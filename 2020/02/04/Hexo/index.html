@@ -26,6 +26,9 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+  
+    <link rel="stylesheet" type="text/css" href="/./avatarrotation.css">
+  
   <style type="text/css">
   
     #container.show {
@@ -43,7 +46,8 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #E0FFFF"></div>
+<!-- <div class="overlay" style="background: #E0FFFF"></div> -->
+<div class="overlay"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -53,13 +57,14 @@
 		  <h1 class="header-author"><a href="/">Yun Qi</a></h1>
 		</hgroup>
 		
-
 		<nav class="header-menu">
 			<ul>
 			
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="https://mubu.com/docEoa0s66CHf" target="_blank" rel="noopener">随笔</a></li>
+	        
+				<li><a href="/categories">categories</a></li>
 	        
 			</ul>
 		</nav>
@@ -92,6 +97,12 @@
 					<a class="twitter" target="_blank" href="https://twitter.com/satoru43886693" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
+			<!-- 《左侧边栏添加--网易云音乐插件 -->
+			<!-- https://www.writebug.site/2018/04/21/hexo-yilia个性化之-添加背景音乐/ -->
+			
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=228 height=86 src="//music.163.com/outchain/player?type=2&id=1400594005&auto=1&height=66"></iframe>
+			
+			<!-- 网易云音乐插件》-->
 		</nav>
 	</header>		
 </div>
@@ -119,6 +130,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -134,12 +147,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="https://mubu.com/docEoa0s66CHf" target="_blank" rel="noopener">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="https://mubu.com/docEoa0s66CHf" target="_blank" rel="noopener">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/categories">categories</a></li>
 		        
 				</ul>
 			</nav>
@@ -383,7 +398,7 @@
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
