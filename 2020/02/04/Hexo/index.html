@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、hexo基操master分支 1、新建md             hexo n &quot;title&quot;    2、清理     hexo clean   3、生成 hexo g   4、部署到远端；推到github              hexo d   5、启动预览,blog  hexo s">
+  <meta name="description" content="一、hexo基操master分支 1、新建md             hexo n &quot;title&quot;    2、清理     hexo clean   3、生成 hexo g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2020/02/04/Hexo/index.html">
 <meta property="og:site_name" content="Yun.Qi">
-<meta property="og:description" content="一、hexo基操master分支 1、新建md             hexo n &quot;title&quot;    2、清理     hexo clean   3、生成 hexo g   4、部署到远端；推到github              hexo d   5、启动预览,blog  hexo s">
+<meta property="og:description" content="一、hexo基操master分支 1、新建md             hexo n &quot;title&quot;    2、清理     hexo clean   3、生成 hexo g">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-04T07:34:18.000Z">
-<meta property="article:modified_time" content="2020-02-09T05:35:25.166Z">
+<meta property="article:modified_time" content="2020-02-09T09:20:44.840Z">
 <meta property="article:author" content="Yun Qi">
 <meta name="twitter:card" content="summary">
   
@@ -75,10 +75,10 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 5
+			总文章数 6
 		</nav>
 		<nav>
-			总字数 <span class="post-count">2.1k</span>
+			总字数 <span class="post-count">3.1k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -109,6 +109,73 @@
 			<!-- https://www.writebug.site/2018/04/21/hexo-yilia个性化之-添加背景音乐/ -->
 			
 			<!-- 网易云音乐插件》-->
+			
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+				<!--div id="aplayer" style="position:absolute;left;0;bottom:0;"></div-->
+				<div id="aplayer" style="bottom: 0;"></div>
+				<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+				<script>
+				  const ap = new APlayer({
+					container: document.getElementById('aplayer'),
+					autoplay: false, //自动播放
+					listFolded: false, //播放列表默认折叠
+					listMaxHeight: 90, //播放列表最大高度
+					order: 'list', //音频循环顺序, 可选值: 'list', 'random'
+					loop: 'all', //音频循环播放, 可选值: 'all', 'one', 'none'
+					theme: '#e9e9e9', //切换音频时的主题色，优先级低于audio.theme
+					preload: 'none', //音频预加载，可选值: 'none', 'metadata', 'auto'
+					mutex: false, //互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
+					lrcType: 3, //歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式）
+					volume: 0.7, //默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+					fixed: true, //吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
+					audio: [{
+						name: '光るなら',
+						artist: 'Goose house',
+						lrc: '../../downloads/lrc/gh.lrc',
+						cover: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=103348549,509929454&fm=26&gp=0.jpg',
+						url: 'http://m10.music.126.net/20200209192630/ec7476f16b914ced73fe60378456da50/ymusic/9e0a/6075/ec14/a0338148b6233f2b8a48286db4125b50.mp3',
+					  },
+						
+					  {
+						name: '別の人の彼女になったよ',
+						artist: '春茶',
+						lrc: '../../downloads/lrc/wacci.lrc',
+						cover: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3954397262,2237664834&fm=26&gp=0.jpg',
+						url: 'http://m10.music.126.net/20200209190417/61205b6481ab59b0aba0783aa3702768/ymusic/0408/070f/0059/3b72a0d5670eb13bcbe7737c095ff7f4.mp3'
+					  },
+					  {
+						name: '二人セゾン',
+						artist: '欅坂46',
+						lrc: '../../downloads/lrc/榉坂.lrc',
+						cover: 'http://img5.imgtn.bdimg.com/it/u=3365498476,1339285403&fm=26&gp=0.jpg',
+						url: 'http://m10.music.126.net/20200209190658/e5b4280ef576bedf235bb5d81a743db5/ymusic/b3af/a391/876d/e5dd0805c015b0724163137814f15d90.mp3'
+					  },
+					  {
+						name: '瞬き',
+						artist: '春茶',
+						lrc: '../../downloads/lrc/春茶.lrc',
+						cover: 'http://img3.imgtn.bdimg.com/it/u=2333262178,216782807&fm=26&gp=0.jpg',
+						url: 'http://m10.music.126.net/20200209192407/ecff47d55166f810d2540a94f63f88b4/ymusic/53d8/1045/0d5c/f79b2e0e8b95001e4f83b25111f7bdc8.mp3',
+					  }
+					]
+				  });
+				
+				  //实现切换音频时，根据音频的封面图片自适应主题色
+				  const colorThief = new ColorThief();
+				  const setTheme = (index) => {
+					if (!ap.list.audios[index].theme) {
+					  colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+						ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+					  });
+					}
+				  };
+				  setTheme(ap.list.index);
+				  ap.on('listswitch', (data) => {
+					setTheme(data.index);
+				  });
+				</script>
+				
 		</nav>
 	</header>		
 </div>
@@ -195,7 +262,7 @@
         
       </header>
       <div align="center" class="post-count">
-        字数: 136字 | 预计阅读时长：1分钟
+        字数: 242字 | 预计阅读时长：1分钟
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -212,7 +279,7 @@
 <li>3、生成<blockquote>
 <p><code>hexo g</code></p>
 </blockquote>
-</li>
+<a id="more"></a></li>
 <li>4、部署到远端；推到github             <blockquote>
 <p><code>hexo d</code></p>
 </blockquote>
@@ -220,17 +287,39 @@
 <li>5、启动预览,blog <blockquote>
 <p><code>hexo s</code> </p>
 </blockquote>
-<a id="more"></a>
-<h3 id="二、blog-分支"><a href="#二、blog-分支" class="headerlink" title="二、blog 分支"></a>二、blog 分支</h3></li>
-<li>6、<code>git add .</code></li>
-<li>7、<code>git commit -m &quot;提交信息&quot;</code></li>
-<li>8、<code>git push origin blog</code> &nbsp;#如果设置了blog为默认分支，可以直接git push</li>
+</li>
 </ul>
-<h2 id="所用主题-yilia"><a href="#所用主题-yilia" class="headerlink" title="所用主题 :yilia"></a>所用主题 :yilia</h2><h3 id="三、source-md-blog目录下"><a href="#三、source-md-blog目录下" class="headerlink" title="三、source/md-(blog目录下)"></a>三、source/md-(blog目录下)</h3><ul>
-<li>没有跳过的会转化为HTML，在blog中体现</li>
+<h3 id="blog-分支"><a href="#blog-分支" class="headerlink" title="blog 分支"></a>blog 分支</h3><ul>
+<li>6、将当前目录下修改的所有代码从工作区添加到暂存区 . 代表当前目录<blockquote>
+<p><code>git add .</code></p>
+</blockquote>
+</li>
+<li>7、将缓存区内容添加到本地仓库<blockquote>
+<p><code>git commit -m &quot;提交信息&quot;</code></p>
+</blockquote>
+</li>
+<li>8、将本地版本库推送到远程服务器,将本地库如果设置了blog为默认分支，可以直接git push<blockquote>
+<p><code>git push origin blog</code> </p>
+</blockquote>
+</li>
+<li>9、先将远程仓库master中的信息同步到本地仓库master中<blockquote>
+<p><code>git pull origin master</code></p>
+</blockquote>
+</li>
+<li>10、查看工作区代码相对于暂存区的差别<blockquote>
+<p><code>git status</code> </p>
+</blockquote>
+</li>
 </ul>
-<h3 id="四、source-main-0cf68a-css"><a href="#四、source-main-0cf68a-css" class="headerlink" title="四、source/main.0cf68a.css"></a>四、source/main.0cf68a.css</h3><h5 id="left-bg"><a href="#left-bg" class="headerlink" title="left-bg"></a>left-bg</h5><ul>
-<li>left-col 中<hr/><h5 id="body-bg"><a href="#body-bg" class="headerlink" title="body-bg"></a>body-bg</h5></li>
+<blockquote>
+<p>参考<a href="https://www.jianshu.com/p/2e1d551b8261" target="_blank" rel="noopener" title="简书">简书网站</a></p>
+</blockquote>
+<h2 id="二、source-md-blog目录下"><a href="#二、source-md-blog目录下" class="headerlink" title="二、source/md-(blog目录下)"></a>二、source/md-(blog目录下)</h2><ul>
+<li>没有跳过的会转化为HTML，在blog中体现<blockquote>
+<p><strong>所用主题 :<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">yilia</a></strong></p>
+</blockquote>
+<h2 id="三、source-main-0cf68a-css"><a href="#三、source-main-0cf68a-css" class="headerlink" title="三、source/main.0cf68a.css"></a>三、source/main.0cf68a.css</h2><h3 id="left-bg"><a href="#left-bg" class="headerlink" title="left-bg"></a>left-bg</h3></li>
+<li>left-col 中<hr/><h3 id="body-bg"><a href="#body-bg" class="headerlink" title="body-bg"></a>body-bg</h3></li>
 <li>body 中<blockquote>
 <p>具体修改参考<a href="http://yansheng836.coding.me/" target="_blank" rel="noopener">大佬博客</a>中的<a href="http://yansheng836.coding.me/article/72a91df5.html" target="_blank" rel="noopener">这一篇</a></p>
 </blockquote>
@@ -341,7 +430,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、hexo基操"><span class="toc-number">1.</span> <span class="toc-text">一、hexo基操</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#master分支"><span class="toc-number">1.1.</span> <span class="toc-text">master分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、blog-分支"><span class="toc-number">1.2.</span> <span class="toc-text">二、blog 分支</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#所用主题-yilia"><span class="toc-number">2.</span> <span class="toc-text">所用主题 :yilia</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#三、source-md-blog目录下"><span class="toc-number">2.1.</span> <span class="toc-text">三、source&#x2F;md-(blog目录下)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、source-main-0cf68a-css"><span class="toc-number">2.2.</span> <span class="toc-text">四、source&#x2F;main.0cf68a.css</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#left-bg"><span class="toc-number">2.2.0.1.</span> <span class="toc-text">left-bg</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#body-bg"><span class="toc-number">2.2.0.2.</span> <span class="toc-text">body-bg</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、hexo基操"><span class="toc-number">1.</span> <span class="toc-text">一、hexo基操</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#master分支"><span class="toc-number">1.1.</span> <span class="toc-text">master分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#blog-分支"><span class="toc-number">1.2.</span> <span class="toc-text">blog 分支</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、source-md-blog目录下"><span class="toc-number">2.</span> <span class="toc-text">二、source&#x2F;md-(blog目录下)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、source-main-0cf68a-css"><span class="toc-number">3.</span> <span class="toc-text">三、source&#x2F;main.0cf68a.css</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#left-bg"><span class="toc-number">3.1.</span> <span class="toc-text">left-bg</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#body-bg"><span class="toc-number">3.2.</span> <span class="toc-text">body-bg</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

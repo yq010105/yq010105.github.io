@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Spider_note | Yun.Qi</title>
+  <title>Python_note | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考Github上的教程学习  一、线程线程Pool1234567from multiprocessing.dummy import Pool   def calc_power2(num):return num*numpool &#x3D; Pool(5)origin_num &#x3D; [x for x in range(10)]result &#x3D; pool.map(calc_pow">
+  <meta name="description" content="1、文件管理（txt）123fd &#x3D; open(&#39;file.txt&#39;,&#39;w&#39;,encoding&#x3D;&#39;utf-8&#39;)      #utf-8 or GBKfd.write(content)     fd.close() 其中content可以是字符串，变量，\t ……      r w a    只读 覆盖写 添加写   2、csv文">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spider_note">
-<meta property="og:url" content="http://yoursite.com/2020/02/08/spider/index.html">
+<meta property="og:title" content="Python_note">
+<meta property="og:url" content="http://yoursite.com/2020/02/09/Python-note/index.html">
 <meta property="og:site_name" content="Yun.Qi">
-<meta property="og:description" content="参考Github上的教程学习  一、线程线程Pool1234567from multiprocessing.dummy import Pool   def calc_power2(num):return num*numpool &#x3D; Pool(5)origin_num &#x3D; [x for x in range(10)]result &#x3D; pool.map(calc_pow">
+<meta property="og:description" content="1、文件管理（txt）123fd &#x3D; open(&#39;file.txt&#39;,&#39;w&#39;,encoding&#x3D;&#39;utf-8&#39;)      #utf-8 or GBKfd.write(content)     fd.close() 其中content可以是字符串，变量，\t ……      r w a    只读 覆盖写 添加写   2、csv文">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-08T03:40:18.000Z">
-<meta property="article:modified_time" content="2020-02-09T10:01:34.599Z">
+<meta property="article:published_time" content="2020-02-09T07:38:38.000Z">
+<meta property="article:modified_time" content="2020-02-09T09:54:36.169Z">
 <meta property="article:author" content="Yun Qi">
 <meta name="twitter:card" content="summary">
   
@@ -244,72 +244,159 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-spider" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Python-note" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Spider_note
+      Python_note
     </h1>
   
 
         
-        <a href="/2020/02/08/spider/" class="archive-article-date">
-  	<time datetime="2020-02-08T03:40:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-08</time>
+        <a href="/2020/02/09/Python-note/" class="archive-article-date">
+  	<time datetime="2020-02-09T07:38:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-09</time>
 </a>
         
       </header>
       <div align="center" class="post-count">
-        字数: 1,656字 | 预计阅读时长：8分钟
+        字数: 618字 | 预计阅读时长：3分钟
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>参考Github上的<a href="https://github.com/kingname/SourceCodeOfBook" target="_blank" rel="noopener" title="Github">教程</a>学习</p>
+        <h1 id="1、文件管理（txt）"><a href="#1、文件管理（txt）" class="headerlink" title="1、文件管理（txt）"></a>1、文件管理（txt）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fd &#x3D; open(&#39;file.txt&#39;,&#39;w&#39;,encoding&#x3D;&#39;utf-8&#39;)      #utf-8 or GBK</span><br><span class="line">fd.write(content)     </span><br><span class="line">fd.close()</span><br></pre></td></tr></table></figure>
+<p>其中content可以是字符串，变量，\t ……</p>
+<hr/>
+
+<table>
+<thead>
+<tr>
+<th align="center">r</th>
+<th align="center">w</th>
+<th align="center">a</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">只读</td>
+<td align="center">覆盖写</td>
+<td align="center">添加写</td>
+</tr>
+</tbody></table>
+<h1 id="2、csv文件"><a href="#2、csv文件" class="headerlink" title="2、csv文件"></a>2、csv文件</h1><a id="more"></a>
+<h2 id="列表序列数据"><a href="#列表序列数据" class="headerlink" title="列表序列数据"></a>列表序列数据</h2><ul>
+<li>headers :表头</li>
+<li>rows :内容</li>
+<li>f_csv = csv.writer(f)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>f为open(‘file.txt’,’w’,encoding=’utf-8’)</em></li>
+<li>f_csv.writerow(headers)</li>
+<li>f_csv.writerows(rows)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import csv</span><br><span class="line"></span><br><span class="line">headers &#x3D; [&#39;class&#39;,&#39;name&#39;,&#39;sex&#39;,&#39;height&#39;,&#39;year&#39;]</span><br><span class="line"></span><br><span class="line">rows &#x3D; [</span><br><span class="line">        [1,&#39;xiaoming&#39;,&#39;male&#39;,168,23],</span><br><span class="line">        [1,&#39;xiaohong&#39;,&#39;female&#39;,162,22],</span><br><span class="line">        [2,&#39;xiaozhang&#39;,&#39;female&#39;,163,21],</span><br><span class="line">        [2,&#39;xiaoli&#39;,&#39;male&#39;,158,21]</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">with open(&#39;test.csv&#39;,&#39;w&#39;,newline&#x3D;&#39;&#39;)as f:</span><br><span class="line">    f_csv &#x3D; csv.writer(f)</span><br><span class="line">    f_csv.writerow(headers)</span><br><span class="line">    f_csv.writerows(rows)</span><br></pre></td></tr></table></figure></li>
+<li>注意：如果打开csv文件出现空行的情况，那么需要添加一个参数 newline=”*<br><code>with open(&#39;test.csv&#39;,&#39;w&#39;,newline=&#39;&#39;)as f:</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">class</th>
+<th align="center">name</th>
+<th align="center">sex</th>
+<th align="center">height</th>
+<th align="center">year</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">xiaoming</td>
+<td align="center">male</td>
+<td align="center">168</td>
+<td align="center">23</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">xiaohong</td>
+<td align="center">female</td>
+<td align="center">162</td>
+<td align="center">22</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">xiaozhang</td>
+<td align="center">female</td>
+<td align="center">163</td>
+<td align="center">21</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">xiaoli</td>
+<td align="center">male</td>
+<td align="center">158</td>
+<td align="center">21</td>
+</tr>
+</tbody></table>
+<h2 id="字典序列数据"><a href="#字典序列数据" class="headerlink" title="字典序列数据"></a>字典序列数据</h2><ul>
+<li>headers :表头</li>
+<li>rows :内容</li>
+<li>f_csv = DictWriter(f,headers)</li>
+<li>f_csv.writeheader()</li>
+<li>f_csv.writerows(rows)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import csv</span><br><span class="line"></span><br><span class="line">headers &#x3D; [&#39;class&#39;,&#39;name&#39;,&#39;sex&#39;,&#39;height&#39;,&#39;year&#39;]</span><br><span class="line"></span><br><span class="line">rows &#x3D; [</span><br><span class="line">        &#123;&#39;class&#39;:1,&#39;name&#39;:&#39;xiaoming&#39;,&#39;sex&#39;:&#39;male&#39;,&#39;height&#39;:168,&#39;year&#39;:23&#125;,</span><br><span class="line">        &#123;&#39;class&#39;:1,&#39;name&#39;:&#39;xiaohong&#39;,&#39;sex&#39;:&#39;female&#39;,&#39;height&#39;:162,&#39;year&#39;:22&#125;,</span><br><span class="line">        &#123;&#39;class&#39;:2,&#39;name&#39;:&#39;xiaozhang&#39;,&#39;sex&#39;:&#39;female&#39;,&#39;height&#39;:163,&#39;year&#39;:21&#125;,</span><br><span class="line">        &#123;&#39;class&#39;:2,&#39;name&#39;:&#39;xiaoli&#39;,&#39;sex&#39;:&#39;male&#39;,&#39;height&#39;:158,&#39;year&#39;:21&#125;,</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">with open(&#39;test2.csv&#39;,&#39;w&#39;,newline&#x3D;&#39;&#39;)as f:</span><br><span class="line">    f_csv &#x3D; csv.DictWriter(f,headers)</span><br><span class="line">    f_csv.writeheader()</span><br><span class="line">    f_csv.writerows(rows)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">class</th>
+<th align="center">name</th>
+<th align="center">sex</th>
+<th align="center">height</th>
+<th align="center">year</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">xiaoming</td>
+<td align="center">male</td>
+<td align="center">168</td>
+<td align="center">23</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">xiaohong</td>
+<td align="center">female</td>
+<td align="center">162</td>
+<td align="center">22</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">xiaozhang</td>
+<td align="center">female</td>
+<td align="center">163</td>
+<td align="center">21</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">xiaoli</td>
+<td align="center">male</td>
+<td align="center">158</td>
+<td align="center">21</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="csv文件的读"><a href="#csv文件的读" class="headerlink" title="csv文件的读"></a>csv文件的读</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import csv</span><br><span class="line">with open(&#39;test.csv&#39;)as f:</span><br><span class="line">    f_csv &#x3D; csv.reader(f)</span><br><span class="line">    for row in f_csv:</span><br><span class="line">        print(row)</span><br><span class="line"></span><br><span class="line">&#39;&#39;&#39;result</span><br><span class="line">[&#39;class&#39;, &#39;name&#39;, &#39;sex&#39;, &#39;height&#39;, &#39;year&#39;]</span><br><span class="line">[&#39;1&#39;, &#39;xiaoming&#39;, &#39;male&#39;, &#39;168&#39;, &#39;23&#39;]</span><br><span class="line">[&#39;1&#39;, &#39;xiaohong&#39;, &#39;female&#39;, &#39;162&#39;, &#39;22&#39;]</span><br><span class="line">[&#39;2&#39;, &#39;xiaozhang&#39;, &#39;female&#39;, &#39;163&#39;, &#39;21&#39;]</span><br><span class="line">[&#39;2&#39;, &#39;xiaoli&#39;, &#39;male&#39;, &#39;158&#39;, &#39;21&#39;]</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line"></span><br><span class="line">with open(&#39;test.csv&#39;)as f:</span><br><span class="line">    f_csv &#x3D; csv.reader(f)</span><br><span class="line">    for row in f_csv:</span><br><span class="line">        print(row[0])</span><br><span class="line"></span><br><span class="line">&#39;&#39;&#39;result</span><br><span class="line">class</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">&#39;&#39;&#39;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考<a href="https://blog.csdn.net/katyusha1/article/details/81606175" target="_blank" rel="noopener" title="CSDN">网站</a></p>
 </blockquote>
-<h1 id="一、线程"><a href="#一、线程" class="headerlink" title="一、线程"></a>一、线程</h1><h2 id="线程Pool"><a href="#线程Pool" class="headerlink" title="线程Pool"></a>线程Pool</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from multiprocessing.dummy import Pool   </span><br><span class="line">def calc_power2(num):</span><br><span class="line">return num*num</span><br><span class="line">pool &#x3D; Pool(5)</span><br><span class="line">origin_num &#x3D; [x for x in range(10)]</span><br><span class="line">result &#x3D; pool.map(calc_power2,origin_num)</span><br><span class="line">print(f&#39;0~9的平方分别为：&#123;result&#125;&#39;)</span><br></pre></td></tr></table></figure>
-<p><code>Pool(5)</code> &emsp;五个线程</p>
-<hr/>
-<a id="more"></a>
+<h1 id="3、with-open-as-读写文件"><a href="#3、with-open-as-读写文件" class="headerlink" title="3、with open () as 读写文件"></a>3、with open () as 读写文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 读文件</span><br><span class="line">with open(&#39;file.txt&#39;,&#39;r&#39;,) as f:</span><br><span class="line">    print(f.read())</span><br><span class="line"># 不需调用f.close()</span><br><span class="line"># 如果文件过大则用read(size)比较保险</span><br><span class="line"># 如果文件是配置文件readlines()较为方便</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 写文件</span><br><span class="line">with open(&#39;file.txt&#39;,&#39;w&#39;,encoding&#x3D;&#39;utf-8&#39;) as f:</span><br><span class="line">    f.write(&#39;Hello World !&#39;)</span><br><span class="line"># 文本文件    encoding 字符编码：gbk，utf-8</span><br><span class="line"># 二进制文件  rb模式读取:图片,视频</span><br></pre></td></tr></table></figure>
 
-<h2 id="所用函数"><a href="#所用函数" class="headerlink" title="所用函数"></a>所用函数</h2><p><code>time.time()</code> &nbsp; 程序当前时间<br>eg：用来对比单线程和多线程访问baidu的速度</p>
-<h1 id="二、request库"><a href="#二、request库" class="headerlink" title="二、request库"></a>二、request库</h1><h2 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">url &#x3D; &#39;&#39;</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;UserAgent&quot;:&quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like\ Gecko) Chrome&#x2F;80.0.3987.87 Safari&#x2F;537.36 Edg&#x2F;80.0.361.48&quot;</span><br><span class="line">&#125;</span><br><span class="line">response &#x3D; request.get(url,headers&#x3D;headers)</span><br><span class="line">response.encoding &#x3D; &#39;utf-8&#39;  #或者GBK</span><br><span class="line">html &#x3D; response</span><br></pre></td></tr></table></figure>
-<h2 id="另一种用法"><a href="#另一种用法" class="headerlink" title="另一种用法"></a>另一种用法</h2><p><code>html = requests.get(&#39;url&#39;).content.decode()</code></p>
-<h1 id="三、re库"><a href="#三、re库" class="headerlink" title="三、re库"></a>三、re库</h1><h2 id="基础用法-1"><a href="#基础用法-1" class="headerlink" title="基础用法"></a>基础用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.findall(r&#39;&#39;,html,re.S)   #这是一个列表所以可以取第一个数据</span><br><span class="line">                            #re.findall(r&#39;&#39;,html,re.S)[0]</span><br></pre></td></tr></table></figure>
-
-<h1 id="四、Xpath–lxml库"><a href="#四、Xpath–lxml库" class="headerlink" title="四、Xpath–lxml库"></a>四、Xpath–lxml库</h1><ul>
-<li>XPath是一种查询语言，能从XML\HTML的树状结构中寻找节点</li>
-</ul>
-<h2 id="XPath语法"><a href="#XPath语法" class="headerlink" title="XPath语法"></a>XPath语法</h2><h3 id="XPath语法解析"><a href="#XPath语法解析" class="headerlink" title="XPath语法解析"></a>XPath语法解析</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">example_html</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">         &lt;title&gt;测试&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">         &lt;div class&#x3D;&quot;useful&quot;&gt;</span><br><span class="line"> &lt;ul&gt;</span><br><span class="line">                   &lt;li class&#x3D;&quot;info&quot;&gt;我需要的信息1&lt;&#x2F;li&gt;</span><br><span class="line">                   &lt;li class&#x3D;&quot;info&quot;&gt;我需要的信息2&lt;&#x2F;li&gt;</span><br><span class="line">                   &lt;li class&#x3D;&quot;info&quot;&gt;我需要的信息3&lt;&#x2F;li&gt;</span><br><span class="line"> &lt;&#x2F;ul&gt;</span><br><span class="line">         &lt;&#x2F;div&gt;</span><br><span class="line">         &lt;div class&#x3D;&quot;useless&quot;&gt;</span><br><span class="line">              &lt;ul&gt;</span><br><span class="line">                   &lt;li class&#x3D;&quot;info&quot;&gt;垃圾1&lt;&#x2F;li&gt;</span><br><span class="line">                   &lt;li class&#x3D;&quot;info&quot;&gt;垃圾2&lt;&#x2F;li&gt;</span><br><span class="line">              &lt;&#x2F;ul&gt;</span><br><span class="line">         &lt;&#x2F;div&gt;</span><br><span class="line">     &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
-<p><code>info = selector.xpath(&#39;//div[@class=&quot;useful&quot;]/ul/li/text()&#39;)</code><br>就可以提取出class=”userful”中的三句话，返回一个列表</p>
-<h3 id="基本框架"><a href="#基本框架" class="headerlink" title="基本框架"></a>基本框架</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import lxml.html</span><br><span class="line">selector &#x3D; lxml.html.fromstring(&#39;网页源代码&#39;)    #网页源代码可用requests来获取</span><br><span class="line">info &#x3D; selector.xpath(&#39;一段XPath语句&#39;)</span><br></pre></td></tr></table></figure>
-<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">import lxml.html</span><br><span class="line"></span><br><span class="line">source &#x3D; &#39;&#39;&#39;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">         &lt;title&gt;测试&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;&#x2F;head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">         &lt;div class&#x3D;&quot;useful&quot;&gt;</span><br><span class="line"> &lt;ul&gt;</span><br><span class="line">                   &lt;li class&#x3D;&quot;info&quot;&gt;我需要的信息1&lt;&#x2F;li&gt;</span><br><span class="line">                   &lt;li class&#x3D;&quot;info&quot;&gt;我需要的信息2&lt;&#x2F;li&gt;</span><br><span class="line">                   &lt;li class&#x3D;&quot;info&quot;&gt;我需要的信息3&lt;&#x2F;li&gt;</span><br><span class="line"> &lt;&#x2F;ul&gt;</span><br><span class="line">         &lt;&#x2F;div&gt;</span><br><span class="line">         &lt;div class&#x3D;&quot;useless&quot;&gt;</span><br><span class="line">              &lt;ul&gt;</span><br><span class="line">                   &lt;li class&#x3D;&quot;info&quot;&gt;垃圾1&lt;&#x2F;li&gt;</span><br><span class="line">                   &lt;li class&#x3D;&quot;info&quot;&gt;垃圾2&lt;&#x2F;li&gt;</span><br><span class="line">              &lt;&#x2F;ul&gt;</span><br><span class="line">         &lt;&#x2F;div&gt;</span><br><span class="line">     &lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">selector &#x3D; lxml.html.fromstring(source)</span><br><span class="line">info &#x3D; selector.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;useful&quot;]&#x2F;ul&#x2F;li&#x2F;text()&#39;)</span><br><span class="line">print(info)         #[&#39;我需要的信息1&#39;, &#39;我需要的信息2&#39;, &#39;我需要的信息3&#39;]</span><br></pre></td></tr></table></figure>
-<hr/>
-
+<blockquote>
+<p>参考<a href="https://blog.csdn.net/xrinosvip/article/details/82019844" target="_blank" rel="noopener" title="CSDN">网站</a></p>
+</blockquote>
+<h1 id="4、python中陌生的函数"><a href="#4、python中陌生的函数" class="headerlink" title="4、python中陌生的函数"></a>4、python中陌生的函数</h1><p><em>自己还不太熟悉的</em></p>
+<h2 id="a-split-对字符串进行切片–返回一个列表"><a href="#a-split-对字符串进行切片–返回一个列表" class="headerlink" title="a.split() #对字符串进行切片–返回一个列表"></a>a.<code>split() #对字符串进行切片</code>–返回一个列表</h2><p>语法<code>str.split(str=&quot;&quot;, num=string.count(str)).</code></p>
 <ul>
-<li>a.<strong>XPath语句格式</strong><br><code>info = selector.xpath(&#39;一段XPath语句&#39;)</code>中’一段XPath语句’的格式<br>核心思想：XPath就是写地址<br>获取文本：<code>//标签1[@属性1=&quot;属性值1&quot;]/标签2[@属性2=&quot;属性值2&quot;]/..../text()</code><br>获取属性值：<code>//标签1[@属性1=&quot;属性值1&quot;]/标签2[@属性2=&quot;属性值2&quot;]/..../@属性n</code><br>其中的<code>[@属性=&quot;属性值&quot;]</code>不是必需的，其作用是帮助过滤相同的标签，无相同标签可省略</li>
-<li>b.<strong>标签1的选取</strong><br>标签1可以直接从html这个最外层的标签开始，一层一层往下找，这个时候，XPath语句是这样的：<br><code>/html/body/div[@class=&quot;useful&quot;]/ul/li/text()</code><br>但是由于前面的’/html/body’是所有HTML通用的，而且没有属性，所以可不写，即带属性标签前的标签都可以省略</li>
-<li>c.<strong>可以省略的属性</strong><br>1、本身标签没有属性<br>2、这个标签所有的属性值相同</li>
-<li>d.<strong>XPath的特殊情况</strong><br>1、以相同字符串开头<code>标签[starts-with(@属性,&quot;开头字符串&quot;)]</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;test-1&quot;&gt;需要的内容1&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;test-2&quot;&gt;需要的内容2&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;testfault&quot;&gt;需要的内容3&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;useless&quot;&gt;这是我不需要的内容&lt;&#x2F;div&gt;</span><br><span class="line">content &#x3D; selector.xpath(&#39;&#x2F;&#x2F;div[starts-with(@id,&quot;test&quot;)]&#x2F;text()&#39;)</span><br><span class="line">print(content)      #[&#39;需要的内容1&#39;,&#39;需要的内容3&#39;,&#39;需要的内容2&#39;]</span><br></pre></td></tr></table></figure>
-2、属性值包含相同字符串<code>标签[contains(@属性,&quot;相同字符串&quot;)]</code><br>3、对XPath返回的对象执行XPath<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useful &#x3D; selector.xpath(&#39;&#x2F;&#x2F;div[@class&#x3D;&quot;useful&quot;]&#39;)   #这里返回一个列表</span><br><span class="line">info_list &#x3D; useful[0].xpath(&#39;ul&#x2F;li&#x2F;text()&#39;)         #useful[0]即为列表中第一个数据</span><br><span class="line">print(info_list)</span><br></pre></td></tr></table></figure>
-4、不同标签下的文字<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import lxml.html</span><br><span class="line"></span><br><span class="line">html &#x3D; &#39;&#39;&#39;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;test3&quot;&gt;</span><br><span class="line">        我左青龙，</span><br><span class="line">        &lt;span id&#x3D;&quot;tiger&quot;&gt;</span><br><span class="line">        右白虎，</span><br><span class="line">            &lt;ul&gt;上朱雀，</span><br><span class="line">                &lt;li&gt;下玄武。&lt;&#x2F;li&gt;</span><br><span class="line">            &lt;&#x2F;ul&gt;</span><br><span class="line">        老牛在当中，</span><br><span class="line">        &lt;&#x2F;span&gt;</span><br><span class="line">        龙头在胸口。</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">#如果直接提取id&#x3D;&quot;test3&quot;</span><br><span class="line">selector &#x3D; lxml.html.fromstring(html)</span><br><span class="line">content_1 &#x3D; selector.xpath(&#39;&#x2F;&#x2F;div[@id&#x3D;&quot;test3&quot;]&#x2F;text()&#39;)</span><br><span class="line">print(content_1)   #[&#39;\n        我左青龙，\n        &#39;, &#39;\n        龙头在胸口。\n    &#39;]</span><br><span class="line">#只会提取到div标签中的文字信息，而不会自动提取子标签中的信息</span><br><span class="line"></span><br><span class="line">#这时就需要用string(.)关键字了</span><br><span class="line">selector &#x3D; lxml.html.fromstring(html)</span><br><span class="line">data &#x3D; selector.xpath(&#39;&#x2F;&#x2F;div[@id&#x3D;&quot;test3&quot;]&#39;)[0]</span><br><span class="line">info &#x3D; data.xpath(&#39;string(.)&#39;)</span><br><span class="line">print(info)     #就可以提取出所有的文本信息了</span><br></pre></td></tr></table></figure>
-<h2 id="XPath通过chrome辅助构造"><a href="#XPath通过chrome辅助构造" class="headerlink" title="XPath通过chrome辅助构造"></a>XPath通过chrome辅助构造</h2>在一行源码单击右键，选择“Copy”→“Copy XPath”命令<br>把结果粘贴下来，可以看到如下的XPath语句：<br><code>//*[@id=&quot;thread_list&quot;]/li[2]/div/div[2]/div[1]/div[1]/a</code></li>
-<li>其中方括号中的数字，表示这是第几个该标签，但需要注意，这里的数字是从1开始*</li>
-</ul>
-<h1 id="五、Beautiful-Soup4库-BS4"><a href="#五、Beautiful-Soup4库-BS4" class="headerlink" title="五、Beautiful Soup4库(BS4)"></a>五、Beautiful Soup4库(BS4)</h1><p><em>BS4在某些方面比XPath易懂，但是不如XPath简洁，而且由于它是使用Python开发的，因此速度比XPath慢。</em><br>使用Beautiful Soup4提取HTML内容，一般要经过以下两步。</p>
-<h2 id="bs4处理步骤"><a href="#bs4处理步骤" class="headerlink" title="bs4处理步骤"></a>bs4处理步骤</h2><ul>
-<li>1)处理源代码生成BeautifulSoup对象。<br>解析源代码生成BeautifulSoup对象，使用以下代码：<br><code>soup = BeautifulSoup(网页源代码, &#39;解析器&#39;)</code><br>解析器：<br>这里的“解析器”，可以使用html.parser：<br><code>soup = BeautifulSoup(source, &#39;html.parser&#39;)</code><br>如果安装了lxml，还可以使用lxml：<br><code>soup = BeautifulSoup(source, &#39;lxml&#39;)</code></li>
-<li>2)使用find_all()或者find()来查找内容。<br><code>soup.find(class_=&#39;属性值&#39;)</code></li>
-<li>由于HTML中的class属性与Python的class关键字相同，因此为了不产生冲突，BS4规定，如果遇到要查询class的情况，使用“class_”来代替*</li>
-</ul>
-<h2 id="example-1"><a href="#example-1" class="headerlink" title="example"></a><a href="http://exercise.kingname.info/exercise_bs_1.html" target="_blank" rel="noopener">example</a></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import request</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">html &#x3D; requests.get(&#39;http:&#x2F;&#x2F;exercise.kingname.info&#x2F;exercise_bs_1.html&#39;).content.decode()</span><br><span class="line"># 1、解析源代码</span><br><span class="line">soup &#x3D; BeautifulSoup(html,&#39;lxml&#39;)</span><br><span class="line"># 2、查找内容</span><br><span class="line">info &#x3D; soup.find(class_&#x3D; &#39;test&#39;)</span><br><span class="line">print(info.string)      #我需要的信息2</span><br><span class="line"></span><br><span class="line"># 先抓大，再抓小</span><br><span class="line">useful &#x3D; soup.find(class_&#x3D;&#39;useful&#39;)</span><br><span class="line">all_content &#x3D; useful.find_all(&#39;li&#39;)</span><br><span class="line">for li in all_content:</span><br><span class="line">    print(li.string)        #我需要的信息1</span><br><span class="line">                            #我需要的信息2</span><br><span class="line">                            #我需要的信息3</span><br><span class="line">    print(li)               #&lt;li class&#x3D;&quot;info&quot;&gt;我需要的信息1&lt;&#x2F;li&gt;</span><br><span class="line">                            #&lt;li class&#x3D;&quot;test&quot;&gt;我需要的信息2&lt;&#x2F;li&gt;</span><br><span class="line">                            #&lt;li class&#x3D;&quot;iamstrange&quot;&gt;我需要的信息3&lt;&#x2F;li&gt;    </span><br><span class="line">    print(li[&#39;class&#39;])      #[&#39;info&#39;]</span><br><span class="line">                            #[&#39;test&#39;]</span><br><span class="line">                            #[&#39;iamstrange&#39;]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>其他查找方法</li>
-<li><em>以‘我需要’为开头的信息*</em><br><code>content = soup.find_all(text = re.compile(&#39;我需要&#39;))</code></li>
-<li><em>对属性值搜素使用正则,即对iamstrang属性值搜索*</em><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">content &#x3D; soup.find_all(class_&#x3D;re.compile(&#39;iam&#39;))[0]</span><br><span class="line">print(content.string)       #我需要的信息3</span><br></pre></td></tr></table></figure>
+<li>str：分隔符，默认为所有的空字符，包括空格、换行、指标</li>
+<li>num：分割次数，默认为-1，即分割所有<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#example</span><br><span class="line">txt &#x3D; &quot;Google#Runoob#Taobao#Facebook&quot;</span><br><span class="line"> </span><br><span class="line"># 第二个参数为 1，返回两个参数列表</span><br><span class="line">x &#x3D; txt.split(&quot;#&quot;, 1)</span><br><span class="line"> </span><br><span class="line">print(x)         #[&#39;Google&#39;, &#39;Runoob#Taobao#Facebook&#39;]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考教程：<a href="https://www.runoob.com/python/att-string-split.html" target="_blank" rel="noopener" title="runoob.com">RUNOOB</a></p>
+</blockquote>
 </li>
 </ul>
 
@@ -370,7 +457,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/08/spider/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/09/Python-note/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -384,18 +471,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/08/markdown/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Markdown
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/04/questions/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Pycharm questions</div>
+    <a href="/2020/02/09/github/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Github</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -422,7 +500,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、线程"><span class="toc-number">1.</span> <span class="toc-text">一、线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线程Pool"><span class="toc-number">1.1.</span> <span class="toc-text">线程Pool</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#所用函数"><span class="toc-number">1.2.</span> <span class="toc-text">所用函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、request库"><span class="toc-number">2.</span> <span class="toc-text">二、request库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础用法"><span class="toc-number">2.1.</span> <span class="toc-text">基础用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#另一种用法"><span class="toc-number">2.2.</span> <span class="toc-text">另一种用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、re库"><span class="toc-number">3.</span> <span class="toc-text">三、re库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础用法-1"><span class="toc-number">3.1.</span> <span class="toc-text">基础用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Xpath–lxml库"><span class="toc-number">4.</span> <span class="toc-text">四、Xpath–lxml库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#XPath语法"><span class="toc-number">4.1.</span> <span class="toc-text">XPath语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XPath语法解析"><span class="toc-number">4.1.1.</span> <span class="toc-text">XPath语法解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本框架"><span class="toc-number">4.1.2.</span> <span class="toc-text">基本框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example"><span class="toc-number">4.1.3.</span> <span class="toc-text">example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XPath通过chrome辅助构造"><span class="toc-number">4.2.</span> <span class="toc-text">XPath通过chrome辅助构造</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、Beautiful-Soup4库-BS4"><span class="toc-number">5.</span> <span class="toc-text">五、Beautiful Soup4库(BS4)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bs4处理步骤"><span class="toc-number">5.1.</span> <span class="toc-text">bs4处理步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#example-1"><span class="toc-number">5.2.</span> <span class="toc-text">example</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1、文件管理（txt）"><span class="toc-number">1.</span> <span class="toc-text">1、文件管理（txt）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、csv文件"><span class="toc-number">2.</span> <span class="toc-text">2、csv文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#列表序列数据"><span class="toc-number">2.1.</span> <span class="toc-text">列表序列数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字典序列数据"><span class="toc-number">2.2.</span> <span class="toc-text">字典序列数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#csv文件的读"><span class="toc-number">2.3.</span> <span class="toc-text">csv文件的读</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、with-open-as-读写文件"><span class="toc-number">3.</span> <span class="toc-text">3、with open () as 读写文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、python中陌生的函数"><span class="toc-number">4.</span> <span class="toc-text">4、python中陌生的函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#a-split-对字符串进行切片–返回一个列表"><span class="toc-number">4.1.</span> <span class="toc-text">a.split() #对字符串进行切片–返回一个列表</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

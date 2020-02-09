@@ -71,10 +71,10 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 5
+			总文章数 6
 		</nav>
 		<nav>
-			总字数 <span class="post-count">2.1k</span>
+			总字数 <span class="post-count">3.1k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -105,6 +105,73 @@
 			<!-- https://www.writebug.site/2018/04/21/hexo-yilia个性化之-添加背景音乐/ -->
 			
 			<!-- 网易云音乐插件》-->
+			
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+				<!--div id="aplayer" style="position:absolute;left;0;bottom:0;"></div-->
+				<div id="aplayer" style="bottom: 0;"></div>
+				<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/npm/color-thief-don@2.0.2/src/color-thief.js"></script>
+				<script>
+				  const ap = new APlayer({
+					container: document.getElementById('aplayer'),
+					autoplay: false, //自动播放
+					listFolded: false, //播放列表默认折叠
+					listMaxHeight: 90, //播放列表最大高度
+					order: 'list', //音频循环顺序, 可选值: 'list', 'random'
+					loop: 'all', //音频循环播放, 可选值: 'all', 'one', 'none'
+					theme: '#e9e9e9', //切换音频时的主题色，优先级低于audio.theme
+					preload: 'none', //音频预加载，可选值: 'none', 'metadata', 'auto'
+					mutex: false, //互斥，阻止多个播放器同时播放，当前播放器播放时暂停其他播放器
+					lrcType: 3, //歌词格式，可选值：3（LRC文件歌词格式），1（JS字符串歌词格式）
+					volume: 0.7, //默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+					fixed: true, //吸底模式（fixed:true），迷你模式（mini:true），普通模式（注释此行或者设置fixed:false）
+					audio: [{
+						name: '光るなら',
+						artist: 'Goose house',
+						lrc: '../../downloads/lrc/gh.lrc',
+						cover: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=103348549,509929454&fm=26&gp=0.jpg',
+						url: 'http://m10.music.126.net/20200209192630/ec7476f16b914ced73fe60378456da50/ymusic/9e0a/6075/ec14/a0338148b6233f2b8a48286db4125b50.mp3',
+					  },
+						
+					  {
+						name: '別の人の彼女になったよ',
+						artist: '春茶',
+						lrc: '../../downloads/lrc/wacci.lrc',
+						cover: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3954397262,2237664834&fm=26&gp=0.jpg',
+						url: 'http://m10.music.126.net/20200209190417/61205b6481ab59b0aba0783aa3702768/ymusic/0408/070f/0059/3b72a0d5670eb13bcbe7737c095ff7f4.mp3'
+					  },
+					  {
+						name: '二人セゾン',
+						artist: '欅坂46',
+						lrc: '../../downloads/lrc/榉坂.lrc',
+						cover: 'http://img5.imgtn.bdimg.com/it/u=3365498476,1339285403&fm=26&gp=0.jpg',
+						url: 'http://m10.music.126.net/20200209190658/e5b4280ef576bedf235bb5d81a743db5/ymusic/b3af/a391/876d/e5dd0805c015b0724163137814f15d90.mp3'
+					  },
+					  {
+						name: '瞬き',
+						artist: '春茶',
+						lrc: '../../downloads/lrc/春茶.lrc',
+						cover: 'http://img3.imgtn.bdimg.com/it/u=2333262178,216782807&fm=26&gp=0.jpg',
+						url: 'http://m10.music.126.net/20200209192407/ecff47d55166f810d2540a94f63f88b4/ymusic/53d8/1045/0d5c/f79b2e0e8b95001e4f83b25111f7bdc8.mp3',
+					  }
+					]
+				  });
+				
+				  //实现切换音频时，根据音频的封面图片自适应主题色
+				  const colorThief = new ColorThief();
+				  const setTheme = (index) => {
+					if (!ap.list.audios[index].theme) {
+					  colorThief.getColorAsync(ap.list.audios[index].cover, function(color) {
+						ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+					  });
+					}
+				  };
+				  setTheme(ap.list.index);
+				  ap.on('listswitch', (data) => {
+					setTheme(data.index);
+				  });
+				</script>
+				
 		</nav>
 	</header>		
 </div>
@@ -185,6 +252,33 @@
           <a href="/archives/2020" class="archive-year">2020</a>
         </div>
         <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/02/09/Python-note/" class="archive-article-date">
+  	<time datetime="2020-02-09T07:38:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-09</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/02/09/Python-note/">Python_note</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
     
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
