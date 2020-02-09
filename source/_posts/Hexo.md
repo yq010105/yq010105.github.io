@@ -16,7 +16,7 @@ tags:
 >`hexo d`
 * 5、启动预览,blog 
 >`hexo s` 
-
+<!-- more -->
 ### 二、blog 分支
 * 6、`git add .`
 * 7、`git commit -m "提交信息"`

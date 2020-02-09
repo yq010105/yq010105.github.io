@@ -1,5 +1,5 @@
 ---
-title: pycharm questions
+title: Pycharm questions
 date: 2020-02-04 23:01:44
 tags:
 ---
