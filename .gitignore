@@ -7,3 +7,4 @@ public/
 .deploy*/
 #ignored the useless themes
 /themes/landscape/
+!/themes/yilia/
