@@ -10,15 +10,61 @@ ok&nbsp;ok<hr/>
 `ok&ensp;ok`&ensp;等同于字体度的一半,叫“半角空格”，全称是 En Space
 ok&ensp;ok<hr/>
 `ok&emsp;ok`&emsp;1 em在16px的字体中就是16px,它叫“全角空格”，全称是 Em Space
+<!-- more -->
 ok&emsp;ok<hr/>
 `ok&thinsp;ok`&thinsp;“窄空格”，全称是 Thin Space。占据的宽度比较小。它是em之六分之一宽。
 ok&thinsp;ok<hr/>
 `ok&zwj;ok`&zwj;它叫零宽连字，全称是 Zero Width Joiner，简称“ZWJ”，是一个不打印字符
 ok&zwj;ok
 >参考[网站](https://www.jianshu.com/p/31eade263e7a "简书")
-<!-- more -->
+
 # 2、链接
-### 行内式(方便简洁)
+## 行内式(方便简洁)
 `[链接文字](链接网址 "标题")`
 `This is an [example link](https://www.jianshu.com/p/31eade263e7a)`
 会显示为:&nbsp;This is an [example link](https://www.jianshu.com/p/31eade263e7a)
+
+# 3、图片
+```
+![alt 属性文本](图片地址)
+
+![alt 属性文本](图片地址 "可选标题")
+```
+```
+![四月是你的谎言](https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=905665511,4125694826&fm=26&gp=0.jpg "四谎")
+```
+![四月是你的谎言](https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=905665511,4125694826&fm=26&gp=0.jpg "四谎")
+
+
+
+# 4、表格
+```
+| 左对齐 | 右对齐 | 居中对齐 |
+| :-----| ----: | :----: |
+| 单元格 | 单元格 | 单元格 |
+| 单元格 | 单元格 | 单元格 |
+```
+| 左对齐 | 右对齐 | 居中对齐 |
+| :-----| ----: | :----: |
+| 单元格 | 单元格 | 单元格 |
+| 单元格 | 单元格 | 单元格 |
+
+>参考教程:[markdown](https://www.runoob.com/markdown/md-tutorial.html)
+
+# 5、设置字体大小颜色
+```
+<font face="黑体">我是黑体字</font>
+<font face="微软雅黑">我是微软雅黑</font>
+<font face="STCAIYUN">我是华文彩云</font>
+<font color=#0099ff size=7 face="黑体">color=#0099ff size=72 face="黑体"</font>
+<font color=#00ffff size=72>color=#00ffff</font>
+<font color=gray size=72>color=gray</font>
+```
+<font face="黑体">我是黑体字</font>
+<font face="微软雅黑">我是微软雅黑</font>
+<font face="STCAIYUN">我是华文彩云</font>
+<font color=#0099ff size=7 face="黑体">color=#0099ff size=72 face="黑体"</font>
+<font color=#00ffff size=72>color=#00ffff</font>
+<font color=gray size=72>color=gray</font>
+
+>参考网站:[CSDN](https://blog.csdn.net/weixin_37998647/article/details/79428290 "CSDN")

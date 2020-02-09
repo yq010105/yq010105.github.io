@@ -3,8 +3,9 @@ title: Spider_note
 date: 2020-02-08 11:40:18
 tags:
 ---
+>参考Github上的[教程](https://github.com/kingname/SourceCodeOfBook "Github")学习
 # 一、线程
-### 线程Pool
+## 线程Pool
 ```多线程计算每个数的平方
 from multiprocessing.dummy import Pool   
 def calc_power2(num):
@@ -16,12 +17,13 @@ print(f'0~9的平方分别为：{result}')
 ```
 `Pool(5)` &emsp;五个线程
 <hr/>
+<!-- more -->
 
-### 所用函数
+## 所用函数
 `time.time()` &nbsp; 程序当前时间
 eg：用来对比单线程和多线程访问baidu的速度
 
-<!-- more -->
+
 # 二、request库
 ## 基础用法
 ```
@@ -35,6 +37,7 @@ html = response
 ```
 ## 另一种用法
 `html = requests.get('url').content.decode()`
+
 # 三、re库
 ## 基础用法
 ```
@@ -72,13 +75,13 @@ example_html
 ```
 `info = selector.xpath('//div[@class="useful"]/ul/li/text()')`
 就可以提取出class="userful"中的三句话，返回一个列表
-##### 基本框架
+### 基本框架
 ``` 具体使用方法
 import lxml.html
 selector = lxml.html.fromstring('网页源代码')    #网页源代码可用requests来获取
 info = selector.xpath('一段XPath语句')
 ```
-###### example
+### example
 ``` example
 import lxml.html
 
@@ -178,7 +181,7 @@ data = selector.xpath('//div[@id="test3"]')[0]
 info = data.xpath('string(.)')
 print(info)     #就可以提取出所有的文本信息了
 ```
-### XPath通过chrome辅助构造
+## XPath通过chrome辅助构造
 在一行源码单击右键，选择“Copy”→“Copy XPath”命令
 把结果粘贴下来，可以看到如下的XPath语句：
 `//*[@id="thread_list"]/li[2]/div/div[2]/div[1]/div[1]/a`
@@ -201,7 +204,7 @@ print(info)     #就可以提取出所有的文本信息了
 `soup.find(class_='属性值')`
 *由于HTML中的class属性与Python的class关键字相同，因此为了不产生冲突，BS4规定，如果遇到要查询class的情况，使用“class_”来代替*
 
-###### [example](http://exercise.kingname.info/exercise_bs_1.html) 
+## [example](http://exercise.kingname.info/exercise_bs_1.html) 
 ```example_link
 import request
 from bs4 import BeautifulSoup
