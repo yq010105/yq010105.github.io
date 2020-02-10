@@ -16,8 +16,10 @@
 <meta property="og:description" content="参考Github上的教程学习  一、线程线程Pool1234567from multiprocessing.dummy import Pool   def calc_power2(num):return num*numpool &#x3D; Pool(5)origin_num &#x3D; [x for x in range(10)]result &#x3D; pool.map(calc_pow">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-08T03:40:18.000Z">
-<meta property="article:modified_time" content="2020-02-09T10:01:34.599Z">
+<meta property="article:modified_time" content="2020-02-10T04:32:50.818Z">
 <meta property="article:author" content="Yun Qi">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Spider">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Yun.Qi" type="application/atom+xml">
@@ -78,7 +80,7 @@
 			总文章数 6
 		</nav>
 		<nav>
-			总字数 <span class="post-count">3.1k</span>
+			总字数 <span class="post-count">4.1k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -198,7 +200,7 @@
         
       </header>
       <div align="center" class="post-count">
-        字数: 1,656字 | 预计阅读时长：8分钟
+        字数: 2,471字 | 预计阅读时长：11分钟
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -212,8 +214,16 @@
 <a id="more"></a>
 
 <h2 id="所用函数"><a href="#所用函数" class="headerlink" title="所用函数"></a>所用函数</h2><p><code>time.time()</code> &nbsp; 程序当前时间<br>eg：用来对比单线程和多线程访问baidu的速度</p>
-<h1 id="二、request库"><a href="#二、request库" class="headerlink" title="二、request库"></a>二、request库</h1><h2 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">url &#x3D; &#39;&#39;</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;UserAgent&quot;:&quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like\ Gecko) Chrome&#x2F;80.0.3987.87 Safari&#x2F;537.36 Edg&#x2F;80.0.361.48&quot;</span><br><span class="line">&#125;</span><br><span class="line">response &#x3D; request.get(url,headers&#x3D;headers)</span><br><span class="line">response.encoding &#x3D; &#39;utf-8&#39;  #或者GBK</span><br><span class="line">html &#x3D; response</span><br></pre></td></tr></table></figure>
-<h2 id="另一种用法"><a href="#另一种用法" class="headerlink" title="另一种用法"></a>另一种用法</h2><p><code>html = requests.get(&#39;url&#39;).content.decode()</code></p>
+<h1 id="二、request库"><a href="#二、request库" class="headerlink" title="二、request库"></a>二、request库</h1><h2 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">url &#x3D; &#39;&#39;</span><br><span class="line">headers &#x3D; &#123;</span><br><span class="line">    &quot;UserAgent&quot;:&quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like\ Gecko) Chrome&#x2F;80.0.3987.87 Safari&#x2F;537.36 Edg&#x2F;80.0.361.48&quot;</span><br><span class="line">&#125;</span><br><span class="line">response &#x3D; requests.get(url,headers&#x3D;headers)</span><br><span class="line">response.encoding &#x3D; &#39;utf-8&#39;  #或者GBK</span><br><span class="line">html &#x3D; response</span><br></pre></td></tr></table></figure>
+<h2 id="进阶用法"><a href="#进阶用法" class="headerlink" title="进阶用法"></a>进阶用法</h2><ul>
+<li><strong>使用requests模拟发送get请求</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import requests </span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;http:&#x2F;&#x2F;exercise.kingname.info&#x2F;ajax_1_backend&#39;</span><br><span class="line">html &#x3D; requests.get(url).content.decode()</span><br><span class="line">print(html)</span><br><span class="line"># 如果你看到这一段文字，说明你已经成功访问了这个页面,并获取了GET方式的异步加载数据。</span><br></pre></td></tr></table></figure></li>
+<li><strong>使用requests模拟发送post请求</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line"></span><br><span class="line">url &#x3D; &#39;http:&#x2F;&#x2F;exercise.kingname.info&#x2F;ajax_1_postbackend&#39;</span><br><span class="line">html &#x3D; requests.post(url,json&#x3D;&#123;&#39;name&#39;:&#39;yunq&#39;,&#39;age&#39;:24&#125;).content.decode()</span><br><span class="line">print(html)</span><br><span class="line"># 如果你看到这一段文字，说明你已经成功访问了这个页面，并获取了POST方式的异步加载数据。你向服务器提交的两个参数，分别为name： yunq, age：24</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p>参考<a href="http://exercise.kingname.info/exercise_ajax_1.html" target="_blank" rel="noopener">学习网站</a>，(<a href="#异步GET与POST请求">异步GET与POST请求</a>)</p>
+</blockquote>
 <h1 id="三、re库"><a href="#三、re库" class="headerlink" title="三、re库"></a>三、re库</h1><h2 id="基础用法-1"><a href="#基础用法-1" class="headerlink" title="基础用法"></a>基础用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">re.findall(r&#39;&#39;,html,re.S)   #这是一个列表所以可以取第一个数据</span><br><span class="line">                            #re.findall(r&#39;&#39;,html,re.S)[0]</span><br></pre></td></tr></table></figure>
 
 <h1 id="四、Xpath–lxml库"><a href="#四、Xpath–lxml库" class="headerlink" title="四、Xpath–lxml库"></a>四、Xpath–lxml库</h1><ul>
@@ -246,9 +256,32 @@
 <li>其他查找方法</li>
 <li><em>以‘我需要’为开头的信息*</em><br><code>content = soup.find_all(text = re.compile(&#39;我需要&#39;))</code></li>
 <li><em>对属性值搜素使用正则,即对iamstrang属性值搜索*</em><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">content &#x3D; soup.find_all(class_&#x3D;re.compile(&#39;iam&#39;))[0]</span><br><span class="line">print(content.string)       #我需要的信息3</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-
+<h1 id="六、异步加载与请求头"><a href="#六、异步加载与请求头" class="headerlink" title="六、异步加载与请求头"></a>六、异步加载与请求头</h1><h2 id="异步加载"><a href="#异步加载" class="headerlink" title="异步加载"></a>异步加载</h2><p><em>异步加载：一个页面，点击后网址不变，页面改变</em></p>
+<h3 id="AJAX技术"><a href="#AJAX技术" class="headerlink" title="AJAX技术"></a>AJAX技术</h3><ul>
+<li>AJAX是Asynchronous JavaScript And XML的首字母缩写，意为异步JavaScript与XML</li>
+<li>使用AJAX技术，可以在不刷新网页的情况下更新网页数据。使用AJAX技术的网页，一般会使用HTML编写网页的框架。</li>
+<li>在打开网页的时候，首先加载的是这个框架。剩下的部分将会在框架加载完成以后再通过JavaScript从后台加载。<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3></li>
+<li>JSON的全称是JavaScript Object Notation，是一种轻量级的数据交换格式。网络之间使用HTTP方式传递数据的时候，绝大多数情况下传递的都是字符串。</li>
+<li>因此，当需要把Python里面的数据发送给网页或者其他编程语言的时候，可以先将Python的数据转化为JSON格式的字符串，然后将字符串传递给其他语言，其他语言再将JSON格式的字符串转换为它自己的数据格式<h4 id="列表-字典与字符串相互转化"><a href="#列表-字典与字符串相互转化" class="headerlink" title="列表\字典与字符串相互转化"></a>列表\字典与字符串相互转化</h4></li>
+<li><em>python中字典or列表 与 json格式字符串的相互转化</em><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line"></span><br><span class="line">data &#x3D; &#123;</span><br><span class="line">    &#39;name&#39; : &#39;Connor&#39;,</span><br><span class="line">    &#39;sex&#39; : &#39;boy&#39;,</span><br><span class="line">    &#39;age&#39; : 26</span><br><span class="line">&#125;</span><br><span class="line">print(data)     #dict   #&#123;&#39;name&#39;: &#39;Connor&#39;, &#39;sex&#39;: &#39;boy&#39;, &#39;age&#39;: 26&#125;</span><br><span class="line">data1&#x3D;json.dumps(data)  </span><br><span class="line">print(data1)    #str    #&#123;&quot;name&quot;: &quot;Connor&quot;, &quot;sex&quot;: &quot;boy&quot;, &quot;age&quot;: 26&#125;</span><br><span class="line">data2&#x3D;json.loads(data1)</span><br><span class="line">print(data2)    #dict   #&#123;&#39;name&#39;: &#39;Connor&#39;, &#39;sex&#39;: &#39;boy&#39;, &#39;age&#39;: 26&#125;</span><br><span class="line"># 如果加上indent&#x3D;4参数</span><br><span class="line">data3 &#x3D; json.dumps(data,indent&#x3D;4)</span><br><span class="line">print(data3)    #str</span><br><span class="line">#结果更加的美观易读</span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;Connor&quot;,</span><br><span class="line">    &quot;sex&quot;: &quot;boy&quot;,</span><br><span class="line">    &quot;age&quot;: 26</span><br><span class="line">&#125;</span><br><span class="line">&#39;&#39;&#39;</span><br></pre></td></tr></table></figure></li>
+<li><strong>str=json.dumps(dict)</strong></li>
+<li><strong>dict=json.loads(str)</strong></li>
+</ul>
+<h3 id="异步GET与POST请求"><a href="#异步GET与POST请求" class="headerlink" title="异步GET与POST请求"></a>异步GET与POST请求</h3><ul>
+<li>使用异步加载技术的网站，被加载的内容是不能在源代码中找到的。</li>
+<li>为了解决这个问题，就需要使用Google Chrome浏览器的开发者模式。在网页上单击右键，选择“检查”命令，然后定位到“Network”选项卡</li>
+<li>接下来需要刷新网页。在Windows下，按F5键或者单击地址栏左边的“刷新”按钮</li>
+<li>单击“Network”选项卡下面出现的“ajax_1_backend”和“ajax_1_postbackend”，并定位到“Response”选项卡，可以看到这里出现了网页上面的内容</li>
+<li>再选择“Headers”选项卡，可以看到这个请求使用GET方式，发送到<a href="http://exercise.kingname.info/ajax_1_backend" target="_blank" rel="noopener">http://exercise.kingname.info/ajax_1_backend</a></li>
+<li>对于网页中的第2条内容，查看“Headers”选项卡，可以看到，这是使用POST方式向<a href="http://exercise.kingname.info/ajax_1_postbackend" target="_blank" rel="noopener">http://exercise.kingname.info/ajax_1_postbackend</a> 发送请求，并以JSON格式提交数据<blockquote>
+<p>具体代码实现看<em>request</em>&nbsp;&nbsp;的<strong><a href="#进阶用法">进阶用法</a></strong></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="特殊的异步加载"><a href="#特殊的异步加载" class="headerlink" title="特殊的异步加载"></a>特殊的异步加载</h3>
       
 
       
@@ -256,6 +289,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spider</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -358,7 +406,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、线程"><span class="toc-number">1.</span> <span class="toc-text">一、线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线程Pool"><span class="toc-number">1.1.</span> <span class="toc-text">线程Pool</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#所用函数"><span class="toc-number">1.2.</span> <span class="toc-text">所用函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、request库"><span class="toc-number">2.</span> <span class="toc-text">二、request库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础用法"><span class="toc-number">2.1.</span> <span class="toc-text">基础用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#另一种用法"><span class="toc-number">2.2.</span> <span class="toc-text">另一种用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、re库"><span class="toc-number">3.</span> <span class="toc-text">三、re库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础用法-1"><span class="toc-number">3.1.</span> <span class="toc-text">基础用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Xpath–lxml库"><span class="toc-number">4.</span> <span class="toc-text">四、Xpath–lxml库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#XPath语法"><span class="toc-number">4.1.</span> <span class="toc-text">XPath语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XPath语法解析"><span class="toc-number">4.1.1.</span> <span class="toc-text">XPath语法解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本框架"><span class="toc-number">4.1.2.</span> <span class="toc-text">基本框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example"><span class="toc-number">4.1.3.</span> <span class="toc-text">example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XPath通过chrome辅助构造"><span class="toc-number">4.2.</span> <span class="toc-text">XPath通过chrome辅助构造</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、Beautiful-Soup4库-BS4"><span class="toc-number">5.</span> <span class="toc-text">五、Beautiful Soup4库(BS4)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bs4处理步骤"><span class="toc-number">5.1.</span> <span class="toc-text">bs4处理步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#example-1"><span class="toc-number">5.2.</span> <span class="toc-text">example</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、线程"><span class="toc-number">1.</span> <span class="toc-text">一、线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#线程Pool"><span class="toc-number">1.1.</span> <span class="toc-text">线程Pool</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#所用函数"><span class="toc-number">1.2.</span> <span class="toc-text">所用函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、request库"><span class="toc-number">2.</span> <span class="toc-text">二、request库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础用法"><span class="toc-number">2.1.</span> <span class="toc-text">基础用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进阶用法"><span class="toc-number">2.2.</span> <span class="toc-text">进阶用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、re库"><span class="toc-number">3.</span> <span class="toc-text">三、re库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础用法-1"><span class="toc-number">3.1.</span> <span class="toc-text">基础用法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、Xpath–lxml库"><span class="toc-number">4.</span> <span class="toc-text">四、Xpath–lxml库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#XPath语法"><span class="toc-number">4.1.</span> <span class="toc-text">XPath语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XPath语法解析"><span class="toc-number">4.1.1.</span> <span class="toc-text">XPath语法解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本框架"><span class="toc-number">4.1.2.</span> <span class="toc-text">基本框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example"><span class="toc-number">4.1.3.</span> <span class="toc-text">example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XPath通过chrome辅助构造"><span class="toc-number">4.2.</span> <span class="toc-text">XPath通过chrome辅助构造</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、Beautiful-Soup4库-BS4"><span class="toc-number">5.</span> <span class="toc-text">五、Beautiful Soup4库(BS4)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bs4处理步骤"><span class="toc-number">5.1.</span> <span class="toc-text">bs4处理步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#example-1"><span class="toc-number">5.2.</span> <span class="toc-text">example</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、异步加载与请求头"><span class="toc-number">6.</span> <span class="toc-text">六、异步加载与请求头</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#异步加载"><span class="toc-number">6.1.</span> <span class="toc-text">异步加载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AJAX技术"><span class="toc-number">6.1.1.</span> <span class="toc-text">AJAX技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON"><span class="toc-number">6.1.2.</span> <span class="toc-text">JSON</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#列表-字典与字符串相互转化"><span class="toc-number">6.1.2.1.</span> <span class="toc-text">列表\字典与字符串相互转化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异步GET与POST请求"><span class="toc-number">6.1.3.</span> <span class="toc-text">异步GET与POST请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊的异步加载"><span class="toc-number">6.1.4.</span> <span class="toc-text">特殊的异步加载</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -464,6 +512,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Questions</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spider</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -513,7 +585,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">一只菜鸡&lt;br&gt;&lt;br&gt;刚刚起步</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">自用blog&lt;/br&gt;&lt;/br&gt;用来写笔记</div>
   	  	
     	</section>
     
@@ -587,5 +659,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
+  <!-- 代码块复制功能 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+<script type="text/javascript" src="/js/clipboard_use.js"></script>
 </body>
 </html>
