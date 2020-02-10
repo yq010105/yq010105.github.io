@@ -5,7 +5,7 @@ tags:
     - Python
 ---
 
-# 1、文件管理（txt）
+# 文件管理（txt）
 ```
 fd = open('file.txt','w',encoding='utf-8')      #utf-8 or GBK
 fd.write(content)     
@@ -18,7 +18,7 @@ fd.close()
 | :----: | :----: | :----: |
 | 只读 | 覆盖写 | 添加写 |
 
-# 2、csv文件
+# csv文件
 <!-- more -->
 ## 列表序列数据
 * headers :表头
@@ -114,7 +114,7 @@ class
 ```
 >参考[网站](https://blog.csdn.net/katyusha1/article/details/81606175 "CSDN")
 
-# 3、with open () as 读写文件
+# with open () as 读写文件
 ```
 # 读文件
 with open('file.txt','r',) as f:
@@ -134,9 +134,9 @@ with open('file.txt','w',encoding='utf-8') as f:
 >参考[网站](https://blog.csdn.net/xrinosvip/article/details/82019844 "CSDN")
 
 
-# 4、python中陌生的函数
+# python中陌生的函数
 *自己还不太熟悉的*
-## a.`split() #对字符串进行切片`--返回一个列表
+## `split() #对字符串进行切片`--返回一个列表
 
 
 语法`str.split(str="", num=string.count(str)).`

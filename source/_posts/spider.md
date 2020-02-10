@@ -6,7 +6,7 @@ tags:
     - Spider
 ---
 >参考Github上的[教程](https://github.com/kingname/SourceCodeOfBook "Github")学习
-# 一、线程
+# 线程
 ## 线程Pool
 ```多线程计算每个数的平方
 from multiprocessing.dummy import Pool   
@@ -26,7 +26,7 @@ print(f'0~9的平方分别为：{result}')
 eg：用来对比单线程和多线程访问baidu的速度
 
 
-# 二、request库
+# request库
 ## 基础用法
 ```
 url = ''
@@ -35,7 +35,7 @@ headers = {
 }
 response = requests.get(url,headers=headers)
 response.encoding = 'utf-8'  #或者GBK
-html = response 
+html = response.text
 ```
 ## 进阶用法
 * **使用requests模拟发送get请求**
@@ -59,14 +59,23 @@ print(html)
 
 >参考[学习网站](http://exercise.kingname.info/exercise_ajax_1.html)，([异步GET与POST请求](#异步GET与POST请求))
 
-# 三、re库
+# re库
 ## 基础用法
 ```
-re.findall(r'',html,re.S)   #这是一个列表所以可以取第一个数据
+re.findall(r'',html,re.S)   #返回一个列表，这是一个列表所以可以取第一个数据
                             #re.findall(r'',html,re.S)[0]
+
+re.search(r'',html,re.S)    #返回一个re.Match类型数据
+                            #<re.Match object; span=(214, 297), match='secret = \'{"code": "\\u884c\\u52a8\\u4ee3\\u53f7>
+
+re.search(r'href="sf">(.*?)<').group()        
+                            #返回一个字符串             #.*?是匹配到的内容
+                            #group()返回的是''内的字符串内容:href="sf">(.*?)<
+                            #group(1)返回的是()中的字符串内容:.*?
+                            #如果(.*?)有多个，则使用group(1),group(2)........
 ```
 
-# 四、Xpath--lxml库
+# Xpath--lxml库
 * XPath是一种查询语言，能从XML\HTML的树状结构中寻找节点
 
 ## XPath语法
@@ -209,7 +218,7 @@ print(info)     #就可以提取出所有的文本信息了
 *其中方括号中的数字，表示这是第几个该标签，但需要注意，这里的数字是从1开始*
 
 
-# 五、Beautiful Soup4库(BS4)
+# Beautiful Soup4库(BS4)
 *BS4在某些方面比XPath易懂，但是不如XPath简洁，而且由于它是使用Python开发的，因此速度比XPath慢。*
 使用Beautiful Soup4提取HTML内容，一般要经过以下两步。
 ## bs4处理步骤
@@ -260,7 +269,7 @@ content = soup.find_all(class_=re.compile('iam'))[0]
 print(content.string)       #我需要的信息3
 ```
 
-# 六、异步加载与请求头
+# 异步加载与请求头
 ## 异步加载
 *异步加载：一个页面，点击后网址不变，页面改变*
 ### AJAX技术
@@ -270,7 +279,7 @@ print(content.string)       #我需要的信息3
 ### JSON
 * JSON的全称是JavaScript Object Notation，是一种轻量级的数据交换格式。网络之间使用HTTP方式传递数据的时候，绝大多数情况下传递的都是字符串。
 * 因此，当需要把Python里面的数据发送给网页或者其他编程语言的时候，可以先将Python的数据转化为JSON格式的字符串，然后将字符串传递给其他语言，其他语言再将JSON格式的字符串转换为它自己的数据格式
-#### 列表\字典与字符串相互转化
+* **列表\字典与字符串相互转化**
 * *python中字典or列表 与 json格式字符串的相互转化*
 ``` 
 import json
@@ -310,3 +319,120 @@ print(data3)    #str
 >具体代码实现看*request*&nbsp;&nbsp;的**[进阶用法](#进阶用法)**
 
 ### 特殊的异步加载
+* **[练习页面](http://exercise.kingname.info/exercise_ajax_2.html)**
+- 伪装成异步加载的后端渲染,数据就在源代码里，但却不直接显示出来
+- 源代码最下面的JavaScript代码，其中有一段：
+`{"code": "\u884c\u52a8\u4ee3\u53f7\uff1a\u5929\u738b\u76d6\u5730\u864e"}`
+- 使用Python去解析，发现可以得到网页上面的内容
+```
+import json
+
+html_json = '{"code": "\u884c\u52a8\u4ee3\u53f7\uff1a\u5929\u738b\u76d6\u5730\u864e"}'
+html_dic = json.loads(html_json)
+print(html_dic)      #{'code': '行动代号：天王盖地虎'}
+```
+- **这种假的异步加载页面，其处理思路一般是使用正则表达式从页面中把数据提取出来，然后直接解析**
+```
+import json
+import requests
+import re
+
+url = 'http://exercise.kingname.info/exercise_ajax_2.html'
+html = requests.get(url).content.decode()
+code_json = re.search("secret = '(.*?)'", html, re.S).group(1)
+code_dict = json.loads(code_json)
+print(code_dict['code'])
+#行动代号：天王盖地虎
+```
+
+### 多次请求的异步加载
+* **[练习页面](http://exercise.kingname.info/exercise_ajax_3.html)**
+- 还有一些网页，显示在页面上的内容要经过多次异步请求才能得到。
+- 第1个AJAX请求返回的是第2个请求的参数，第2个请求的返回内容又是第3个请求的参数，只有得到了上一个请求里面的有用信息，才能发起下一个请求
+- 在“Headers”选项卡查看这个POST请求的具体参数，在body里面发现两个奇怪的参数secret1和secret2
+- 尝试修改secret1和secret2，发现POST请求无法得到想要的结果
+**奇怪的参数**
+```
+name: "xx"
+age: 24
+secret1: "kingname is genius."
+secret2: "kingname"
+```
+**如果修改这两个参数**
+```
+import json
+import requests
+
+url = 'http://exercise.kingname.info/ajax_3_postbackend'
+return_json_1 = requests.post(url,json={"name":"xx",
+"age":"24","secret1":"123","secret2":"456"})
+return_json_2 = requests.post(url,json={"name" :"xx","age":23
+})
+print(json.loads(return_json_1.content.decode()))   #{'success': False, 'reason': '参数错误'}
+print(json.loads(return_json_2.content.decode()))   #{'success': False, 'reason': '参数不全'}
+```
+- 打开这个练习页的源代码，在源代码中可以找到secret_2
+```
+<html>
+    <head>
+        <title>exercise ajax load</title>
+        <script> var secret_2 = 'kingname';</script>
+    </head>
+    <body>
+        <div class="content"></div>
+    </body>
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+    <script src="static/js/loaddata_3.js"></script>
+</html>
+```
+- 虽然在POST参数中，名字是secret2，而源代码中的名字是secret_2，不过从值可以看出这就是同一个参数
+- 源代码里面没有secret1，因此就要考虑这个参数是不是来自于另一个异步请求
+- 继续在开发者工具中查看其他请求，可以成功找到secret1,注意，它的名字变为了“code”，但是从值可以看出这就是secret1
+* **不少网站也会使用这种改名字的方式来迷惑爬虫开发者**
+```
+{code: "kingname is genius.", success: true}
+code: "kingname is genius."
+success: true
+```
+- 这一条请求就是一个不带任何参数的GET请求
+- *对于这种多次请求才能得到数据的情况，解决办法就是逐一请求，得到返回结果以后再发起下一个请求。具体到这个例子中，那就是先从源代码里面获得secret2，再通过GET请求得到secret1，最后使用secret1和secret2来获取页面上显示的内容*
+* **[爬取网站]http://exercise.kingname.info/exercise_ajax_3.html)**
+```example
+import json
+import requests
+import re
+
+url = 'http://exercise.kingname.info/exercise_ajax_3.html'
+first_ajax_url = 'http://exercise.kingname.info/ajax_3_backend'
+second_ajax_url = 'http://exercise.kingname.info/ajax_3_postbackend'
+
+page_html = requests.get(url).content.decode()
+secret_2 = re.search("secret_2 = '(.*?)';",page_html,re.S).group(1)
+print(secret_2)           #kingname
+
+ajax_1_json = requests.get(first_ajax_url).content.decode()
+print(ajax_1_json)        #{"code": "kingname is genius.", "success": true}
+ajax_1_dict = json.loads(ajax_1_json)
+secret_1 = ajax_1_dict['code']
+print(secret_1)           #kingname is genius.
+
+# 获取了secret_1和secret_2后post请求second_ajax_url
+
+ajax_2_json = requests.post(second_ajax_url,json={
+    'name':'yq','age':24,'secret1':secret_1,'secret2':secret_2
+}).content.decode()
+print(ajax_2_json)          #{"code": "\u884c\u52a8\u4ee3\u53f7\uff1a\u54ce\u54df\u4e0d\u9519\u54e6", "success": true}
+
+ajax_2_dict = json.loads(ajax_2_json)
+print(ajax_2_dict)          #{'code': '行动代号：哎哟不错哦', 'success': True}
+
+code = ajax_2_dict['code']
+print(code)                 #行动代号：哎哟不错哦
+```
+
+### 基于异步加载的简单登录
+* **[练习页面](http://exercise. kingname.info/exercise_ajax_4.html)**
+- 网站的登录方式有很多种，其中有一种比较简单的方式，就是使用AJAX发送请求来进行登录
+- 在[练习页面](http://exercise. kingname.info/exercise_ajax_4.html)中根据输入框中的提示，使用用户名“kingname”和密码“genius”进行登录,登录成功以后弹出提示框
+- **对于这种简单的登录功能，可以使用抓取异步加载网页的方式来进行处理**
+- 在Chrome开发者工具中可以发现，当单击“登录”按钮时，网页向后台发送了一条请求

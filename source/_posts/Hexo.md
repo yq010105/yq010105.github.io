@@ -6,7 +6,7 @@ tags:
 ---
 >**建立hexo_blog，参考b站up:[CodeSheep](https://space.bilibili.com/384068749)的[视频](https://www.bilibili.com/video/av44544186)**
 >>**所用主题 :[yilia](https://github.com/litten/hexo-theme-yilia)，主要按照[大佬博客](http://yansheng836.coding.me/)中的[这一分类](http://yansheng836.coding.me/tags/hexo/)进行修改**
-## 一、hexo基操
+## hexo基操
 ### master分支
 * 1、新建md			
 >`hexo n "title"` 
@@ -35,10 +35,10 @@ tags:
 >参考[简书网站](https://www.jianshu.com/p/2e1d551b8261 "简书")
 
 
-## 二、source/md-(blog目录下)
+## source/md-(blog目录下)
 * 没有跳过的会转化为HTML，在blog中体现
 
-## 三、source/main.0cf68a.css
+## source/main.0cf68a.css
 ### left-bg
 * left-col 中<hr/>
 ### body-bg
@@ -47,12 +47,12 @@ tags:
 ### copy代码块
 >按照[大佬博客](http://yansheng836.coding.me/)中的[这一篇](http://yansheng836.coding.me/article/e9d1b881.html)
 
-## 四、修改建站时间
+## 修改建站时间
 ### footer.ejs
 * yilia/layout/_partial/footer.ejs
 >参考[这一篇](http://yansheng836.coding.me/article/50902a4.html)
 
-## 五、看板娘
+## 看板娘
 * **安装插件:**  `npm install --save hexo-helper-live2d` **[github项目](https://github.com/EYHN/hexo-helper-live2d)**
 * **安装模型:**  `npm install live2d-widget-model-模型名` **[模型名参考](https://huaji8.top/post/live2d-plugin-2.0/)**
 * **在yilia/_config.yml中添加**

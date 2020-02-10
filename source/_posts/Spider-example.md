@@ -6,9 +6,9 @@ tags:
     - Python
 ---
 >Spider_example的[GitHub连接](https://github.com/yq010105/spider_learn "github")
-# 1、爬取bilibili每日排行榜数据
+# 爬取bilibili每日排行榜数据
 * **使用XPath爬取,并将数据保存到csv文件中**
-* *文件名使用该排行榜所在时间段*
+* **文件名使用该排行榜所在时间段**
 <!-- more -->
 ```源码
 import requests
@@ -50,4 +50,5 @@ with open(f'{time_num2}.csv','w',encoding='utf-8') as f:
     f_csv.writerows(rows)
 ```
 * **csv部分展示**
+`2020年02月07日 - 2020年02月10日`
 ![bilibili_csv](/img/bilibili_csv.png)

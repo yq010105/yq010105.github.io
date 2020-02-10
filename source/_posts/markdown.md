@@ -5,7 +5,7 @@ tags:
     - MD
 ---
 
-# 1、空格
+# 空格
 `ok&nbsp;ok`&nbsp;它是按下space键产生的空格,叫不换行空格，全称是 No-Break Space
 ok&nbsp;ok<hr/>
 `ok&ensp;ok`&ensp;等同于字体度的一半,叫“半角空格”，全称是 En Space
@@ -19,7 +19,7 @@ ok&thinsp;ok<hr/>
 ok&zwj;ok
 >参考[网站](https://www.jianshu.com/p/31eade263e7a "简书")
 
-# 2、链接
+# 链接
 ## 行内式(方便简洁)
 `[链接文字](链接网址 "标题")`
 `This is an [example link](https://www.jianshu.com/p/31eade263e7a)`
@@ -44,7 +44,8 @@ l
 
 > 参考[link](https://blog.csdn.net/wangzhibo666/article/details/88731227 "CSDN")
 
-# 3、图片
+# 图片
+## 网络图片的添加
 ```
 ![alt 属性文本](图片地址)
 
@@ -55,9 +56,19 @@ l
 ```
 ![四月是你的谎言](https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=905665511,4125694826&fm=26&gp=0.jpg "四谎")
 
+## 本地图片的添加
+```
+![avatar](/img/picture_exam.jpeg "example")
+--or--
+<img src="/img/picture_exam.jpeg " width = 10% height = 10% div align=right />
+# 或者是
+#<img src="url" width = "100" height = "100" div align=left />
+```
+![avatar](/img/picture_exam.jpeg "example")
+<img src="/img/picture_exam.jpeg " width = 10% height = 10% div align=right />
 
 
-# 4、表格
+# 表格
 ```
 | 左对齐 | 右对齐 | 居中对齐 |
 | :-----| ----: | :----: |
@@ -71,7 +82,7 @@ l
 
 >参考教程:[markdown](https://www.runoob.com/markdown/md-tutorial.html)
 
-# 5、设置字体大小颜色
+# 设置字体大小颜色
 ```
 <font face="黑体">我是黑体字</font>
 <font face="微软雅黑">我是微软雅黑</font>
@@ -88,6 +99,6 @@ l
 <font color=gray size=72>color=gray</font>
 
 
-### <a id="测试">锚点测试</a>
-### <a id="测试2">锚点测试2</a>
+- <a id="测试">锚点测试</a>
+- <a id="测试2">锚点测试2</a>
 >参考网站:[CSDN](https://blog.csdn.net/weixin_37998647/article/details/79428290 "CSDN")
