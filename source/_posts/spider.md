@@ -2,6 +2,8 @@
 title: Spider_note
 date: 2020-02-08 11:40:18
 tags:
+    - Python
+    - Spider
 ---
 >参考Github上的[教程](https://github.com/kingname/SourceCodeOfBook "Github")学习
 # 一、线程
@@ -31,12 +33,31 @@ url = ''
 headers = {
     "UserAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like\ Gecko) Chrome/80.0.3987.87 Safari/537.36 Edg/80.0.361.48"
 }
-response = request.get(url,headers=headers)
+response = requests.get(url,headers=headers)
 response.encoding = 'utf-8'  #或者GBK
 html = response 
 ```
-## 另一种用法
-`html = requests.get('url').content.decode()`
+## 进阶用法
+* **使用requests模拟发送get请求**
+```
+import requests 
+
+url = 'http://exercise.kingname.info/ajax_1_backend'
+html = requests.get(url).content.decode()
+print(html)
+# 如果你看到这一段文字，说明你已经成功访问了这个页面,并获取了GET方式的异步加载数据。
+```
+* **使用requests模拟发送post请求**
+```
+import requests
+
+url = 'http://exercise.kingname.info/ajax_1_postbackend'
+html = requests.post(url,json={'name':'yunq','age':24}).content.decode()
+print(html)
+# 如果你看到这一段文字，说明你已经成功访问了这个页面，并获取了POST方式的异步加载数据。你向服务器提交的两个参数，分别为name： yunq, age：24
+```
+
+>参考[学习网站](http://exercise.kingname.info/exercise_ajax_1.html)，([异步GET与POST请求](#异步GET与POST请求))
 
 # 三、re库
 ## 基础用法
@@ -238,3 +259,54 @@ for li in all_content:
 content = soup.find_all(class_=re.compile('iam'))[0]
 print(content.string)       #我需要的信息3
 ```
+
+# 六、异步加载与请求头
+## 异步加载
+*异步加载：一个页面，点击后网址不变，页面改变*
+### AJAX技术
+* AJAX是Asynchronous JavaScript And XML的首字母缩写，意为异步JavaScript与XML
+* 使用AJAX技术，可以在不刷新网页的情况下更新网页数据。使用AJAX技术的网页，一般会使用HTML编写网页的框架。
+* 在打开网页的时候，首先加载的是这个框架。剩下的部分将会在框架加载完成以后再通过JavaScript从后台加载。
+### JSON
+* JSON的全称是JavaScript Object Notation，是一种轻量级的数据交换格式。网络之间使用HTTP方式传递数据的时候，绝大多数情况下传递的都是字符串。
+* 因此，当需要把Python里面的数据发送给网页或者其他编程语言的时候，可以先将Python的数据转化为JSON格式的字符串，然后将字符串传递给其他语言，其他语言再将JSON格式的字符串转换为它自己的数据格式
+#### 列表\字典与字符串相互转化
+* *python中字典or列表 与 json格式字符串的相互转化*
+``` 
+import json
+
+data = {
+    'name' : 'Connor',
+    'sex' : 'boy',
+    'age' : 26
+}
+print(data)     #dict   #{'name': 'Connor', 'sex': 'boy', 'age': 26}
+data1=json.dumps(data)  
+print(data1)    #str    #{"name": "Connor", "sex": "boy", "age": 26}
+data2=json.loads(data1)
+print(data2)    #dict   #{'name': 'Connor', 'sex': 'boy', 'age': 26}
+# 如果加上indent=4参数
+data3 = json.dumps(data,indent=4)
+print(data3)    #str
+#结果更加的美观易读
+'''
+{
+    "name": "Connor",
+    "sex": "boy",
+    "age": 26
+}
+'''
+```
+* **str=json.dumps(dict)**
+* **dict=json.loads(str)**
+
+### 异步GET与POST请求
+- 使用异步加载技术的网站，被加载的内容是不能在源代码中找到的。
+- 为了解决这个问题，就需要使用Google Chrome浏览器的开发者模式。在网页上单击右键，选择“检查”命令，然后定位到“Network”选项卡
+- 接下来需要刷新网页。在Windows下，按F5键或者单击地址栏左边的“刷新”按钮
+- 单击“Network”选项卡下面出现的“ajax_1_backend”和“ajax_1_postbackend”，并定位到“Response”选项卡，可以看到这里出现了网页上面的内容
+- 再选择“Headers”选项卡，可以看到这个请求使用GET方式，发送到http://exercise.kingname.info/ajax_1_backend
+- 对于网页中的第2条内容，查看“Headers”选项卡，可以看到，这是使用POST方式向http://exercise.kingname.info/ajax_1_postbackend 发送请求，并以JSON格式提交数据
+>具体代码实现看*request*&nbsp;&nbsp;的**[进阶用法](#进阶用法)**
+
+### 特殊的异步加载

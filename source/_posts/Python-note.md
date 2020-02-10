@@ -2,6 +2,7 @@
 title: Python_note
 date: 2020-02-09 15:38:38
 tags:
+    - Python
 ---
 
 # 1、文件管理（txt）

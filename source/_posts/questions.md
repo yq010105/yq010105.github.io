@@ -2,6 +2,8 @@
 title: Pycharm questions
 date: 2020-02-04 23:01:44
 tags:
+    - Python
+    - Questions
 ---
 
 # 新版pycharm问题

@@ -2,6 +2,7 @@
 title: Hexo
 date: 2020-02-04 15:34:18
 tags:
+    - Hexo
 ---
 
 ## 一、hexo基操
@@ -35,11 +36,12 @@ tags:
 
 ## 二、source/md-(blog目录下)
 * 没有跳过的会转化为HTML，在blog中体现
->**所用主题 :[yilia](https://github.com/litten/hexo-theme-yilia)**
+>**所用主题 :[yilia](https://github.com/litten/hexo-theme-yilia)，主要按照[大佬博客](http://yansheng836.coding.me/)中的[这一分类](http://yansheng836.coding.me/tags/hexo/)进行修改**
 ## 三、source/main.0cf68a.css
 ### left-bg
 * left-col 中<hr/>
 ### body-bg
 * body 中
 >具体修改参考[大佬博客](http://yansheng836.coding.me/)中的[这一篇](http://yansheng836.coding.me/article/72a91df5.html)
-
+### copy代码块
+>按照[大佬博客](http://yansheng836.coding.me/)中的[这一篇](http://yansheng836.coding.me/article/e9d1b881.html)

@@ -1,7 +1,8 @@
 ---
 title: Markdown
 date: 2020-02-08 12:00:45
-tags:
+tags:  
+    - MD
 ---
 
 # 1、空格
@@ -23,6 +24,25 @@ ok&zwj;ok
 `[链接文字](链接网址 "标题")`
 `This is an [example link](https://www.jianshu.com/p/31eade263e7a)`
 会显示为:&nbsp;This is an [example link](https://www.jianshu.com/p/31eade263e7a)
+## 锚点
+* 第一种
+```
+- [测试](#测试)
+### <a id="测试">测试</a>
+```
+- [测试](#测试)
+* 第二种
+```
+### <a href="#测试2">测试2</a>
+h
+t
+m
+l
+<a id="测试2">测试2</a>
+```
+* <a href="#测试2">测试2</a>
+
+> 参考[link](https://blog.csdn.net/wangzhibo666/article/details/88731227 "CSDN")
 
 # 3、图片
 ```
@@ -67,4 +87,7 @@ ok&zwj;ok
 <font color=#00ffff size=72>color=#00ffff</font>
 <font color=gray size=72>color=gray</font>
 
+
+### <a id="测试">锚点测试</a>
+### <a id="测试2">锚点测试2</a>
 >参考网站:[CSDN](https://blog.csdn.net/weixin_37998647/article/details/79428290 "CSDN")
