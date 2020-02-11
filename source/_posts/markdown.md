@@ -6,17 +6,15 @@ tags:
 ---
 
 # 空格
-`ok&nbsp;ok`&nbsp;它是按下space键产生的空格,叫不换行空格，全称是 No-Break Space
-ok&nbsp;ok<hr/>
-`ok&ensp;ok`&ensp;等同于字体度的一半,叫“半角空格”，全称是 En Space
-ok&ensp;ok<hr/>
-`ok&emsp;ok`&emsp;1 em在16px的字体中就是16px,它叫“全角空格”，全称是 Em Space
+| 语法 | example | 解释 |
+| :----: | :----: | :----: |
+| `ok&nbsp;ok`&nbsp; | ok&nbsp;ok | 它是按下space键产生的空格,叫不换行空格，全称是 No-Break Space |
+| `ok&ensp;ok`&ensp; | ok&ensp;ok | 等同于字体度的一半,叫“半角空格”，全称是 En Space|
+| `ok&emsp;ok`&emsp; | ok&emsp;ok | 1 em在16px的字体中就是16px,它叫“全角空格”，全称是 Em Space |
+| `ok&thinsp;ok`&thinsp; | ok&thinsp;ok | “窄空格”，全称是 Thin Space。占据的宽度比较小。它是em之六分之一宽 |
+| `ok&zwj;ok`&zwj; | ok&zwj;ok | 它叫零宽连字，全称是 Zero Width Joiner，简称“ZWJ”，是一个不打印字符 |
+
 <!-- more -->
-ok&emsp;ok<hr/>
-`ok&thinsp;ok`&thinsp;“窄空格”，全称是 Thin Space。占据的宽度比较小。它是em之六分之一宽。
-ok&thinsp;ok<hr/>
-`ok&zwj;ok`&zwj;它叫零宽连字，全称是 Zero Width Joiner，简称“ZWJ”，是一个不打印字符
-ok&zwj;ok
 >参考[网站](https://www.jianshu.com/p/31eade263e7a "简书")
 
 # 链接
