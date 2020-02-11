@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Hexo | Yun.Qi</title>
+  <title>Python_format | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yun.Qi">
-<meta property="og:url" content="http://yoursite.com/tags/Hexo/index.html">
+  <meta name="description" content="参考教程网站和CSDN  python_formatstr.format()，它增强了字符串格式化的功能。基本语法是通过 {} 和 : 来代替以前的 % 。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python_format">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/python-format/index.html">
 <meta property="og:site_name" content="Yun.Qi">
+<meta property="og:description" content="参考教程网站和CSDN  python_formatstr.format()，它增强了字符串格式化的功能。基本语法是通过 {} 和 : 来代替以前的 % 。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-11T12:56:10.000Z">
+<meta property="article:modified_time" content="2020-02-11T13:40:56.641Z">
 <meta property="article:author" content="Yun Qi">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Yun.Qi" type="application/atom+xml">
@@ -176,60 +181,306 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-python-format" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/04/Hexo/" class="archive-article-date">
-  	<time datetime="2020-02-04T07:34:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/04/Hexo/">Hexo</a>
+    <h1 class="article-title" itemprop="name">
+      Python_format
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/02/11/python-format/" class="archive-article-date">
+  	<time datetime="2020-02-11T12:56:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
+</a>
+        
+      </header>
+      <div align="center" class="post-count">
+        字数: 673字 | 预计阅读时长：3分钟
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>参考教程<a href="https://www.runoob.com/python/att-string-format.html" target="_blank" rel="noopener">网站</a>和<a href="https://blog.csdn.net/qq_19691995/article/details/84197252" target="_blank" rel="noopener">CSDN</a></p>
+</blockquote>
+<h1 id="python-format"><a href="#python-format" class="headerlink" title="python_format"></a>python_format</h1><p>str.format()，它增强了字符串格式化的功能。<br>基本语法是通过 {} 和 : 来代替以前的 % 。</p>
+<a id="more"></a>
+<h2 id="format-函数可以接受不限个参数，位置可以不按顺序"><a href="#format-函数可以接受不限个参数，位置可以不按顺序" class="headerlink" title="format 函数可以接受不限个参数，位置可以不按顺序"></a>format 函数可以接受不限个参数，位置可以不按顺序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;&quot;&#123;&#125; &#123;&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)    # 不设置指定位置，按默认顺序</span><br><span class="line">&#39;hello world&#39;</span><br><span class="line"> </span><br><span class="line">&gt;&gt;&gt; &quot;&#123;0&#125; &#123;1&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)  # 设置指定位置</span><br><span class="line">&#39;hello world&#39;</span><br><span class="line"> </span><br><span class="line">&gt;&gt;&gt; &quot;&#123;1&#125; &#123;0&#125; &#123;1&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)  # 设置指定位置</span><br><span class="line">&#39;world hello world&#39;</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置参数"><a href="#设置参数" class="headerlink" title="设置参数"></a>设置参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;网站名：&#123;name&#125;, 地址 &#123;url&#125;&quot;.format(name&#x3D;&quot;菜鸟教程&quot;, url&#x3D;&quot;www.runoob.com&quot;))</span><br><span class="line"> </span><br><span class="line"># 通过字典设置参数</span><br><span class="line">site &#x3D; &#123;&quot;name&quot;: &quot;菜鸟教程&quot;, &quot;url&quot;: &quot;www.runoob.com&quot;&#125;</span><br><span class="line">print(&quot;网站名：&#123;name&#125;, 地址 &#123;url&#125;&quot;.format(**site))</span><br><span class="line"> </span><br><span class="line"># 通过列表索引设置参数</span><br><span class="line">my_list &#x3D; [&#39;菜鸟教程&#39;, &#39;www.runoob.com&#39;]</span><br><span class="line">print(&quot;网站名：&#123;0[0]&#125;, 地址 &#123;0[1]&#125;&quot;.format(my_list))  # &quot;0&quot; 是必须的</span><br><span class="line"></span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">网站名：菜鸟教程, 地址 www.runoob.com</span><br><span class="line">网站名：菜鸟教程, 地址 www.runoob.com</span><br><span class="line">网站名：菜鸟教程, 地址 www.runoob.com</span><br><span class="line">&#39;&#39;&#39;</span><br></pre></td></tr></table></figure>
+
+<p>通过字典和列表的另一种写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; hash &#x3D; &#123;&#39;name&#39;:&#39;hoho&#39;,&#39;age&#39;:18&#125;</span><br><span class="line">&gt;&gt;&gt; &#39;my name is &#123;name&#125;,age is &#123;age&#125;&#39;.format(**hash)        #**dict</span><br><span class="line">&#39;my name is hoho,age is 18&#39;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; li &#x3D; [&#39;hoho&#39;,18]</span><br><span class="line">&gt;&gt;&gt; &#39;my name is &#123;&#125; ,age &#123;&#125;&#39;.format(*li)               #*[]迭代列表</span><br><span class="line">&#39;my name is hoho ,age 18&#39;</span><br></pre></td></tr></table></figure>
+
+<h2 id="向str-format传入对象"><a href="#向str-format传入对象" class="headerlink" title="向str.format传入对象"></a>向<code>str.format</code>传入对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class AssignValue(object):</span><br><span class="line">    def __init__(self, value):</span><br><span class="line">        self.value &#x3D; value</span><br><span class="line">my_value &#x3D; AssignValue(6)</span><br><span class="line">print(&#39;value 为: &#123;0.value&#125;&#39;.format(my_value))  # &quot;0&quot; 是可选的</span><br><span class="line"></span><br><span class="line"># value 为: 6</span><br></pre></td></tr></table></figure>
+
+<h2 id="数字格式化"><a href="#数字格式化" class="headerlink" title="数字格式化"></a>数字格式化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; print(&quot;&#123;:.2f&#125;&quot;.format(3.1415926));</span><br><span class="line">3.14</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">数字</th>
+<th align="center">格式</th>
+<th align="center">输出</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">3.1415926</td>
+<td align="center">{:.2f}</td>
+<td align="center">3.14</td>
+<td align="center">保留小数点后两位</td>
+</tr>
+<tr>
+<td align="center">3.1415926</td>
+<td align="center">{:+.2f}</td>
+<td align="center">+3.14</td>
+<td align="center">带符号保留小数点后两位</td>
+</tr>
+<tr>
+<td align="center">-1</td>
+<td align="center">{:+.2f}</td>
+<td align="center">-1.00</td>
+<td align="center">带符号保留小数点后两位</td>
+</tr>
+<tr>
+<td align="center">2.71828</td>
+<td align="center">{:.0f}</td>
+<td align="center">3</td>
+<td align="center">不带小数</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">{:0&gt;2d}</td>
+<td align="center">05</td>
+<td align="center">数字补零</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">{:x&lt;4d}</td>
+<td align="center">5xxx</td>
+<td align="center">数字补x (填充右边, 宽度为4)</td>
+</tr>
+<tr>
+<td align="center">10</td>
+<td align="center">{:x&lt;4d}</td>
+<td align="center">10xx</td>
+<td align="center">数字补x (填充右边, 宽度为4)</td>
+</tr>
+<tr>
+<td align="center">1000000</td>
+<td align="center">{:,}</td>
+<td align="center">1,000,000</td>
+<td align="center">以逗号分隔的数字格式</td>
+</tr>
+<tr>
+<td align="center">0.25</td>
+<td align="center">{:.2%}</td>
+<td align="center">25.00%</td>
+<td align="center">百分比格式</td>
+</tr>
+<tr>
+<td align="center">1000000000</td>
+<td align="center">{:.2e}</td>
+<td align="center">1.00e+09</td>
+<td align="center">指数记法</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">{:&gt;10d}</td>
+<td align="center">13</td>
+<td align="center">右对齐 (默认, 宽度为10)</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">{:&lt;10d}</td>
+<td align="center">13</td>
+<td align="center">左对齐 (宽度为10)</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="center">{:^10d}</td>
+<td align="center">13</td>
+<td align="center">中间对齐 (宽度为10)</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="center">‘{:b}’.format(11)</td>
+<td align="center">1011</td>
+<td align="center">进制</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">‘{:d}’.format(11)</td>
+<td align="center">11</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">‘{:o}’.format(11)</td>
+<td align="center">13</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">‘{:x}’.format(11)</td>
+<td align="center">b</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">‘{:#x}’.format(11)</td>
+<td align="center">0xb</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center">‘{:#X}’.format(11)</td>
+<td align="center">0XB</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>^, &lt;, &gt; 分别是居中、左对齐、右对齐，后面带宽度， : 号后面带填充的字符，只能是一个字符，不指定则默认是用空格填充</strong></li>
+<li><strong>+ 表示在正数前显示 +，负数前显示 -；  （空格）表示在正数前加空格</strong></li>
+<li><strong>b、d、o、x 分别是二进制、十进制、八进制、十六进制</strong></li>
+</ul>
+<h2 id="此外还可以用大括号-来转义大括号"><a href="#此外还可以用大括号-来转义大括号" class="headerlink" title="此外还可以用大括号 {} 来转义大括号"></a>此外还可以用大括号 {} 来转义大括号</h2><p><code>print (&quot;{} 对应的位置是 0&quot;.format(&quot;runoob&quot;))</code><br><em>结果为</em>：<strong>runoob 对应的位置是 {0}</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/11/python-format/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/02/10/Spider-example/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spider_example</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python-format"><span class="toc-number">1.</span> <span class="toc-text">python_format</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#format-函数可以接受不限个参数，位置可以不按顺序"><span class="toc-number">1.1.</span> <span class="toc-text">format 函数可以接受不限个参数，位置可以不按顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置参数"><span class="toc-number">1.2.</span> <span class="toc-text">设置参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#向str-format传入对象"><span class="toc-number">1.3.</span> <span class="toc-text">向str.format传入对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数字格式化"><span class="toc-number">1.4.</span> <span class="toc-text">数字格式化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#此外还可以用大括号-来转义大括号"><span class="toc-number">1.5.</span> <span class="toc-text">此外还可以用大括号 {} 来转义大括号</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -284,9 +535,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: false,
