@@ -74,6 +74,8 @@ re.search(r'href="sf">(.*?)<').group()
                             #group(1)返回的是()中的字符串内容:.*?
                             #如果(.*?)有多个，则使用group(1),group(2)........
 ```
+# 正则表达式
+`.*?`
 
 # Xpath--lxml库
 * XPath是一种查询语言，能从XML\HTML的树状结构中寻找节点
@@ -431,8 +433,254 @@ print(code)                 #行动代号：哎哟不错哦
 ```
 
 ### 基于异步加载的简单登录
-* **[练习页面](http://exercise. kingname.info/exercise_ajax_4.html)**
+* **[练习页面](http://exercise.kingname.info/exercise_ajax_4.html)**
 - 网站的登录方式有很多种，其中有一种比较简单的方式，就是使用AJAX发送请求来进行登录
-- 在[练习页面](http://exercise. kingname.info/exercise_ajax_4.html)中根据输入框中的提示，使用用户名“kingname”和密码“genius”进行登录,登录成功以后弹出提示框
+- 在[练习页面](http://exercise.kingname.info/exercise_ajax_4.html)中根据输入框中的提示，使用用户名“kingname”和密码“genius”进行登录,登录成功以后弹出提示框
 - **对于这种简单的登录功能，可以使用抓取异步加载网页的方式来进行处理**
 - 在Chrome开发者工具中可以发现，当单击“登录”按钮时，网页向后台发送了一条请求
+**`{"code": "kingname is genius", "success": true}`**
+```
+import requests
+import json
+
+url = 'http://exercise.kingname.info/ajax_4_backend'
+code_json = requests.post(url,json={
+    'username':'kingname','password':'genius'}).content.decode()
+code__dict = json.loads(code_json)
+print(code__dict['code'])
+# kingname is genius
+```
+- 这就是使用POST方式的最简单的AJAX请求。使用获取POST方式的AJAX请求的代码，就能成功获取到登录以后返回的内容
+
+## 请求头
+### 请求头的作用
+- 使用计算机网页版外卖网站的读者应该会发现这样一个现象：第一次登录外卖网页的时候会让你选择当前所在的商业圈，一旦选定好之后关闭浏览器再打开，网页就会自动定位到先前选择的商业圈
+- 又比如，例如携程的网站，使用计算机浏览器打开的时候，页面看起来非常复杂多样
+- 同一个网址，使用手机浏览器打开时，网址会自动发生改变，而且得到的页面竟然完全不同
+**同一个网址，PC端和手机端页面不同**
+* Headers称为请求头，浏览器可以将一些信息通过Headers传递给服务器，服务器也可以将一些信息通过Headers传递给浏览器，电商网站常常应用的Cookies就是Headers里面的一个部分
+
+### 伪造请求头
+- 打开[练习页](http://exercise.kingname.info/exercise_headers.html)，使用Chrome的开发者工具监控这个页面的网页请求
+- 页面看起来像是发起了一个普通的GET方式的异步请求给http://exercise.kingname.info/exercise_headers_backend
+- 使用requests尝试获取这个网址的返回信息,结果发现失败
+- 使用浏览器访问网站的时候，网站可以看到一个名称为Headers（请求头）的东西
+```
+headers = {
+            Accept: */*
+            Accept-Encoding: gzip, deflate
+            Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7
+            anhao: kingname
+            Content-Type: application/json; charset=utf-8
+            Cookie: __cfduid=d513aff6c34f63c4c2971cdf1e19780051581303763
+            Host: exercise.kingname.info
+            Proxy-Connection: keep-alive
+            Referer: http://exercise.kingname.info/exercise_headers.html
+            User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36
+            X-Requested-With: XMLHttpRequest
+            }
+```
+- 为了解决这个问题，就需要给爬虫“换头”。把浏览器的头安装到爬虫的身上，这样网站就不知道谁是谁了
+- 要换头，首先就需要知道浏览器的头是什么样的。因此需要在Chrome浏览器开发者工具的“Network”选项卡的Request Headers里面观察这一次请求的请求头
+- 在requests里面，设置请求头的参数名称为“headers”，它的值是一个字典
+**带有请求头的请求，使用requests的发送格式为：**
+```
+html = requests.get(url, headers=字典).content.decode()
+html = requests.post(url, json=xxx, headers=字典).content.decode()
+```
+- 代码中的字典就对应了浏览器中的请求头
+- 在爬虫里面创建一个字典，将Chrome的请求头的内容复制进去，并调整好格式，发起一个带有Chrome请求头的爬虫请求，可以发现请求获得成功
+- 虽然对于某些网站，在请求头里面只需要设置User-Agent就可以正常访问了，但是为了保险起见，还是建议把所有项目都带上，这样可以让爬虫更“像”浏览器
+
+## 模拟浏览器
+- **[练习页面](http://exercise.kingname.info/exercise_advanced_ajax.html)**
+- *问题：*
+- 有一些网站在发起AJAX请求的时候，会带上特殊的字符串用于身份验证。这种字符串称为Token
+- 打开练习页面，这个页面在发起AJAX请求的时候会在Headers中带上一个参数ReqTime；在POST发送的数据中会有一个参数sum
+- 多次刷新页面，可以发现ReqTime和sum一直在变化
+- 不难看出ReqTime是精确到毫秒的时间戳，即使使用Python生成了一个时间戳，也不能得到网页上面的内容
+### Selenium介绍
+- 虽然在网页的源代码中无法看到被异步加载的内容，但是在Chrome的开发者工具的“Elements”选项卡下却可以看到网页上的内容
+### selenium安装
+- 安装selenium `pip install selenium`
+- 下载ChromeDriver
+### selenium的使用
+#### 获取源代码
+* **将chromedriver与代码放在同一个文件夹中以方便代码直接调用**
+```  
+# 初始化selenium
+from selenium import webdriver
+driver = webdriver.Chrome('./chromedriver')     
+```
+* 指定了Selenium使用ChromeDriver来操作Chrome解析网页，括号里的参数就是ChromeDriver可执行文件的地址
+- 如果要使用PhantomJS，只需要修改第3行代码即可：driver = webdriver.PhantomJS('./phantomjs')，需要将PhantomJS的可执行文件与代码放在一起
+- 需要特别提醒的是，如果chromedriver与代码不在一起，可以通过绝对路径来指定，例如：driver = webdriver.Chrome('/usr/bin/chromedriver')
+- 使用Windows的读者可在路径字符串左引号的左边加一个“r”符号，将代码写为：driver = webdriver.Chrome(r'C:\server\chromedriver.exe')
+- 初始化完成以后，就可以使用Selenium打开网页了。要打开一个网页只需要一行代码：
+`driver.get('http://exercise.kingname.info/exercise_advanced_ajax.html')`
+- 代码运行以后会自动打开一个Chrome窗口，并在窗口里面自动进入这个网址对应的页面。一旦被异步加载的内容已经出现在了这个自动打开的Chrome窗口中，那么此时使用下列代码：
+`html = driver.page_source`
+- 就能得到在Chrome开发者工具中出现的HTML代码
+**综合：**
+```
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome(r'C:\Program Files (x86)\Google\Chrome\Application\chromedriver')
+driver.get('http://exercise.kingname.info/exercise_advanced_ajax.html')
+time.sleep(5)
+html = driver.page_source
+print(html)
+input('按任意键结束：')
+```
+**运行程序会出现以下界面**
+![selenium](/img/selenium.png "selenium")
+#### 等待信息出现
+- 设置了一个5s的延迟，这是由于Selenium并不会等待网页加载完成再执行后面的代码。它只是向ChromeDriver发送了一个命令，让ChromeDriver打开某个网页
+- 至于网页要开多久，Selenium并不关心。由于被异步加载的内容会延迟出现，因此需要等待它出现以后再开始抓取
+
+#### 在网页中获取元素
+*在网页中寻找需要的内容，可以使用类似于Beautiful Soup4 的语法：*
+```
+element = driver.find_element_by_id("passwd-id") #如果有多个符合条件的，返回第1个
+element = driver.find_element_by_name("passwd") #如果有多个符合条件的，返回第1个
+element_list = driver.find_elements_by_id("passwd-id") #以列表形式返回所有的符合条件的element
+element_list = driver.find_elements_by_name("passwd") #以列表形式返回所有的符合条件的element
+```
+**也可以使用XPath**
+```
+element = driver.find_element_by_xpath("//input[@id='passwd-id']") 
+#如果有多个符合条件的，返回第1个
+element = driver.find_elements_by_xpath("//div[@id='passwd-id']") 
+#以列表形式返回所有的符合条件的element
+```
+[练习网站](http://exercise.kingname.info/exercise_advanced_ajax.html)
+```
+from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+import time
+
+driver = webdriver.Chrome(r'C:\Program Files (x86)\Google\Chrome\Application\chromedriver')
+driver.get('http://exercise.kingname.info/exercise_advanced_ajax.html')
+
+time.sleep(5)
+try :
+    WebDriverWait(driver,30).until(EC.text_to_be_present_in_element(By.CLASS_NAME,"content"),'通关')
+except Exception as _:
+    print('网页加载太慢，爬')
+# 但是也可能会爬，不知到原因
+element = driver.find_element_by_xpath('//div[@class="content"]')
+print(f'异步加载的内容是：{element.text}')
+
+# 异步加载的内容是：通关成功，通关口令：这是最终数据。
+
+driver.quit()
+```
+## 实例：[乐视](http://www.le.com)爬取视频评论
+* *1>分析网站的异步加载请求*
+* *2>使用requests发送请求*<hr/>
+* 通过使用Chrome的开发者工具分析页面的异步加载请求，可以发现评论所在的请求
+* 可以使用Python来模拟这个请求，从而获取视频的评论信息
+* 在请求的URL里面有两个参数：vid和pid,这两个参数在网页的源代码里面都可以找到
+<hr/>
+
+* 爬虫首先访问视频页面，通过正则表达式获取vid和pid，并将结果保存到“necessary_info”这个类属性对应的字典中
+```
+# 核心代码
+def get_necessary_id(self):
+  source = self.get_source(self.url, self.HEADERS)
+  vid = re.search('vid: (\d+)', source).group(1)
+  pid = re.search('pid: (\d+)', source).group(1)
+  self.necessary_info['xid'] = vid
+  self.necessary_info['pid'] = pid
+```
+* 访问评论的接口，用Python发起请求，获得评论数据
+```
+def get_comment(self):
+    url = self.COMMENT_URL.format(xid=self.necessary_info['xid'],
+                             pid=self.necessary_info['pid'])
+    source = self.get_source(url, self.HEADERS)
+    source_json = source[source.find('{"'): -1]
+    comment_dict = json.loads(source_json)
+    comments = comment_dict['data']
+    for comment in comments:
+        print(f'发帖人： {comment["user"]["username"]}, 评论内容：{comment["content"]}')
+```
+* 代码中，提前定义的self.COMMENT_URL和self.HEADERS
+```
+# 综合
+import re
+import json
+import requests
+
+class LetvSpider(object):
+
+    COMMENT_URL = 'http://api-my.le.com/vcm/api/list?jsonp=jQuery19100358 \
+    8935956887496_1581419682085&type=video&rows=20&page=1&sort=&cid=2&sourc\
+    e=1&xid=27576461&pid=10022394&ctype=cmt%2Cimg%2Cvote&listType=1&_=1581419682087'
+
+    HEADERS = {'Accept': '*/*',
+            'Accept-Encoding': 'gzip, deflate',
+            'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+            'Cookie': 'tj_lc=d551d3996ae75055e97c1f22ac9aa002; tj_uuid=-_15814196222976075472; tj_env=1; ssoCookieSynced=1; language=zh-cn; sso_curr_country=CN; vjuids=-75eba524.17033f49d1f.0.d645e0a5d3aa1; vjlast=1581419634.1581419634.30; tj_v2c=-27576461_2',
+            'Host': 'api-my.le.com',
+            'Proxy-Connection': 'keep-alive',
+            'Referer':'http://www.le.com/ptv/vplay/27576461.html',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36'
+             }
+
+    def __init__(self,url):
+        self.necessary_info = {}
+        self.url = url
+        self.get_necessary_id()
+        self.get_comment()
+    
+    def get_source(self,url,headers):
+        return requests.get(url,headers).content.decode()
+    
+    def get_necessary_id(self):
+        source = self.get_source(self.url,self.HEADERS)
+        vid = re.search('vid: (\d+)',source).group(1)
+        pid = re.search('pid: (\d+)',source).group(1)
+        self.necessary_info['xid'] = vid 
+        self.necessary_info['pid'] = pid
+    
+    def get_comment(self):
+        url = self.COMMENT_URL.format(xid=self.necessary_info['xid'],
+        pid=self.necessary_info['pid'])
+        source = self.get_source(url,self.HEADERS)
+        source_json = source[source.find('{"'): -1]
+        comment_dict = json.loads(source_json)
+        comments = comment_dict['data']
+        for comment in comments:
+            print(f'发帖人：{comment["user"]["username"]},评论内容:{comment["content"]}')
+
+if __name__ == '__main__':
+    spider = LetvSpider('http://www.le.com/ptv/vplay/27576461.html')
+
+
+'''
+发帖人：福建乐迷,评论内容:好喜欢东华帝君
+发帖人：河北乐迷,评论内容:十
+发帖人：河北乐迷,评论内容:瑶光上神好漂亮。
+发帖人：河北乐迷,评论内容:太好看了。
+发帖人：河北乐迷,评论内容:真水无香。
+发帖人：河北乐迷,评论内容:喜欢白浅
+发帖人：天莫邪,评论内容:杨幂真不好看
+发帖人：呆萌小甜心,评论内容:爱幂幂
+发帖人：G_,评论内容:有谁是看了枕上书又来看十里桃花我浅浅的
+发帖人：黑名单,评论内容:我来啦
+发帖人：凉辰梦瑾空人心_702_210,评论内容:为啥只能隔乐视看了 好伤心�😭
+发帖人：上海乐迷,评论内容:产科医生
+发帖人：红_,评论内容:这个很好看
+发帖人：子璇,评论内容:墨渊霸气，白浅跟她在一起才不会受伤害
+发帖人：聂芳英,评论内容:为什么其他的APP上看不到
+发帖人：月色不错,评论内容:这个是玉帝还是王母
+发帖人：Myth橙子,评论内容:每个平台看一遍我是有多闲
+发帖人：上海乐迷,评论内容:怎么这么难找〈产科医生）的电视剧
+发帖人：上海乐迷,评论内容:我想看产科医生的电视剧
+发帖人：上海乐迷,评论内容:产科医生
+'''
+```
