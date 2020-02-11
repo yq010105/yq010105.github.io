@@ -14,12 +14,14 @@ fd.close()
 其中content可以是字符串，变量，\t ......
 <hr/>
 
+<!-- more -->
+
 | r | w | a |
 | :----: | :----: | :----: |
 | 只读 | 覆盖写 | 添加写 |
 
 # csv文件
-<!-- more -->
+
 ## 列表序列数据
 * headers :表头
 * rows :内容
@@ -270,6 +272,7 @@ except Networkerror,e:
 
 
 >参考[教程](https://www.runoob.com/python/python-exceptions.html)
+
 
 # python小知识点
 ## 换行符 '\n' 和 回车符 '\r' 的区别？

@@ -9,11 +9,12 @@ tags:
 ## 搜索技巧
 ### in:name spring boot
 名字里带spring boot，在name中搜
+<!-- more -->
+
 ### in:readme spring boot
 readme中带spring boot，在readme中搜
 ### in:description
 在描述中搜
-<!-- more -->
 ### stars:>3000
 stars 多于3000的数据库
 ### forks:>3000

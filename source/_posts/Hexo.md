@@ -6,6 +6,8 @@ tags:
 ---
 >**建立hexo_blog，参考b站up:[CodeSheep](https://space.bilibili.com/384068749)的[视频](https://www.bilibili.com/video/av44544186)**
 >>**所用主题 :[yilia](https://github.com/litten/hexo-theme-yilia)，主要按照[大佬博客](http://yansheng836.coding.me/)中的[这一分类](http://yansheng836.coding.me/tags/hexo/)进行修改**
+<!-- more -->
+
 ## hexo基操
 ### master分支
 * 1、新建md			
@@ -14,7 +16,6 @@ tags:
 >`hexo clean`
 * 3、生成
 >`hexo g`
-<!-- more -->
 * 4、部署到远端；推到github 			
 >`hexo d`
 * 5、启动预览,blog 
