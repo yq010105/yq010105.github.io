@@ -16,7 +16,7 @@
 <meta property="og:description" content="Github搜索技巧in:name spring boot名字里带spring boot，在name中搜 in:readme spring bootreadme中带spring boot，在readme中搜 in:description在描述中搜">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-09T03:15:23.000Z">
-<meta property="article:modified_time" content="2020-02-10T13:14:35.124Z">
+<meta property="article:modified_time" content="2020-02-11T12:20:59.669Z">
 <meta property="article:author" content="Yun Qi">
 <meta property="article:tag" content="Github">
 <meta name="twitter:card" content="summary">
@@ -79,7 +79,7 @@
 			总文章数 7
 		</nav>
 		<nav>
-			总字数 <span class="post-count">7.8k</span>
+			总字数 <span class="post-count">11.5k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -199,7 +199,7 @@
         
       </header>
       <div align="center" class="post-count">
-        字数: 112字 | 预计阅读时长：1分钟
+        字数: 977字 | 预计阅读时长：4分钟
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -222,6 +222,59 @@
 <li>git pull</li>
 <li>git clone https://……..</li>
 </ul>
+<h2 id="gitignore文件"><a href="#gitignore文件" class="headerlink" title=".gitignore文件"></a>.gitignore文件</h2><table>
+<thead>
+<tr>
+<th align="center">例子</th>
+<th align="center">解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/mtk</td>
+<td align="center">过滤整个文件夹</td>
+</tr>
+<tr>
+<td align="center">*.zip</td>
+<td align="center">过滤所有.zip文件</td>
+</tr>
+<tr>
+<td align="center">/mtk/do.c</td>
+<td align="center">过滤某个具体文件</td>
+</tr>
+<tr>
+<td align="center">!/mtk/one.txt</td>
+<td align="center">追踪（不过滤）某个具体文件</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">配置语法</span><br><span class="line">以斜杠“&#x2F;”开头表示目录；</span><br><span class="line">以星号“*”通配多个字符；</span><br><span class="line">以问号“?”通配单个字符</span><br><span class="line">以方括号“[]”包含单个字符的匹配列表；</span><br><span class="line">以叹号“!”表示不忽略(跟踪)匹配到的文件或目录。</span><br><span class="line">注意： git 对于 .gitignore配置文件是按行从上到下进行规则匹配的</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><em>如果你创建.gitignore文件之前就push了某一文件，那么即使你在.gitignore文件中写入过滤该文件的规则，该规则也不会起作用，git仍然会对该文件进行版本管理</em></p>
+</li>
+<li><p><strong>.gitignore规则不生效</strong></p>
+</li>
+<li><p>.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的*</p>
+</li>
+<li><p><strong>解决方法</strong></p>
+</li>
+<li><p><em>解决方法就是先把本地缓存删除（改变成未track状态），然后再提交*</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#39;update .gitignore&#39;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Git 忽略文件提交的三种方法</strong></p>
+</li>
+<li><p><strong>1、在Git项目中定义 .gitignore 文件</strong><br>这种方式通过在项目的某个文件夹下定义 .gitignore 文件，在该文件中定义相应的忽略规则，来管理当前文件夹下的文件的Git提交行为<br>在 .gitingore 文件中，遵循相应的语法，在每一行指定一个忽略规则</p>
+</li>
+<li><p><strong>2、在Git项目的设置中指定排除文件</strong><br>这种方式只是临时指定该项目的行为，需要编辑当前项目下的 .git/info/exclude 文件，然后将需要忽略提交的文件写入其中<br><em>这种方式指定的忽略文件的根目录是项目根目录</em></p>
+</li>
+<li><p><strong>3、定义Git全局的 .gitignore 文件</strong><br>除了可以在项目中定义 .gitignore 文件外，还可以设置全局的 git .gitignore 文件来管理所有Git项目的行为。这种方式在不同的项目开发者之间是不共享的，是属于项目之上Git应用级别的行为</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Git 忽略规则匹配语法</span><br><span class="line">在 .gitignore 文件中，每一行的忽略规则的语法如下：</span><br><span class="line"></span><br><span class="line">空格不匹配任意文件，可作为分隔符，可用反斜杠转义</span><br><span class="line"># 开头的模式标识注释，可以使用反斜杠进行转义</span><br><span class="line">! 开头的模式标识否定，该文件将会再次被包含，如果排除了该文件的父级目录，则使用 ! 也不会再次被包含。可以使用反斜杠进行转义</span><br><span class="line">&#x2F; 结束的模式只匹配文件夹以及在该文件夹路径下的内容，但是不匹配该文件</span><br><span class="line">&#x2F; 开始的模式匹配项目跟目录</span><br><span class="line">如果一个模式不包含斜杠，则它匹配相对于当前 .gitignore 文件路径的内容，如果该模式不在 .gitignore 文件中，则相对于项目根目录</span><br><span class="line">**匹配多级目录，可在开始，中间，结束</span><br><span class="line">?通用匹配单个字符</span><br><span class="line">[]通用匹配单个字符列表</span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>作者：王伟desire<br>    链接：<a href="https://www.jianshu.com/p/74bd0ceb6182" target="_blank" rel="noopener">https://www.jianshu.com/p/74bd0ceb6182</a><br>    来源：简书<br>    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
 
       
 
@@ -343,7 +396,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Github"><span class="toc-number">1.</span> <span class="toc-text">Github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#搜索技巧"><span class="toc-number">1.1.</span> <span class="toc-text">搜索技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#in-name-spring-boot"><span class="toc-number">1.1.1.</span> <span class="toc-text">in:name spring boot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#in-readme-spring-boot"><span class="toc-number">1.1.2.</span> <span class="toc-text">in:readme spring boot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#in-description"><span class="toc-number">1.1.3.</span> <span class="toc-text">in:description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stars-gt-3000"><span class="toc-number">1.1.4.</span> <span class="toc-text">stars:&gt;3000</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#forks-gt-3000"><span class="toc-number">1.1.5.</span> <span class="toc-text">forks:&gt;3000</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#language-java"><span class="toc-number">1.1.6.</span> <span class="toc-text">language:java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#push-gt-2019-02-01"><span class="toc-number">1.1.7.</span> <span class="toc-text">push:&gt;2019-02-01</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git"><span class="toc-number">2.</span> <span class="toc-text">Git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git使用"><span class="toc-number">2.1.</span> <span class="toc-text">git使用</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Github"><span class="toc-number">1.</span> <span class="toc-text">Github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#搜索技巧"><span class="toc-number">1.1.</span> <span class="toc-text">搜索技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#in-name-spring-boot"><span class="toc-number">1.1.1.</span> <span class="toc-text">in:name spring boot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#in-readme-spring-boot"><span class="toc-number">1.1.2.</span> <span class="toc-text">in:readme spring boot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#in-description"><span class="toc-number">1.1.3.</span> <span class="toc-text">in:description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stars-gt-3000"><span class="toc-number">1.1.4.</span> <span class="toc-text">stars:&gt;3000</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#forks-gt-3000"><span class="toc-number">1.1.5.</span> <span class="toc-text">forks:&gt;3000</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#language-java"><span class="toc-number">1.1.6.</span> <span class="toc-text">language:java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#push-gt-2019-02-01"><span class="toc-number">1.1.7.</span> <span class="toc-text">push:&gt;2019-02-01</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Git"><span class="toc-number">2.</span> <span class="toc-text">Git</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git使用"><span class="toc-number">2.1.</span> <span class="toc-text">git使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitignore文件"><span class="toc-number">2.2.</span> <span class="toc-text">.gitignore文件</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -483,19 +536,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spider</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MD</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spider</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,6 +553,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Questions</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MD</a>
               </li>
             
             <div class="clearfix"></div>
