@@ -4,11 +4,14 @@ date: 2020-02-11 20:56:10
 tags:
     - Python
 ---
+**Python_format&emsp;&emsp;&emsp;一种格式化字符串函数`str.format()`**
 >参考教程[网站](https://www.runoob.com/python/att-string-format.html)和[CSDN](https://blog.csdn.net/qq_19691995/article/details/84197252)
+<!--more -->
+
 # python_format
 str.format()，它增强了字符串格式化的功能。
 基本语法是通过 {} 和 : 来代替以前的 % 。
-<!--more -->
+
 ## format 函数可以接受不限个参数，位置可以不按顺序
 ```py
 >>>"{} {}".format("hello", "world")    # 不设置指定位置，按默认顺序

@@ -4,6 +4,9 @@ date: 2020-02-08 12:00:45
 tags:  
     - MD
 ---
+**关于我初次使用Markdown以来遇到的问题**
+*Markdown笔记本*
+<!-- more -->
 
 # 空格
 | 语法 | example | 解释 |
@@ -14,7 +17,6 @@ tags:
 | `ok&thinsp;ok`&thinsp; | ok&thinsp;ok | “窄空格”，全称是 Thin Space。占据的宽度比较小。它是em之六分之一宽 |
 | `ok&zwj;ok`&zwj; | ok&zwj;ok | 它叫零宽连字，全称是 Zero Width Joiner，简称“ZWJ”，是一个不打印字符 |
 
-<!-- more -->
 >参考[网站](https://www.jianshu.com/p/31eade263e7a "简书")
 
 # 链接

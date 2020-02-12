@@ -1,11 +1,14 @@
 ---
-title: Spider_note
+title: Spider_note(已置顶)
 date: 2020-02-08 11:40:18
+top: true
 tags:
     - Python
     - Spider
 ---
 >参考Github上的[教程](https://github.com/kingname/SourceCodeOfBook "Github")学习
+一个连python都没有完全学会的菜鸡来学爬虫
+<!-- more -->
 # 线程
 ## 线程Pool
 ```py
@@ -19,7 +22,7 @@ print(f'0~9的平方分别为：{result}')
 ```
 `Pool(5)` &emsp;五个线程
 <hr/>
-<!-- more -->
+
 
 ## 所用函数
 `time.time()` &nbsp; 程序当前时间
@@ -715,6 +718,7 @@ print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
 ## 模拟登录
 * 1.使用Selenium操作浏览器登录和使用Cookies登录虽然简单粗暴，但是有效
 * 2.使用模拟提交表单登录虽然较为麻烦，但可以实现自动化
+
 ### 使用Selenium模拟登录
 ```
      使用Selenium来进行模拟登录，整个过程非常简单。流程如下。
@@ -726,3 +730,220 @@ print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
 （6）按下Enter键。
 
 ```
+- 程序首先打开知乎的登录页面，然后使用“find_element_by_ name”分别找到输入账号和密码的两个输入框
+- 这两个输入框的name属性值分别为“account”(我的是username)和“password”
+- 在Selenium中可以使用send_keys()方法往输入框中输入字符串
+- 在输入了密码以后，验证码框就会弹出来。知乎使用的验证码为点击倒立的文字，这种验证码不容易自动化处理，因此在这个地方让爬虫先暂停，手动点击倒立文字
+- 爬虫中的input()语句会阻塞程序，直到在控制台按下Enter键，爬虫才会继续运行
+
+### 使用Cookies登录
+- *Cookie是用户使用浏览器访问网站的时候网站存放在浏览器中的一小段数据*
+- Cookie的复数形式Cookies用来表示各种各样的Cookie。它们有些用来记录用户的状态信息；有些用来记录用户的操作行为；还有一些，具有现代网络最重要的功能：记录授权信息——用户是否登录以及用户登录哪个账号
+- 为了不让用户每次访问网站都进行登录操作，浏览器会在用户第一次登录成功以后放一段加密的信息在Cookies中。下次用户访问，网站先检查Cookies有没有这个加密信息，如果有并且合法，那么就跳过登录操作，直接进入登录后的页面
+- 通过已经登录的Cookies，可以让爬虫绕过登录过程，直接进入登录以后的页面
+- 在已经登录知乎的情况下，打开Chrome的开发者工具，定位到“Network”选项卡，然后刷新网页，在加载的内容中随便选择一项，然后看右侧的数据，从Request Headers中可以找到Cookie
+```
+cookie: _zap=56180d87-245a-4b79-83e2-711f4629644e; d_c0="AMAY69ZKzRCPTh5KJj9edoIQ4_BiQS3iqwM=|1581434842"; _xsrf=jzLzeCfZignAw6qDdNqO85UOdCrRcB3C; Hm_lvt_98beee57fd2ef70ccdd5ca52b9740c49=1581485103,1581492629,1581492650,1581494278; capsion_ticket="2|1:0|10:1581494284|14:capsion_ticket|44:ZjQyY2FjMmZkZTJmNDJkNGI5NmYxMDNkMzc3MTVlNGI=|e2f4eb7e3652b2f1f3e439d7ff4275e4e15bdfbfbed8ce423dceded2da4235cf"; z_c0="2|1:0|10:1581494646|4:z_c0|92:Mi4xY2R0cUJRQUFBQUFBd0JqcjFrck5FQ1lBQUFCZ0FsVk5kdjh3WHdBMEczY0dBVm5MNUFmV1V4cmtja0p1Rm1kMGtn|560b73b3b5f052f6151d4a02e62f1f645f01ad7826d8c183d7152fb2fcf8456d"; Hm_lpvt_98beee57fd2ef70ccdd5ca52b9740c49=1581494647; tst=r; KLBRSID=81978cf28cf03c58e07f705c156aa833|1581494650|1581494278
+```
+* **请注意这里一定是“Request Headers”，不要选成了“Response Headers”** 
+- 只要把这个Request Headers的内容通过requests提交，就能直接进入登录以后的知乎页面了
+- 可以看到，使用Cookie来登录网页，不仅可以绕过登录步骤，还可以绕过网站的验证码
+- Session，是指一段会话。网站会把每一个会话的ID（Session ID）保存在浏览器的Cookies中用来标识用户的身份
+- requests的Session模块可以自动保存网站返回的一些信息
+- 其实在前面章节中使用的requests.get()，在底层还是会先创建一个Session，然后用Session去访问
+- 对于HTTPS的网站，在requests发送请求的时候需要带上verify=False这个参数，否则爬虫会报错
+- 带上这个参数以后，爬虫依然会报一个警告，这是因为没有HTTPS的证书
+- 不过这个警告不会影响爬虫的运行结果。对于有强迫症的读者，可以参考相关内容为requests设置证书，从而解除这个警告
+
+### 模拟表单登录
+**[练习页面](http://exercise.kingname.info/exercise_login?next=%2Fexercise_login_success)**
+- 这个登录页面多了一个“自动登录”复选框输入用户名kingname，密码genius，勾选“自动登录”复选框并单击“登录”按钮，可以看到登录成功后的页面
+- 打开Chrome的开发者工具并监控登录过程
+- 然而，仔细观察会发现登录请求的那个网址只会在“Network”选项卡中存在1s，然后就消失了
+- Network”选项卡下面只剩下登录成功后的页面所发起的各种网络请求
+- 这是因为表单登录成功以后会进行页面跳转，相当于开了一个新的网页，于是新的请求就会直接把旧的请求覆盖。为了避免这种情况，需要在Chrome的开发者工具的“Network”选项卡中勾选“Preserve log”复选框，再一次登录就可以看到登录过程
+- 此时可以看到Status Code是302，说明这里有一个网页跳转，也就证明了之前为什么登录以后看不到登录的请求
+- **使用requests的Session模块来模拟这个登录**
+```py
+import requests
+
+login_url = 'http://exercise.kingname.info/exercise_login'
+login_sucess_url = 'http://exercise.kingname.info/exercise_login_success'
+
+data = {
+    'username':'kingname',
+    'password':'genius',
+    'remember':'Yes'
+}
+
+session = requests.Session()
+before_login = session.get(login_sucess_url).text
+print(before_login)
+print('============开始登陆==============')
+session.post(login_url,data=data).text
+after_login = session.get(login_sucess_url).text
+print(after_login)
+```
+**结果**
+```html
+<html>
+    <head>
+        <title>exercise login</title>
+        <style>
+            label { display: block;
+                    width: 100px;
+                    margin-left: auto;
+                    margin-right: auto}
+            body { text-align: center}
+            .content {MARGIN-RIGHT: auto;
+                      MARGIN-LEFT: auto;
+                      height:200px;}
+            .login {display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                    margin-top: 5px;}
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <form action="/exercise_login" method="POST">
+                <div class="row">
+                        <div class="form-group">
+                            <label>用户名:</label>
+                            <input name="username" type="text" class="form-control" placeholder="请输入:kingname" value="">
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="form-group">
+                            <label>密  码  :</label>
+                            <input name="password" type="password" class="form-control" placeholder="请输入:genius" value="">
+                        </div>
+                </div>
+                <div class="row">
+                    <label class="checkbox pull-right" >自动登录
+                        <input type="checkbox" name="rememberme" value="Yes" data-toggle="checkbox" />
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="submit" class="login">登录</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script src="static/js/jquery-3.2.1.min.js"></script>
+
+</html>
+============开始登陆==============
+<html>
+    <head>
+        <title>Login Success</title>
+    </head>
+    <body>
+        <div class="content">
+            如果你看到这一行内容，说明你已经登录成功。<a href="/exercise_logout">退出登录</a>
+        </div>
+    </body>
+</html>
+```
+
+## 验证码
+### 肉眼打码
+- 对于一次登录就可以长时间使用的情况，只需要识别一次验证码即可
+- 这种情况下，与其花时间开发一个自动识别验证码的程序，不如直接肉眼识别
+- **肉眼识别验证码有两种情况，借助浏览器与不借助浏览器**
+
+- 1、借助浏览器
+在模拟登录中讲到过Cookies，通过Cookies能实现绕过登录，从而直接访问需要登录的网站。因此，对于需要输入验证码才能进行登录的网站，可以手动在浏览器登录网站，并通过Chrome获取Cookies，然后使用Cookies来访问网站
+这样就可以实现人工输入一次验证码，然后很长时间不再登录。
+- 2、不借助浏览器
+对于仅仅需要识别图片的验证码，可以使用这种方式——先把验证码下载到本地，然后肉眼去识别并手动输入给爬虫
+```
+手动输入验证码的一般流程如下:
+（1）爬虫访问登录页面
+（2）分析网页源代码，获取验证码地址
+（3）下载验证码到本地
+（4）打开验证码，人眼读取内容
+（5）构造POST的数据，填入验证码
+（6）POST提交
+```
+* *需要注意的是，其中的（2）、（3）、（4）、（5）、（6）步是一气呵成的，是在爬虫运行的时候做的。绝对不能先把爬虫程序关闭，肉眼识别验证码以后再重新运行*
+
+**[练习页面](http://exercise.kingname.info/exercise_captcha.html)**
+```py
+import requests
+import lxml.html
+
+url = 'http://exercise.kingname.info/exercise_captcha.html'
+url_check = 'http://exercise.kingname.info/exercise_captcha_check'
+
+session = requests.session()
+html = session.get(url).content
+selector = lxml.html.fromstring(html)
+captcha_url = selector.xpath('//img/@src')[0]
+
+image = requests.get('http://exercise.kingname.info/'+captcha_url).content
+with open('captcha.png','wb') as f:
+    f.write(image)
+
+captcha = input('请查看图片，然后输入在这里：')
+after_check = session.post(url_check,data={'captcha':captcha})
+
+print(f'请输入验证码后，网站返回：{after_check.content.decode()}')
+```
+**结果**
+```
+请查看图片，然后输入在这里：1595
+请输入验证码后，网站返回：看到这个页面，说明你的验证码输入正确
+```
+![验证码](/img/captcha.png)
+
+### 自动打码
+1、Python图像识别
+- 对于验证码识别，Python也有现成的库来使用
+- 开源的OCR库pytesseract配合图像识别引擎tesseract，可以用来将图片中的文字转换为文本
+- 这种方式在爬虫中的应用并不多见。因为现在大部分的验证码都加上了干扰的纹理，已经很少能用单机版的图片识别方式来识别了。所以如果使用这种方式，只有两种情况：网站的验证码极其简单工整，使用大量的验证码来训练tesseract
+*安装tesseract*
+打开网页下载安装包：https://github.com/tesseract-ocr/tesseract/wiki/Downloads ,在“3rd party Windows exe's/ installer”下面可以找到.exe安装包
+*安装Python库*
+pip install Pillow
+pip install pytesseract
+其中，Pillow是Python中专门用来处理图像的第三方库，pytesseract是专门用来操作tesseract的第三方库
+*tesseract的使用*
+```
+          tesseract的使用非常简单。
+① 导入pytesseract和Pillow。
+② 打开图片。
+③ 识别。
+```
+```py
+# 通过以下代码来实现最简单的图片识别：
+import pytesseract
+from PIL import Image
+image = Image.open('验证码.png')
+code = pytesseract.image_to_string(image)
+print(code)     
+```
+
+2、打码网站
+在线验证码识别的网站，简称打码网站。这些网站有一些是使用深度学习技术识别验证码，有一些是雇佣了很多人来人肉识别验证码
+网站提供了接口来实现验证码识别服务。使用打码网站理论上可以识别任何使用输入方式来验证的验证码
+```
+这种打码网站的流程一般是这样的。
+① 将验证码上传到网站服务器。
+② 网站服务器将验证码分发给打码工人。
+③ 打码工人肉眼识别验证码并上传结果。
+④ 网站将结果返回。
+```
+*使用在线打码*
+在百度或者谷歌上面搜索“验证码在线识别”，就可以找到很多提供在线打码的网站。但是由于一般这种打码网站是需要交费才能使用的，所以要注意财产安全
+
+## 案例-自动登录果壳网
+[目标网站](https://www.guokr.com)
+使用模拟登录与验证码识别的技术实现自动登录果壳网。 果壳网的登录界面有验证码，请使用人工或者在线打码的方式识别验证码，并让爬虫登录。登录以后可以正确显示“个人资料设置”界面的源代码
+- 涉及的知识点：
+- （1）爬虫识别验证码。
+- （2）爬虫模拟登录。
+>来自[第八章](https://github.com/kingname/SourceCodeOfBook/tree/master/%E7%AC%AC8%E7%AB%A0/program)，需要使用再来深度学习
+

@@ -5,11 +5,14 @@ tags:
     - Spider
     - Python
 ---
->Spider_example的[GitHub链接](https://github.com/yq010105/spider_learn "github")
+>**自己动手做的python爬虫**&emsp;&emsp;&emsp;[GitHub链接](https://github.com/yq010105/spider_learn "github")
+很垃圾！！！
+<!-- more -->
+>
 # 爬取bilibili每日排行榜数据
 * **使用XPath爬取,并将数据保存到csv文件中**
 * **文件名使用该排行榜所在时间段**
-<!-- more -->
+
 ```python
 import requests
 import csv

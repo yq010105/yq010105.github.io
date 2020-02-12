@@ -4,7 +4,10 @@ date: 2020-02-09 15:38:38
 tags:
     - Python
 ---
+**python，边学爬虫，边把不会的python知识不全**
+*自己的Python笔记*
 
+<!-- more -->
 # 文件管理（txt）
 ```py
 fd = open('file.txt','w',encoding='utf-8')      #utf-8 or GBK
@@ -14,7 +17,7 @@ fd.close()
 其中content可以是字符串，变量，\t ......
 <hr/>
 
-<!-- more -->
+
 
 | r | w | a |
 | :----: | :----: | :----: |
