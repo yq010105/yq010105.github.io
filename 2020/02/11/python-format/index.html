@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Python_format | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="参考教程网站和CSDN  python_formatstr.format()，它增强了字符串格式化的功能。基本语法是通过 {} 和 : 来代替以前的 % 。">
+  <meta name="description" content="Python_format&amp;emsp;&amp;emsp;&amp;emsp;一种格式化字符串函数str.format()  参考教程网站和CSDN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python_format">
 <meta property="og:url" content="http://yoursite.com/2020/02/11/python-format/index.html">
 <meta property="og:site_name" content="Yun.Qi">
-<meta property="og:description" content="参考教程网站和CSDN  python_formatstr.format()，它增强了字符串格式化的功能。基本语法是通过 {} 和 : 来代替以前的 % 。">
+<meta property="og:description" content="Python_format&amp;emsp;&amp;emsp;&amp;emsp;一种格式化字符串函数str.format()  参考教程网站和CSDN">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-11T12:56:10.000Z">
-<meta property="article:modified_time" content="2020-02-12T02:45:29.072Z">
+<meta property="article:modified_time" content="2020-02-12T11:10:31.215Z">
 <meta property="article:author" content="Yun Qi">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -73,13 +73,15 @@
 	        
 				<li><a href="/YQi">YQi</a></li>
 	        
+				<li><a href="/APP">APP</a></li>
+	        
 			</ul>
 		</nav>
 		<nav>
-			总文章数 8
+			已经写了 8 篇
 		</nav>
 		<nav>
-			总字数 <span class="post-count">12.7k</span>
+			字数已达 <span class="post-count">15474</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -142,6 +144,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -162,11 +166,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">Home</a></li>
+					<li style="width: 25%"><a href="/">Home</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/diary">Diary</a></li>
+					<li style="width: 25%"><a href="/diary">Diary</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/YQi">YQi</a></li>
+					<li style="width: 25%"><a href="/YQi">YQi</a></li>
+		        
+					<li style="width: 25%"><a href="/APP">APP</a></li>
 		        
 				</ul>
 			</nav>
@@ -199,16 +205,18 @@
         
       </header>
       <div align="center" class="post-count">
-        字数: 673字 | 预计阅读时长：3分钟
+       字数: 686字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">神必链接</a>|&emsp;预计阅读时长：3分钟
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
+        <p><strong>Python_format&emsp;&emsp;&emsp;一种格式化字符串函数<code>str.format()</code></strong></p>
+<blockquote>
 <p>参考教程<a href="https://www.runoob.com/python/att-string-format.html" target="_blank" rel="noopener">网站</a>和<a href="https://blog.csdn.net/qq_19691995/article/details/84197252" target="_blank" rel="noopener">CSDN</a></p>
 </blockquote>
-<h1 id="python-format"><a href="#python-format" class="headerlink" title="python_format"></a>python_format</h1><p>str.format()，它增强了字符串格式化的功能。<br>基本语法是通过 {} 和 : 来代替以前的 % 。</p>
 <a id="more"></a>
+
+<h1 id="python-format"><a href="#python-format" class="headerlink" title="python_format"></a>python_format</h1><p>str.format()，它增强了字符串格式化的功能。<br>基本语法是通过 {} 和 : 来代替以前的 % 。</p>
 <h2 id="format-函数可以接受不限个参数，位置可以不按顺序"><a href="#format-函数可以接受不限个参数，位置可以不按顺序" class="headerlink" title="format 函数可以接受不限个参数，位置可以不按顺序"></a>format 函数可以接受不限个参数，位置可以不按顺序</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">"&#123;&#125; &#123;&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)    <span class="comment"># 不设置指定位置，按默认顺序</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"&#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"&#123;1&#125; &#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'world hello world'</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="设置参数"><a href="#设置参数" class="headerlink" title="设置参数"></a>设置参数</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"网站名：&#123;name&#125;, 地址 &#123;url&#125;"</span>.format(name=<span class="string">"菜鸟教程"</span>, url=<span class="string">"www.runoob.com"</span>))</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 通过字典设置参数</span></span><br><span class="line">site = &#123;<span class="string">"name"</span>: <span class="string">"菜鸟教程"</span>, <span class="string">"url"</span>: <span class="string">"www.runoob.com"</span>&#125;</span><br><span class="line">print(<span class="string">"网站名：&#123;name&#125;, 地址 &#123;url&#125;"</span>.format(**site))</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 通过列表索引设置参数</span></span><br><span class="line">my_list = [<span class="string">'菜鸟教程'</span>, <span class="string">'www.runoob.com'</span>]</span><br><span class="line">print(<span class="string">"网站名：&#123;0[0]&#125;, 地址 &#123;0[1]&#125;"</span>.format(my_list))  <span class="comment"># "0" 是必须的</span></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">网站名：菜鸟教程, 地址 www.runoob.com</span></span><br><span class="line"><span class="string">网站名：菜鸟教程, 地址 www.runoob.com</span></span><br><span class="line"><span class="string">网站名：菜鸟教程, 地址 www.runoob.com</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
@@ -605,15 +613,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spider</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Questions</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spider</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,6 +626,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Questions</a>
               </li>
             
             <div class="clearfix"></div>

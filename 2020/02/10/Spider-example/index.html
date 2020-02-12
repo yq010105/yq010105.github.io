@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Spider_example | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spider_example的GitHub链接  爬取bilibili每日排行榜数据 使用XPath爬取,并将数据保存到csv文件中 文件名使用该排行榜所在时间段">
+  <meta name="description" content="自己动手做的python爬虫&amp;emsp;&amp;emsp;&amp;emsp;GitHub链接很垃圾！！！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spider_example">
 <meta property="og:url" content="http://yoursite.com/2020/02/10/Spider-example/index.html">
 <meta property="og:site_name" content="Yun.Qi">
-<meta property="og:description" content="Spider_example的GitHub链接  爬取bilibili每日排行榜数据 使用XPath爬取,并将数据保存到csv文件中 文件名使用该排行榜所在时间段">
+<meta property="og:description" content="自己动手做的python爬虫&amp;emsp;&amp;emsp;&amp;emsp;GitHub链接很垃圾！！！">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/img/bilibili_csv.png">
 <meta property="article:published_time" content="2020-02-10T08:43:47.000Z">
-<meta property="article:modified_time" content="2020-02-12T02:37:02.343Z">
+<meta property="article:modified_time" content="2020-02-12T11:06:24.298Z">
 <meta property="article:author" content="Yun Qi">
-<meta property="article:tag" content="Spider">
 <meta property="article:tag" content="Python">
+<meta property="article:tag" content="Spider">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/img/bilibili_csv.png">
   
@@ -76,13 +76,15 @@
 	        
 				<li><a href="/YQi">YQi</a></li>
 	        
+				<li><a href="/APP">APP</a></li>
+	        
 			</ul>
 		</nav>
 		<nav>
-			总文章数 8
+			已经写了 8 篇
 		</nav>
 		<nav>
-			总字数 <span class="post-count">12.7k</span>
+			字数已达 <span class="post-count">15474</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -145,6 +147,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -165,11 +169,13 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">Home</a></li>
+					<li style="width: 25%"><a href="/">Home</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/diary">Diary</a></li>
+					<li style="width: 25%"><a href="/diary">Diary</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/YQi">YQi</a></li>
+					<li style="width: 25%"><a href="/YQi">YQi</a></li>
+		        
+					<li style="width: 25%"><a href="/APP">APP</a></li>
 		        
 				</ul>
 			</nav>
@@ -202,18 +208,23 @@
         
       </header>
       <div align="center" class="post-count">
-        字数: 1,162字 | 预计阅读时长：7分钟
+       字数: 1,172字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">神必链接</a>|&emsp;预计阅读时长：7分钟
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>Spider_example的<a href="https://github.com/yq010105/spider_learn" target="_blank" rel="noopener" title="github">GitHub链接</a></p>
+<p><strong>自己动手做的python爬虫</strong>&emsp;&emsp;&emsp;<a href="https://github.com/yq010105/spider_learn" target="_blank" rel="noopener" title="github">GitHub链接</a><br>很垃圾！！！</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
 </blockquote>
 <h1 id="爬取bilibili每日排行榜数据"><a href="#爬取bilibili每日排行榜数据" class="headerlink" title="爬取bilibili每日排行榜数据"></a>爬取bilibili每日排行榜数据</h1><ul>
 <li><strong>使用XPath爬取,并将数据保存到csv文件中</strong></li>
-<li><strong>文件名使用该排行榜所在时间段</strong><a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> lxml.html</span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://www.bilibili.com/ranking/'</span></span><br><span class="line">html = requests.get(url).content.decode()</span><br><span class="line"><span class="comment"># print(html)</span></span><br><span class="line"></span><br><span class="line">selector = lxml.html.fromstring(html)</span><br><span class="line"></span><br><span class="line">title = selector.xpath(<span class="string">'//*[@id="app"]/div[1]/div/div[1]/div[2]/div[3]/ul/li/div[2]/div[2]/a/text()'</span>)</span><br><span class="line"><span class="comment"># print(len(title))</span></span><br><span class="line"></span><br><span class="line">link = selector.xpath(<span class="string">'//*[@id="app"]/div[1]/div/div[1]/div[2]/div[3]/ul/li/div[2]/div[1]/a/@href'</span>)</span><br><span class="line"><span class="comment"># print(link[0])</span></span><br><span class="line"><span class="comment"># cover = selector.xpath('//*[@id="app"]/div[1]/div/div[1]/div[2]/div[3]/ul/li/div[2]/div[1]/a/div/img/@src')</span></span><br><span class="line"><span class="comment"># print(cover[0])</span></span><br><span class="line"></span><br><span class="line">up_name = selector.xpath(<span class="string">'//*[@id="app"]/div[1]/div/div[1]/div[2]/div[3]/ul/li/div[2]/div[2]/div[1]/a/span/text()'</span>)</span><br><span class="line"><span class="comment"># print(up_name[5])</span></span><br><span class="line">up_videoplay = selector.xpath(<span class="string">'//*[@id="app"]/div[1]/div/div[1]/div[2]/div[3]/ul/li/div[2]/div[2]/div[1]/span[1]/text()'</span>)</span><br><span class="line"></span><br><span class="line">time = selector.xpath(<span class="string">'//*[@id="app"]/div[1]/div/div[1]/div[2]/div[2]/div/span/text()'</span>)</span><br><span class="line">time_num = time[<span class="number">0</span>]</span><br><span class="line">str1 = time_num.replace(<span class="string">' 的数据综合得分，每日更新一次'</span>,<span class="string">''</span>)</span><br><span class="line">str2 = str1.replace(<span class="string">'统计所有投稿在 '</span>,<span class="string">''</span>)</span><br><span class="line">time_num2 = str2</span><br><span class="line"></span><br><span class="line">headers = [<span class="string">'up_name'</span>,<span class="string">'title'</span>,<span class="string">'link'</span>]</span><br><span class="line">rows = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    rows.append([up_name[i],title[i],link[i]])</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">f'<span class="subst">&#123;time_num2&#125;</span>.csv'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f_csv = csv.writer(f)</span><br><span class="line">    f_csv.writerow(headers)</span><br><span class="line">    f_csv.writerows(rows)</span><br></pre></td></tr></table></figure></li>
+<li><strong>文件名使用该排行榜所在时间段</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> lxml.html</span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://www.bilibili.com/ranking/'</span></span><br><span class="line">html = requests.get(url).content.decode()</span><br><span class="line"><span class="comment"># print(html)</span></span><br><span class="line"></span><br><span class="line">selector = lxml.html.fromstring(html)</span><br><span class="line"></span><br><span class="line">title = selector.xpath(<span class="string">'//*[@id="app"]/div[1]/div/div[1]/div[2]/div[3]/ul/li/div[2]/div[2]/a/text()'</span>)</span><br><span class="line"><span class="comment"># print(len(title))</span></span><br><span class="line"></span><br><span class="line">link = selector.xpath(<span class="string">'//*[@id="app"]/div[1]/div/div[1]/div[2]/div[3]/ul/li/div[2]/div[1]/a/@href'</span>)</span><br><span class="line"><span class="comment"># print(link[0])</span></span><br><span class="line"><span class="comment"># cover = selector.xpath('//*[@id="app"]/div[1]/div/div[1]/div[2]/div[3]/ul/li/div[2]/div[1]/a/div/img/@src')</span></span><br><span class="line"><span class="comment"># print(cover[0])</span></span><br><span class="line"></span><br><span class="line">up_name = selector.xpath(<span class="string">'//*[@id="app"]/div[1]/div/div[1]/div[2]/div[3]/ul/li/div[2]/div[2]/div[1]/a/span/text()'</span>)</span><br><span class="line"><span class="comment"># print(up_name[5])</span></span><br><span class="line">up_videoplay = selector.xpath(<span class="string">'//*[@id="app"]/div[1]/div/div[1]/div[2]/div[3]/ul/li/div[2]/div[2]/div[1]/span[1]/text()'</span>)</span><br><span class="line"></span><br><span class="line">time = selector.xpath(<span class="string">'//*[@id="app"]/div[1]/div/div[1]/div[2]/div[2]/div/span/text()'</span>)</span><br><span class="line">time_num = time[<span class="number">0</span>]</span><br><span class="line">str1 = time_num.replace(<span class="string">' 的数据综合得分，每日更新一次'</span>,<span class="string">''</span>)</span><br><span class="line">str2 = str1.replace(<span class="string">'统计所有投稿在 '</span>,<span class="string">''</span>)</span><br><span class="line">time_num2 = str2</span><br><span class="line"></span><br><span class="line">headers = [<span class="string">'up_name'</span>,<span class="string">'title'</span>,<span class="string">'link'</span>]</span><br><span class="line">rows = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    rows.append([up_name[i],title[i],link[i]])</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">f'<span class="subst">&#123;time_num2&#125;</span>.csv'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f_csv = csv.writer(f)</span><br><span class="line">    f_csv.writerow(headers)</span><br><span class="line">    f_csv.writerows(rows)</span><br></pre></td></tr></table></figure>
+<ul>
 <li><strong>csv部分展示</strong><br><code>2020年02月07日 - 2020年02月10日</code><br><img src="/img/bilibili_csv.png" alt="bilibili_csv"></li>
 </ul>
 <h1 id="爬取baidu上搜到的图片-初级"><a href="#爬取baidu上搜到的图片-初级" class="headerlink" title="爬取baidu上搜到的图片(初级)"></a>爬取baidu上搜到的图片(初级)</h1><h2 id="thumbURL"><a href="#thumbURL" class="headerlink" title="thumbURL"></a>thumbURL</h2><ul>
@@ -241,11 +252,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spider</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spider</a>
         		</li>
       		
 		</ul>
@@ -497,15 +508,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spider</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Questions</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spider</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,6 +521,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Questions</a>
               </li>
             
             <div class="clearfix"></div>
