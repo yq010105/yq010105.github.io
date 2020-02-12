@@ -16,7 +16,7 @@
 <meta property="og:description" content="参考教程网站和CSDN  python_formatstr.format()，它增强了字符串格式化的功能。基本语法是通过 {} 和 : 来代替以前的 % 。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-11T12:56:10.000Z">
-<meta property="article:modified_time" content="2020-02-11T13:40:56.641Z">
+<meta property="article:modified_time" content="2020-02-12T02:45:29.072Z">
 <meta property="article:author" content="Yun Qi">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -79,7 +79,7 @@
 			总文章数 8
 		</nav>
 		<nav>
-			总字数 <span class="post-count">12.3k</span>
+			总字数 <span class="post-count">12.7k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -109,7 +109,7 @@
 			<!-- 《左侧边栏添加--网易云音乐插件 -->
 			<!-- https://www.writebug.site/2018/04/21/hexo-yilia个性化之-添加背景音乐/ -->
 			
-				<iframe frameborder="0" border="0" marginwidth="0" marginheight="0" width=228 height=86 src="//music.163.com/outchain/player?type=2&id=29732992&auto=0&height=66"></iframe>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=228 height=86 src="//music.163.com/outchain/player?type=2&id=1400594005&auto=0&height=66"></iframe>
 			
 			<!-- 网易云音乐插件》-->
 			
@@ -209,16 +209,16 @@
 </blockquote>
 <h1 id="python-format"><a href="#python-format" class="headerlink" title="python_format"></a>python_format</h1><p>str.format()，它增强了字符串格式化的功能。<br>基本语法是通过 {} 和 : 来代替以前的 % 。</p>
 <a id="more"></a>
-<h2 id="format-函数可以接受不限个参数，位置可以不按顺序"><a href="#format-函数可以接受不限个参数，位置可以不按顺序" class="headerlink" title="format 函数可以接受不限个参数，位置可以不按顺序"></a>format 函数可以接受不限个参数，位置可以不按顺序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;&quot;&#123;&#125; &#123;&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)    # 不设置指定位置，按默认顺序</span><br><span class="line">&#39;hello world&#39;</span><br><span class="line"> </span><br><span class="line">&gt;&gt;&gt; &quot;&#123;0&#125; &#123;1&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)  # 设置指定位置</span><br><span class="line">&#39;hello world&#39;</span><br><span class="line"> </span><br><span class="line">&gt;&gt;&gt; &quot;&#123;1&#125; &#123;0&#125; &#123;1&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)  # 设置指定位置</span><br><span class="line">&#39;world hello world&#39;</span><br></pre></td></tr></table></figure>
+<h2 id="format-函数可以接受不限个参数，位置可以不按顺序"><a href="#format-函数可以接受不限个参数，位置可以不按顺序" class="headerlink" title="format 函数可以接受不限个参数，位置可以不按顺序"></a>format 函数可以接受不限个参数，位置可以不按顺序</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">"&#123;&#125; &#123;&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)    <span class="comment"># 不设置指定位置，按默认顺序</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"&#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"&#123;1&#125; &#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'world hello world'</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="设置参数"><a href="#设置参数" class="headerlink" title="设置参数"></a>设置参数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">print(&quot;网站名：&#123;name&#125;, 地址 &#123;url&#125;&quot;.format(name&#x3D;&quot;菜鸟教程&quot;, url&#x3D;&quot;www.runoob.com&quot;))</span><br><span class="line"> </span><br><span class="line"># 通过字典设置参数</span><br><span class="line">site &#x3D; &#123;&quot;name&quot;: &quot;菜鸟教程&quot;, &quot;url&quot;: &quot;www.runoob.com&quot;&#125;</span><br><span class="line">print(&quot;网站名：&#123;name&#125;, 地址 &#123;url&#125;&quot;.format(**site))</span><br><span class="line"> </span><br><span class="line"># 通过列表索引设置参数</span><br><span class="line">my_list &#x3D; [&#39;菜鸟教程&#39;, &#39;www.runoob.com&#39;]</span><br><span class="line">print(&quot;网站名：&#123;0[0]&#125;, 地址 &#123;0[1]&#125;&quot;.format(my_list))  # &quot;0&quot; 是必须的</span><br><span class="line"></span><br><span class="line">&#39;&#39;&#39;</span><br><span class="line">网站名：菜鸟教程, 地址 www.runoob.com</span><br><span class="line">网站名：菜鸟教程, 地址 www.runoob.com</span><br><span class="line">网站名：菜鸟教程, 地址 www.runoob.com</span><br><span class="line">&#39;&#39;&#39;</span><br></pre></td></tr></table></figure>
+<h2 id="设置参数"><a href="#设置参数" class="headerlink" title="设置参数"></a>设置参数</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"网站名：&#123;name&#125;, 地址 &#123;url&#125;"</span>.format(name=<span class="string">"菜鸟教程"</span>, url=<span class="string">"www.runoob.com"</span>))</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 通过字典设置参数</span></span><br><span class="line">site = &#123;<span class="string">"name"</span>: <span class="string">"菜鸟教程"</span>, <span class="string">"url"</span>: <span class="string">"www.runoob.com"</span>&#125;</span><br><span class="line">print(<span class="string">"网站名：&#123;name&#125;, 地址 &#123;url&#125;"</span>.format(**site))</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 通过列表索引设置参数</span></span><br><span class="line">my_list = [<span class="string">'菜鸟教程'</span>, <span class="string">'www.runoob.com'</span>]</span><br><span class="line">print(<span class="string">"网站名：&#123;0[0]&#125;, 地址 &#123;0[1]&#125;"</span>.format(my_list))  <span class="comment"># "0" 是必须的</span></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">网站名：菜鸟教程, 地址 www.runoob.com</span></span><br><span class="line"><span class="string">网站名：菜鸟教程, 地址 www.runoob.com</span></span><br><span class="line"><span class="string">网站名：菜鸟教程, 地址 www.runoob.com</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
 
 <p>通过字典和列表的另一种写法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; hash &#x3D; &#123;&#39;name&#39;:&#39;hoho&#39;,&#39;age&#39;:18&#125;</span><br><span class="line">&gt;&gt;&gt; &#39;my name is &#123;name&#125;,age is &#123;age&#125;&#39;.format(**hash)        #**dict</span><br><span class="line">&#39;my name is hoho,age is 18&#39;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; li &#x3D; [&#39;hoho&#39;,18]</span><br><span class="line">&gt;&gt;&gt; &#39;my name is &#123;&#125; ,age &#123;&#125;&#39;.format(*li)               #*[]迭代列表</span><br><span class="line">&#39;my name is hoho ,age 18&#39;</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>hash = &#123;<span class="string">'name'</span>:<span class="string">'hoho'</span>,<span class="string">'age'</span>:<span class="number">18</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'my name is &#123;name&#125;,age is &#123;age&#125;'</span>.format(**hash)        <span class="comment">#**dict</span></span><br><span class="line"><span class="string">'my name is hoho,age is 18'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>li = [<span class="string">'hoho'</span>,<span class="number">18</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'my name is &#123;&#125; ,age &#123;&#125;'</span>.format(*li)               <span class="comment">#*[]迭代列表</span></span><br><span class="line"><span class="string">'my name is hoho ,age 18'</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="向str-format传入对象"><a href="#向str-format传入对象" class="headerlink" title="向str.format传入对象"></a>向<code>str.format</code>传入对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class AssignValue(object):</span><br><span class="line">    def __init__(self, value):</span><br><span class="line">        self.value &#x3D; value</span><br><span class="line">my_value &#x3D; AssignValue(6)</span><br><span class="line">print(&#39;value 为: &#123;0.value&#125;&#39;.format(my_value))  # &quot;0&quot; 是可选的</span><br><span class="line"></span><br><span class="line"># value 为: 6</span><br></pre></td></tr></table></figure>
+<h2 id="向str-format传入对象"><a href="#向str-format传入对象" class="headerlink" title="向str.format传入对象"></a>向<code>str.format</code>传入对象</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AssignValue</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">my_value = AssignValue(<span class="number">6</span>)</span><br><span class="line">print(<span class="string">'value 为: &#123;0.value&#125;'</span>.format(my_value))  <span class="comment"># "0" 是可选的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># value 为: 6</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="数字格式化"><a href="#数字格式化" class="headerlink" title="数字格式化"></a>数字格式化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; print(&quot;&#123;:.2f&#125;&quot;.format(3.1415926));</span><br><span class="line">3.14</span><br></pre></td></tr></table></figure>
+<h2 id="数字格式化"><a href="#数字格式化" class="headerlink" title="数字格式化"></a>数字格式化</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;:.2f&#125;"</span>.format(<span class="number">3.1415926</span>));</span><br><span class="line"><span class="number">3.14</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -605,15 +605,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MD</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spider</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,6 +618,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MD</a>
               </li>
             
             <div class="clearfix"></div>

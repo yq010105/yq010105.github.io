@@ -335,7 +335,14 @@ body {
     min-height:100%;
     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
     url(./img/1.jpg) no-repeat 0% 20%/ cover;
+    cursor:url(./img/ico1.ico), default;
 }
+
+@media screen and (max-width:800px) {
+    body {
+        background: url(./img/phone.jpg) no-repeat fixed top;}
+       }
+
 audio, canvas, progress, video {
     display:inline-block
 }
@@ -352,7 +359,7 @@ progress {
 a {
     background:transparent;
     text-decoration:none;
-    color:#08c
+    color:#08c;
 }
 a:active {
     outline:0
@@ -1890,7 +1897,7 @@ pre .css~* .id, pre .id {
     text-align:left;
     float:right
 }
-.article-more-link a {
+/*.article-more-link a {
     background:#4d4d4d;
     color:#fff;
     font-size:12px;
@@ -1898,7 +1905,65 @@ pre .css~* .id, pre .id {
     line-height:16px;
     border-radius:2px;
     transition:background .3s
+}*/
+/* 《展开全文按钮 */
+.article-more-link a {
+    color:#fff;
+    font-size:12px;
+    padding:5px 8px;
+    line-height:16px;
+    border-radius:2px;
+    /* Prevent highlight colour when element is tapped */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* Smooth fonts */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+/* Shutter In Horizontal ,from : http://ianlunn.github.io/Hover/ */
+ .hvr-shutter-in-horizontal {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+	/* 在鼠标悬浮时为：蓝色 */
+    background: #2098D1;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+.hvr-shutter-in-horizontal:before {
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	/* 在默认情况下为：灰褐色 */
+    background: #4d4d4d;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.hvr-shutter-in-horizontal:hover, .hvr-shutter-in-horizontal:focus, .hvr-shutter-in-horizontal:active {
+    color: white;
+}
+.hvr-shutter-in-horizontal:hover:before, .hvr-shutter-in-horizontal:focus:before, .hvr-shutter-in-horizontal:active:before {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+}
+/* 展开全文按钮》 */
+
 .article-more-link a:hover {
     background:#3c3c3c
 }
