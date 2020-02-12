@@ -57,7 +57,7 @@ tags:
 * **安装插件:**  `npm install --save hexo-helper-live2d` **[github项目](https://github.com/EYHN/hexo-helper-live2d)**
 * **安装模型:**  `npm install live2d-widget-model-模型名` **[模型名参考](https://huaji8.top/post/live2d-plugin-2.0/)**
 * **在yilia/_config.yml中添加**
-```
+```yml
 # Live2D
 ## https://github.com/EYHN/hexo-helper-live2d
 live2d:

@@ -6,7 +6,7 @@ tags:
 ---
 
 # 文件管理（txt）
-```
+```py
 fd = open('file.txt','w',encoding='utf-8')      #utf-8 or GBK
 fd.write(content)     
 fd.close()
@@ -28,7 +28,7 @@ fd.close()
 * f_csv = csv.writer(f)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*f为open('file.txt','w',encoding='utf-8')*
 * f_csv.writerow(headers)
 * f_csv.writerows(rows)
-```
+```py
 import csv
 
 headers = ['class','name','sex','height','year']
@@ -61,7 +61,7 @@ with open('test.csv','w',newline='')as f:
 * f_csv = DictWriter(f,headers)
 * f_csv.writeheader()
 * f_csv.writerows(rows)
-```
+```py
 import csv
 
 headers = ['class','name','sex','height','year']
@@ -86,7 +86,7 @@ with open('test2.csv','w',newline='')as f:
 |2|xiaoli|male|158|21|
 
 ## csv文件的读
-```
+```py
 import csv
 with open('test.csv')as f:
     f_csv = csv.reader(f)
@@ -117,7 +117,7 @@ class
 >参考[网站](https://blog.csdn.net/katyusha1/article/details/81606175 "CSDN")
 
 # with open () as 读写文件
-```
+```py
 # 读文件
 with open('file.txt','r',) as f:
     print(f.read())
@@ -136,7 +136,7 @@ with open('file.txt','w',encoding='utf-8') as f:
 >参考[网站](https://blog.csdn.net/xrinosvip/article/details/82019844 "CSDN")
 
 # os中创建文件夹
-```
+```py
 import os 
 
 main_path = 'E:/os/'    #创建一个路径
@@ -144,7 +144,7 @@ if not os.path.exists(main_path):   #如果该路径不存在
     os.makedirs(main_path)  #则新建一个路径
 ```
 # 将图片保存在文件夹中
-```
+```py
 dir = '文件路径' + name +'.jpg'     #文件名
 url_get = requests.get(url)         #从url中获取图片信息
 with open(dir,'wb') as f:           #打开图片文件，保存图片信息
@@ -153,7 +153,7 @@ with open(dir,'wb') as f:           #打开图片文件，保存图片信息
 
 # try...except语句
 ## **语法**
-```
+```py
 #python 异常处理
 try:
 <语句>        #运行别的代码
@@ -165,7 +165,7 @@ else:
 <语句>        #如果没有异常发生
 ```
 ## **使用except而不带任何异常类型**
-```
+```py
 try:
     正常的操作
    ......................
@@ -178,7 +178,7 @@ else:
 **以上方式try-except语句捕获所有发生的异常。但这不是一个很好的方式，我们不能通过该程序识别出具体的异常信息。因为它捕获所有的异常**
 
 ## **使用except而带多种异常类型**
-```
+```py
 try:
     正常的操作
    ......................
@@ -189,7 +189,7 @@ else:
     如果没有异常执行这块代码
 ```
 ## **try-finally 语句**
-```
+```py
 try:
 <语句>
 finally:
@@ -197,7 +197,7 @@ finally:
 raise
 ```
 ## **异常的参数**
-```
+```py
 try:
     正常的操作
    ......................
@@ -208,13 +208,13 @@ except ExceptionType, Argument:
 - 通过创建一个新的异常类，程序可以命名它们自己的异常。异常应该是典型的继承自Exception类，通过直接或间接的方式
 - 以下为与RuntimeError相关的实例,实例中创建了一个类，基类为RuntimeError，用于在异常触发时输出更多的信息
 - 在try语句块中，用户自定义的异常后执行except块语句，变量 e 是用于创建Networkerror类的实例
-```
+```py
 class Networkerror(RuntimeError):
     def __init__(self, arg):
         self.args = arg
 ```
 - **在你定义以上类后，你可以触发该异常，如下所示：**
-```
+```py
 try:
     raise Networkerror("Bad hostname")
 except Networkerror,e:
@@ -290,11 +290,11 @@ except Networkerror,e:
 ## `str.split()`  **对字符串进行切片--返回一个列表**
 
 
-语法`str.split(str="", num=string.count(str)).`
+- 语法`str.split(str="", num=string.count(str)).`
 * str：分隔符，默认为所有的空字符，包括空格、换行、指标
 * num：分割次数，默认为-1，即分割所有
-```
-#example
+```py
+# example
 txt = "Google#Runoob#Taobao#Facebook"
  
 # 第二个参数为 1，返回两个参数列表
@@ -303,3 +303,19 @@ x = txt.split("#", 1)
 print(x)         #['Google', 'Runoob#Taobao#Facebook']
 ```
 >参考教程：[RUNOOB](https://www.runoob.com/python/att-string-split.html "runoob.com")
+
+## `str.find()`  **检测字符串中是否包含子字符串 str**
+* *如果包含子字符串返回开始的索引值，否则返回-1*
+- 语法`str.find(str, beg=0, end=len(string))`
+- str -- 指定检索的字符串
+- beg -- 开始索引，默认为0
+- end -- 结束索引，默认为字符串的长度
+```py
+# example
+str1 = "this is string example....wow!!!";
+str2 = "exam";
+ 
+print str1.find(str2);          #15
+print str1.find(str2, 10);      #15
+print str1.find(str2, 40);      #-1,查不到返回-1
+```

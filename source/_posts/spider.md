@@ -8,7 +8,7 @@ tags:
 >参考Github上的[教程](https://github.com/kingname/SourceCodeOfBook "Github")学习
 # 线程
 ## 线程Pool
-```多线程计算每个数的平方
+```py
 from multiprocessing.dummy import Pool   
 def calc_power2(num):
 return num*num
@@ -28,7 +28,7 @@ eg：用来对比单线程和多线程访问baidu的速度
 
 # request库
 ## 基础用法
-```
+```py
 url = ''
 headers = {
     "UserAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like\ Gecko) Chrome/80.0.3987.87 Safari/537.36 Edg/80.0.361.48"
@@ -39,7 +39,7 @@ html = response.text
 ```
 ## 进阶用法
 * **使用requests模拟发送get请求**
-```
+```py
 import requests 
 
 url = 'http://exercise.kingname.info/ajax_1_backend'
@@ -48,7 +48,7 @@ print(html)
 # 如果你看到这一段文字，说明你已经成功访问了这个页面,并获取了GET方式的异步加载数据。
 ```
 * **使用requests模拟发送post请求**
-```
+```py
 import requests
 
 url = 'http://exercise.kingname.info/ajax_1_postbackend'
@@ -61,7 +61,7 @@ print(html)
 
 # re库
 ## 基础用法
-```
+```py
 re.findall(r'',html,re.S)   #返回一个列表，这是一个列表所以可以取第一个数据
                             #re.findall(r'',html,re.S)[0]
 
@@ -82,7 +82,7 @@ re.search(r'href="sf">(.*?)<').group()
 
 ## XPath语法
 ### XPath语法解析
-``` example
+```html
 example_html
 <html>
     <head>
@@ -108,13 +108,13 @@ example_html
 `info = selector.xpath('//div[@class="useful"]/ul/li/text()')`
 就可以提取出class="userful"中的三句话，返回一个列表
 ### 基本框架
-``` 具体使用方法
+```py
 import lxml.html
 selector = lxml.html.fromstring('网页源代码')    #网页源代码可用requests来获取
 info = selector.xpath('一段XPath语句')
 ```
 ### example
-``` example
+```py 
 import lxml.html
 
 source = '''
@@ -160,7 +160,7 @@ print(info)         #['我需要的信息1', '我需要的信息2', '我需要�
 2、这个标签所有的属性值相同
 * d.**XPath的特殊情况**
 1、以相同字符串开头`标签[starts-with(@属性,"开头字符串")]`
-```
+```py
     <div id="test-1">需要的内容1</div>
     <div id="test-2">需要的内容2</div>
     <div id="testfault">需要的内容3</div>
@@ -170,13 +170,13 @@ print(info)         #['我需要的信息1', '我需要的信息2', '我需要�
 ```
 2、属性值包含相同字符串`标签[contains(@属性,"相同字符串")]`
 3、对XPath返回的对象执行XPath
-```
+```py
 useful = selector.xpath('//div[@class="useful"]')   #这里返回一个列表
 info_list = useful[0].xpath('ul/li/text()')         #useful[0]即为列表中第一个数据
 print(info_list)
 ```
 4、不同标签下的文字
-```
+```py
 import lxml.html
 
 html = '''
@@ -237,7 +237,7 @@ print(info)     #就可以提取出所有的文本信息了
 *由于HTML中的class属性与Python的class关键字相同，因此为了不产生冲突，BS4规定，如果遇到要查询class的情况，使用“class_”来代替*
 
 ## [example](http://exercise.kingname.info/exercise_bs_1.html) 
-```example_link
+```py
 import request
 from bs4 import BeautifulSoup
 
@@ -266,7 +266,7 @@ for li in all_content:
 **以‘我需要’为开头的信息**
 `content = soup.find_all(text = re.compile('我需要'))`
 **对属性值搜素使用正则,即对iamstrang属性值搜索**
-```
+```py
 content = soup.find_all(class_=re.compile('iam'))[0]
 print(content.string)       #我需要的信息3
 ```
@@ -283,7 +283,7 @@ print(content.string)       #我需要的信息3
 * 因此，当需要把Python里面的数据发送给网页或者其他编程语言的时候，可以先将Python的数据转化为JSON格式的字符串，然后将字符串传递给其他语言，其他语言再将JSON格式的字符串转换为它自己的数据格式
 * **列表\字典与字符串相互转化**
 * *python中字典or列表 与 json格式字符串的相互转化*
-``` 
+``` py
 import json
 
 data = {
@@ -326,7 +326,7 @@ print(data3)    #str
 - 源代码最下面的JavaScript代码，其中有一段：
 `{"code": "\u884c\u52a8\u4ee3\u53f7\uff1a\u5929\u738b\u76d6\u5730\u864e"}`
 - 使用Python去解析，发现可以得到网页上面的内容
-```
+```py
 import json
 
 html_json = '{"code": "\u884c\u52a8\u4ee3\u53f7\uff1a\u5929\u738b\u76d6\u5730\u864e"}'
@@ -334,7 +334,7 @@ html_dic = json.loads(html_json)
 print(html_dic)      #{'code': '行动代号：天王盖地虎'}
 ```
 - **这种假的异步加载页面，其处理思路一般是使用正则表达式从页面中把数据提取出来，然后直接解析**
-```
+```py
 import json
 import requests
 import re
@@ -361,7 +361,7 @@ secret1: "kingname is genius."
 secret2: "kingname"
 ```
 **如果修改这两个参数**
-```
+```py
 import json
 import requests
 
@@ -374,7 +374,7 @@ print(json.loads(return_json_1.content.decode()))   #{'success': False, 'reason'
 print(json.loads(return_json_2.content.decode()))   #{'success': False, 'reason': '参数不全'}
 ```
 - 打开这个练习页的源代码，在源代码中可以找到secret_2
-```
+```html
 <html>
     <head>
         <title>exercise ajax load</title>
@@ -391,7 +391,7 @@ print(json.loads(return_json_2.content.decode()))   #{'success': False, 'reason'
 - 源代码里面没有secret1，因此就要考虑这个参数是不是来自于另一个异步请求
 - 继续在开发者工具中查看其他请求，可以成功找到secret1,注意，它的名字变为了“code”，但是从值可以看出这就是secret1
 * **不少网站也会使用这种改名字的方式来迷惑爬虫开发者**
-```
+```js
 {code: "kingname is genius.", success: true}
 code: "kingname is genius."
 success: true
@@ -399,7 +399,7 @@ success: true
 - 这一条请求就是一个不带任何参数的GET请求
 - *对于这种多次请求才能得到数据的情况，解决办法就是逐一请求，得到返回结果以后再发起下一个请求。具体到这个例子中，那就是先从源代码里面获得secret2，再通过GET请求得到secret1，最后使用secret1和secret2来获取页面上显示的内容*
 * **[爬取网站]http://exercise.kingname.info/exercise_ajax_3.html)**
-```example
+```py
 import json
 import requests
 import re
@@ -439,7 +439,7 @@ print(code)                 #行动代号：哎哟不错哦
 - **对于这种简单的登录功能，可以使用抓取异步加载网页的方式来进行处理**
 - 在Chrome开发者工具中可以发现，当单击“登录”按钮时，网页向后台发送了一条请求
 **`{"code": "kingname is genius", "success": true}`**
-```
+```py
 import requests
 import json
 
@@ -465,7 +465,7 @@ print(code__dict['code'])
 - 页面看起来像是发起了一个普通的GET方式的异步请求给http://exercise.kingname.info/exercise_headers_backend
 - 使用requests尝试获取这个网址的返回信息,结果发现失败
 - 使用浏览器访问网站的时候，网站可以看到一个名称为Headers（请求头）的东西
-```
+```js
 headers = {
             Accept: */*
             Accept-Encoding: gzip, deflate
@@ -484,7 +484,7 @@ headers = {
 - 要换头，首先就需要知道浏览器的头是什么样的。因此需要在Chrome浏览器开发者工具的“Network”选项卡的Request Headers里面观察这一次请求的请求头
 - 在requests里面，设置请求头的参数名称为“headers”，它的值是一个字典
 **带有请求头的请求，使用requests的发送格式为：**
-```
+```py
 html = requests.get(url, headers=字典).content.decode()
 html = requests.post(url, json=xxx, headers=字典).content.decode()
 ```
@@ -507,7 +507,7 @@ html = requests.post(url, json=xxx, headers=字典).content.decode()
 ### selenium的使用
 #### 获取源代码
 * **将chromedriver与代码放在同一个文件夹中以方便代码直接调用**
-```  
+```  py
 # 初始化selenium
 from selenium import webdriver
 driver = webdriver.Chrome('./chromedriver')     
@@ -522,7 +522,7 @@ driver = webdriver.Chrome('./chromedriver')
 `html = driver.page_source`
 - 就能得到在Chrome开发者工具中出现的HTML代码
 **综合：**
-```
+```py
 from selenium import webdriver
 import time
 
@@ -541,21 +541,21 @@ input('按任意键结束：')
 
 #### 在网页中获取元素
 *在网页中寻找需要的内容，可以使用类似于Beautiful Soup4 的语法：*
-```
+```py
 element = driver.find_element_by_id("passwd-id") #如果有多个符合条件的，返回第1个
 element = driver.find_element_by_name("passwd") #如果有多个符合条件的，返回第1个
 element_list = driver.find_elements_by_id("passwd-id") #以列表形式返回所有的符合条件的element
 element_list = driver.find_elements_by_name("passwd") #以列表形式返回所有的符合条件的element
 ```
 **也可以使用XPath**
-```
+```py
 element = driver.find_element_by_xpath("//input[@id='passwd-id']") 
 #如果有多个符合条件的，返回第1个
 element = driver.find_elements_by_xpath("//div[@id='passwd-id']") 
 #以列表形式返回所有的符合条件的element
 ```
 [练习网站](http://exercise.kingname.info/exercise_advanced_ajax.html)
-```
+```py
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
@@ -587,7 +587,7 @@ driver.quit()
 <hr/>
 
 * 爬虫首先访问视频页面，通过正则表达式获取vid和pid，并将结果保存到“necessary_info”这个类属性对应的字典中
-```
+```py
 # 核心代码
 def get_necessary_id(self):
   source = self.get_source(self.url, self.HEADERS)
@@ -597,7 +597,7 @@ def get_necessary_id(self):
   self.necessary_info['pid'] = pid
 ```
 * 访问评论的接口，用Python发起请求，获得评论数据
-```
+```py
 def get_comment(self):
     url = self.COMMENT_URL.format(xid=self.necessary_info['xid'],
                              pid=self.necessary_info['pid'])
@@ -609,7 +609,7 @@ def get_comment(self):
         print(f'发帖人： {comment["user"]["username"]}, 评论内容：{comment["content"]}')
 ```
 * 代码中，提前定义的self.COMMENT_URL和self.HEADERS
-```
+```py
 # 综合
 import re
 import json
@@ -636,23 +636,24 @@ class LetvSpider(object):
         self.url = url
         self.get_necessary_id()
         self.get_comment()
-    
+
+    # 得到request返回的html--str
     def get_source(self,url,headers):
         return requests.get(url,headers).content.decode()
     
     def get_necessary_id(self):
-        source = self.get_source(self.url,self.HEADERS)
-        vid = re.search('vid: (\d+)',source).group(1)
+        source = self.get_source(self.url,self.HEADERS) # 得到html
+        vid = re.search('vid: (\d+)',source).group(1)   #re到vid、pid
         pid = re.search('pid: (\d+)',source).group(1)
-        self.necessary_info['xid'] = vid 
+        self.necessary_info['xid'] = vid        #传入vid、pid到字典
         self.necessary_info['pid'] = pid
     
     def get_comment(self):
         url = self.COMMENT_URL.format(xid=self.necessary_info['xid'],
-        pid=self.necessary_info['pid'])
-        source = self.get_source(url,self.HEADERS)
-        source_json = source[source.find('{"'): -1]
-        comment_dict = json.loads(source_json)
+        pid=self.necessary_info['pid'])     # format格式化  url 评论list的request_url
+        source = self.get_source(url,self.HEADERS)  # 调用get_source()
+        source_json = source[source.find('{"'): -1] # str切片
+        comment_dict = json.loads(source_json)  #一个字典
         comments = comment_dict['data']
         for comment in comments:
             print(f'发帖人：{comment["user"]["username"]},评论内容:{comment["content"]}')
@@ -685,7 +686,7 @@ if __name__ == '__main__':
 '''
 ```
 
-```
+```py
 print("网站名：{name}, 地址 {url}".format(name="菜鸟教程", url="www.runoob.com"))
  
 # 通过字典设置参数
@@ -699,11 +700,29 @@ print("网站名：{0[0]}, 地址 {0[1]}".format(my_list))  # "0" 是必须的
 # 网站名：菜鸟教程, 地址 www.runoob.com
 ```
 
-```
+```py
 class AssignValue(object):
     def __init__(self, value):
         self.value = value
 my_value = AssignValue(6)
 print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
 # value 为: 6
+```
+
+# 模拟登录与验证码
+- 对于一个需要登录才能访问的网站，它的页面在登录前和登录后可能是不一样的
+- 如果直接使用requests去获取源代码，只能得到登录以前的页面源代码
+## 模拟登录
+* 1.使用Selenium操作浏览器登录和使用Cookies登录虽然简单粗暴，但是有效
+* 2.使用模拟提交表单登录虽然较为麻烦，但可以实现自动化
+### 使用Selenium模拟登录
+```
+     使用Selenium来进行模拟登录，整个过程非常简单。流程如下。
+（1）初始化ChromeDriver。
+（2）打开知乎登录页面。
+（3）找到用户名的输入框，输入用户名。
+（4）找到密码输入框，输入用户名。
+（5）手动单击验证码。
+（6）按下Enter键。
+
 ```

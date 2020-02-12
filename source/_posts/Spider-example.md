@@ -10,7 +10,7 @@ tags:
 * **使用XPath爬取,并将数据保存到csv文件中**
 * **文件名使用该排行榜所在时间段**
 <!-- more -->
-```源码
+```python
 import requests
 import csv
 import lxml.html
@@ -56,7 +56,7 @@ with open(f'{time_num2}.csv','w',encoding='utf-8') as f:
 # 爬取baidu上搜到的图片(初级)
 ## thumbURL
 - *分辨率极低*
-```
+```py
 import re
 import requests
 import os 
@@ -92,7 +92,7 @@ if __name__ == '__main__':
 ```
 ## objURL
 *分辨率较高，但有的图爬不了*
-```
+```py
 import re
 import requests
 import os 
@@ -137,7 +137,7 @@ if __name__ == '__main__':
 ```
 # 爬取ins上的图片(初级版) 
 - *分辨率低*
-```
+```python
 import requests
 import json
 import lxml.html

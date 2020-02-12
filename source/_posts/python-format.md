@@ -10,7 +10,7 @@ str.format()，它增强了字符串格式化的功能。
 基本语法是通过 {} 和 : 来代替以前的 % 。
 <!--more -->
 ## format 函数可以接受不限个参数，位置可以不按顺序
-```
+```py
 >>>"{} {}".format("hello", "world")    # 不设置指定位置，按默认顺序
 'hello world'
  
@@ -22,7 +22,7 @@ str.format()，它增强了字符串格式化的功能。
 ```
 
 ## 设置参数
-```
+```py
 print("网站名：{name}, 地址 {url}".format(name="菜鸟教程", url="www.runoob.com"))
  
 # 通过字典设置参数
@@ -41,7 +41,7 @@ print("网站名：{0[0]}, 地址 {0[1]}".format(my_list))  # "0" 是必须的
 ```
 
 通过字典和列表的另一种写法
-```
+```py
 >>> hash = {'name':'hoho','age':18}
 >>> 'my name is {name},age is {age}'.format(**hash)        #**dict
 'my name is hoho,age is 18'
@@ -52,7 +52,7 @@ print("网站名：{0[0]}, 地址 {0[1]}".format(my_list))  # "0" 是必须的
 ```
 
 ## 向`str.format`传入对象
-```
+```py
 class AssignValue(object):
     def __init__(self, value):
         self.value = value
@@ -63,7 +63,7 @@ print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
 ```
 
 ## 数字格式化
-```
+```py
 >>> print("{:.2f}".format(3.1415926));
 3.14
 ```
