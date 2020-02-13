@@ -8,8 +8,8 @@ tags:
 >**自己动手做的python爬虫**&emsp;&emsp;&emsp;[GitHub链接](https://github.com/yq010105/spider_learn "github")
 很垃圾！！！
 <!-- more -->
->
-# 爬取bilibili每日排行榜数据
+
+# 1. 爬取bilibili每日排行榜数据
 * **使用XPath爬取,并将数据保存到csv文件中**
 * **文件名使用该排行榜所在时间段**
 
@@ -56,8 +56,8 @@ with open(f'{time_num2}.csv','w',encoding='utf-8') as f:
 `2020年02月07日 - 2020年02月10日`
 ![bilibili_csv](/img/bilibili_csv.png)
 
-# 爬取baidu上搜到的图片(初级)
-## thumbURL
+# 2. 爬取baidu上搜到的图片(初级)
+## 2.1 thumbURL
 - *分辨率极低*
 ```py
 import re
@@ -93,7 +93,7 @@ def main():
 if __name__ == '__main__':
         main()
 ```
-## objURL
+## 2.2 objURL
 *分辨率较高，但有的图爬不了*
 ```py
 import re
@@ -138,7 +138,7 @@ def main():
 if __name__ == '__main__':
         main()
 ```
-# 爬取ins上的图片(初级版) 
+# 3. 爬取ins上的图片(初级版) 
 - *分辨率低*
 ```python
 import requests

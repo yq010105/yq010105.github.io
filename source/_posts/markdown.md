@@ -2,13 +2,13 @@
 title: Markdown
 date: 2020-02-08 12:00:45
 tags:  
-    - MD
+    - Markdown
 ---
 **关于我初次使用Markdown以来遇到的问题**
 *Markdown笔记本*
 <!-- more -->
 
-# 空格
+# 1. 空格
 | 语法 | example | 解释 |
 | :----: | :----: | :----: |
 | `ok&nbsp;ok`&nbsp; | ok&nbsp;ok | 它是按下space键产生的空格,叫不换行空格，全称是 No-Break Space |
@@ -19,12 +19,12 @@ tags:
 
 >参考[网站](https://www.jianshu.com/p/31eade263e7a "简书")
 
-# 链接
-## 行内式(方便简洁)
+# 2. 链接
+## 2.1 行内式(方便简洁)
 `[链接文字](链接网址 "标题")`
 `This is an [example link](https://www.jianshu.com/p/31eade263e7a)`
 会显示为:&nbsp;This is an [example link](https://www.jianshu.com/p/31eade263e7a)
-## 锚点
+## 2.2 锚点
 * 第一种
 ```
 - [测试](#测试)
@@ -44,8 +44,8 @@ l
 
 > 参考[link](https://blog.csdn.net/wangzhibo666/article/details/88731227 "CSDN")
 
-# 图片
-## 网络图片的添加
+# 3. 图片
+## 3.1 网络图片的添加
 ```
 ![alt 属性文本](图片地址)
 
@@ -56,7 +56,7 @@ l
 ```
 ![四月是你的谎言](https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=905665511,4125694826&fm=26&gp=0.jpg "四谎")
 
-## 本地图片的添加
+## 3.2 本地图片的添加
 ```
 ![avatar](/img/picture_exam.jpeg "example")
 --or--
@@ -68,7 +68,7 @@ l
 <img src="/img/picture_exam.jpeg " width = 10% height = 10% div align=right />
 
 
-# 表格
+# 4. 表格
 ```
 | 左对齐 | 右对齐 | 居中对齐 |
 | :-----| ----: | :----: |
@@ -82,7 +82,7 @@ l
 
 >参考教程:[markdown](https://www.runoob.com/markdown/md-tutorial.html)
 
-# 设置字体大小颜色
+# 5. 设置字体大小颜色
 ```
 <font face="黑体">我是黑体字</font>
 <font face="微软雅黑">我是微软雅黑</font>

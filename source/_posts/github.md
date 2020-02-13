@@ -8,34 +8,34 @@ tags:
 *Github宝库*
 <!-- more -->
 
-# Github
-## 搜索技巧
-### in:name spring boot
+# 1. Github
+## 1.1 搜索技巧
+### ① in:name spring boot
 名字里带spring boot，在name中搜
 
-### in:readme spring boot
+### ② in:readme spring boot
 readme中带spring boot，在readme中搜
-### in:description
+### ③ in:description
 在描述中搜
-### stars:>3000
+### ④ stars:>3000
 stars 多于3000的数据库
-### forks:>3000
+### ⑤ forks:>3000
 forks 多于3000的数据库
-### language:java
+### ⑥ language:java
 java 语言的数据库
-### push:>2019-02-01
+### ⑦ push:>2019-02-01
 在2019.02.01以后有过更新的数据库
 >在[大佬b站视频](https://www.bilibili.com/video/av75587104)中学习
 
-# Git
-## git使用
+# 2. Git
+## 2.1 git使用
 * git add .
 * git commit -m 'title'
 * git push 
 * git pull
 * git clone https://........
 
-## .gitignore文件
+## 2.2 .gitignore文件
 
 |例子|解释|
 |:----:|:----:|

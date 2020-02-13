@@ -1,7 +1,7 @@
 ---
-title: 分类
+title: YQI
 date: 2020-02-08 14:43:19
-type: "categories"
+type: "tags"
 comments: false
 ---
 

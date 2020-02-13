@@ -9,8 +9,8 @@ tags:
 >参考Github上的[教程](https://github.com/kingname/SourceCodeOfBook "Github")学习
 一个连python都没有完全学会的菜鸡来学爬虫
 <!-- more -->
-# 线程
-## 线程Pool
+# 1. 线程
+## 1.1 线程Pool
 ```py
 from multiprocessing.dummy import Pool   
 def calc_power2(num):
@@ -24,13 +24,13 @@ print(f'0~9的平方分别为：{result}')
 <hr/>
 
 
-## 所用函数
+## 1.2 所用函数
 `time.time()` &nbsp; 程序当前时间
 eg：用来对比单线程和多线程访问baidu的速度
 
 
-# request库
-## 基础用法
+# 2. request库
+## 2.1 基础用法
 ```py
 url = ''
 headers = {
@@ -40,7 +40,7 @@ response = requests.get(url,headers=headers)
 response.encoding = 'utf-8'  #或者GBK
 html = response.text
 ```
-## 进阶用法
+## 2.2 进阶用法
 * **使用requests模拟发送get请求**
 ```py
 import requests 
@@ -62,8 +62,8 @@ print(html)
 
 >参考[学习网站](http://exercise.kingname.info/exercise_ajax_1.html)，([异步GET与POST请求](#异步GET与POST请求))
 
-# re库
-## 基础用法
+# 3. re库
+## 3.1 基础用法
 ```py
 re.findall(r'',html,re.S)   #返回一个列表，这是一个列表所以可以取第一个数据
                             #re.findall(r'',html,re.S)[0]
@@ -77,14 +77,14 @@ re.search(r'href="sf">(.*?)<').group()
                             #group(1)返回的是()中的字符串内容:.*?
                             #如果(.*?)有多个，则使用group(1),group(2)........
 ```
-# 正则表达式
+# 4. 正则表达式
 `.*?`
 
-# Xpath--lxml库
+# 5. Xpath--lxml库
 * XPath是一种查询语言，能从XML\HTML的树状结构中寻找节点
 
-## XPath语法
-### XPath语法解析
+## 5.1 XPath语法
+### 5.1.1 XPath语法解析
 ```html
 example_html
 <html>
@@ -110,13 +110,13 @@ example_html
 ```
 `info = selector.xpath('//div[@class="useful"]/ul/li/text()')`
 就可以提取出class="userful"中的三句话，返回一个列表
-### 基本框架
+### 5.1.2 基本框架
 ```py
 import lxml.html
 selector = lxml.html.fromstring('网页源代码')    #网页源代码可用requests来获取
 info = selector.xpath('一段XPath语句')
 ```
-### example
+### 5.1.3 example
 ```py 
 import lxml.html
 
@@ -216,17 +216,17 @@ data = selector.xpath('//div[@id="test3"]')[0]
 info = data.xpath('string(.)')
 print(info)     #就可以提取出所有的文本信息了
 ```
-## XPath通过chrome辅助构造
+## 5.2 XPath通过chrome辅助构造
 在一行源码单击右键，选择“Copy”→“Copy XPath”命令
 把结果粘贴下来，可以看到如下的XPath语句：
 `//*[@id="thread_list"]/li[2]/div/div[2]/div[1]/div[1]/a`
 *其中方括号中的数字，表示这是第几个该标签，但需要注意，这里的数字是从1开始*
 
 
-# Beautiful Soup4库(BS4)
+# 6. Beautiful Soup4库(BS4)
 *BS4在某些方面比XPath易懂，但是不如XPath简洁，而且由于它是使用Python开发的，因此速度比XPath慢。*
 使用Beautiful Soup4提取HTML内容，一般要经过以下两步。
-## bs4处理步骤
+## 6.1 bs4处理步骤
 * 1)处理源代码生成BeautifulSoup对象。
 解析源代码生成BeautifulSoup对象，使用以下代码：
 `soup = BeautifulSoup(网页源代码, '解析器')`
@@ -239,7 +239,7 @@ print(info)     #就可以提取出所有的文本信息了
 `soup.find(class_='属性值')`
 *由于HTML中的class属性与Python的class关键字相同，因此为了不产生冲突，BS4规定，如果遇到要查询class的情况，使用“class_”来代替*
 
-## [example](http://exercise.kingname.info/exercise_bs_1.html) 
+## 6.2 [example](http://exercise.kingname.info/exercise_bs_1.html) 
 ```py
 import request
 from bs4 import BeautifulSoup
@@ -274,14 +274,14 @@ content = soup.find_all(class_=re.compile('iam'))[0]
 print(content.string)       #我需要的信息3
 ```
 
-# 异步加载与请求头
-## 异步加载
+# 7. 异步加载与请求头
+## 7.1 异步加载
 *异步加载：一个页面，点击后网址不变，页面改变*
-### AJAX技术
+### 7.1.1 AJAX技术
 * AJAX是Asynchronous JavaScript And XML的首字母缩写，意为异步JavaScript与XML
 * 使用AJAX技术，可以在不刷新网页的情况下更新网页数据。使用AJAX技术的网页，一般会使用HTML编写网页的框架。
 * 在打开网页的时候，首先加载的是这个框架。剩下的部分将会在框架加载完成以后再通过JavaScript从后台加载。
-### JSON
+### 7.1.2 JSON
 * JSON的全称是JavaScript Object Notation，是一种轻量级的数据交换格式。网络之间使用HTTP方式传递数据的时候，绝大多数情况下传递的都是字符串。
 * 因此，当需要把Python里面的数据发送给网页或者其他编程语言的时候，可以先将Python的数据转化为JSON格式的字符串，然后将字符串传递给其他语言，其他语言再将JSON格式的字符串转换为它自己的数据格式
 * **列表\字典与字符串相互转化**
@@ -314,7 +314,7 @@ print(data3)    #str
 * **str=json.dumps(dict)**
 * **dict=json.loads(str)**
 
-### 异步GET与POST请求
+### 7.1.3 异步GET与POST请求
 - 使用异步加载技术的网站，被加载的内容是不能在源代码中找到的。
 - 为了解决这个问题，就需要使用Google Chrome浏览器的开发者模式。在网页上单击右键，选择“检查”命令，然后定位到“Network”选项卡
 - 接下来需要刷新网页。在Windows下，按F5键或者单击地址栏左边的“刷新”按钮
@@ -323,7 +323,7 @@ print(data3)    #str
 - 对于网页中的第2条内容，查看“Headers”选项卡，可以看到，这是使用POST方式向http://exercise.kingname.info/ajax_1_postbackend 发送请求，并以JSON格式提交数据
 >具体代码实现看*request*&nbsp;&nbsp;的**[进阶用法](#进阶用法)**
 
-### 特殊的异步加载
+### 7.1.4 特殊的异步加载
 * **[练习页面](http://exercise.kingname.info/exercise_ajax_2.html)**
 - 伪装成异步加载的后端渲染,数据就在源代码里，但却不直接显示出来
 - 源代码最下面的JavaScript代码，其中有一段：
@@ -350,7 +350,7 @@ print(code_dict['code'])
 #行动代号：天王盖地虎
 ```
 
-### 多次请求的异步加载
+### 7.1.5 多次请求的异步加载
 * **[练习页面](http://exercise.kingname.info/exercise_ajax_3.html)**
 - 还有一些网页，显示在页面上的内容要经过多次异步请求才能得到。
 - 第1个AJAX请求返回的是第2个请求的参数，第2个请求的返回内容又是第3个请求的参数，只有得到了上一个请求里面的有用信息，才能发起下一个请求
@@ -435,7 +435,7 @@ code = ajax_2_dict['code']
 print(code)                 #行动代号：哎哟不错哦
 ```
 
-### 基于异步加载的简单登录
+### 7.1.6 基于异步加载的简单登录
 * **[练习页面](http://exercise.kingname.info/exercise_ajax_4.html)**
 - 网站的登录方式有很多种，其中有一种比较简单的方式，就是使用AJAX发送请求来进行登录
 - 在[练习页面](http://exercise.kingname.info/exercise_ajax_4.html)中根据输入框中的提示，使用用户名“kingname”和密码“genius”进行登录,登录成功以后弹出提示框
@@ -455,15 +455,15 @@ print(code__dict['code'])
 ```
 - 这就是使用POST方式的最简单的AJAX请求。使用获取POST方式的AJAX请求的代码，就能成功获取到登录以后返回的内容
 
-## 请求头
-### 请求头的作用
+## 7.2 请求头
+### 7.2.1 请求头的作用
 - 使用计算机网页版外卖网站的读者应该会发现这样一个现象：第一次登录外卖网页的时候会让你选择当前所在的商业圈，一旦选定好之后关闭浏览器再打开，网页就会自动定位到先前选择的商业圈
 - 又比如，例如携程的网站，使用计算机浏览器打开的时候，页面看起来非常复杂多样
 - 同一个网址，使用手机浏览器打开时，网址会自动发生改变，而且得到的页面竟然完全不同
 **同一个网址，PC端和手机端页面不同**
 * Headers称为请求头，浏览器可以将一些信息通过Headers传递给服务器，服务器也可以将一些信息通过Headers传递给浏览器，电商网站常常应用的Cookies就是Headers里面的一个部分
 
-### 伪造请求头
+### 7.2.2 伪造请求头
 - 打开[练习页](http://exercise.kingname.info/exercise_headers.html)，使用Chrome的开发者工具监控这个页面的网页请求
 - 页面看起来像是发起了一个普通的GET方式的异步请求给http://exercise.kingname.info/exercise_headers_backend
 - 使用requests尝试获取这个网址的返回信息,结果发现失败
@@ -495,20 +495,20 @@ html = requests.post(url, json=xxx, headers=字典).content.decode()
 - 在爬虫里面创建一个字典，将Chrome的请求头的内容复制进去，并调整好格式，发起一个带有Chrome请求头的爬虫请求，可以发现请求获得成功
 - 虽然对于某些网站，在请求头里面只需要设置User-Agent就可以正常访问了，但是为了保险起见，还是建议把所有项目都带上，这样可以让爬虫更“像”浏览器
 
-## 模拟浏览器
+## 7.3 模拟浏览器
 - **[练习页面](http://exercise.kingname.info/exercise_advanced_ajax.html)**
 - *问题：*
 - 有一些网站在发起AJAX请求的时候，会带上特殊的字符串用于身份验证。这种字符串称为Token
 - 打开练习页面，这个页面在发起AJAX请求的时候会在Headers中带上一个参数ReqTime；在POST发送的数据中会有一个参数sum
 - 多次刷新页面，可以发现ReqTime和sum一直在变化
 - 不难看出ReqTime是精确到毫秒的时间戳，即使使用Python生成了一个时间戳，也不能得到网页上面的内容
-### Selenium介绍
+### 7.3.1 Selenium介绍
 - 虽然在网页的源代码中无法看到被异步加载的内容，但是在Chrome的开发者工具的“Elements”选项卡下却可以看到网页上的内容
-### selenium安装
+### 7.3.2 selenium安装
 - 安装selenium `pip install selenium`
 - 下载ChromeDriver
-### selenium的使用
-#### 获取源代码
+### 7.3.3 selenium的使用
+#### 7.3.3.1 获取源代码
 * **将chromedriver与代码放在同一个文件夹中以方便代码直接调用**
 ```  py
 # 初始化selenium
@@ -538,11 +538,11 @@ input('按任意键结束：')
 ```
 **运行程序会出现以下界面**
 ![selenium](/img/selenium.png "selenium")
-#### 等待信息出现
+#### 7.3.3.2 等待信息出现
 - 设置了一个5s的延迟，这是由于Selenium并不会等待网页加载完成再执行后面的代码。它只是向ChromeDriver发送了一个命令，让ChromeDriver打开某个网页
 - 至于网页要开多久，Selenium并不关心。由于被异步加载的内容会延迟出现，因此需要等待它出现以后再开始抓取
 
-#### 在网页中获取元素
+#### 7.3.3.3 在网页中获取元素
 *在网页中寻找需要的内容，可以使用类似于Beautiful Soup4 的语法：*
 ```py
 element = driver.find_element_by_id("passwd-id") #如果有多个符合条件的，返回第1个
@@ -581,7 +581,7 @@ print(f'异步加载的内容是：{element.text}')
 
 driver.quit()
 ```
-## 实例：[乐视](http://www.le.com)爬取视频评论
+## 7.4 实例：[乐视](http://www.le.com)爬取视频评论
 * *1>分析网站的异步加载请求*
 * *2>使用requests发送请求*<hr/>
 * 通过使用Chrome的开发者工具分析页面的异步加载请求，可以发现评论所在的请求
@@ -712,14 +712,14 @@ print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
 # value 为: 6
 ```
 
-# 模拟登录与验证码
+# 8. 模拟登录与验证码
 - 对于一个需要登录才能访问的网站，它的页面在登录前和登录后可能是不一样的
 - 如果直接使用requests去获取源代码，只能得到登录以前的页面源代码
-## 模拟登录
+## 8.1 模拟登录
 * 1.使用Selenium操作浏览器登录和使用Cookies登录虽然简单粗暴，但是有效
 * 2.使用模拟提交表单登录虽然较为麻烦，但可以实现自动化
 
-### 使用Selenium模拟登录
+### 8.1.1 使用Selenium模拟登录
 ```
      使用Selenium来进行模拟登录，整个过程非常简单。流程如下。
 （1）初始化ChromeDriver。
@@ -736,7 +736,7 @@ print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
 - 在输入了密码以后，验证码框就会弹出来。知乎使用的验证码为点击倒立的文字，这种验证码不容易自动化处理，因此在这个地方让爬虫先暂停，手动点击倒立文字
 - 爬虫中的input()语句会阻塞程序，直到在控制台按下Enter键，爬虫才会继续运行
 
-### 使用Cookies登录
+### 8.1.2 使用Cookies登录
 - *Cookie是用户使用浏览器访问网站的时候网站存放在浏览器中的一小段数据*
 - Cookie的复数形式Cookies用来表示各种各样的Cookie。它们有些用来记录用户的状态信息；有些用来记录用户的操作行为；还有一些，具有现代网络最重要的功能：记录授权信息——用户是否登录以及用户登录哪个账号
 - 为了不让用户每次访问网站都进行登录操作，浏览器会在用户第一次登录成功以后放一段加密的信息在Cookies中。下次用户访问，网站先检查Cookies有没有这个加密信息，如果有并且合法，那么就跳过登录操作，直接进入登录后的页面
@@ -755,7 +755,7 @@ cookie: _zap=56180d87-245a-4b79-83e2-711f4629644e; d_c0="AMAY69ZKzRCPTh5KJj9edoI
 - 带上这个参数以后，爬虫依然会报一个警告，这是因为没有HTTPS的证书
 - 不过这个警告不会影响爬虫的运行结果。对于有强迫症的读者，可以参考相关内容为requests设置证书，从而解除这个警告
 
-### 模拟表单登录
+### 8.1.3 模拟表单登录
 **[练习页面](http://exercise.kingname.info/exercise_login?next=%2Fexercise_login_success)**
 - 这个登录页面多了一个“自动登录”复选框输入用户名kingname，密码genius，勾选“自动登录”复选框并单击“登录”按钮，可以看到登录成功后的页面
 - 打开Chrome的开发者工具并监控登录过程
@@ -848,8 +848,8 @@ print(after_login)
 </html>
 ```
 
-## 验证码
-### 肉眼打码
+## 8.2 验证码
+### 8.2.1 肉眼打码
 - 对于一次登录就可以长时间使用的情况，只需要识别一次验证码即可
 - 这种情况下，与其花时间开发一个自动识别验证码的程序，不如直接肉眼识别
 - **肉眼识别验证码有两种情况，借助浏览器与不借助浏览器**
@@ -899,7 +899,7 @@ print(f'请输入验证码后，网站返回：{after_check.content.decode()}')
 ```
 ![验证码](/img/captcha.png)
 
-### 自动打码
+### 8.2.2 自动打码
 1、Python图像识别
 - 对于验证码识别，Python也有现成的库来使用
 - 开源的OCR库pytesseract配合图像识别引擎tesseract，可以用来将图片中的文字转换为文本
@@ -939,7 +939,7 @@ print(code)
 *使用在线打码*
 在百度或者谷歌上面搜索“验证码在线识别”，就可以找到很多提供在线打码的网站。但是由于一般这种打码网站是需要交费才能使用的，所以要注意财产安全
 
-## 案例-自动登录果壳网
+## 8.3 案例-自动登录果壳网
 [目标网站](https://www.guokr.com)
 使用模拟登录与验证码识别的技术实现自动登录果壳网。 果壳网的登录界面有验证码，请使用人工或者在线打码的方式识别验证码，并让爬虫登录。登录以后可以正确显示“个人资料设置”界面的源代码
 - 涉及的知识点：

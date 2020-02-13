@@ -9,10 +9,10 @@ tags:
 <!--more -->
 
 # python_format
-str.format()，它增强了字符串格式化的功能。
-基本语法是通过 {} 和 : 来代替以前的 % 。
+&emsp;&emsp;&emsp;**`str.format()`，它增强了字符串格式化的功能**
+&emsp;&emsp;&emsp;**基本语法是通过 {} 和 : 来代替以前的 %**
 
-## format 函数可以接受不限个参数，位置可以不按顺序
+## 1. format 函数可以接受不限个参数，位置可以不按顺序
 ```py
 >>>"{} {}".format("hello", "world")    # 不设置指定位置，按默认顺序
 'hello world'
@@ -24,7 +24,7 @@ str.format()，它增强了字符串格式化的功能。
 'world hello world'
 ```
 
-## 设置参数
+## 2. 设置参数
 ```py
 print("网站名：{name}, 地址 {url}".format(name="菜鸟教程", url="www.runoob.com"))
  
@@ -54,7 +54,7 @@ print("网站名：{0[0]}, 地址 {0[1]}".format(my_list))  # "0" 是必须的
 'my name is hoho ,age 18'
 ```
 
-## 向`str.format`传入对象
+## 3. 向`str.format`传入对象
 ```py
 class AssignValue(object):
     def __init__(self, value):
@@ -65,7 +65,7 @@ print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
 # value 为: 6
 ```
 
-## 数字格式化
+## 4. 数字格式化
 ```py
 >>> print("{:.2f}".format(3.1415926));
 3.14
@@ -96,6 +96,8 @@ print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
 - **+ 表示在正数前显示 +，负数前显示 -；  （空格）表示在正数前加空格**
 - **b、d、o、x 分别是二进制、十进制、八进制、十六进制**
 
-## 此外还可以用大括号 {} 来转义大括号
-`print ("{} 对应的位置是 {{0}}".format("runoob"))`
+## 5. 此外还可以用大括号 {} 来转义大括号
+```py
+print ("{} 对应的位置是 {{0}}".format("runoob"))
+```
 *结果为*：**runoob 对应的位置是 {0}**
