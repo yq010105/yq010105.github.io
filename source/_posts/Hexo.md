@@ -82,7 +82,8 @@ live2d:
 * **卸载模型:**  `npm uninstall live2d-widget-model-模型名`
 * **卸载插件:**  `npm uninstall hexo-helper-live2d`
 * **删掉yilia/_config.yml中配置**
-* *过于占内存，已卸载*
+* ~~*过于占内存，已卸载*~~、*33真是太可爱了*
+>[2233娘的model](https://github.com/52cik/bilibili-haruna)
 >参考[这一篇](http://yansheng836.coding.me/article/e239dc63.html)
 
 # 6. 网易云音乐插件
@@ -115,3 +116,172 @@ music:
   text: '底部文字'
 ```
 >参考大佬做的[yilia-plus](https://github.com/JoeyBling/hexo-theme-yilia-plus)中的配置
+
+# 7. 添加背景特效
+## 7.1 点击爱心
+- 在`/yilia/source/js/`下添加`love.js`文件,书写代码
+```js
+(function (window, document, undefined) {
+    var hearts = [];
+    window.requestAnimationFrame = (function () {
+        return window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            function (callback) {
+                setTimeout(callback, 1000 / 60);
+            }
+    })();
+    init();
+
+    function init() {
+        css(
+            ".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}"
+        );
+        attachEvent();
+        gameloop();
+    }
+
+    function gameloop() {
+        for (var i = 0; i < hearts.length; i++) {
+            if (hearts[i].alpha <= 0) {
+                document.body.removeChild(hearts[i].el);
+                hearts.splice(i, 1);
+                continue;
+            }
+            hearts[i].y--;
+            hearts[i].scale += 0.004;
+            hearts[i].alpha -= 0.013;
+            hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i]
+                .alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale +
+                ") rotate(45deg);background:" + hearts[i].color;
+        }
+        requestAnimationFrame(gameloop);
+    }
+
+    function attachEvent() {
+        var old = typeof window.onclick === "function" && window.onclick;
+        window.onclick = function (event) {
+            old && old();
+            createHeart(event);
+        }
+    }
+
+    function createHeart(event) {
+        var d = document.createElement("div");
+        d.className = "heart";
+        hearts.push({
+            el: d,
+            x: event.clientX - 5,
+            y: event.clientY - 5,
+            scale: 1,
+            alpha: 1,
+            color: randomColor()
+        });
+        document.body.appendChild(d);
+    }
+
+    function css(css) {
+        var style = document.createElement("style");
+        style.type = "text/css";
+        try {
+            style.appendChild(document.createTextNode(css));
+        } catch (ex) {
+            style.styleSheet.cssText = css;
+        }
+        document.getElementsByTagName('head')[0].appendChild(style);
+    }
+
+    function randomColor() {
+        return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) +
+            ")";
+    }
+})(window, document);
+```
+- 在`yilia/layout/layout.ejs`中添加代码(切记在</body>标签前添加)
+```js
+<!-- 《页面点击小红心 -->
+<% if (theme.love){ %>
+  <script type="text/javascript" src="/js/love.js"></script>
+<% } %>
+<!-- 页面点击小红心》 -->
+```
+- 在`yilia/_config.yml`中添加配置
+```yml
+#点击小红心
+love: true
+```
+
+## 7.2 背景线条
+- 在`yilia/layout/layout.ejs`中添加代码
+```js
+<!--动态线条背景-->
+<% if (theme.canvas_nest.enable){ %>
+  <script type="text/javascript" color="<%=theme.canvas_nest.color %>" opacity="<%=theme.canvas_nest.opacity %>" 
+      zIndex="<%=theme.canvas_nest.zIndex %>" count="<%=theme.canvas_nest.count %>" 
+      src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+  </script>
+<% } %>
+```
+- 在`yilia/_config.yml`中添加配置
+```yml
+# 动态线条效果，会向鼠标集中
+canvas_nest:
+  enable: false
+  color: '255, 235, 59'        # color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  pointColor: '156,39,176'     # color of points, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  opacity: '0.8'               # the opacity of line (0~1), default: 0.5.
+  count: '99'                  # the number of lines, default: 99.
+  zIndex: '-1'                 # z-index property of the background, default: -1.
+```
+## 7.3 背景点击文字
+- 在`yilia/source/js/`下添加`click_show_text.js`文件，添加代码
+```js
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array
+        ("富强", "民主", "文明", "和谐", "自由", "平等", "公正", "法治", "爱国", "敬业", "诚信", "友善");
+        var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 5,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "#FF0000"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+			3000,
+			function() {
+			    $i.remove();
+			});
+    });
+    setTimeout('delay()', 2000);
+});
+
+function delay() {
+    $(".buryit").removeAttr("onclick");
+}
+```
+- 在`yilia/layout/layout.ejs`中添加代码
+```js
+<!--单击显示文字-->
+<% if (theme.click_show_text){ %>
+  <script type="text/javascript" src="/js/click_show_text.js"></script>
+<% } %>
+```
+- 在`yilia/_config.yml`中添加配置
+```yml
+# 鼠标点击显示文字
+click_show_text: false
+```
+>[参考博客](http://yansheng836.coding.me/article/cf9c6a5e.html)
