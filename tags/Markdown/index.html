@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python_note | Yun.Qi</title>
+  <title>Tag: Markdown | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="python，边学爬虫，边把不会的python知识不全自己的Python笔记">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Python_note">
-<meta property="og:url" content="http://yoursite.com/2020/02/09/Python-note/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Yun.Qi">
+<meta property="og:url" content="http://yoursite.com/tags/Markdown/index.html">
 <meta property="og:site_name" content="Yun.Qi">
-<meta property="og:description" content="python，边学爬虫，边把不会的python知识不全自己的Python笔记">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-09T07:38:38.000Z">
-<meta property="article:modified_time" content="2020-02-13T04:47:19.641Z">
 <meta property="article:author" content="Yun Qi">
-<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Yun.Qi" type="application/atom+xml">
@@ -199,530 +194,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python-note" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Python_note
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/02/08/markdown/" class="archive-article-date">
+  	<time datetime="2020-02-08T04:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-08</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/02/08/markdown/">Markdown</a>
     </h1>
   
 
-        
-        <a href="/2020/02/09/Python-note/" class="archive-article-date">
-  	<time datetime="2020-02-09T07:38:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-09</time>
-</a>
-        
-      </header>
-      <div align="center" class="post-count">
-       字数: 1,927字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">Mystery</a>|&emsp;预计阅读时长：8分钟
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>python，边学爬虫，边把不会的python知识不全</strong><br><em>自己的Python笔记</em></p>
-<a id="more"></a>
-<h1 id="1-文件管理（txt）"><a href="#1-文件管理（txt）" class="headerlink" title="1. 文件管理（txt）"></a>1. 文件管理（txt）</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fd = open(<span class="string">'file.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>)      <span class="comment">#utf-8 or GBK</span></span><br><span class="line">fd.write(content)     </span><br><span class="line">fd.close()</span><br></pre></td></tr></table></figure>
-<p>其中content可以是字符串，变量，\t ……</p>
-<hr/>
-
-
-
-<table>
-<thead>
-<tr>
-<th align="center">r</th>
-<th align="center">w</th>
-<th align="center">a</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">只读</td>
-<td align="center">覆盖写</td>
-<td align="center">添加写</td>
-</tr>
-</tbody></table>
-<h1 id="2-csv文件"><a href="#2-csv文件" class="headerlink" title="2. csv文件"></a>2. csv文件</h1><h2 id="2-1-列表序列数据"><a href="#2-1-列表序列数据" class="headerlink" title="2.1 列表序列数据"></a>2.1 列表序列数据</h2><ul>
-<li>headers :表头</li>
-<li>rows :内容</li>
-<li>f_csv = csv.writer(f)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>f为open(‘file.txt’,’w’,encoding=’utf-8’)</em></li>
-<li>f_csv.writerow(headers)</li>
-<li>f_csv.writerows(rows)<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">headers = [<span class="string">'class'</span>,<span class="string">'name'</span>,<span class="string">'sex'</span>,<span class="string">'height'</span>,<span class="string">'year'</span>]</span><br><span class="line"></span><br><span class="line">rows = [</span><br><span class="line">        [<span class="number">1</span>,<span class="string">'xiaoming'</span>,<span class="string">'male'</span>,<span class="number">168</span>,<span class="number">23</span>],</span><br><span class="line">        [<span class="number">1</span>,<span class="string">'xiaohong'</span>,<span class="string">'female'</span>,<span class="number">162</span>,<span class="number">22</span>],</span><br><span class="line">        [<span class="number">2</span>,<span class="string">'xiaozhang'</span>,<span class="string">'female'</span>,<span class="number">163</span>,<span class="number">21</span>],</span><br><span class="line">        [<span class="number">2</span>,<span class="string">'xiaoli'</span>,<span class="string">'male'</span>,<span class="number">158</span>,<span class="number">21</span>]</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'test.csv'</span>,<span class="string">'w'</span>,newline=<span class="string">''</span>)<span class="keyword">as</span> f:</span><br><span class="line">    f_csv = csv.writer(f)</span><br><span class="line">    f_csv.writerow(headers)</span><br><span class="line">    f_csv.writerows(rows)</span><br></pre></td></tr></table></figure></li>
-<li>注意：如果打开csv文件出现空行的情况，那么需要添加一个参数 newline=”*<br><code>with open(&#39;test.csv&#39;,&#39;w&#39;,newline=&#39;&#39;)as f:</code></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">class</th>
-<th align="center">name</th>
-<th align="center">sex</th>
-<th align="center">height</th>
-<th align="center">year</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">xiaoming</td>
-<td align="center">male</td>
-<td align="center">168</td>
-<td align="center">23</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">xiaohong</td>
-<td align="center">female</td>
-<td align="center">162</td>
-<td align="center">22</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">xiaozhang</td>
-<td align="center">female</td>
-<td align="center">163</td>
-<td align="center">21</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">xiaoli</td>
-<td align="center">male</td>
-<td align="center">158</td>
-<td align="center">21</td>
-</tr>
-</tbody></table>
-<h2 id="2-2-字典序列数据"><a href="#2-2-字典序列数据" class="headerlink" title="2.2 字典序列数据"></a>2.2 字典序列数据</h2><ul>
-<li>headers :表头</li>
-<li>rows :内容</li>
-<li>f_csv = DictWriter(f,headers)</li>
-<li>f_csv.writeheader()</li>
-<li>f_csv.writerows(rows)<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">headers = [<span class="string">'class'</span>,<span class="string">'name'</span>,<span class="string">'sex'</span>,<span class="string">'height'</span>,<span class="string">'year'</span>]</span><br><span class="line"></span><br><span class="line">rows = [</span><br><span class="line">        &#123;<span class="string">'class'</span>:<span class="number">1</span>,<span class="string">'name'</span>:<span class="string">'xiaoming'</span>,<span class="string">'sex'</span>:<span class="string">'male'</span>,<span class="string">'height'</span>:<span class="number">168</span>,<span class="string">'year'</span>:<span class="number">23</span>&#125;,</span><br><span class="line">        &#123;<span class="string">'class'</span>:<span class="number">1</span>,<span class="string">'name'</span>:<span class="string">'xiaohong'</span>,<span class="string">'sex'</span>:<span class="string">'female'</span>,<span class="string">'height'</span>:<span class="number">162</span>,<span class="string">'year'</span>:<span class="number">22</span>&#125;,</span><br><span class="line">        &#123;<span class="string">'class'</span>:<span class="number">2</span>,<span class="string">'name'</span>:<span class="string">'xiaozhang'</span>,<span class="string">'sex'</span>:<span class="string">'female'</span>,<span class="string">'height'</span>:<span class="number">163</span>,<span class="string">'year'</span>:<span class="number">21</span>&#125;,</span><br><span class="line">        &#123;<span class="string">'class'</span>:<span class="number">2</span>,<span class="string">'name'</span>:<span class="string">'xiaoli'</span>,<span class="string">'sex'</span>:<span class="string">'male'</span>,<span class="string">'height'</span>:<span class="number">158</span>,<span class="string">'year'</span>:<span class="number">21</span>&#125;,</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'test2.csv'</span>,<span class="string">'w'</span>,newline=<span class="string">''</span>)<span class="keyword">as</span> f:</span><br><span class="line">    f_csv = csv.DictWriter(f,headers)</span><br><span class="line">    f_csv.writeheader()</span><br><span class="line">    f_csv.writerows(rows)</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th align="center">class</th>
-<th align="center">name</th>
-<th align="center">sex</th>
-<th align="center">height</th>
-<th align="center">year</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">xiaoming</td>
-<td align="center">male</td>
-<td align="center">168</td>
-<td align="center">23</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">xiaohong</td>
-<td align="center">female</td>
-<td align="center">162</td>
-<td align="center">22</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">xiaozhang</td>
-<td align="center">female</td>
-<td align="center">163</td>
-<td align="center">21</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">xiaoli</td>
-<td align="center">male</td>
-<td align="center">158</td>
-<td align="center">21</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<h2 id="2-3-csv文件的读"><a href="#2-3-csv文件的读" class="headerlink" title="2.3 csv文件的读"></a>2.3 csv文件的读</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'test.csv'</span>)<span class="keyword">as</span> f:</span><br><span class="line">    f_csv = csv.reader(f)</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> f_csv:</span><br><span class="line">        print(row)</span><br><span class="line"></span><br><span class="line"><span class="string">'''result</span></span><br><span class="line"><span class="string">['class', 'name', 'sex', 'height', 'year']</span></span><br><span class="line"><span class="string">['1', 'xiaoming', 'male', '168', '23']</span></span><br><span class="line"><span class="string">['1', 'xiaohong', 'female', '162', '22']</span></span><br><span class="line"><span class="string">['2', 'xiaozhang', 'female', '163', '21']</span></span><br><span class="line"><span class="string">['2', 'xiaoli', 'male', '158', '21']</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'test.csv'</span>)<span class="keyword">as</span> f:</span><br><span class="line">    f_csv = csv.reader(f)</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> f_csv:</span><br><span class="line">        print(row[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="string">'''result</span></span><br><span class="line"><span class="string">class</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考<a href="https://blog.csdn.net/katyusha1/article/details/81606175" target="_blank" rel="noopener" title="CSDN">网站</a></p>
-</blockquote>
-<h1 id="3-with-open-as-读写文件"><a href="#3-with-open-as-读写文件" class="headerlink" title="3. with open () as 读写文件"></a>3. with open () as 读写文件</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'file.txt'</span>,<span class="string">'r'</span>,) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.read())</span><br><span class="line"><span class="comment"># 不需调用f.close()</span></span><br><span class="line"><span class="comment"># 如果文件过大则用read(size)比较保险</span></span><br><span class="line"><span class="comment"># 如果文件是配置文件readlines()较为方便</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 写文件</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'file.txt'</span>,<span class="string">'w'</span>,encoding=<span class="string">'utf-8'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">'Hello World !'</span>)</span><br><span class="line"><span class="comment"># 文本文件    encoding 字符编码：gbk，utf-8</span></span><br><span class="line"><span class="comment"># 二进制文件  rb模式读取:图片,视频</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参考<a href="https://blog.csdn.net/xrinosvip/article/details/82019844" target="_blank" rel="noopener" title="CSDN">网站</a></p>
-</blockquote>
-<h1 id="4-os中创建文件夹"><a href="#4-os中创建文件夹" class="headerlink" title="4. os中创建文件夹"></a>4. os中创建文件夹</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os </span><br><span class="line"></span><br><span class="line">main_path = <span class="string">'E:/os/'</span>    <span class="comment">#创建一个路径</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(main_path):   <span class="comment">#如果该路径不存在</span></span><br><span class="line">    os.makedirs(main_path)  <span class="comment">#则新建一个路径</span></span><br></pre></td></tr></table></figure>
-<h1 id="5-将图片保存在文件夹中"><a href="#5-将图片保存在文件夹中" class="headerlink" title="5. 将图片保存在文件夹中"></a>5. 将图片保存在文件夹中</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dir = <span class="string">'文件路径'</span> + name +<span class="string">'.jpg'</span>     <span class="comment">#文件名</span></span><br><span class="line">url_get = requests.get(url)         <span class="comment">#从url中获取图片信息</span></span><br><span class="line"><span class="keyword">with</span> open(dir,<span class="string">'wb'</span>) <span class="keyword">as</span> f:           <span class="comment">#打开图片文件，保存图片信息</span></span><br><span class="line">    f.writer(url_get.content)</span><br></pre></td></tr></table></figure>
-
-<h1 id="6-try…except语句"><a href="#6-try…except语句" class="headerlink" title="6. try…except语句"></a>6. try…except语句</h1><h2 id="6-1-语法"><a href="#6-1-语法" class="headerlink" title="6.1 语法"></a>6.1 <strong>语法</strong></h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#python 异常处理</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">&lt;语句&gt;        <span class="comment">#运行别的代码</span></span><br><span class="line"><span class="keyword">except</span> &lt;名字&gt;：</span><br><span class="line">&lt;语句&gt;        <span class="comment">#如果在try部份引发了'name'异常</span></span><br><span class="line"><span class="keyword">except</span> &lt;名字&gt;，&lt;数据&gt;:</span><br><span class="line">&lt;语句&gt;        <span class="comment">#如果引发了'name'异常，获得附加的数据</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">&lt;语句&gt;        <span class="comment">#如果没有异常发生</span></span><br></pre></td></tr></table></figure>
-<h2 id="6-2-使用except而不带任何异常类型"><a href="#6-2-使用except而不带任何异常类型" class="headerlink" title="6.2 使用except而不带任何异常类型"></a>6.2 <strong>使用except而不带任何异常类型</strong></h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    正常的操作</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    发生异常，执行这块代码</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    如果没有异常执行这块代码</span><br></pre></td></tr></table></figure>
-<p><strong>以上方式try-except语句捕获所有发生的异常。但这不是一个很好的方式，我们不能通过该程序识别出具体的异常信息。因为它捕获所有的异常</strong></p>
-<h2 id="6-3-使用except而带多种异常类型"><a href="#6-3-使用except而带多种异常类型" class="headerlink" title="6.3 使用except而带多种异常类型"></a>6.3 <strong>使用except而带多种异常类型</strong></h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    正常的操作</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">except</span>(Exception1[, Exception2[,...ExceptionN]]]):</span><br><span class="line">   发生以上多个异常中的一个，执行这块代码</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    如果没有异常执行这块代码</span><br></pre></td></tr></table></figure>
-<h2 id="6-4-try-finally-语句"><a href="#6-4-try-finally-语句" class="headerlink" title="6.4 try-finally 语句"></a>6.4 <strong>try-finally 语句</strong></h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">&lt;语句&gt;</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">&lt;语句&gt;    <span class="comment">#退出try时总会执行</span></span><br><span class="line"><span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
-<h2 id="6-5-异常的参数"><a href="#6-5-异常的参数" class="headerlink" title="6.5 异常的参数"></a>6.5 <strong>异常的参数</strong></h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    正常的操作</span><br><span class="line">   ......................</span><br><span class="line"><span class="keyword">except</span> ExceptionType, Argument:</span><br><span class="line">    你可以在这输出 Argument 的值...</span><br></pre></td></tr></table></figure>
-<h2 id="6-6-用户自定义异常"><a href="#6-6-用户自定义异常" class="headerlink" title="6.6 用户自定义异常"></a>6.6 <strong>用户自定义异常</strong></h2><ul>
-<li>通过创建一个新的异常类，程序可以命名它们自己的异常。异常应该是典型的继承自Exception类，通过直接或间接的方式</li>
-<li>以下为与RuntimeError相关的实例,实例中创建了一个类，基类为RuntimeError，用于在异常触发时输出更多的信息</li>
-<li>在try语句块中，用户自定义的异常后执行except块语句，变量 e 是用于创建Networkerror类的实例<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Networkerror</span><span class="params">(RuntimeError)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, arg)</span>:</span></span><br><span class="line">        self.args = arg</span><br></pre></td></tr></table></figure></li>
-<li><strong>在你定义以上类后，你可以触发该异常，如下所示：</strong><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">raise</span> Networkerror(<span class="string">"Bad hostname"</span>)</span><br><span class="line"><span class="keyword">except</span> Networkerror,e:</span><br><span class="line">    <span class="keyword">print</span> e.args</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">异常名称</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">BaseException</td>
-<td align="center">所有异常的基类</td>
-</tr>
-<tr>
-<td align="center">SystemExit</td>
-<td align="center">解释器请求退出</td>
-</tr>
-<tr>
-<td align="center">KeyboardInterrupt</td>
-<td align="center">用户中断执行(通常是输入^C)</td>
-</tr>
-<tr>
-<td align="center">Exception</td>
-<td align="center">常规错误的基类</td>
-</tr>
-<tr>
-<td align="center">StopIteration</td>
-<td align="center">迭代器没有更多的值</td>
-</tr>
-<tr>
-<td align="center">GeneratorExit</td>
-<td align="center">生成器(generator)发生异常来通知退出</td>
-</tr>
-<tr>
-<td align="center">StandardError</td>
-<td align="center">所有的内建标准异常的基类</td>
-</tr>
-<tr>
-<td align="center">ArithmeticError</td>
-<td align="center">所有数值计算错误的基类</td>
-</tr>
-<tr>
-<td align="center">FloatingPointError</td>
-<td align="center">浮点计算错误</td>
-</tr>
-<tr>
-<td align="center">OverflowError</td>
-<td align="center">数值运算超出最大限制</td>
-</tr>
-<tr>
-<td align="center">ZeroDivisionError</td>
-<td align="center">除(或取模)零 (所有数据类型)</td>
-</tr>
-<tr>
-<td align="center">AssertionError</td>
-<td align="center">断言语句失败</td>
-</tr>
-<tr>
-<td align="center">AttributeError</td>
-<td align="center">对象没有这个属性</td>
-</tr>
-<tr>
-<td align="center">EOFError</td>
-<td align="center">没有内建输入,到达EOF 标记</td>
-</tr>
-<tr>
-<td align="center">EnvironmentError</td>
-<td align="center">操作系统错误的基类</td>
-</tr>
-<tr>
-<td align="center">IOError</td>
-<td align="center">输入/输出操作失败</td>
-</tr>
-<tr>
-<td align="center">OSError</td>
-<td align="center">操作系统错误</td>
-</tr>
-<tr>
-<td align="center">WindowsError</td>
-<td align="center">系统调用失败</td>
-</tr>
-<tr>
-<td align="center">ImportError</td>
-<td align="center">导入模块/对象失败</td>
-</tr>
-<tr>
-<td align="center">LookupError</td>
-<td align="center">无效数据查询的基类</td>
-</tr>
-<tr>
-<td align="center">IndexError</td>
-<td align="center">序列中没有此索引(index)</td>
-</tr>
-<tr>
-<td align="center">KeyError</td>
-<td align="center">映射中没有这个键</td>
-</tr>
-<tr>
-<td align="center">MemoryError</td>
-<td align="center">内存溢出错误(对于Python 解释器不是致命的)</td>
-</tr>
-<tr>
-<td align="center">NameError</td>
-<td align="center">未声明/初始化对象 (没有属性)</td>
-</tr>
-<tr>
-<td align="center">UnboundLocalError</td>
-<td align="center">访问未初始化的本地变量</td>
-</tr>
-<tr>
-<td align="center">ReferenceError</td>
-<td align="center">弱引用(Weak reference)试图访问已经垃圾回收了的对象</td>
-</tr>
-<tr>
-<td align="center">RuntimeError</td>
-<td align="center">一般的运行时错误</td>
-</tr>
-<tr>
-<td align="center">NotImplementedError</td>
-<td align="center">尚未实现的方法</td>
-</tr>
-<tr>
-<td align="center">SyntaxError    Python</td>
-<td align="center">语法错误</td>
-</tr>
-<tr>
-<td align="center">IndentationError</td>
-<td align="center">缩进错误</td>
-</tr>
-<tr>
-<td align="center">TabError    Tab</td>
-<td align="center">和空格混用</td>
-</tr>
-<tr>
-<td align="center">SystemError</td>
-<td align="center">一般的解释器系统错误</td>
-</tr>
-<tr>
-<td align="center">TypeError</td>
-<td align="center">对类型无效的操作</td>
-</tr>
-<tr>
-<td align="center">ValueError</td>
-<td align="center">传入无效的参数</td>
-</tr>
-<tr>
-<td align="center">UnicodeError    Unicode</td>
-<td align="center">相关的错误</td>
-</tr>
-<tr>
-<td align="center">UnicodeDecodeError    Unicode</td>
-<td align="center">解码时的错误</td>
-</tr>
-<tr>
-<td align="center">UnicodeEncodeError    Unicode</td>
-<td align="center">编码时错误</td>
-</tr>
-<tr>
-<td align="center">UnicodeTranslateError Unicode</td>
-<td align="center">转换时错误</td>
-</tr>
-<tr>
-<td align="center">Warning</td>
-<td align="center">警告的基类</td>
-</tr>
-<tr>
-<td align="center">DeprecationWarning</td>
-<td align="center">关于被弃用的特征的警告</td>
-</tr>
-<tr>
-<td align="center">FutureWarning</td>
-<td align="center">关于构造将来语义会有改变的警告</td>
-</tr>
-<tr>
-<td align="center">OverflowWarning</td>
-<td align="center">旧的关于自动提升为长整型(long)的警告</td>
-</tr>
-<tr>
-<td align="center">PendingDeprecationWarning</td>
-<td align="center">关于特性将会被废弃的警告</td>
-</tr>
-<tr>
-<td align="center">RuntimeWarning</td>
-<td align="center">可疑的运行时行为(runtime behavior)的警告</td>
-</tr>
-<tr>
-<td align="center">SyntaxWarning</td>
-<td align="center">可疑的语法的警告</td>
-</tr>
-<tr>
-<td align="center">UserWarning</td>
-<td align="center">用户代码生成的警告</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>参考<a href="https://www.runoob.com/python/python-exceptions.html" target="_blank" rel="noopener">教程</a></p>
-</blockquote>
-<h1 id="7-python小知识点"><a href="#7-python小知识点" class="headerlink" title="7. python小知识点"></a>7. python小知识点</h1><h2 id="7-1-换行符-‘-n’-和-回车符-‘-r’-的区别？"><a href="#7-1-换行符-‘-n’-和-回车符-‘-r’-的区别？" class="headerlink" title="7.1 换行符 ‘\n’ 和 回车符 ‘\r’ 的区别？"></a>7.1 换行符 ‘\n’ 和 回车符 ‘\r’ 的区别？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">换行符就是另起一新行，光标在新行的开头；</span><br><span class="line">\n</span><br><span class="line">回车符就是光标回到一旧行的开头；(即光标目前所在的行为旧行)</span><br><span class="line">\r</span><br><span class="line">在解析文本或其他格式的文件内容时，常常要碰到判定回车式换行的地方</span><br><span class="line">这个时候就要注意既要判定&quot;\r\n&quot;又要判定&quot;\n&quot;。</span><br></pre></td></tr></table></figure>
-
-<h1 id="8-python中陌生的函数"><a href="#8-python中陌生的函数" class="headerlink" title="8. python中陌生的函数"></a>8. python中陌生的函数</h1><p><em>自己还不太熟悉的</em></p>
-<h2 id="8-1-str-split-对字符串进行切片–返回一个列表"><a href="#8-1-str-split-对字符串进行切片–返回一个列表" class="headerlink" title="8.1 str.split()  对字符串进行切片–返回一个列表"></a>8.1 <code>str.split()</code>  <strong>对字符串进行切片–返回一个列表</strong></h2><ul>
-<li>语法<code>str.split(str=&quot;&quot;, num=string.count(str)).</code></li>
-</ul>
-<ul>
-<li>str：分隔符，默认为所有的空字符，包括空格、换行、指标</li>
-<li>num：分割次数，默认为-1，即分割所有<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example</span></span><br><span class="line">txt = <span class="string">"Google#Runoob#Taobao#Facebook"</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 第二个参数为 1，返回两个参数列表</span></span><br><span class="line">x = txt.split(<span class="string">"#"</span>, <span class="number">1</span>)</span><br><span class="line"> </span><br><span class="line">print(x)         <span class="comment">#['Google', 'Runoob#Taobao#Facebook']</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考教程：<a href="https://www.runoob.com/python/att-string-split.html" target="_blank" rel="noopener" title="runoob.com">RUNOOB</a></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="8-2-str-find-检测字符串中是否包含子字符串-str"><a href="#8-2-str-find-检测字符串中是否包含子字符串-str" class="headerlink" title="8.2 str.find()  检测字符串中是否包含子字符串 str"></a>8.2 <code>str.find()</code>  <strong>检测字符串中是否包含子字符串 str</strong></h2><ul>
-<li><em>如果包含子字符串返回开始的索引值，否则返回-1</em></li>
-</ul>
-<ul>
-<li>语法<code>str.find(str, beg=0, end=len(string))</code></li>
-<li>str – 指定检索的字符串</li>
-<li>beg – 开始索引，默认为0</li>
-<li>end – 结束索引，默认为字符串的长度<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example</span></span><br><span class="line">str1 = <span class="string">"this is string example....wow!!!"</span>;</span><br><span class="line">str2 = <span class="string">"exam"</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> str1.find(str2);          <span class="comment">#15</span></span><br><span class="line"><span class="keyword">print</span> str1.find(str2, <span class="number">10</span>);      <span class="comment">#15</span></span><br><span class="line"><span class="keyword">print</span> str1.find(str2, <span class="number">40</span>);      <span class="comment">#-1,查不到返回-1</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/09/Python-note/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/02/10/Spider-example/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Spider_example
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/02/09/github/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Github</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-文件管理（txt）"><span class="toc-number">1.</span> <span class="toc-text">1. 文件管理（txt）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-csv文件"><span class="toc-number">2.</span> <span class="toc-text">2. csv文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-列表序列数据"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 列表序列数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-字典序列数据"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 字典序列数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-csv文件的读"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 csv文件的读</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-with-open-as-读写文件"><span class="toc-number">3.</span> <span class="toc-text">3. with open () as 读写文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-os中创建文件夹"><span class="toc-number">4.</span> <span class="toc-text">4. os中创建文件夹</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-将图片保存在文件夹中"><span class="toc-number">5.</span> <span class="toc-text">5. 将图片保存在文件夹中</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-try…except语句"><span class="toc-number">6.</span> <span class="toc-text">6. try…except语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-语法"><span class="toc-number">6.1.</span> <span class="toc-text">6.1 语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-使用except而不带任何异常类型"><span class="toc-number">6.2.</span> <span class="toc-text">6.2 使用except而不带任何异常类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-使用except而带多种异常类型"><span class="toc-number">6.3.</span> <span class="toc-text">6.3 使用except而带多种异常类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-try-finally-语句"><span class="toc-number">6.4.</span> <span class="toc-text">6.4 try-finally 语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-5-异常的参数"><span class="toc-number">6.5.</span> <span class="toc-text">6.5 异常的参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-6-用户自定义异常"><span class="toc-number">6.6.</span> <span class="toc-text">6.6 用户自定义异常</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-python小知识点"><span class="toc-number">7.</span> <span class="toc-text">7. python小知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-换行符-‘-n’-和-回车符-‘-r’-的区别？"><span class="toc-number">7.1.</span> <span class="toc-text">7.1 换行符 ‘\n’ 和 回车符 ‘\r’ 的区别？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-python中陌生的函数"><span class="toc-number">8.</span> <span class="toc-text">8. python中陌生的函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1-str-split-对字符串进行切片–返回一个列表"><span class="toc-number">8.1.</span> <span class="toc-text">8.1 str.split()  对字符串进行切片–返回一个列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2-str-find-检测字符串中是否包含子字符串-str"><span class="toc-number">8.2.</span> <span class="toc-text">8.2 str.find()  检测字符串中是否包含子字符串 str</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -777,9 +302,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
