@@ -76,3 +76,5 @@ HTTP使用统一资源标识符（Uniform Resource Identifiers, URI）来传输�
 # 5. HTTPS协议
 HTTPS (Secure Hypertext Transfer Protocol)安全超文本传输协议，HTTPS是在HTTP上建立SSL加密层，并对传输数据进行加密，是HTTP协议的安全版
 ![https](/img/http/https.png)
+
+>[参考教程](https://www.cnblogs.com/angle6-liu/p/10459132.html)

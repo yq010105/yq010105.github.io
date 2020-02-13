@@ -6,7 +6,7 @@ tags:
     - Python
 ---
 >**自己动手做的python爬虫**&emsp;&emsp;&emsp;[GitHub链接](https://github.com/yq010105/spider_learn "github")
-很垃圾！！！
+WARNING :逻辑混乱，语法不顺！！！
 <!-- more -->
 
 # 1. 爬取bilibili每日排行榜数据
@@ -138,6 +138,108 @@ def main():
 if __name__ == '__main__':
         main()
 ```
+
+## 2.3 baidu面向对象
+* 输入想爬取的关键词，自动爬取(只能下30张)
+```py
+import requests
+import re
+import os
+
+
+def get_id(search_id):
+    url = 'http://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=' + search_id
+    return url
+
+def get_obj():
+    url = get_id(search_id)
+    html = requests.get(url).content.decode()
+    obj_URL = re.findall('"objURL":"(.*?)",',html,re.S)
+    return obj_URL
+
+def save_pic():
+    obj_url = get_obj()
+    i = 1
+    for objurl in obj_url:
+        print('开始下载图片'+'\t'+'第'+str(i)+'张')
+        try :
+            pic = requests.get(objurl,timeout = 10)
+        except requests.exceptions.ConnectionError:
+            print('图片无法下载')
+            continue
+        except requests.exceptions.ReadTimeout:
+            print('requests.exceptions.ReadTimeout')
+            continue
+        global search_id
+        main_path = r'E:\learn\py\git\spider\spider_learn\baidu\pic\\' + search_id +'\\'
+        if not os.path.exists(main_path):
+            os.makedirs(main_path)
+        dir = "E:\learn\py\git\spider\spider_learn\\baidu\pic\\" +search_id +'\\'+ search_id+ str(i) + '.jpg'
+        with open(dir,'wb') as f:
+            f.write(pic.content)
+        i += 1
+
+
+if __name__ =='__main__':
+    search_id = input('请输入要下载的内容:')
+    save_pic()
+```
+## 2.4 baidu_more
+* **进一步升级，可以爬任意数量图片**
+```py
+import requests
+import re
+import os
+from multiprocessing.dummy import Pool
+
+
+def get_urls(search_id):
+    total = (input('请输入要几页----30张一页----：'))
+    url = 'http://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=' + search_id+ '&pn='
+    t = 0
+    URLS = []
+    while t < int(total)*30:
+        URL = url + str(t)
+        t = t + 30
+        URLS.append(URL)
+    return URLS
+
+def get_obj(url):
+    html = requests.get(url).content.decode()
+    obj_URL = re.findall('"objURL":"(.*?)",',html,re.S)
+    return obj_URL
+
+def save_pic():
+    pool=Pool(5)
+    objurls = pool.map(get_obj,URLS)
+    i = 1
+    for objurl in objurls:
+        for obj in objurl:
+            print('开始下载图片'+'\t'+'第'+str(i)+'张')
+            try :
+                pic = requests.get(obj,timeout = 10)
+            except requests.exceptions.ConnectionError:
+                print('图片无法下载')
+                continue
+            except requests.exceptions.ReadTimeout:
+                print('requests.exceptions.ReadTimeout')
+                continue
+            global search_id
+            main_path = r'E:\learn\py\git\spider\spider_learn\baidu\pic\\' + search_id +'\\'
+            if not os.path.exists(main_path):
+                os.makedirs(main_path)
+            dir = "E:\learn\py\git\spider\spider_learn\\baidu\pic\\" +search_id +'\\'+ search_id+ str(i) + '.jpg'
+            with open(dir,'wb') as f:
+                f.write(pic.content)
+            i += 1
+
+
+if __name__ =='__main__':
+    search_id = input('请输入要下载的内容:')
+    URLS = get_urls(search_id)
+    save_pic()
+```
+
 # 3. 爬取ins上的图片(初级版) 
 - *分辨率低*
 ```python
