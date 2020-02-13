@@ -331,10 +331,10 @@ body {
     font-family:Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;
     line-height:1.5;
     color:#333;
-    /* background-color:#fff; */
+    background-color:rgb(85, 144, 161); 
     min-height:100%;
-    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-    url(./img/1_2.jpg) no-repeat 0% 20%/ cover;
+    /*background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url(./img/1_.jpg) no-repeat 0% 20%/ cover;*/
     cursor:url(./img/ico1.ico), default;
 }
 
