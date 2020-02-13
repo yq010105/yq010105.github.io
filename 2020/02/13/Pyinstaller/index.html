@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python_format | Yun.Qi</title>
+  <title>Pyinstaller | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Python_format&amp;emsp;&amp;emsp;&amp;emsp;一种格式化字符串函数str.format()  参考教程网站和CSDN">
+  <meta name="description" content="将python文件打包成exe可执行文件pip3 install pyinstaller">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python_format">
-<meta property="og:url" content="http://yoursite.com/2020/02/11/python-format/index.html">
+<meta property="og:title" content="Pyinstaller">
+<meta property="og:url" content="http://yoursite.com/2020/02/13/Pyinstaller/index.html">
 <meta property="og:site_name" content="Yun.Qi">
-<meta property="og:description" content="Python_format&amp;emsp;&amp;emsp;&amp;emsp;一种格式化字符串函数str.format()  参考教程网站和CSDN">
+<meta property="og:description" content="将python文件打包成exe可执行文件pip3 install pyinstaller">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-11T12:56:10.000Z">
-<meta property="article:modified_time" content="2020-02-13T04:46:49.197Z">
+<meta property="article:published_time" content="2020-02-13T09:36:51.000Z">
+<meta property="article:modified_time" content="2020-02-13T09:45:31.152Z">
 <meta property="article:author" content="Yun Qi">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -199,177 +199,79 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-python-format" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Pyinstaller" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python_format
+      Pyinstaller
     </h1>
   
 
         
-        <a href="/2020/02/11/python-format/" class="archive-article-date">
-  	<time datetime="2020-02-11T12:56:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-11</time>
+        <a href="/2020/02/13/Pyinstaller/" class="archive-article-date">
+  	<time datetime="2020-02-13T09:36:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-13</time>
 </a>
         
       </header>
       <div align="center" class="post-count">
-       字数: 692字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">Mystery</a>|&emsp;预计阅读时长：3分钟
+       字数: 814字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">Mystery</a>|&emsp;预计阅读时长：3分钟
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>Python_format&emsp;&emsp;&emsp;一种格式化字符串函数<code>str.format()</code></strong></p>
-<blockquote>
-<p>参考教程<a href="https://www.runoob.com/python/att-string-format.html" target="_blank" rel="noopener">网站</a>和<a href="https://blog.csdn.net/qq_19691995/article/details/84197252" target="_blank" rel="noopener">CSDN</a></p>
-</blockquote>
+        <p><strong>将python文件打包成exe可执行文件</strong><br><strong><code>pip3 install pyinstaller</code></strong></p>
 <a id="more"></a>
-
-<h1 id="python-format"><a href="#python-format" class="headerlink" title="python_format"></a>python_format</h1><p>&emsp;&emsp;&emsp;<strong><code>str.format()</code>，它增强了字符串格式化的功能</strong><br>&emsp;&emsp;&emsp;<strong>基本语法是通过 {} 和 : 来代替以前的 %</strong></p>
-<h2 id="1-format-函数可以接受不限个参数，位置可以不按顺序"><a href="#1-format-函数可以接受不限个参数，位置可以不按顺序" class="headerlink" title="1. format 函数可以接受不限个参数，位置可以不按顺序"></a>1. format 函数可以接受不限个参数，位置可以不按顺序</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">"&#123;&#125; &#123;&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)    <span class="comment"># 不设置指定位置，按默认顺序</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"&#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"&#123;1&#125; &#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'world hello world'</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-设置参数"><a href="#2-设置参数" class="headerlink" title="2. 设置参数"></a>2. 设置参数</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"网站名：&#123;name&#125;, 地址 &#123;url&#125;"</span>.format(name=<span class="string">"菜鸟教程"</span>, url=<span class="string">"www.runoob.com"</span>))</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 通过字典设置参数</span></span><br><span class="line">site = &#123;<span class="string">"name"</span>: <span class="string">"菜鸟教程"</span>, <span class="string">"url"</span>: <span class="string">"www.runoob.com"</span>&#125;</span><br><span class="line">print(<span class="string">"网站名：&#123;name&#125;, 地址 &#123;url&#125;"</span>.format(**site))</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 通过列表索引设置参数</span></span><br><span class="line">my_list = [<span class="string">'菜鸟教程'</span>, <span class="string">'www.runoob.com'</span>]</span><br><span class="line">print(<span class="string">"网站名：&#123;0[0]&#125;, 地址 &#123;0[1]&#125;"</span>.format(my_list))  <span class="comment"># "0" 是必须的</span></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">网站名：菜鸟教程, 地址 www.runoob.com</span></span><br><span class="line"><span class="string">网站名：菜鸟教程, 地址 www.runoob.com</span></span><br><span class="line"><span class="string">网站名：菜鸟教程, 地址 www.runoob.com</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
-
-<p>通过字典和列表的另一种写法</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>hash = &#123;<span class="string">'name'</span>:<span class="string">'hoho'</span>,<span class="string">'age'</span>:<span class="number">18</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'my name is &#123;name&#125;,age is &#123;age&#125;'</span>.format(**hash)        <span class="comment">#**dict</span></span><br><span class="line"><span class="string">'my name is hoho,age is 18'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>li = [<span class="string">'hoho'</span>,<span class="number">18</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'my name is &#123;&#125; ,age &#123;&#125;'</span>.format(*li)               <span class="comment">#*[]迭代列表</span></span><br><span class="line"><span class="string">'my name is hoho ,age 18'</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-向str-format传入对象"><a href="#3-向str-format传入对象" class="headerlink" title="3. 向str.format传入对象"></a>3. 向<code>str.format</code>传入对象</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AssignValue</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">my_value = AssignValue(<span class="number">6</span>)</span><br><span class="line">print(<span class="string">'value 为: &#123;0.value&#125;'</span>.format(my_value))  <span class="comment"># "0" 是可选的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># value 为: 6</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="4-数字格式化"><a href="#4-数字格式化" class="headerlink" title="4. 数字格式化"></a>4. 数字格式化</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"&#123;:.2f&#125;"</span>.format(<span class="number">3.1415926</span>));</span><br><span class="line"><span class="number">3.14</span></span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th align="center">数字</th>
-<th align="center">格式</th>
-<th align="center">输出</th>
-<th align="center">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">3.1415926</td>
-<td align="center">{:.2f}</td>
-<td align="center">3.14</td>
-<td align="center">保留小数点后两位</td>
-</tr>
-<tr>
-<td align="center">3.1415926</td>
-<td align="center">{:+.2f}</td>
-<td align="center">+3.14</td>
-<td align="center">带符号保留小数点后两位</td>
-</tr>
-<tr>
-<td align="center">-1</td>
-<td align="center">{:+.2f}</td>
-<td align="center">-1.00</td>
-<td align="center">带符号保留小数点后两位</td>
-</tr>
-<tr>
-<td align="center">2.71828</td>
-<td align="center">{:.0f}</td>
-<td align="center">3</td>
-<td align="center">不带小数</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">{:0&gt;2d}</td>
-<td align="center">05</td>
-<td align="center">数字补零</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="center">{:x&lt;4d}</td>
-<td align="center">5xxx</td>
-<td align="center">数字补x (填充右边, 宽度为4)</td>
-</tr>
-<tr>
-<td align="center">10</td>
-<td align="center">{:x&lt;4d}</td>
-<td align="center">10xx</td>
-<td align="center">数字补x (填充右边, 宽度为4)</td>
-</tr>
-<tr>
-<td align="center">1000000</td>
-<td align="center">{:,}</td>
-<td align="center">1,000,000</td>
-<td align="center">以逗号分隔的数字格式</td>
-</tr>
-<tr>
-<td align="center">0.25</td>
-<td align="center">{:.2%}</td>
-<td align="center">25.00%</td>
-<td align="center">百分比格式</td>
-</tr>
-<tr>
-<td align="center">1000000000</td>
-<td align="center">{:.2e}</td>
-<td align="center">1.00e+09</td>
-<td align="center">指数记法</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td align="center">{:&gt;10d}</td>
-<td align="center">13</td>
-<td align="center">右对齐 (默认, 宽度为10)</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td align="center">{:&lt;10d}</td>
-<td align="center">13</td>
-<td align="center">左对齐 (宽度为10)</td>
-</tr>
-<tr>
-<td align="center">13</td>
-<td align="center">{:^10d}</td>
-<td align="center">13</td>
-<td align="center">中间对齐 (宽度为10)</td>
-</tr>
-<tr>
-<td align="center">11</td>
-<td align="center">‘{:b}’.format(11)</td>
-<td align="center">1011</td>
-<td align="center">进制</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">‘{:d}’.format(11)</td>
-<td align="center">11</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">‘{:o}’.format(11)</td>
-<td align="center">13</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">‘{:x}’.format(11)</td>
-<td align="center">b</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">‘{:#x}’.format(11)</td>
-<td align="center">0xb</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">‘{:#X}’.format(11)</td>
-<td align="center">0XB</td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<ul>
-<li><strong>^, &lt;, &gt; 分别是居中、左对齐、右对齐，后面带宽度， : 号后面带填充的字符，只能是一个字符，不指定则默认是用空格填充</strong></li>
-<li><strong>+ 表示在正数前显示 +，负数前显示 -；  （空格）表示在正数前加空格</strong></li>
-<li><strong>b、d、o、x 分别是二进制、十进制、八进制、十六进制</strong></li>
+<h1 id="Pyinstaller的使用"><a href="#Pyinstaller的使用" class="headerlink" title="Pyinstaller的使用"></a>Pyinstaller的使用</h1><h2 id="1-打开PowerShell窗口"><a href="#1-打开PowerShell窗口" class="headerlink" title="1. 打开PowerShell窗口"></a>1. 打开PowerShell窗口</h2><ul>
+<li>在你的Python程序文件夹上（不点进去）按住shift并且右键，在弹出的选项中点击”在此处打开命令行窗口”</li>
+<li>或者先进入命令行窗口，然后使用cd指令进入程序文件夹，示例：<br><code>cd G:\工程储存\Python工程\love</code></li>
 </ul>
-<h2 id="5-此外还可以用大括号-来转义大括号"><a href="#5-此外还可以用大括号-来转义大括号" class="headerlink" title="5. 此外还可以用大括号 {} 来转义大括号"></a>5. 此外还可以用大括号 {} 来转义大括号</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (<span class="string">"&#123;&#125; 对应的位置是 &#123;&#123;0&#125;&#125;"</span>.format(<span class="string">"runoob"</span>))</span><br></pre></td></tr></table></figure>
-<p><em>结果为</em>：<strong>runoob 对应的位置是 {0}</strong></p>
+<h2 id="2-输入以下指令，开始打包"><a href="#2-输入以下指令，开始打包" class="headerlink" title="2. 输入以下指令，开始打包"></a>2. 输入以下指令，开始打包</h2><p><code>pyinstaller -F -w (-i icofile) filename</code></p>
+<ul>
+<li>filename表示你的Python程序文件名 </li>
+<li>-w 表示隐藏程序运行时的命令行窗口(不加-w会有黑色窗口)</li>
+<li>括号内的为可选参数，-i icofile表示给程序加上图标，图标必须为.ico格式</li>
+<li>icofile表示图标的位置，建议直接放在程序文件夹里面，这样子打包的时候直接写文件名就好*</li>
+<li>输入示例：<br><code>pyinstaller -F -w -i favicon love.py</code></li>
+<li>然后我们进入到程序目录里面会再看到一个名称为dist目录，打包好的exe程序就在里面</li>
+</ul>
+<h2 id="3-pyinstaller相关参数"><a href="#3-pyinstaller相关参数" class="headerlink" title="3. pyinstaller相关参数"></a>3. pyinstaller相关参数</h2><ul>
+<li><p>-F, –onefile    打包一个单个文件，如果你的代码都写在一个.py文件的话，可以用这个，如果是多个.py文件就别用</p>
+</li>
+<li><p>-D, –onedir    打包多个文件，在dist中生成很多依赖文件，适合以框架形式编写工具代码，我个人比较推荐这样，代码易于维护</p>
+</li>
+<li><p>-K, –tk    在部署时包含 TCL/TK</p>
+</li>
+<li><p>-a, –ascii    不包含编码.在支持Unicode的python版本上默认包含所有的编码.</p>
+</li>
+<li><p>-d, –debug    产生debug版本的可执行文件</p>
+</li>
+<li><p>-w,–windowed,–noconsole    使用Windows子系统执行.当程序启动的时候不会打开命令行(只对Windows有效)</p>
+</li>
+<li><p>-c,–nowindowed,–console   使用控制台子系统执行(默认)(只对Windows有效)</p>
+</li>
+<li><p>-s,–strip    可执行文件和共享库将run through strip.注意Cygwin的strip往往使普通的win32 Dll无法使用.</p>
+</li>
+<li><p>-X, –upx    如果有UPX安装(执行Configure.py时检测),会压缩执行文件(Windows系统中的DLL也会)(参见note)</p>
+</li>
+<li><p>-o DIR, –out=DIR    指定spec文件的生成目录,如果没有指定,而且当前目录是PyInstaller的根目录,会自动创建一个用于输出(spec和生成的可执行文件)的目录.如果没有指定,而当前目录不是PyInstaller的根目录,则会输出到当前的目录下.</p>
+</li>
+<li><p>-p DIR, –path=DIR    设置导入路径(和使用PYTHONPATH效果相似).可以用路径分割符(Windows使用分号,Linux使用冒号)分割,指定多个目录.也可以使用多个-p参数来设置多个导入路径，让pyinstaller自己去找程序需要的资源</p>
+</li>
+<li><p>–icon=&lt;FILE.ICO&gt;<br>将file.ico添加为可执行文件的资源(只对Windows系统有效)，改变程序的图标  pyinstaller -i  ico路径 xxxxx.py</p>
+</li>
+<li><p>–icon=&lt;FILE.EXE,N&gt;    将file.exe的第n个图标添加为可执行文件的资源(只对Windows系统有效)</p>
+</li>
+<li><p>-v FILE, –version=FILE    将verfile作为可执行文件的版本资源(只对Windows系统有效)</p>
+</li>
+<li><p>-n NAME, –name=NAME    可选的项目(产生的spec的)名字.如果省略,第一个脚本的主文件名将作为spec的名字</p>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://blog.csdn.net/qq_33462307/article/details/90479045" target="_blank" rel="noopener">参考CSDN</a></p>
+</blockquote>
 
       
 
@@ -439,7 +341,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/11/python-format/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/13/Pyinstaller/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -453,18 +355,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/13/HTTP/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HTTP
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/10/Spider-example/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Spider_example</div>
+    <a href="/2020/02/13/HTTP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTTP</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -491,7 +384,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python-format"><span class="toc-number">1.</span> <span class="toc-text">python_format</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-format-函数可以接受不限个参数，位置可以不按顺序"><span class="toc-number">1.1.</span> <span class="toc-text">1. format 函数可以接受不限个参数，位置可以不按顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-设置参数"><span class="toc-number">1.2.</span> <span class="toc-text">2. 设置参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-向str-format传入对象"><span class="toc-number">1.3.</span> <span class="toc-text">3. 向str.format传入对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-数字格式化"><span class="toc-number">1.4.</span> <span class="toc-text">4. 数字格式化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-此外还可以用大括号-来转义大括号"><span class="toc-number">1.5.</span> <span class="toc-text">5. 此外还可以用大括号 {} 来转义大括号</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Pyinstaller的使用"><span class="toc-number">1.</span> <span class="toc-text">Pyinstaller的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-打开PowerShell窗口"><span class="toc-number">1.1.</span> <span class="toc-text">1. 打开PowerShell窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-输入以下指令，开始打包"><span class="toc-number">1.2.</span> <span class="toc-text">2. 输入以下指令，开始打包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-pyinstaller相关参数"><span class="toc-number">1.3.</span> <span class="toc-text">3. pyinstaller相关参数</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
