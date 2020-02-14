@@ -8,13 +8,13 @@ tags:
 **将python文件打包成exe可执行文件** 
 **`pip3 install pyinstaller`**
 <!--more-->
-# Pyinstaller的使用
-## 1. 打开PowerShell窗口
+# 1. Pyinstaller的使用
+## 1.1 打开PowerShell窗口
 * 在你的Python程序文件夹上（不点进去）按住shift并且右键，在弹出的选项中点击"在此处打开命令行窗口"
 * 或者先进入命令行窗口，然后使用cd指令进入程序文件夹，示例：
 `cd G:\工程储存\Python工程\love`
 
-## 2. 输入以下指令，开始打包
+## 1.2 输入以下指令，开始打包
 `pyinstaller -F -w (-i icofile) filename`
 * filename表示你的Python程序文件名 
 * -w 表示隐藏程序运行时的命令行窗口(不加-w会有黑色窗口)
@@ -24,7 +24,7 @@ tags:
 `pyinstaller -F -w -i favicon love.py`
 * 然后我们进入到程序目录里面会再看到一个名称为dist目录，打包好的exe程序就在里面
 
-## 3. pyinstaller相关参数
+## 1.3 pyinstaller相关参数
 * -F, –onefile    打包一个单个文件，如果你的代码都写在一个.py文件的话，可以用这个，如果是多个.py文件就别用
 * -D, –onedir    打包多个文件，在dist中生成很多依赖文件，适合以框架形式编写工具代码，我个人比较推荐这样，代码易于维护
 * -K, –tk    在部署时包含 TCL/TK
@@ -44,3 +44,10 @@ tags:
 * -n NAME, –name=NAME    可选的项目(产生的spec的)名字.如果省略,第一个脚本的主文件名将作为spec的名字
 
 >[参考CSDN](https://blog.csdn.net/qq_33462307/article/details/90479045)
+
+# 2. Pyinstaller的问题
+## 2.1 Fail to execute scrip XXX
+
+**使用了`pyinstaller -F -w code.py`打包以后，发现打不开**
+
+*解决不了啊啊啊啊*
