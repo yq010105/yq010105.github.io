@@ -2,18 +2,21 @@
 title: Bilibili_Api
 date: 2020-02-14 14:31:32
 tags:
-    - Python
+  - Python
 ---
 
-**bilibili提供的api接口(一串json字符)**
-*让基于bilibili的开发更简单*
+**bilibili 提供的 api 接口(一串 json 字符)**
+_让基于 bilibili 的开发更简单_
+
 <!--more-->
 
-# 1. bilibili用户基本信息(name，level，关注，粉丝)获取
-`https://api.bilibili.com/x/space/upstat?mid=UUID&jsonp=jsonp`*up信息，名字，等级，视频总播放量，文章总浏览数*
-`https://api.bilibili.com/x/relation/stat?vmid=UUID&jsonp=jsonp`*up信息，关注数，黑名单，粉丝数*
+# 1. bilibili 用户基本信息(name，level，关注，粉丝)获取
 
-**简单的代码获取up信息**
+`https://api.bilibili.com/x/space/upstat?mid=UUID&jsonp=jsonp`_up 信息，名字，等级，视频总播放量，文章总浏览数_
+`https://api.bilibili.com/x/relation/stat?vmid=UUID&jsonp=jsonp`_up 信息，关注数，黑名单，粉丝数_
+
+**简单的代码获取 up 信息**
+
 ```py
 import json
 import requests
@@ -38,12 +41,13 @@ print(f'up等级达到:{up_level}级')
 if int(up_level)>=5:
     print('----哇是个大佬！！！----')
 print(f'up关注了{up_following_num}个人')
-if int(up_following_num)>=700: 
+if int(up_following_num)>=700:
     print('----铁定是个dd！！！----')
 print(f'up有{up_follower_num}个粉丝')
 ```
 
 **示例：**
+
 ```py
 输入要查询的up的uid：2
 up名字是:碧诗
@@ -53,9 +57,10 @@ up关注了191个人
 up有804598个粉丝
 ```
 
-# 2. bilibili统计某视频评论区，并生成词云
+# 2. bilibili 统计某视频评论区，并生成词云
 
-* **获取某视频评论区评论**
+- **获取某视频评论区评论**
+
 ```py
 import json
 import requests
@@ -68,7 +73,7 @@ p_total = input('请输入评论要几页:')
 
 def get_urls():
     urls = []
-    p = 1 
+    p = 1
     while p <= int(p_total):
         url = 'http://api.bilibili.com/x/v2/reply?jsonp=jsonp&;pn=' + str(p) + '&type=1&oid=' + av
         urls.append(url)
@@ -132,7 +137,7 @@ if __name__ == '__main__':
     print(f'此视频已获得 {p_total} 页的评论')
 ```
 
-* **将生成的评论txt文件统计为词云**
+- **将生成的评论 txt 文件统计为词云**
 
 ```py
 from wordcloud import WordCloud

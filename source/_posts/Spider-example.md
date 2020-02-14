@@ -2,16 +2,19 @@
 title: Spider_example
 date: 2020-02-10 16:43:47
 tags:
-    - Spider
-    - Python
+  - Spider
+  - Python
 ---
->**自己动手做的python爬虫**&emsp;&emsp;&emsp;[GitHub链接](https://github.com/yq010105/spider_learn "github")
-WARNING :逻辑混乱，语法不顺！！！
+
+> **自己动手做的 python 爬虫**&emsp;&emsp;&emsp;[GitHub 链接](https://github.com/yq010105/spider_learn "github")
+> WARNING :逻辑混乱，语法不顺！！！
+
 <!-- more -->
 
-# 1. 爬取bilibili每日排行榜数据
-* **使用XPath爬取,并将数据保存到csv文件中**
-* **文件名使用该排行榜所在时间段**
+# 1. 爬取 bilibili 每日排行榜数据
+
+- **使用 XPath 爬取,并将数据保存到 csv 文件中**
+- **文件名使用该排行榜所在时间段**
 
 ```python
 import requests
@@ -52,17 +55,21 @@ with open(f'{time_num2}.csv','w',encoding='utf-8') as f:
     f_csv.writerow(headers)
     f_csv.writerows(rows)
 ```
-* **csv部分展示**
-`2020年02月07日 - 2020年02月10日`
-![bilibili_csv](/img/bilibili_csv.png)
 
-# 2. 爬取baidu上搜到的图片(初级)
+- **csv 部分展示**
+  `2020年02月07日 - 2020年02月10日`
+  ![bilibili_csv](/img/bilibili_csv.png)
+
+# 2. 爬取 baidu 上搜到的图片(初级)
+
 ## 2.1 thumbURL
-- *分辨率极低*
+
+- _分辨率极低_
+
 ```py
 import re
 import requests
-import os 
+import os
 
 def download(html):
     #通过正则匹配
@@ -75,7 +82,7 @@ def download(html):
         except requests.exceptions.ConnectionError:
             print('图片无法下载')
             continue
-        #保存图片路径             
+        #保存图片路径
         main_path="E:/baidu/" #文件保存路径，如果不存在就会被重建
         if  not os.path.exists(main_path):#如果路径不存在
             os.makedirs(main_path)
@@ -88,17 +95,20 @@ def main():
         url = 'https://image.baidu.com/search/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&fm=result&pos=history&word=siyueshinide'
         result = requests.get(url)
         download(result.text)
- 
- 
+
+
 if __name__ == '__main__':
         main()
 ```
+
 ## 2.2 objURL
-*分辨率较高，但有的图爬不了*
+
+_分辨率较高，但有的图爬不了_
+
 ```py
 import re
 import requests
-import os 
+import os
 import json
 
 def download(html):
@@ -120,7 +130,7 @@ def download(html):
         except requests.exceptions.ReadTimeout:
             print('requests.exceptions.ReadTimeout')
             continue
-        #保存图片路径             
+        #保存图片路径
         main_path="E:/baidu/" #文件保存路径，如果不存在就会被重建
         if  not os.path.exists(main_path):#如果路径不存在
             os.makedirs(main_path)
@@ -133,14 +143,16 @@ def main():
         url = 'https://image.baidu.com/search/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&fm=result&pos=history&word=siyueshinide'
         result = requests.get(url)
         download(result.text)
- 
- 
+
+
 if __name__ == '__main__':
         main()
 ```
 
-## 2.3 baidu面向对象
-* 输入想爬取的关键词，自动爬取(只能下30张)
+## 2.3 baidu 面向对象
+
+- 输入想爬取的关键词，自动爬取(只能下 30 张)
+
 ```py
 import requests
 import re
@@ -186,7 +198,9 @@ if __name__ =='__main__':
 ```
 
 ## 2.4 baidu_more
-* **进一步升级，可以爬任意数量图片**
+
+- **进一步升级，可以爬任意数量图片**
+
 ```py
 import requests
 import re
@@ -242,8 +256,10 @@ if __name__ =='__main__':
     save_pic()
 ```
 
-# 3. 爬取ins上的图片(初级版) 
-- *分辨率低*
+# 3. 爬取 ins 上的图片(初级版)
+
+- _分辨率低_
+
 ```python
 import requests
 import json
@@ -305,7 +321,7 @@ def save_pic():
             main_path = 'E:/ins/'
             if not os.path.exists(main_path):
                 os.makedirs(main_path)
-            path = 'E:/ins/' + 'baku' + str(i) + '.jpg' 
+            path = 'E:/ins/' + 'baku' + str(i) + '.jpg'
             with open(path,'wb') as f:
                 f.write(pic.content)
                 print(f'第{i}张已下载')
@@ -313,9 +329,9 @@ def save_pic():
         except requests.exceptions.ConnectionError:        #requests.exceptions.ConnectionError
             print('图片无法下载')
             continue
-    return 
+    return
 
 save_pic()
 ```
 
-**学习如何爬取高分辨率图片ing**
+**学习如何爬取高分辨率图片 ing**
