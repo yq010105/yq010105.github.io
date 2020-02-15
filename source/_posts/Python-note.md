@@ -3,6 +3,7 @@ title: Python_note
 date: 2020-02-09 15:38:38
 tags:
   - Python
+  - Note
 ---
 
 **python，边学爬虫，边把不会的 python 知识不全**
