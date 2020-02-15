@@ -1,12 +1,14 @@
 ---
-title: Bilibili_Api
+title: Bilibili_Api_Python
 date: 2020-02-14 14:31:32
 tags:
   - Python
+  - Bilibili
 ---
 
 **bilibili 提供的 api 接口(一串 json 字符)**
 _让基于 bilibili 的开发更简单_
+**我基于 python 写的几个使用 api 获取信息的例子**
 
 <!--more-->
 
@@ -166,3 +168,209 @@ wc()
 
 **示例：av2**
 ![图片示例](/img/bilibili/comment.png)
+
+# 3. 获取 bilibili 主页各个分区的视频封面和 av 号
+
+`https://www.bilibili.com/index/ding.json`_首页 api，每刷新一次，信息就会改变一次_
+_获取的视频信息也就不同，所以可以一直获取信息(理论上来说)_
+_缺点是每次只能获取十张图片信息_
+_用的是 wb 写入文件，所以即使文件有一样的也会被覆盖..._
+
+```py
+import requests
+import re
+import os
+import json
+
+print('-douga-teleplay-kichiku-dance-bangumi-fashion-life-ad-guochuang-movie-music-technology-game-ent--')
+fenqu = input('请输入爬取分区:')
+if fenqu == '':
+    fenqu1 = 'shuma'
+else :
+    fenqu1 = fenqu
+
+html = requests.get(
+    'https://www.bilibili.com/index/ding.json').content.decode()
+
+dict_html = json.loads(html)
+i = 0
+aids = []
+pics = []
+
+for i in range(10):
+    aid = dict_html[fenqu][str(i)]['aid']
+    pic = dict_html[fenqu][str(i)]['pic']
+    aids.append(aid)
+    pics.append(pic)
+
+j = 1
+h = j-1
+for h in range(10):
+    main_path = 'E:\\learn\\py\\git\\spider\\spider_learn\\bilibili\\bilibili_api\\pic\\'+fenqu1
+    if not os.path.exists(main_path):
+        os.makedirs(main_path)
+    try:
+        piccc = requests.get(pics[h])
+    except requests.exceptions.ConnectionError:
+        print('图片无法下载')
+        continue
+    except requests.exceptions.ReadTimeout:
+        print('requests.exceptions.ReadTimeout')
+        continue
+    dir = 'E:\\learn\\py\\git\\spider\\spider_learn\\bilibili\\bilibili_api\\pic\\' + \
+         fenqu1 + '\\'  +'av' + str(aids[h]) + '.jpg'
+    with open(dir, 'wb') as f:
+        print(f'正在爬取第{j}张图')
+        f.write(piccc.content)
+    j += 1
+    h += 1
+
+print('----完成图片爬取----')
+```
+
+_略微修改后_
+_可能就是因为有重复的，会覆盖前面已下载的_
+_爬个 5 次本该有 50 张，但才有 20 几张(dance 区)_
+_可能 dance 区首页视频比较少吧，游戏区很多_
+**不管了反正这个爬虫也没什么用 hhh**
+
+```py
+import requests
+import re
+import os
+import json
+
+def get_pic():
+    if fenqu == '':
+        fenqu1 = 'shuma'
+    else :
+        fenqu1 = fenqu
+
+    html = requests.get(
+        'https://www.bilibili.com/index/ding.json').content.decode()
+
+    dict_html = json.loads(html)
+    i = 0
+    aids = []
+    pics = []
+
+    for i in range(10):
+        aid = dict_html[fenqu][str(i)]['aid']
+        pic = dict_html[fenqu][str(i)]['pic']
+        aids.append(aid)
+        pics.append(pic)
+
+    j = 1
+    h = j-1
+    for h in range(10):
+        main_path = 'E:\\learn\\py\\git\\spider\\spider_learn\\bilibili\\bilibili_api\\pic\\'+fenqu1
+        if not os.path.exists(main_path):
+            os.makedirs(main_path)
+        try:
+            piccc = requests.get(pics[h])
+        except requests.exceptions.ConnectionError:
+            print('图片无法下载')
+            continue
+        except requests.exceptions.ReadTimeout:
+            print('requests.exceptions.ReadTimeout')
+            continue
+        dir = 'E:\\learn\\py\\git\\spider\\spider_learn\\bilibili\\bilibili_api\\pic\\' + \
+            fenqu1 + '\\'  +'av' + str(aids[h]) + '.jpg'
+        with open(dir, 'wb') as f:
+            print(f'正在爬取第{j}张图')
+            f.write(piccc.content)
+        j += 1
+        h += 1
+
+to = int(input('请输入你要爬多少次---一次最多十张：'))
+print('-douga-teleplay-kichiku-dance-bangumi-fashion-life-ad-guochuang-movie-music-technology-game-ent--')
+fenqu = input('请输入爬取分区:')
+for i in range(to):
+    get_pic()
+    print(f'----完成第{i}次图片爬取----')
+```
+
+> [Github 源码链接](https://github.com/yq010105/spider_learn/tree/master/bilibili/bilibili_api)
+
+# 4. 主站上的实时人数
+
+_所用 api 接口_`https://api.bilibili.com/x/web-interface/online?&;jsonp=jsonp`
+
+```py
+import requests
+import json
+import time
+
+def print_num():
+    index = requests.get(
+    'https://api.bilibili.com/x/web-interface/online?&;jsonp=jsonp').content.decode()
+    dict_index = json.loads(index)
+    all_count = dict_index['data']['all_count']
+    web_online = dict_index['data']['web_online']
+    play_online = dict_index['data']['play_online']
+# 应该是人数和实时在线人数
+    print(f'all_count:{all_count}')
+    print(f'web_online:{web_online}')
+    print(f'play_online:{play_online}')
+
+
+for i in range(100):
+    print(f'第{i+1}次计数')
+    print_num()
+    time.sleep(2)
+```
+
+# 5. 用户的粉丝数
+
+_只能获取一页，b 站最多是五页，多了就会有限制_
+
+```py
+import requests
+import json
+import csv
+import os
+import time
+
+uid = input('请输入查找的up主的uid:')
+url = 'https://api.bilibili.com/x/relation/followers?vmid=' + \
+    uid + '&ps=0&order=desc&jsonp=jsonp'
+
+html = requests.get(url).content.decode()
+dic_html = json.loads(html)
+
+index_order = dic_html['data']['list']
+mids, mtimes, unames, signs = [], [], [], []
+for i in index_order:
+    mid = i['mid']
+    mids.append(mid)
+    mtime = i['mtime']
+    mmtime = time.asctime(time.localtime(mtime))
+    mtimes.append(mmtime)
+    uname = i['uname']
+    unames.append(uname)
+    sign = i['sign']
+    signs.append(sign)
+# print(index_order)
+# print(mids)
+headers = ['uid', '注册时间', 'up姓名', '个性签名']
+rows = []
+j = 0
+for j in range(len(mids)):
+    rows.append([mids[j], mtimes[j], unames[j], signs[j]])
+
+main_path = 'E:\\learn\\py\\git\\spider\\spider_learn\\bilibili\\bilibili_api\\csv'
+if not os.path.exists(main_path):
+    os.makedirs(main_path)
+
+dir = 'E:\\learn\\py\\git\\spider\\spider_learn\\bilibili\\bilibili_api\\csv\\' + \
+    'follers' + '.csv'
+
+with open(dir, 'w', encoding='utf-8') as f:
+    fb = csv.writer(f)
+    fb.writerow(headers)
+    fb.writerows(rows)
+
+
+print('----最多只显示一页的粉丝数，也就是50个----')
+print(f'共有{len(mids)}个粉丝')
+```
