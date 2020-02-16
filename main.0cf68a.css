@@ -1863,7 +1863,7 @@ pre .css~* .id, pre .id {
     max-width:100%
 }
 .article-inner h1.article-title, .article-title {
-    color:#696969;
+    color:#6e3c3c;
     margin-left:0;
     font-weight:300;
     line-height:35px;
@@ -1872,7 +1872,7 @@ pre .css~* .id, pre .id {
     transition:color .3s
 }
 .article-header {
-    border-left:5px solid #4d4d4d;
+    border-left:5px solid #5a5a5a;
     padding:30px 0 15px 25px;
     padding-left:7.6923%
 }
@@ -2976,7 +2976,7 @@ pre .css~* .id, pre .id {
         margin:0;
         position:relative;
         z-index:2;
-        color:#424242
+        color:#1dc2ce
     }
     #mobile-nav .overlay {
         height:110px;
@@ -3030,7 +3030,7 @@ pre .css~* .id, pre .id {
         justify-content:space-around;
         position:relative;
         z-index:1;
-        border:1px solid #a0a0a0;
+        border:1px solid #2c2c2c;
         border-radius:3px
     }
     .header-menu li {
@@ -3048,7 +3048,7 @@ pre .css~* .id, pre .id {
         text-overflow:ellipsis;
         white-space:nowrap;
         display:block;
-        color:#a0a0a0
+        color:#3b3b3b
     }
     .header-menu li a.active {
         color:#eaeaea;
@@ -3056,7 +3056,7 @@ pre .css~* .id, pre .id {
     }
     .profilepic {
         display:block;
-        border:5px solid #fff;
+        border:5px solid rgba(37, 185, 253, 0.555);
         border-radius:300px;
         width:128px;
         height:128px;
