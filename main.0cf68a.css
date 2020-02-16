@@ -335,12 +335,13 @@ body {
     min-height:100%;
     /*background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
     url(./img/1_.jpg) no-repeat 0% 20%/ cover;*/
-    cursor:url(./img/ico1.ico), default;
+    cursor:url(./img/ico2.png), default;
 }
 
 @media screen and (max-width:800px) {
     body {
-        background: url(./img/phone.jpg) no-repeat fixed top;}
+        background: linear-gradient(rgba(255, 127, 127, 0.212),rgba(255,255,255,0.2))
+        , url(./img/phone2.jpg) no-repeat 0% 20%/ cover;}
        }
 
 audio, canvas, progress, video {
@@ -2832,7 +2833,7 @@ pre .css~* .id, pre .id {
         border: 1px solid #ddd;
         border-top: 1px solid #fff;
         border-bottom: 1px solid #fff;
-        background: #fff;
+        background: rgba(85, 185, 185, 0.425);
         transition: all .2s ease-in
     }
     .article .article-more-link {
