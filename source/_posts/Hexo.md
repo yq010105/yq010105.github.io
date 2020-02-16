@@ -43,34 +43,151 @@ tags:
 
 - 没有跳过的会转化为 HTML，在 blog 中体现
 
-# 3. source/main.0cf68a.css 文件中
+# 3. 添加背景图片和左侧图片
 
-## 3.1 left-bg
+主要在`source/main.0cf68a.css` 文件中修改
 
-- left-col 中<hr/>
+> 具体修改参考[大佬博客](http://yansheng836.coding.me/)中的[这一篇](http://yansheng836.coding.me/article/72a91df5.html)
 
-## 3.2 body-bg
+## 3.1 左侧背景
 
-- 背景图片，先将背景调至半透明，然后添加图片
-- body 中
-  > 具体修改参考[大佬博客](http://yansheng836.coding.me/)中的[这一篇](http://yansheng836.coding.me/article/72a91df5.html)
+`themes/yilia/layout/_partial/left-col.ejs`文件中注释掉原来代码，添加新的无属性代码
+
+```js
+<!-- <div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>"> -->
+<!-- 左侧边栏（上半部分）不设置背景颜色 -->
+<div class="overlay" >
+```
+
+`themes\yilia\source\main.0cf68a.css`中修改添加背景图片
+
+```css
+.left-col {
+  /* background:#fff; 注释掉原来的修改背景*/
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("http://bucket836.oss-cn-shenzhen.aliyuncs.com/wallpaper/381535373.jpeg")
+      no-repeat 0% 20% / cover;
+  width: 300px;
+  position: fixed;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  height: 100%;
+  z-index: 999;
+}
+```
+
+如果你的背景图片跟文字颜色不匹配(字看不清)，可以修改中文件
+
+```css
+ .left-col #header a {
+    color:#696969
+    color:#673ab7^M
+ }
+ .left-col #header a:hover {
+    color:#b0a0aa
+    color: #03A9F4^M
+ }
+ .left-col #header .header-subtitle {
+     text-align:center;
+    color:#999;
+    color:#673ab7;
+     font-size:18px;
+```
+
+## 3.2 文章背景
+
+先将文章背景调成透明色,搜索`.article {`
+
+```css
+.article {
+  margin: 30px;
+  border: 1px solid #ddd;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.4); /*调成透明色，才能看清背景图片*/
+  transition: all 0.2s ease-in;
+}
+```
+
+然后再添加背景图片，搜索`body {`
+
+```css
+body {
+  margin: 0;
+  font-size: 14px;
+  font-family: Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  /*background-color:rgb(85, 144, 161); */
+  min-height: 100%;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ), url(./img/1_.jpg) no-repeat 0% 20% / cover; /*添加背景图片*/
+}
+```
+
+**如果修改完代码，背景还没有变，可能你的 body 或者 article 定义了两次，前面有一个 body{},后面还有一个，只要删掉后面的就可以了**
+_需要自己好好的找一找_
+
+**如果你的 main.0cf68a.css,文件代码很乱，可以在[我的 Github](https://github.com/yq010105/hexo_themes/blob/master/yilia/source/main.0cf68a.css)中复制** _别问我怎么知道的_
 
 ## 3.3 copy 代码块
 
 > 按照[大佬博客](http://yansheng836.coding.me/)中的[这一篇](http://yansheng836.coding.me/article/e9d1b881.html)
 
-# 4. 修改建站时间
+# 4. 添加网站运行时间
 
-## 4.1 footer.ejs
+_简单配置_
+修改`\themes\yilia\layout\_partial\footer.ejs`，在`</footer>`上面添加如下内容
 
-- yilia/layout/\_partial/footer.ejs
-  > 参考[这一篇](http://yansheng836.coding.me/article/50902a4.html)
+```js
+<!--《添加网站运行时间 -->
+<!--<br/>-->
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+
+    function createtime() {
+        var grt = new Date("07/25/2019 12:00:00"); //此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime() + 250);
+        days = (now - grt) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if (String(hnum).length == 1) {
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if (String(mnum).length == 1) {
+            mnum = "0" + mnum;
+        }
+        seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if (String(snum).length == 1) {
+            snum = "0" + snum;
+        }
+        document.getElementById("timeDate").innerHTML = " | 本站已安全运行 " + dnum + " 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()", 250);
+</script>
+<!-- 添加网站运行时间》 -->
+```
+
+> 参考[这一篇](http://yansheng836.coding.me/article/50902a4.html)
 
 # 5. 看板娘(かんばんむすめ)
 
 - **安装插件:** `npm install --save hexo-helper-live2d` **[github 项目](https://github.com/EYHN/hexo-helper-live2d)**
 - **安装模型:** `npm install live2d-widget-model-模型名` **[模型名参考](https://huaji8.top/post/live2d-plugin-2.0/)**
-- **在 yilia/\_config.yml 中添加**
+- **在 blog/\_config.yml 中添加**
+- _我在 yilia 中配置没有效果，但在 blog 中有效果_
 
 ```yml
 # Live2D
@@ -357,3 +474,43 @@ click_show_text: false
 ```
 
 > [参考博客](http://yansheng836.coding.me/article/cf9c6a5e.html)
+
+# 8. 修改手机端的页面背景颜色，文章的背景颜色以及头像上方颜色
+
+_在`main.0cf68a.css`中修改@media 下的模块_
+
+## 8.1 页面背景颜色(图片)
+
+添加下列代码，即为修改页面的背景托 i 按
+
+```css
+@media screen and (max-width: 800px) {
+  body {
+    background: linear-gradient(
+        rgba(255, 127, 127, 0.212),
+        rgba(255, 255, 255, 0.2)
+      ), url(./img/phone2.jpg) no-repeat 0% 20% / cover;
+  }
+}
+```
+
+## 8.2 文章背景颜色
+
+找到`@media`下的 article
+
+```css
+.article {
+  margin: 30px;
+  border: 1px solid #ddd;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  background: rgba(85, 185, 185, 0.425);
+  transition: all 0.2s ease-in;
+}
+```
+
+根据自己喜好改变`background`属性值
+
+## 8.3 头像图片
+
+直接在`_config.yml`中修改，我改成了透明即`header: 'rgba(255, 127, 127, 0)'`

@@ -457,3 +457,45 @@ Dim starName As String="刘翔”
 |  Mod   |     整除后的余数     |
 |   \\   |   整数除法 19\4=4    |
 |  +or&  | 字串串连"v"&"b"="vb" |
+
+**几个例子**
+```vb
+Dim firstName As String
+
+Dim secondName As String
+
+Dim yourName As String
+
+Private Sub Command1_Click()
+
+firstName = Text1.Text
+
+secondName = Text2.Text
+
+yourName = secondName + "  " + firstName
+
+Label1.Caption = yourName
+
+End Sub
+```
+```vb
+Dim number1, number2, number3 as Integer
+
+Dim total, average as variant
+
+Private sub Form_Click
+
+number1=val(Text1.Text)
+number2=val(Text2.Text)
+number3= val(Text3.Text)
+
+Total=number1+number2+number3
+
+Average=Total/5
+
+Label1.Caption=Total
+
+Label2.Caption=Average
+
+End Sub
+```
