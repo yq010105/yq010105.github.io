@@ -1,13 +1,13 @@
 ---
-title: Python_note
+title: Python-Note
 date: 2020-02-09 15:38:38
 tags:
   - Python
   - Note
 ---
 
+**Python 语言学习笔记**
 **python，边学爬虫，边把不会的 python 知识不全**
-_自己的 Python 笔记_
 
 <!-- more -->
 
@@ -33,7 +33,7 @@ fd.close()
 
 - headers :表头
 - rows :内容
-- f_csv = csv.writer(f)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_f 为 open('file.txt','w',encoding='utf-8')_
+- f*csv = csv.writer(f)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\_f 为 open('file.txt','w',encoding='utf-8')*
 - f_csv.writerow(headers)
 - f_csv.writerows(rows)
 

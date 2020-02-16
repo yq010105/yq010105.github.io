@@ -1,14 +1,14 @@
 ---
-title: Java-note
+title: Java-Note
 date: 2020-02-15 19:58:04
 tags:
   - Java
   - Note
 ---
 
-> [java 参考学习教程](https://www.runoob.com/java/java-basic-syntax.html)
+**Java 语言学习笔记**
 
-**学习 java 的笔记**
+> [java 参考学习教程](https://www.runoob.com/java/java-basic-syntax.html)
 
 <!--more-->
 
@@ -222,16 +222,18 @@ public class Puppy{
 ```
 
 ## 2.3 创建对象
-*对象是根据类创建的。在Java中，使用关键字new来创建一个新的对象*
-* 声明：声明一个对象，包括对象名称和对象类型
-* 实例化：使用关键字new来创建一个对象
-* 初始化：使用new创建对象时，会调用构造方法初始化对象
+
+_对象是根据类创建的。在 Java 中，使用关键字 new 来创建一个新的对象_
+
+- 声明：声明一个对象，包括对象名称和对象类型
+- 实例化：使用关键字 new 来创建一个对象
+- 初始化：使用 new 创建对象时，会调用构造方法初始化对象
 
 ```java
 public class Puppy{
    public Puppy(String name){
       //这个构造器仅有一个参数：name
-      System.out.println("小狗的名字是 : " + name ); 
+      System.out.println("小狗的名字是 : " + name );
    }
    public static void main(String[] args){
       // 下面的语句将创建一个Puppy对象
