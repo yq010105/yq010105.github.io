@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Github | Yun.Qi</title>
+  <title>Selector-jsoup &amp; Json Path | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yun.Qi">
-<meta property="og:url" content="http://yoursite.com/tags/Github/index.html">
+  <meta name="description" content="Jsoup 中 Selector 选择器用法Json Path的用法暂时不学了先，事情太多了  Jsoup Selector官方文档Json Path">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Selector-jsoup &amp; Json Path">
+<meta property="og:url" content="http://yoursite.com/2020/02/18/Selector-jsoup/index.html">
 <meta property="og:site_name" content="Yun.Qi">
+<meta property="og:description" content="Jsoup 中 Selector 选择器用法Json Path的用法暂时不学了先，事情太多了  Jsoup Selector官方文档Json Path">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-18T04:19:20.000Z">
+<meta property="article:modified_time" content="2020-02-18T12:38:12.127Z">
 <meta property="article:author" content="Yun Qi">
+<meta property="article:tag" content="HTML&#x2F;CSS&#x2F;JS">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Yun.Qi" type="application/atom+xml">
@@ -188,60 +193,151 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Selector-jsoup" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/09/github/" class="archive-article-date">
-  	<time datetime="2020-02-09T03:15:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/09/github/">Github</a>
+    <h1 class="article-title" itemprop="name">
+      Selector-jsoup &amp; Json Path
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/02/18/Selector-jsoup/" class="archive-article-date">
+  	<time datetime="2020-02-18T04:19:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
+</a>
+        
+      </header>
+      <div align="center" class="post-count">
+       字数: 750字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">Mystery</a>|&emsp;预计阅读时长：3分钟
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Jsoup 中 Selector 选择器用法</strong><br><strong>Json Path的用法</strong><br>暂时不学了先，事情太多了</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/syt_boss/article/details/82863990" target="_blank" rel="noopener">Jsoup Selector</a><br><a href="https://jsoup.org/apidocs/org/jsoup/select/Selector.html" target="_blank" rel="noopener">官方文档</a><br><a href="">Json Path</a></p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="1-Selector-选择器概述"><a href="#1-Selector-选择器概述" class="headerlink" title="1. Selector 选择器概述"></a>1. Selector 选择器概述</h1><ul>
+<li>tagname: 通过标签查找元素，比如：a</li>
+<li>ns|tag: 通过标签在命名空间查找元素，比如：可以用 fb|name 语法来查找 <a href="fb:name">fb:name</a> 元素</li>
+<li>#id: 通过 ID 查找元素，比如：#logo</li>
+<li>.class: 通过 class 名称查找元素，比如：.masthead</li>
+<li>[attribute]: 利用属性查找元素，比如：[href]</li>
+<li>[^attr]: 利用属性名前缀来查找元素，比如：可以用[^data-] 来查找带有 HTML5 Dataset 属性的元素</li>
+<li>[attr=value]: 利用属性值来查找元素，比如：[width=500]</li>
+<li>[attr^=value], [attr$=value], [attr<em>=value]: 利用匹配属性值开头、结尾或包含属性值来查找元素，比如：[href\</em>=/path/]</li>
+<li>[attr~=regex]: 利用属性值匹配正则表达式来查找元素，比如： img[src~=(?i).(png|jpe?g)]</li>
+<li>*: 这个符号将匹配所有元素</li>
+</ul>
+<h1 id="2-Selector选择器组合使用"><a href="#2-Selector选择器组合使用" class="headerlink" title="2. Selector选择器组合使用"></a>2. Selector选择器组合使用</h1><ul>
+<li>el#id: 元素+ID，比如： div#logo</li>
+<li>el.class: 元素+class，比如： div.masthead</li>
+<li>el[attr]: 元素+class，比如： a[href]</li>
+<li>任意组合，比如：a[href].highlight</li>
+<li>ancestor child: 查找某个元素下子元素，比如：可以用.body p 查找在”body”元素下的所有 p元素</li>
+<li>parent &gt; child: 查找某个父元素下的直接子元素，比如：可以用div.content &gt; p 查找 p 元素，也可以用body &gt; * 查找body标签下所有直接子元素</li>
+<li>siblingA + siblingB: 查找在A元素之前第一个同级元素B，比如：div.head + div</li>
+<li>siblingA ~ siblingX: 查找A元素之前的同级X元素，比如：h1 ~ p</li>
+<li>el, el, el:多个选择器组合，查找匹配任一选择器的唯一元素，例如：div.masthead, div.logo</li>
+</ul>
+<h1 id="3-伪选择器selectors"><a href="#3-伪选择器selectors" class="headerlink" title="3. 伪选择器selectors"></a>3. 伪选择器selectors</h1><ul>
+<li>:lt(n): 查找哪些元素的同级索引值（它的位置在DOM树中是相对于它的父节点）小于n，比如：td:lt(3) 表示小于三列的元素</li>
+<li>:gt(n):查找哪些元素的同级索引值大于n，比如： div p:gt(2)表示哪些div中有包含2个以上的p元素</li>
+<li>:eq(n): 查找哪些元素的同级索引值与n相等，比如：form input:eq(1)表示包含一个input标签的Form元素</li>
+<li>:has(seletor): 查找匹配选择器包含元素的元素，比如：div:has(p)表示哪些div包含了p元素</li>
+<li>:not(selector): 查找与选择器不匹配的元素，比如： div:not(.logo) 表示不包含 class=logo 元素的所有 div 列表</li>
+<li>:contains(text): 查找包含给定文本的元素，搜索不区分大不写，比如： p:contains(jsoup)</li>
+<li>:containsOwn(text): 查找直接包含给定文本的元素</li>
+<li>:matches(regex): 查找哪些元素的文本匹配指定的正则表达式，比如：div:matches((?i)login)</li>
+<li>:matchesOwn(regex): 查找自身包含文本匹配指定正则表达式的元素</li>
+<li>注意：上述伪选择器索引是从0开始的，也就是说第一个元素索引值为0，第二个元素index为1等</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTML/CSS/JS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/02/18/%E4%B8%80%E4%BA%9B%E5%A5%87%E6%80%AA%E7%9A%84%E6%83%B3%E8%B1%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一些奇怪的想象</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Selector-选择器概述"><span class="toc-number">1.</span> <span class="toc-text">1. Selector 选择器概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Selector选择器组合使用"><span class="toc-number">2.</span> <span class="toc-text">2. Selector选择器组合使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-伪选择器selectors"><span class="toc-number">3.</span> <span class="toc-text">3. 伪选择器selectors</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -296,9 +392,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
