@@ -3,6 +3,7 @@ title: Python_solve_problems
 date: 2020-02-17 17:09:35
 tags:
   - Python
+  - Questions
 ---
 
 **这篇主要是记录一些生活学习中遇到的一些难题,想不通,就用 python 模拟出来**
