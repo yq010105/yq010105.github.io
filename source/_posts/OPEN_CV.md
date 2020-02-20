@@ -3,6 +3,7 @@ title: 第一次萌芽杯python技能
 date: 2020-02-18 20:42:34
 tags:
   - Python
+  - Opencv
 ---
 
 ~~萌芽杯比赛可能需要~~
@@ -32,6 +33,29 @@ def cv_show(name,img):
     cv2.waitKey(0)
     cv2.destroyALLWindows()
 ```
+## 0.1.1 画直线
+
+像素点坐标，左为零，上为零
+左上角为坐标原点，而坐标系是从左到右x符合，从上到下，y要取负
+
+
+```py
+img = np.zeros((320, 320, 3), np.uint8) #生成一个空灰度图像
+print(img.shape) # 输出：(320, 320, 3)
+
+def cv_show(name,img):
+    cv2.namedWindow(name,0)
+    cv2.imshow(name,img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+# 图片，初始坐标，结束坐标，图线颜色，图线粗细
+cv2.line(img,(0,100),(100,0),(0,0,255),2)
+cv2.line(img,(0,200),(100,0),(0,255,0),2)
+cv_show('line',img)
+```
+
+
 
 ## 0.2 基本属性/函数
 
@@ -558,6 +582,167 @@ cv2.waitKey(0)
 ```
 
 ## 0.21 直方图
+图片像素的统计直方图
+cv2.calcHist(img,channels,mask,histSize,ranges)
+img -- 图片
+channels--通道 0 -- 自动灰度图  'b' 'g' 'r'
+mask--淹模图像，掩码，统计某一部分
+    创建掩码
+    mask = np.zeros(img,shape[:2],np.uint8)
+    选择掩码保存部分
+    mask[100:300,100:400] = 255 白色保存部分
+    # masked_img = cv2.bitwise_and(img,img,mask=mask)
+hisSize -- BIN的数目，直方图范围
+ranges -- 像素值取值反围
+
+`hist = cv2.calcHist([img],[0],None,[256],[0,256])`
+```py
+img =cv2.imread('1.jpg')
+hist = cv2.calcHist([img],[0],None,[256],[0,256])
+# 画出直方图
+plt.hist(img,ravel(),256):
+plt.show
+```
+
+直方图均衡化
+
+```py
+# 如果统计出来的直方图 不太平均
+# 平均化
+equ = cv2.equalizeHist(img)
+plt.hist(equ,ravel(),256)
+plt.show
+
+# 结果更加的明显    
+# 一个部分分给其他部分，进行均衡
+# 分模块进行均衡化
+# 但有的图会出现边界
+```
+自适应直方图均衡化
+```py
+clahe = cv2.createCLAHE(clipLimit = 2.0,tileGridSize = (8，8))
+res_clahe = clahe.apply(img)
+cv2.imshow('result',res_clahe)
+```
+
+## 0.22傅里叶变换
+现实中的事物都是运动的
+而傅里叶的频域中一切都是静止的，现实中的东西在频域中分为高频，低频
+* 高频：变化剧烈的灰度分量，eg：边界
+* 低频：变化缓慢的灰度变量，eg：一片大海
+![傅里叶](/img/opencv/傅里叶.png)
+滤波
+低通滤波器：只保留低频，图像变得模糊
+高通滤波器：只保留高频，图像细节增强
+
+
+在 频域中处理，更加方便
+```py
+cv2.dft()
+# 逆变换
+cv2.idft()
+
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+
+img = cv2.imread('1.jpg',0)
+# 输入图像必须先转换成float32格式
+img_float32 = np.float32(img)
+# 得到的结果中 频率为0的部分在左上角，通常要转换到中心位置，用shift变换
+dft = cv2.dft(img_float32,flags = cv2.DFT_COMPLEX_OUTPUT)
+dft_shift = np.fft.fftshift(dft)
+# cv2.dft()返回结果是双通道的，通常还要转换为图像格式
+magnitude_spectrum = 20*np.log(cv2.magnitude(dft_shift[:,:,0],dft_shift[:,:,1]))
+```
+低通：
+```py
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+
+def cv_show(name,img):
+    cv2.namedWindow(name,0)
+    cv2.imshow(name,img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+img = cv2.imread('./img/clock1.jpg',0)
+# 输入图像必须先转换成float32格式
+img_float32 = np.float32(img)
+# 得到的结果中 频率为0的部分在左上角，通常要转换到中心位置，用shift变换
+dft = cv2.dft(img_float32,flags = cv2.DFT_COMPLEX_OUTPUT)
+dft_shift = np.fft.fftshift(dft)
+# cv2.dft()返回结果是双通道的，通常还要转换为图像格式
+# magnitude_spectrum = 20*np.log(cv2.magnitude(dft_shift[:,:,0],dft_shift[:,:,1]))
+
+rows,cols = img.shape
+crow,ccol = int(rows/2) , int(cols/2)
+
+# 要magn里面
+# 创建一个掩码  zeros 全为0 全不要
+mask = np.zeros((rows,cols,2),np.uint8)
+mask[crow-30:crow+30,ccol-30:ccol+30] = 1   # 中间为低频，低频要 
+fshift = dft_shift*mask
+# shift 回去
+f_ishift = np.fft.ifftshift(fshift)
+
+img_back = cv2.idft(f_ishift)
+img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
+
+
+plt.subplot(121), plt.imshow(img,cmap = 'gray')
+plt.title('input image'), plt.xticks([]),plt.yticks([])
+plt.subplot(122), plt.imshow(img_back, cmap = 'gray')
+plt.title('magnitude spectrum'), plt.xticks([]),plt.yticks([])
+plt.show()
+图像模糊
+```
+高通
+```py
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+
+def cv_show(name,img):
+    cv2.namedWindow(name,0)
+    cv2.imshow(name,img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+img = cv2.imread('./img/clock1.jpg',0)
+# 输入图像必须先转换成float32格式
+img_float32 = np.float32(img)
+# 得到的结果中 频率为0的部分在左上角，通常要转换到中心位置，用shift变换
+dft = cv2.dft(img_float32,flags = cv2.DFT_COMPLEX_OUTPUT)
+dft_shift = np.fft.fftshift(dft)
+# cv2.dft()返回结果是双通道的，通常还要转换为图像格式
+# magnitude_spectrum = 20*np.log(cv2.magnitude(dft_shift[:,:,0],dft_shift[:,:,1]))
+
+rows,cols = img.shape
+crow,ccol = int(rows/2) , int(cols/2)
+
+# 全为1 全要
+mask = np.ones((rows,cols,2),np.uint8)
+mask[crow-30:crow+30,ccol-30:ccol+30] = 0   # 中间为0，中间不要，即低频不要
+fshift = dft_shift*mask
+# shift 回去
+f_ishift = np.fft.ifftshift(fshift)
+
+img_back = cv2.idft(f_ishift)
+img_back = cv2.magnitude(img_back[:,:,0],img_back[:,:,1])
+
+# 展示
+plt.subplot(121), plt.imshow(img,cmap = 'gray')
+plt.title('input image'), plt.xticks([]),plt.yticks([])
+plt.subplot(122), plt.imshow(img_back, cmap = 'gray')
+plt.title('magnitude spectrum'), plt.xticks([]),plt.yticks([])
+plt.show()
+```
+
+## 0.23 实战
+### 0.23.1银行卡的号码读取
+
 
 
 # 1. 图像识别相关
