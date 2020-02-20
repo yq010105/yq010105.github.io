@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python_mengya | Yun.Qi</title>
+  <title>Python_mengya_process | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="代码的构造过程，并没有写完">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python_mengya">
+<meta property="og:title" content="Python_mengya_process">
 <meta property="og:url" content="http://yoursite.com/2020/02/19/python_mengya/index.html">
 <meta property="og:site_name" content="Yun.Qi">
 <meta property="og:description" content="代码的构造过程，并没有写完">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-19T04:51:09.000Z">
-<meta property="article:modified_time" content="2020-02-19T12:56:55.527Z">
+<meta property="article:modified_time" content="2020-02-20T13:59:03.762Z">
 <meta property="article:author" content="Yun Qi">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Opencv">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Yun.Qi" type="application/atom+xml">
@@ -71,10 +73,10 @@
 			</ul>
 		</nav>
 		<nav>
-			已经写了 20 篇
+			已经写了 21 篇
 		</nav>
 		<nav>
-			字数已达 <span class="post-count">34.4k</span>
+			字数已达 <span class="post-count">36.5k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -199,7 +201,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python_mengya
+      Python_mengya_process
     </h1>
   
 
@@ -210,7 +212,7 @@
         
       </header>
       <div align="center" class="post-count">
-       字数: 154字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">Mystery</a>|&emsp;预计阅读时长：1分钟
+       字数: 945字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">Mystery</a>|&emsp;预计阅读时长：5分钟
       </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -219,6 +221,10 @@
 <a id="more"></a>
 
 <h1 id="1-测试"><a href="#1-测试" class="headerlink" title="1. 测试"></a>1. 测试</h1><h2 id="1-1-视频经过梯度处理"><a href="#1-1-视频经过梯度处理" class="headerlink" title="1.1 视频经过梯度处理"></a>1.1 视频经过梯度处理</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">vc = cv2.VideoCapture(<span class="string">'./video/1.mp4'</span>)</span><br><span class="line"><span class="keyword">if</span> vc.isOpened():</span><br><span class="line">    open, frame = vc.read()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    open = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> open:</span><br><span class="line">    ret, frame = vc.read()</span><br><span class="line">    <span class="keyword">if</span> frame <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> ret == <span class="literal">True</span>:</span><br><span class="line">        gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)</span><br><span class="line">        <span class="comment"># sobelx = cv2.Sobel(gray,cv2.CV_64F,1,0)</span></span><br><span class="line">        <span class="comment"># sobely = cv2.Sobel(gray,cv2.CV_64F,0,1)</span></span><br><span class="line">        <span class="comment"># sobelx = cv2.convertScaleAbs(sobelx)</span></span><br><span class="line">        <span class="comment"># sobely = cv2.convertScaleAbs(sobely)</span></span><br><span class="line">        <span class="comment"># sobelxy = cv2.addWeighted(sobelx,0.5,sobely,0.5,0)</span></span><br><span class="line">        v1 = cv2.Canny(gray,<span class="number">10</span>,<span class="number">50</span>)</span><br><span class="line">        cv2.namedWindow(<span class="string">'result'</span>,<span class="number">0</span>)</span><br><span class="line">        <span class="comment"># cv2.imshow('result',sobelxy)</span></span><br><span class="line">        cv2.imshow(<span class="string">'result'</span>,v1)</span><br><span class="line">        <span class="keyword">if</span> cv2.waitKey(<span class="number">10</span>) &amp; <span class="number">0xFF</span> == <span class="number">27</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">vc.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-检测指针，绘制直线"><a href="#1-2-检测指针，绘制直线" class="headerlink" title="1.2 检测指针，绘制直线"></a>1.2 检测指针，绘制直线</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">'./img/clock2.jpg'</span>)    <span class="comment"># + input('请输入文件路径：')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cv_show</span><span class="params">(name,img)</span>:</span></span><br><span class="line">    cv2.namedWindow(name,<span class="number">0</span>)</span><br><span class="line">    cv2.imshow(name,img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">linedraw</span><span class="params">(image)</span>:</span></span><br><span class="line">    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">        <span class="comment"># edges = cv.Canny(gray, 50, 150, apertureSize=3)</span></span><br><span class="line">        <span class="comment"># 自动检测可能的直线，返回的是一条条线段</span></span><br><span class="line">    ret, thresohold = cv2.threshold(gray, <span class="number">55</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">    <span class="comment"># aussian = cv2.GaussianBlur(thresohold, (5, 5), 1) 高斯</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># kernel = np.ones((5, 5), np.uint8)  # （5，5）腐蚀大小</span></span><br><span class="line">    <span class="comment"># erosion = cv2.erode(thresohold, kernel, iterations=1) 去噪音点</span></span><br><span class="line">    </span><br><span class="line">    edges = cv2.Canny(thresohold, <span class="number">10</span>, <span class="number">150</span>, apertureSize=<span class="number">3</span>)</span><br><span class="line">    lines = cv2.HoughLinesP(edges, <span class="number">1</span>, np.pi / <span class="number">180</span>, <span class="number">80</span>, minLineLength=<span class="number">110</span>, maxLineGap=<span class="number">10</span>)</span><br><span class="line">        <span class="comment"># print(type(lines))</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">        x1, y1, x2, y2 = line[<span class="number">0</span>]</span><br><span class="line">        cv2.line(image, (x1, y1), (x2, y2), (<span class="number">0</span>, <span class="number">255</span>,<span class="number">0</span>), <span class="number">2</span>)</span><br><span class="line">    cv_show(<span class="string">'result'</span>,image)</span><br><span class="line"></span><br><span class="line">linedraw(img)</span><br><span class="line">os.system(<span class="string">"pause"</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-小综合；根据表盘识别指针并求出斜率"><a href="#1-3-小综合；根据表盘识别指针并求出斜率" class="headerlink" title="1.3 小综合；根据表盘识别指针并求出斜率"></a>1.3 小综合；根据表盘识别指针并求出斜率</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">'./img/clock1.jpg'</span>, cv2.IMREAD_UNCHANGED)</span><br><span class="line"><span class="comment"># 裁剪图片  具体指针要改</span></span><br><span class="line">imgbufen = img[<span class="number">70</span>:<span class="number">566</span>,<span class="number">0</span>:<span class="number">1000</span>]</span><br><span class="line"><span class="comment"># 将图像的阈值化 小于阈值的为max 大于阈值的为0，</span></span><br><span class="line"><span class="comment"># 主要是因为这个指针是黑的,圆形遮罩也是黑的，所以先把指针反转为白的</span></span><br><span class="line"><span class="comment"># 具体指针要改</span></span><br><span class="line">imgfan = cv2.threshold(imgbufen,<span class="number">127</span>,<span class="number">255</span>,cv2.THRESH_BINARY_INV)[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出图像</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cv_show</span><span class="params">(name,img)</span>:</span></span><br><span class="line">    cv2.namedWindow(name,<span class="number">0</span>)</span><br><span class="line">    cv2.imshow(name,img)</span><br><span class="line">    cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">    cv2.destroyAllWindows()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 得到一个圆形遮罩，返回中间圆形</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_zhezhao</span><span class="params">(imgfan)</span>:</span></span><br><span class="line">    <span class="comment">#获取图片尺寸</span></span><br><span class="line">    height, width = imgfan.shape[:<span class="number">2</span>]</span><br><span class="line">    height = int(height)</span><br><span class="line">    width = int(width)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#生成内显示模板</span></span><br><span class="line">    circleIn = np.zeros((height, width, <span class="number">1</span>), np.uint8)</span><br><span class="line">    circleIn = cv2.circle(circleIn, (width // <span class="number">2</span>, height // <span class="number">2</span>), min(height, width) // <span class="number">2</span>, (<span class="number">1</span>), <span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#原图与内显示模板融合</span></span><br><span class="line">    <span class="comment">#生成空白图片</span></span><br><span class="line">    imgIn = np.zeros((height, width, <span class="number">4</span>), np.uint8)</span><br><span class="line">    <span class="comment">#复制前3个通道</span></span><br><span class="line">    imgIn[:, :, <span class="number">0</span>] = np.multiply(imgfan[:, :, <span class="number">0</span>], circleIn[:, :, <span class="number">0</span>])</span><br><span class="line">    imgIn[:, :, <span class="number">1</span>] = np.multiply(imgfan[:, :, <span class="number">1</span>], circleIn[:, :, <span class="number">0</span>])</span><br><span class="line">    imgIn[:, :, <span class="number">2</span>] = np.multiply(imgfan[:, :, <span class="number">2</span>], circleIn[:, :, <span class="number">0</span>])</span><br><span class="line">    <span class="comment">#设置α通道的不透明部分</span></span><br><span class="line">    circleIn[circleIn == <span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">    imgIn[:, :, <span class="number">3</span>] = circleIn[:, :, <span class="number">0</span>]</span><br><span class="line">    <span class="comment"># cv2.imwrite('./img/result1.jpg', imgIn)</span></span><br><span class="line">    <span class="comment"># cv_show('imgin',imgIn)</span></span><br><span class="line">    <span class="keyword">return</span> imgIn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 得到线，霍夫直线</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getlines</span><span class="params">(imgIn)</span>:</span></span><br><span class="line">    gray = cv2.cvtColor(imgIn,cv2.COLOR_BGR2GRAY)</span><br><span class="line">    <span class="comment"># cv_show("gray",gray)</span></span><br><span class="line">    edges = cv2.Canny(gray, <span class="number">10</span>, <span class="number">150</span>, apertureSize=<span class="number">3</span>)</span><br><span class="line">    lines = cv2.HoughLinesP(edges, <span class="number">1</span>, np.pi / <span class="number">180</span>, <span class="number">80</span>, minLineLength=<span class="number">110</span>, maxLineGap=<span class="number">10</span>)</span><br><span class="line">            <span class="comment"># print(type(lines))</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">        x1, y1, x2, y2 = line[<span class="number">0</span>]</span><br><span class="line">        <span class="comment"># print(x1,y1,x2,y2)</span></span><br><span class="line">        cv2.line(imgbufen, (x1, y1), (x2, y2), (<span class="number">0</span>, <span class="number">255</span>,<span class="number">0</span>), <span class="number">2</span>)</span><br><span class="line">        <span class="comment"># cv_show('img',imgbufen)</span></span><br><span class="line">        floatx1.append(float(x1))</span><br><span class="line">        floaty1.append(float(y1))</span><br><span class="line">        floatx2.append(float(x2))</span><br><span class="line">        floaty2.append(float(y2))</span><br><span class="line">    <span class="comment"># cv_show('imgline',imgbufen)</span></span><br><span class="line">    <span class="keyword">return</span> floatx1,floaty1,floatx2,floaty2</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_thr_k</span><span class="params">()</span>:</span></span><br><span class="line">    thrs = []</span><br><span class="line">    ks = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(floatx1)):</span><br><span class="line">        x1 = floatx1[i]</span><br><span class="line">        y1 = floaty1[i]</span><br><span class="line">        x2 = floatx2[i]</span><br><span class="line">        y2 = floaty2[i]</span><br><span class="line">        k = (y1-y2)/(x2-x1)</span><br><span class="line">        thr = math.atan(k)</span><br><span class="line">        thr = math.degrees(thr)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        ks.append(k)</span><br><span class="line">        thrs.append(thr)</span><br><span class="line">    <span class="keyword">return</span> ks,thrs</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">imgIn = get_zhezhao(imgfan)</span><br><span class="line">floatx1,floaty1,floatx2,floaty2 = [],[],[],[]</span><br><span class="line">getlines(imgIn)</span><br><span class="line"></span><br><span class="line"><span class="comment"># print(floatx1,floaty1,floatx2,floaty2)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 多条直线的角度列表，单条直线直接thrs[0]</span></span><br><span class="line">thrs = get_thr_k()</span><br><span class="line">print(<span class="string">f'直线的斜率为：<span class="subst">&#123;thrs[<span class="number">0</span>][<span class="number">0</span>]&#125;</span>'</span>)</span><br><span class="line">print(<span class="string">f'直线与横线间角度值：<span class="subst">&#123;thrs[<span class="number">1</span>][<span class="number">0</span>]&#125;</span>'</span>)</span><br><span class="line">cv_show(<span class="string">'imgline'</span>,imgbufen)</span><br></pre></td></tr></table></figure>
       
 
       
@@ -226,6 +232,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -239,8 +260,17 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/02/20/math/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          math
+        
+      </div>
+    </a>
   
-    <a href="/2020/02/18/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2020/02/18/OPEN_CV/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">第一次萌芽杯python技能</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -268,7 +298,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-测试"><span class="toc-number">1.</span> <span class="toc-text">1. 测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-视频经过梯度处理"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 视频经过梯度处理</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-测试"><span class="toc-number">1.</span> <span class="toc-text">1. 测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-视频经过梯度处理"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 视频经过梯度处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-检测指针，绘制直线"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 检测指针，绘制直线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-小综合；根据表盘识别指针并求出斜率"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 小综合；根据表盘识别指针并求出斜率</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -424,11 +454,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Questions</a>
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">HTML/CSS/JS</a>
+                <a href="javascript:void(0)" class="js-tag color5">Questions</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -436,11 +466,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">HTML/CSS/JS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color3">VB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,7 +482,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">VB</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">脑洞（并不是）</a>
               </li>
             
             <div class="clearfix"></div>
