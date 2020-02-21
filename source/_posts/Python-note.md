@@ -319,6 +319,59 @@ except Networkerror,e:
 这个时候就要注意既要判定"\r\n"又要判定"\n"。
 ```
 
+## 7.2 Python 中 import, from...import,import...as 的区别
+
+```py
+import datetime
+print(datetime.datetime.now())
+```
+
+以上代码实现输出系统当前时间，是引入整个 datetime 包，然后再调用 datetime 这个类中的 now()方法
+
+```py
+from datetime import datetime
+print(datetime.now())
+```
+
+这里是从 datetime 包中只导入 datetime 这个类，让后再调用 datetime 这个类中的 now()方法实现同样的目的
+
+```py
+import datetime as dt
+print(dt.datetime.now())
+```
+
+假如你嫌 datetime 这个包名称太长，想要给它取个别名，以后每次用到它的时候都用它的别名代替它，这时就需要用到 import…as
+
+## 7.3 Python中[ : n]、[m : ]、[-1]、[:-1]、[::-1]、[2::-1]和[1:]的含义
+
+```py
+[m : ] 代表列表中的第m+1项到最后一项
+
+[ : n] 代表列表中的第一项到第n项
+
+ 
+
+import numpy as np
+a=[1,2,3.4,5]
+print(a)
+[ 1 2 3 4 5 ]
+ 
+print(a[-1])     取最后一个元素
+结果：[5]
+ 
+print(a[:-1])     除了最后一个取全部
+结果：[ 1 2 3 4 ]
+ 
+print(a[::-1])     取从后向前（相反）的元素
+结果：[ 5 4 3 2 1 ]
+ 
+print(a[2::-1])     取从下标为2的元素翻转读取
+结果：[ 3 2 1 ]
+
+print(a[1:])     取第二个到最后一个元素
+结果：[2 3 4 5]
+```
+
 # 8. python 中陌生的函数
 
 _自己还不太熟悉的_

@@ -1,5 +1,5 @@
 ---
-title: Pyinstaller
+title: Python_Pyinstaller
 date: 2020-02-13 17:36:51
 tags:
   - Python

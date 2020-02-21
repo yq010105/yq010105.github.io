@@ -2,8 +2,8 @@
 title: 第一次萌芽杯python技能
 date: 2020-02-18 20:42:34
 tags:
-  - Python
-  - Opencv
+    - Python
+    - 萌芽杯
 ---
 
 ~~萌芽杯比赛可能需要~~

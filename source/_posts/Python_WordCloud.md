@@ -1,5 +1,5 @@
 ---
-title: WordCloud
+title: Python_WordCloud
 date: 2020-02-13 20:23:53
 tags:
   - Python

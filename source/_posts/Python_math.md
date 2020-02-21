@@ -1,5 +1,5 @@
 ---
-title: math
+title: Python_math
 date: 2020-02-20 21:47:39
 tags:
     - Python

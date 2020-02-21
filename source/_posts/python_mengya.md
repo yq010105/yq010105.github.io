@@ -3,7 +3,7 @@ title: Python_mengya_process
 date: 2020-02-19 12:51:09
 tags:
     - Python 
-    - Opencv
+    - 萌芽杯
 ---
 
 **代码的构造过程，并没有写完**
