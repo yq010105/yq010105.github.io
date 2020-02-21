@@ -6,15 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Opencv | Yun.Qi</title>
+  <title>Python_Plt | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yun.Qi">
-<meta property="og:url" content="http://yoursite.com/tags/Opencv/index.html">
+  <meta name="description" content="Python plt 的学习  参考教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python_Plt">
+<meta property="og:url" content="http://yoursite.com/2020/02/21/Python_plt/index.html">
 <meta property="og:site_name" content="Yun.Qi">
+<meta property="og:description" content="Python plt 的学习  参考教程">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/img/plt/plot1.png">
+<meta property="og:image" content="http://yoursite.com/img/plt/plot2.png">
+<meta property="og:image" content="http://yoursite.com/img/plt/plot3.png">
+<meta property="og:image" content="http://yoursite.com/img/plt/plot4.png">
+<meta property="og:image" content="http://yoursite.com/img/plt/figure1.png">
+<meta property="og:image" content="http://yoursite.com/img/plt/xticks.png">
+<meta property="og:image" content="http://yoursite.com/img/plt/title1.png">
+<meta property="article:published_time" content="2020-02-21T03:37:01.000Z">
+<meta property="article:modified_time" content="2020-02-21T05:25:40.486Z">
 <meta property="article:author" content="Yun Qi">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/img/plt/plot1.png">
   
     <link rel="alternative" href="/atom.xml" title="Yun.Qi" type="application/atom+xml">
   
@@ -67,10 +80,10 @@
 			</ul>
 		</nav>
 		<nav>
-			已经写了 21 篇
+			已经写了 23 篇
 		</nav>
 		<nav>
-			字数已达 <span class="post-count">36.5k</span>
+			字数已达 <span class="post-count">39.1k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -188,36 +201,94 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Python_plt" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/python_mengya/" class="archive-article-date">
-  	<time datetime="2020-02-19T04:51:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/python_mengya/">Python_mengya_process</a>
+    <h1 class="article-title" itemprop="name">
+      Python_Plt
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/02/21/Python_plt/" class="archive-article-date">
+  	<time datetime="2020-02-21T03:37:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
+</a>
+        
+      </header>
+      <div align="center" class="post-count">
+       字数: 1,395字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">Mystery</a>|&emsp;预计阅读时长：6分钟
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Python plt 的学习</strong></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/qiurisiyu2016/article/details/80187177" target="_blank" rel="noopener">参考教程</a></p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="0-plt-打开-opencv-图像"><a href="#0-plt-打开-opencv-图像" class="headerlink" title="0. plt 打开 opencv 图像"></a>0. plt 打开 opencv 图像</h1><p><strong>BGR 用 RGB 打开</strong></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">img=cv2.imread(<span class="string">'lena.jpg'</span>,cv2.IMREAD_COLOR)</span><br><span class="line"></span><br><span class="line"><span class="comment">#method1</span></span><br><span class="line">b,g,r=cv2.split(img)</span><br><span class="line">img2=cv2.merge([r,g,b])</span><br><span class="line">plt.imshow(img2)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment">#method2</span></span><br><span class="line">img3=img[:,:,::<span class="number">-1</span>]</span><br><span class="line">plt.imshow(img3)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="comment">#method3</span></span><br><span class="line">img4=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)</span><br><span class="line">plt.imshow(img4)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h1 id="1-plt-plot-x-y"><a href="#1-plt-plot-x-y" class="headerlink" title="1. plt.plot(x,y)"></a>1. plt.plot(x,y)</h1><p><code>format_string的内容</code><br><img src="/img/plt/plot1.png" alt="string内容图片"><br><img src="/img/plt/plot2.png" alt="string内容图片"><br><img src="/img/plt/plot3.png" alt="string内容图片"><br><code>**kwargs</code></p>
+<p>**kwards：<br>color 颜色<br>linestyle 线条样式<br>marker 标记风格<br>markerfacecolor 标记颜色<br>markersize 标记大小 等等</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># plt.plot(x,y,format_string,**kwargs)</span></span><br><span class="line"><span class="comment"># x轴数据，y轴数据，控制曲线格式的字符串format_string颜色字符，风格字符，和标记字符</span></span><br><span class="line">plt.plot([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">6</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">1</span>],<span class="string">'r-s'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><strong>展示</strong><br><img src="/img/plt/plot4.png" alt="plot"></p>
+<h1 id="2-plt-figure-用来画图，自定义画布大小"><a href="#2-plt-figure-用来画图，自定义画布大小" class="headerlink" title="2. plt.figure()用来画图，自定义画布大小"></a>2. plt.figure()用来画图，自定义画布大小</h1><p>定义画布大小，然后用 plot 画图</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># plt.figure() # 用来画图,自定义画布大小</span></span><br><span class="line">fig1 = plt.figure(num=<span class="string">'fig111111'</span>, figsize=(<span class="number">10</span>, <span class="number">3</span>), dpi=<span class="number">75</span>, facecolor=<span class="string">'#FFFFFF'</span>, edgecolor=<span class="string">'#0000FF'</span>)</span><br><span class="line"><span class="comment"># 名字,宽*高，dpi图像每英寸长度内的像素点数 一般75，</span></span><br><span class="line">plt.plot([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">plt.show()</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/plt/figure1.png" alt="展示图片"></p>
+<h1 id="3、plt-subplot-222"><a href="#3、plt-subplot-222" class="headerlink" title="3、plt.subplot(222)"></a>3、plt.subplot(222)</h1><p>将 figure 设置的画布大小分成几个部分，参数‘221’表示 2(row)x2(colu),即将画布分成 2x2，两行两列的 4 块区域，1 表示选择图形输出的区域在第一块，图形输出区域参数必须在“行 x 列”范围，此处必须在 1 和 2 之间选择——如果参数设置为 subplot(111)，则表示画布整个输出，不分割成小块区域，图形直接输出在整块画布上</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">plt.subplot(<span class="number">222</span>) </span><br><span class="line">plt.plot(y,xx)    <span class="comment">#在2x2画布中第二块区域输出图形</span></span><br><span class="line">plt.show()</span><br><span class="line">plt.subplot(<span class="number">223</span>)  <span class="comment">#在2x2画布中第三块区域输出图形</span></span><br><span class="line">plt.plot(y,xx)</span><br><span class="line">plt.subplot(<span class="number">224</span>)  <span class="comment"># 在在2x2画布中第四块区域输出图形</span></span><br><span class="line">plt.plot(y,xx)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 子图</span></span><br><span class="line">plt.add_subplot(<span class="number">221</span>)</span><br><span class="line">plt.add_subplot(<span class="number">222</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="4、plt-xlim-设置-x-轴或者-y-轴刻度范围"><a href="#4、plt-xlim-设置-x-轴或者-y-轴刻度范围" class="headerlink" title="4、plt.xlim 设置 x 轴或者 y 轴刻度范围"></a>4、plt.xlim 设置 x 轴或者 y 轴刻度范围</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.xlim(<span class="number">0</span>,<span class="number">1000</span>)  <span class="comment">#  设置x轴刻度范围，从0~1000         #lim为极限，范围</span></span><br><span class="line">plt.ylim(<span class="number">0</span>,<span class="number">20</span>)   <span class="comment"># 设置y轴刻度的范围，从0~20</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="5、plt-xticks-：设置-x-轴刻度的表现方式"><a href="#5、plt-xticks-：设置-x-轴刻度的表现方式" class="headerlink" title="5、plt.xticks()：设置 x 轴刻度的表现方式"></a>5、plt.xticks()：设置 x 轴刻度的表现方式</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fig2 = plt.figure(num=<span class="string">'fig222222'</span>, figsize=(<span class="number">6</span>, <span class="number">3</span>), dpi=<span class="number">75</span>, facecolor=<span class="string">'#FFFFFF'</span>, edgecolor=<span class="string">'#FF0000'</span>)</span><br><span class="line">plt.plot()</span><br><span class="line"><span class="comment"># np.linspace 创建等差数列</span></span><br><span class="line">plt.xticks(np.linspace(<span class="number">0</span>,<span class="number">1000</span>,<span class="number">15</span>,endpoint=<span class="literal">True</span>))</span><br><span class="line"><span class="comment"># 设置x轴刻度</span></span><br><span class="line">plt.yticks(np.linspace(<span class="number">0</span>,<span class="number">20</span>,<span class="number">10</span>,endpoint=<span class="literal">True</span>))</span><br><span class="line">plt.show()</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><strong>展示</strong><br><img src="/img/plt/xticks.png" alt="xticks代码展示"></p>
+<h1 id="6-plt-scatter-–散点图"><a href="#6-plt-scatter-–散点图" class="headerlink" title="6. plt.scatter()–散点图"></a>6. plt.scatter()–散点图</h1><p><code>matplotlib.pyplot.scatter(x, y, s=None, c=None, marker=None, cmap=None, norm=None, vmin=None, vmax=None,alpha=None, linewidths=None, verts=None, edgecolors=None, *, data=None, **kwargs)</code></p>
+<ul>
+<li>x，y：表示的是大小为(n,)的数组，也就是我们即将绘制散点图的数据点</li>
+<li>s:是一个实数或者是一个数组大小为(n,)，这个是一个可选的参数</li>
+<li>c:表示的是颜色，也是一个可选项。默认是蓝色’b’,表示的是标记的颜色，或者可以是一个表示颜色的字符，或者是一个长度为 n 的表示颜色的序列等等</li>
+<li>marker:表示的是标记的样式，默认的是’o’</li>
+<li>cmap:Colormap 实体或者是一个 colormap 的名字，cmap 仅仅当 c 是一个浮点数数组的时候才使用。如果没有申明就是 image.cmap</li>
+<li>norm:Normalize 实体来将数据亮度转化到 0-1 之间，也是只有 c 是一个浮点数的数组的时候才使用。如果没有申明，就是默认为 colors.Normalize</li>
+<li>vmin,vmax:实数，当 norm 存在的时候忽略。用来进行亮度数据的归一化</li>
+<li>alpha：实数，0-1 之间</li>
+<li>linewidths:也就是标记点的长度</li>
+</ul>
+<blockquote>
+<p><a href="https://blog.csdn.net/m0_37393514/article/details/81298503" target="_blank" rel="noopener">参考教程</a></p>
+</blockquote>
+<h1 id="7、ax2-set-title-‘xxx’-设置标题，画图"><a href="#7、ax2-set-title-‘xxx’-设置标题，画图" class="headerlink" title="7、ax2.set_title(‘xxx’)设置标题，画图"></a>7、ax2.set_title(‘xxx’)设置标题，画图</h1><p><code>plt.xlabel()</code> <code>plt.ylabel()</code>xy 轴标签</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#产生[1,2,3,...,9]的序列</span></span><br><span class="line">x = np.arange(<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">y = x</span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax1 = fig.add_subplot(<span class="number">221</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#设置标题</span></span><br><span class="line">ax1.set_title(<span class="string">'Scatter Plot1'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'M'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'N'</span>)</span><br><span class="line">ax2 = fig.add_subplot(<span class="number">222</span>)</span><br><span class="line">ax2.set_title(<span class="string">'Scatter Plot2clf'</span>)</span><br><span class="line"><span class="comment">#设置X轴标签</span></span><br><span class="line">plt.xlabel(<span class="string">'X'</span>)           <span class="comment">#设置X/Y轴标签是在对应的figure后进行操作才对应到该figure</span></span><br><span class="line"><span class="comment">#设置Y轴标签</span></span><br><span class="line">plt.ylabel(<span class="string">'Y'</span>)</span><br><span class="line"><span class="comment">#画散点图</span></span><br><span class="line">ax1.scatter(x,y,c = <span class="string">'r'</span>,marker = <span class="string">'o'</span>)          <span class="comment">#可以看出画散点图是在对figure进行操作</span></span><br><span class="line">ax2.scatter(x,y,c = <span class="string">'b'</span>,marker = <span class="string">'x'</span>)</span><br><span class="line"><span class="comment">#设置图标</span></span><br><span class="line">plt.legend(<span class="string">'show picture x1 '</span>)</span><br><span class="line"><span class="comment">#显示所画的图</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><strong>展示</strong><br><img src="/img/plt/title1.png" alt="title展示"></p>
+<h1 id="8-plt-hist（）绘制直方图"><a href="#8-plt-hist（）绘制直方图" class="headerlink" title="8. plt.hist（）绘制直方图"></a>8. plt.hist（）绘制直方图</h1><p><em>可以将高斯函数这些画出来</em></p>
+<p><code>n, bins, patches = plt.hist(arr, bins=10, normed=0, facecolor=&#39;black&#39;, edgecolor=&#39;black&#39;,alpha=1，histtype=&#39;bar&#39;)</code><br>hist 的参数非常多，但常用的就这六个，只有第一个是必须的，后面四个可选</p>
+<ul>
+<li>arr: 需要计算直方图的一维数组</li>
+<li>bins: 直方图的柱数，可选项，默认为 10</li>
+<li>normed: 是否将得到的直方图向量归一化。默认为 0</li>
+<li>facecolor: 直方图颜色</li>
+<li>edgecolor: 直方图边框颜色</li>
+<li>alpha: 透明度</li>
+<li>histtype: 直方图类型，‘bar’, ‘barstacked’, ‘step’, ‘stepfilled’<br>返回值 ：<br>n: 直方图向量，是否归一化由参数 normed 设定<br>bins: 返回各个 bin 的区间范围<br>patches: 返回每个 bin 里面包含的数据，是一个 list</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mu, sigma &#x3D; 0, .1</span><br><span class="line">s &#x3D; np.random.normal(loc&#x3D;mu, scale&#x3D;sigma, size&#x3D;1000)</span><br><span class="line">a,b,c &#x3D; plt.hist(s, bins&#x3D;3)</span><br><span class="line">print(&quot;a: &quot;,a)</span><br><span class="line">print(&quot;b: &quot;,b)</span><br><span class="line">print(&quot;c: &quot;,c)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">结果：</span><br><span class="line"></span><br><span class="line">a:  [ 85. 720. 195.]         #每个柱子的值</span><br><span class="line">b:  [-0.36109509 -0.1357318   0.08963149  0.31499478]   #每个柱的区间范围</span><br><span class="line">c:  &lt;a list of 3 Patch objects&gt;       #总共多少柱子</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -225,69 +296,81 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/OPEN_CV/" class="archive-article-date">
-  	<time datetime="2020-02-18T12:42:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/02/21/Python-np/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python_np
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/20/Python_math/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python_math</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/OPEN_CV/">第一次萌芽杯python技能</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-plt-打开-opencv-图像"><span class="toc-number">1.</span> <span class="toc-text">0. plt 打开 opencv 图像</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-plt-plot-x-y"><span class="toc-number">2.</span> <span class="toc-text">1. plt.plot(x,y)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-plt-figure-用来画图，自定义画布大小"><span class="toc-number">3.</span> <span class="toc-text">2. plt.figure()用来画图，自定义画布大小</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、plt-subplot-222"><span class="toc-number">4.</span> <span class="toc-text">3、plt.subplot(222)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、plt-xlim-设置-x-轴或者-y-轴刻度范围"><span class="toc-number">5.</span> <span class="toc-text">4、plt.xlim 设置 x 轴或者 y 轴刻度范围</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5、plt-xticks-：设置-x-轴刻度的表现方式"><span class="toc-number">6.</span> <span class="toc-text">5、plt.xticks()：设置 x 轴刻度的表现方式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-plt-scatter-–散点图"><span class="toc-number">7.</span> <span class="toc-text">6. plt.scatter()–散点图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7、ax2-set-title-‘xxx’-设置标题，画图"><span class="toc-number">8.</span> <span class="toc-text">7、ax2.set_title(‘xxx’)设置标题，画图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-plt-hist（）绘制直方图"><span class="toc-number">9.</span> <span class="toc-text">8. plt.hist（）绘制直方图</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -342,9 +425,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -412,7 +495,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">Api</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -424,7 +507,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color5">Note</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -432,7 +519,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Note</a>
+                <a href="javascript:void(0)" class="js-tag color4">萌芽杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -444,19 +531,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">脑洞（并不是）</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
             
             <div class="clearfix"></div>

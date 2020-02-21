@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python_solve_problems | Yun.Qi</title>
+  <title>Python_np | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这篇主要是记录一些生活学习中遇到的一些难题,想不通,就用 python 模拟出来虽然模拟出来了，但不会有可能还是不会 hhh">
+  <meta name="description" content="Python 中 numpy 的学习一点一点地学，可能没有逻辑，知识点分散import numpy as np">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python_solve_problems">
-<meta property="og:url" content="http://yoursite.com/2020/02/17/Python-solve/index.html">
+<meta property="og:title" content="Python_np">
+<meta property="og:url" content="http://yoursite.com/2020/02/21/Python-np/index.html">
 <meta property="og:site_name" content="Yun.Qi">
-<meta property="og:description" content="这篇主要是记录一些生活学习中遇到的一些难题,想不通,就用 python 模拟出来虽然模拟出来了，但不会有可能还是不会 hhh">
+<meta property="og:description" content="Python 中 numpy 的学习一点一点地学，可能没有逻辑，知识点分散import numpy as np">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-17T09:09:35.000Z">
-<meta property="article:modified_time" content="2020-02-17T14:20:26.918Z">
+<meta property="og:image" content="http://yoursite.com/img/np/random_seed.webp">
+<meta property="article:published_time" content="2020-02-21T04:06:22.000Z">
+<meta property="article:modified_time" content="2020-02-21T05:13:12.892Z">
 <meta property="article:author" content="Yun Qi">
 <meta property="article:tag" content="Python">
-<meta property="article:tag" content="Questions">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/img/np/random_seed.webp">
   
     <link rel="alternative" href="/atom.xml" title="Yun.Qi" type="application/atom+xml">
   
@@ -73,10 +74,10 @@
 			</ul>
 		</nav>
 		<nav>
-			已经写了 21 篇
+			已经写了 23 篇
 		</nav>
 		<nav>
-			字数已达 <span class="post-count">36.5k</span>
+			字数已达 <span class="post-count">39.1k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -194,44 +195,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Python-solve" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Python-np" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python_solve_problems
+      Python_np
     </h1>
   
 
         
-        <a href="/2020/02/17/Python-solve/" class="archive-article-date">
-  	<time datetime="2020-02-17T09:09:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
+        <a href="/2020/02/21/Python-np/" class="archive-article-date">
+  	<time datetime="2020-02-21T04:06:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
 </a>
         
       </header>
       <div align="center" class="post-count">
-       字数: 672字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">Mystery</a>|&emsp;预计阅读时长：3分钟
+       字数: 879字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">Mystery</a>|&emsp;预计阅读时长：4分钟
       </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>这篇主要是记录一些生活学习中遇到的一些难题,想不通,就用 python 模拟出来</strong><br><em>虽然模拟出来了，但不会有可能还是不会 hhh</em></p>
+        <p><strong>Python 中 numpy 的学习</strong><br>一点一点地学，可能没有逻辑，知识点分散<br><em>import numpy as np</em></p>
 <a id="more"></a>
 
-<h1 id="1-概率类问题"><a href="#1-概率类问题" class="headerlink" title="1. 概率类问题"></a>1. 概率类问题</h1><h2 id="1-1-一道小题，材料力学老师引出"><a href="#1-1-一道小题，材料力学老师引出" class="headerlink" title="1.1 一道小题，材料力学老师引出"></a>1.1 一道小题，材料力学老师引出</h2><p><em>24 个朋友生日问题</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一年中同一天收到2个或2个以上朋友生日聚会邀请的概率</span><br><span class="line">A 、小于10%  B、20%  C、40%  D、大于50%</span><br></pre></td></tr></table></figure>
+<h1 id="1-np-linspace"><a href="#1-np-linspace" class="headerlink" title="1. np.linspace()"></a>1. np.linspace()</h1><p><strong>用来创建等差数列</strong></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">numpy.linspace(start, stop, num=<span class="number">50</span>, endpoint=<span class="literal">True</span>, retstep=<span class="literal">False</span>, dtype=<span class="literal">None</span>, axis=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">start:返回样本数据开始点</span><br><span class="line">stop:返回样本数据结束点</span><br><span class="line">num:生成的样本数据量，默认为<span class="number">50</span></span><br><span class="line">endpoint：<span class="literal">True</span>则包含stop；<span class="literal">False</span>则不包含stop</span><br><span class="line">retstep：If <span class="literal">True</span>, <span class="keyword">return</span> (samples, step), where step <span class="keyword">is</span> the spacing between samples.(即如果为<span class="literal">True</span>则结果会给出数据间隔)</span><br><span class="line">dtype：输出数组类型</span><br><span class="line">axis：<span class="number">0</span>(默认)或<span class="number">-1</span></span><br></pre></td></tr></table></figure>
 
-<p><em>将其大致概括就是：身边有 24 个朋友，他们中有两个人或两个以上的人同一天生日的概率是多少</em><br><strong>为了简单，就只算两个人生日相同的概率</strong></p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_same</span><span class="params">()</span>:</span></span><br><span class="line">    ris = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">24</span>):  <span class="comment"># 24个人，生成24个随机数</span></span><br><span class="line">        ri = random.randint(<span class="number">1</span>, <span class="number">365</span>)  <span class="comment"># 随机数范围则是一年365天</span></span><br><span class="line">        ris.append(ri)</span><br><span class="line"></span><br><span class="line">    d = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">24</span>):     <span class="comment"># 循环来比较随机数</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(j+<span class="number">1</span>, <span class="number">24</span>):</span><br><span class="line">            <span class="keyword">if</span> ris[j] == ris[k]:</span><br><span class="line">                d += <span class="number">1</span></span><br><span class="line">                <span class="comment"># print(ris[k])</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">return</span> d        <span class="comment"># 如果有相同，不管有几个，d都不是0</span></span><br><span class="line">    <span class="comment"># 即如果d=0，说明这24个人里无同一天生日</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_gailv</span><span class="params">()</span>:</span></span><br><span class="line">    su = <span class="number">0</span>      <span class="comment"># 总次数</span></span><br><span class="line">    suancal = <span class="number">0</span>  <span class="comment"># 无相同，即d=0的次数</span></span><br><span class="line">    <span class="keyword">for</span> h <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">10000</span>):   <span class="comment"># 10000次</span></span><br><span class="line">        <span class="comment"># print(h)</span></span><br><span class="line">        suan = get_same()</span><br><span class="line">        <span class="keyword">if</span> suan == <span class="number">0</span>:   <span class="comment"># 如果suan为0，说明生日都不同</span></span><br><span class="line">            suancal = suancal + <span class="number">1</span></span><br><span class="line">        su += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> suancal/su    <span class="comment"># 24 人生日都不同的概率</span></span><br><span class="line"></span><br><span class="line">gailvs = []</span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">10</span>):     <span class="comment"># 重复10次获得概率</span></span><br><span class="line">    gailv = get_gailv()</span><br><span class="line">    gailvs.append(gailv)</span><br><span class="line">print(gailvs)</span><br></pre></td></tr></table></figure>
+<p>eg:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.linspace(<span class="number">2.0</span>, <span class="number">3.0</span>, num=<span class="number">5</span>)</span><br><span class="line">array([ <span class="number">2.</span>  ,  <span class="number">2.25</span>,  <span class="number">2.5</span> ,  <span class="number">2.75</span>,  <span class="number">3.</span>  ])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.linspace(<span class="number">2.0</span>, <span class="number">3.0</span>, num=<span class="number">5</span>, endpoint=<span class="literal">False</span>)</span><br><span class="line">array([ <span class="number">2.</span> ,  <span class="number">2.2</span>,  <span class="number">2.4</span>,  <span class="number">2.6</span>,  <span class="number">2.8</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.linspace(<span class="number">2.0</span>, <span class="number">3.0</span>, num=<span class="number">5</span>, retstep=<span class="literal">True</span>)</span><br><span class="line">(array([ <span class="number">2.</span>  ,  <span class="number">2.25</span>,  <span class="number">2.5</span> ,  <span class="number">2.75</span>,  <span class="number">3.</span>  ]), <span class="number">0.25</span>)</span><br></pre></td></tr></table></figure>
 
-<p><strong>结果为</strong><br><strong>[0.4609, 0.4626, 0.4719, 0.4608, 0.4528, 0.4607, 0.467, 0.4575, 0.4549, 0.4577]</strong></p>
-<p><em>可以发现没有超过 0.5 的概率，说明生日都不相同的概率是大于 0.5 的，也就是说这 24 个人有超过 50%的概率是有两个或两个以上生日是同一天的</em><br><strong>接下来分析原因：</strong><br>不难猜想出，如果只有两个人，这两个人生日同一天概率很小，随着人数的增多，出现生日相同的概率越来越大<br>可以反过来思考，计算每个人生日都不同的概率<br>两个人不同：364/365<br>三个人不同：364/365 _ 363/365<br>四个人不同：364/365 _ 363/365 * 362/365<br>以此类推：当 24 个人生日不同时的概率：</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">total = <span class="number">1</span></span><br><span class="line">j = <span class="number">365</span></span><br><span class="line">ren = int(input(<span class="string">'请输入人数：'</span>))    <span class="comment"># 24人</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(ren<span class="number">-1</span>):</span><br><span class="line">    j = j - <span class="number">1</span></span><br><span class="line">    total = j * total</span><br><span class="line"></span><br><span class="line">fenmu = <span class="number">365</span> ** (ren<span class="number">-1</span>)</span><br><span class="line">print(total/fenmu) <span class="comment"># 0.4616557420854712</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://blog.csdn.net/Asher117/article/details/87855493" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<h1 id="2-np-arange"><a href="#2-np-arange" class="headerlink" title="2. np.arange()"></a>2. np.arange()</h1><p><strong>函数返回一个有终点和起点的固定步长的排列，如[1,2,3,4,5]，起点是 1，终点是 5，步长为 1</strong></p>
+<ul>
+<li>1）一个参数时，参数值为终点，起点取默认值0，步长取默认值1</li>
+<li>2）两个参数时，第一个参数为起点，第二个参数为终点，步长取默认值1</li>
+<li>3）三个参数时，第一个参数为起点，第二个参数为终点，第三个参数为步长。其中步长支持小数</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#一个参数 默认起点0，步长为1 输出：[0 1 2]</span></span><br><span class="line">a = np.arange(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#两个参数 默认步长为1 输出[3 4 5 6 7 8]</span></span><br><span class="line">a = np.arange(<span class="number">3</span>,<span class="number">9</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#三个参数 起点为0，终点为3，步长为0.1 输出[ 0.   0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.   1.1  1.2  1.3  1.4 1.5  1.6  1.7  1.8  1.9  2.   2.1  2.2  2.3  2.4  2.5  2.6  2.7  2.8  2.9]</span></span><br><span class="line">a = np.arange(<span class="number">0</span>, <span class="number">3</span>, <span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://blog.csdn.net/qq_41550480/article/details/89390579" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<h1 id="3-np-random"><a href="#3-np-random" class="headerlink" title="3. np.random()"></a>3. np.random()</h1><h2 id="3-1-np-random-randint"><a href="#3-1-np-random-randint" class="headerlink" title="3.1 np.random.randint"></a>3.1 np.random.randint</h2><p>low、high、size三个参数。默认high是None,如果只有low，那范围就是[0,low)。如果有high，范围就是[low,high)</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.random.randint(<span class="number">2</span>, size=<span class="number">10</span>)</span><br><span class="line">array([<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.random.randint(<span class="number">1</span>, size=<span class="number">10</span>)</span><br><span class="line">array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.random.randint(<span class="number">5</span>, size=(<span class="number">2</span>, <span class="number">4</span>))</span><br><span class="line">array([[<span class="number">4</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">       [<span class="number">3</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">0</span>]])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://blog.csdn.net/weixin_42029738/article/details/81977492" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<h2 id="3-2-numpy-random-randn-与rand"><a href="#3-2-numpy-random-randn-与rand" class="headerlink" title="3.2 numpy.random.randn()与rand()"></a>3.2 numpy.random.randn()与rand()</h2><ul>
+<li>numpy.random.randn(d0, d1, …, dn)是从标准正态分布中返回一个或多个样本值</li>
+<li>numpy.random.rand(d0, d1, …, dn)的随机样本位于[0, 1)中</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"> </span><br><span class="line">arr1 = np.random.randn(<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line">print(arr1)</span><br><span class="line">print(<span class="string">'******************************************************************'</span>)</span><br><span class="line">arr2 = np.random.rand(<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line">print(arr2)</span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">正负数都有</span></span><br><span class="line"><span class="string">[[-1.03021018 0.5197033 0.52117459 -0.70102661]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[ 0.98268569 1.21940697 -1.095241 -0.38161758]]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">******************************************************************</span></span><br><span class="line"><span class="string">正数部分</span></span><br><span class="line"><span class="string">[[ 0.19947349 0.05282713 0.56704222 0.45479972]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">[ 0.28827103 0.1643551 0.30486786 0.56386943]]</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
 
-<p>可以计算出概率为 0.46，即可以得出有两人或两人以上的概率为 0.54</p>
-
+<h2 id="3-3-np-random-seed"><a href="#3-3-np-random-seed" class="headerlink" title="3.3 np.random.seed()"></a>3.3 np.random.seed()</h2><p><strong>seed( ) 用于指定随机数生成时所用算法开始的整数值</strong></p>
+<ul>
+<li>1.如果使用相同的seed( )值，则每次生成的随即数都相同</li>
+<li>2.如果不设置这个值，则系统根据时间来自己选择这个值，此时每次生成的随机数因时间差异而不同</li>
+<li>3.设置的seed()值仅一次有效</li>
+</ul>
+<p><img src="/img/np/random_seed.webp" alt="seed示例"></p>
+<h2 id="3-4-np-random-normal-loc-scale-size"><a href="#3-4-np-random-normal-loc-scale-size" class="headerlink" title="3.4 np.random.normal([loc,scale,size])"></a>3.4 np.random.normal([loc,scale,size])</h2><p>正态(高斯)分布</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mu,sigma = <span class="number">0</span>,<span class="number">0.1</span></span><br><span class="line">s = np.random.normal(mu,sigma,<span class="number">10</span>)</span><br><span class="line">print(s)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string"> [-0.14154151 -0.04927673  0.01828343  0.05323477  0.05350814 -0.14129784</span></span><br><span class="line"><span class="string">  0.06566983 -0.05441259 -0.01597307  0.16633013]</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -245,10 +273,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Questions</a>
         		</li>
       		
 		</ul>
@@ -267,18 +291,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/18/%E4%B8%80%E4%BA%9B%E5%A5%87%E6%80%AA%E7%9A%84%E6%83%B3%E8%B1%A1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          一些奇怪的想象
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/16/VB-note/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">VB-Note</div>
+    <a href="/2020/02/21/Python_plt/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python_Plt</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -305,7 +320,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-概率类问题"><span class="toc-number">1.</span> <span class="toc-text">1. 概率类问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-一道小题，材料力学老师引出"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 一道小题，材料力学老师引出</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-np-linspace"><span class="toc-number">1.</span> <span class="toc-text">1. np.linspace()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-np-arange"><span class="toc-number">2.</span> <span class="toc-text">2. np.arange()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-np-random"><span class="toc-number">3.</span> <span class="toc-text">3. np.random()</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-np-random-randint"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 np.random.randint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-numpy-random-randn-与rand"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 numpy.random.randn()与rand()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-np-random-seed"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 np.random.seed()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-np-random-normal-loc-scale-size"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 np.random.normal([loc,scale,size])</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -449,7 +464,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">Api</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -461,7 +476,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color5">Note</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,7 +488,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Note</a>
+                <a href="javascript:void(0)" class="js-tag color4">萌芽杯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,19 +500,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">脑洞（并不是）</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
             
             <div class="clearfix"></div>
