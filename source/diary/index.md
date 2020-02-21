@@ -6,7 +6,8 @@ type: "tags"
 
 # 2020/02/21 
 &emsp;&emsp;学学matplotlib.pyplot,展示图像很美观
-
+&emsp;&emsp;这一天学了一下，plt和np，一个是有关图像展示，另一个是数据处理的，最后晚上的时候打算学一下太极拳，但是好难阿啊hhh
+&emsp;&emsp;还是算了吧，久违的放松一下吧，玩会儿lolhhh，，，，。。。
 
 
 ---

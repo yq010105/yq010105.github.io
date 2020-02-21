@@ -173,3 +173,67 @@ print(f'直线的斜率为：{thrs[0][0]}')
 print(f'直线与横线间角度值：{thrs[1][0]}')
 cv_show('imgline',imgbufen)
 ```
+
+# 1.4 更高级的检测指针，然后返回指针斜率
+
+```py
+import cv2
+import math
+import linekthr as lt
+import numpy as np
+
+def get_pointer_rad(img):
+    '''获取角度'''
+    shape = img.shape
+    c_y, c_x, depth = int(shape[0] / 2), int(shape[1] / 2), shape[2]    # h,w,cute
+    x1=c_x+c_x*1.5  # 指针长度--宽 2.5倍
+    src = img.copy()
+    freq_list = []
+    for i in range(361):        # 算法
+        x = (x1 - c_x) * math.cos(i * math.pi / 180) + c_x
+        y = (x1 - c_x) * math.sin(i * math.pi / 180) + c_y
+        temp = src.copy()   # 备份
+        cv2.line(temp, (c_x, c_y), (int(x), int(y)), (0, 255, 0), thickness=1)  # 在temp上画线
+        t1 = img.copy()
+        t1[temp[:, :, 1] == 255] = 255
+        c = img[temp[:, :, 1] == 255]
+        points = c[c == 0]
+        freq_list.append((len(points), i))
+        cv2.imshow('d', temp)
+        # cv2.imshow('d1', t1)
+        cv2.waitKey(1)
+    # key = lambda x: float(x[0])
+    # keytup = max(freq_list, key=key)
+    # thrth = keytup[1]
+    # print(f'当前角度:{thrth}度')
+    # print('当前角度：',max(freq_list, key=key),'度')
+    cv2.destroyAllWindows()
+    return max(freq_list, key=lambda x: x[0])
+
+img = cv2.imread('./img/clock_re.png')
+imgc = img[0:165,6:171]
+
+def getthr():
+    thres = np.random.randint(40,100)   # 随机数范围
+    # print(thres)
+    imgfan = cv2.threshold(imgc, thres, 255, cv2.THRESH_BINARY)[1]
+    max = get_pointer_rad(imgfan)
+    # lt.cv_show('imgfan',imgfan)
+    # print(max)
+    # exit()
+    thrs = []
+    thr = max[1]
+    return thr
+
+def get_averg():
+    tol = 0
+    h = 20          # 统计次数
+    for i in range(h):
+        thr = getthr()
+        tol = tol + thr
+        print(f'第{i+1}次的角度:{thr}')
+    averg = tol / h
+    return averg
+
+print(f'角度的平均值：{get_averg()}')
+```
