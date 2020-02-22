@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/2 | Yun.Qi</title>
+  <title>Python_plotly | Yun.Qi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yun.Qi">
-<meta property="og:url" content="http://yoursite.com/archives/2020/02/index.html">
+  <meta name="description" content="数据可视化的 plotly  参考教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python_plotly">
+<meta property="og:url" content="http://yoursite.com/2020/02/22/Python-plotly/index.html">
 <meta property="og:site_name" content="Yun.Qi">
+<meta property="og:description" content="数据可视化的 plotly  参考教程">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-22T10:57:30.000Z">
+<meta property="article:modified_time" content="2020-02-22T11:26:37.749Z">
 <meta property="article:author" content="Yun Qi">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Yun.Qi" type="application/atom+xml">
@@ -188,36 +193,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Python-plotly" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Python_plotly
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/22/Python-plotly/" class="archive-article-date">
+
+        
+        <a href="/2020/02/22/Python-plotly/" class="archive-article-date">
   	<time datetime="2020-02-22T10:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/22/Python-plotly/">Python_plotly</a>
-    </h1>
-  
+        
+      </header>
+      <div align="center" class="post-count">
+       字数: 851字&emsp;|<a href='https://yq010105.github.io/APP/' target="_blank" rel="noopener">Mystery</a>|&emsp;预计阅读时长：5分钟
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>数据可视化的 plotly</strong></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/weixin_34407348/article/details/91371969" target="_blank" rel="noopener">参考教程</a></p>
+</blockquote>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<h1 id="1-基本操作，初步理解代码"><a href="#1-基本操作，初步理解代码" class="headerlink" title="1. 基本操作，初步理解代码"></a>1. 基本操作，初步理解代码</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成一个直方图</span></span><br><span class="line"><span class="keyword">import</span> plotly.offline <span class="keyword">as</span> ptly</span><br><span class="line"><span class="keyword">import</span> plotly.graph_objs <span class="keyword">as</span> go</span><br><span class="line"></span><br><span class="line">data=[]</span><br><span class="line">trace1 = go.Bar(x=[<span class="string">'first'</span>,<span class="string">'second'</span>,<span class="string">'third'</span>],</span><br><span class="line">                y=[<span class="number">20</span>,<span class="number">40</span>,<span class="number">30</span>]</span><br><span class="line">    )</span><br><span class="line">data.append(trace1)</span><br><span class="line">layout = go.Layout(font=dict(family=<span class="string">'Courier New, monospace'</span>, size=<span class="number">18</span>, color=<span class="string">'#3D3D3D'</span>),</span><br><span class="line">                   title=<span class="string">'example'</span></span><br><span class="line">    )</span><br><span class="line">fig = go.Figure(data=data, layout=layout)</span><br><span class="line">ptly.plot(fig, filename = <span class="string">'example.html'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>或者用 dict 表示</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">trace1 = &#123;<span class="string">'type'</span>:<span class="string">'bar'</span>,</span><br><span class="line">          <span class="string">'x'</span>:[<span class="string">'first'</span>,<span class="string">'second'</span>,<span class="string">'third'</span>],</span><br><span class="line">          <span class="string">'y'</span>:[<span class="number">20</span>,<span class="number">40</span>,<span class="number">30</span>]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-图形属性"><a href="#2-图形属性" class="headerlink" title="2. 图形属性`"></a>2. 图形属性`</h1><h2 id="2-1-柱状图"><a href="#2-1-柱状图" class="headerlink" title="2.1 柱状图"></a>2.1 柱状图</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">trace1 = go.Bar(x=[],</span><br><span class="line">                y=[],</span><br><span class="line">                name=<span class="string">'thename'</span>,</span><br><span class="line">                width=<span class="number">0.5</span>,</span><br><span class="line">                marker=dict(color=<span class="string">"#c45ca2"</span>),</span><br><span class="line">                opacity=<span class="number">1</span></span><br><span class="line">            )</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-饼图"><a href="#2-2-饼图" class="headerlink" title="2.2 饼图"></a>2.2 饼图</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">trace1 = go.Pie(labels=[],</span><br><span class="line">                values=[],</span><br><span class="line">                hoverinfo=<span class="string">'label+percent'</span>,</span><br><span class="line">                textinfo=<span class="string">'value'</span>,</span><br><span class="line">                textfont=dict(size=<span class="number">20</span>),</span><br><span class="line">                marker=dict(colors=colors,</span><br><span class="line">                           line=dict(color=<span class="string">'#000000'</span>, width=<span class="number">2</span>)),</span><br><span class="line">                hole= <span class="number">.4</span>,</span><br><span class="line">                name=<span class="string">"pie name"</span>,</span><br><span class="line">                domain=dict(x = [<span class="number">0</span>, <span class="number">.48</span>]),</span><br><span class="line">                opacity=<span class="number">1</span></span><br><span class="line">            )</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-散点图，折线图"><a href="#2-3-散点图，折线图" class="headerlink" title="2.3 散点图，折线图"></a>2.3 散点图，折线图</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">trace1 = go.Scatter(x = [],</span><br><span class="line">                    y = [],</span><br><span class="line">                    mode = <span class="string">'markers'</span>,   <span class="comment">#mode可选'markers','lines','lines+markers'</span></span><br><span class="line">                    name = <span class="string">'the name'</span>,</span><br><span class="line">                    marker = dict(size = <span class="number">10</span>,        <span class="comment">#若设为变量则可用散点大小表示变量大小</span></span><br><span class="line">                                  color = <span class="string">'rgba(152, 0, 0, .8)'</span>,</span><br><span class="line">                                  line = dict(width = <span class="number">2</span>,</span><br><span class="line">                                              color = <span class="string">'rgb(0, 0, 0)'</span></span><br><span class="line">                                              ),</span><br><span class="line">                                  opacity=[]</span><br><span class="line">                                )</span><br><span class="line">            )</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-布局属性"><a href="#3-布局属性" class="headerlink" title="3. 布局属性"></a>3. 布局属性</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通用</span></span><br><span class="line">layout = go.Layout(title=<span class="string">'your title'</span>,  <span class="comment">#大标题</span></span><br><span class="line">                   font=dict(</span><br><span class="line">                     family=<span class="string">'Courier New, monospace'</span>,</span><br><span class="line">                     size=<span class="number">18</span>,</span><br><span class="line">                     color=<span class="string">'#3D3D3D'</span></span><br><span class="line">                               ),<span class="comment">#字体</span></span><br><span class="line">                   width=<span class="number">1400</span>,</span><br><span class="line">                   height=<span class="number">800</span>,              <span class="comment">#图形的大小</span></span><br><span class="line">                   margin=go.Margin(</span><br><span class="line">                                    l=<span class="number">100</span>,</span><br><span class="line">                                    r=<span class="number">100</span>,</span><br><span class="line">                                    b=<span class="number">200</span>,</span><br><span class="line">                                    t=<span class="number">200</span>,</span><br><span class="line">                                    pad=<span class="number">0</span></span><br><span class="line">                                    ),      <span class="comment">#边距设置</span></span><br><span class="line">                   plot_bgcolor=<span class="string">'#ffffff'</span>,   <span class="comment">#绘图部分背景颜色</span></span><br><span class="line">                   paper_bgcolor=<span class="string">'#ffffff'</span>,   <span class="comment">#整体背景颜色</span></span><br><span class="line">                   showlegend=<span class="literal">True</span>,        <span class="comment">#是否显示图例，也可放在每个trace里单独设置</span></span><br><span class="line">                   <span class="comment">#图例相关参数设置：</span></span><br><span class="line">                   legend=dict(orientation=<span class="string">"v"</span>,</span><br><span class="line">                                x=<span class="number">0</span>,</span><br><span class="line">                                y=<span class="number">1</span>,</span><br><span class="line">                                traceorder=<span class="string">'normal'</span>,</span><br><span class="line">                                font=dict(</span><br><span class="line">                                        family=<span class="string">'sans-serif'</span>,</span><br><span class="line">                                        size=<span class="number">12</span>,</span><br><span class="line">                                        color=<span class="string">'#000'</span></span><br><span class="line">                                            ),</span><br><span class="line">                                bgcolor=<span class="string">'#E2E2E2'</span>,</span><br><span class="line">                                bordercolor=<span class="string">'#FFFFFF'</span>,</span><br><span class="line">                                borderwidth=<span class="number">2</span></span><br><span class="line">                            ),</span><br><span class="line">                   <span class="comment">#x轴相关参数设置（y轴对应yaxis）：</span></span><br><span class="line">                   xaxis=dict(title=<span class="string">'x Axis'</span>,</span><br><span class="line">                              titlefont=dict(</span><br><span class="line">                                        family=<span class="string">'Courier New, monospace'</span>,</span><br><span class="line">                                        size=<span class="number">18</span>,</span><br><span class="line">                                        color=<span class="string">'#7f7f7f'</span></span><br><span class="line">                                            ),</span><br><span class="line">                               range=[],   <span class="comment">#x轴范围，如[0,30]</span></span><br><span class="line">                               type=<span class="string">'-'</span>,</span><br><span class="line">                              <span class="comment">#x轴类型，可选["-","linear","log","date","category"]</span></span><br><span class="line">                               domain=[<span class="number">0</span>,<span class="number">0.45</span>]</span><br><span class="line">                              <span class="comment">#设置x轴在整个图像占的位置范围（主要在有多张图时使用，第二个图用xaxis2设置相关参数）</span></span><br><span class="line">                            )</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 柱状图</span></span><br><span class="line">layout = go.Layout(bargap=<span class="number">0.3</span>,      <span class="comment">#0~1</span></span><br><span class="line">                   bargroupgap=<span class="number">0.1</span>,  <span class="comment">#0~1</span></span><br><span class="line">                   barmode=<span class="string">''</span>,</span><br><span class="line">                   <span class="comment">#barmode: ["stack","group","overlay","relative"],设置多个trace的组合方式</span></span><br><span class="line">                   barnorm=<span class="string">''</span></span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-1-设置坐标轴"><a href="#3-1-设置坐标轴" class="headerlink" title="3.1 设置坐标轴"></a>3.1 设置坐标轴</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">axis_template=dict(</span><br><span class="line">    showgrid=<span class="literal">True</span>,  <span class="comment">#网格</span></span><br><span class="line">    zeroline=<span class="literal">True</span>,  <span class="comment">#是否显示基线,即沿着(0,0)画出x轴和y轴</span></span><br><span class="line">    nticks=<span class="number">20</span>,</span><br><span class="line">    showline=<span class="literal">True</span>,</span><br><span class="line">    title=<span class="string">'X axis'</span>,</span><br><span class="line">    mirror=<span class="string">'all'</span>,</span><br><span class="line">    zerolinecolor=<span class="string">"#FF0000"</span></span><br><span class="line">)</span><br><span class="line">layout=go.Layout(</span><br><span class="line">    xaxis=axis_template,</span><br><span class="line">    yaxis=axis_template</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="https://blog.csdn.net/u012897374/article/details/77857980" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<h1 id="4-图像整体属性"><a href="#4-图像整体属性" class="headerlink" title="4. 图像整体属性"></a>4. 图像整体属性</h1><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ptly.plot(figure_or_data, show_link=<span class="literal">True</span>, link_text=<span class="string">'Export to plot.ly'</span>,</span><br><span class="line">         validate=<span class="literal">True</span>, output_type=<span class="string">'file'</span>, include_plotlyjs=<span class="literal">True</span>,</span><br><span class="line">         filename=<span class="string">'temp-plot.html'</span>, auto_open=<span class="literal">True</span>, image=<span class="literal">None</span>,</span><br><span class="line">         image_filename=<span class="string">'plot_image'</span>, image_width=<span class="number">800</span>, image_height=<span class="number">600</span>,</span><br><span class="line">         config=<span class="literal">None</span>)s</span><br></pre></td></tr></table></figure>
+
+<h1 id="5-数据处理"><a href="#5-数据处理" class="headerlink" title="5. 数据处理"></a>5. 数据处理</h1><p><strong>包括 aggregate,filter,groupby,sort</strong></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># aggregate</span></span><br><span class="line">transforms = [dict(</span><br><span class="line">    type = <span class="string">'aggregate'</span>,</span><br><span class="line">    groups = [],        <span class="comment">#用于分组的数组</span></span><br><span class="line">    aggregations = [dict(</span><br><span class="line">        target = <span class="string">'y'</span>, func = <span class="string">'sum'</span>, enabled = <span class="literal">True</span>),</span><br><span class="line">    ]</span><br><span class="line">  )]</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">func参数可用：</span></span><br><span class="line"><span class="string">"count","sum","avg","median","mode","rms","stddev","min","max","first","last"</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># filter</span></span><br><span class="line">transforms = [dict(</span><br><span class="line">    type = <span class="string">'filter'</span>,</span><br><span class="line">    target = <span class="string">'y'</span>,</span><br><span class="line">    operation = <span class="string">'&gt;'</span>,</span><br><span class="line">    value = <span class="number">4</span></span><br><span class="line">  )]</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">operation参数可用:</span></span><br><span class="line"><span class="string">"=","!=","&lt;","&gt;=","&gt;","&lt;=","[]","()","[)","(]","][",")(","](",")[","&#123;&#125;","&#125;&#123;"</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># groupby</span></span><br><span class="line">transforms = [dict(</span><br><span class="line">    type = <span class="string">'groupby'</span>,</span><br><span class="line">    groups = [],     <span class="comment">#用于分组的数组</span></span><br><span class="line">    styles = [</span><br><span class="line">        dict(target = <span class="string">'Moe'</span>, value = dict(marker = dict(color = <span class="string">'blue'</span>))),</span><br><span class="line">        dict(target = <span class="string">'Larry'</span>, value = dict(marker = dict(color = <span class="string">'red'</span>))),</span><br><span class="line">        dict(target = <span class="string">'Curly'</span>, value = dict(marker = dict(color = <span class="string">'black'</span>)))</span><br><span class="line">    ]</span><br><span class="line">  )]</span><br><span class="line"></span><br><span class="line"><span class="comment"># sort</span></span><br><span class="line">transforms = [dict(</span><br><span class="line">    type = <span class="string">'sort'</span>,</span><br><span class="line">    target = <span class="string">'x'</span>,</span><br><span class="line">    order = <span class="string">'ascending'</span>   <span class="comment">#升序ascending，降序descending</span></span><br><span class="line">  )]</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -229,376 +263,67 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/22/Python-openpyxl/" class="archive-article-date">
-  	<time datetime="2020-02-22T06:40:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/22/Python-openpyxl/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python_openpyxl</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/22/Python-openpyxl/">Python_openpyxl</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-基本操作，初步理解代码"><span class="toc-number">1.</span> <span class="toc-text">1. 基本操作，初步理解代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-图形属性"><span class="toc-number">2.</span> <span class="toc-text">2. 图形属性&#96;</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-柱状图"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 柱状图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-饼图"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 饼图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-散点图，折线图"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 散点图，折线图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-布局属性"><span class="toc-number">3.</span> <span class="toc-text">3. 布局属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-设置坐标轴"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 设置坐标轴</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-图像整体属性"><span class="toc-number">4.</span> <span class="toc-text">4. 图像整体属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-数据处理"><span class="toc-number">5.</span> <span class="toc-text">5. 数据处理</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/21/Python-np/" class="archive-article-date">
-  	<time datetime="2020-02-21T04:06:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/Python-np/">Python_np</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/21/Python_plt/" class="archive-article-date">
-  	<time datetime="2020-02-21T03:37:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/Python_plt/">Python_Plt</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/20/Python_math/" class="archive-article-date">
-  	<time datetime="2020-02-20T13:47:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/20/Python_math/">Python_math</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/python_mengya/" class="archive-article-date">
-  	<time datetime="2020-02-19T04:51:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/python_mengya/">Python_mengya_process</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">萌芽杯</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/Python_OPEN_CV/" class="archive-article-date">
-  	<time datetime="2020-02-18T12:42:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/Python_OPEN_CV/">第一次萌芽杯python技能</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">萌芽杯</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/Selector-jsoup/" class="archive-article-date">
-  	<time datetime="2020-02-18T04:19:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/Selector-jsoup/">Selector-jsoup &amp; Json Path厚墨书源制作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">HTML/CSS/JS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/%E4%B8%80%E4%BA%9B%E5%A5%87%E6%80%AA%E7%9A%84%E6%83%B3%E8%B1%A1/" class="archive-article-date">
-  	<time datetime="2020-02-18T03:13:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/%E4%B8%80%E4%BA%9B%E5%A5%87%E6%80%AA%E7%9A%84%E6%83%B3%E8%B1%A1/">一些奇怪的想象</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">脑洞（并不是）</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/Python-solve_pro/" class="archive-article-date">
-  	<time datetime="2020-02-17T09:09:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/Python-solve_pro/">Python_solve_problems</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Questions</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/02/page/2/">2</a><a class="page-number" href="/archives/2020/02/page/3/">3</a><a class="extend next" rel="next" href="/archives/2020/02/page/2/">Next</a>
-    </nav>
   
 
 
@@ -654,8 +379,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
