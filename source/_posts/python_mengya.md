@@ -237,3 +237,183 @@ def get_averg():
 
 print(f'角度的平均值：{get_averg()}')
 ```
+
+# 2. 初步完成~~核心~~
+
+`line_get.py`
+```py
+import cv2
+import math
+import numpy as np
+
+# 获取指针角度值
+def get_pointer_rad(img):
+    shape = img.shape
+    c_y, c_x, depth = int(shape[0] / 2), int(shape[1] / 2), shape[2]    # h,w,cute
+    x1=c_x+c_x*1.5  # 指针长度--宽 2.5倍
+    src = img.copy()
+    freq_list = []
+    for i in range(361):        # 算法
+        x = (x1 - c_x) * math.cos(i * math.pi / 180) + c_x
+        y = (x1 - c_x) * math.sin(i * math.pi / 180) + c_y
+        temp = src.copy()   # 备份
+        cv2.line(temp, (c_x, c_y), (int(x), int(y)), (0, 255, 0), thickness=1)  # 在temp上画线
+        t1 = img.copy()
+        t1[temp[:, :, 1] == 255] = 255
+        c = img[temp[:, :, 1] == 255]
+        points = c[c == 0]
+        freq_list.append((len(points), i))
+        # 可以展示匹配过程
+        # cv2.imshow('d', temp)
+        # cv2.imshow('d1', t1)
+        # 如果要求固定检测时间不要太快，可以在这里调慢
+        cv2.waitKey(1)
+    cv2.destroyAllWindows()
+    return max(freq_list, key=lambda x: x[0])
+
+def getthr(imgc):
+    thres = np.random.randint(40,100)   # 随机数范围
+    imgfan = cv2.threshold(imgc, thres, 255, cv2.THRESH_BINARY)[1]
+    max = get_pointer_rad(imgfan)
+    thr = max[1]
+    return thr
+
+def get_averg(imgc,h):
+    tol = 0
+    h = int(h)          # 统计次数
+    for i in range(h):
+        thr = getthr(imgc)
+        tol = tol + thr
+        # debug 看看角度是否正确统计
+        # print(f'第{i+1}次的角度:{thr}')
+        print(i+1,end='、')
+    averg = tol / h
+    return averg
+
+if __name__ == '__main__':
+    img = cv2.imread('./img/clock_re.png')
+    imgc = img[0:165, 6:171]
+    print(f'角度的平均值：{get_averg(imgc,5)}')
+```
+
+`xlsx_get.py`
+```py
+from openpyxl import Workbook
+import openpyxl as xl
+import cv2
+import line_get as lg
+import os
+import time
+
+
+def get_xlsx():
+    # 新建xlsx或打开已有xlsx
+    filex = 'data.xlsx'
+    if os.path.exists(filex):
+        print('--在result.xlsx中写入数据--')
+        wb = xl.load_workbook('data.xlsx')
+        # 文件表单定位
+        sheet = wb['Sheet']
+    else:
+        wb = Workbook()
+        print('--新建一个data.xlsx--')
+        sheet = wb['Sheet']
+
+    # 储存数据
+    ws = wb.active
+    ws['A1'] = '指针角度'
+    ws['B1'] = '转换角度'
+    ws['C1'] = '测试时间'
+    img = cv2.imread('./img/clock_re.png')
+    imgh = img[0:165,6:171]
+
+    cishu = int(input('请输入需要多少组数据--一直测则输入0--：'))
+    pingjun = int(input('请输入多少组算一次平均值--推荐10--:'))
+
+    row = 0
+    if cishu == 0 or cishu < 0:
+        while row >= cishu :
+            maxrow = sheet.max_row
+            # print(f'excel中第{maxrow + 1}行输入数据-----')
+            # 测几次来算平均值 imgh,10--10次
+            thr = lg.get_averg(imgh,pingjun)
+            ws.cell(row=maxrow+1,column=1,value=thr)
+            print(f'第{row + 1}组-----角度平均值数据：{thr}，输入到第{maxrow + 1}行中')
+            if thr>0 and thr<=45:
+                cdu = thr/2.25 +100
+            elif thr>=135 and thr <= 360:
+                cdu = (thr - 135)/2.25
+            else :
+                cdu = '故障'
+            ws.cell(row=maxrow+1,column=2,value=cdu)
+            timed = time.strftime("%H:%M:%S", time.localtime())  # %Y-%m-%d
+            ws.cell(row=maxrow+1,column=3,value=timed)
+            row += 1
+            wb.save('result.xlsx')
+    else:
+        while row < cishu :
+            maxrow = sheet.max_row
+            # print(f'excel中第{maxrow + 1}行输入数据-----')
+            # 测几次来算平均值 imgh,10--10次
+            thr = lg.get_averg(imgh,pingjun)
+            ws.cell(row=maxrow+1,column=1,value=thr)
+            print(f'第{row + 1}组-----角度平均值数据：{thr}，输入到第{maxrow + 1}行中')
+            if thr>0 and thr<=45:
+                cdu = thr/2.25 +100
+            elif thr>=135 and thr <= 360:
+                cdu = (thr - 135)/2.25
+            else :
+                cdu = '故障'
+            ws.cell(row=maxrow+1,column=2,value=cdu)
+            timed = time.strftime("%H:%M:%S", time.localtime())  # %Y-%m-%d
+            ws.cell(row=maxrow+1,column=3,value=timed)
+            row += 1
+            wb.save('data.xlsx')
+
+if __name__ == '__main__':
+    get_xlsx()
+```
+
+`keshihua_data.py`
+**主要运行文件**
+
+```py
+import plotly.offline as ptly
+import plotly.graph_objs as go
+import openpyxl as xl
+import xlsx_get as xg
+
+xg.get_xlsx()
+data=[]
+wb = xl.load_workbook('data.xlsx')
+sheet = wb['Sheet']
+ws = wb.active
+
+cdu = []
+for row in ws.iter_rows(min_row=2, min_col=2,max_col=2,max_row=sheet.max_row ):
+    for cell in row:
+        cdu.append(cell.value)
+timed = []
+for row in ws.iter_rows(min_row=2, min_col=3,max_col=3,max_row=sheet.max_row ):
+    for cell in row:
+        timed.append(cell.value)
+
+trace1 = go.Scatter(x = timed,
+                    y = cdu,
+                    mode = 'lines+markers',   #mode可选'markers','lines','lines+markers'
+                    name = 'data',
+                    marker = dict(size = 10,        #若设为变量则可用散点大小表示变量大小
+                                  color = 'rgba(152, 0, 0, .8)',
+                                  line = dict(width = 2,
+                                              color = 'rgb(0, 0, 0)'
+                                              ),
+                                  opacity=[]
+                                )
+            )
+data.append(trace1)
+layout = go.Layout(font=dict(family='Courier New, monospace', size=18, color='#3D3D3D'),
+                   title='温度值'
+    )
+fig = go.Figure(data=data, layout=layout)
+ptly.plot(fig, filename = 'data.html')
+```
