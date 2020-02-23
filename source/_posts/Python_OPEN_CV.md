@@ -740,10 +740,50 @@ plt.title('magnitude spectrum'), plt.xticks([]),plt.yticks([])
 plt.show()
 ```
 
-## 0.23 实战
-### 0.23.1银行卡的号码读取
+## 0.23 摄像头获取视频或图片获取感兴趣部分
 
+```py
+import cv2
 
+def video_show():
+    choose_video = False
+    while True:
+        ret1,frame = video.read()
+        if not ret1:
+            print("视频获取失败！")
+            break
+        cv2.imshow("Video_show",frame)
+        if cv2.waitKey(1) & 0xff == ord("q"):
+            # rects = []
+            # fromCenter = False
+            # Select multiple rectangles
+            # select_data = cv2.selectROI("Image", frame, rects, fromCenter)
+            select_data = cv2.selectROI("Video_show",frame)
+            choose_video = True
+        if choose_video :
+            #获取选择框内的图像
+            choose_data = frame[select_data[1]:select_data[1]+select_data[3],select_data[0]:select_data[0]+select_data[2]]
+            cv2.imshow("choose_video",choose_data)
+        if cv2.waitKey(1) & 0xff == ord("p"):
+            break
+    video.release()
+    # cv2.destroyAllWindows()
+    return choose_data
+if __name__ == "__main__":
+    video = cv2.VideoCapture(0)
+    video_show()
+```
+
+### 0.23.1 选取roi区域定义
+```py
+# 方法1：使用表示矩形区域的Rect，参数有矩形左上角坐标、矩形的长和宽
+# Mat imageROI;
+imageROI = image(Rect(500,250,logo.cols,logo.rows));
+
+# 方法2：指定感兴趣的行或列的范围（Range），Range是指从起始索引到终止索引（不包括终止索引）的一段连续序列
+# Mat imageROI;
+imageROI = image(Range(250,250+logoImage.rows),Range(200,200+logoImage.cols));
+```
 
 # 1. 图像识别相关
 
