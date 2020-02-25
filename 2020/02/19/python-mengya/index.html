@@ -1,0 +1,1754 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python_mengya_process, Yun.Qi">
+    <meta name="description" content="代码的构造过程，并没有写完（萌芽杯项目）">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Python_mengya_process | Yun.Qi</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Yun.Qi</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://yq010105.github.io/" target="_blank" rel="noopener" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Yun.Qi</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://yq010105.github.io/" target="_blank" rel="noopener" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/yq010105/yq010105.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/yq010105/yq010105.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python_mengya_process</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%90%8C%E8%8A%BD%E6%9D%AF/">
+                                <span class="chip bg-color">萌芽杯</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
+                                技术力
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-02-19
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    3,156
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="1-测试"><a href="#1-测试" class="headerlink" title="1. 测试"></a>1. 测试</h1><h2 id="1-1-视频经过梯度处理"><a href="#1-1-视频经过梯度处理" class="headerlink" title="1.1 视频经过梯度处理"></a>1.1 视频经过梯度处理</h2><pre class=" language-py"><code class="language-py">import cv2
+
+vc = cv2.VideoCapture('./video/1.mp4')
+if vc.isOpened():
+    open, frame = vc.read()
+else:
+    open = False
+
+while open:
+    ret, frame = vc.read()
+    if frame is None:
+        break
+    if ret == True:
+        gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+        # sobelx = cv2.Sobel(gray,cv2.CV_64F,1,0)
+        # sobely = cv2.Sobel(gray,cv2.CV_64F,0,1)
+        # sobelx = cv2.convertScaleAbs(sobelx)
+        # sobely = cv2.convertScaleAbs(sobely)
+        # sobelxy = cv2.addWeighted(sobelx,0.5,sobely,0.5,0)
+        v1 = cv2.Canny(gray,10,50)
+        cv2.namedWindow('result',0)
+        # cv2.imshow('result',sobelxy)
+        cv2.imshow('result',v1)
+        if cv2.waitKey(10) & 0xFF == 27:
+            break
+
+vc.release()
+cv2.destroyAllWindows()</code></pre>
+<h2 id="1-2-检测指针，绘制直线"><a href="#1-2-检测指针，绘制直线" class="headerlink" title="1.2 检测指针，绘制直线"></a>1.2 检测指针，绘制直线</h2><pre class=" language-py"><code class="language-py">import cv2
+import numpy as np
+import os
+
+img = cv2.imread('./img/clock2.jpg')    # + input('请输入文件路径：')
+def cv_show(name,img):
+    cv2.namedWindow(name,0)
+    cv2.imshow(name,img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+def linedraw(image):
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        # edges = cv.Canny(gray, 50, 150, apertureSize=3)
+        # 自动检测可能的直线，返回的是一条条线段
+    ret, thresohold = cv2.threshold(gray, 55, 255, cv2.THRESH_BINARY)
+    # aussian = cv2.GaussianBlur(thresohold, (5, 5), 1) 高斯
+
+    # kernel = np.ones((5, 5), np.uint8)  # （5，5）腐蚀大小
+    # erosion = cv2.erode(thresohold, kernel, iterations=1) 去噪音点
+
+    edges = cv2.Canny(thresohold, 10, 150, apertureSize=3)
+    lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 80, minLineLength=110, maxLineGap=10)
+        # print(type(lines))
+    for line in lines:
+        x1, y1, x2, y2 = line[0]
+        cv2.line(image, (x1, y1), (x2, y2), (0, 255,0), 2)
+    cv_show('result',image)
+
+linedraw(img)
+os.system("pause")</code></pre>
+<h2 id="1-3-小综合；根据表盘识别指针并求出斜率"><a href="#1-3-小综合；根据表盘识别指针并求出斜率" class="headerlink" title="1.3 小综合；根据表盘识别指针并求出斜率"></a>1.3 小综合；根据表盘识别指针并求出斜率</h2><pre class=" language-py"><code class="language-py">import cv2
+import numpy as np
+import math
+
+img = cv2.imread('./img/clock1.jpg', cv2.IMREAD_UNCHANGED)
+# 裁剪图片  具体指针要改
+imgbufen = img[70:566,0:1000]
+# 将图像的阈值化 小于阈值的为max 大于阈值的为0，
+# 主要是因为这个指针是黑的,圆形遮罩也是黑的，所以先把指针反转为白的
+# 具体指针要改
+imgfan = cv2.threshold(imgbufen,127,255,cv2.THRESH_BINARY_INV)[1]
+
+# 输出图像
+def cv_show(name,img):
+    cv2.namedWindow(name,0)
+    cv2.imshow(name,img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+# 得到一个圆形遮罩，返回中间圆形
+def get_zhezhao(imgfan):
+    #获取图片尺寸
+    height, width = imgfan.shape[:2]
+    height = int(height)
+    width = int(width)
+
+    #生成内显示模板
+    circleIn = np.zeros((height, width, 1), np.uint8)
+    circleIn = cv2.circle(circleIn, (width // 2, height // 2), min(height, width) // 2, (1), -1)
+
+    #原图与内显示模板融合
+    #生成空白图片
+    imgIn = np.zeros((height, width, 4), np.uint8)
+    #复制前3个通道
+    imgIn[:, :, 0] = np.multiply(imgfan[:, :, 0], circleIn[:, :, 0])
+    imgIn[:, :, 1] = np.multiply(imgfan[:, :, 1], circleIn[:, :, 0])
+    imgIn[:, :, 2] = np.multiply(imgfan[:, :, 2], circleIn[:, :, 0])
+    #设置α通道的不透明部分
+    circleIn[circleIn == 1] = 1
+    imgIn[:, :, 3] = circleIn[:, :, 0]
+    # cv2.imwrite('./img/result1.jpg', imgIn)
+    # cv_show('imgin',imgIn)
+    return imgIn
+
+# 得到线，霍夫直线
+def getlines(imgIn):
+    gray = cv2.cvtColor(imgIn,cv2.COLOR_BGR2GRAY)
+    # cv_show("gray",gray)
+    edges = cv2.Canny(gray, 10, 150, apertureSize=3)
+    lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 80, minLineLength=110, maxLineGap=10)
+            # print(type(lines))
+    for line in lines:
+        x1, y1, x2, y2 = line[0]
+        # print(x1,y1,x2,y2)
+        cv2.line(imgbufen, (x1, y1), (x2, y2), (0, 255,0), 2)
+        # cv_show('img',imgbufen)
+        floatx1.append(float(x1))
+        floaty1.append(float(y1))
+        floatx2.append(float(x2))
+        floaty2.append(float(y2))
+    # cv_show('imgline',imgbufen)
+    return floatx1,floaty1,floatx2,floaty2
+
+def get_thr_k():
+    thrs = []
+    ks = []
+    for i in range(len(floatx1)):
+        x1 = floatx1[i]
+        y1 = floaty1[i]
+        x2 = floatx2[i]
+        y2 = floaty2[i]
+        k = (y1-y2)/(x2-x1)
+        thr = math.atan(k)
+        thr = math.degrees(thr)
+        i += 1
+        ks.append(k)
+        thrs.append(thr)
+    return ks,thrs
+
+
+imgIn = get_zhezhao(imgfan)
+floatx1,floaty1,floatx2,floaty2 = [],[],[],[]
+getlines(imgIn)
+
+# print(floatx1,floaty1,floatx2,floaty2)
+
+
+# 多条直线的角度列表，单条直线直接thrs[0]
+thrs = get_thr_k()
+print(f'直线的斜率为：{thrs[0][0]}')
+print(f'直线与横线间角度值：{thrs[1][0]}')
+cv_show('imgline',imgbufen)</code></pre>
+<h2 id="1-4-更高级的检测指针，然后返回指针斜率"><a href="#1-4-更高级的检测指针，然后返回指针斜率" class="headerlink" title="1.4 更高级的检测指针，然后返回指针斜率"></a>1.4 更高级的检测指针，然后返回指针斜率</h2><pre class=" language-py"><code class="language-py">import cv2
+import math
+import linekthr as lt
+import numpy as np
+
+def get_pointer_rad(img):
+    '''获取角度'''
+    shape = img.shape
+    c_y, c_x, depth = int(shape[0] / 2), int(shape[1] / 2), shape[2]    # h,w,cute
+    x1=c_x+c_x*1.5  # 指针长度--宽 2.5倍
+    src = img.copy()
+    freq_list = []
+    for i in range(361):        # 算法
+        x = (x1 - c_x) * math.cos(i * math.pi / 180) + c_x
+        y = (x1 - c_x) * math.sin(i * math.pi / 180) + c_y
+        temp = src.copy()   # 备份
+        cv2.line(temp, (c_x, c_y), (int(x), int(y)), (0, 255, 0), thickness=1)  # 在temp上画线
+        t1 = img.copy()
+        t1[temp[:, :, 1] == 255] = 255
+        c = img[temp[:, :, 1] == 255]
+        points = c[c == 0]
+        freq_list.append((len(points), i))
+        cv2.imshow('d', temp)
+        # cv2.imshow('d1', t1)
+        cv2.waitKey(1)
+    # key = lambda x: float(x[0])
+    # keytup = max(freq_list, key=key)
+    # thrth = keytup[1]
+    # print(f'当前角度:{thrth}度')
+    # print('当前角度：',max(freq_list, key=key),'度')
+    cv2.destroyAllWindows()
+    return max(freq_list, key=lambda x: x[0])
+
+img = cv2.imread('./img/clock_re.png')
+imgc = img[0:165,6:171]
+
+def getthr():
+    thres = np.random.randint(40,100)   # 随机数范围
+    # print(thres)
+    imgfan = cv2.threshold(imgc, thres, 255, cv2.THRESH_BINARY)[1]
+    max = get_pointer_rad(imgfan)
+    # lt.cv_show('imgfan',imgfan)
+    # print(max)
+    # exit()
+    thrs = []
+    thr = max[1]
+    return thr
+
+def get_averg():
+    tol = 0
+    h = 20          # 统计次数
+    for i in range(h):
+        thr = getthr()
+        tol = tol + thr
+        print(f'第{i+1}次的角度:{thr}')
+    averg = tol / h
+    return averg
+
+print(f'角度的平均值：{get_averg()}')</code></pre>
+<h1 id="2-初步完成核心"><a href="#2-初步完成核心" class="headerlink" title="2. 初步完成核心"></a>2. 初步完成<del>核心</del></h1><p><code>line_get.py</code></p>
+<pre class=" language-py"><code class="language-py">import cv2
+import math
+import numpy as np
+
+# 获取指针角度值
+def get_pointer_rad(img):
+    shape = img.shape
+    c_y, c_x, depth = int(shape[0] / 2), int(shape[1] / 2), shape[2]    # h,w,cute
+    x1=c_x+c_x*1.5  # 指针长度--宽 2.5倍
+    src = img.copy()
+    freq_list = []
+    for i in range(361):        # 算法
+        x = (x1 - c_x) * math.cos(i * math.pi / 180) + c_x
+        y = (x1 - c_x) * math.sin(i * math.pi / 180) + c_y
+        temp = src.copy()   # 备份
+        cv2.line(temp, (c_x, c_y), (int(x), int(y)), (0, 255, 0), thickness=1)  # 在temp上画线
+        t1 = img.copy()
+        t1[temp[:, :, 1] == 255] = 255
+        c = img[temp[:, :, 1] == 255]
+        points = c[c == 0]
+        freq_list.append((len(points), i))
+        # 可以展示匹配过程
+        # cv2.imshow('d', temp)
+        # cv2.imshow('d1', t1)
+        # 如果要求固定检测时间不要太快，可以在这里调慢
+        cv2.waitKey(1)
+    cv2.destroyAllWindows()
+    return max(freq_list, key=lambda x: x[0])
+
+def getthr(imgc):
+    thres = np.random.randint(40,100)   # 随机数范围
+    imgfan = cv2.threshold(imgc, thres, 255, cv2.THRESH_BINARY)[1]
+    max = get_pointer_rad(imgfan)
+    thr = max[1]
+    return thr
+
+def get_averg(imgc,h):
+    tol = 0
+    h = int(h)          # 统计次数
+    for i in range(h):
+        thr = getthr(imgc)
+        tol = tol + thr
+        # debug 看看角度是否正确统计
+        # print(f'第{i+1}次的角度:{thr}')
+        print(i+1,end='、')
+    averg = tol / h
+    return averg
+
+if __name__ == '__main__':
+    img = cv2.imread('./img/clock_re.png')
+    imgc = img[0:165, 6:171]
+    print(f'角度的平均值：{get_averg(imgc,5)}')</code></pre>
+<p><code>xlsx_get.py</code></p>
+<pre class=" language-py"><code class="language-py">from openpyxl import Workbook
+import openpyxl as xl
+import cv2
+import line_get as lg
+import os
+import time
+
+
+def get_xlsx():
+    # 新建xlsx或打开已有xlsx
+    filex = 'data.xlsx'
+    if os.path.exists(filex):
+        print('--在result.xlsx中写入数据--')
+        wb = xl.load_workbook('data.xlsx')
+        # 文件表单定位
+        sheet = wb['Sheet']
+    else:
+        wb = Workbook()
+        print('--新建一个data.xlsx--')
+        sheet = wb['Sheet']
+
+    # 储存数据
+    ws = wb.active
+    ws['A1'] = '指针角度'
+    ws['B1'] = '转换角度'
+    ws['C1'] = '测试时间'
+    img = cv2.imread('./img/clock_re.png')
+    imgh = img[0:165,6:171]
+
+    cishu = int(input('请输入需要多少组数据--一直测则输入0--：'))
+    pingjun = int(input('请输入多少组算一次平均值--推荐10--:'))
+
+    row = 0
+    if cishu == 0 or cishu < 0:
+        while row >= cishu :
+            maxrow = sheet.max_row
+            # print(f'excel中第{maxrow + 1}行输入数据-----')
+            # 测几次来算平均值 imgh,10--10次
+            thr = lg.get_averg(imgh,pingjun)
+            ws.cell(row=maxrow+1,column=1,value=thr)
+            print(f'第{row + 1}组-----角度平均值数据：{thr}，输入到第{maxrow + 1}行中')
+            if thr>0 and thr<=45:
+                cdu = thr/2.25 +100
+            elif thr>=135 and thr <= 360:
+                cdu = (thr - 135)/2.25
+            else :
+                cdu = '故障'
+            ws.cell(row=maxrow+1,column=2,value=cdu)
+            timed = time.strftime("%H:%M:%S", time.localtime())  # %Y-%m-%d
+            ws.cell(row=maxrow+1,column=3,value=timed)
+            row += 1
+            wb.save('result.xlsx')
+    else:
+        while row < cishu :
+            maxrow = sheet.max_row
+            # print(f'excel中第{maxrow + 1}行输入数据-----')
+            # 测几次来算平均值 imgh,10--10次
+            thr = lg.get_averg(imgh,pingjun)
+            ws.cell(row=maxrow+1,column=1,value=thr)
+            print(f'第{row + 1}组-----角度平均值数据：{thr}，输入到第{maxrow + 1}行中')
+            if thr>0 and thr<=45:
+                cdu = thr/2.25 +100
+            elif thr>=135 and thr <= 360:
+                cdu = (thr - 135)/2.25
+            else :
+                cdu = '故障'
+            ws.cell(row=maxrow+1,column=2,value=cdu)
+            timed = time.strftime("%H:%M:%S", time.localtime())  # %Y-%m-%d
+            ws.cell(row=maxrow+1,column=3,value=timed)
+            row += 1
+            wb.save('data.xlsx')
+
+if __name__ == '__main__':
+    get_xlsx()</code></pre>
+<p><code>keshihua_data.py</code><br><strong>主要运行文件</strong></p>
+<pre class=" language-py"><code class="language-py">import plotly.offline as ptly
+import plotly.graph_objs as go
+import openpyxl as xl
+import xlsx_get as xg
+
+xg.get_xlsx()
+data=[]
+wb = xl.load_workbook('data.xlsx')
+sheet = wb['Sheet']
+ws = wb.active
+
+cdu = []
+for row in ws.iter_rows(min_row=2, min_col=2,max_col=2,max_row=sheet.max_row ):
+    for cell in row:
+        cdu.append(cell.value)
+timed = []
+for row in ws.iter_rows(min_row=2, min_col=3,max_col=3,max_row=sheet.max_row ):
+    for cell in row:
+        timed.append(cell.value)
+
+trace1 = go.Scatter(x = timed,
+                    y = cdu,
+                    mode = 'lines+markers',   #mode可选'markers','lines','lines+markers'
+                    name = 'data',
+                    marker = dict(size = 10,        #若设为变量则可用散点大小表示变量大小
+                                  color = 'rgba(152, 0, 0, .8)',
+                                  line = dict(width = 2,
+                                              color = 'rgb(0, 0, 0)'
+                                              ),
+                                  opacity=[]
+                                )
+            )
+data.append(trace1)
+layout = go.Layout(font=dict(family='Courier New, monospace', size=18, color='#3D3D3D'),
+                   title='温度值'
+    )
+fig = go.Figure(data=data, layout=layout)
+ptly.plot(fig, filename = 'data.html')</code></pre>
+<h1 id="3-进一步优化，直接再存到excel同时绘制图线，达到粗略得实时"><a href="#3-进一步优化，直接再存到excel同时绘制图线，达到粗略得实时" class="headerlink" title="3. 进一步优化，直接再存到excel同时绘制图线，达到粗略得实时"></a>3. 进一步优化，直接再存到excel同时绘制图线，达到粗略得实时</h1><p><code>keshihua_data_shishi.py</code></p>
+<ul>
+<li>1.实时显示，但不太美观，而且不丝滑</li>
+<li>2.界面美观，但不会实时显示</li>
+</ul>
+<pre class=" language-py"><code class="language-py"># import plotly.offline as ptly
+# import plotly.graph_objs as go
+import openpyxl as xl
+from openpyxl import Workbook
+import line_get as lg
+import cv2
+import time
+import os
+import matplotlib.pyplot as plt
+
+def save_xlsx(thr,cdu,timed):
+    filex = 'ssdata.xlsx'
+    if os.path.exists(filex):
+        print(f'--在ssdata.xlsx中写入数据--')
+        wb = xl.load_workbook('ssdata.xlsx')
+        # 文件表单定位
+        sheet = wb['Sheet']
+    else:
+        wb = Workbook()
+        print('--新建一个ssdata.xlsx--')
+        sheet = wb['Sheet']
+
+    ws = wb.active
+    ws['A1'] = '指针角度'
+    ws['B1'] = '转换角度'
+    ws['C1'] = '测试时间'
+
+    maxrow = sheet.max_row + 1
+    ws.cell(row=maxrow,column=1,value=thr)
+    ws.cell(row=maxrow,column=2,value=cdu)
+    ws.cell(row=maxrow,column=3,value=timed)
+
+    wb.save('ssdata.xlsx')
+
+def get_cts():
+    filex = 'ssdata.xlsx'
+    if os.path.exists(filex):
+        print(f'--在ssdata.xlsx中写入数据--')
+        wb = xl.load_workbook('ssdata.xlsx')
+        # 文件表单定位
+        sheet = wb['Sheet']
+    else:
+        wb = Workbook()
+        print('--新建一个ssdata.xlsx--')
+        sheet = wb['Sheet']
+    ws = wb.active
+    cdu = []
+    for row in ws.iter_rows(min_row=2, min_col=2,max_col=2,max_row=sheet.max_row ):
+        for cell in row:
+            cdu.append(str(cell.value))
+    timed = []
+    for row in ws.iter_rows(min_row=2, min_col=3,max_col=3,max_row=sheet.max_row ):
+        for cell in row:
+            timed.append(cell.value)
+    return cdu,timed
+
+def get_shishi(cishu,pingjun):
+    img = cv2.imread('./img/clock_re.png')
+    imgh = img[0:165,6:171]
+
+    row = 0
+    cts = get_cts()
+    cdus = cts[0]
+    timeds = cts[1]
+
+    while row >= cishu :
+        thr = lg.get_averg(imgh,pingjun)
+        if thr > 0 and thr <= 45:
+            cdu = thr / 2.25 + 100
+        elif thr >= 135 and thr <= 360:
+            cdu = (thr - 135) / 2.25
+        else:
+            cdu = '测试故障'
+        cdus.append(str(cdu))
+        timed = time.strftime("%H:%M:%S", time.localtime())
+        timeds.append(timed)
+
+        # 保存数据
+        save_xlsx(thr,cdu,timed)
+
+        # plt.figure(1)
+        plt.clf()  # 清空画布上的所有内容
+        fig1 = plt.figure(num='温度-时间', figsize=(20, 10), dpi=75, facecolor='#FFFFFF', edgecolor='#0000FF')
+        plt.xlabel('Time')
+        plt.ylabel('Temp')
+        plt.plot(timeds, cdus, 'r-s')
+        # plt.draw()  # 注意此函数需要调用
+        # time.sleep(0.01)
+        plt.pause(0.01)
+
+        if len(timeds) >= 22:
+            timeds = []
+            cdus = []
+            plt.clf()
+        else :
+            continue
+
+        # # plotly 数据可视化 美观，可是不会动态
+        # data = []
+        # namee = str(round(cdu,1)) + '°C'
+        # trace1 = go.Scatter(x=timeds,
+        #                     y=cdus,
+        #                     mode='lines+markers',  # mode可选'markers','lines','lines+markers'
+        #                     name= namee,
+        #                     marker=dict(size=10,  # 若设为变量则可用散点大小表示变量大小
+        #                                 color='rgba(152, 0, 0, .8)',
+        #                                 line=dict(width=2,
+        #                                           color='rgb(0, 0, 0)'
+        #                                           ),
+        #                                 opacity=[]
+        #                                 )
+        #                     )
+        # data.append(trace1)
+        # axis_template = dict(
+        #     showgrid=True,  # 网格
+        #     zeroline=True,  # 是否显示基线,即沿着(0,0)画出x轴和y轴
+        #     nticks=20,
+        #     showline=True,
+        #     title='Time',
+        #     mirror='all',
+        #     zerolinecolor="#FF0000"
+        # )
+        # ayis_template = dict(
+        #     showgrid=True,  # 网格
+        #     zeroline=True,  # 是否显示基线,即沿着(0,0)画出x轴和y轴
+        #     nticks=20,
+        #     showline=True,
+        #     title='Temp',
+        #     mirror='all',
+        #     zerolinecolor="#FF0000"
+        # )
+        # layout = go.Layout(font=dict(family='Courier New, monospace', size=18, color='#3D3D3D'),
+        #                    title='温度值' ,xaxis=axis_template,yaxis=ayis_template
+        #                    )
+        # fig = go.Figure(data=data, layout=layout)
+        # ptly.plot(fig, filename='ssdata.html')
+
+if __name__ == '__main__':
+    get_shishi(0,5)</code></pre>
+<p><code>keshihua_shishi.py</code></p>
+<pre class=" language-py"><code class="language-py">import keshihua_data_shishi as kds
+
+cishu = 0   # 0 - 一直测
+pingjun = int(input('请输入多少组算一次平均数--建议10组--:'))
+
+while True:
+    kds.get_shishi(cishu,pingjun)
+</code></pre>
+<h1 id="4-粗糙的整合–待优化"><a href="#4-粗糙的整合–待优化" class="headerlink" title="4. 粗糙的整合–待优化"></a>4. 粗糙的整合–待优化</h1><pre class=" language-py"><code class="language-py">import math
+import numpy as np
+import openpyxl as xl
+from openpyxl import Workbook
+import cv2
+import time
+import os
+import matplotlib.pyplot as plt
+import plotly.offline as ptly
+import plotly.graph_objs as go
+
+# 获取指针角度值
+def get_pointer_rad(img):
+    shape = img.shape
+    c_y, c_x, depth = int(shape[0] / 2), int(shape[1] / 2), shape[2]    # h,w,cute
+    x1=c_x+c_x*1.5  # 指针长度--宽 2.5倍
+    src = img.copy()
+    freq_list = []
+    for i in range(361):        # 算法
+        x = (x1 - c_x) * math.cos(i * math.pi / 180) + c_x
+        y = (x1 - c_x) * math.sin(i * math.pi / 180) + c_y
+        temp = src.copy()   # 备份
+        cv2.line(temp, (c_x, c_y), (int(x), int(y)), (0, 255, 0), thickness=1)  # 在temp上画线
+        t1 = img.copy()
+        t1[temp[:, :, 1] == 255] = 255
+        c = img[temp[:, :, 1] == 255]
+        points = c[c == 0]
+        freq_list.append((len(points), i))
+        # 可以展示匹配过程
+        # cv2.imshow('d', temp)
+        # cv2.imshow('d1', t1)
+        # 如果要求固定检测时间不要太快，可以在这里调慢
+        cv2.waitKey(1)
+    cv2.destroyAllWindows()
+    return max(freq_list, key=lambda x: x[0])
+
+def getthr(imgc):
+    thres = np.random.randint(40,100)   # 随机数范围
+    imgfan = cv2.threshold(imgc, thres, 255, cv2.THRESH_BINARY)[1]
+    max = get_pointer_rad(imgfan)
+    thr = max[1]
+    return thr
+
+def get_averg(imgc,h):
+    tol = 0
+    h = int(h)          # 统计次数
+    for i in range(h):
+        thr = getthr(imgc)
+        tol = tol + thr
+        # debug 看看角度是否正确统计
+        # print(f'第{i+1}次的角度:{thr}')
+        print(i+1,end='、')
+    averg = tol / h
+    return averg
+
+
+def save_xlsx(thr,cdu,timed):
+    filex = 'ssdata.xlsx'
+    if os.path.exists(filex):
+        print(f'--在ssdata.xlsx中写入数据--')
+        wb = xl.load_workbook('ssdata.xlsx')
+        # 文件表单定位
+        sheet = wb['Sheet']
+    else:
+        wb = Workbook()
+        print('--新建一个ssdata.xlsx--')
+        sheet = wb['Sheet']
+
+    ws = wb.active
+    ws['A1'] = '指针角度'
+    ws['B1'] = '转换角度'
+    ws['C1'] = '测试时间'
+
+    maxrow = sheet.max_row + 1
+    ws.cell(row=maxrow,column=1,value=thr)
+    ws.cell(row=maxrow,column=2,value=cdu)
+    ws.cell(row=maxrow,column=3,value=timed)
+
+    wb.save('ssdata.xlsx')
+
+def get_cts():
+    filex = 'ssdata.xlsx'
+    if os.path.exists(filex):
+        print(f'--在ssdata.xlsx中写入数据--')
+        wb = xl.load_workbook('ssdata.xlsx')
+        # 文件表单定位
+        sheet = wb['Sheet']
+    else:
+        wb = Workbook()
+        print('--新建一个ssdata.xlsx--')
+        sheet = wb['Sheet']
+    ws = wb.active
+    cdu = []
+    for row in ws.iter_rows(min_row=2, min_col=2,max_col=2,max_row=sheet.max_row ):
+        for cell in row:
+            cdu.append(str(cell.value))
+    timed = []
+    for row in ws.iter_rows(min_row=2, min_col=3,max_col=3,max_row=sheet.max_row ):
+        for cell in row:
+            timed.append(cell.value)
+    return cdu,timed
+
+def get_shishi(cishu,pingjun):
+    # img = cv2.imread('./img/clock_re.png')
+    imgh = cv2.imread('frame.jpg')
+    # imgh = img[0:165,6:171]
+
+    # 读取excle中数据
+    cts = get_cts()
+    cdus = cts[0]
+    timeds = cts[1]
+
+    row = True
+    while row:
+        thr = get_averg(imgh,pingjun)
+        if thr > 0 and thr <= 45:
+            cdu = thr / 2.25 + 100
+        elif thr >= 135 and thr <= 360:
+            cdu = (thr - 135) / 2.25
+        else:
+            cdu = '测试故障'
+        cdus.append(str(cdu))
+        timed = time.strftime("%H:%M:%S", time.localtime())
+        timeds.append(timed)
+
+        # 保存数据
+        save_xlsx(thr,cdu,timed)
+
+
+        # # plotly 数据可视化 美观，可是不会动态
+        # data = []
+        # cdu1 = round(cdu ,1)
+        # namee = str(cdu1) + '°C'
+        # trace1 = go.Scatter(x=timeds,
+        #                     y=cdus,
+        #                     mode='lines+markers',  # mode可选'markers','lines','lines+markers'
+        #                     name= namee,
+        #                     marker=dict(size=10,  # 若设为变量则可用散点大小表示变量大小
+        #                                 color='rgba(152, 0, 0, .8)',
+        #                                 line=dict(width=2,
+        #                                           color='rgb(0, 0, 0)'
+        #                                           ),
+        #                                 opacity=[]
+        #                                 )
+        #                     )
+        # data.append(trace1)
+        # axis_template = dict(
+        #     showgrid=True,  # 网格
+        #     zeroline=True,  # 是否显示基线,即沿着(0,0)画出x轴和y轴
+        #     nticks=20,
+        #     showline=True,
+        #     title='Time',
+        #     mirror='all',
+        #     zerolinecolor="#FF0000"
+        # )
+        # ayis_template = dict(
+        #     showgrid=True,  # 网格
+        #     zeroline=True,  # 是否显示基线,即沿着(0,0)画出x轴和y轴
+        #     nticks=20,
+        #     showline=True,
+        #     title='Temp',
+        #     mirror='all',
+        #     zerolinecolor="#FF0000"
+        # )
+        # layout = go.Layout(font=dict(family='Courier New, monospace', size=18, color='#3D3D3D'),
+        #                    title='温度值' ,xaxis=axis_template,yaxis=ayis_template
+        #                    )
+        # fig = go.Figure(data=data, layout=layout)
+        # ptly.plot(fig, filename='ssdata.html')
+        # break
+
+        # 实时数据，停不下来
+        # plt.figure(1)
+        plt.clf()  # 清空画布上的所有内容
+        fig1 = plt.figure(num='温度-时间', figsize=(20, 10), dpi=75, facecolor='#FFFFFF', edgecolor='#0000FF')
+        plt.xlabel('Time')
+        plt.ylabel('Temp')
+        plt.plot(timeds, cdus, 'r-s')
+        # plt.draw()  # 注意此函数需要调用
+        # time.sleep(0.01)
+        plt.pause(0.01)
+
+        if len(timeds) >= 22:
+            timeds = []
+            cdus = []
+            plt.clf()
+            row = False
+        else :
+            break
+
+
+def video_show(video,ci):
+    i = 1
+    while True:
+        ret1,frame = video.read()
+        if not ret1:
+            print("视频获取失败！")
+            break
+        framegray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+
+        template = cv2.imread('./img/moban_c.jpg')
+        # print(template.shape)
+        # exit()
+        theight , twidth = template.shape[0] , template.shape[1]
+        result = cv2.matchTemplate(frame,template,cv2.TM_SQDIFF_NORMED)
+        cv2.normalize(result,result,0,1,cv2.NORM_MINMAX,-1)
+        min_val,max_val,min_loc,max_loc = cv2.minMaxLoc(result)
+
+        # # min_loc：矩形定点
+        # # (min_loc[0]+twidth,min_loc[1]+theight)：矩形的宽高
+        # # (0,0,225)：矩形的边框颜色；2：矩形边框宽度
+        cv2.rectangle(frame ,min_loc ,(min_loc[0] + twidth ,min_loc[1] + theight) ,(255 ,0 ,0) ,2)
+        cv2.imshow("Video_show",frame)
+
+        choose_data = framegray[min_loc[0]:(min_loc[0] + twidth ),min_loc[1]: (min_loc[1] + theight)]
+        # choose_datafan = cv2.threshold(choose_data ,110,255 ,cv2.THRESH_BINARY_INV)[1]
+        cv2.imshow("choose_video",choose_data)
+        if i%ci == 0 :
+            cv2.imwrite(f'frame.jpg',choose_data)
+            print(f'照片已保存--frame.jpg--：')
+            break
+        i += 1
+        if cv2.waitKey(1) & 0xff == ord("e"):
+            break
+    video.release()
+    cv2.destroyAllWindows()
+
+if __name__ == '__main__' :
+    cishu = 0  # 0 - 一直测
+    # pingjun = int(input('请输入多少组算一次平均数--建议2组--:'))
+    pingjun = 5
+    ci = 100
+    # ci = int(input('请输入多少时间换一组照片--100大概3.638s左右--：'))
+    while True:
+        video = cv2.VideoCapture(0)
+        video_show(video ,ci)
+        get_shishi(cishu ,pingjun)</code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://yoursite.com" rel="external nofollow noreferrer">Yun Qi</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://yoursite.com/2020/02/19/python-mengya/">http://yoursite.com/2020/02/19/python-mengya/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="http://yoursite.com" target="_blank">Yun Qi</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%90%8C%E8%8A%BD%E6%9D%AF/">
+                                    <span class="chip bg-color">萌芽杯</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2020/02/20/python-math/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Python_math">
+                        
+                        <span class="card-title">Python_math</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            python中的math库非常的有意思hhh暂时先写一部分；没什么时间深入研究，等过段时间再说
+
+
+1. 角度相关函数1.1 角弧度转换import math
+math.degrees(math.pi/2)
+# 90.0
+math.radi
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
+                                    技术力
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/18/python-open-cv/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="第一次萌芽杯python技能">
+                        
+                        <span class="card-title">第一次萌芽杯python技能</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            萌芽杯比赛可能需要python 学习进程
+
+
+0.基本知识的学习0.1 基本操作cv2.IMREAD_COLOR:彩色图像 RGB 三通道cv2.IMREAD_GRAYSCALE：灰度图像 灰度一个通道
+
+img = cv2.imread(
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
+                                    技术力
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%90%8C%E8%8A%BD%E6%9D%AF/">
+                        <span class="chip bg-color">萌芽杯</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme:='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="http://yoursite.com" target="_blank">Yun Qi</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">30.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/yq010105" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:yuanqi053@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/satoru43886693" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/satoru43886693" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1422718901" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1422718901" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"./live2d_models/haruna/33/model.2018.spring.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.8},"log":false});</script></body>
+
+</html>
