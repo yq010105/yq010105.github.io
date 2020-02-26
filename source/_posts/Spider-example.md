@@ -72,7 +72,7 @@ with open(f'{time_num2}.csv','w',encoding='utf-8') as f:
 
 - _分辨率极低_
 
-```py
+```python
 import re
 import requests
 import os
@@ -111,7 +111,7 @@ if __name__ == '__main__':
 
 _分辨率较高，但有的图爬不了_
 
-```py
+```python
 import re
 import requests
 import os
@@ -159,7 +159,7 @@ if __name__ == '__main__':
 
 - 输入想爬取的关键词，自动爬取(只能下 30 张)
 
-```py
+```python
 import requests
 import re
 import os
@@ -207,7 +207,7 @@ if __name__ =='__main__':
 
 - **进一步升级，可以爬任意数量图片**
 
-```py
+```python
 import requests
 import re
 import os
@@ -340,4 +340,76 @@ def save_pic():
 save_pic()
 ```
 
-**学习如何爬取高分辨率图片 ing**
+# 4.爬取Wallhaven上的图片
+
+## 4.1 龟速爬取,只是用来爬了一下博客需要的图片hhh
+
+*爬取速度慢，要等半天才能开始保存文件，应该是我代码结构的问题，以后再做优化*
+
+```python
+import lxml.html
+import requests
+import re
+import os
+
+headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36"}
+
+def get_url():
+    pages = input('输入页数：')
+    # pages = '1'
+    url_pics = []
+    page = 1
+    while page <= int(pages):
+        url = 'https://wallhaven.cc/search?categories=010&purity=100&resolutions=1280x800&sorting=relevance&order=desc&page=' + str(page)
+        html = requests.get(url,headers = headers).content.decode()
+    # print(html)
+    # exit()
+        selector = lxml.html.fromstring(html)
+
+        url_pic = selector.xpath('//*[@id="thumbs"]/section/ul/li/figure/a/@href')
+        url_pics.append(url_pic)
+        page += 1
+    print('得到了内层url')
+    return url_pics
+
+def get_pic():
+    url_pics = get_url()
+    img_urls = []
+    for urlst in url_pics:
+        for url in urlst:
+            htmlp = requests.get(url,headers = headers).content.decode()
+            # print(htmlp)
+            # exit()
+            img_url = re.findall(r'"wallpaper" src="(.*?)"',htmlp,re.S)[0]
+            img_urls.append(img_url)
+    print('得到图片的url')
+    return img_urls
+
+def get_img(imgurl_list):
+    i = 1
+    for url in imgurl_list:
+        print('开始下载图片'+'\t'+'第'+str(i)+'张')
+        try:
+            pic = requests.get(url, timeout=10)
+        except requests.exceptions.ConnectionError:
+            print('图片无法下载')
+            continue
+        except requests.exceptions.ReadTimeout:
+            print('requests.exceptions.ReadTimeout')
+            continue
+
+        main_path = r'E:\\wallhaven\\' 
+        if not os.path.exists(main_path):
+            os.makedirs(main_path)
+
+        
+        dir = 'E:\\wallhaven\\' + str(i) +'.jpg'
+
+        with open(dir, 'wb') as f:
+            f.write(pic.content)
+        i += 1
+
+if __name__ == '__main__':
+    imgurl_list = get_pic()
+    get_img(imgurl_list)
+```
