@@ -1,6 +1,8 @@
 ---
 title: Hexo
 date: 2020-02-04 15:34:18
+categories: 技术力
+summary: Hexo博客基本操作
 tags:
   - Hexo
 ---
@@ -11,9 +13,9 @@ tags:
 
 <!-- more -->
 
-# 1. hexo 基操
+## 1. hexo 基操
 
-## 1.1 master 分支
+### 1.1 master 分支
 
 |           描述            |          代码           |
 | :-----------------------: | :---------------------: |
@@ -24,7 +26,7 @@ tags:
 |  部署到远端；推到 github  |        `hexo d`         |
 |       启动预览,blog       |        `hexo s`         |
 
-## 1.2 blog 分支
+### 1.2 blog 分支
 
 - 6、将当前目录下修改的所有代码从工作区添加到暂存区 . 代表当前目录
   > `git add .`
@@ -39,17 +41,17 @@ tags:
 
 > 参考[简书网站](https://www.jianshu.com/p/2e1d551b8261 "简书")
 
-# 2. source/md-(blog 目录下)
+## 2. source/md-(blog 目录下)
 
 - 没有跳过的会转化为 HTML，在 blog 中体现
 
-# 3. 添加背景图片和左侧图片
+## 3. 添加背景图片和左侧图片
 
 主要在`source/main.0cf68a.css` 文件中修改
 
 > 具体修改参考[大佬博客](http://yansheng836.coding.me/)中的[这一篇](http://yansheng836.coding.me/article/72a91df5.html)
 
-## 3.1 左侧背景
+### 3.1 左侧背景
 
 `themes/yilia/layout/_partial/left-col.ejs`文件中注释掉原来代码，添加新的无属性代码
 
@@ -98,7 +100,7 @@ tags:
      font-size:18px;
 ```
 
-## 3.2 文章背景
+### 3.2 文章背景
 
 先将文章背景调成透明色,搜索`.article {`
 
@@ -136,11 +138,11 @@ _需要自己好好的找一找_
 
 **如果你的 main.0cf68a.css,文件代码很乱，可以在[我的 Github](https://github.com/yq010105/hexo_themes/blob/master/yilia/source/main.0cf68a.css)中复制** _别问我怎么知道的_
 
-## 3.3 copy 代码块
+### 3.3 copy 代码块
 
 > 按照[大佬博客](http://yansheng836.coding.me/)中的[这一篇](http://yansheng836.coding.me/article/e9d1b881.html)
 
-# 4. 添加网站运行时间
+## 4. 添加网站运行时间
 
 _简单配置_
 修改`\themes\yilia\layout\_partial\footer.ejs`，在`</footer>`上面添加如下内容
@@ -182,7 +184,7 @@ _简单配置_
 
 > 参考[这一篇](http://yansheng836.coding.me/article/50902a4.html)
 
-# 5. 看板娘(かんばんむすめ)
+## 5. 看板娘(かんばんむすめ)
 
 - **安装插件:** `npm install --save hexo-helper-live2d` **[github 项目](https://github.com/EYHN/hexo-helper-live2d)**
 - **安装模型:** `npm install live2d-widget-model-模型名` **[模型名参考](https://huaji8.top/post/live2d-plugin-2.0/)**
@@ -218,7 +220,7 @@ live2d:
   > [2233 娘的 model](https://github.com/52cik/bilibili-haruna)
   > 参考[这一篇](http://yansheng836.coding.me/article/e239dc63.html)
 
-# 6. 网易云音乐插件
+## 6. 网易云音乐插件
 
 - 在`/yilia/layout/_partial/post/left-col.ejs`中最后的`</nav>`标签上方添加
 
@@ -254,9 +256,9 @@ music:
 
 > 参考大佬做的[yilia-plus](https://github.com/JoeyBling/hexo-theme-yilia-plus)中的配置
 
-# 7. 添加背景特效
+## 7. 添加背景特效
 
-## 7.1 点击爱心
+### 7.1 点击爱心
 
 - 在`/yilia/source/js/`下添加`love.js`文件,书写代码
 
@@ -376,7 +378,7 @@ music:
 love: true
 ```
 
-## 7.2 背景线条
+### 7.2 背景线条
 
 - 在`yilia/layout/layout.ejs`中添加代码
 
@@ -403,7 +405,7 @@ canvas_nest:
   zIndex: "-1" # z-index property of the background, default: -1.
 ```
 
-## 7.3 背景点击文字
+### 7.3 背景点击文字
 
 - 在`yilia/source/js/`下添加`click_show_text.js`文件，添加代码
 
@@ -475,11 +477,11 @@ click_show_text: false
 
 > [参考博客](http://yansheng836.coding.me/article/cf9c6a5e.html)
 
-# 8. 修改手机端的页面背景颜色，文章的背景颜色以及头像上方颜色
+## 8. 修改手机端的页面背景颜色，文章的背景颜色以及头像上方颜色
 
 _在`main.0cf68a.css`中修改@media 下的模块_
 
-## 8.1 页面背景颜色(图片)
+### 8.1 页面背景颜色(图片)
 
 添加下列代码，即为修改页面的背景托 i 按
 
@@ -494,7 +496,7 @@ _在`main.0cf68a.css`中修改@media 下的模块_
 }
 ```
 
-## 8.2 文章背景颜色
+### 8.2 文章背景颜色
 
 找到`@media`下的 article
 
@@ -511,6 +513,6 @@ _在`main.0cf68a.css`中修改@media 下的模块_
 
 根据自己喜好改变`background`属性值
 
-## 8.3 头像图片
+### 8.3 头像图片
 
 直接在`_config.yml`中修改，我改成了透明即`header: 'rgba(255, 127, 127, 0)'`

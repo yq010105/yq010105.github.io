@@ -1,10 +1,12 @@
 ---
 title: Python_openpyxl
 date: 2020-02-22 14:40:22
+summary: Python openpyxl的操作方法,用python操作excel
+categories: 学习力
 tags:
     - Python
 ---
-
+ 
 **Python openpyxl的操作方法**
 >[参考教程](https://www.jb51.net/article/169356.htm)
 

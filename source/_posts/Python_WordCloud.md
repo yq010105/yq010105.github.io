@@ -1,12 +1,13 @@
 ---
 title: Python_WordCloud
 date: 2020-02-13 20:23:53
+summary: WordCloud 一个可以生成词云的 python 的轮子
+categories: 学习力
 tags:
   - Python
 ---
 
-- **wordcloud 一个可以生成词云的 python 包**
-  <!--more-->
+安装: `pip install WordCloud`
 
 # 1. wordcloud 代码(英文)
 

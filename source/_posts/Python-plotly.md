@@ -1,6 +1,8 @@
 ---
 title: Python_plotly
 date: 2020-02-22 18:57:30
+summary:  Python中plotly轮子的用法，更加高级的可视化轮子
+categories: 学习力
 tags:
   - Python
 ---

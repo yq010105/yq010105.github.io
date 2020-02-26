@@ -1,6 +1,8 @@
 ---
 title: Python_math
 date: 2020-02-20 21:47:39
+summary: Python中的math库，写代码时需要用到的python中的数学函数
+categories: 学习力
 tags:
     - Python
 ---

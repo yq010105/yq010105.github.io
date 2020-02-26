@@ -1,18 +1,18 @@
 ---
-title: Selector-jsoup & Json Path厚墨书源制作
+title: 厚墨书源制作所需技术
 date: 2020-02-18 12:19:20
+summary: 在学习制作厚墨书源过程中需要进一步学习的技术
+categories: 学习力
 tags:
-  - HTML/CSS/JS
+  - Jsoup
 ---
 
 **Jsoup 中 Selector 选择器用法**
-**Json Path的用法**
 暂时不学了先，事情太多了
 <!--more-->
 
 > [Jsoup Selector](https://blog.csdn.net/syt_boss/article/details/82863990)
 > [官方文档](https://jsoup.org/apidocs/org/jsoup/select/Selector.html)
-> [Json Path]()
 
 # 1. Selector 选择器概述
 

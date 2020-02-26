@@ -1,6 +1,8 @@
 ---
 title: Python_format
 date: 2020-02-11 20:56:10
+summary: python中的format格式化字符串函数
+categories: 学习力
 tags:
   - Python
 ---
@@ -11,10 +13,11 @@ tags:
 
 <!--more -->
 
-# python_format
+**python_format**
 
 &emsp;&emsp;&emsp;**`str.format()`，它增强了字符串格式化的功能**
 &emsp;&emsp;&emsp;**基本语法是通过 {} 和 : 来代替以前的 %**
+**你也可以`print(f'字符{参数1}字符{参数2}字符')`**
 
 ## 1. format 函数可以接受不限个参数，位置可以不按顺序
 

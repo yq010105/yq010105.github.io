@@ -1,7 +1,10 @@
 ---
-title: System
+title: System重置系统后各种软件的重新安装
 date: 2020-02-25 09:31:57
+summary: 重置系统后软件安装的各个步骤中回收站状况，我什么也不懂hh
+categories: 无力
 tags:
+    - Windows
 ---
 
 

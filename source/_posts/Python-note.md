@@ -1,12 +1,14 @@
 ---
 title: Python-Note
 date: 2020-02-09 15:38:38
+summary: Python 语言学习笔记
+categories: 学习力
 tags:
   - Python
   - Note
 ---
 
-**Python 语言学习笔记**
+**有一定的python自学基础，基础不扎实**
 **python，边学爬虫，边把不会的 python 知识不全**
 
 <!-- more -->

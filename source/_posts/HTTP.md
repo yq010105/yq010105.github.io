@@ -1,23 +1,20 @@
 ---
 title: HTTP
 date: 2020-02-13 12:50:04
+categories: 学习力
+summary: HTTP 协议即 Hyper Text Transfer Protocol（超文本传输协议）,是用于从万维网WWW服务器传输超文本到本地浏览器的传送协议
 tags:
   - Spider
 ---
 
-**HTTP 协议**
-HTTP 协议是 Hyper Text Transfer Protocol（超文本传输协议）的缩写,是用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议
-
-<!--more -->
-
-# 1. 特点
+## 1. 特点
 
 - HTTP 基于 TCP/IP 协议：http 协议是基于 TCP/IP 协议之上的应用层协议
 - HTTP 是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间
 - HTTP 是基于请求－响应模式：HTTP 协议规定,请求从客户端发出,最后服务器端响应该请求并 返回
 - HTTP 是无状态保存：HTTP 协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快
 
-# 2. URL
+## 2. URL
 
 HTTP 使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。URL 是一种特殊类型的 URI，包含了用于查找某个资源的足够的信息
 
@@ -31,7 +28,7 @@ HTTP 使用统一资源标识符（Uniform Resource Identifiers, URI）来传输
 - 锚部分：从“#”开始到最后，都是锚部分。本例中的锚部分是“name”。锚部分也不是一个 URL 必须的部分
 - 参数部分：从“？”开始到“#”为止之间的部分为参数部分，又称搜索部分、查询部分。本例中的参数部分为“boardID=5&ID=24618&page=1”。参数可以允许有多个参数，参数与参数之间用“&”作为分隔符
 
-# 3. Request
+## 3. Request
 
 ![request解析图](/img/http/http_request.png)
 
@@ -50,7 +47,7 @@ HTTP 使用统一资源标识符（Uniform Resource Identifiers, URI）来传输
 - X-Requested-With:XMLHttpResquest 代表通过 ajax 方式进行访问的
 - User-Agent:请求载体的身份标识
 
-# 4. Response
+## 4. Response
 
 ![response解析图](/img/http/http_response.png)
 
@@ -83,7 +80,7 @@ HTTP 使用统一资源标识符（Uniform Resource Identifiers, URI）来传输
 
 > [百度百科详细对比表](https://baike.baidu.com/item/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/5053660?fr=aladdin)
 
-# 5. HTTPS 协议
+## 5. HTTPS 协议
 
 HTTPS (Secure Hypertext Transfer Protocol)安全超文本传输协议，HTTPS 是在 HTTP 上建立 SSL 加密层，并对传输数据进行加密，是 HTTP 协议的安全版
 ![https](/img/http/https.png)

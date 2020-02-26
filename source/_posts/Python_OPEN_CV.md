@@ -1,19 +1,21 @@
 ---
-title: 第一次萌芽杯python技能
+title: Python_Opencv
 date: 2020-02-18 20:42:34
+summary: Python中opencv的学习和使用，可以操作图片，跟ps中知识挺像的hhh
+categories: 学习力
 tags:
     - Python
-    - 萌芽杯
+    - Compete
 ---
-
-~~萌芽杯比赛可能需要~~
-**python 学习进程**
 
 <!--more-->
 
 # 0.基本知识的学习
 
 ## 0.1 基本操作
+
+引用库
+`import cv2`
 
 cv2.IMREAD_COLOR:彩色图像 RGB 三通道
 cv2.IMREAD_GRAYSCALE：灰度图像 灰度一个通道

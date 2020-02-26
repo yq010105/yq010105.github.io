@@ -1,17 +1,20 @@
 ---
 title: Python_mengya_process
 date: 2020-02-19 12:51:09
+top: true 
+cover: true
+coverImg: /img/cover/mengya.jpg
+img: /img/cover/mengya.jpg
+categories: 技术力
+summary: 识别表的指针，代码的构造过程，并没有写完（萌芽杯比赛项目）
 tags:
     - Python 
-    - 萌芽杯
+    - Compete
 ---
-
-**代码的构造过程，并没有写完**
-<!--more-->
 
 # 1. 测试
 ## 1.1 视频经过梯度处理
-```py
+```python
 import cv2
 
 vc = cv2.VideoCapture('./video/1.mp4')
@@ -43,7 +46,7 @@ cv2.destroyAllWindows()
 ```
 
 ## 1.2 检测指针，绘制直线
-```py
+```python
 import cv2
 import numpy as np
 import os
@@ -79,7 +82,7 @@ os.system("pause")
 
 ## 1.3 小综合；根据表盘识别指针并求出斜率
 
-```py
+```python
 import cv2
 import numpy as np
 import math
@@ -176,7 +179,7 @@ cv_show('imgline',imgbufen)
 
 ## 1.4 更高级的检测指针，然后返回指针斜率
 
-```py
+```python
 import cv2
 import math
 import linekthr as lt
@@ -241,7 +244,7 @@ print(f'角度的平均值：{get_averg()}')
 # 2. 初步完成~~核心~~
 
 `line_get.py`
-```py
+```python
 import cv2
 import math
 import numpy as np
@@ -297,7 +300,7 @@ if __name__ == '__main__':
 ```
 
 `xlsx_get.py`
-```py
+```python
 from openpyxl import Workbook
 import openpyxl as xl
 import cv2
@@ -377,7 +380,7 @@ if __name__ == '__main__':
 `keshihua_data.py`
 **主要运行文件**
 
-```py
+```python
 import plotly.offline as ptly
 import plotly.graph_objs as go
 import openpyxl as xl
@@ -424,7 +427,8 @@ ptly.plot(fig, filename = 'data.html')
 
 * 1.实时显示，但不太美观，而且不丝滑
 * 2.界面美观，但不会实时显示
-```py
+
+```python
 # import plotly.offline as ptly
 # import plotly.graph_objs as go
 import openpyxl as xl
@@ -567,7 +571,7 @@ if __name__ == '__main__':
 ```
 
 `keshihua_shishi.py`
-```py
+```python
 import keshihua_data_shishi as kds
 
 cishu = 0   # 0 - 一直测
@@ -580,7 +584,7 @@ while True:
 
 # 4. 粗糙的整合--待优化
 
-```py
+```python
 import math
 import numpy as np
 import openpyxl as xl

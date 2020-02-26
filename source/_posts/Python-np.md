@@ -1,15 +1,15 @@
 ---
 title: Python_np
 date: 2020-02-21 12:06:22
+summary: Python中numpy轮子，用来处理数据
+categories: 学习力
 tags:
   - Python
 ---
 
-**Python 中 numpy 的学习**
-一点一点地学，可能没有逻辑，知识点分散
-_import numpy as np_
-
 <!--more-->
+**函数引用，命名为np：`import numpy as np`**
+
 
 # 1. np.linspace()
 

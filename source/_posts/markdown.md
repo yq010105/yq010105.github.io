@@ -1,16 +1,13 @@
 ---
 title: Markdown
 date: 2020-02-08 12:00:45
+categories: 学习力
+summary: 关于我使用 Markdown 以来学到的知识
 tags:
   - Markdown
 ---
 
-**关于我初次使用 Markdown 以来遇到的问题**
-_Markdown 笔记本_
-
-<!-- more -->
-
-# 1. 空格
+## 1. 空格
 
 |          语法          |   example    |                                解释                                 |
 | :--------------------: | :----------: | :-----------------------------------------------------------------: |
@@ -22,15 +19,15 @@ _Markdown 笔记本_
 
 > 参考[网站](https://www.jianshu.com/p/31eade263e7a "简书")
 
-# 2. 链接
+## 2. 链接
 
-## 2.1 行内式(方便简洁)
+### 2.1 行内式(方便简洁)
 
 `[链接文字](链接网址 "标题")`
 `This is an [example link](https://www.jianshu.com/p/31eade263e7a)`
 会显示为:&nbsp;This is an [example link](https://www.jianshu.com/p/31eade263e7a)
 
-## 2.2 锚点
+### 2.2 锚点
 
 - 第一种
 
@@ -56,9 +53,9 @@ l
 
 > 参考[link](https://blog.csdn.net/wangzhibo666/article/details/88731227 "CSDN")
 
-# 3. 图片
+## 3. 图片
 
-## 3.1 网络图片的添加
+### 3.1 网络图片的添加
 
 ```
 ![alt 属性文本](图片地址)
@@ -72,7 +69,7 @@ l
 
 ![四月是你的谎言](https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=905665511,4125694826&fm=26&gp=0.jpg "四谎")
 
-## 3.2 本地图片的添加
+### 3.2 本地图片的添加
 
 ```
 ![avatar](/img/picture_exam.jpeg "example")
@@ -85,7 +82,7 @@ l
 ![avatar](/img/picture_exam.jpeg "example")
 <img src="/img/picture_exam.jpeg " width = 10% height = 10% div align=right />
 
-# 4. 表格
+## 4. 表格
 
 ```
 | 左对齐 | 右对齐 | 居中对齐 |
@@ -101,7 +98,7 @@ l
 
 > 参考教程:[markdown](https://www.runoob.com/markdown/md-tutorial.html)
 
-# 5. 设置字体大小颜色
+## 5. 设置字体大小颜色
 
 ```
 <font face="黑体">我是黑体字</font>

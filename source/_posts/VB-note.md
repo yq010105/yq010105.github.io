@@ -2,6 +2,9 @@
 title: VB-Note
 date: 2020-02-16 13:32:49
 top: true
+img: /img/cover/vb.jpeg
+summary: VB语言学习过程，这个学期开始学习VB，提前作预习
+categories: 学习力
 tags:
   - VB
   - Note

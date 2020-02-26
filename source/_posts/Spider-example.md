@@ -1,6 +1,12 @@
 ---
-title: Spider_example
+title: Spider Example
 date: 2020-02-10 16:43:47
+top: true
+coverImg: /img/cover/spiderex.jpg
+img: /img/cover/spiderex.jpg
+categories: 技术力
+summary: 自己动手编写的几个python爬虫小栗子
+cover: true
 tags:
   - Spider
   - Python

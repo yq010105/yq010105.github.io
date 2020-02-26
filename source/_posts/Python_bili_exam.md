@@ -1,6 +1,8 @@
 ---
-title: Bilibili_Api_Python
+title: Python_Bilibili_Api
 date: 2020-02-14 14:31:32
+summary: 用bilibili提供的api基于python做出的几个小栗子，获取信息
+categories: 技术力
 tags:
   - Python
   - Bilibili
