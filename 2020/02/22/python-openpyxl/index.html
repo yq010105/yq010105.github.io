@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Bilibili Api, Yun.Qi">
-    <meta name="description" content="Bilibili api 相关信息和介绍">
+    <meta name="keywords" content="Python_openpyxl, Yun.Qi">
+    <meta name="description" content="Python openpyxl的操作方法,用python操作excel">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Bilibili Api | Yun.Qi</title>
+    <title>Python_openpyxl | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Bilibili Api</h1>
+                    <h1 class="description center-align post-title">Python_openpyxl</h1>
                 </div>
             </div>
         </div>
@@ -426,12 +426,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Bilibili/">
-                                <span class="chip bg-color">Bilibili</span>
-                            </a>
-                        
-                            <a href="/tags/Api/">
-                                <span class="chip bg-color">Api</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -442,8 +438,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%B5%84%E6%BA%90%E5%8A%9B/" class="post-category">
-                                资源力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -455,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-15
+                    2020-02-22
                 </div>
                 
 
@@ -469,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    185
+                    972
                 </div>
                 
 
@@ -487,13 +483,167 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-up-信息，名字，等级，视频总播放量，文章总浏览数"><a href="#1-up-信息，名字，等级，视频总播放量，文章总浏览数" class="headerlink" title="1. up 信息，名字，等级，视频总播放量，文章总浏览数"></a>1. up 信息，名字，等级，视频总播放量，文章总浏览数</h2><p><code>https://api.bilibili.com/x/space/upstat?mid=uid&amp;jsonp=jsonp</code></p>
-<h2 id="2-up-信息，关注数，黑名单，粉丝数"><a href="#2-up-信息，关注数，黑名单，粉丝数" class="headerlink" title="2. up 信息，关注数，黑名单，粉丝数"></a>2. up 信息，关注数，黑名单，粉丝数</h2><p><code>https://api.bilibili.com/x/relation/stat?vmid=UID&amp;jsonp=jsonp</code></p>
-<h2 id="3-bilibili-某视频评论区的信息"><a href="#3-bilibili-某视频评论区的信息" class="headerlink" title="3. bilibili 某视频评论区的信息"></a>3. bilibili 某视频评论区的信息</h2><p><code>http://api.bilibili.com/x/v2/reply?jsonp=jsonp&amp;;pn=页数&amp;type=1&amp;oid=av号</code></p>
-<h2 id="4-bilibili-主页各个分区信息（信息量巨大）"><a href="#4-bilibili-主页各个分区信息（信息量巨大）" class="headerlink" title="4. bilibili 主页各个分区信息（信息量巨大）"></a>4. bilibili 主页各个分区信息（信息量巨大）</h2><p><code>https://www.bilibili.com/index/ding.json</code></p>
-<h2 id="5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"><a href="#5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息" class="headerlink" title="5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"></a>5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息</h2><p><code>http://api.bilibili.com/archive_stat/stat?aid=av号&amp;type=jsonp</code></p>
-<h2 id="6-bilibili-主站"><a href="#6-bilibili-主站" class="headerlink" title="6. bilibili 主站"></a>6. bilibili 主站</h2><p><code>https://api.bilibili.com/x/web-interface/online?&amp;;jsonp=jsonp</code></p>
-<h2 id="7-up的粉丝数量，但有限制，最对250个"><a href="#7-up的粉丝数量，但有限制，最对250个" class="headerlink" title="7. up的粉丝数量，但有限制，最对250个"></a>7. up的粉丝数量，但有限制，最对250个</h2><p><code>https://api.bilibili.com/x/relation/followers?vmid=uid&amp;pn=5&amp;ps=0&amp;order=desc&amp;jsonp=jsonp</code></p>
+                <p><strong>Python openpyxl的操作方法</strong></p>
+<blockquote>
+<p><a href="https://www.jb51.net/article/169356.htm" target="_blank" rel="noopener">参考教程</a></p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="1-打开文件夹"><a href="#1-打开文件夹" class="headerlink" title="1. 打开文件夹"></a>1. 打开文件夹</h1><p><strong><code>from openpyxl import Workbook</code></strong></p>
+<h2 id="1-1-创建"><a href="#1-1-创建" class="headerlink" title="1.1 创建"></a>1.1 创建</h2><pre class="line-numbers language-py"><code class="language-py"># 实例化
+wb = Workbook()
+# 激活worksheet
+ws = wb.active<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="1-2-储存"><a href="#1-2-储存" class="headerlink" title="1.2 储存"></a>1.2 储存</h2><p>每个文件操作完之后需要储存</p>
+<pre class="line-numbers language-py"><code class="language-py">wb.save('文件名.xlsx')<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="1-3-打开已有"><a href="#1-3-打开已有" class="headerlink" title="1.3 打开已有"></a>1.3 打开已有</h2><pre class="line-numbers language-py"><code class="language-py">wb2 = load_workbook('文件名.xlsx')<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="2-创建表"><a href="#2-创建表" class="headerlink" title="2. 创建表"></a>2. 创建表</h1><h1 id="2-1-创建表（sheet"><a href="#2-1-创建表（sheet" class="headerlink" title="2.1 创建表（sheet"></a>2.1 创建表（sheet</h1><pre class="line-numbers language-py"><code class="language-py"># 方式一：插入到最后(default)
+ws1 = wb.create_sheet("Mysheet") 
+# 方式二：插入到最开始的位置
+ws2 = wb.create_sheet("Mysheet", 0)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-2-选择表"><a href="#2-2-选择表" class="headerlink" title="2.2 选择表"></a>2.2 选择表</h2><pre class="line-numbers language-py"><code class="language-py"># sheet 名称可以作为 key 进行索引
+ws3 = wb["New Title"]
+ws4 = wb.get_sheet_by_name("New Title")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-3-查看表名（sheet）"><a href="#2-3-查看表名（sheet）" class="headerlink" title="2.3 查看表名（sheet）"></a>2.3 查看表名（sheet）</h2><pre class="line-numbers language-py"><code class="language-py"># 显示所有表名
+print(wb.sheetnames)
+['Sheet2', 'New Title', 'Sheet1']
+# 遍历所有表
+for sheet in wb:
+    print(sheet.title)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="3-单元格"><a href="#3-单元格" class="headerlink" title="3. 单元格"></a>3. 单元格</h1><h2 id="3-1-储存数据"><a href="#3-1-储存数据" class="headerlink" title="3.1 储存数据"></a>3.1 储存数据</h2><pre class="line-numbers language-py"><code class="language-py">#  方式一 数据可以直接分配到单元格中(可以输入公式)
+ws['A1'] = 42
+# 方式二：可以附加行，从第一列开始附加(从最下方空白处，最左开始)(可以输入多行)
+ws.append([1,2,3])
+# 方式三：Python 类型会被自动转换
+ws['A3'] = datetime.datetime.now().strftime("%Y-%m-%d")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-2-访问单元格（call）"><a href="#3-2-访问单元格（call）" class="headerlink" title="3.2 访问单元格（call）"></a>3.2 访问单元格（call）</h2><h3 id="3-2-1-单单元格访问"><a href="#3-2-1-单单元格访问" class="headerlink" title="3.2.1 单单元格访问"></a>3.2.1 单单元格访问</h3><pre class="line-numbers language-py"><code class="language-py"># 方法一
+c = ws['A4']
+# 方法二：row 行；column 列
+d = ws.cell(row=4, column=2, value=10)
+# 方法三：只要访问就创建
+for i in range(1,101):
+    for j in range(1,101):
+        ws.cell(row=i, column=j)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-2-2-多单元格访问"><a href="#3-2-2-多单元格访问" class="headerlink" title="3.2.2 多单元格访问"></a>3.2.2 多单元格访问</h3><pre class="line-numbers language-py"><code class="language-py"># 通过切片
+cell_range = ws['A1':'C2']
+
+# 通过行(列)
+colC = ws['C']
+col_range = ws['C:D']
+row10 = ws[10]
+row_range = ws[5:10]
+
+# 通过指定范围(行 → 行)
+for row in ws.iter_rows(min_row=1, max_col=3, max_row=2):
+    for cell in row:
+        print(cell)
+<Cell Sheet1.A1>
+<Cell Sheet1.B1>
+<Cell Sheet1.C1>
+<Cell Sheet1.A2>
+<Cell Sheet1.B2>
+<Cell Sheet1.C2>　
+
+# 通过指定范围(列 → 列)
+for row in ws.iter_rows(min_row=1, max_col=3, max_row=2):
+    for cell in row:
+        print(cell)
+<Cell Sheet1.A1>
+<Cell Sheet1.B1>
+<Cell Sheet1.C1>
+<Cell Sheet1.A2>
+<Cell Sheet1.B2>
+<Cell Sheet1.C2>
+
+# 遍历所有 方法一
+ws = wb.active
+ws['C9'] = 'hello world'
+tuple(ws.rows)
+((<Cell Sheet.A1>, <Cell Sheet.B1>, <Cell Sheet.C1>),
+(<Cell Sheet.A2>, <Cell Sheet.B2>, <Cell Sheet.C2>),
+...
+(<Cell Sheet.A8>, <Cell Sheet.B8>, <Cell Sheet.C8>),
+(<Cell Sheet.A9>, <Cell Sheet.B9>, <Cell Sheet.C9>))
+
+# 遍历所有 方法二
+tuple(ws.columns)
+((<Cell Sheet.A1>,
+<Cell Sheet.A2>,
+<Cell Sheet.A3>,
+...
+<Cell Sheet.B7>,
+<Cell Sheet.B8>,
+<Cell Sheet.B9>),
+(<Cell Sheet.C1>,
+...
+<Cell Sheet.C8>,
+<Cell Sheet.C9>))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h1><h2 id="4-1-改变sheet-标签按钮颜色"><a href="#4-1-改变sheet-标签按钮颜色" class="headerlink" title="4.1 改变sheet 标签按钮颜色"></a>4.1 改变sheet 标签按钮颜色</h2><pre class="line-numbers language-py"><code class="language-py">ws.sheet_properties.tabColor = "1072BA"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="4-2-获取最大行，最大列"><a href="#4-2-获取最大行，最大列" class="headerlink" title="4.2 获取最大行，最大列"></a>4.2 获取最大行，最大列</h2><pre class="line-numbers language-py"><code class="language-py"># 获得最大列和最大行
+print(sheet.max_row)
+print(sheet.max_column)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-3-获取每一行每一列"><a href="#4-3-获取每一行每一列" class="headerlink" title="4.3 获取每一行每一列"></a>4.3 获取每一行每一列</h2><pre class="line-numbers language-py"><code class="language-py">sheet.rows为生成器, 里面是每一行的数据，每一行又由一个tuple包裹。
+sheet.columns类似，不过里面是每个tuple是每一列的单元格。
+# 因为按行，所以返回A1, B1, C1这样的顺序
+for row in sheet.rows:
+  for cell in row:
+    print(cell.value)
+
+# A1, A2, A3这样的顺序
+for column in sheet.columns:
+  for cell in column:
+    print(cell.value)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-4-根据数字得到字母，根据字母得到数字"><a href="#4-4-根据数字得到字母，根据字母得到数字" class="headerlink" title="4.4 根据数字得到字母，根据字母得到数字"></a>4.4 根据数字得到字母，根据字母得到数字</h2><pre class="line-numbers language-py"><code class="language-py">from openpyxl.utils import get_column_letter, column_index_from_string
+
+# 根据列的数字返回字母
+print(get_column_letter(2)) # B
+# 根据字母返回列的数字
+print(column_index_from_string('D')) # 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-5-删除工作表"><a href="#4-5-删除工作表" class="headerlink" title="4.5  删除工作表"></a>4.5  删除工作表</h2><pre class="line-numbers language-py"><code class="language-py"># 方式一
+wb.remove(sheet)
+# 方式二
+del wb[sheet]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-6-矩阵置换（行-→-列）"><a href="#4-6-矩阵置换（行-→-列）" class="headerlink" title="4.6 矩阵置换（行 → 列）"></a>4.6 矩阵置换（行 → 列）</h2><pre class="line-numbers language-py"><code class="language-py">rows = [
+  ['Number', 'data1', 'data2'],
+  [2, 40, 30],
+  [3, 40, 25],
+  [4, 50, 30],
+  [5, 30, 10],
+  [6, 25, 5],
+  [7, 50, 10]]
+
+list(zip(*rows))
+
+# out
+[('Number', 2, 3, 4, 5, 6, 7),
+ ('data1', 40, 40, 50, 30, 25, 50),
+ ('data2', 30, 25, 30, 10, 5, 10)]
+
+# 注意 方法会舍弃缺少数据的列(行)
+rows = [
+  ['Number', 'data1', 'data2'],
+  [2, 40  ], # 这里少一个数据
+  [3, 40, 25],
+  [4, 50, 30],
+  [5, 30, 10],
+  [6, 25, 5],
+  [7, 50, 10],
+]
+# out
+[('Number', 2, 3, 4, 5, 6, 7), ('data1', 40, 40, 50, 30, 25, 50)]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-7-设置单元格风格"><a href="#4-7-设置单元格风格" class="headerlink" title="4.7 设置单元格风格"></a>4.7 设置单元格风格</h2><h3 id="4-7-1-需要导入的类"><a href="#4-7-1-需要导入的类" class="headerlink" title="4.7.1 需要导入的类"></a>4.7.1 需要导入的类</h3><p><code>from openpyxl.styles import Font, colors, Alignment</code></p>
+<h3 id="4-7-2-字体"><a href="#4-7-2-字体" class="headerlink" title="4.7.2 字体"></a>4.7.2 字体</h3><pre class="line-numbers language-py"><code class="language-py">bold_itatic_24_font = Font(name='等线', size=24, italic=True, color=colors.RED, bold=True)
+# 代码指定了等线24号，加粗斜体，字体颜色红色。直接使用cell的font属性，将Font对象赋值给它
+sheet['A1'].font = bold_itatic_24_font<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-7-3-对齐方式"><a href="#4-7-3-对齐方式" class="headerlink" title="4.7.3 对齐方式"></a>4.7.3 对齐方式</h3><pre class="line-numbers language-py"><code class="language-py"># 设置B1中的数据垂直居中和水平居中
+sheet['B1'].alignment = Alignment(horizontal='center', vertical='center')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="4-7-4-设置行高和列宽"><a href="#4-7-4-设置行高和列宽" class="headerlink" title="4.7.4 设置行高和列宽"></a>4.7.4 设置行高和列宽</h3><pre class="line-numbers language-py"><code class="language-py"># 第2行行高
+sheet.row_dimensions[2].height = 40
+# C列列宽
+sheet.column_dimensions['C'].width = 30<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-7-5-合并和拆分单元格"><a href="#4-7-5-合并和拆分单元格" class="headerlink" title="4.7.5 合并和拆分单元格"></a>4.7.5 合并和拆分单元格</h3><pre class="line-numbers language-py"><code class="language-py"># 合并单元格， 往左上角写入数据即可
+sheet.merge_cells('B1:G1') # 合并一行中的几个单元格
+sheet.merge_cells('A1:C3') # 合并一个矩形区域中的单元格<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -537,7 +687,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yq010105.github.io/2020/02/15/bilibili-api/">http://yq010105.github.io/2020/02/15/bilibili-api/</a>
+                    <a href="http://yq010105.github.io/2020/02/22/python-openpyxl/">http://yq010105.github.io/2020/02/22/python-openpyxl/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -575,12 +725,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Bilibili/">
-                                    <span class="chip bg-color">Bilibili</span>
-                                </a>
-                            
-                                <a href="/tags/Api/">
-                                    <span class="chip bg-color">Api</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
                         </div>
@@ -622,24 +768,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/02/15/java-note/">
+                <a href="/2020/02/22/python-plotly/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Java-Note">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Python_plotly">
                         
-                        <span class="card-title">Java-Note</span>
+                        <span class="card-title">Python_plotly</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java 语言学习笔记
+                            Python中plotly轮子的用法，更加高级的可视化轮子
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-22
                         </span>
                         <span class="publish-author">
                             
@@ -656,12 +802,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Note/">
-                        <span class="chip bg-color">Note</span>
-                    </a>
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -675,31 +817,31 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/14/python-bili-exam/">
+                <a href="/2020/02/21/python-np/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Python_Bilibili_Api">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Python_np">
                         
-                        <span class="card-title">Python_Bilibili_Api</span>
+                        <span class="card-title">Python_np</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用bilibili提供的api基于python做出的几个小栗子，获取信息
+                            Python中numpy轮子，用来处理数据
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -708,10 +850,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/Bilibili/">
-                        <span class="chip bg-color">Bilibili</span>
-                    </a>
                     
                     <a href="/tags/Python/">
                         <span class="chip bg-color">Python</span>

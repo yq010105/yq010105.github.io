@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Bilibili Api, Yun.Qi">
-    <meta name="description" content="Bilibili api 相关信息和介绍">
+    <meta name="keywords" content="Python_mysql, Yun.Qi">
+    <meta name="description" content="MySQL数据库的学习，慢慢学">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Bilibili Api | Yun.Qi</title>
+    <title>Python_mysql | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Bilibili Api</h1>
+                    <h1 class="description center-align post-title">Python_mysql</h1>
                 </div>
             </div>
         </div>
@@ -426,12 +426,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Bilibili/">
-                                <span class="chip bg-color">Bilibili</span>
-                            </a>
-                        
-                            <a href="/tags/Api/">
-                                <span class="chip bg-color">Api</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -442,8 +438,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%B5%84%E6%BA%90%E5%8A%9B/" class="post-category">
-                                资源力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -455,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-15
+                    2020-02-24
                 </div>
                 
 
@@ -469,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    185
+                    70
                 </div>
                 
 
@@ -487,14 +483,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-up-信息，名字，等级，视频总播放量，文章总浏览数"><a href="#1-up-信息，名字，等级，视频总播放量，文章总浏览数" class="headerlink" title="1. up 信息，名字，等级，视频总播放量，文章总浏览数"></a>1. up 信息，名字，等级，视频总播放量，文章总浏览数</h2><p><code>https://api.bilibili.com/x/space/upstat?mid=uid&amp;jsonp=jsonp</code></p>
-<h2 id="2-up-信息，关注数，黑名单，粉丝数"><a href="#2-up-信息，关注数，黑名单，粉丝数" class="headerlink" title="2. up 信息，关注数，黑名单，粉丝数"></a>2. up 信息，关注数，黑名单，粉丝数</h2><p><code>https://api.bilibili.com/x/relation/stat?vmid=UID&amp;jsonp=jsonp</code></p>
-<h2 id="3-bilibili-某视频评论区的信息"><a href="#3-bilibili-某视频评论区的信息" class="headerlink" title="3. bilibili 某视频评论区的信息"></a>3. bilibili 某视频评论区的信息</h2><p><code>http://api.bilibili.com/x/v2/reply?jsonp=jsonp&amp;;pn=页数&amp;type=1&amp;oid=av号</code></p>
-<h2 id="4-bilibili-主页各个分区信息（信息量巨大）"><a href="#4-bilibili-主页各个分区信息（信息量巨大）" class="headerlink" title="4. bilibili 主页各个分区信息（信息量巨大）"></a>4. bilibili 主页各个分区信息（信息量巨大）</h2><p><code>https://www.bilibili.com/index/ding.json</code></p>
-<h2 id="5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"><a href="#5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息" class="headerlink" title="5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"></a>5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息</h2><p><code>http://api.bilibili.com/archive_stat/stat?aid=av号&amp;type=jsonp</code></p>
-<h2 id="6-bilibili-主站"><a href="#6-bilibili-主站" class="headerlink" title="6. bilibili 主站"></a>6. bilibili 主站</h2><p><code>https://api.bilibili.com/x/web-interface/online?&amp;;jsonp=jsonp</code></p>
-<h2 id="7-up的粉丝数量，但有限制，最对250个"><a href="#7-up的粉丝数量，但有限制，最对250个" class="headerlink" title="7. up的粉丝数量，但有限制，最对250个"></a>7. up的粉丝数量，但有限制，最对250个</h2><p><code>https://api.bilibili.com/x/relation/followers?vmid=uid&amp;pn=5&amp;ps=0&amp;order=desc&amp;jsonp=jsonp</code></p>
-<script>
+                <p><strong>MySQL数据库的学习</strong><br>根据<a href="https://www.bilibili.com/video/av49181542" target="_blank" rel="noopener">b站视频</a>学习MySQL数据库</p>
+<a id="more"></a>
+
+<h1 id="0-安装完的一些基本操作"><a href="#0-安装完的一些基本操作" class="headerlink" title="0. 安装完的一些基本操作"></a>0. 安装完的一些基本操作</h1><h2 id="0-1-服务的启动与停止"><a href="#0-1-服务的启动与停止" class="headerlink" title="0.1 服务的启动与停止"></a>0.1 服务的启动与停止</h2><ul>
+<li>管理员启动cmd</li>
+<li>输入<code>net stop mysql</code> 关闭服务</li>
+<li>输入<code>net start mysql</code> 启动服务</li>
+</ul>
+<h2 id="0-2-登录和退出"><a href="#0-2-登录和退出" class="headerlink" title="0.2 登录和退出"></a>0.2 登录和退出</h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -537,7 +534,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yq010105.github.io/2020/02/15/bilibili-api/">http://yq010105.github.io/2020/02/15/bilibili-api/</a>
+                    <a href="http://yq010105.github.io/2020/02/24/python-mysql/">http://yq010105.github.io/2020/02/24/python-mysql/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -575,12 +572,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Bilibili/">
-                                    <span class="chip bg-color">Bilibili</span>
-                                </a>
-                            
-                                <a href="/tags/Api/">
-                                    <span class="chip bg-color">Api</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
                         </div>
@@ -622,25 +615,74 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/02/15/java-note/">
+                <a href="/2020/02/25/system/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Java-Note">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="System重置系统后各种软件的重新安装">
                         
-                        <span class="card-title">Java-Note</span>
+                        <span class="card-title">System重置系统后各种软件的重新安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java 语言学习笔记
+                            重置系统后软件安装的各个步骤中回收站状况，我什么也不懂hh
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-25
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%97%A0%E5%8A%9B/" class="post-category">
+                                    无力
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Windows/">
+                        <span class="chip bg-color">Windows</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/22/python-plotly/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="Python_plotly">
+                        
+                        <span class="card-title">Python_plotly</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Python中plotly轮子的用法，更加高级的可视化轮子
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -655,63 +697,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/Note/">
-                        <span class="chip bg-color">Note</span>
-                    </a>
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/02/14/python-bili-exam/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Python_Bilibili_Api">
-                        
-                        <span class="card-title">Python_Bilibili_Api</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            用bilibili提供的api基于python做出的几个小栗子，获取信息
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-14
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Bilibili/">
-                        <span class="chip bg-color">Bilibili</span>
-                    </a>
                     
                     <a href="/tags/Python/">
                         <span class="chip bg-color">Python</span>

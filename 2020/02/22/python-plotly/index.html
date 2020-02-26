@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Bilibili Api, Yun.Qi">
-    <meta name="description" content="Bilibili api 相关信息和介绍">
+    <meta name="keywords" content="Python_plotly, Yun.Qi">
+    <meta name="description" content="Python中plotly轮子的用法，更加高级的可视化轮子">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Bilibili Api | Yun.Qi</title>
+    <title>Python_plotly | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Bilibili Api</h1>
+                    <h1 class="description center-align post-title">Python_plotly</h1>
                 </div>
             </div>
         </div>
@@ -426,12 +426,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Bilibili/">
-                                <span class="chip bg-color">Bilibili</span>
-                            </a>
-                        
-                            <a href="/tags/Api/">
-                                <span class="chip bg-color">Api</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -442,8 +438,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%B5%84%E6%BA%90%E5%8A%9B/" class="post-category">
-                                资源力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -455,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-15
+                    2020-02-22
                 </div>
                 
 
@@ -469,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    185
+                    630
                 </div>
                 
 
@@ -487,13 +483,182 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-up-信息，名字，等级，视频总播放量，文章总浏览数"><a href="#1-up-信息，名字，等级，视频总播放量，文章总浏览数" class="headerlink" title="1. up 信息，名字，等级，视频总播放量，文章总浏览数"></a>1. up 信息，名字，等级，视频总播放量，文章总浏览数</h2><p><code>https://api.bilibili.com/x/space/upstat?mid=uid&amp;jsonp=jsonp</code></p>
-<h2 id="2-up-信息，关注数，黑名单，粉丝数"><a href="#2-up-信息，关注数，黑名单，粉丝数" class="headerlink" title="2. up 信息，关注数，黑名单，粉丝数"></a>2. up 信息，关注数，黑名单，粉丝数</h2><p><code>https://api.bilibili.com/x/relation/stat?vmid=UID&amp;jsonp=jsonp</code></p>
-<h2 id="3-bilibili-某视频评论区的信息"><a href="#3-bilibili-某视频评论区的信息" class="headerlink" title="3. bilibili 某视频评论区的信息"></a>3. bilibili 某视频评论区的信息</h2><p><code>http://api.bilibili.com/x/v2/reply?jsonp=jsonp&amp;;pn=页数&amp;type=1&amp;oid=av号</code></p>
-<h2 id="4-bilibili-主页各个分区信息（信息量巨大）"><a href="#4-bilibili-主页各个分区信息（信息量巨大）" class="headerlink" title="4. bilibili 主页各个分区信息（信息量巨大）"></a>4. bilibili 主页各个分区信息（信息量巨大）</h2><p><code>https://www.bilibili.com/index/ding.json</code></p>
-<h2 id="5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"><a href="#5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息" class="headerlink" title="5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"></a>5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息</h2><p><code>http://api.bilibili.com/archive_stat/stat?aid=av号&amp;type=jsonp</code></p>
-<h2 id="6-bilibili-主站"><a href="#6-bilibili-主站" class="headerlink" title="6. bilibili 主站"></a>6. bilibili 主站</h2><p><code>https://api.bilibili.com/x/web-interface/online?&amp;;jsonp=jsonp</code></p>
-<h2 id="7-up的粉丝数量，但有限制，最对250个"><a href="#7-up的粉丝数量，但有限制，最对250个" class="headerlink" title="7. up的粉丝数量，但有限制，最对250个"></a>7. up的粉丝数量，但有限制，最对250个</h2><p><code>https://api.bilibili.com/x/relation/followers?vmid=uid&amp;pn=5&amp;ps=0&amp;order=desc&amp;jsonp=jsonp</code></p>
+                <p><strong>数据可视化的 plotly</strong></p>
+<blockquote>
+<p><a href="https://blog.csdn.net/weixin_34407348/article/details/91371969" target="_blank" rel="noopener">参考教程</a></p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="1-基本操作，初步理解代码"><a href="#1-基本操作，初步理解代码" class="headerlink" title="1. 基本操作，初步理解代码"></a>1. 基本操作，初步理解代码</h1><pre class="line-numbers language-py"><code class="language-py"># 生成一个直方图
+import plotly.offline as ptly
+import plotly.graph_objs as go
+
+data=[]
+trace1 = go.Bar(x=['first','second','third'],
+                y=[20,40,30]
+    )
+data.append(trace1)
+layout = go.Layout(font=dict(family='Courier New, monospace', size=18, color='#3D3D3D'),
+                   title='example'
+    )
+fig = go.Figure(data=data, layout=layout)
+ptly.plot(fig, filename = 'example.html')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>或者用 dict 表示</p>
+<pre class="line-numbers language-py"><code class="language-py">trace1 = {'type':'bar',
+          'x':['first','second','third'],
+          'y':[20,40,30]
+    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="2-图形属性"><a href="#2-图形属性" class="headerlink" title="2. 图形属性`"></a>2. 图形属性`</h1><h2 id="2-1-柱状图"><a href="#2-1-柱状图" class="headerlink" title="2.1 柱状图"></a>2.1 柱状图</h2><pre class="line-numbers language-py"><code class="language-py">trace1 = go.Bar(x=[],
+                y=[],
+                name='thename',
+                width=0.5,
+                marker=dict(color="#c45ca2"),
+                opacity=1
+            )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-2-饼图"><a href="#2-2-饼图" class="headerlink" title="2.2 饼图"></a>2.2 饼图</h2><pre class="line-numbers language-py"><code class="language-py">trace1 = go.Pie(labels=[],
+                values=[],
+                hoverinfo='label+percent',
+                textinfo='value',
+                textfont=dict(size=20),
+                marker=dict(colors=colors,
+                           line=dict(color='#000000', width=2)),
+                hole= .4,
+                name="pie name",
+                domain=dict(x = [0, .48]),
+                opacity=1
+            )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-3-散点图，折线图"><a href="#2-3-散点图，折线图" class="headerlink" title="2.3 散点图，折线图"></a>2.3 散点图，折线图</h2><pre class="line-numbers language-py"><code class="language-py">trace1 = go.Scatter(x = [],
+                    y = [],
+                    mode = 'markers',   #mode可选'markers','lines','lines+markers'
+                    name = 'the name',
+                    marker = dict(size = 10,        #若设为变量则可用散点大小表示变量大小
+                                  color = 'rgba(152, 0, 0, .8)',
+                                  line = dict(width = 2,
+                                              color = 'rgb(0, 0, 0)'
+                                              ),
+                                  opacity=[]
+                                )
+            )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="3-布局属性"><a href="#3-布局属性" class="headerlink" title="3. 布局属性"></a>3. 布局属性</h1><pre class="line-numbers language-py"><code class="language-py"># 通用
+layout = go.Layout(title='your title',  #大标题
+                   font=dict(
+                     family='Courier New, monospace',
+                     size=18,
+                     color='#3D3D3D'
+                               ),#字体
+                   width=1400,
+                   height=800,              #图形的大小
+                   margin=go.Margin(
+                                    l=100,
+                                    r=100,
+                                    b=200,
+                                    t=200,
+                                    pad=0
+                                    ),      #边距设置
+                   plot_bgcolor='#ffffff',   #绘图部分背景颜色
+                   paper_bgcolor='#ffffff',   #整体背景颜色
+                   showlegend=True,        #是否显示图例，也可放在每个trace里单独设置
+                   #图例相关参数设置：
+                   legend=dict(orientation="v",
+                                x=0,
+                                y=1,
+                                traceorder='normal',
+                                font=dict(
+                                        family='sans-serif',
+                                        size=12,
+                                        color='#000'
+                                            ),
+                                bgcolor='#E2E2E2',
+                                bordercolor='#FFFFFF',
+                                borderwidth=2
+                            ),
+                   #x轴相关参数设置（y轴对应yaxis）：
+                   xaxis=dict(title='x Axis',
+                              titlefont=dict(
+                                        family='Courier New, monospace',
+                                        size=18,
+                                        color='#7f7f7f'
+                                            ),
+                               range=[],   #x轴范围，如[0,30]
+                               type='-',
+                              #x轴类型，可选["-","linear","log","date","category"]
+                               domain=[0,0.45]
+                              #设置x轴在整个图像占的位置范围（主要在有多张图时使用，第二个图用xaxis2设置相关参数）
+                            )
+    )
+
+
+# 柱状图
+layout = go.Layout(bargap=0.3,      #0~1
+                   bargroupgap=0.1,  #0~1
+                   barmode='',
+                   #barmode: ["stack","group","overlay","relative"],设置多个trace的组合方式
+                   barnorm=''
+    )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-1-设置坐标轴"><a href="#3-1-设置坐标轴" class="headerlink" title="3.1 设置坐标轴"></a>3.1 设置坐标轴</h2><pre class="line-numbers language-py"><code class="language-py">axis_template=dict(
+    showgrid=True,  #网格
+    zeroline=True,  #是否显示基线,即沿着(0,0)画出x轴和y轴
+    nticks=20,
+    showline=True,
+    title='X axis',
+    mirror='all',
+    zerolinecolor="#FF0000"
+)
+layout=go.Layout(
+    xaxis=axis_template,
+    yaxis=axis_template
+)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><a href="https://blog.csdn.net/u012897374/article/details/77857980" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<h1 id="4-图像整体属性"><a href="#4-图像整体属性" class="headerlink" title="4. 图像整体属性"></a>4. 图像整体属性</h1><pre class="line-numbers language-py"><code class="language-py">ptly.plot(figure_or_data, show_link=True, link_text='Export to plot.ly',
+         validate=True, output_type='file', include_plotlyjs=True,
+         filename='temp-plot.html', auto_open=True, image=None,
+         image_filename='plot_image', image_width=800, image_height=600,
+         config=None)s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="5-数据处理"><a href="#5-数据处理" class="headerlink" title="5. 数据处理"></a>5. 数据处理</h1><p><strong>包括 aggregate,filter,groupby,sort</strong></p>
+<pre class="line-numbers language-py"><code class="language-py"># aggregate
+transforms = [dict(
+    type = 'aggregate',
+    groups = [],        #用于分组的数组
+    aggregations = [dict(
+        target = 'y', func = 'sum', enabled = True),
+    ]
+  )]
+"""
+func参数可用：
+"count","sum","avg","median","mode","rms","stddev","min","max","first","last"
+"""
+
+# filter
+transforms = [dict(
+    type = 'filter',
+    target = 'y',
+    operation = '>',
+    value = 4
+  )]
+"""
+operation参数可用:
+"=","!=","<",">=",">","<=","[]","()","[)","(]","][",")(","](",")[","{}","}{"
+"""
+
+# groupby
+transforms = [dict(
+    type = 'groupby',
+    groups = [],     #用于分组的数组
+    styles = [
+        dict(target = 'Moe', value = dict(marker = dict(color = 'blue'))),
+        dict(target = 'Larry', value = dict(marker = dict(color = 'red'))),
+        dict(target = 'Curly', value = dict(marker = dict(color = 'black')))
+    ]
+  )]
+
+# sort
+transforms = [dict(
+    type = 'sort',
+    target = 'x',
+    order = 'ascending'   #升序ascending，降序descending
+  )]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -537,7 +702,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yq010105.github.io/2020/02/15/bilibili-api/">http://yq010105.github.io/2020/02/15/bilibili-api/</a>
+                    <a href="http://yq010105.github.io/2020/02/22/python-plotly/">http://yq010105.github.io/2020/02/22/python-plotly/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -575,12 +740,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Bilibili/">
-                                    <span class="chip bg-color">Bilibili</span>
-                                </a>
-                            
-                                <a href="/tags/Api/">
-                                    <span class="chip bg-color">Api</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
                         </div>
@@ -622,24 +783,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/02/15/java-note/">
+                <a href="/2020/02/24/python-mysql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Java-Note">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Python_mysql">
                         
-                        <span class="card-title">Java-Note</span>
+                        <span class="card-title">Python_mysql</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java 语言学习笔记
+                            MySQL数据库的学习，慢慢学
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-24
                         </span>
                         <span class="publish-author">
                             
@@ -656,12 +817,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Note/">
-                        <span class="chip bg-color">Note</span>
-                    </a>
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -675,31 +832,31 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/14/python-bili-exam/">
+                <a href="/2020/02/22/python-openpyxl/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Python_Bilibili_Api">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Python_openpyxl">
                         
-                        <span class="card-title">Python_Bilibili_Api</span>
+                        <span class="card-title">Python_openpyxl</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用bilibili提供的api基于python做出的几个小栗子，获取信息
+                            Python openpyxl的操作方法,用python操作excel
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -708,10 +865,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/Bilibili/">
-                        <span class="chip bg-color">Bilibili</span>
-                    </a>
                     
                     <a href="/tags/Python/">
                         <span class="chip bg-color">Python</span>

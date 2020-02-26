@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Bilibili Api, Yun.Qi">
-    <meta name="description" content="Bilibili api 相关信息和介绍">
+    <meta name="keywords" content="Python_np, Yun.Qi">
+    <meta name="description" content="Python中numpy轮子，用来处理数据">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Bilibili Api | Yun.Qi</title>
+    <title>Python_np | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Bilibili Api</h1>
+                    <h1 class="description center-align post-title">Python_np</h1>
                 </div>
             </div>
         </div>
@@ -426,12 +426,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Bilibili/">
-                                <span class="chip bg-color">Bilibili</span>
-                            </a>
-                        
-                            <a href="/tags/Api/">
-                                <span class="chip bg-color">Api</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -442,8 +438,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%B5%84%E6%BA%90%E5%8A%9B/" class="post-category">
-                                资源力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -455,7 +451,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-15
+                    2020-02-21
                 </div>
                 
 
@@ -469,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    185
+                    804
                 </div>
                 
 
@@ -487,13 +483,98 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-up-信息，名字，等级，视频总播放量，文章总浏览数"><a href="#1-up-信息，名字，等级，视频总播放量，文章总浏览数" class="headerlink" title="1. up 信息，名字，等级，视频总播放量，文章总浏览数"></a>1. up 信息，名字，等级，视频总播放量，文章总浏览数</h2><p><code>https://api.bilibili.com/x/space/upstat?mid=uid&amp;jsonp=jsonp</code></p>
-<h2 id="2-up-信息，关注数，黑名单，粉丝数"><a href="#2-up-信息，关注数，黑名单，粉丝数" class="headerlink" title="2. up 信息，关注数，黑名单，粉丝数"></a>2. up 信息，关注数，黑名单，粉丝数</h2><p><code>https://api.bilibili.com/x/relation/stat?vmid=UID&amp;jsonp=jsonp</code></p>
-<h2 id="3-bilibili-某视频评论区的信息"><a href="#3-bilibili-某视频评论区的信息" class="headerlink" title="3. bilibili 某视频评论区的信息"></a>3. bilibili 某视频评论区的信息</h2><p><code>http://api.bilibili.com/x/v2/reply?jsonp=jsonp&amp;;pn=页数&amp;type=1&amp;oid=av号</code></p>
-<h2 id="4-bilibili-主页各个分区信息（信息量巨大）"><a href="#4-bilibili-主页各个分区信息（信息量巨大）" class="headerlink" title="4. bilibili 主页各个分区信息（信息量巨大）"></a>4. bilibili 主页各个分区信息（信息量巨大）</h2><p><code>https://www.bilibili.com/index/ding.json</code></p>
-<h2 id="5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"><a href="#5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息" class="headerlink" title="5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"></a>5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息</h2><p><code>http://api.bilibili.com/archive_stat/stat?aid=av号&amp;type=jsonp</code></p>
-<h2 id="6-bilibili-主站"><a href="#6-bilibili-主站" class="headerlink" title="6. bilibili 主站"></a>6. bilibili 主站</h2><p><code>https://api.bilibili.com/x/web-interface/online?&amp;;jsonp=jsonp</code></p>
-<h2 id="7-up的粉丝数量，但有限制，最对250个"><a href="#7-up的粉丝数量，但有限制，最对250个" class="headerlink" title="7. up的粉丝数量，但有限制，最对250个"></a>7. up的粉丝数量，但有限制，最对250个</h2><p><code>https://api.bilibili.com/x/relation/followers?vmid=uid&amp;pn=5&amp;ps=0&amp;order=desc&amp;jsonp=jsonp</code></p>
+                <a id="more"></a>
+<p><strong>函数引用，命名为np：<code>import numpy as np</code></strong></p>
+<h1 id="1-np-linspace"><a href="#1-np-linspace" class="headerlink" title="1. np.linspace()"></a>1. np.linspace()</h1><p><strong>用来创建等差数列</strong></p>
+<pre class="line-numbers language-py"><code class="language-py">numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)
+
+start:返回样本数据开始点
+stop:返回样本数据结束点
+num:生成的样本数据量，默认为50
+endpoint：True则包含stop；False则不包含stop
+retstep：If True, return (samples, step), where step is the spacing between samples.(即如果为True则结果会给出数据间隔)
+dtype：输出数组类型
+axis：0(默认)或-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>eg:</p>
+<pre class="line-numbers language-py"><code class="language-py">>>> np.linspace(2.0, 3.0, num=5)
+array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ])
+>>> np.linspace(2.0, 3.0, num=5, endpoint=False)
+array([ 2. ,  2.2,  2.4,  2.6,  2.8])
+>>> np.linspace(2.0, 3.0, num=5, retstep=True)
+(array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ]), 0.25)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><a href="https://blog.csdn.net/Asher117/article/details/87855493" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<h1 id="2-np-arange"><a href="#2-np-arange" class="headerlink" title="2. np.arange()"></a>2. np.arange()</h1><p><strong>函数返回一个有终点和起点的固定步长的排列，如[1,2,3,4,5]，起点是 1，终点是 5，步长为 1</strong></p>
+<ul>
+<li>1）一个参数时，参数值为终点，起点取默认值0，步长取默认值1</li>
+<li>2）两个参数时，第一个参数为起点，第二个参数为终点，步长取默认值1</li>
+<li>3）三个参数时，第一个参数为起点，第二个参数为终点，第三个参数为步长。其中步长支持小数</li>
+</ul>
+<pre class="line-numbers language-py"><code class="language-py">#一个参数 默认起点0，步长为1 输出：[0 1 2]
+a = np.arange(3)
+
+#两个参数 默认步长为1 输出[3 4 5 6 7 8]
+a = np.arange(3,9)
+
+#三个参数 起点为0，终点为3，步长为0.1 输出[ 0.   0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.   1.1  1.2  1.3  1.4 1.5  1.6  1.7  1.8  1.9  2.   2.1  2.2  2.3  2.4  2.5  2.6  2.7  2.8  2.9]
+a = np.arange(0, 3, 0.1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><a href="https://blog.csdn.net/qq_41550480/article/details/89390579" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<h1 id="3-np-random"><a href="#3-np-random" class="headerlink" title="3. np.random()"></a>3. np.random()</h1><h2 id="3-1-np-random-randint"><a href="#3-1-np-random-randint" class="headerlink" title="3.1 np.random.randint"></a>3.1 np.random.randint</h2><p>low、high、size三个参数。默认high是None,如果只有low，那范围就是[0,low)。如果有high，范围就是[low,high)</p>
+<pre class="line-numbers language-py"><code class="language-py">>>> np.random.randint(2, size=10)
+array([1, 0, 0, 0, 1, 1, 0, 0, 1, 0])
+
+>>> np.random.randint(1, size=10)
+array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+
+>>> np.random.randint(5, size=(2, 4))
+array([[4, 0, 2, 1],
+       [3, 2, 2, 0]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><a href="https://blog.csdn.net/weixin_42029738/article/details/81977492" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<h2 id="3-2-numpy-random-randn-与rand"><a href="#3-2-numpy-random-randn-与rand" class="headerlink" title="3.2 numpy.random.randn()与rand()"></a>3.2 numpy.random.randn()与rand()</h2><ul>
+<li>numpy.random.randn(d0, d1, …, dn)是从标准正态分布中返回一个或多个样本值</li>
+<li>numpy.random.rand(d0, d1, …, dn)的随机样本位于[0, 1)中</li>
+</ul>
+<pre class="line-numbers language-py"><code class="language-py">
+import numpy as np 
+
+arr1 = np.random.randn(2,4)
+print(arr1)
+print('******************************************************************')
+arr2 = np.random.rand(2,4)
+print(arr2)
+
+'''
+正负数都有
+[[-1.03021018 0.5197033 0.52117459 -0.70102661]
+
+[ 0.98268569 1.21940697 -1.095241 -0.38161758]]
+
+******************************************************************
+正数部分
+[[ 0.19947349 0.05282713 0.56704222 0.45479972]
+
+[ 0.28827103 0.1643551 0.30486786 0.56386943]]
+'''<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-3-np-random-seed"><a href="#3-3-np-random-seed" class="headerlink" title="3.3 np.random.seed()"></a>3.3 np.random.seed()</h2><p><strong>seed( ) 用于指定随机数生成时所用算法开始的整数值</strong></p>
+<ul>
+<li>1.如果使用相同的seed( )值，则每次生成的随即数都相同</li>
+<li>2.如果不设置这个值，则系统根据时间来自己选择这个值，此时每次生成的随机数因时间差异而不同</li>
+<li>3.设置的seed()值仅一次有效</li>
+</ul>
+<p><img src="/img/np/random_seed.webp" alt="seed示例"></p>
+<h2 id="3-4-np-random-normal-loc-scale-size"><a href="#3-4-np-random-normal-loc-scale-size" class="headerlink" title="3.4 np.random.normal([loc,scale,size])"></a>3.4 np.random.normal([loc,scale,size])</h2><p>正态(高斯)分布</p>
+<pre class="line-numbers language-py"><code class="language-py">mu,sigma = 0,0.1
+s = np.random.normal(mu,sigma,10)
+print(s)
+'''
+ [-0.14154151 -0.04927673  0.01828343  0.05323477  0.05350814 -0.14129784
+  0.06566983 -0.05441259 -0.01597307  0.16633013]
+'''<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -537,7 +618,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yq010105.github.io/2020/02/15/bilibili-api/">http://yq010105.github.io/2020/02/15/bilibili-api/</a>
+                    <a href="http://yq010105.github.io/2020/02/21/python-np/">http://yq010105.github.io/2020/02/21/python-np/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -575,12 +656,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Bilibili/">
-                                    <span class="chip bg-color">Bilibili</span>
-                                </a>
-                            
-                                <a href="/tags/Api/">
-                                    <span class="chip bg-color">Api</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
                         </div>
@@ -622,24 +699,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/02/15/java-note/">
+                <a href="/2020/02/22/python-openpyxl/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Java-Note">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Python_openpyxl">
                         
-                        <span class="card-title">Java-Note</span>
+                        <span class="card-title">Python_openpyxl</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java 语言学习笔记
+                            Python openpyxl的操作方法,用python操作excel
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-22
                         </span>
                         <span class="publish-author">
                             
@@ -656,12 +733,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Note/">
-                        <span class="chip bg-color">Note</span>
-                    </a>
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -675,31 +748,31 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/14/python-bili-exam/">
+                <a href="/2020/02/21/python-plt/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Python_Bilibili_Api">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Python_Plt">
                         
-                        <span class="card-title">Python_Bilibili_Api</span>
+                        <span class="card-title">Python_Plt</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用bilibili提供的api基于python做出的几个小栗子，获取信息
+                            Python plt 的学习过程，可以让数据可视化，还可以展示图像
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -708,10 +781,6 @@
                 </div>
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/Bilibili/">
-                        <span class="chip bg-color">Bilibili</span>
-                    </a>
                     
                     <a href="/tags/Python/">
                         <span class="chip bg-color">Python</span>
