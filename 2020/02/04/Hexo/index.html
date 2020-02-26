@@ -5,23 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Hexo, Yun.Qi">
-    <meta name="description" content="
-建立 hexo_blog，参考 b 站 up:CodeSheep的视频
-
-所用主题 :yilia，主要按照大佬博客中的这一分类进行修改
-
-
-
-
-1. hexo 基操1.1 master 分支
-
-
-描述
-代码
-
-
-
-新建页面 type:’t">
+    <meta name="description" content="Hexo博客基本操作">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -64,7 +48,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="https://yq010105.github.io/" target="_blank" rel="noopener" class="waves-effect waves-light">
+    <a href="https://yq010105.github.io/" class="waves-effect waves-light">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
@@ -117,6 +101,17 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/APP" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>APP</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
@@ -144,7 +139,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="https://yq010105.github.io/" target="_blank" rel="noopener" class="waves-effect waves-light">
+		<a href="https://yq010105.github.io/" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
@@ -193,6 +188,17 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/APP" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			APP
 		</a>
           
         </li>
@@ -457,7 +463,7 @@
 </blockquote>
 <a id="more"></a>
 
-<h1 id="1-hexo-基操"><a href="#1-hexo-基操" class="headerlink" title="1. hexo 基操"></a>1. hexo 基操</h1><h2 id="1-1-master-分支"><a href="#1-1-master-分支" class="headerlink" title="1.1 master 分支"></a>1.1 master 分支</h2><table>
+<h2 id="1-hexo-基操"><a href="#1-hexo-基操" class="headerlink" title="1. hexo 基操"></a>1. hexo 基操</h2><h3 id="1-1-master-分支"><a href="#1-1-master-分支" class="headerlink" title="1.1 master 分支"></a>1.1 master 分支</h3><table>
 <thead>
 <tr>
 <th align="center">描述</th>
@@ -489,7 +495,7 @@
 <td align="center"><code>hexo s</code></td>
 </tr>
 </tbody></table>
-<h2 id="1-2-blog-分支"><a href="#1-2-blog-分支" class="headerlink" title="1.2 blog 分支"></a>1.2 blog 分支</h2><ul>
+<h3 id="1-2-blog-分支"><a href="#1-2-blog-分支" class="headerlink" title="1.2 blog 分支"></a>1.2 blog 分支</h3><ul>
 <li>6、将当前目录下修改的所有代码从工作区添加到暂存区 . 代表当前目录<blockquote>
 <p><code>git add .</code></p>
 </blockquote>
@@ -514,14 +520,14 @@
 <blockquote>
 <p>参考<a href="https://www.jianshu.com/p/2e1d551b8261" target="_blank" rel="noopener" title="简书">简书网站</a></p>
 </blockquote>
-<h1 id="2-source-md-blog-目录下"><a href="#2-source-md-blog-目录下" class="headerlink" title="2. source/md-(blog 目录下)"></a>2. source/md-(blog 目录下)</h1><ul>
+<h2 id="2-source-md-blog-目录下"><a href="#2-source-md-blog-目录下" class="headerlink" title="2. source/md-(blog 目录下)"></a>2. source/md-(blog 目录下)</h2><ul>
 <li>没有跳过的会转化为 HTML，在 blog 中体现</li>
 </ul>
-<h1 id="3-添加背景图片和左侧图片"><a href="#3-添加背景图片和左侧图片" class="headerlink" title="3. 添加背景图片和左侧图片"></a>3. 添加背景图片和左侧图片</h1><p>主要在<code>source/main.0cf68a.css</code> 文件中修改</p>
+<h2 id="3-添加背景图片和左侧图片"><a href="#3-添加背景图片和左侧图片" class="headerlink" title="3. 添加背景图片和左侧图片"></a>3. 添加背景图片和左侧图片</h2><p>主要在<code>source/main.0cf68a.css</code> 文件中修改</p>
 <blockquote>
 <p>具体修改参考<a href="http://yansheng836.coding.me/" target="_blank" rel="noopener">大佬博客</a>中的<a href="http://yansheng836.coding.me/article/72a91df5.html" target="_blank" rel="noopener">这一篇</a></p>
 </blockquote>
-<h2 id="3-1-左侧背景"><a href="#3-1-左侧背景" class="headerlink" title="3.1 左侧背景"></a>3.1 左侧背景</h2><p><code>themes/yilia/layout/_partial/left-col.ejs</code>文件中注释掉原来代码，添加新的无属性代码</p>
+<h3 id="3-1-左侧背景"><a href="#3-1-左侧背景" class="headerlink" title="3.1 左侧背景"></a>3.1 左侧背景</h3><p><code>themes/yilia/layout/_partial/left-col.ejs</code>文件中注释掉原来代码，添加新的无属性代码</p>
 <pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"overlay"</span> style<span class="token operator">=</span><span class="token string">"background: &lt;%= theme.style &amp;&amp; theme.style.header ? theme.style.header : defaultBg %>"</span><span class="token operator">></span> <span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 左侧边栏（上半部分）不设置背景颜色 <span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"overlay"</span> <span class="token operator">></span></code></pre>
@@ -556,7 +562,7 @@
     <span class="token property">color</span><span class="token punctuation">:</span><span class="token hexcode">#999</span><span class="token punctuation">;</span>
     <span class="token property">color</span><span class="token punctuation">:</span><span class="token hexcode">#673ab7</span><span class="token punctuation">;</span>
      <span class="token property">font-size</span><span class="token punctuation">:</span><span class="token number">18</span>px<span class="token punctuation">;</span></code></pre>
-<h2 id="3-2-文章背景"><a href="#3-2-文章背景" class="headerlink" title="3.2 文章背景"></a>3.2 文章背景</h2><p>先将文章背景调成透明色,搜索<code>.article {</code></p>
+<h3 id="3-2-文章背景"><a href="#3-2-文章背景" class="headerlink" title="3.2 文章背景"></a>3.2 文章背景</h3><p>先将文章背景调成透明色,搜索<code>.article {</code></p>
 <pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.article</span> </span><span class="token punctuation">{</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">30</span>px<span class="token punctuation">;</span>
   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#ddd</span><span class="token punctuation">;</span>
@@ -581,10 +587,10 @@
 <span class="token punctuation">}</span></code></pre>
 <p><strong>如果修改完代码，背景还没有变，可能你的 body 或者 article 定义了两次，前面有一个 body{},后面还有一个，只要删掉后面的就可以了</strong><br><em>需要自己好好的找一找</em></p>
 <p><strong>如果你的 main.0cf68a.css,文件代码很乱，可以在<a href="https://github.com/yq010105/hexo_themes/blob/master/yilia/source/main.0cf68a.css" target="_blank" rel="noopener">我的 Github</a>中复制</strong> <em>别问我怎么知道的</em></p>
-<h2 id="3-3-copy-代码块"><a href="#3-3-copy-代码块" class="headerlink" title="3.3 copy 代码块"></a>3.3 copy 代码块</h2><blockquote>
+<h3 id="3-3-copy-代码块"><a href="#3-3-copy-代码块" class="headerlink" title="3.3 copy 代码块"></a>3.3 copy 代码块</h3><blockquote>
 <p>按照<a href="http://yansheng836.coding.me/" target="_blank" rel="noopener">大佬博客</a>中的<a href="http://yansheng836.coding.me/article/e9d1b881.html" target="_blank" rel="noopener">这一篇</a></p>
 </blockquote>
-<h1 id="4-添加网站运行时间"><a href="#4-添加网站运行时间" class="headerlink" title="4. 添加网站运行时间"></a>4. 添加网站运行时间</h1><p><em>简单配置</em><br>修改<code>\themes\yilia\layout\_partial\footer.ejs</code>，在<code>&lt;/footer&gt;</code>上面添加如下内容</p>
+<h2 id="4-添加网站运行时间"><a href="#4-添加网站运行时间" class="headerlink" title="4. 添加网站运行时间"></a>4. 添加网站运行时间</h2><p><em>简单配置</em><br>修改<code>\themes\yilia\layout\_partial\footer.ejs</code>，在<code>&lt;/footer&gt;</code>上面添加如下内容</p>
 <pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>《添加网站运行时间 <span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span><span class="token operator">&lt;</span>br<span class="token operator">/</span><span class="token operator">></span><span class="token operator">--</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>span id<span class="token operator">=</span><span class="token string">"timeDate"</span><span class="token operator">></span>载入天数<span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span><span class="token operator">&lt;</span>span id<span class="token operator">=</span><span class="token string">"times"</span><span class="token operator">></span>载入时分秒<span class="token operator">...</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
@@ -620,7 +626,7 @@
 <blockquote>
 <p>参考<a href="http://yansheng836.coding.me/article/50902a4.html" target="_blank" rel="noopener">这一篇</a></p>
 </blockquote>
-<h1 id="5-看板娘-かんばんむすめ"><a href="#5-看板娘-かんばんむすめ" class="headerlink" title="5. 看板娘(かんばんむすめ)"></a>5. 看板娘(かんばんむすめ)</h1><ul>
+<h2 id="5-看板娘-かんばんむすめ"><a href="#5-看板娘-かんばんむすめ" class="headerlink" title="5. 看板娘(かんばんむすめ)"></a>5. 看板娘(かんばんむすめ)</h2><ul>
 <li><strong>安装插件:</strong> <code>npm install --save hexo-helper-live2d</code> <strong><a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">github 项目</a></strong></li>
 <li><strong>安装模型:</strong> <code>npm install live2d-widget-model-模型名</code> <strong><a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">模型名参考</a></strong></li>
 <li><strong>在 blog/_config.yml 中添加</strong></li>
@@ -654,7 +660,7 @@ live2d:
 </blockquote>
 </li>
 </ul>
-<h1 id="6-网易云音乐插件"><a href="#6-网易云音乐插件" class="headerlink" title="6. 网易云音乐插件"></a>6. 网易云音乐插件</h1><ul>
+<h2 id="6-网易云音乐插件"><a href="#6-网易云音乐插件" class="headerlink" title="6. 网易云音乐插件"></a>6. 网易云音乐插件</h2><ul>
 <li>在<code>/yilia/layout/_partial/post/left-col.ejs</code>中最后的<code>&lt;/nav&gt;</code>标签上方添加</li>
 </ul>
 <pre class=" language-js"><code class="language-js">    <span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>music <span class="token operator">&amp;&amp;</span> theme<span class="token punctuation">.</span>music<span class="token punctuation">.</span>enable<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token operator">%</span><span class="token operator">></span>
@@ -685,7 +691,7 @@ music:
 <blockquote>
 <p>参考大佬做的<a href="https://github.com/JoeyBling/hexo-theme-yilia-plus" target="_blank" rel="noopener">yilia-plus</a>中的配置</p>
 </blockquote>
-<h1 id="7-添加背景特效"><a href="#7-添加背景特效" class="headerlink" title="7. 添加背景特效"></a>7. 添加背景特效</h1><h2 id="7-1-点击爱心"><a href="#7-1-点击爱心" class="headerlink" title="7.1 点击爱心"></a>7.1 点击爱心</h2><ul>
+<h2 id="7-添加背景特效"><a href="#7-添加背景特效" class="headerlink" title="7. 添加背景特效"></a>7. 添加背景特效</h2><h3 id="7-1-点击爱心"><a href="#7-1-点击爱心" class="headerlink" title="7.1 点击爱心"></a>7.1 点击爱心</h3><ul>
 <li>在<code>/yilia/source/js/</code>下添加<code>love.js</code>文件,书写代码</li>
 </ul>
 <pre class=" language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> document<span class="token punctuation">,</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -797,7 +803,7 @@ music:
 </ul>
 <pre class=" language-yml"><code class="language-yml">#点击小红心
 love: true</code></pre>
-<h2 id="7-2-背景线条"><a href="#7-2-背景线条" class="headerlink" title="7.2 背景线条"></a>7.2 背景线条</h2><ul>
+<h3 id="7-2-背景线条"><a href="#7-2-背景线条" class="headerlink" title="7.2 背景线条"></a>7.2 背景线条</h3><ul>
 <li>在<code>yilia/layout/layout.ejs</code>中添加代码</li>
 </ul>
 <pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>动态线条背景<span class="token operator">--</span><span class="token operator">></span>
@@ -818,7 +824,7 @@ canvas_nest:
   opacity: "0.8" # the opacity of line (0~1), default: 0.5.
   count: "99" # the number of lines, default: 99.
   zIndex: "-1" # z-index property of the background, default: -1.</code></pre>
-<h2 id="7-3-背景点击文字"><a href="#7-3-背景点击文字" class="headerlink" title="7.3 背景点击文字"></a>7.3 背景点击文字</h2><ul>
+<h3 id="7-3-背景点击文字"><a href="#7-3-背景点击文字" class="headerlink" title="7.3 背景点击文字"></a>7.3 背景点击文字</h3><ul>
 <li>在<code>yilia/source/js/</code>下添加<code>click_show_text.js</code>文件，添加代码</li>
 </ul>
 <pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> a_idx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -883,8 +889,8 @@ click_show_text: false</code></pre>
 <blockquote>
 <p><a href="http://yansheng836.coding.me/article/cf9c6a5e.html" target="_blank" rel="noopener">参考博客</a></p>
 </blockquote>
-<h1 id="8-修改手机端的页面背景颜色，文章的背景颜色以及头像上方颜色"><a href="#8-修改手机端的页面背景颜色，文章的背景颜色以及头像上方颜色" class="headerlink" title="8. 修改手机端的页面背景颜色，文章的背景颜色以及头像上方颜色"></a>8. 修改手机端的页面背景颜色，文章的背景颜色以及头像上方颜色</h1><p><em>在<code>main.0cf68a.css</code>中修改@media 下的模块</em></p>
-<h2 id="8-1-页面背景颜色-图片"><a href="#8-1-页面背景颜色-图片" class="headerlink" title="8.1 页面背景颜色(图片)"></a>8.1 页面背景颜色(图片)</h2><p>添加下列代码，即为修改页面的背景托 i 按</p>
+<h2 id="8-修改手机端的页面背景颜色，文章的背景颜色以及头像上方颜色"><a href="#8-修改手机端的页面背景颜色，文章的背景颜色以及头像上方颜色" class="headerlink" title="8. 修改手机端的页面背景颜色，文章的背景颜色以及头像上方颜色"></a>8. 修改手机端的页面背景颜色，文章的背景颜色以及头像上方颜色</h2><p><em>在<code>main.0cf68a.css</code>中修改@media 下的模块</em></p>
+<h3 id="8-1-页面背景颜色-图片"><a href="#8-1-页面背景颜色-图片" class="headerlink" title="8.1 页面背景颜色(图片)"></a>8.1 页面背景颜色(图片)</h3><p>添加下列代码，即为修改页面的背景托 i 按</p>
 <pre class=" language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> screen and <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 800px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
   <span class="token selector">body </span><span class="token punctuation">{</span>
     <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>
@@ -893,7 +899,7 @@ click_show_text: false</code></pre>
       <span class="token punctuation">)</span>, <span class="token url">url(./img/phone2.jpg)</span> no-repeat <span class="token number">0%</span> <span class="token number">20%</span> / cover<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h2 id="8-2-文章背景颜色"><a href="#8-2-文章背景颜色" class="headerlink" title="8.2 文章背景颜色"></a>8.2 文章背景颜色</h2><p>找到<code>@media</code>下的 article</p>
+<h3 id="8-2-文章背景颜色"><a href="#8-2-文章背景颜色" class="headerlink" title="8.2 文章背景颜色"></a>8.2 文章背景颜色</h3><p>找到<code>@media</code>下的 article</p>
 <pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.article</span> </span><span class="token punctuation">{</span>
   <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">30</span>px<span class="token punctuation">;</span>
   <span class="token property">border</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#ddd</span><span class="token punctuation">;</span>
@@ -903,7 +909,7 @@ click_show_text: false</code></pre>
   <span class="token property">transition</span><span class="token punctuation">:</span> all <span class="token number">0.2</span>s ease-in<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>根据自己喜好改变<code>background</code>属性值</p>
-<h2 id="8-3-头像图片"><a href="#8-3-头像图片" class="headerlink" title="8.3 头像图片"></a>8.3 头像图片</h2><p>直接在<code>_config.yml</code>中修改，我改成了透明即<code>header: 'rgba(255, 127, 127, 0)'</code></p>
+<h3 id="8-3-头像图片"><a href="#8-3-头像图片" class="headerlink" title="8.3 头像图片"></a>8.3 头像图片</h3><p>直接在<code>_config.yml</code>中修改，我改成了透明即<code>header: 'rgba(255, 127, 127, 0)'</code></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -937,7 +943,7 @@ click_show_text: false</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com" rel="external nofollow noreferrer">Yun Qi</a>
+                    <a href="http://yq010105.github.io" rel="external nofollow noreferrer">Yun Qi</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -947,7 +953,7 @@ click_show_text: false</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/02/04/hexo/">http://yoursite.com/2020/02/04/hexo/</a>
+                    <a href="http://yq010105.github.io/2020/02/04/hexo/">http://yq010105.github.io/2020/02/04/hexo/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -960,7 +966,7 @@ click_show_text: false</code></pre>
                     All articles in this blog are used except for special statements
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     reprint polocy. If reproduced, please indicate source
-                    <a href="http://yoursite.com" target="_blank">Yun Qi</a>
+                    <a href="http://yq010105.github.io" target="_blank">Yun Qi</a>
                     !
                 </span>
             </div>
@@ -1097,23 +1103,7 @@ click_show_text: false</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-建立 hexo_blog，参考 b 站 up:CodeSheep的视频
-
-所用主题 :yilia，主要按照大佬博客中的这一分类进行修改
-
-
-
-
-1. hexo 基操1.1 master 分支
-
-
-描述
-代码
-
-
-
-新建页面 type:’t
+                            Hexo博客基本操作
                         
                     </div>
                     <div class="publish-info">
@@ -1279,42 +1269,17 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme:='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
-            <a href="http://yoursite.com" target="_blank">Yun Qi</a>
+            <a href="http://yq010105.github.io" target="_blank">Yun Qi</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.9k</span>&nbsp;字
+                class="white-color">30.8k</span>&nbsp;字
             
             
             

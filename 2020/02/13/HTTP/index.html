@@ -5,11 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="HTTP, Yun.Qi">
-    <meta name="description" content="HTTP 协议HTTP 协议是 Hyper Text Transfer Protocol（超文本传输协议）的缩写,是用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议
-
-
-1. 特点
-HTTP 基于">
+    <meta name="description" content="HTTP 协议即 Hyper Text Transfer Protocol（超文本传输协议）,是用于从万维网WWW服务器传输超文本到本地浏览器的传送协议">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -52,7 +48,7 @@ HTTP 基于">
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="https://yq010105.github.io/" target="_blank" rel="noopener" class="waves-effect waves-light">
+    <a href="https://yq010105.github.io/" class="waves-effect waves-light">
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
@@ -105,6 +101,17 @@ HTTP 基于">
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/APP" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>APP</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
@@ -132,7 +139,7 @@ HTTP 基于">
         
         <li class="m-nav-item">
 	  
-		<a href="https://yq010105.github.io/" target="_blank" rel="noopener" class="waves-effect waves-light">
+		<a href="https://yq010105.github.io/" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
@@ -181,6 +188,17 @@ HTTP 基于">
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/APP" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			APP
 		</a>
           
         </li>
@@ -397,8 +415,8 @@ HTTP 基于">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -419,7 +437,7 @@ HTTP 基于">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1,290
+                    1,239
                 </div>
                 
 
@@ -437,16 +455,13 @@ HTTP 基于">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>HTTP 协议</strong><br>HTTP 协议是 Hyper Text Transfer Protocol（超文本传输协议）的缩写,是用于从万维网（WWW:World Wide Web ）服务器传输超文本到本地浏览器的传送协议</p>
-<a id="more"></a>
-
-<h1 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h1><ul>
+                <h2 id="1-特点"><a href="#1-特点" class="headerlink" title="1. 特点"></a>1. 特点</h2><ul>
 <li>HTTP 基于 TCP/IP 协议：http 协议是基于 TCP/IP 协议之上的应用层协议</li>
 <li>HTTP 是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间</li>
 <li>HTTP 是基于请求－响应模式：HTTP 协议规定,请求从客户端发出,最后服务器端响应该请求并 返回</li>
 <li>HTTP 是无状态保存：HTTP 协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快</li>
 </ul>
-<h1 id="2-URL"><a href="#2-URL" class="headerlink" title="2. URL"></a>2. URL</h1><p>HTTP 使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。URL 是一种特殊类型的 URI，包含了用于查找某个资源的足够的信息</p>
+<h2 id="2-URL"><a href="#2-URL" class="headerlink" title="2. URL"></a>2. URL</h2><p>HTTP 使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。URL 是一种特殊类型的 URI，包含了用于查找某个资源的足够的信息</p>
 <p><strong>例子解析</strong>：<em><a href="http://www.aspxfans.com:8080/news/index.asp?boardID=5&amp;ID=24618&amp;page=1#name" target="_blank" rel="noopener">http://www.aspxfans.com:8080/news/index.asp?boardID=5&amp;ID=24618&amp;page=1#name</a></em></p>
 <ul>
 <li>协议部分：该 URL 的协议部分为“http：”</li>
@@ -457,7 +472,7 @@ HTTP 基于">
 <li>锚部分：从“#”开始到最后，都是锚部分。本例中的锚部分是“name”。锚部分也不是一个 URL 必须的部分</li>
 <li>参数部分：从“？”开始到“#”为止之间的部分为参数部分，又称搜索部分、查询部分。本例中的参数部分为“boardID=5&amp;ID=24618&amp;page=1”。参数可以允许有多个参数，参数与参数之间用“&amp;”作为分隔符</li>
 </ul>
-<h1 id="3-Request"><a href="#3-Request" class="headerlink" title="3. Request"></a>3. Request</h1><p><img src="/img/http/http_request.png" alt="request解析图"></p>
+<h2 id="3-Request"><a href="#3-Request" class="headerlink" title="3. Request"></a>3. Request</h2><p><img src="/img/http/http_request.png" alt="request解析图"></p>
 <hr>
 <p><strong>常见请求头</strong></p>
 <ul>
@@ -472,7 +487,7 @@ HTTP 基于">
 <li>X-Requested-With:XMLHttpResquest 代表通过 ajax 方式进行访问的</li>
 <li>User-Agent:请求载体的身份标识</li>
 </ul>
-<h1 id="4-Response"><a href="#4-Response" class="headerlink" title="4. Response"></a>4. Response</h1><p><img src="/img/http/http_response.png" alt="response解析图"></p>
+<h2 id="4-Response"><a href="#4-Response" class="headerlink" title="4. Response"></a>4. Response</h2><p><img src="/img/http/http_response.png" alt="response解析图"></p>
 <hr>
 <p><strong>常见的响应头信息</strong></p>
 <ul>
@@ -527,7 +542,7 @@ HTTP 基于">
 <blockquote>
 <p><a href="https://baike.baidu.com/item/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/5053660?fr=aladdin" target="_blank" rel="noopener">百度百科详细对比表</a></p>
 </blockquote>
-<h1 id="5-HTTPS-协议"><a href="#5-HTTPS-协议" class="headerlink" title="5. HTTPS 协议"></a>5. HTTPS 协议</h1><p>HTTPS (Secure Hypertext Transfer Protocol)安全超文本传输协议，HTTPS 是在 HTTP 上建立 SSL 加密层，并对传输数据进行加密，是 HTTP 协议的安全版<br><img src="/img/http/https.png" alt="https"></p>
+<h2 id="5-HTTPS-协议"><a href="#5-HTTPS-协议" class="headerlink" title="5. HTTPS 协议"></a>5. HTTPS 协议</h2><p>HTTPS (Secure Hypertext Transfer Protocol)安全超文本传输协议，HTTPS 是在 HTTP 上建立 SSL 加密层，并对传输数据进行加密，是 HTTP 协议的安全版<br><img src="/img/http/https.png" alt="https"></p>
 <blockquote>
 <p><a href="https://www.cnblogs.com/angle6-liu/p/10459132.html" target="_blank" rel="noopener">参考教程</a></p>
 </blockquote>
@@ -564,7 +579,7 @@ HTTP 基于">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com" rel="external nofollow noreferrer">Yun Qi</a>
+                    <a href="http://yq010105.github.io" rel="external nofollow noreferrer">Yun Qi</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -574,7 +589,7 @@ HTTP 基于">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/02/13/http/">http://yoursite.com/2020/02/13/http/</a>
+                    <a href="http://yq010105.github.io/2020/02/13/http/">http://yq010105.github.io/2020/02/13/http/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -587,7 +602,7 @@ HTTP 基于">
                     All articles in this blog are used except for special statements
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     reprint polocy. If reproduced, please indicate source
-                    <a href="http://yoursite.com" target="_blank">Yun Qi</a>
+                    <a href="http://yq010105.github.io" target="_blank">Yun Qi</a>
                     !
                 </span>
             </div>
@@ -891,42 +906,17 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme:='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
-            <a href="http://yoursite.com" target="_blank">Yun Qi</a>
+            <a href="http://yq010105.github.io" target="_blank">Yun Qi</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.9k</span>&nbsp;字
+                class="white-color">30.8k</span>&nbsp;字
             
             
             
