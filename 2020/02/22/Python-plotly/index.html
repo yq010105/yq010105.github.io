@@ -5,18 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python_plotly, Yun.Qi">
-    <meta name="description" content="数据可视化的 plotly
-
-参考教程
-
-
-
-1. 基本操作，初步理解代码# 生成一个直方图
-import plotly.offline as ptly
-import plotly.graph_objs as go
-
-data=[]
-tra">
+    <meta name="description" content="Python中plotly轮子的用法，更加高级的可视化轮子">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -37,7 +26,8 @@ tra">
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -116,9 +106,20 @@ tra">
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -207,9 +208,20 @@ tra">
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -243,7 +255,7 @@ tra">
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -426,8 +438,8 @@ tra">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -443,6 +455,11 @@ tra">
                 </div>
                 
 
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
                 
 
                 
@@ -472,7 +489,7 @@ tra">
 </blockquote>
 <a id="more"></a>
 
-<h1 id="1-基本操作，初步理解代码"><a href="#1-基本操作，初步理解代码" class="headerlink" title="1. 基本操作，初步理解代码"></a>1. 基本操作，初步理解代码</h1><pre class=" language-py"><code class="language-py"># 生成一个直方图
+<h1 id="1-基本操作，初步理解代码"><a href="#1-基本操作，初步理解代码" class="headerlink" title="1. 基本操作，初步理解代码"></a>1. 基本操作，初步理解代码</h1><pre class="line-numbers language-py"><code class="language-py"># 生成一个直方图
 import plotly.offline as ptly
 import plotly.graph_objs as go
 
@@ -485,20 +502,20 @@ layout = go.Layout(font=dict(family='Courier New, monospace', size=18, color='#3
                    title='example'
     )
 fig = go.Figure(data=data, layout=layout)
-ptly.plot(fig, filename = 'example.html')</code></pre>
+ptly.plot(fig, filename = 'example.html')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>或者用 dict 表示</p>
-<pre class=" language-py"><code class="language-py">trace1 = {'type':'bar',
+<pre class="line-numbers language-py"><code class="language-py">trace1 = {'type':'bar',
           'x':['first','second','third'],
           'y':[20,40,30]
-    }</code></pre>
-<h1 id="2-图形属性"><a href="#2-图形属性" class="headerlink" title="2. 图形属性`"></a>2. 图形属性`</h1><h2 id="2-1-柱状图"><a href="#2-1-柱状图" class="headerlink" title="2.1 柱状图"></a>2.1 柱状图</h2><pre class=" language-py"><code class="language-py">trace1 = go.Bar(x=[],
+    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="2-图形属性"><a href="#2-图形属性" class="headerlink" title="2. 图形属性`"></a>2. 图形属性`</h1><h2 id="2-1-柱状图"><a href="#2-1-柱状图" class="headerlink" title="2.1 柱状图"></a>2.1 柱状图</h2><pre class="line-numbers language-py"><code class="language-py">trace1 = go.Bar(x=[],
                 y=[],
                 name='thename',
                 width=0.5,
                 marker=dict(color="#c45ca2"),
                 opacity=1
-            )</code></pre>
-<h2 id="2-2-饼图"><a href="#2-2-饼图" class="headerlink" title="2.2 饼图"></a>2.2 饼图</h2><pre class=" language-py"><code class="language-py">trace1 = go.Pie(labels=[],
+            )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-2-饼图"><a href="#2-2-饼图" class="headerlink" title="2.2 饼图"></a>2.2 饼图</h2><pre class="line-numbers language-py"><code class="language-py">trace1 = go.Pie(labels=[],
                 values=[],
                 hoverinfo='label+percent',
                 textinfo='value',
@@ -509,8 +526,8 @@ ptly.plot(fig, filename = 'example.html')</code></pre>
                 name="pie name",
                 domain=dict(x = [0, .48]),
                 opacity=1
-            )</code></pre>
-<h2 id="2-3-散点图，折线图"><a href="#2-3-散点图，折线图" class="headerlink" title="2.3 散点图，折线图"></a>2.3 散点图，折线图</h2><pre class=" language-py"><code class="language-py">trace1 = go.Scatter(x = [],
+            )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-3-散点图，折线图"><a href="#2-3-散点图，折线图" class="headerlink" title="2.3 散点图，折线图"></a>2.3 散点图，折线图</h2><pre class="line-numbers language-py"><code class="language-py">trace1 = go.Scatter(x = [],
                     y = [],
                     mode = 'markers',   #mode可选'markers','lines','lines+markers'
                     name = 'the name',
@@ -521,8 +538,8 @@ ptly.plot(fig, filename = 'example.html')</code></pre>
                                               ),
                                   opacity=[]
                                 )
-            )</code></pre>
-<h1 id="3-布局属性"><a href="#3-布局属性" class="headerlink" title="3. 布局属性"></a>3. 布局属性</h1><pre class=" language-py"><code class="language-py"># 通用
+            )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="3-布局属性"><a href="#3-布局属性" class="headerlink" title="3. 布局属性"></a>3. 布局属性</h1><pre class="line-numbers language-py"><code class="language-py"># 通用
 layout = go.Layout(title='your title',  #大标题
                    font=dict(
                      family='Courier New, monospace',
@@ -577,8 +594,8 @@ layout = go.Layout(bargap=0.3,      #0~1
                    barmode='',
                    #barmode: ["stack","group","overlay","relative"],设置多个trace的组合方式
                    barnorm=''
-    )</code></pre>
-<h2 id="3-1-设置坐标轴"><a href="#3-1-设置坐标轴" class="headerlink" title="3.1 设置坐标轴"></a>3.1 设置坐标轴</h2><pre class=" language-py"><code class="language-py">axis_template=dict(
+    )<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-1-设置坐标轴"><a href="#3-1-设置坐标轴" class="headerlink" title="3.1 设置坐标轴"></a>3.1 设置坐标轴</h2><pre class="line-numbers language-py"><code class="language-py">axis_template=dict(
     showgrid=True,  #网格
     zeroline=True,  #是否显示基线,即沿着(0,0)画出x轴和y轴
     nticks=20,
@@ -590,17 +607,17 @@ layout = go.Layout(bargap=0.3,      #0~1
 layout=go.Layout(
     xaxis=axis_template,
     yaxis=axis_template
-)</code></pre>
+)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><a href="https://blog.csdn.net/u012897374/article/details/77857980" target="_blank" rel="noopener">原文链接</a></p>
 </blockquote>
-<h1 id="4-图像整体属性"><a href="#4-图像整体属性" class="headerlink" title="4. 图像整体属性"></a>4. 图像整体属性</h1><pre class=" language-py"><code class="language-py">ptly.plot(figure_or_data, show_link=True, link_text='Export to plot.ly',
+<h1 id="4-图像整体属性"><a href="#4-图像整体属性" class="headerlink" title="4. 图像整体属性"></a>4. 图像整体属性</h1><pre class="line-numbers language-py"><code class="language-py">ptly.plot(figure_or_data, show_link=True, link_text='Export to plot.ly',
          validate=True, output_type='file', include_plotlyjs=True,
          filename='temp-plot.html', auto_open=True, image=None,
          image_filename='plot_image', image_width=800, image_height=600,
-         config=None)s</code></pre>
+         config=None)s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="5-数据处理"><a href="#5-数据处理" class="headerlink" title="5. 数据处理"></a>5. 数据处理</h1><p><strong>包括 aggregate,filter,groupby,sort</strong></p>
-<pre class=" language-py"><code class="language-py"># aggregate
+<pre class="line-numbers language-py"><code class="language-py"># aggregate
 transforms = [dict(
     type = 'aggregate',
     groups = [],        #用于分组的数组
@@ -641,7 +658,7 @@ transforms = [dict(
     type = 'sort',
     target = 'x',
     order = 'ascending'   #升序ascending，降序descending
-  )]</code></pre>
+  )]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -778,15 +795,7 @@ transforms = [dict(
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MySQL数据库的学习根据b站视频学习MySQL数据库
-
-
-0. 安装完的一些基本操作0.1 服务的启动与停止
-管理员启动cmd
-输入net stop mysql 关闭服务
-输入net start mysql 启动服务
-
-0.2 登录和退出
+                            MySQL数据库的学习，慢慢学
                         
                     </div>
                     <div class="publish-info">
@@ -797,8 +806,8 @@ transforms = [dict(
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -835,17 +844,7 @@ transforms = [dict(
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python openpyxl的操作方法
-
-参考教程
-
-
-
-1. 打开文件夹from openpyxl import Workbook
-1.1 创建# 实例化
-wb = Workbook()
-# 激活worksheet
-ws = wb.ac
+                            Python openpyxl的操作方法,用python操作excel
                         
                     </div>
                     <div class="publish-info">
@@ -856,8 +855,8 @@ ws = wb.ac
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -934,7 +933,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -946,7 +945,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1020,7 +1019,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -1147,12 +1146,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

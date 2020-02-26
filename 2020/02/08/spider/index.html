@@ -5,13 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Spider_note, Yun.Qi">
-    <meta name="description" content="
-参考 Github 上的教程学习一个连 python 都没有完全学会的菜鸡来学爬虫
-
-
-
-1. 线程1.1 线程 Poolfrom multiprocessing.dummy import Pool
-def calc_power2(num">
+    <meta name="description" content="python爬虫学习，根据GitHub上的一篇教程所学到的知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +26,8 @@ def calc_power2(num">
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -111,9 +106,20 @@ def calc_power2(num">
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -202,9 +208,20 @@ def calc_power2(num">
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -238,7 +255,7 @@ def calc_power2(num">
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -425,8 +442,8 @@ def calc_power2(num">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -442,6 +459,11 @@ def calc_power2(num">
                 </div>
                 
 
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
                 
 
                 
@@ -470,46 +492,46 @@ def calc_power2(num">
 </blockquote>
 <a id="more"></a>
 
-<h1 id="1-线程"><a href="#1-线程" class="headerlink" title="1. 线程"></a>1. 线程</h1><h2 id="1-1-线程-Pool"><a href="#1-1-线程-Pool" class="headerlink" title="1.1 线程 Pool"></a>1.1 线程 Pool</h2><pre class=" language-py"><code class="language-py">from multiprocessing.dummy import Pool
+<h1 id="1-线程"><a href="#1-线程" class="headerlink" title="1. 线程"></a>1. 线程</h1><h2 id="1-1-线程-Pool"><a href="#1-1-线程-Pool" class="headerlink" title="1.1 线程 Pool"></a>1.1 线程 Pool</h2><pre class="line-numbers language-py"><code class="language-py">from multiprocessing.dummy import Pool
 def calc_power2(num):
 return num*num
 pool = Pool(5)
 origin_num = [x for x in range(10)]
 result = pool.map(calc_power2,origin_num)
-print(f'0~9的平方分别为：{result}')</code></pre>
+print(f'0~9的平方分别为：{result}')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>Pool(5)</code>  五个线程</p>
 <hr>
 
 <h2 id="1-2-所用函数"><a href="#1-2-所用函数" class="headerlink" title="1.2 所用函数"></a>1.2 所用函数</h2><p><code>time.time()</code> &nbsp; 程序当前时间<br>eg：用来对比单线程和多线程访问 baidu 的速度</p>
-<h1 id="2-request-库"><a href="#2-request-库" class="headerlink" title="2. request 库"></a>2. request 库</h1><h2 id="2-1-基础用法"><a href="#2-1-基础用法" class="headerlink" title="2.1 基础用法"></a>2.1 基础用法</h2><pre class=" language-py"><code class="language-py">url = ''
+<h1 id="2-request-库"><a href="#2-request-库" class="headerlink" title="2. request 库"></a>2. request 库</h1><h2 id="2-1-基础用法"><a href="#2-1-基础用法" class="headerlink" title="2.1 基础用法"></a>2.1 基础用法</h2><pre class="line-numbers language-py"><code class="language-py">url = ''
 headers = {
     "UserAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like\ Gecko) Chrome/80.0.3987.87 Safari/537.36 Edg/80.0.361.48"
 }
 response = requests.get(url,headers=headers)
 response.encoding = 'utf-8'  #或者GBK
-html = response.text</code></pre>
+html = response.text<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-2-进阶用法"><a href="#2-2-进阶用法" class="headerlink" title="2.2 进阶用法"></a>2.2 进阶用法</h2><ul>
 <li><strong>使用 requests 模拟发送 get 请求</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">import requests
+<pre class="line-numbers language-py"><code class="language-py">import requests
 
 url = 'http://exercise.kingname.info/ajax_1_backend'
 html = requests.get(url).content.decode()
 print(html)
-# 如果你看到这一段文字，说明你已经成功访问了这个页面,并获取了GET方式的异步加载数据。</code></pre>
+# 如果你看到这一段文字，说明你已经成功访问了这个页面,并获取了GET方式的异步加载数据。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><strong>使用 requests 模拟发送 post 请求</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">import requests
+<pre class="line-numbers language-py"><code class="language-py">import requests
 
 url = 'http://exercise.kingname.info/ajax_1_postbackend'
 html = requests.post(url,json={'name':'yunq','age':24}).content.decode()
 print(html)
-# 如果你看到这一段文字，说明你已经成功访问了这个页面，并获取了POST方式的异步加载数据。你向服务器提交的两个参数，分别为name： yunq, age：24</code></pre>
+# 如果你看到这一段文字，说明你已经成功访问了这个页面，并获取了POST方式的异步加载数据。你向服务器提交的两个参数，分别为name： yunq, age：24<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考<a href="http://exercise.kingname.info/exercise_ajax_1.html" target="_blank" rel="noopener">学习网站</a>，(<a href="#异步GET与POST请求">异步 GET 与 POST 请求</a>)</p>
 </blockquote>
-<h1 id="3-re-库"><a href="#3-re-库" class="headerlink" title="3. re 库"></a>3. re 库</h1><h2 id="3-1-基础用法"><a href="#3-1-基础用法" class="headerlink" title="3.1 基础用法"></a>3.1 基础用法</h2><pre class=" language-py"><code class="language-py">re.findall(r'',html,re.S)   #返回一个列表，这是一个列表所以可以取第一个数据
+<h1 id="3-re-库"><a href="#3-re-库" class="headerlink" title="3. re 库"></a>3. re 库</h1><h2 id="3-1-基础用法"><a href="#3-1-基础用法" class="headerlink" title="3.1 基础用法"></a>3.1 基础用法</h2><pre class="line-numbers language-py"><code class="language-py">re.findall(r'',html,re.S)   #返回一个列表，这是一个列表所以可以取第一个数据
                             #re.findall(r'',html,re.S)[0]
 
 re.search(r'',html,re.S)    #返回一个re.Match类型数据
@@ -519,12 +541,12 @@ re.search(r'href="sf">(.*?)<').group()
                             #返回一个字符串             #.*?是匹配到的内容
                             #group()返回的是''内的字符串内容:href="sf">(.*?)<
                             #group(1)返回的是()中的字符串内容:.*?
-                            #如果(.*?)有多个，则使用group(1),group(2)........</code></pre>
+                            #如果(.*?)有多个，则使用group(1),group(2)........<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="4-正则表达式"><a href="#4-正则表达式" class="headerlink" title="4. 正则表达式"></a>4. 正则表达式</h1><p><code>.*?</code></p>
 <h1 id="5-Xpath–lxml-库"><a href="#5-Xpath–lxml-库" class="headerlink" title="5. Xpath–lxml 库"></a>5. Xpath–lxml 库</h1><ul>
 <li>XPath 是一种查询语言，能从 XML\HTML 的树状结构中寻找节点</li>
 </ul>
-<h2 id="5-1-XPath-语法"><a href="#5-1-XPath-语法" class="headerlink" title="5.1 XPath 语法"></a>5.1 XPath 语法</h2><h3 id="5-1-1-XPath-语法解析"><a href="#5-1-1-XPath-语法解析" class="headerlink" title="5.1.1 XPath 语法解析"></a>5.1.1 XPath 语法解析</h3><pre class=" language-html"><code class="language-html">example_html
+<h2 id="5-1-XPath-语法"><a href="#5-1-XPath-语法" class="headerlink" title="5.1 XPath 语法"></a>5.1 XPath 语法</h2><h3 id="5-1-1-XPath-语法解析"><a href="#5-1-1-XPath-语法解析" class="headerlink" title="5.1.1 XPath 语法解析"></a>5.1.1 XPath 语法解析</h3><pre class="line-numbers language-html"><code class="language-html">example_html
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>测试<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
@@ -544,18 +566,19 @@ re.search(r'href="sf">(.*?)<').group()
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>info = selector.xpath('//div[@class="useful"]/ul/li/text()')</code><br>就可以提取出 class=”userful”中的三句话，返回一个列表</p>
-<h3 id="5-1-2-基本框架"><a href="#5-1-2-基本框架" class="headerlink" title="5.1.2 基本框架"></a>5.1.2 基本框架</h3><pre class=" language-py"><code class="language-py">import lxml.html
+<h3 id="5-1-2-基本框架"><a href="#5-1-2-基本框架" class="headerlink" title="5.1.2 基本框架"></a>5.1.2 基本框架</h3><pre class="line-numbers language-py"><code class="language-py">import lxml.html
 selector = lxml.html.fromstring('网页源代码')    #网页源代码可用requests来获取
-info = selector.xpath('一段XPath语句')</code></pre>
-<h3 id="5-1-3-example"><a href="#5-1-3-example" class="headerlink" title="5.1.3 example"></a>5.1.3 example</h3><pre class=" language-py"><code class="language-py">import lxml.html
+info = selector.xpath('一段XPath语句')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-1-3-example"><a href="#5-1-3-example" class="headerlink" title="5.1.3 example"></a>5.1.3 example</h3><pre class="line-numbers language-py"><code class="language-py">import lxml.html
 
 source = '''
 <html>
     <head>
          <title>测试</title>
-    <meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+    <meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
     <body>
          <div class="useful">
  <ul>
@@ -575,7 +598,7 @@ source = '''
 '''
 selector = lxml.html.fromstring(source)
 info = selector.xpath('//div[@class="useful"]/ul/li/text()')
-print(info)         #['我需要的信息1', '我需要的信息2', '我需要的信息3']</code></pre>
+print(info)         #['我需要的信息1', '我需要的信息2', '我需要的信息3']<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 
 <ul>
@@ -584,18 +607,18 @@ print(info)         #['我需要的信息1', '我需要的信息2', '我需要�
 <li>c.<strong>可以省略的属性</strong><br>1、本身标签没有属性<br>2、这个标签所有的属性值相同</li>
 <li>d.<strong>XPath 的特殊情况</strong><br>1、以相同字符串开头<code>标签[starts-with(@属性,"开头字符串")]</code></li>
 </ul>
-<pre class=" language-py"><code class="language-py">    <div id="test-1">需要的内容1</div>
+<pre class="line-numbers language-py"><code class="language-py">    <div id="test-1">需要的内容1</div>
     <div id="test-2">需要的内容2</div>
     <div id="testfault">需要的内容3</div>
     <div id="useless">这是我不需要的内容</div>
     content = selector.xpath('//div[starts-with(@id,"test")]/text()')
-    print(content)      #['需要的内容1','需要的内容3','需要的内容2']</code></pre>
+    print(content)      #['需要的内容1','需要的内容3','需要的内容2']<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>2、属性值包含相同字符串<code>标签[contains(@属性,"相同字符串")]</code><br>3、对 XPath 返回的对象执行 XPath</p>
-<pre class=" language-py"><code class="language-py">useful = selector.xpath('//div[@class="useful"]')   #这里返回一个列表
+<pre class="line-numbers language-py"><code class="language-py">useful = selector.xpath('//div[@class="useful"]')   #这里返回一个列表
 info_list = useful[0].xpath('ul/li/text()')         #useful[0]即为列表中第一个数据
-print(info_list)</code></pre>
+print(info_list)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>4、不同标签下的文字</p>
-<pre class=" language-py"><code class="language-py">import lxml.html
+<pre class="line-numbers language-py"><code class="language-py">import lxml.html
 
 html = '''
 <!DOCTYPE html>
@@ -629,14 +652,14 @@ print(content_1)   #['\n        我左青龙，\n        ', '\n        龙头在
 selector = lxml.html.fromstring(html)
 data = selector.xpath('//div[@id="test3"]')[0]
 info = data.xpath('string(.)')
-print(info)     #就可以提取出所有的文本信息了</code></pre>
+print(info)     #就可以提取出所有的文本信息了<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="5-2-XPath-通过-chrome-辅助构造"><a href="#5-2-XPath-通过-chrome-辅助构造" class="headerlink" title="5.2 XPath 通过 chrome 辅助构造"></a>5.2 XPath 通过 chrome 辅助构造</h2><p>在一行源码单击右键，选择“Copy”→“Copy XPath”命令<br>把结果粘贴下来，可以看到如下的 XPath 语句：<br><code>//*[@id="thread_list"]/li[2]/div/div[2]/div[1]/div[1]/a</code><br><em>其中方括号中的数字，表示这是第几个该标签，但需要注意，这里的数字是从 1 开始</em></p>
 <h1 id="6-Beautiful-Soup4-库-BS4"><a href="#6-Beautiful-Soup4-库-BS4" class="headerlink" title="6. Beautiful Soup4 库(BS4)"></a>6. Beautiful Soup4 库(BS4)</h1><p><em>BS4 在某些方面比 XPath 易懂，但是不如 XPath 简洁，而且由于它是使用 Python 开发的，因此速度比 XPath 慢。</em><br>使用 Beautiful Soup4 提取 HTML 内容，一般要经过以下两步。</p>
 <h2 id="6-1-bs4-处理步骤"><a href="#6-1-bs4-处理步骤" class="headerlink" title="6.1 bs4 处理步骤"></a>6.1 bs4 处理步骤</h2><ul>
 <li>1)处理源代码生成 BeautifulSoup 对象。<br>解析源代码生成 BeautifulSoup 对象，使用以下代码：<br><code>soup = BeautifulSoup(网页源代码, '解析器')</code><br>解析器：<br>这里的“解析器”，可以使用 html.parser：<br><code>soup = BeautifulSoup(source, 'html.parser')</code><br>如果安装了 lxml，还可以使用 lxml：<br><code>soup = BeautifulSoup(source, 'lxml')</code></li>
 <li>2)使用 find<em>all()或者 find()来查找内容。<br>`soup.find(class</em>=’属性值’)`<br><em>由于 HTML 中的 class 属性与 Python 的 class 关键字相同，因此为了不产生冲突，BS4 规定，如果遇到要查询 class 的情况，使用“class_”来代替</em></li>
 </ul>
-<h2 id="6-2-example"><a href="#6-2-example" class="headerlink" title="6.2 example"></a>6.2 <a href="http://exercise.kingname.info/exercise_bs_1.html" target="_blank" rel="noopener">example</a></h2><pre class=" language-py"><code class="language-py">import request
+<h2 id="6-2-example"><a href="#6-2-example" class="headerlink" title="6.2 example"></a>6.2 <a href="http://exercise.kingname.info/exercise_bs_1.html" target="_blank" rel="noopener">example</a></h2><pre class="line-numbers language-py"><code class="language-py">import request
 from bs4 import BeautifulSoup
 
 html = requests.get('http://exercise.kingname.info/exercise_bs_1.html').content.decode()
@@ -658,12 +681,12 @@ for li in all_content:
                             #<li class="iamstrange">我需要的信息3</li>
     print(li['class'])      #['info']
                             #['test']
-                            #['iamstrange']</code></pre>
+                            #['iamstrange']<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>其他查找方法<br><strong>以‘我需要’为开头的信息</strong><br><code>content = soup.find_all(text = re.compile('我需要'))</code><br><strong>对属性值搜素使用正则,即对 iamstrang 属性值搜索</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">content = soup.find_all(class_=re.compile('iam'))[0]
-print(content.string)       #我需要的信息3</code></pre>
+<pre class="line-numbers language-py"><code class="language-py">content = soup.find_all(class_=re.compile('iam'))[0]
+print(content.string)       #我需要的信息3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h1 id="7-异步加载与请求头"><a href="#7-异步加载与请求头" class="headerlink" title="7. 异步加载与请求头"></a>7. 异步加载与请求头</h1><h2 id="7-1-异步加载"><a href="#7-1-异步加载" class="headerlink" title="7.1 异步加载"></a>7.1 异步加载</h2><p><em>异步加载：一个页面，点击后网址不变，页面改变</em></p>
 <h3 id="7-1-1-AJAX-技术"><a href="#7-1-1-AJAX-技术" class="headerlink" title="7.1.1 AJAX 技术"></a>7.1.1 AJAX 技术</h3><ul>
 <li>AJAX 是 Asynchronous JavaScript And XML 的首字母缩写，意为异步 JavaScript 与 XML</li>
@@ -676,7 +699,7 @@ print(content.string)       #我需要的信息3</code></pre>
 <li><strong>列表\字典与字符串相互转化</strong></li>
 <li><em>python 中字典 or 列表 与 json 格式字符串的相互转化</em></li>
 </ul>
-<pre class=" language-py"><code class="language-py">import json
+<pre class="line-numbers language-py"><code class="language-py">import json
 
 data = {
     'name' : 'Connor',
@@ -698,7 +721,7 @@ print(data3)    #str
     "sex": "boy",
     "age": 26
 }
-'''</code></pre>
+'''<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><strong>str=json.dumps(dict)</strong></li>
 <li><strong>dict=json.loads(str)</strong></li>
@@ -722,15 +745,15 @@ print(data3)    #str
 <li>源代码最下面的 JavaScript 代码，其中有一段：<br><code>{"code": "\u884c\u52a8\u4ee3\u53f7\uff1a\u5929\u738b\u76d6\u5730\u864e"}</code></li>
 <li>使用 Python 去解析，发现可以得到网页上面的内容</li>
 </ul>
-<pre class=" language-py"><code class="language-py">import json
+<pre class="line-numbers language-py"><code class="language-py">import json
 
 html_json = '{"code": "\u884c\u52a8\u4ee3\u53f7\uff1a\u5929\u738b\u76d6\u5730\u864e"}'
 html_dic = json.loads(html_json)
-print(html_dic)      #{'code': '行动代号：天王盖地虎'}</code></pre>
+print(html_dic)      #{'code': '行动代号：天王盖地虎'}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><strong>这种假的异步加载页面，其处理思路一般是使用正则表达式从页面中把数据提取出来，然后直接解析</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">import json
+<pre class="line-numbers language-py"><code class="language-py">import json
 import requests
 import re
 
@@ -739,7 +762,7 @@ html = requests.get(url).content.decode()
 code_json = re.search("secret = '(.*?)'", html, re.S).group(1)
 code_dict = json.loads(code_json)
 print(code_dict['code'])
-#行动代号：天王盖地虎</code></pre>
+#行动代号：天王盖地虎<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="7-1-5-多次请求的异步加载"><a href="#7-1-5-多次请求的异步加载" class="headerlink" title="7.1.5 多次请求的异步加载"></a>7.1.5 多次请求的异步加载</h3><ul>
 <li><strong><a href="http://exercise.kingname.info/exercise_ajax_3.html" target="_blank" rel="noopener">练习页面</a></strong></li>
 </ul>
@@ -753,7 +776,7 @@ print(code_dict['code'])
 age: 24
 secret1: "kingname is genius."
 secret2: "kingname"</code></pre><p><strong>如果修改这两个参数</strong></p>
-<pre class=" language-py"><code class="language-py">import json
+<pre class="line-numbers language-py"><code class="language-py">import json
 import requests
 
 url = 'http://exercise.kingname.info/ajax_3_postbackend'
@@ -762,11 +785,11 @@ return_json_1 = requests.post(url,json={"name":"xx",
 return_json_2 = requests.post(url,json={"name" :"xx","age":23
 })
 print(json.loads(return_json_1.content.decode()))   #{'success': False, 'reason': '参数错误'}
-print(json.loads(return_json_2.content.decode()))   #{'success': False, 'reason': '参数不全'}</code></pre>
+print(json.loads(return_json_2.content.decode()))   #{'success': False, 'reason': '参数不全'}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>打开这个练习页的源代码，在源代码中可以找到 secret_2</li>
 </ul>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>exercise ajax load<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
@@ -778,7 +801,7 @@ print(json.loads(return_json_2.content.decode()))   #{'success': False, 'reason'
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>static/js/jquery-3.2.1.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>static/js/loaddata_3.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>虽然在 POST 参数中，名字是 secret2，而源代码中的名字是 secret_2，不过从值可以看出这就是同一个参数</li>
 <li>源代码里面没有 secret1，因此就要考虑这个参数是不是来自于另一个异步请求</li>
@@ -787,9 +810,9 @@ print(json.loads(return_json_2.content.decode()))   #{'success': False, 'reason'
 <ul>
 <li><strong>不少网站也会使用这种改名字的方式来迷惑爬虫开发者</strong></li>
 </ul>
-<pre class=" language-js"><code class="language-js"><span class="token punctuation">{</span>code<span class="token punctuation">:</span> <span class="token string">"kingname is genius."</span><span class="token punctuation">,</span> success<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">{</span>code<span class="token punctuation">:</span> <span class="token string">"kingname is genius."</span><span class="token punctuation">,</span> success<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span>
 code<span class="token punctuation">:</span> <span class="token string">"kingname is genius."</span>
-success<span class="token punctuation">:</span> <span class="token boolean">true</span></code></pre>
+success<span class="token punctuation">:</span> <span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>这一条请求就是一个不带任何参数的 GET 请求</li>
 <li><em>对于这种多次请求才能得到数据的情况，解决办法就是逐一请求，得到返回结果以后再发起下一个请求。具体到这个例子中，那就是先从源代码里面获得 secret2，再通过 GET 请求得到 secret1，最后使用 secret1 和 secret2 来获取页面上显示的内容</em></li>
@@ -797,7 +820,7 @@ success<span class="token punctuation">:</span> <span class="token boolean">true
 <ul>
 <li><strong>[爬取网站]<a href="http://exercise.kingname.info/exercise_ajax_3.html" target="_blank" rel="noopener">http://exercise.kingname.info/exercise_ajax_3.html</a>)</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">import json
+<pre class="line-numbers language-py"><code class="language-py">import json
 import requests
 import re
 
@@ -826,7 +849,7 @@ ajax_2_dict = json.loads(ajax_2_json)
 print(ajax_2_dict)          #{'code': '行动代号：哎哟不错哦', 'success': True}
 
 code = ajax_2_dict['code']
-print(code)                 #行动代号：哎哟不错哦</code></pre>
+print(code)                 #行动代号：哎哟不错哦<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="7-1-6-基于异步加载的简单登录"><a href="#7-1-6-基于异步加载的简单登录" class="headerlink" title="7.1.6 基于异步加载的简单登录"></a>7.1.6 基于异步加载的简单登录</h3><ul>
 <li><strong><a href="http://exercise.kingname.info/exercise_ajax_4.html" target="_blank" rel="noopener">练习页面</a></strong></li>
 </ul>
@@ -836,7 +859,7 @@ print(code)                 #行动代号：哎哟不错哦</code></pre>
 <li><strong>对于这种简单的登录功能，可以使用抓取异步加载网页的方式来进行处理</strong></li>
 <li>在 Chrome 开发者工具中可以发现，当单击“登录”按钮时，网页向后台发送了一条请求<br><strong><code>{"code": "kingname is genius", "success": true}</code></strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">import requests
+<pre class="line-numbers language-py"><code class="language-py">import requests
 import json
 
 url = 'http://exercise.kingname.info/ajax_4_backend'
@@ -844,7 +867,7 @@ code_json = requests.post(url,json={
     'username':'kingname','password':'genius'}).content.decode()
 code__dict = json.loads(code_json)
 print(code__dict['code'])
-# kingname is genius</code></pre>
+# kingname is genius<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>这就是使用 POST 方式的最简单的 AJAX 请求。使用获取 POST 方式的 AJAX 请求的代码，就能成功获取到登录以后返回的内容</li>
 </ul>
@@ -862,7 +885,7 @@ print(code__dict['code'])
 <li>使用 requests 尝试获取这个网址的返回信息,结果发现失败</li>
 <li>使用浏览器访问网站的时候，网站可以看到一个名称为 Headers（请求头）的东西</li>
 </ul>
-<pre class=" language-js"><code class="language-js">headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-js"><code class="language-js">headers <span class="token operator">=</span> <span class="token punctuation">{</span>
             Accept<span class="token punctuation">:</span> <span class="token operator">*</span><span class="token operator">/</span><span class="token operator">*</span>
             Accept<span class="token operator">-</span>Encoding<span class="token punctuation">:</span> gzip<span class="token punctuation">,</span> deflate
             Accept<span class="token operator">-</span>Language<span class="token punctuation">:</span> zh<span class="token operator">-</span>CN<span class="token punctuation">,</span>zh<span class="token punctuation">;</span>q<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span>en<span class="token operator">-</span>US<span class="token punctuation">;</span>q<span class="token operator">=</span><span class="token number">0.8</span><span class="token punctuation">,</span>en<span class="token punctuation">;</span>q<span class="token operator">=</span><span class="token number">0.7</span>
@@ -874,14 +897,14 @@ print(code__dict['code'])
             Referer<span class="token punctuation">:</span> http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>exercise<span class="token punctuation">.</span>kingname<span class="token punctuation">.</span>info<span class="token operator">/</span>exercise_headers<span class="token punctuation">.</span>html
             User<span class="token operator">-</span>Agent<span class="token punctuation">:</span> Mozilla<span class="token operator">/</span><span class="token number">5.0</span> <span class="token punctuation">(</span>Windows NT <span class="token number">10.0</span><span class="token punctuation">;</span> WOW64<span class="token punctuation">)</span> AppleWebKit<span class="token operator">/</span><span class="token number">537.36</span> <span class="token punctuation">(</span>KHTML<span class="token punctuation">,</span> like Gecko<span class="token punctuation">)</span> Chrome<span class="token operator">/</span><span class="token number">79.0</span><span class="token punctuation">.</span><span class="token number">3945.79</span> Safari<span class="token operator">/</span><span class="token number">537.36</span>
             X<span class="token operator">-</span>Requested<span class="token operator">-</span>With<span class="token punctuation">:</span> XMLHttpRequest
-            <span class="token punctuation">}</span></code></pre>
+            <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>为了解决这个问题，就需要给爬虫“换头”。把浏览器的头安装到爬虫的身上，这样网站就不知道谁是谁了</li>
 <li>要换头，首先就需要知道浏览器的头是什么样的。因此需要在 Chrome 浏览器开发者工具的“Network”选项卡的 Request Headers 里面观察这一次请求的请求头</li>
 <li>在 requests 里面，设置请求头的参数名称为“headers”，它的值是一个字典<br><strong>带有请求头的请求，使用 requests 的发送格式为：</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">html = requests.get(url, headers=字典).content.decode()
-html = requests.post(url, json=xxx, headers=字典).content.decode()</code></pre>
+<pre class="line-numbers language-py"><code class="language-py">html = requests.get(url, headers=字典).content.decode()
+html = requests.post(url, json=xxx, headers=字典).content.decode()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>代码中的字典就对应了浏览器中的请求头</li>
 <li>在爬虫里面创建一个字典，将 Chrome 的请求头的内容复制进去，并调整好格式，发起一个带有 Chrome 请求头的爬虫请求，可以发现请求获得成功</li>
@@ -905,9 +928,9 @@ html = requests.post(url, json=xxx, headers=字典).content.decode()</code></pre
 <h3 id="7-3-3-selenium-的使用"><a href="#7-3-3-selenium-的使用" class="headerlink" title="7.3.3 selenium 的使用"></a>7.3.3 selenium 的使用</h3><h4 id="7-3-3-1-获取源代码"><a href="#7-3-3-1-获取源代码" class="headerlink" title="7.3.3.1 获取源代码"></a>7.3.3.1 获取源代码</h4><ul>
 <li><strong>将 chromedriver 与代码放在同一个文件夹中以方便代码直接调用</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py"># 初始化selenium
+<pre class="line-numbers language-py"><code class="language-py"># 初始化selenium
 from selenium import webdriver
-driver = webdriver.Chrome('./chromedriver')</code></pre>
+driver = webdriver.Chrome('./chromedriver')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>指定了 Selenium 使用 ChromeDriver 来操作 Chrome 解析网页，括号里的参数就是 ChromeDriver 可执行文件的地址</li>
 </ul>
@@ -919,7 +942,7 @@ driver = webdriver.Chrome('./chromedriver')</code></pre>
 <li>代码运行以后会自动打开一个 Chrome 窗口，并在窗口里面自动进入这个网址对应的页面。一旦被异步加载的内容已经出现在了这个自动打开的 Chrome 窗口中，那么此时使用下列代码：<br><code>html = driver.page_source</code></li>
 <li>就能得到在 Chrome 开发者工具中出现的 HTML 代码<br><strong>综合：</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">from selenium import webdriver
+<pre class="line-numbers language-py"><code class="language-py">from selenium import webdriver
 import time
 
 driver = webdriver.Chrome(r'C:\Program Files (x86)\Google\Chrome\Application\chromedriver')
@@ -927,24 +950,24 @@ driver.get('http://exercise.kingname.info/exercise_advanced_ajax.html')
 time.sleep(5)
 html = driver.page_source
 print(html)
-input('按任意键结束：')</code></pre>
+input('按任意键结束：')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>运行程序会出现以下界面</strong><br><img src="/img/selenium.png" alt="selenium" title="selenium"></p>
 <h4 id="7-3-3-2-等待信息出现"><a href="#7-3-3-2-等待信息出现" class="headerlink" title="7.3.3.2 等待信息出现"></a>7.3.3.2 等待信息出现</h4><ul>
 <li>设置了一个 5s 的延迟，这是由于 Selenium 并不会等待网页加载完成再执行后面的代码。它只是向 ChromeDriver 发送了一个命令，让 ChromeDriver 打开某个网页</li>
 <li>至于网页要开多久，Selenium 并不关心。由于被异步加载的内容会延迟出现，因此需要等待它出现以后再开始抓取</li>
 </ul>
 <h4 id="7-3-3-3-在网页中获取元素"><a href="#7-3-3-3-在网页中获取元素" class="headerlink" title="7.3.3.3 在网页中获取元素"></a>7.3.3.3 在网页中获取元素</h4><p><em>在网页中寻找需要的内容，可以使用类似于 Beautiful Soup4 的语法：</em></p>
-<pre class=" language-py"><code class="language-py">element = driver.find_element_by_id("passwd-id") #如果有多个符合条件的，返回第1个
+<pre class="line-numbers language-py"><code class="language-py">element = driver.find_element_by_id("passwd-id") #如果有多个符合条件的，返回第1个
 element = driver.find_element_by_name("passwd") #如果有多个符合条件的，返回第1个
 element_list = driver.find_elements_by_id("passwd-id") #以列表形式返回所有的符合条件的element
-element_list = driver.find_elements_by_name("passwd") #以列表形式返回所有的符合条件的element</code></pre>
+element_list = driver.find_elements_by_name("passwd") #以列表形式返回所有的符合条件的element<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>也可以使用 XPath</strong></p>
-<pre class=" language-py"><code class="language-py">element = driver.find_element_by_xpath("//input[@id='passwd-id']")
+<pre class="line-numbers language-py"><code class="language-py">element = driver.find_element_by_xpath("//input[@id='passwd-id']")
 #如果有多个符合条件的，返回第1个
 element = driver.find_elements_by_xpath("//div[@id='passwd-id']")
-#以列表形式返回所有的符合条件的element</code></pre>
+#以列表形式返回所有的符合条件的element<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><a href="http://exercise.kingname.info/exercise_advanced_ajax.html" target="_blank" rel="noopener">练习网站</a></p>
-<pre class=" language-py"><code class="language-py">from selenium import webdriver
+<pre class="line-numbers language-py"><code class="language-py">from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -964,7 +987,7 @@ print(f'异步加载的内容是：{element.text}')
 
 # 异步加载的内容是：通关成功，通关口令：这是最终数据。
 
-driver.quit()</code></pre>
+driver.quit()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="7-4-实例：乐视爬取视频评论"><a href="#7-4-实例：乐视爬取视频评论" class="headerlink" title="7.4 实例：乐视爬取视频评论"></a>7.4 实例：<a href="http://www.le.com" target="_blank" rel="noopener">乐视</a>爬取视频评论</h2><ul>
 <li><p><em>1&gt;分析网站的异步加载请求</em></p>
 </li>
@@ -980,17 +1003,17 @@ driver.quit()</code></pre>
 <li><p>爬虫首先访问视频页面，通过正则表达式获取 vid 和 pid，并将结果保存到“necessary_info”这个类属性对应的字典中</p>
 </li>
 </ul>
-<pre class=" language-py"><code class="language-py"># 核心代码
+<pre class="line-numbers language-py"><code class="language-py"># 核心代码
 def get_necessary_id(self):
   source = self.get_source(self.url, self.HEADERS)
   vid = re.search('vid: (\d+)', source).group(1)
   pid = re.search('pid: (\d+)', source).group(1)
   self.necessary_info['xid'] = vid
-  self.necessary_info['pid'] = pid</code></pre>
+  self.necessary_info['pid'] = pid<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>访问评论的接口，用 Python 发起请求，获得评论数据</li>
 </ul>
-<pre class=" language-py"><code class="language-py">def get_comment(self):
+<pre class="line-numbers language-py"><code class="language-py">def get_comment(self):
     url = self.COMMENT_URL.format(xid=self.necessary_info['xid'],
                              pid=self.necessary_info['pid'])
     source = self.get_source(url, self.HEADERS)
@@ -998,11 +1021,11 @@ def get_necessary_id(self):
     comment_dict = json.loads(source_json)
     comments = comment_dict['data']
     for comment in comments:
-        print(f'发帖人： {comment["user"]["username"]}, 评论内容：{comment["content"]}')</code></pre>
+        print(f'发帖人： {comment["user"]["username"]}, 评论内容：{comment["content"]}')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>代码中，提前定义的 self.COMMENT_URL 和 self.HEADERS</li>
 </ul>
-<pre class=" language-py"><code class="language-py"># 综合
+<pre class="line-numbers language-py"><code class="language-py"># 综合
 import re
 import json
 import requests
@@ -1075,8 +1098,8 @@ if __name__ == '__main__':
 发帖人：上海乐迷,评论内容:怎么这么难找〈产科医生）的电视剧
 发帖人：上海乐迷,评论内容:我想看产科医生的电视剧
 发帖人：上海乐迷,评论内容:产科医生
-'''</code></pre>
-<pre class=" language-py"><code class="language-py">print("网站名：{name}, 地址 {url}".format(name="菜鸟教程", url="www.runoob.com"))
+'''<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-py"><code class="language-py">print("网站名：{name}, 地址 {url}".format(name="菜鸟教程", url="www.runoob.com"))
 
 # 通过字典设置参数
 site = {"name": "菜鸟教程", "url": "www.runoob.com"}
@@ -1086,13 +1109,13 @@ print("网站名：{name}, 地址 {url}".format(**site))
 my_list = ['菜鸟教程', 'www.runoob.com']
 print("网站名：{0[0]}, 地址 {0[1]}".format(my_list))  # "0" 是必须的
 
-# 网站名：菜鸟教程, 地址 www.runoob.com</code></pre>
-<pre class=" language-py"><code class="language-py">class AssignValue(object):
+# 网站名：菜鸟教程, 地址 www.runoob.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-py"><code class="language-py">class AssignValue(object):
     def __init__(self, value):
         self.value = value
 my_value = AssignValue(6)
 print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
-# value 为: 6</code></pre>
+# value 为: 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="8-模拟登录与验证码"><a href="#8-模拟登录与验证码" class="headerlink" title="8. 模拟登录与验证码"></a>8. 模拟登录与验证码</h1><ul>
 <li>对于一个需要登录才能访问的网站，它的页面在登录前和登录后可能是不一样的</li>
 <li>如果直接使用 requests 去获取源代码，只能得到登录以前的页面源代码</li>
@@ -1145,7 +1168,7 @@ print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
 <li>此时可以看到 Status Code 是 302，说明这里有一个网页跳转，也就证明了之前为什么登录以后看不到登录的请求</li>
 <li><strong>使用 requests 的 Session 模块来模拟这个登录</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">import requests
+<pre class="line-numbers language-py"><code class="language-py">import requests
 
 login_url = 'http://exercise.kingname.info/exercise_login'
 login_sucess_url = 'http://exercise.kingname.info/exercise_login_success'
@@ -1162,9 +1185,9 @@ print(before_login)
 print('============开始登陆==============')
 session.post(login_url,data=data).text
 after_login = session.get(login_sucess_url).text
-print(after_login)</code></pre>
+print(after_login)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>结果</strong></p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>exercise login<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
@@ -1250,7 +1273,7 @@ print(after_login)</code></pre>
       <span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="8-2-验证码"><a href="#8-2-验证码" class="headerlink" title="8.2 验证码"></a>8.2 验证码</h2><h3 id="8-2-1-肉眼打码"><a href="#8-2-1-肉眼打码" class="headerlink" title="8.2.1 肉眼打码"></a>8.2.1 肉眼打码</h3><ul>
 <li><p>对于一次登录就可以长时间使用的情况，只需要识别一次验证码即可</p>
 </li>
@@ -1273,7 +1296,7 @@ print(after_login)</code></pre>
 <li><em>需要注意的是，其中的（2）、（3）、（4）、（5）、（6）步是一气呵成的，是在爬虫运行的时候做的。绝对不能先把爬虫程序关闭，肉眼识别验证码以后再重新运行</em></li>
 </ul>
 <p><strong><a href="http://exercise.kingname.info/exercise_captcha.html" target="_blank" rel="noopener">练习页面</a></strong></p>
-<pre class=" language-py"><code class="language-py">import requests
+<pre class="line-numbers language-py"><code class="language-py">import requests
 import lxml.html
 
 url = 'http://exercise.kingname.info/exercise_captcha.html'
@@ -1291,7 +1314,7 @@ with open('captcha.png','wb') as f:
 captcha = input('请查看图片，然后输入在这里：')
 after_check = session.post(url_check,data={'captcha':captcha})
 
-print(f'请输入验证码后，网站返回：{after_check.content.decode()}')</code></pre>
+print(f'请输入验证码后，网站返回：{after_check.content.decode()}')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>结果</strong></p>
 <pre><code>请查看图片，然后输入在这里：1595
 请输入验证码后，网站返回：看到这个页面，说明你的验证码输入正确</code></pre><p><img src="/img/captcha.png" alt="验证码"></p>
@@ -1304,12 +1327,12 @@ print(f'请输入验证码后，网站返回：{after_check.content.decode()}')<
 <pre><code>          tesseract的使用非常简单。
 ① 导入pytesseract和Pillow。
 ② 打开图片。
-③ 识别。</code></pre><pre class=" language-py"><code class="language-py"># 通过以下代码来实现最简单的图片识别：
+③ 识别。</code></pre><pre class="line-numbers language-py"><code class="language-py"># 通过以下代码来实现最简单的图片识别：
 import pytesseract
 from PIL import Image
 image = Image.open('验证码.png')
 code = pytesseract.image_to_string(image)
-print(code)</code></pre>
+print(code)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>2、打码网站<br>在线验证码识别的网站，简称打码网站。这些网站有一些是使用深度学习技术识别验证码，有一些是雇佣了很多人来人肉识别验证码<br>网站提供了接口来实现验证码识别服务。使用打码网站理论上可以识别任何使用输入方式来验证的验证码</p>
 <pre><code>这种打码网站的流程一般是这样的。
 ① 将验证码上传到网站服务器。
@@ -1476,8 +1499,8 @@ print(code)</code></pre>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -1514,11 +1537,7 @@ print(code)</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用 Pycharm 遇到的问题VS code 天下第一
-
-
-1. 新版 pycharm 问题问题 1：pycharm 双击打不开已解决：可能时进程中已经有了 pycharm，在任务管理器里结束进程，然后重新打开
-问题 2：pycharm 
+                            使用 Pycharm 遇到的问题,现以转用vscode
                         
                     </div>
                     <div class="publish-info">
@@ -1529,8 +1548,8 @@ print(code)</code></pre>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%97%AE%E9%A2%98/" class="post-category">
-                                    问题
+                            <a href="/categories/%E6%97%A0%E5%8A%9B/" class="post-category">
+                                    无力
                                 </a>
                             
                             
@@ -1611,7 +1630,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1623,7 +1642,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1697,7 +1716,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -1824,12 +1843,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

@@ -5,16 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python_Plt, Yun.Qi">
-    <meta name="description" content="Python plt 的学习
-
-参考教程
-
-
-
-0. plt 打开 opencv 图像BGR 用 RGB 打开
-import numpy as np
-import cv2
-from matplotlib import pyplot as p">
+    <meta name="description" content="Python plt 的学习过程，可以让数据可视化，还可以展示图像">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -35,7 +26,8 @@ from matplotlib import pyplot as p">
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -114,9 +106,20 @@ from matplotlib import pyplot as p">
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -205,9 +208,20 @@ from matplotlib import pyplot as p">
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -241,7 +255,7 @@ from matplotlib import pyplot as p">
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -424,8 +438,8 @@ from matplotlib import pyplot as p">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -442,11 +456,16 @@ from matplotlib import pyplot as p">
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
+                
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1,305
+                    1,300
                 </div>
                 
 
@@ -464,14 +483,13 @@ from matplotlib import pyplot as p">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>Python plt 的学习</strong></p>
-<blockquote>
+                <blockquote>
 <p><a href="https://blog.csdn.net/qiurisiyu2016/article/details/80187177" target="_blank" rel="noopener">参考教程</a></p>
 </blockquote>
 <a id="more"></a>
 
 <h1 id="0-plt-打开-opencv-图像"><a href="#0-plt-打开-opencv-图像" class="headerlink" title="0. plt 打开 opencv 图像"></a>0. plt 打开 opencv 图像</h1><p><strong>BGR 用 RGB 打开</strong></p>
-<pre class=" language-py"><code class="language-py">import numpy as np
+<pre class="line-numbers language-py"><code class="language-py">import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
@@ -491,24 +509,24 @@ plt.show()
 #method3
 img4=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 plt.imshow(img4)
-plt.show()</code></pre>
+plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="1-plt-plot-x-y"><a href="#1-plt-plot-x-y" class="headerlink" title="1. plt.plot(x,y)"></a>1. plt.plot(x,y)</h1><p><code>format_string的内容</code><br><img src="/img/plt/plot1.png" alt="string内容图片"><br><img src="/img/plt/plot2.png" alt="string内容图片"><br><img src="/img/plt/plot3.png" alt="string内容图片"><br><code>**kwargs</code></p>
 <p>**kwards：<br>color 颜色<br>linestyle 线条样式<br>marker 标记风格<br>markerfacecolor 标记颜色<br>markersize 标记大小 等等</p>
-<pre class=" language-py"><code class="language-py"># plt.plot(x,y,format_string,**kwargs)
+<pre class="line-numbers language-py"><code class="language-py"># plt.plot(x,y,format_string,**kwargs)
 # x轴数据，y轴数据，控制曲线格式的字符串format_string颜色字符，风格字符，和标记字符
 plt.plot([1,2,3,6],[4,5,8,1],'r-s')
-plt.show()</code></pre>
+plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>展示</strong><br><img src="/img/plt/plot4.png" alt="plot"></p>
 <h1 id="2-plt-figure-用来画图，自定义画布大小"><a href="#2-plt-figure-用来画图，自定义画布大小" class="headerlink" title="2. plt.figure()用来画图，自定义画布大小"></a>2. plt.figure()用来画图，自定义画布大小</h1><p>定义画布大小，然后用 plot 画图</p>
-<pre class=" language-py"><code class="language-py"># plt.figure() # 用来画图,自定义画布大小
+<pre class="line-numbers language-py"><code class="language-py"># plt.figure() # 用来画图,自定义画布大小
 fig1 = plt.figure(num='fig111111', figsize=(10, 3), dpi=75, facecolor='#FFFFFF', edgecolor='#0000FF')
 # 名字,宽*高，dpi图像每英寸长度内的像素点数 一般75，
 plt.plot([1,2,3],[2,2,3])
 plt.show()
-plt.close()</code></pre>
+plt.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/img/plt/figure1.png" alt="展示图片"></p>
 <h1 id="3、plt-subplot-222"><a href="#3、plt-subplot-222" class="headerlink" title="3、plt.subplot(222)"></a>3、plt.subplot(222)</h1><p>将 figure 设置的画布大小分成几个部分，参数‘221’表示 2(row)x2(colu),即将画布分成 2x2，两行两列的 4 块区域，1 表示选择图形输出的区域在第一块，图形输出区域参数必须在“行 x 列”范围，此处必须在 1 和 2 之间选择——如果参数设置为 subplot(111)，则表示画布整个输出，不分割成小块区域，图形直接输出在整块画布上</p>
-<pre class=" language-py"><code class="language-py">plt.subplot(222) 
+<pre class="line-numbers language-py"><code class="language-py">plt.subplot(222) 
 plt.plot(y,xx)    #在2x2画布中第二块区域输出图形
 plt.show()
 plt.subplot(223)  #在2x2画布中第三块区域输出图形
@@ -518,17 +536,17 @@ plt.plot(y,xx)
 
 # 子图
 plt.add_subplot(221)
-plt.add_subplot(222)</code></pre>
-<h1 id="4、plt-xlim-设置-x-轴或者-y-轴刻度范围"><a href="#4、plt-xlim-设置-x-轴或者-y-轴刻度范围" class="headerlink" title="4、plt.xlim 设置 x 轴或者 y 轴刻度范围"></a>4、plt.xlim 设置 x 轴或者 y 轴刻度范围</h1><pre class=" language-py"><code class="language-py">plt.xlim(0,1000)  #  设置x轴刻度范围，从0~1000         #lim为极限，范围
-plt.ylim(0,20)   # 设置y轴刻度的范围，从0~20</code></pre>
-<h1 id="5、plt-xticks-：设置-x-轴刻度的表现方式"><a href="#5、plt-xticks-：设置-x-轴刻度的表现方式" class="headerlink" title="5、plt.xticks()：设置 x 轴刻度的表现方式"></a>5、plt.xticks()：设置 x 轴刻度的表现方式</h1><pre class=" language-py"><code class="language-py">fig2 = plt.figure(num='fig222222', figsize=(6, 3), dpi=75, facecolor='#FFFFFF', edgecolor='#FF0000')
+plt.add_subplot(222)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="4、plt-xlim-设置-x-轴或者-y-轴刻度范围"><a href="#4、plt-xlim-设置-x-轴或者-y-轴刻度范围" class="headerlink" title="4、plt.xlim 设置 x 轴或者 y 轴刻度范围"></a>4、plt.xlim 设置 x 轴或者 y 轴刻度范围</h1><pre class="line-numbers language-py"><code class="language-py">plt.xlim(0,1000)  #  设置x轴刻度范围，从0~1000         #lim为极限，范围
+plt.ylim(0,20)   # 设置y轴刻度的范围，从0~20<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1 id="5、plt-xticks-：设置-x-轴刻度的表现方式"><a href="#5、plt-xticks-：设置-x-轴刻度的表现方式" class="headerlink" title="5、plt.xticks()：设置 x 轴刻度的表现方式"></a>5、plt.xticks()：设置 x 轴刻度的表现方式</h1><pre class="line-numbers language-py"><code class="language-py">fig2 = plt.figure(num='fig222222', figsize=(6, 3), dpi=75, facecolor='#FFFFFF', edgecolor='#FF0000')
 plt.plot()
 # np.linspace 创建等差数列
 plt.xticks(np.linspace(0,1000,15,endpoint=True))
 # 设置x轴刻度
 plt.yticks(np.linspace(0,20,10,endpoint=True))
 plt.show()
-plt.close()</code></pre>
+plt.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>展示</strong><br><img src="/img/plt/xticks.png" alt="xticks代码展示"></p>
 <h1 id="6-plt-scatter-–散点图"><a href="#6-plt-scatter-–散点图" class="headerlink" title="6. plt.scatter()–散点图"></a>6. plt.scatter()–散点图</h1><p><code>matplotlib.pyplot.scatter(x, y, s=None, c=None, marker=None, cmap=None, norm=None, vmin=None, vmax=None,alpha=None, linewidths=None, verts=None, edgecolors=None, *, data=None, **kwargs)</code></p>
 <ul>
@@ -546,7 +564,7 @@ plt.close()</code></pre>
 <p><a href="https://blog.csdn.net/m0_37393514/article/details/81298503" target="_blank" rel="noopener">参考教程</a></p>
 </blockquote>
 <h1 id="7、ax2-set-title-‘xxx’-设置标题，画图"><a href="#7、ax2-set-title-‘xxx’-设置标题，画图" class="headerlink" title="7、ax2.set_title(‘xxx’)设置标题，画图"></a>7、ax2.set_title(‘xxx’)设置标题，画图</h1><p><code>plt.xlabel()</code> <code>plt.ylabel()</code>xy 轴标签</p>
-<pre class=" language-py"><code class="language-py">#产生[1,2,3,...,9]的序列
+<pre class="line-numbers language-py"><code class="language-py">#产生[1,2,3,...,9]的序列
 x = np.arange(1,10)
 y = x
 fig = plt.figure()
@@ -569,7 +587,7 @@ ax2.scatter(x,y,c = 'b',marker = 'x')
 #设置图标
 plt.legend('show picture x1 ')
 #显示所画的图
-plt.show()</code></pre>
+plt.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>展示</strong><br><img src="/img/plt/title1.png" alt="title展示"></p>
 <h1 id="8-plt-hist（）绘制直方图"><a href="#8-plt-hist（）绘制直方图" class="headerlink" title="8. plt.hist（）绘制直方图"></a>8. plt.hist（）绘制直方图</h1><p><em>可以将高斯函数这些画出来</em></p>
 <p><code>n, bins, patches = plt.hist(arr, bins=10, normed=0, facecolor='black', edgecolor='black',alpha=1，histtype='bar')</code><br>hist 的参数非常多，但常用的就这六个，只有第一个是必须的，后面四个可选</p>
@@ -731,11 +749,7 @@ c:  &lt;a list of 3 Patch objects&gt;       #总共多少柱子</code></pre><scr
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python 中 numpy 的学习一点一点地学，可能没有逻辑，知识点分散import numpy as np
-
-
-1. np.linspace()用来创建等差数列
-numpy.linspace(start, stop, num=50, e
+                            Python中numpy轮子，用来处理数据
                         
                     </div>
                     <div class="publish-info">
@@ -746,8 +760,8 @@ numpy.linspace(start, stop, num=50, e
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -784,13 +798,7 @@ numpy.linspace(start, stop, num=50, e
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            python中的math库非常的有意思hhh暂时先写一部分；没什么时间深入研究，等过段时间再说
-
-
-1. 角度相关函数1.1 角弧度转换import math
-math.degrees(math.pi/2)
-# 90.0
-math.radi
+                            Python中的math库，写代码时需要用到的python中的数学函数
                         
                     </div>
                     <div class="publish-info">
@@ -801,8 +809,8 @@ math.radi
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -879,7 +887,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -891,7 +899,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -965,7 +973,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -1092,12 +1100,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

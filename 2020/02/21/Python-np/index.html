@@ -5,11 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python_np, Yun.Qi">
-    <meta name="description" content="Python 中 numpy 的学习一点一点地学，可能没有逻辑，知识点分散import numpy as np
-
-
-1. np.linspace()用来创建等差数列
-numpy.linspace(start, stop, num=50, e">
+    <meta name="description" content="Python中numpy轮子，用来处理数据">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +26,8 @@ numpy.linspace(start, stop, num=50, e">
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -109,9 +106,20 @@ numpy.linspace(start, stop, num=50, e">
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -200,9 +208,20 @@ numpy.linspace(start, stop, num=50, e">
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -236,7 +255,7 @@ numpy.linspace(start, stop, num=50, e">
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -419,8 +438,8 @@ numpy.linspace(start, stop, num=50, e">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -437,11 +456,16 @@ numpy.linspace(start, stop, num=50, e">
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
+                
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    819
+                    804
                 </div>
                 
 
@@ -459,11 +483,10 @@ numpy.linspace(start, stop, num=50, e">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>Python 中 numpy 的学习</strong><br>一点一点地学，可能没有逻辑，知识点分散<br><em>import numpy as np</em></p>
-<a id="more"></a>
-
+                <a id="more"></a>
+<p><strong>函数引用，命名为np：<code>import numpy as np</code></strong></p>
 <h1 id="1-np-linspace"><a href="#1-np-linspace" class="headerlink" title="1. np.linspace()"></a>1. np.linspace()</h1><p><strong>用来创建等差数列</strong></p>
-<pre class=" language-py"><code class="language-py">numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)
+<pre class="line-numbers language-py"><code class="language-py">numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)
 
 start:返回样本数据开始点
 stop:返回样本数据结束点
@@ -471,14 +494,14 @@ num:生成的样本数据量，默认为50
 endpoint：True则包含stop；False则不包含stop
 retstep：If True, return (samples, step), where step is the spacing between samples.(即如果为True则结果会给出数据间隔)
 dtype：输出数组类型
-axis：0(默认)或-1</code></pre>
+axis：0(默认)或-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>eg:</p>
-<pre class=" language-py"><code class="language-py">>>> np.linspace(2.0, 3.0, num=5)
+<pre class="line-numbers language-py"><code class="language-py">>>> np.linspace(2.0, 3.0, num=5)
 array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ])
 >>> np.linspace(2.0, 3.0, num=5, endpoint=False)
 array([ 2. ,  2.2,  2.4,  2.6,  2.8])
 >>> np.linspace(2.0, 3.0, num=5, retstep=True)
-(array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ]), 0.25)</code></pre>
+(array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ]), 0.25)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><a href="https://blog.csdn.net/Asher117/article/details/87855493" target="_blank" rel="noopener">原文链接</a></p>
 </blockquote>
@@ -488,19 +511,19 @@ array([ 2. ,  2.2,  2.4,  2.6,  2.8])
 <li>2）两个参数时，第一个参数为起点，第二个参数为终点，步长取默认值1</li>
 <li>3）三个参数时，第一个参数为起点，第二个参数为终点，第三个参数为步长。其中步长支持小数</li>
 </ul>
-<pre class=" language-py"><code class="language-py">#一个参数 默认起点0，步长为1 输出：[0 1 2]
+<pre class="line-numbers language-py"><code class="language-py">#一个参数 默认起点0，步长为1 输出：[0 1 2]
 a = np.arange(3)
 
 #两个参数 默认步长为1 输出[3 4 5 6 7 8]
 a = np.arange(3,9)
 
 #三个参数 起点为0，终点为3，步长为0.1 输出[ 0.   0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.   1.1  1.2  1.3  1.4 1.5  1.6  1.7  1.8  1.9  2.   2.1  2.2  2.3  2.4  2.5  2.6  2.7  2.8  2.9]
-a = np.arange(0, 3, 0.1)</code></pre>
+a = np.arange(0, 3, 0.1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><a href="https://blog.csdn.net/qq_41550480/article/details/89390579" target="_blank" rel="noopener">原文链接</a></p>
 </blockquote>
 <h1 id="3-np-random"><a href="#3-np-random" class="headerlink" title="3. np.random()"></a>3. np.random()</h1><h2 id="3-1-np-random-randint"><a href="#3-1-np-random-randint" class="headerlink" title="3.1 np.random.randint"></a>3.1 np.random.randint</h2><p>low、high、size三个参数。默认high是None,如果只有low，那范围就是[0,low)。如果有high，范围就是[low,high)</p>
-<pre class=" language-py"><code class="language-py">>>> np.random.randint(2, size=10)
+<pre class="line-numbers language-py"><code class="language-py">>>> np.random.randint(2, size=10)
 array([1, 0, 0, 0, 1, 1, 0, 0, 1, 0])
 
 >>> np.random.randint(1, size=10)
@@ -508,7 +531,7 @@ array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
 >>> np.random.randint(5, size=(2, 4))
 array([[4, 0, 2, 1],
-       [3, 2, 2, 0]])</code></pre>
+       [3, 2, 2, 0]])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><a href="https://blog.csdn.net/weixin_42029738/article/details/81977492" target="_blank" rel="noopener">原文链接</a></p>
 </blockquote>
@@ -516,7 +539,7 @@ array([[4, 0, 2, 1],
 <li>numpy.random.randn(d0, d1, …, dn)是从标准正态分布中返回一个或多个样本值</li>
 <li>numpy.random.rand(d0, d1, …, dn)的随机样本位于[0, 1)中</li>
 </ul>
-<pre class=" language-py"><code class="language-py">
+<pre class="line-numbers language-py"><code class="language-py">
 import numpy as np 
 
 arr1 = np.random.randn(2,4)
@@ -536,7 +559,7 @@ print(arr2)
 [[ 0.19947349 0.05282713 0.56704222 0.45479972]
 
 [ 0.28827103 0.1643551 0.30486786 0.56386943]]
-'''</code></pre>
+'''<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-3-np-random-seed"><a href="#3-3-np-random-seed" class="headerlink" title="3.3 np.random.seed()"></a>3.3 np.random.seed()</h2><p><strong>seed( ) 用于指定随机数生成时所用算法开始的整数值</strong></p>
 <ul>
 <li>1.如果使用相同的seed( )值，则每次生成的随即数都相同</li>
@@ -545,13 +568,13 @@ print(arr2)
 </ul>
 <p><img src="/img/np/random_seed.webp" alt="seed示例"></p>
 <h2 id="3-4-np-random-normal-loc-scale-size"><a href="#3-4-np-random-normal-loc-scale-size" class="headerlink" title="3.4 np.random.normal([loc,scale,size])"></a>3.4 np.random.normal([loc,scale,size])</h2><p>正态(高斯)分布</p>
-<pre class=" language-py"><code class="language-py">mu,sigma = 0,0.1
+<pre class="line-numbers language-py"><code class="language-py">mu,sigma = 0,0.1
 s = np.random.normal(mu,sigma,10)
 print(s)
 '''
  [-0.14154151 -0.04927673  0.01828343  0.05323477  0.05350814 -0.14129784
   0.06566983 -0.05441259 -0.01597307  0.16633013]
-'''</code></pre>
+'''<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -688,17 +711,7 @@ print(s)
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python openpyxl的操作方法
-
-参考教程
-
-
-
-1. 打开文件夹from openpyxl import Workbook
-1.1 创建# 实例化
-wb = Workbook()
-# 激活worksheet
-ws = wb.ac
+                            Python openpyxl的操作方法,用python操作excel
                         
                     </div>
                     <div class="publish-info">
@@ -709,8 +722,8 @@ ws = wb.ac
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -747,16 +760,7 @@ ws = wb.ac
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python plt 的学习
-
-参考教程
-
-
-
-0. plt 打开 opencv 图像BGR 用 RGB 打开
-import numpy as np
-import cv2
-from matplotlib import pyplot as p
+                            Python plt 的学习过程，可以让数据可视化，还可以展示图像
                         
                     </div>
                     <div class="publish-info">
@@ -767,8 +771,8 @@ from matplotlib import pyplot as p
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -845,7 +849,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -857,7 +861,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -931,7 +935,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -1058,12 +1062,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

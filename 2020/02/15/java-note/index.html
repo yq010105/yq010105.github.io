@@ -26,7 +26,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -105,9 +106,20 @@
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -196,9 +208,20 @@
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -232,7 +255,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -437,6 +460,11 @@
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
+                
 
                 
                 <div class="info-break-policy">
@@ -468,7 +496,7 @@
 <li>_方法_：方法就是行为，一个类可以有很多方法。逻辑运算、数据修改以及所有动作都是在方法中完成的</li>
 <li>_实例变量_：每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定</li>
 </ul>
-<h3 id="1-1-java-程序HelloWorld-java"><a href="#1-1-java-程序HelloWorld-java" class="headerlink" title="1.1 java 程序HelloWorld.java"></a>1.1 java 程序<code>HelloWorld.java</code></h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
+<h3 id="1-1-java-程序HelloWorld-java"><a href="#1-1-java-程序HelloWorld-java" class="headerlink" title="1.1 java 程序HelloWorld.java"></a>1.1 java 程序<code>HelloWorld.java</code></h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/* 第一个Java程序
      * 它将打印字符串 Hello World
      */</span>
@@ -476,7 +504,7 @@
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 打印 Hello World</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-# Hello World</code></pre>
+# Hello World<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>cmd 窗口</strong><br><code>javac HelloWorld.java --调试</code><br><code>java Helloworld --运行</code></p>
 <h3 id="1-2-基本语法"><a href="#1-2-基本语法" class="headerlink" title="1.2 基本语法"></a>1.2 基本语法</h3><ul>
 <li>大小写敏感：Java 是大小写敏感的，这就意味着标识符 Hello 与 hello 是不同的</li>
@@ -506,7 +534,7 @@
 </ul>
 <h3 id="1-6-java-数组"><a href="#1-6-java-数组" class="headerlink" title="1.6 java 数组"></a>1.6 java 数组</h3><p><em>数组是储存在堆上的对象，可以保存多个同类型变量</em></p>
 <h3 id="1-7-java-枚举"><a href="#1-7-java-枚举" class="headerlink" title="1.7 java 枚举"></a>1.7 java 枚举</h3><p><em>Java 5.0 引入了枚举，枚举限制变量只能是预先设定好的值。使用枚举可以减少代码中的 bug</em><br><em>例如，我们为果汁店设计一个程序，它将限制果汁为小杯、中杯、大杯。这就意味着它不允许顾客点除了这三种尺寸外的果汁</em></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">FreshJuice</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">FreshJuice</span> <span class="token punctuation">{</span>
    <span class="token keyword">enum</span> FreshJuiceSize<span class="token punctuation">{</span> SMALL<span class="token punctuation">,</span> MEDIUM <span class="token punctuation">,</span> LARGE <span class="token punctuation">}</span>
    FreshJuiceSize size<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -516,7 +544,7 @@
       FreshJuice juice <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FreshJuice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       juice<span class="token punctuation">.</span>size <span class="token operator">=</span> FreshJuice<span class="token punctuation">.</span>FreshJuiceSize<span class="token punctuation">.</span>MEDIUM  <span class="token punctuation">;</span>
    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-7-1-java-关键字-不可以用于变量"><a href="#1-7-1-java-关键字-不可以用于变量" class="headerlink" title="1.7.1 java 关键字(不可以用于变量)"></a>1.7.1 java 关键字(不可以用于变量)</h3><table>
 <thead>
 <tr>
@@ -776,12 +804,12 @@
 <td align="center">空</td>
 </tr>
 </tbody></table>
-<h3 id="1-8-java-注释"><a href="#1-8-java-注释" class="headerlink" title="1.8 java 注释"></a>1.8 java 注释</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*多行
+<h3 id="1-8-java-注释"><a href="#1-8-java-注释" class="headerlink" title="1.8 java 注释"></a>1.8 java 注释</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*多行
 *注释
 */</span>
 
 <span class="token comment" spellcheck="true">// 单行注释</span>
-<span class="token comment" spellcheck="true">/*单行注释*/</span></code></pre>
+<span class="token comment" spellcheck="true">/*单行注释*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="1-9-java-空行—-忽略"><a href="#1-9-java-空行—-忽略" class="headerlink" title="1.9 java 空行—-忽略"></a>1.9 java 空行—-忽略</h3><h3 id="1-10-继承"><a href="#1-10-继承" class="headerlink" title="1.10 继承"></a>1.10 继承</h3><ul>
 <li>在 Java 中，一个类可以由其他类派生。如果你要创建一个类，而且已经存在一个类具有你所需要的属性或方法，那么你可以将新创建的类继承该类</li>
 <li>利用继承的方法，可以重用已存在类的方法和属性，而不用重写这些代码。被继承的类称为超类（super class），派生类称为子类（subclass）</li>
@@ -792,7 +820,7 @@
 </ul>
 <h3 id="1-12-java-源程序与编译型运行区别"><a href="#1-12-java-源程序与编译型运行区别" class="headerlink" title="1.12 java 源程序与编译型运行区别"></a>1.12 java 源程序与编译型运行区别</h3><p><img src="/img/java/java.png" alt="java_pic"></p>
 <h2 id="2-对象和类"><a href="#2-对象和类" class="headerlink" title="2. 对象和类"></a>2. 对象和类</h2><p><em>一个群体中有很多 boy 和 girl</em><br><em>其中 boy 和 girl 为类 class，而具体的每个人为该类的对象</em></p>
-<h3 id="2-1-java-中的类"><a href="#2-1-java-中的类" class="headerlink" title="2.1 java 中的类"></a>2.1 java 中的类</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">{</span>
+<h3 id="2-1-java-中的类"><a href="#2-1-java-中的类" class="headerlink" title="2.1 java 中的类"></a>2.1 java 中的类</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">{</span>
   String breed<span class="token punctuation">;</span>
   <span class="token keyword">int</span> age<span class="token punctuation">;</span>
   String color<span class="token punctuation">;</span>
@@ -804,7 +832,7 @@
 
   <span class="token keyword">void</span> <span class="token function">sleeping</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>一个类中可以包含一下类型的变量：</p>
 <ul>
 <li>局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁</li>
@@ -816,21 +844,21 @@
 <li>在创建一个对象的时候，至少要调用一个构造方法</li>
 <li>构造方法的名称必须与类同名，一个类可以有多个构造方法</li>
 </ul>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Puppy</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Puppy</span><span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token function">Puppy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token punctuation">}</span>
 
     <span class="token keyword">public</span> <span class="token function">Puppy</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">// 这个构造器仅有一个参数：name</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-3-创建对象"><a href="#2-3-创建对象" class="headerlink" title="2.3 创建对象"></a>2.3 创建对象</h3><p><em>对象是根据类创建的。在 Java 中，使用关键字 new 来创建一个新的对象</em></p>
 <ul>
 <li>声明：声明一个对象，包括对象名称和对象类型</li>
 <li>实例化：使用关键字 new 来创建一个对象</li>
 <li>初始化：使用 new 创建对象时，会调用构造方法初始化对象</li>
 </ul>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Puppy</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Puppy</span><span class="token punctuation">{</span>
    <span class="token keyword">public</span> <span class="token function">Puppy</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
       <span class="token comment" spellcheck="true">//这个构造器仅有一个参数：name</span>
       System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"小狗的名字是 : "</span> <span class="token operator">+</span> name <span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -839,7 +867,7 @@
       <span class="token comment" spellcheck="true">// 下面的语句将创建一个Puppy对象</span>
       Puppy myPuppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Puppy</span><span class="token punctuation">(</span> <span class="token string">"tommy"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -971,8 +999,7 @@
                 <a href="/2020/02/16/vb-note/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="VB-Note">
+                        <img src="/img/cover/vb.jpeg" class="responsive-img" alt="VB-Note">
                         
                         <span class="card-title">VB-Note</span>
                     </div>
@@ -980,15 +1007,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            VB 语言学习笔记
-
-参考教程 _ Visual Basic 是一种相当容易学习的高阶程序语言，它可使你编写几乎任何的程序_
-
-
-
-1. 第一个 VB 程序Hello WorldPrivate Sub Form_Load ( )
-
-Form
+                            VB语言学习过程，这个学期开始学习VB，提前作预习
                         
                     </div>
                     <div class="publish-info">
@@ -1033,15 +1052,15 @@ Form
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Bilibili_Api">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Bilibili Api">
                         
-                        <span class="card-title">Bilibili_Api</span>
+                        <span class="card-title">Bilibili Api</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            bilibili api 相关信息
+                            Bilibili api 相关信息和介绍
                         
                     </div>
                     <div class="publish-info">
@@ -1052,8 +1071,8 @@ Form
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Source/" class="post-category">
-                                    Source
+                            <a href="/categories/%E8%B5%84%E6%BA%90%E5%8A%9B/" class="post-category">
+                                    资源力
                                 </a>
                             
                             
@@ -1134,7 +1153,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1146,7 +1165,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1220,7 +1239,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -1347,12 +1366,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

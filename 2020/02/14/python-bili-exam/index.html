@@ -4,11 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Bilibili_Api_Python, Yun.Qi">
-    <meta name="description" content="bilibili 提供的 api 接口(一串 json 字符)让基于 bilibili 的开发更简单我基于 python 写的几个使用 api 获取信息的例子
-
-
-1. bilibili 用户基本信息(name，level，关注，粉丝)获取">
+    <meta name="keywords" content="Python_Bilibili_Api, Yun.Qi">
+    <meta name="description" content="用bilibili提供的api基于python做出的几个小栗子，获取信息">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Bilibili_Api_Python | Yun.Qi</title>
+    <title>Python_Bilibili_Api | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +26,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -108,9 +106,20 @@
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -199,9 +208,20 @@
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -235,7 +255,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -284,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Bilibili_Api_Python</h1>
+                    <h1 class="description center-align post-title">Python_Bilibili_Api</h1>
                 </div>
             </div>
         </div>
@@ -440,6 +460,11 @@
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
+                
 
                 
                 <div class="info-break-policy">
@@ -467,7 +492,7 @@
 
 <h1 id="1-bilibili-用户基本信息-name，level，关注，粉丝-获取"><a href="#1-bilibili-用户基本信息-name，level，关注，粉丝-获取" class="headerlink" title="1. bilibili 用户基本信息(name，level，关注，粉丝)获取"></a>1. bilibili 用户基本信息(name，level，关注，粉丝)获取</h1><p><code>https://api.bilibili.com/x/space/upstat?mid=UUID&amp;jsonp=jsonp</code><em>up 信息，名字，等级，视频总播放量，文章总浏览数</em><br><code>https://api.bilibili.com/x/relation/stat?vmid=UUID&amp;jsonp=jsonp</code><em>up 信息，关注数，黑名单，粉丝数</em></p>
 <p><strong>简单的代码获取 up 信息</strong></p>
-<pre class=" language-py"><code class="language-py">import json
+<pre class="line-numbers language-py"><code class="language-py">import json
 import requests
 
 mid = input('输入要查询的up的uid：')
@@ -492,18 +517,18 @@ if int(up_level)>=5:
 print(f'up关注了{up_following_num}个人')
 if int(up_following_num)>=700:
     print('----铁定是个dd！！！----')
-print(f'up有{up_follower_num}个粉丝')</code></pre>
+print(f'up有{up_follower_num}个粉丝')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>示例：</strong></p>
-<pre class=" language-py"><code class="language-py">输入要查询的up的uid：2
+<pre class="line-numbers language-py"><code class="language-py">输入要查询的up的uid：2
 up名字是:碧诗
 up等级达到:6级
 ----哇是个大佬！！！----
 up关注了191个人
-up有804598个粉丝</code></pre>
+up有804598个粉丝<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="2-bilibili-统计某视频评论区，并生成词云"><a href="#2-bilibili-统计某视频评论区，并生成词云" class="headerlink" title="2. bilibili 统计某视频评论区，并生成词云"></a>2. bilibili 统计某视频评论区，并生成词云</h1><ul>
 <li><strong>获取某视频评论区评论</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">import json
+<pre class="line-numbers language-py"><code class="language-py">import json
 import requests
 from multiprocessing.dummy import Pool
 import re
@@ -575,11 +600,11 @@ def save():
 if __name__ == '__main__':
     save()
     print('----已完成----',end='\t')
-    print(f'此视频已获得 {p_total} 页的评论')</code></pre>
+    print(f'此视频已获得 {p_total} 页的评论')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><strong>将生成的评论 txt 文件统计为词云</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">from wordcloud import WordCloud
+<pre class="line-numbers language-py"><code class="language-py">from wordcloud import WordCloud
 import PIL .Image as image
 import jieba
 
@@ -600,10 +625,10 @@ def wc():
         image_produce.show()
         WordCloud2.to_file('./txt/comment.png')
 
-wc()</code></pre>
+wc()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>示例：av2</strong><br><img src="/img/bilibili/comment.png" alt="图片示例"></p>
 <h1 id="3-获取-bilibili-主页各个分区的视频封面和-av-号"><a href="#3-获取-bilibili-主页各个分区的视频封面和-av-号" class="headerlink" title="3. 获取 bilibili 主页各个分区的视频封面和 av 号"></a>3. 获取 bilibili 主页各个分区的视频封面和 av 号</h1><p><code>https://www.bilibili.com/index/ding.json</code><em>首页 api，每刷新一次，信息就会改变一次</em><br><em>获取的视频信息也就不同，所以可以一直获取信息(理论上来说)</em><br><em>缺点是每次只能获取十张图片信息</em><br><em>用的是 wb 写入文件，所以即使文件有一样的也会被覆盖…</em></p>
-<pre class=" language-py"><code class="language-py">import requests
+<pre class="line-numbers language-py"><code class="language-py">import requests
 import re
 import os
 import json
@@ -651,9 +676,9 @@ for h in range(10):
     j += 1
     h += 1
 
-print('----完成图片爬取----')</code></pre>
+print('----完成图片爬取----')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><em>略微修改后</em><br><em>可能就是因为有重复的，会覆盖前面已下载的</em><br><em>爬个 5 次本该有 50 张，但才有 20 几张(dance 区)</em><br><em>可能 dance 区首页视频比较少吧，游戏区很多</em><br><strong>不管了反正这个爬虫也没什么用 hhh</strong></p>
-<pre class=" language-py"><code class="language-py">import requests
+<pre class="line-numbers language-py"><code class="language-py">import requests
 import re
 import os
 import json
@@ -705,12 +730,12 @@ print('-douga-teleplay-kichiku-dance-bangumi-fashion-life-ad-guochuang-movie-mus
 fenqu = input('请输入爬取分区:')
 for i in range(to):
     get_pic()
-    print(f'----完成第{i}次图片爬取----')</code></pre>
+    print(f'----完成第{i}次图片爬取----')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><a href="https://github.com/yq010105/spider_learn/tree/master/bilibili/bilibili_api" target="_blank" rel="noopener">Github 源码链接</a></p>
 </blockquote>
 <h1 id="4-主站上的实时人数"><a href="#4-主站上的实时人数" class="headerlink" title="4. 主站上的实时人数"></a>4. 主站上的实时人数</h1><p>_所用 api 接口_<code>https://api.bilibili.com/x/web-interface/online?&amp;;jsonp=jsonp</code></p>
-<pre class=" language-py"><code class="language-py">import requests
+<pre class="line-numbers language-py"><code class="language-py">import requests
 import json
 import time
 
@@ -730,9 +755,9 @@ def print_num():
 for i in range(100):
     print(f'第{i+1}次计数')
     print_num()
-    time.sleep(2)</code></pre>
+    time.sleep(2)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="5-用户的粉丝数"><a href="#5-用户的粉丝数" class="headerlink" title="5. 用户的粉丝数"></a>5. 用户的粉丝数</h1><p><em>只能获取一页，b 站最多是五页，多了就会有限制</em></p>
-<pre class=" language-py"><code class="language-py">import requests
+<pre class="line-numbers language-py"><code class="language-py">import requests
 import json
 import csv
 import os
@@ -779,7 +804,7 @@ with open(dir, 'w', encoding='utf-8') as f:
 
 
 print('----最多只显示一页的粉丝数，也就是50个----')
-print(f'共有{len(mids)}个粉丝')</code></pre>
+print(f'共有{len(mids)}个粉丝')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -912,15 +937,15 @@ print(f'共有{len(mids)}个粉丝')</code></pre>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Bilibili_Api">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Bilibili Api">
                         
-                        <span class="card-title">Bilibili_Api</span>
+                        <span class="card-title">Bilibili Api</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            bilibili api 相关信息
+                            Bilibili api 相关信息和介绍
                         
                     </div>
                     <div class="publish-info">
@@ -931,8 +956,8 @@ print(f'共有{len(mids)}个粉丝')</code></pre>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Source/" class="post-category">
-                                    Source
+                            <a href="/categories/%E8%B5%84%E6%BA%90%E5%8A%9B/" class="post-category">
+                                    资源力
                                 </a>
                             
                             
@@ -973,14 +998,7 @@ print(f'共有{len(mids)}个粉丝')</code></pre>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-wordcloud 一个可以生成词云的 python 包
-
-
-
-1. wordcloud 代码(英文)from wordcloud import WordCloud
-import PIL .Image as image
-import nu
+                            WordCloud 一个可以生成词云的 python 的轮子
                         
                     </div>
                     <div class="publish-info">
@@ -991,8 +1009,8 @@ import nu
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -1069,7 +1087,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1081,7 +1099,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1155,7 +1173,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -1282,12 +1300,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Bilibili_Api, Yun.Qi">
-    <meta name="description" content="bilibili api 相关信息">
+    <meta name="keywords" content="Bilibili Api, Yun.Qi">
+    <meta name="description" content="Bilibili api 相关信息和介绍">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Bilibili_Api | Yun.Qi</title>
+    <title>Bilibili Api | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -26,7 +26,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -105,9 +106,20 @@
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -196,9 +208,20 @@
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -232,7 +255,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -281,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Bilibili_Api</h1>
+                    <h1 class="description center-align post-title">Bilibili Api</h1>
                 </div>
             </div>
         </div>
@@ -419,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Source/" class="post-category">
-                                Source
+                            <a href="/categories/%E8%B5%84%E6%BA%90%E5%8A%9B/" class="post-category">
+                                资源力
                             </a>
                         
                     </div>
@@ -436,6 +459,11 @@
                 </div>
                 
 
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
                 
 
                 
@@ -459,13 +487,13 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-up-信息，名字，等级，视频总播放量，文章总浏览数"><a href="#1-up-信息，名字，等级，视频总播放量，文章总浏览数" class="headerlink" title="1. up 信息，名字，等级，视频总播放量，文章总浏览数"></a>1. <em>up 信息，名字，等级，视频总播放量，文章总浏览数</em></h2><p><strong><a href="https://api.bilibili.com/x/space/upstat?mid=uid&amp;jsonp=jsonp" target="_blank" rel="noopener">https://api.bilibili.com/x/space/upstat?mid=uid&amp;jsonp=jsonp</a></strong></p>
-<h2 id="2-up-信息，关注数，黑名单，粉丝数"><a href="#2-up-信息，关注数，黑名单，粉丝数" class="headerlink" title="2. up 信息，关注数，黑名单，粉丝数"></a>2. <em>up 信息，关注数，黑名单，粉丝数</em></h2><p><strong><a href="https://api.bilibili.com/x/relation/stat?vmid=UID&amp;jsonp=jsonp" target="_blank" rel="noopener">https://api.bilibili.com/x/relation/stat?vmid=UID&amp;jsonp=jsonp</a></strong></p>
-<h2 id="3-bilibili-某视频评论区的信息"><a href="#3-bilibili-某视频评论区的信息" class="headerlink" title="3. bilibili 某视频评论区的信息"></a>3. bilibili 某视频评论区的信息</h2><p><strong><a href="http://api.bilibili.com/x/v2/reply?jsonp=jsonp&amp;;pn=页数&amp;type=1&amp;oid=av号" target="_blank" rel="noopener">http://api.bilibili.com/x/v2/reply?jsonp=jsonp&amp;;pn=页数&amp;type=1&amp;oid=av号</a></strong></p>
-<h2 id="4-bilibili-主页各个分区信息（信息量巨大）"><a href="#4-bilibili-主页各个分区信息（信息量巨大）" class="headerlink" title="4. bilibili 主页各个分区信息（信息量巨大）"></a>4. bilibili 主页各个分区信息（信息量巨大）</h2><p><strong><a href="https://www.bilibili.com/index/ding.json" target="_blank" rel="noopener">https://www.bilibili.com/index/ding.json</a></strong></p>
-<h2 id="5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"><a href="#5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息" class="headerlink" title="5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"></a>5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息</h2><p><strong><a href="http://api.bilibili.com/archive_stat/stat?aid=av号&amp;type=jsonp" target="_blank" rel="noopener">http://api.bilibili.com/archive_stat/stat?aid=av号&amp;type=jsonp</a></strong></p>
-<h2 id="6-bilibili-主站"><a href="#6-bilibili-主站" class="headerlink" title="6. bilibili 主站"></a>6. bilibili 主站</h2><p><strong><a href="https://api.bilibili.com/x/web-interface/online?&amp;;jsonp=jsonp" target="_blank" rel="noopener">https://api.bilibili.com/x/web-interface/online?&amp;;jsonp=jsonp</a></strong></p>
-<h2 id="7-up的粉丝数量，但有限制，最对250个"><a href="#7-up的粉丝数量，但有限制，最对250个" class="headerlink" title="7. up的粉丝数量，但有限制，最对250个"></a>7. up的粉丝数量，但有限制，最对250个</h2><p><strong><a href="https://api.bilibili.com/x/relation/followers?vmid=uid&amp;pn=5&amp;ps=0&amp;order=desc&amp;jsonp=jsonp" target="_blank" rel="noopener">https://api.bilibili.com/x/relation/followers?vmid=uid&amp;pn=5&amp;ps=0&amp;order=desc&amp;jsonp=jsonp</a></strong></p>
+                <h2 id="1-up-信息，名字，等级，视频总播放量，文章总浏览数"><a href="#1-up-信息，名字，等级，视频总播放量，文章总浏览数" class="headerlink" title="1. up 信息，名字，等级，视频总播放量，文章总浏览数"></a>1. up 信息，名字，等级，视频总播放量，文章总浏览数</h2><p><code>https://api.bilibili.com/x/space/upstat?mid=uid&amp;jsonp=jsonp</code></p>
+<h2 id="2-up-信息，关注数，黑名单，粉丝数"><a href="#2-up-信息，关注数，黑名单，粉丝数" class="headerlink" title="2. up 信息，关注数，黑名单，粉丝数"></a>2. up 信息，关注数，黑名单，粉丝数</h2><p><code>https://api.bilibili.com/x/relation/stat?vmid=UID&amp;jsonp=jsonp</code></p>
+<h2 id="3-bilibili-某视频评论区的信息"><a href="#3-bilibili-某视频评论区的信息" class="headerlink" title="3. bilibili 某视频评论区的信息"></a>3. bilibili 某视频评论区的信息</h2><p><code>http://api.bilibili.com/x/v2/reply?jsonp=jsonp&amp;;pn=页数&amp;type=1&amp;oid=av号</code></p>
+<h2 id="4-bilibili-主页各个分区信息（信息量巨大）"><a href="#4-bilibili-主页各个分区信息（信息量巨大）" class="headerlink" title="4. bilibili 主页各个分区信息（信息量巨大）"></a>4. bilibili 主页各个分区信息（信息量巨大）</h2><p><code>https://www.bilibili.com/index/ding.json</code></p>
+<h2 id="5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"><a href="#5-bilibili-视频-av-号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息" class="headerlink" title="5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息"></a>5. bilibili 视频 av 号，弹幕，评论，收藏，硬币，分享，喜欢等基本信息</h2><p><code>http://api.bilibili.com/archive_stat/stat?aid=av号&amp;type=jsonp</code></p>
+<h2 id="6-bilibili-主站"><a href="#6-bilibili-主站" class="headerlink" title="6. bilibili 主站"></a>6. bilibili 主站</h2><p><code>https://api.bilibili.com/x/web-interface/online?&amp;;jsonp=jsonp</code></p>
+<h2 id="7-up的粉丝数量，但有限制，最对250个"><a href="#7-up的粉丝数量，但有限制，最对250个" class="headerlink" title="7. up的粉丝数量，但有限制，最对250个"></a>7. up的粉丝数量，但有限制，最对250个</h2><p><code>https://api.bilibili.com/x/relation/followers?vmid=uid&amp;pn=5&amp;ps=0&amp;order=desc&amp;jsonp=jsonp</code></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -651,18 +679,15 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Bilibili_Api_Python">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Python_Bilibili_Api">
                         
-                        <span class="card-title">Bilibili_Api_Python</span>
+                        <span class="card-title">Python_Bilibili_Api</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            bilibili 提供的 api 接口(一串 json 字符)让基于 bilibili 的开发更简单我基于 python 写的几个使用 api 获取信息的例子
-
-
-1. bilibili 用户基本信息(name，level，关注，粉丝)获取
+                            用bilibili提供的api基于python做出的几个小栗子，获取信息
                         
                     </div>
                     <div class="publish-info">
@@ -755,7 +780,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -767,7 +792,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -841,7 +866,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -968,12 +993,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

@@ -5,13 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python_format, Yun.Qi">
-    <meta name="description" content="Python_format   一种格式化字符串函数str.format()
-
-参考教程网站和CSDN
-
-
-
-python_format   str.format()，它增强了字符串格式化的功能   基本语法是通过 {} 和 : 来代替以前">
+    <meta name="description" content="python中的format格式化字符串函数">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +26,8 @@ python_format   str.format()，它增强了字符串格式化的功能 �
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -111,9 +106,20 @@ python_format   str.format()，它增强了字符串格式化的功能 �
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -202,9 +208,20 @@ python_format   str.format()，它增强了字符串格式化的功能 �
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -238,7 +255,7 @@ python_format   str.format()，它增强了字符串格式化的功能 �
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -421,8 +438,8 @@ python_format   str.format()，它增强了字符串格式化的功能 �
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -439,11 +456,16 @@ python_format   str.format()，它增强了字符串格式化的功能 �
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
+                
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    655
+                    673
                 </div>
                 
 
@@ -467,16 +489,17 @@ python_format   str.format()，它增强了字符串格式化的功能 �
 </blockquote>
 <a id="more"></a>
 
-<h1 id="python-format"><a href="#python-format" class="headerlink" title="python_format"></a>python_format</h1><p>   <strong><code>str.format()</code>，它增强了字符串格式化的功能</strong><br>   <strong>基本语法是通过 {} 和 : 来代替以前的 %</strong></p>
-<h2 id="1-format-函数可以接受不限个参数，位置可以不按顺序"><a href="#1-format-函数可以接受不限个参数，位置可以不按顺序" class="headerlink" title="1. format 函数可以接受不限个参数，位置可以不按顺序"></a>1. format 函数可以接受不限个参数，位置可以不按顺序</h2><pre class=" language-py"><code class="language-py">>>>"{} {}".format("hello", "world")    # 不设置指定位置，按默认顺序
+<p><strong>python_format</strong></p>
+<p>   <strong><code>str.format()</code>，它增强了字符串格式化的功能</strong><br>   <strong>基本语法是通过 {} 和 : 来代替以前的 %</strong><br><strong>你也可以<code>print(f'字符{参数1}字符{参数2}字符')</code></strong></p>
+<h2 id="1-format-函数可以接受不限个参数，位置可以不按顺序"><a href="#1-format-函数可以接受不限个参数，位置可以不按顺序" class="headerlink" title="1. format 函数可以接受不限个参数，位置可以不按顺序"></a>1. format 函数可以接受不限个参数，位置可以不按顺序</h2><pre class="line-numbers language-py"><code class="language-py">>>>"{} {}".format("hello", "world")    # 不设置指定位置，按默认顺序
 'hello world'
 
 >>> "{0} {1}".format("hello", "world")  # 设置指定位置
 'hello world'
 
 >>> "{1} {0} {1}".format("hello", "world")  # 设置指定位置
-'world hello world'</code></pre>
-<h2 id="2-设置参数"><a href="#2-设置参数" class="headerlink" title="2. 设置参数"></a>2. 设置参数</h2><pre class=" language-py"><code class="language-py">print("网站名：{name}, 地址 {url}".format(name="菜鸟教程", url="www.runoob.com"))
+'world hello world'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-设置参数"><a href="#2-设置参数" class="headerlink" title="2. 设置参数"></a>2. 设置参数</h2><pre class="line-numbers language-py"><code class="language-py">print("网站名：{name}, 地址 {url}".format(name="菜鸟教程", url="www.runoob.com"))
 
 # 通过字典设置参数
 site = {"name": "菜鸟教程", "url": "www.runoob.com"}
@@ -490,24 +513,24 @@ print("网站名：{0[0]}, 地址 {0[1]}".format(my_list))  # "0" 是必须的
 网站名：菜鸟教程, 地址 www.runoob.com
 网站名：菜鸟教程, 地址 www.runoob.com
 网站名：菜鸟教程, 地址 www.runoob.com
-'''</code></pre>
+'''<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>通过字典和列表的另一种写法</p>
-<pre class=" language-py"><code class="language-py">>>> hash = {'name':'hoho','age':18}
+<pre class="line-numbers language-py"><code class="language-py">>>> hash = {'name':'hoho','age':18}
 >>> 'my name is {name},age is {age}'.format(**hash)        #**dict
 'my name is hoho,age is 18'
 
 >>> li = ['hoho',18]
 >>> 'my name is {} ,age {}'.format(*li)               #*[]迭代列表
-'my name is hoho ,age 18'</code></pre>
-<h2 id="3-向str-format传入对象"><a href="#3-向str-format传入对象" class="headerlink" title="3. 向str.format传入对象"></a>3. 向<code>str.format</code>传入对象</h2><pre class=" language-py"><code class="language-py">class AssignValue(object):
+'my name is hoho ,age 18'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-向str-format传入对象"><a href="#3-向str-format传入对象" class="headerlink" title="3. 向str.format传入对象"></a>3. 向<code>str.format</code>传入对象</h2><pre class="line-numbers language-py"><code class="language-py">class AssignValue(object):
     def __init__(self, value):
         self.value = value
 my_value = AssignValue(6)
 print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
 
-# value 为: 6</code></pre>
-<h2 id="4-数字格式化"><a href="#4-数字格式化" class="headerlink" title="4. 数字格式化"></a>4. 数字格式化</h2><pre class=" language-py"><code class="language-py">>>> print("{:.2f}".format(3.1415926));
-3.14</code></pre>
+# value 为: 6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-数字格式化"><a href="#4-数字格式化" class="headerlink" title="4. 数字格式化"></a>4. 数字格式化</h2><pre class="line-numbers language-py"><code class="language-py">>>> print("{:.2f}".format(3.1415926));
+3.14<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <table>
 <thead>
 <tr>
@@ -637,8 +660,8 @@ print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
 <li><strong>+ 表示在正数前显示 +，负数前显示 -； （空格）表示在正数前加空格</strong></li>
 <li><strong>b、d、o、x 分别是二进制、十进制、八进制、十六进制</strong></li>
 </ul>
-<h2 id="5-此外还可以用大括号-来转义大括号"><a href="#5-此外还可以用大括号-来转义大括号" class="headerlink" title="5. 此外还可以用大括号 {} 来转义大括号"></a>5. 此外还可以用大括号 {} 来转义大括号</h2><pre class=" language-py"><code class="language-py">print ("{} 对应的位置是 {{0}}".format("runoob"))
-</code></pre>
+<h2 id="5-此外还可以用大括号-来转义大括号"><a href="#5-此外还可以用大括号-来转义大括号" class="headerlink" title="5. 此外还可以用大括号 {} 来转义大括号"></a>5. 此外还可以用大括号 {} 来转义大括号</h2><pre class="line-numbers language-py"><code class="language-py">print ("{} 对应的位置是 {{0}}".format("runoob"))
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>_结果为_：<strong>runoob 对应的位置是 {0}</strong></p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -816,24 +839,15 @@ print('value 为: {0.value}'.format(my_value))  # "0" 是可选的
                 <a href="/2020/02/10/spider-example/">
                     <div class="card-image">
                         
+                        <img src="/img/cover/spiderex.jpg" class="responsive-img" alt="Spider Example">
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Spider_example">
-                        
-                        <span class="card-title">Spider_example</span>
+                        <span class="card-title">Spider Example</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-自己动手做的 python 爬虫   GitHub 链接WARNING :逻辑混乱，语法不顺！！！
-
-
-
-1. 爬取 bilibili 每日排行榜数据
-使用 XPath 爬取,并将数据保存到 csv 文件中
-文件名使用该排行榜所在时间段
-
+                            自己动手编写的几个python爬虫小栗子
                         
                     </div>
                     <div class="publish-info">
@@ -926,7 +940,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -938,7 +952,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1012,7 +1026,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -1139,12 +1153,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

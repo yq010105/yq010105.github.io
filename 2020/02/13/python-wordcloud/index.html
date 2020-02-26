@@ -5,14 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python_WordCloud, Yun.Qi">
-    <meta name="description" content="
-wordcloud 一个可以生成词云的 python 包
-
-
-
-1. wordcloud 代码(英文)from wordcloud import WordCloud
-import PIL .Image as image
-import nu">
+    <meta name="description" content="WordCloud 一个可以生成词云的 python 的轮子">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -33,7 +26,8 @@ import nu">
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -112,9 +106,20 @@ import nu">
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -203,9 +208,20 @@ import nu">
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -239,7 +255,7 @@ import nu">
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -422,8 +438,8 @@ import nu">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -440,11 +456,16 @@ import nu">
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
+                
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    278
+                    271
                 </div>
                 
 
@@ -462,12 +483,8 @@ import nu">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li><strong>wordcloud 一个可以生成词云的 python 包</strong><a id="more"></a>
-
-</li>
-</ul>
-<h1 id="1-wordcloud-代码-英文"><a href="#1-wordcloud-代码-英文" class="headerlink" title="1. wordcloud 代码(英文)"></a>1. wordcloud 代码(英文)</h1><pre class=" language-py"><code class="language-py">from wordcloud import WordCloud
+                <p>安装: <code>pip install WordCloud</code></p>
+<h1 id="1-wordcloud-代码-英文"><a href="#1-wordcloud-代码-英文" class="headerlink" title="1. wordcloud 代码(英文)"></a>1. wordcloud 代码(英文)</h1><pre class="line-numbers language-py"><code class="language-py">from wordcloud import WordCloud
 import PIL .Image as image
 import numpy as np # 自定义图片
 
@@ -482,11 +499,11 @@ with open(dir) as fp:
         mask = mask,
     ).generate(text)
     image_produce = WordCloud.to_image()
-    image_produce.show()        #  生成的文件在：C:\Users\20180\AppData\Local\Temp\jieba.cache中</code></pre>
+    image_produce.show()        #  生成的文件在：C:\Users\20180\AppData\Local\Temp\jieba.cache中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="2-wordcloud-代码实现-中文"><a href="#2-wordcloud-代码实现-中文" class="headerlink" title="2. wordcloud 代码实现(中文)"></a>2. wordcloud 代码实现(中文)</h1><ul>
 <li><strong>jieba 库</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">from wordcloud import WordCloud
+<pre class="line-numbers language-py"><code class="language-py">from wordcloud import WordCloud
 import PIL .Image as image
 import numpy as np # 自定义图片
 import jieba # 中文
@@ -509,11 +526,11 @@ with open(dir) as fp:
         font_path ='C:\\windows\\Fonts\\msyh.ttc'
     ).generate(text)
     image_produce = WordCloud.to_image()
-    image_produce.show()</code></pre>
+    image_produce.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考<a href="https://www.jianshu.com/p/c986f5017ca7" target="_blank" rel="noopener">简书网站</a></p>
 </blockquote>
-<h1 id="3-将-python-词云生成的图片保存下来"><a href="#3-将-python-词云生成的图片保存下来" class="headerlink" title="3. 将 python 词云生成的图片保存下来"></a>3. 将 python 词云生成的图片保存下来</h1><pre class=" language-py"><code class="language-py">import jieba
+<h1 id="3-将-python-词云生成的图片保存下来"><a href="#3-将-python-词云生成的图片保存下来" class="headerlink" title="3. 将 python 词云生成的图片保存下来"></a>3. 将 python 词云生成的图片保存下来</h1><pre class="line-numbers language-py"><code class="language-py">import jieba
 
 from wordcloud import WordCloud
 
@@ -534,7 +551,7 @@ wordshow = WordCloud(background_color='white',
 
                      ).generate(nextword)
 
-wordshow.to_file('bilibili_rank.png')  #转换成图片</code></pre>
+wordshow.to_file('bilibili_rank.png')  #转换成图片<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p><a href="https://blog.csdn.net/qq_41709494/article/details/89213176" target="_blank" rel="noopener">参考网站</a></p>
 </blockquote>
@@ -666,18 +683,15 @@ wordshow.to_file('bilibili_rank.png')  #转换成图片</code></pre>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Bilibili_Api_Python">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Python_Bilibili_Api">
                         
-                        <span class="card-title">Bilibili_Api_Python</span>
+                        <span class="card-title">Python_Bilibili_Api</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            bilibili 提供的 api 接口(一串 json 字符)让基于 bilibili 的开发更简单我基于 python 写的几个使用 api 获取信息的例子
-
-
-1. bilibili 用户基本信息(name，level，关注，粉丝)获取
+                            用bilibili提供的api基于python做出的几个小栗子，获取信息
                         
                     </div>
                     <div class="publish-info">
@@ -722,19 +736,15 @@ wordshow.to_file('bilibili_rank.png')  #转换成图片</code></pre>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Python_Pyinstaller">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Python Pyinstaller">
                         
-                        <span class="card-title">Python_Pyinstaller</span>
+                        <span class="card-title">Python Pyinstaller</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            将 python 文件打包成 exe 可执行文件pip3 install pyinstaller
-
-
-1. Pyinstaller 的使用1.1 打开 PowerShell 窗口
-在你的 Python 程序文件夹上（不点进去）按住 shif
+                            Pyinstaller 可以将 python 文件打包成 exe 可执行文件
                         
                     </div>
                     <div class="publish-info">
@@ -745,8 +755,8 @@ wordshow.to_file('bilibili_rank.png')  #转换成图片</code></pre>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -823,7 +833,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -835,7 +845,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -909,7 +919,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -1036,12 +1046,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

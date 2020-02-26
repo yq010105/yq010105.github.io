@@ -4,16 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Spider_example, Yun.Qi">
-    <meta name="description" content="
-自己动手做的 python 爬虫   GitHub 链接WARNING :逻辑混乱，语法不顺！！！
-
-
-
-1. 爬取 bilibili 每日排行榜数据
-使用 XPath 爬取,并将数据保存到 csv 文件中
-文件名使用该排行榜所在时间段
-">
+    <meta name="keywords" content="Spider Example, Yun.Qi">
+    <meta name="description" content="自己动手编写的几个python爬虫小栗子">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Spider_example | Yun.Qi</title>
+    <title>Spider Example | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -34,7 +26,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -113,9 +106,20 @@
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -204,9 +208,20 @@
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -240,7 +255,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -289,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/img/cover/spiderex.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Spider_example</h1>
+                    <h1 class="description center-align post-title">Spider Example</h1>
                 </div>
             </div>
         </div>
@@ -445,6 +460,11 @@
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
+                
 
                 
                 <div class="info-break-policy">
@@ -476,7 +496,7 @@
 <li><strong>使用 XPath 爬取,并将数据保存到 csv 文件中</strong></li>
 <li><strong>文件名使用该排行榜所在时间段</strong></li>
 </ul>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> requests
 <span class="token keyword">import</span> csv
 <span class="token keyword">import</span> lxml<span class="token punctuation">.</span>html
 
@@ -512,14 +532,14 @@ rows <span class="token operator">=</span> <span class="token punctuation">[</sp
 <span class="token keyword">with</span> open<span class="token punctuation">(</span>f<span class="token string">'{time_num2}.csv'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     f_csv <span class="token operator">=</span> csv<span class="token punctuation">.</span>writer<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
     f_csv<span class="token punctuation">.</span>writerow<span class="token punctuation">(</span>headers<span class="token punctuation">)</span>
-    f_csv<span class="token punctuation">.</span>writerows<span class="token punctuation">(</span>rows<span class="token punctuation">)</span></code></pre>
+    f_csv<span class="token punctuation">.</span>writerows<span class="token punctuation">(</span>rows<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><strong>csv 部分展示</strong><br><code>2020年02月07日 - 2020年02月10日</code><br><img src="/img/bilibili_csv.png" alt="bilibili_csv"></li>
 </ul>
 <h1 id="2-爬取-baidu-上搜到的图片-初级"><a href="#2-爬取-baidu-上搜到的图片-初级" class="headerlink" title="2. 爬取 baidu 上搜到的图片(初级)"></a>2. 爬取 baidu 上搜到的图片(初级)</h1><h2 id="2-1-thumbURL"><a href="#2-1-thumbURL" class="headerlink" title="2.1 thumbURL"></a>2.1 thumbURL</h2><ul>
 <li><em>分辨率极低</em></li>
 </ul>
-<pre class=" language-py"><code class="language-py">import re
+<pre class="line-numbers language-py"><code class="language-py">import re
 import requests
 import os
 
@@ -550,9 +570,9 @@ def main():
 
 
 if __name__ == '__main__':
-        main()</code></pre>
+        main()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-2-objURL"><a href="#2-2-objURL" class="headerlink" title="2.2 objURL"></a>2.2 objURL</h2><p><em>分辨率较高，但有的图爬不了</em></p>
-<pre class=" language-py"><code class="language-py">import re
+<pre class="line-numbers language-py"><code class="language-py">import re
 import requests
 import os
 import json
@@ -592,11 +612,11 @@ def main():
 
 
 if __name__ == '__main__':
-        main()</code></pre>
+        main()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-3-baidu-面向对象"><a href="#2-3-baidu-面向对象" class="headerlink" title="2.3 baidu 面向对象"></a>2.3 baidu 面向对象</h2><ul>
 <li>输入想爬取的关键词，自动爬取(只能下 30 张)</li>
 </ul>
-<pre class=" language-py"><code class="language-py">import requests
+<pre class="line-numbers language-py"><code class="language-py">import requests
 import re
 import os
 
@@ -636,11 +656,11 @@ def save_pic():
 
 if __name__ =='__main__':
     search_id = input('请输入要下载的内容:')
-    save_pic()</code></pre>
+    save_pic()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-4-baidu-more"><a href="#2-4-baidu-more" class="headerlink" title="2.4 baidu_more"></a>2.4 baidu_more</h2><ul>
 <li><strong>进一步升级，可以爬任意数量图片</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">import requests
+<pre class="line-numbers language-py"><code class="language-py">import requests
 import re
 import os
 from multiprocessing.dummy import Pool
@@ -691,11 +711,11 @@ if __name__ =='__main__':
     search_id = input('请输入要下载的内容:')
     URLS = get_urls(search_id)
     patha = input('输入文件保存路径----示例:E:\\baidu----:')
-    save_pic()</code></pre>
+    save_pic()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="3-爬取-ins-上的图片-初级版"><a href="#3-爬取-ins-上的图片-初级版" class="headerlink" title="3. 爬取 ins 上的图片(初级版)"></a>3. 爬取 ins 上的图片(初级版)</h1><ul>
 <li><em>分辨率低</em></li>
 </ul>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> requests
 <span class="token keyword">import</span> json
 <span class="token keyword">import</span> lxml<span class="token punctuation">.</span>html
 <span class="token keyword">import</span> re
@@ -765,7 +785,7 @@ if __name__ =='__main__':
             <span class="token keyword">continue</span>
     <span class="token keyword">return</span>
 
-save_pic<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+save_pic<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>学习如何爬取高分辨率图片 ing</strong></p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -907,13 +927,7 @@ save_pic<span class="token punctuation">(</span><span class="token punctuation">
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python_format   一种格式化字符串函数str.format()
-
-参考教程网站和CSDN
-
-
-
-python_format   str.format()，它增强了字符串格式化的功能   基本语法是通过 {} 和 : 来代替以前
+                            python中的format格式化字符串函数
                         
                     </div>
                     <div class="publish-info">
@@ -924,8 +938,8 @@ python_format   str.format()，它增强了字符串格式化的功能 �
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -962,11 +976,7 @@ python_format   str.format()，它增强了字符串格式化的功能 �
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python 语言学习笔记python，边学爬虫，边把不会的 python 知识不全
-
-
-1. 文件管理（txt）fd = open('file.txt','w',encoding='utf-8')      #utf-8 or GBK
-f
+                            Python 语言学习笔记
                         
                     </div>
                     <div class="publish-info">
@@ -1059,7 +1069,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1071,7 +1081,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1145,7 +1155,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -1272,12 +1282,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

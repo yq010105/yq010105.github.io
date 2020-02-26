@@ -5,11 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python-Note, Yun.Qi">
-    <meta name="description" content="Python 语言学习笔记python，边学爬虫，边把不会的 python 知识不全
-
-
-1. 文件管理（txt）fd = open(&#39;file.txt&#39;,&#39;w&#39;,encoding=&#39;utf-8&#39;)      #utf-8 or GBK
-f">
+    <meta name="description" content="Python 语言学习笔记">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +26,8 @@ f">
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -109,9 +106,20 @@ f">
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -200,9 +208,20 @@ f">
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -236,7 +255,7 @@ f">
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -441,11 +460,16 @@ f">
                 
 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
+                
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2,333
+                    2,340
                 </div>
                 
 
@@ -463,12 +487,12 @@ f">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>Python 语言学习笔记</strong><br><strong>python，边学爬虫，边把不会的 python 知识不全</strong></p>
+                <p><strong>有一定的python自学基础，基础不扎实</strong><br><strong>python，边学爬虫，边把不会的 python 知识不全</strong></p>
 <a id="more"></a>
 
-<h1 id="1-文件管理（txt）"><a href="#1-文件管理（txt）" class="headerlink" title="1. 文件管理（txt）"></a>1. 文件管理（txt）</h1><pre class=" language-py"><code class="language-py">fd = open('file.txt','w',encoding='utf-8')      #utf-8 or GBK
+<h1 id="1-文件管理（txt）"><a href="#1-文件管理（txt）" class="headerlink" title="1. 文件管理（txt）"></a>1. 文件管理（txt）</h1><pre class="line-numbers language-py"><code class="language-py">fd = open('file.txt','w',encoding='utf-8')      #utf-8 or GBK
 fd.write(content)
-fd.close()</code></pre>
+fd.close()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>其中 content 可以是字符串，变量，\t ……</p>
 <hr>
 
@@ -493,7 +517,7 @@ fd.close()</code></pre>
 <li>f_csv.writerow(headers)</li>
 <li>f_csv.writerows(rows)</li>
 </ul>
-<pre class=" language-py"><code class="language-py">import csv
+<pre class="line-numbers language-py"><code class="language-py">import csv
 
 headers = ['class','name','sex','height','year']
 
@@ -507,7 +531,7 @@ rows = [
 with open('test.csv','w',newline='')as f:
     f_csv = csv.writer(f)
     f_csv.writerow(headers)
-    f_csv.writerows(rows)</code></pre>
+    f_csv.writerows(rows)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><em>注意：如果打开 csv 文件出现空行的情况，那么需要添加一个参数 newline=”</em><br><code>with open('test.csv','w',newline='')as f:</code></p>
 <table>
 <thead>
@@ -555,7 +579,7 @@ with open('test.csv','w',newline='')as f:
 <li>f_csv.writeheader()</li>
 <li>f_csv.writerows(rows)</li>
 </ul>
-<pre class=" language-py"><code class="language-py">import csv
+<pre class="line-numbers language-py"><code class="language-py">import csv
 
 headers = ['class','name','sex','height','year']
 
@@ -569,7 +593,7 @@ rows = [
 with open('test2.csv','w',newline='')as f:
     f_csv = csv.DictWriter(f,headers)
     f_csv.writeheader()
-    f_csv.writerows(rows)</code></pre>
+    f_csv.writerows(rows)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <table>
 <thead>
 <tr>
@@ -609,7 +633,7 @@ with open('test2.csv','w',newline='')as f:
 <td align="center">21</td>
 </tr>
 </tbody></table>
-<h2 id="2-3-csv-文件的读"><a href="#2-3-csv-文件的读" class="headerlink" title="2.3 csv 文件的读"></a>2.3 csv 文件的读</h2><pre class=" language-py"><code class="language-py">import csv
+<h2 id="2-3-csv-文件的读"><a href="#2-3-csv-文件的读" class="headerlink" title="2.3 csv 文件的读"></a>2.3 csv 文件的读</h2><pre class="line-numbers language-py"><code class="language-py">import csv
 with open('test.csv')as f:
     f_csv = csv.reader(f)
     for row in f_csv:
@@ -634,11 +658,11 @@ class
 1
 2
 2
-'''</code></pre>
+'''<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考<a href="https://blog.csdn.net/katyusha1/article/details/81606175" target="_blank" rel="noopener" title="CSDN">网站</a></p>
 </blockquote>
-<h1 id="3-with-open-as-读写文件"><a href="#3-with-open-as-读写文件" class="headerlink" title="3. with open () as 读写文件"></a>3. with open () as 读写文件</h1><pre class=" language-py"><code class="language-py"># 读文件
+<h1 id="3-with-open-as-读写文件"><a href="#3-with-open-as-读写文件" class="headerlink" title="3. with open () as 读写文件"></a>3. with open () as 读写文件</h1><pre class="line-numbers language-py"><code class="language-py"># 读文件
 with open('file.txt','r',) as f:
     print(f.read())
 # 不需调用f.close()
@@ -650,20 +674,20 @@ with open('file.txt','r',) as f:
 with open('file.txt','w',encoding='utf-8') as f:
     f.write('Hello World !')
 # 文本文件    encoding 字符编码：gbk，utf-8
-# 二进制文件  rb模式读取:图片,视频</code></pre>
+# 二进制文件  rb模式读取:图片,视频<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考<a href="https://blog.csdn.net/xrinosvip/article/details/82019844" target="_blank" rel="noopener" title="CSDN">网站</a></p>
 </blockquote>
-<h1 id="4-os-中创建文件夹"><a href="#4-os-中创建文件夹" class="headerlink" title="4. os 中创建文件夹"></a>4. os 中创建文件夹</h1><pre class=" language-py"><code class="language-py">import os
+<h1 id="4-os-中创建文件夹"><a href="#4-os-中创建文件夹" class="headerlink" title="4. os 中创建文件夹"></a>4. os 中创建文件夹</h1><pre class="line-numbers language-py"><code class="language-py">import os
 
 main_path = 'E:/os/'    #创建一个路径
 if not os.path.exists(main_path):   #如果该路径不存在
-    os.makedirs(main_path)  #则新建一个路径</code></pre>
-<h1 id="5-将图片保存在文件夹中"><a href="#5-将图片保存在文件夹中" class="headerlink" title="5. 将图片保存在文件夹中"></a>5. 将图片保存在文件夹中</h1><pre class=" language-py"><code class="language-py">dir = '文件路径' + name +'.jpg'     #文件名
+    os.makedirs(main_path)  #则新建一个路径<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="5-将图片保存在文件夹中"><a href="#5-将图片保存在文件夹中" class="headerlink" title="5. 将图片保存在文件夹中"></a>5. 将图片保存在文件夹中</h1><pre class="line-numbers language-py"><code class="language-py">dir = '文件路径' + name +'.jpg'     #文件名
 url_get = requests.get(url)         #从url中获取图片信息
 with open(dir,'wb') as f:           #打开图片文件，保存图片信息
-    f.writer(url_get.content)</code></pre>
-<h1 id="6-try…except-语句"><a href="#6-try…except-语句" class="headerlink" title="6. try…except 语句"></a>6. try…except 语句</h1><h2 id="6-1-语法"><a href="#6-1-语法" class="headerlink" title="6.1 语法"></a>6.1 <strong>语法</strong></h2><pre class=" language-py"><code class="language-py">#python 异常处理
+    f.writer(url_get.content)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="6-try…except-语句"><a href="#6-try…except-语句" class="headerlink" title="6. try…except 语句"></a>6. try…except 语句</h1><h2 id="6-1-语法"><a href="#6-1-语法" class="headerlink" title="6.1 语法"></a>6.1 <strong>语法</strong></h2><pre class="line-numbers language-py"><code class="language-py">#python 异常处理
 try:
 <语句>        #运行别的代码
 except <名字>：
@@ -671,49 +695,49 @@ except <名字>：
 except <名字>，<数据>:
 <语句>        #如果引发了'name'异常，获得附加的数据
 else:
-<语句>        #如果没有异常发生</code></pre>
-<h2 id="6-2-使用-except-而不带任何异常类型"><a href="#6-2-使用-except-而不带任何异常类型" class="headerlink" title="6.2 使用 except 而不带任何异常类型"></a>6.2 <strong>使用 except 而不带任何异常类型</strong></h2><pre class=" language-py"><code class="language-py">try:
+<语句>        #如果没有异常发生<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-2-使用-except-而不带任何异常类型"><a href="#6-2-使用-except-而不带任何异常类型" class="headerlink" title="6.2 使用 except 而不带任何异常类型"></a>6.2 <strong>使用 except 而不带任何异常类型</strong></h2><pre class="line-numbers language-py"><code class="language-py">try:
     正常的操作
    ......................
 except:
     发生异常，执行这块代码
    ......................
 else:
-    如果没有异常执行这块代码</code></pre>
+    如果没有异常执行这块代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>以上方式 try-except 语句捕获所有发生的异常。但这不是一个很好的方式，我们不能通过该程序识别出具体的异常信息。因为它捕获所有的异常</strong></p>
-<h2 id="6-3-使用-except-而带多种异常类型"><a href="#6-3-使用-except-而带多种异常类型" class="headerlink" title="6.3 使用 except 而带多种异常类型"></a>6.3 <strong>使用 except 而带多种异常类型</strong></h2><pre class=" language-py"><code class="language-py">try:
+<h2 id="6-3-使用-except-而带多种异常类型"><a href="#6-3-使用-except-而带多种异常类型" class="headerlink" title="6.3 使用 except 而带多种异常类型"></a>6.3 <strong>使用 except 而带多种异常类型</strong></h2><pre class="line-numbers language-py"><code class="language-py">try:
     正常的操作
    ......................
 except(Exception1[, Exception2[,...ExceptionN]]]):
    发生以上多个异常中的一个，执行这块代码
    ......................
 else:
-    如果没有异常执行这块代码</code></pre>
-<h2 id="6-4-try-finally-语句"><a href="#6-4-try-finally-语句" class="headerlink" title="6.4 try-finally 语句"></a>6.4 <strong>try-finally 语句</strong></h2><pre class=" language-py"><code class="language-py">try:
+    如果没有异常执行这块代码<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-4-try-finally-语句"><a href="#6-4-try-finally-语句" class="headerlink" title="6.4 try-finally 语句"></a>6.4 <strong>try-finally 语句</strong></h2><pre class="line-numbers language-py"><code class="language-py">try:
 <语句>
 finally:
 <语句>    #退出try时总会执行
-raise</code></pre>
-<h2 id="6-5-异常的参数"><a href="#6-5-异常的参数" class="headerlink" title="6.5 异常的参数"></a>6.5 <strong>异常的参数</strong></h2><pre class=" language-py"><code class="language-py">try:
+raise<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-5-异常的参数"><a href="#6-5-异常的参数" class="headerlink" title="6.5 异常的参数"></a>6.5 <strong>异常的参数</strong></h2><pre class="line-numbers language-py"><code class="language-py">try:
     正常的操作
    ......................
 except ExceptionType, Argument:
-    你可以在这输出 Argument 的值...</code></pre>
+    你可以在这输出 Argument 的值...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="6-6-用户自定义异常"><a href="#6-6-用户自定义异常" class="headerlink" title="6.6 用户自定义异常"></a>6.6 <strong>用户自定义异常</strong></h2><ul>
 <li>通过创建一个新的异常类，程序可以命名它们自己的异常。异常应该是典型的继承自 Exception 类，通过直接或间接的方式</li>
 <li>以下为与 RuntimeError 相关的实例,实例中创建了一个类，基类为 RuntimeError，用于在异常触发时输出更多的信息</li>
 <li>在 try 语句块中，用户自定义的异常后执行 except 块语句，变量 e 是用于创建 Networkerror 类的实例</li>
 </ul>
-<pre class=" language-py"><code class="language-py">class Networkerror(RuntimeError):
+<pre class="line-numbers language-py"><code class="language-py">class Networkerror(RuntimeError):
     def __init__(self, arg):
-        self.args = arg</code></pre>
+        self.args = arg<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><strong>在你定义以上类后，你可以触发该异常，如下所示：</strong></li>
 </ul>
-<pre class=" language-py"><code class="language-py">try:
+<pre class="line-numbers language-py"><code class="language-py">try:
     raise Networkerror("Bad hostname")
 except Networkerror,e:
-    print e.args</code></pre>
+    print e.args<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <table>
 <thead>
 <tr>
@@ -914,16 +938,16 @@ except Networkerror,e:
 回车符就是光标回到一旧行的开头；(即光标目前所在的行为旧行)
 \r
 在解析文本或其他格式的文件内容时，常常要碰到判定回车式换行的地方
-这个时候就要注意既要判定"\r\n"又要判定"\n"。</code></pre><h2 id="7-2-Python-中-import-from…import-import…as-的区别"><a href="#7-2-Python-中-import-from…import-import…as-的区别" class="headerlink" title="7.2 Python 中 import, from…import,import…as 的区别"></a>7.2 Python 中 import, from…import,import…as 的区别</h2><pre class=" language-py"><code class="language-py">import datetime
-print(datetime.datetime.now())</code></pre>
+这个时候就要注意既要判定"\r\n"又要判定"\n"。</code></pre><h2 id="7-2-Python-中-import-from…import-import…as-的区别"><a href="#7-2-Python-中-import-from…import-import…as-的区别" class="headerlink" title="7.2 Python 中 import, from…import,import…as 的区别"></a>7.2 Python 中 import, from…import,import…as 的区别</h2><pre class="line-numbers language-py"><code class="language-py">import datetime
+print(datetime.datetime.now())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>以上代码实现输出系统当前时间，是引入整个 datetime 包，然后再调用 datetime 这个类中的 now()方法</p>
-<pre class=" language-py"><code class="language-py">from datetime import datetime
-print(datetime.now())</code></pre>
+<pre class="line-numbers language-py"><code class="language-py">from datetime import datetime
+print(datetime.now())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>这里是从 datetime 包中只导入 datetime 这个类，让后再调用 datetime 这个类中的 now()方法实现同样的目的</p>
-<pre class=" language-py"><code class="language-py">import datetime as dt
-print(dt.datetime.now())</code></pre>
+<pre class="line-numbers language-py"><code class="language-py">import datetime as dt
+print(dt.datetime.now())<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>假如你嫌 datetime 这个包名称太长，想要给它取个别名，以后每次用到它的时候都用它的别名代替它，这时就需要用到 import…as</p>
-<h2 id="7-3-Python中-n-、-m-、-1-、-1-、-1-、-2-1-和-1-的含义"><a href="#7-3-Python中-n-、-m-、-1-、-1-、-1-、-2-1-和-1-的含义" class="headerlink" title="7.3 Python中[ : n]、[m : ]、[-1]、[:-1]、[::-1]、[2::-1]和[1:]的含义"></a>7.3 Python中[ : n]、[m : ]、[-1]、[:-1]、[::-1]、[2::-1]和[1:]的含义</h2><pre class=" language-py"><code class="language-py">[m : ] 代表列表中的第m+1项到最后一项
+<h2 id="7-3-Python中-n-、-m-、-1-、-1-、-1-、-2-1-和-1-的含义"><a href="#7-3-Python中-n-、-m-、-1-、-1-、-1-、-2-1-和-1-的含义" class="headerlink" title="7.3 Python中[ : n]、[m : ]、[-1]、[:-1]、[::-1]、[2::-1]和[1:]的含义"></a>7.3 Python中[ : n]、[m : ]、[-1]、[:-1]、[::-1]、[2::-1]和[1:]的含义</h2><pre class="line-numbers language-py"><code class="language-py">[m : ] 代表列表中的第m+1项到最后一项
 
 [ : n] 代表列表中的第一项到第n项
 
@@ -947,8 +971,8 @@ print(a[2::-1])     取从下标为2的元素翻转读取
 结果：[ 3 2 1 ]
 
 print(a[1:])     取第二个到最后一个元素
-结果：[2 3 4 5]</code></pre>
-<h2 id="7-4-python-浮点数保留几位小数"><a href="#7-4-python-浮点数保留几位小数" class="headerlink" title="7.4 python 浮点数保留几位小数"></a>7.4 python 浮点数保留几位小数</h2><pre class=" language-py"><code class="language-py">a = 5.026
+结果：[2 3 4 5]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="7-4-python-浮点数保留几位小数"><a href="#7-4-python-浮点数保留几位小数" class="headerlink" title="7.4 python 浮点数保留几位小数"></a>7.4 python 浮点数保留几位小数</h2><pre class="line-numbers language-py"><code class="language-py">a = 5.026
 
 b = 5.000
 
@@ -968,7 +992,7 @@ float('%.2f' % a)
 # 5.03
 
 float('%.2f' % b)
-# 5.0</code></pre>
+# 5.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="8-python-中陌生的函数"><a href="#8-python-中陌生的函数" class="headerlink" title="8. python 中陌生的函数"></a>8. python 中陌生的函数</h1><p><em>自己还不太熟悉的</em></p>
 <h2 id="8-1-str-split-对字符串进行切片–返回一个列表"><a href="#8-1-str-split-对字符串进行切片–返回一个列表" class="headerlink" title="8.1 str.split() 对字符串进行切片–返回一个列表"></a>8.1 <code>str.split()</code> <strong>对字符串进行切片–返回一个列表</strong></h2><ul>
 <li>语法<code>str.split(str="", num=string.count(str)).</code></li>
@@ -977,13 +1001,13 @@ float('%.2f' % b)
 <li>str：分隔符，默认为所有的空字符，包括空格、换行、指标</li>
 <li>num：分割次数，默认为-1，即分割所有</li>
 </ul>
-<pre class=" language-py"><code class="language-py"># example
+<pre class="line-numbers language-py"><code class="language-py"># example
 txt = "Google#Runoob#Taobao#Facebook"
 
 # 第二个参数为 1，返回两个参数列表
 x = txt.split("#", 1)
 
-print(x)         #['Google', 'Runoob#Taobao#Facebook']</code></pre>
+print(x)         #['Google', 'Runoob#Taobao#Facebook']<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考教程：<a href="https://www.runoob.com/python/att-string-split.html" target="_blank" rel="noopener" title="runoob.com">RUNOOB</a></p>
 </blockquote>
@@ -996,19 +1020,19 @@ print(x)         #['Google', 'Runoob#Taobao#Facebook']</code></pre>
 <li>beg – 开始索引，默认为 0</li>
 <li>end – 结束索引，默认为字符串的长度</li>
 </ul>
-<pre class=" language-py"><code class="language-py"># example
+<pre class="line-numbers language-py"><code class="language-py"># example
 str1 = "this is string example....wow!!!";
 str2 = "exam";
 
 print str1.find(str2);          #15
 print str1.find(str2, 10);      #15
-print str1.find(str2, 40);      #-1,查不到返回-1</code></pre>
+print str1.find(str2, 40);      #-1,查不到返回-1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="8-3-string-join"><a href="#8-3-string-join" class="headerlink" title="8.3 string.join()"></a>8.3 <code>string.join()</code></h2><ul>
 <li>语法 <code>'sep'.join(seq)</code><em>以 sep 作为分隔符，将 seq 所有的元素合并成一个新的字符串</em> <em>返回值：返回一个以分隔符 sep 连接各个元素后生成的字符串</em></li>
 <li>sep：分隔符。可以为空</li>
 <li>seq：要连接的元素序列、字符串、元组、字典</li>
 </ul>
-<pre class=" language-py"><code class="language-py">>>> seq1 = ['hello','good','boy','doiido'] #对序列操作
+<pre class="line-numbers language-py"><code class="language-py">>>> seq1 = ['hello','good','boy','doiido'] #对序列操作
 >>> print ' '.join(seq1)
 hello good boy doiido
 >>> print ':'.join(seq1)
@@ -1027,17 +1051,17 @@ hello:good:boy:doiido
 # 对字典操作
 >>> seq4 = {'hello':1,'good':2,'boy':3,'doiido':4}
 >>> print ':'.join(seq4)
-boy:good:doiido:hello</code></pre>
+boy:good:doiido:hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><strong>另一个 <code>os.path.join()</code></strong></li>
 </ul>
 <ul>
 <li>语法 <code>os.path.join(path1[,path2[,......]])</code></li>
 </ul>
-<pre class=" language-py"><code class="language-py"> # 合并目录
+<pre class="line-numbers language-py"><code class="language-py"> # 合并目录
 >>> import os
 >>> os.path.join('/hello/','good/boy/','doiido')
-'/hello/good/boy/doiido'</code></pre>
+'/hello/good/boy/doiido'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>参考<a href="https://www.cnblogs.com/sui776265233/p/10755525.html" target="_blank" rel="noopener">博客网站</a></p>
 </blockquote>
@@ -1172,24 +1196,15 @@ boy:good:doiido:hello</code></pre>
                 <a href="/2020/02/10/spider-example/">
                     <div class="card-image">
                         
+                        <img src="/img/cover/spiderex.jpg" class="responsive-img" alt="Spider Example">
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Spider_example">
-                        
-                        <span class="card-title">Spider_example</span>
+                        <span class="card-title">Spider Example</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-自己动手做的 python 爬虫   GitHub 链接WARNING :逻辑混乱，语法不顺！！！
-
-
-
-1. 爬取 bilibili 每日排行榜数据
-使用 XPath 爬取,并将数据保存到 csv 文件中
-文件名使用该排行榜所在时间段
-
+                            自己动手编写的几个python爬虫小栗子
                         
                     </div>
                     <div class="publish-info">
@@ -1253,8 +1268,8 @@ boy:good:doiido:hello</code></pre>
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -1331,7 +1346,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1343,7 +1358,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1417,7 +1432,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -1544,12 +1559,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

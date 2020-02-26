@@ -5,17 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Python_openpyxl, Yun.Qi">
-    <meta name="description" content="Python openpyxl的操作方法
-
-参考教程
-
-
-
-1. 打开文件夹from openpyxl import Workbook
-1.1 创建# 实例化
-wb = Workbook()
-# 激活worksheet
-ws = wb.ac">
+    <meta name="description" content="Python openpyxl的操作方法,用python操作excel">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -36,7 +26,8 @@ ws = wb.ac">
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -115,9 +106,20 @@ ws = wb.ac">
     
     <a href="/APP" class="waves-effect waves-light">
       
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
       
       <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
     </a>
     
   </li>
@@ -206,9 +208,20 @@ ws = wb.ac">
 	  
 		<a href="/APP" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-comments"></i>
+			    <i class="fa-fw fab fa-artstation"></i>
 			
 			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
 		</a>
           
         </li>
@@ -242,7 +255,7 @@ ws = wb.ac">
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7 ;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -425,8 +438,8 @@ ws = wb.ac">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                学习力
                             </a>
                         
                     </div>
@@ -442,6 +455,11 @@ ws = wb.ac">
                 </div>
                 
 
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
                 
 
                 
@@ -472,41 +490,41 @@ ws = wb.ac">
 <a id="more"></a>
 
 <h1 id="1-打开文件夹"><a href="#1-打开文件夹" class="headerlink" title="1. 打开文件夹"></a>1. 打开文件夹</h1><p><strong><code>from openpyxl import Workbook</code></strong></p>
-<h2 id="1-1-创建"><a href="#1-1-创建" class="headerlink" title="1.1 创建"></a>1.1 创建</h2><pre class=" language-py"><code class="language-py"># 实例化
+<h2 id="1-1-创建"><a href="#1-1-创建" class="headerlink" title="1.1 创建"></a>1.1 创建</h2><pre class="line-numbers language-py"><code class="language-py"># 实例化
 wb = Workbook()
 # 激活worksheet
-ws = wb.active</code></pre>
+ws = wb.active<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="1-2-储存"><a href="#1-2-储存" class="headerlink" title="1.2 储存"></a>1.2 储存</h2><p>每个文件操作完之后需要储存</p>
-<pre class=" language-py"><code class="language-py">wb.save('文件名.xlsx')</code></pre>
-<h2 id="1-3-打开已有"><a href="#1-3-打开已有" class="headerlink" title="1.3 打开已有"></a>1.3 打开已有</h2><pre class=" language-py"><code class="language-py">wb2 = load_workbook('文件名.xlsx')</code></pre>
-<h1 id="2-创建表"><a href="#2-创建表" class="headerlink" title="2. 创建表"></a>2. 创建表</h1><h1 id="2-1-创建表（sheet"><a href="#2-1-创建表（sheet" class="headerlink" title="2.1 创建表（sheet"></a>2.1 创建表（sheet</h1><pre class=" language-py"><code class="language-py"># 方式一：插入到最后(default)
+<pre class="line-numbers language-py"><code class="language-py">wb.save('文件名.xlsx')<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="1-3-打开已有"><a href="#1-3-打开已有" class="headerlink" title="1.3 打开已有"></a>1.3 打开已有</h2><pre class="line-numbers language-py"><code class="language-py">wb2 = load_workbook('文件名.xlsx')<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="2-创建表"><a href="#2-创建表" class="headerlink" title="2. 创建表"></a>2. 创建表</h1><h1 id="2-1-创建表（sheet"><a href="#2-1-创建表（sheet" class="headerlink" title="2.1 创建表（sheet"></a>2.1 创建表（sheet</h1><pre class="line-numbers language-py"><code class="language-py"># 方式一：插入到最后(default)
 ws1 = wb.create_sheet("Mysheet") 
 # 方式二：插入到最开始的位置
-ws2 = wb.create_sheet("Mysheet", 0)</code></pre>
-<h2 id="2-2-选择表"><a href="#2-2-选择表" class="headerlink" title="2.2 选择表"></a>2.2 选择表</h2><pre class=" language-py"><code class="language-py"># sheet 名称可以作为 key 进行索引
+ws2 = wb.create_sheet("Mysheet", 0)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-2-选择表"><a href="#2-2-选择表" class="headerlink" title="2.2 选择表"></a>2.2 选择表</h2><pre class="line-numbers language-py"><code class="language-py"># sheet 名称可以作为 key 进行索引
 ws3 = wb["New Title"]
-ws4 = wb.get_sheet_by_name("New Title")</code></pre>
-<h2 id="2-3-查看表名（sheet）"><a href="#2-3-查看表名（sheet）" class="headerlink" title="2.3 查看表名（sheet）"></a>2.3 查看表名（sheet）</h2><pre class=" language-py"><code class="language-py"># 显示所有表名
+ws4 = wb.get_sheet_by_name("New Title")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-3-查看表名（sheet）"><a href="#2-3-查看表名（sheet）" class="headerlink" title="2.3 查看表名（sheet）"></a>2.3 查看表名（sheet）</h2><pre class="line-numbers language-py"><code class="language-py"># 显示所有表名
 print(wb.sheetnames)
 ['Sheet2', 'New Title', 'Sheet1']
 # 遍历所有表
 for sheet in wb:
-    print(sheet.title)</code></pre>
-<h1 id="3-单元格"><a href="#3-单元格" class="headerlink" title="3. 单元格"></a>3. 单元格</h1><h2 id="3-1-储存数据"><a href="#3-1-储存数据" class="headerlink" title="3.1 储存数据"></a>3.1 储存数据</h2><pre class=" language-py"><code class="language-py">#  方式一 数据可以直接分配到单元格中(可以输入公式)
+    print(sheet.title)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="3-单元格"><a href="#3-单元格" class="headerlink" title="3. 单元格"></a>3. 单元格</h1><h2 id="3-1-储存数据"><a href="#3-1-储存数据" class="headerlink" title="3.1 储存数据"></a>3.1 储存数据</h2><pre class="line-numbers language-py"><code class="language-py">#  方式一 数据可以直接分配到单元格中(可以输入公式)
 ws['A1'] = 42
 # 方式二：可以附加行，从第一列开始附加(从最下方空白处，最左开始)(可以输入多行)
 ws.append([1,2,3])
 # 方式三：Python 类型会被自动转换
-ws['A3'] = datetime.datetime.now().strftime("%Y-%m-%d")</code></pre>
-<h2 id="3-2-访问单元格（call）"><a href="#3-2-访问单元格（call）" class="headerlink" title="3.2 访问单元格（call）"></a>3.2 访问单元格（call）</h2><h3 id="3-2-1-单单元格访问"><a href="#3-2-1-单单元格访问" class="headerlink" title="3.2.1 单单元格访问"></a>3.2.1 单单元格访问</h3><pre class=" language-py"><code class="language-py"># 方法一
+ws['A3'] = datetime.datetime.now().strftime("%Y-%m-%d")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-2-访问单元格（call）"><a href="#3-2-访问单元格（call）" class="headerlink" title="3.2 访问单元格（call）"></a>3.2 访问单元格（call）</h2><h3 id="3-2-1-单单元格访问"><a href="#3-2-1-单单元格访问" class="headerlink" title="3.2.1 单单元格访问"></a>3.2.1 单单元格访问</h3><pre class="line-numbers language-py"><code class="language-py"># 方法一
 c = ws['A4']
 # 方法二：row 行；column 列
 d = ws.cell(row=4, column=2, value=10)
 # 方法三：只要访问就创建
 for i in range(1,101):
     for j in range(1,101):
-        ws.cell(row=i, column=j)</code></pre>
-<h3 id="3-2-2-多单元格访问"><a href="#3-2-2-多单元格访问" class="headerlink" title="3.2.2 多单元格访问"></a>3.2.2 多单元格访问</h3><pre class=" language-py"><code class="language-py"># 通过切片
+        ws.cell(row=i, column=j)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-2-2-多单元格访问"><a href="#3-2-2-多单元格访问" class="headerlink" title="3.2.2 多单元格访问"></a>3.2.2 多单元格访问</h3><pre class="line-numbers language-py"><code class="language-py"># 通过切片
 cell_range = ws['A1':'C2']
 
 # 通过行(列)
@@ -559,12 +577,12 @@ tuple(ws.columns)
 (<Cell Sheet.C1>,
 ...
 <Cell Sheet.C8>,
-<Cell Sheet.C9>))</code></pre>
-<h1 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h1><h2 id="4-1-改变sheet-标签按钮颜色"><a href="#4-1-改变sheet-标签按钮颜色" class="headerlink" title="4.1 改变sheet 标签按钮颜色"></a>4.1 改变sheet 标签按钮颜色</h2><pre class=" language-py"><code class="language-py">ws.sheet_properties.tabColor = "1072BA"</code></pre>
-<h2 id="4-2-获取最大行，最大列"><a href="#4-2-获取最大行，最大列" class="headerlink" title="4.2 获取最大行，最大列"></a>4.2 获取最大行，最大列</h2><pre class=" language-py"><code class="language-py"># 获得最大列和最大行
+<Cell Sheet.C9>))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h1><h2 id="4-1-改变sheet-标签按钮颜色"><a href="#4-1-改变sheet-标签按钮颜色" class="headerlink" title="4.1 改变sheet 标签按钮颜色"></a>4.1 改变sheet 标签按钮颜色</h2><pre class="line-numbers language-py"><code class="language-py">ws.sheet_properties.tabColor = "1072BA"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="4-2-获取最大行，最大列"><a href="#4-2-获取最大行，最大列" class="headerlink" title="4.2 获取最大行，最大列"></a>4.2 获取最大行，最大列</h2><pre class="line-numbers language-py"><code class="language-py"># 获得最大列和最大行
 print(sheet.max_row)
-print(sheet.max_column)</code></pre>
-<h2 id="4-3-获取每一行每一列"><a href="#4-3-获取每一行每一列" class="headerlink" title="4.3 获取每一行每一列"></a>4.3 获取每一行每一列</h2><pre class=" language-py"><code class="language-py">sheet.rows为生成器, 里面是每一行的数据，每一行又由一个tuple包裹。
+print(sheet.max_column)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-3-获取每一行每一列"><a href="#4-3-获取每一行每一列" class="headerlink" title="4.3 获取每一行每一列"></a>4.3 获取每一行每一列</h2><pre class="line-numbers language-py"><code class="language-py">sheet.rows为生成器, 里面是每一行的数据，每一行又由一个tuple包裹。
 sheet.columns类似，不过里面是每个tuple是每一列的单元格。
 # 因为按行，所以返回A1, B1, C1这样的顺序
 for row in sheet.rows:
@@ -574,18 +592,18 @@ for row in sheet.rows:
 # A1, A2, A3这样的顺序
 for column in sheet.columns:
   for cell in column:
-    print(cell.value)</code></pre>
-<h2 id="4-4-根据数字得到字母，根据字母得到数字"><a href="#4-4-根据数字得到字母，根据字母得到数字" class="headerlink" title="4.4 根据数字得到字母，根据字母得到数字"></a>4.4 根据数字得到字母，根据字母得到数字</h2><pre class=" language-py"><code class="language-py">from openpyxl.utils import get_column_letter, column_index_from_string
+    print(cell.value)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-4-根据数字得到字母，根据字母得到数字"><a href="#4-4-根据数字得到字母，根据字母得到数字" class="headerlink" title="4.4 根据数字得到字母，根据字母得到数字"></a>4.4 根据数字得到字母，根据字母得到数字</h2><pre class="line-numbers language-py"><code class="language-py">from openpyxl.utils import get_column_letter, column_index_from_string
 
 # 根据列的数字返回字母
 print(get_column_letter(2)) # B
 # 根据字母返回列的数字
-print(column_index_from_string('D')) # 4</code></pre>
-<h2 id="4-5-删除工作表"><a href="#4-5-删除工作表" class="headerlink" title="4.5  删除工作表"></a>4.5  删除工作表</h2><pre class=" language-py"><code class="language-py"># 方式一
+print(column_index_from_string('D')) # 4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-5-删除工作表"><a href="#4-5-删除工作表" class="headerlink" title="4.5  删除工作表"></a>4.5  删除工作表</h2><pre class="line-numbers language-py"><code class="language-py"># 方式一
 wb.remove(sheet)
 # 方式二
-del wb[sheet]</code></pre>
-<h2 id="4-6-矩阵置换（行-→-列）"><a href="#4-6-矩阵置换（行-→-列）" class="headerlink" title="4.6 矩阵置换（行 → 列）"></a>4.6 矩阵置换（行 → 列）</h2><pre class=" language-py"><code class="language-py">rows = [
+del wb[sheet]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-6-矩阵置换（行-→-列）"><a href="#4-6-矩阵置换（行-→-列）" class="headerlink" title="4.6 矩阵置换（行 → 列）"></a>4.6 矩阵置换（行 → 列）</h2><pre class="line-numbers language-py"><code class="language-py">rows = [
   ['Number', 'data1', 'data2'],
   [2, 40, 30],
   [3, 40, 25],
@@ -612,20 +630,20 @@ rows = [
   [7, 50, 10],
 ]
 # out
-[('Number', 2, 3, 4, 5, 6, 7), ('data1', 40, 40, 50, 30, 25, 50)]</code></pre>
+[('Number', 2, 3, 4, 5, 6, 7), ('data1', 40, 40, 50, 30, 25, 50)]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="4-7-设置单元格风格"><a href="#4-7-设置单元格风格" class="headerlink" title="4.7 设置单元格风格"></a>4.7 设置单元格风格</h2><h3 id="4-7-1-需要导入的类"><a href="#4-7-1-需要导入的类" class="headerlink" title="4.7.1 需要导入的类"></a>4.7.1 需要导入的类</h3><p><code>from openpyxl.styles import Font, colors, Alignment</code></p>
-<h3 id="4-7-2-字体"><a href="#4-7-2-字体" class="headerlink" title="4.7.2 字体"></a>4.7.2 字体</h3><pre class=" language-py"><code class="language-py">bold_itatic_24_font = Font(name='等线', size=24, italic=True, color=colors.RED, bold=True)
+<h3 id="4-7-2-字体"><a href="#4-7-2-字体" class="headerlink" title="4.7.2 字体"></a>4.7.2 字体</h3><pre class="line-numbers language-py"><code class="language-py">bold_itatic_24_font = Font(name='等线', size=24, italic=True, color=colors.RED, bold=True)
 # 代码指定了等线24号，加粗斜体，字体颜色红色。直接使用cell的font属性，将Font对象赋值给它
-sheet['A1'].font = bold_itatic_24_font</code></pre>
-<h3 id="4-7-3-对齐方式"><a href="#4-7-3-对齐方式" class="headerlink" title="4.7.3 对齐方式"></a>4.7.3 对齐方式</h3><pre class=" language-py"><code class="language-py"># 设置B1中的数据垂直居中和水平居中
-sheet['B1'].alignment = Alignment(horizontal='center', vertical='center')</code></pre>
-<h3 id="4-7-4-设置行高和列宽"><a href="#4-7-4-设置行高和列宽" class="headerlink" title="4.7.4 设置行高和列宽"></a>4.7.4 设置行高和列宽</h3><pre class=" language-py"><code class="language-py"># 第2行行高
+sheet['A1'].font = bold_itatic_24_font<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-7-3-对齐方式"><a href="#4-7-3-对齐方式" class="headerlink" title="4.7.3 对齐方式"></a>4.7.3 对齐方式</h3><pre class="line-numbers language-py"><code class="language-py"># 设置B1中的数据垂直居中和水平居中
+sheet['B1'].alignment = Alignment(horizontal='center', vertical='center')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="4-7-4-设置行高和列宽"><a href="#4-7-4-设置行高和列宽" class="headerlink" title="4.7.4 设置行高和列宽"></a>4.7.4 设置行高和列宽</h3><pre class="line-numbers language-py"><code class="language-py"># 第2行行高
 sheet.row_dimensions[2].height = 40
 # C列列宽
-sheet.column_dimensions['C'].width = 30</code></pre>
-<h3 id="4-7-5-合并和拆分单元格"><a href="#4-7-5-合并和拆分单元格" class="headerlink" title="4.7.5 合并和拆分单元格"></a>4.7.5 合并和拆分单元格</h3><pre class=" language-py"><code class="language-py"># 合并单元格， 往左上角写入数据即可
+sheet.column_dimensions['C'].width = 30<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="4-7-5-合并和拆分单元格"><a href="#4-7-5-合并和拆分单元格" class="headerlink" title="4.7.5 合并和拆分单元格"></a>4.7.5 合并和拆分单元格</h3><pre class="line-numbers language-py"><code class="language-py"># 合并单元格， 往左上角写入数据即可
 sheet.merge_cells('B1:G1') # 合并一行中的几个单元格
-sheet.merge_cells('A1:C3') # 合并一个矩形区域中的单元格</code></pre>
+sheet.merge_cells('A1:C3') # 合并一个矩形区域中的单元格<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -762,18 +780,7 @@ sheet.merge_cells('A1:C3') # 合并一个矩形区域中的单元格</code></pre
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数据可视化的 plotly
-
-参考教程
-
-
-
-1. 基本操作，初步理解代码# 生成一个直方图
-import plotly.offline as ptly
-import plotly.graph_objs as go
-
-data=[]
-tra
+                            Python中plotly轮子的用法，更加高级的可视化轮子
                         
                     </div>
                     <div class="publish-info">
@@ -784,8 +791,8 @@ tra
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -822,11 +829,7 @@ tra
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python 中 numpy 的学习一点一点地学，可能没有逻辑，知识点分散import numpy as np
-
-
-1. np.linspace()用来创建等差数列
-numpy.linspace(start, stop, num=50, e
+                            Python中numpy轮子，用来处理数据
                         
                     </div>
                     <div class="publish-info">
@@ -837,8 +840,8 @@ numpy.linspace(start, stop, num=50, e
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
@@ -915,7 +918,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1,h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -927,7 +930,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1001,7 +1004,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">30.8k</span>&nbsp;字
+                class="white-color">31.3k</span>&nbsp;字
             
             
             
@@ -1128,12 +1131,11 @@ $(function () {
     
 
     
-    <script type="text/javascript" color="0,0,255"
-        pointColor="0,0,255" opacity='0.7'
-        zIndex="-1" count="99"
-        src="/libs/background/canvas-nest.js"></script>
-    
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
