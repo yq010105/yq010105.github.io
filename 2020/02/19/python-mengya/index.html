@@ -1,0 +1,1767 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python_mengya_process, Yun.Qi">
+    <meta name="description" content="识别表的指针，代码的构造过程，并没有写完（萌芽杯比赛项目）">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Python_mengya_process | Yun.Qi</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Yun.Qi</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="https://yq010105.github.io/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/APP" class="waves-effect waves-light">
+      
+      <i class="fab fa-artstation" style="zoom: 0.6;"></i>
+      
+      <span>APP</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/diary" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Diary</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Yun.Qi</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="https://yq010105.github.io/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/APP" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fab fa-artstation"></i>
+			
+			APP
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/diary" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Diary
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/yq010105/yq010105.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #F062A7 ;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/yq010105/yq010105.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/img/cover/mengya.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Python_mengya_process</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/Compete/">
+                                <span class="chip bg-color">Compete</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
+                                技术力
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-02-19
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2020-02-26
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    3,751
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="1-测试"><a href="#1-测试" class="headerlink" title="1. 测试"></a>1. 测试</h1><h2 id="1-1-视频经过梯度处理"><a href="#1-1-视频经过梯度处理" class="headerlink" title="1.1 视频经过梯度处理"></a>1.1 视频经过梯度处理</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> cv2
+
+vc <span class="token operator">=</span> cv2<span class="token punctuation">.</span>VideoCapture<span class="token punctuation">(</span><span class="token string">'./video/1.mp4'</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> vc<span class="token punctuation">.</span>isOpened<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    open<span class="token punctuation">,</span> frame <span class="token operator">=</span> vc<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    open <span class="token operator">=</span> <span class="token boolean">False</span>
+
+<span class="token keyword">while</span> open<span class="token punctuation">:</span>
+    ret<span class="token punctuation">,</span> frame <span class="token operator">=</span> vc<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> frame <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    <span class="token keyword">if</span> ret <span class="token operator">==</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        gray <span class="token operator">=</span> cv2<span class="token punctuation">.</span>cvtColor<span class="token punctuation">(</span>frame<span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>COLOR_BGR2GRAY<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># sobelx = cv2.Sobel(gray,cv2.CV_64F,1,0)</span>
+        <span class="token comment" spellcheck="true"># sobely = cv2.Sobel(gray,cv2.CV_64F,0,1)</span>
+        <span class="token comment" spellcheck="true"># sobelx = cv2.convertScaleAbs(sobelx)</span>
+        <span class="token comment" spellcheck="true"># sobely = cv2.convertScaleAbs(sobely)</span>
+        <span class="token comment" spellcheck="true"># sobelxy = cv2.addWeighted(sobelx,0.5,sobely,0.5,0)</span>
+        v1 <span class="token operator">=</span> cv2<span class="token punctuation">.</span>Canny<span class="token punctuation">(</span>gray<span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">)</span>
+        cv2<span class="token punctuation">.</span>namedWindow<span class="token punctuation">(</span><span class="token string">'result'</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># cv2.imshow('result',sobelxy)</span>
+        cv2<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span><span class="token string">'result'</span><span class="token punctuation">,</span>v1<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFF</span> <span class="token operator">==</span> <span class="token number">27</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+
+vc<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="1-2-检测指针，绘制直线"><a href="#1-2-检测指针，绘制直线" class="headerlink" title="1.2 检测指针，绘制直线"></a>1.2 检测指针，绘制直线</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> cv2
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> os
+
+img <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'./img/clock2.jpg'</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># + input('请输入文件路径：')</span>
+<span class="token keyword">def</span> <span class="token function">cv_show</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>img<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    cv2<span class="token punctuation">.</span>namedWindow<span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+    cv2<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>name<span class="token punctuation">,</span>img<span class="token punctuation">)</span>
+    cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">linedraw</span><span class="token punctuation">(</span>image<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    gray <span class="token operator">=</span> cv2<span class="token punctuation">.</span>cvtColor<span class="token punctuation">(</span>image<span class="token punctuation">,</span> cv2<span class="token punctuation">.</span>COLOR_BGR2GRAY<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># edges = cv.Canny(gray, 50, 150, apertureSize=3)</span>
+        <span class="token comment" spellcheck="true"># 自动检测可能的直线，返回的是一条条线段</span>
+    ret<span class="token punctuation">,</span> thresohold <span class="token operator">=</span> cv2<span class="token punctuation">.</span>threshold<span class="token punctuation">(</span>gray<span class="token punctuation">,</span> <span class="token number">55</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> cv2<span class="token punctuation">.</span>THRESH_BINARY<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># aussian = cv2.GaussianBlur(thresohold, (5, 5), 1) 高斯</span>
+
+    <span class="token comment" spellcheck="true"># kernel = np.ones((5, 5), np.uint8)  # （5，5）腐蚀大小</span>
+    <span class="token comment" spellcheck="true"># erosion = cv2.erode(thresohold, kernel, iterations=1) 去噪音点</span>
+
+    edges <span class="token operator">=</span> cv2<span class="token punctuation">.</span>Canny<span class="token punctuation">(</span>thresohold<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">,</span> apertureSize<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+    lines <span class="token operator">=</span> cv2<span class="token punctuation">.</span>HoughLinesP<span class="token punctuation">(</span>edges<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> minLineLength<span class="token operator">=</span><span class="token number">110</span><span class="token punctuation">,</span> maxLineGap<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># print(type(lines))</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> lines<span class="token punctuation">:</span>
+        x1<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> y2 <span class="token operator">=</span> line<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        cv2<span class="token punctuation">.</span>line<span class="token punctuation">(</span>image<span class="token punctuation">,</span> <span class="token punctuation">(</span>x1<span class="token punctuation">,</span> y1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x2<span class="token punctuation">,</span> y2<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    cv_show<span class="token punctuation">(</span><span class="token string">'result'</span><span class="token punctuation">,</span>image<span class="token punctuation">)</span>
+
+linedraw<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
+os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">"pause"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="1-3-小综合；根据表盘识别指针并求出斜率"><a href="#1-3-小综合；根据表盘识别指针并求出斜率" class="headerlink" title="1.3 小综合；根据表盘识别指针并求出斜率"></a>1.3 小综合；根据表盘识别指针并求出斜率</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> cv2
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> math
+
+img <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'./img/clock1.jpg'</span><span class="token punctuation">,</span> cv2<span class="token punctuation">.</span>IMREAD_UNCHANGED<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 裁剪图片  具体指针要改</span>
+imgbufen <span class="token operator">=</span> img<span class="token punctuation">[</span><span class="token number">70</span><span class="token punctuation">:</span><span class="token number">566</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">1000</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># 将图像的阈值化 小于阈值的为max 大于阈值的为0，</span>
+<span class="token comment" spellcheck="true"># 主要是因为这个指针是黑的,圆形遮罩也是黑的，所以先把指针反转为白的</span>
+<span class="token comment" spellcheck="true"># 具体指针要改</span>
+imgfan <span class="token operator">=</span> cv2<span class="token punctuation">.</span>threshold<span class="token punctuation">(</span>imgbufen<span class="token punctuation">,</span><span class="token number">127</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>THRESH_BINARY_INV<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true"># 输出图像</span>
+<span class="token keyword">def</span> <span class="token function">cv_show</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>img<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    cv2<span class="token punctuation">.</span>namedWindow<span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+    cv2<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>name<span class="token punctuation">,</span>img<span class="token punctuation">)</span>
+    cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+    cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 得到一个圆形遮罩，返回中间圆形</span>
+<span class="token keyword">def</span> <span class="token function">get_zhezhao</span><span class="token punctuation">(</span>imgfan<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true">#获取图片尺寸</span>
+    height<span class="token punctuation">,</span> width <span class="token operator">=</span> imgfan<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span>
+    height <span class="token operator">=</span> int<span class="token punctuation">(</span>height<span class="token punctuation">)</span>
+    width <span class="token operator">=</span> int<span class="token punctuation">(</span>width<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">#生成内显示模板</span>
+    circleIn <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span>height<span class="token punctuation">,</span> width<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>uint8<span class="token punctuation">)</span>
+    circleIn <span class="token operator">=</span> cv2<span class="token punctuation">.</span>circle<span class="token punctuation">(</span>circleIn<span class="token punctuation">,</span> <span class="token punctuation">(</span>width <span class="token operator">//</span> <span class="token number">2</span><span class="token punctuation">,</span> height <span class="token operator">//</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> min<span class="token punctuation">(</span>height<span class="token punctuation">,</span> width<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">#原图与内显示模板融合</span>
+    <span class="token comment" spellcheck="true">#生成空白图片</span>
+    imgIn <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span>height<span class="token punctuation">,</span> width<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>uint8<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#复制前3个通道</span>
+    imgIn<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>imgfan<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> circleIn<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    imgIn<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>imgfan<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> circleIn<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    imgIn<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> np<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>imgfan<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> circleIn<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#设置α通道的不透明部分</span>
+    circleIn<span class="token punctuation">[</span>circleIn <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+    imgIn<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> circleIn<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># cv2.imwrite('./img/result1.jpg', imgIn)</span>
+    <span class="token comment" spellcheck="true"># cv_show('imgin',imgIn)</span>
+    <span class="token keyword">return</span> imgIn
+
+<span class="token comment" spellcheck="true"># 得到线，霍夫直线</span>
+<span class="token keyword">def</span> <span class="token function">getlines</span><span class="token punctuation">(</span>imgIn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    gray <span class="token operator">=</span> cv2<span class="token punctuation">.</span>cvtColor<span class="token punctuation">(</span>imgIn<span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>COLOR_BGR2GRAY<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># cv_show("gray",gray)</span>
+    edges <span class="token operator">=</span> cv2<span class="token punctuation">.</span>Canny<span class="token punctuation">(</span>gray<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">,</span> apertureSize<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+    lines <span class="token operator">=</span> cv2<span class="token punctuation">.</span>HoughLinesP<span class="token punctuation">(</span>edges<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> minLineLength<span class="token operator">=</span><span class="token number">110</span><span class="token punctuation">,</span> maxLineGap<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># print(type(lines))</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> lines<span class="token punctuation">:</span>
+        x1<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> y2 <span class="token operator">=</span> line<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># print(x1,y1,x2,y2)</span>
+        cv2<span class="token punctuation">.</span>line<span class="token punctuation">(</span>imgbufen<span class="token punctuation">,</span> <span class="token punctuation">(</span>x1<span class="token punctuation">,</span> y1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>x2<span class="token punctuation">,</span> y2<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># cv_show('img',imgbufen)</span>
+        floatx1<span class="token punctuation">.</span>append<span class="token punctuation">(</span>float<span class="token punctuation">(</span>x1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        floaty1<span class="token punctuation">.</span>append<span class="token punctuation">(</span>float<span class="token punctuation">(</span>y1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        floatx2<span class="token punctuation">.</span>append<span class="token punctuation">(</span>float<span class="token punctuation">(</span>x2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        floaty2<span class="token punctuation">.</span>append<span class="token punctuation">(</span>float<span class="token punctuation">(</span>y2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># cv_show('imgline',imgbufen)</span>
+    <span class="token keyword">return</span> floatx1<span class="token punctuation">,</span>floaty1<span class="token punctuation">,</span>floatx2<span class="token punctuation">,</span>floaty2
+
+<span class="token keyword">def</span> <span class="token function">get_thr_k</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    thrs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    ks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>floatx1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x1 <span class="token operator">=</span> floatx1<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        y1 <span class="token operator">=</span> floaty1<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        x2 <span class="token operator">=</span> floatx2<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        y2 <span class="token operator">=</span> floaty2<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+        k <span class="token operator">=</span> <span class="token punctuation">(</span>y1<span class="token operator">-</span>y2<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>x2<span class="token operator">-</span>x1<span class="token punctuation">)</span>
+        thr <span class="token operator">=</span> math<span class="token punctuation">.</span>atan<span class="token punctuation">(</span>k<span class="token punctuation">)</span>
+        thr <span class="token operator">=</span> math<span class="token punctuation">.</span>degrees<span class="token punctuation">(</span>thr<span class="token punctuation">)</span>
+        i <span class="token operator">+=</span> <span class="token number">1</span>
+        ks<span class="token punctuation">.</span>append<span class="token punctuation">(</span>k<span class="token punctuation">)</span>
+        thrs<span class="token punctuation">.</span>append<span class="token punctuation">(</span>thr<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> ks<span class="token punctuation">,</span>thrs
+
+
+imgIn <span class="token operator">=</span> get_zhezhao<span class="token punctuation">(</span>imgfan<span class="token punctuation">)</span>
+floatx1<span class="token punctuation">,</span>floaty1<span class="token punctuation">,</span>floatx2<span class="token punctuation">,</span>floaty2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+getlines<span class="token punctuation">(</span>imgIn<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># print(floatx1,floaty1,floatx2,floaty2)</span>
+
+
+<span class="token comment" spellcheck="true"># 多条直线的角度列表，单条直线直接thrs[0]</span>
+thrs <span class="token operator">=</span> get_thr_k<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'直线的斜率为：{thrs[0][0]}'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'直线与横线间角度值：{thrs[1][0]}'</span><span class="token punctuation">)</span>
+cv_show<span class="token punctuation">(</span><span class="token string">'imgline'</span><span class="token punctuation">,</span>imgbufen<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="1-4-更高级的检测指针，然后返回指针斜率"><a href="#1-4-更高级的检测指针，然后返回指针斜率" class="headerlink" title="1.4 更高级的检测指针，然后返回指针斜率"></a>1.4 更高级的检测指针，然后返回指针斜率</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> cv2
+<span class="token keyword">import</span> math
+<span class="token keyword">import</span> linekthr <span class="token keyword">as</span> lt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token keyword">def</span> <span class="token function">get_pointer_rad</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''获取角度'''</span>
+    shape <span class="token operator">=</span> img<span class="token punctuation">.</span>shape
+    c_y<span class="token punctuation">,</span> c_x<span class="token punctuation">,</span> depth <span class="token operator">=</span> int<span class="token punctuation">(</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> shape<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># h,w,cute</span>
+    x1<span class="token operator">=</span>c_x<span class="token operator">+</span>c_x<span class="token operator">*</span><span class="token number">1.5</span>  <span class="token comment" spellcheck="true"># 指针长度--宽 2.5倍</span>
+    src <span class="token operator">=</span> img<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    freq_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">361</span><span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token comment" spellcheck="true"># 算法</span>
+        x <span class="token operator">=</span> <span class="token punctuation">(</span>x1 <span class="token operator">-</span> c_x<span class="token punctuation">)</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>i <span class="token operator">*</span> math<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">)</span> <span class="token operator">+</span> c_x
+        y <span class="token operator">=</span> <span class="token punctuation">(</span>x1 <span class="token operator">-</span> c_x<span class="token punctuation">)</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>i <span class="token operator">*</span> math<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">)</span> <span class="token operator">+</span> c_y
+        temp <span class="token operator">=</span> src<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 备份</span>
+        cv2<span class="token punctuation">.</span>line<span class="token punctuation">(</span>temp<span class="token punctuation">,</span> <span class="token punctuation">(</span>c_x<span class="token punctuation">,</span> c_y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>int<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> thickness<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 在temp上画线</span>
+        t1 <span class="token operator">=</span> img<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        t1<span class="token punctuation">[</span>temp<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">255</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">255</span>
+        c <span class="token operator">=</span> img<span class="token punctuation">[</span>temp<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">255</span><span class="token punctuation">]</span>
+        points <span class="token operator">=</span> c<span class="token punctuation">[</span>c <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        freq_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        cv2<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span><span class="token string">'d'</span><span class="token punctuation">,</span> temp<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># cv2.imshow('d1', t1)</span>
+        cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># key = lambda x: float(x[0])</span>
+    <span class="token comment" spellcheck="true"># keytup = max(freq_list, key=key)</span>
+    <span class="token comment" spellcheck="true"># thrth = keytup[1]</span>
+    <span class="token comment" spellcheck="true"># print(f'当前角度:{thrth}度')</span>
+    <span class="token comment" spellcheck="true"># print('当前角度：',max(freq_list, key=key),'度')</span>
+    cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> max<span class="token punctuation">(</span>freq_list<span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+img <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'./img/clock_re.png'</span><span class="token punctuation">)</span>
+imgc <span class="token operator">=</span> img<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">165</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">171</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">getthr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    thres <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 随机数范围</span>
+    <span class="token comment" spellcheck="true"># print(thres)</span>
+    imgfan <span class="token operator">=</span> cv2<span class="token punctuation">.</span>threshold<span class="token punctuation">(</span>imgc<span class="token punctuation">,</span> thres<span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> cv2<span class="token punctuation">.</span>THRESH_BINARY<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    max <span class="token operator">=</span> get_pointer_rad<span class="token punctuation">(</span>imgfan<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># lt.cv_show('imgfan',imgfan)</span>
+    <span class="token comment" spellcheck="true"># print(max)</span>
+    <span class="token comment" spellcheck="true"># exit()</span>
+    thrs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    thr <span class="token operator">=</span> max<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> thr
+
+<span class="token keyword">def</span> <span class="token function">get_averg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tol <span class="token operator">=</span> <span class="token number">0</span>
+    h <span class="token operator">=</span> <span class="token number">20</span>          <span class="token comment" spellcheck="true"># 统计次数</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        thr <span class="token operator">=</span> getthr<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        tol <span class="token operator">=</span> tol <span class="token operator">+</span> thr
+        <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'第{i+1}次的角度:{thr}'</span><span class="token punctuation">)</span>
+    averg <span class="token operator">=</span> tol <span class="token operator">/</span> h
+    <span class="token keyword">return</span> averg
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'角度的平均值：{get_averg()}'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="2-初步完成核心"><a href="#2-初步完成核心" class="headerlink" title="2. 初步完成核心"></a>2. 初步完成<del>核心</del></h1><p><code>line_get.py</code></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> cv2
+<span class="token keyword">import</span> math
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token comment" spellcheck="true"># 获取指针角度值</span>
+<span class="token keyword">def</span> <span class="token function">get_pointer_rad</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    shape <span class="token operator">=</span> img<span class="token punctuation">.</span>shape
+    c_y<span class="token punctuation">,</span> c_x<span class="token punctuation">,</span> depth <span class="token operator">=</span> int<span class="token punctuation">(</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> shape<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># h,w,cute</span>
+    x1<span class="token operator">=</span>c_x<span class="token operator">+</span>c_x<span class="token operator">*</span><span class="token number">1.5</span>  <span class="token comment" spellcheck="true"># 指针长度--宽 2.5倍</span>
+    src <span class="token operator">=</span> img<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    freq_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">361</span><span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token comment" spellcheck="true"># 算法</span>
+        x <span class="token operator">=</span> <span class="token punctuation">(</span>x1 <span class="token operator">-</span> c_x<span class="token punctuation">)</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>i <span class="token operator">*</span> math<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">)</span> <span class="token operator">+</span> c_x
+        y <span class="token operator">=</span> <span class="token punctuation">(</span>x1 <span class="token operator">-</span> c_x<span class="token punctuation">)</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>i <span class="token operator">*</span> math<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">)</span> <span class="token operator">+</span> c_y
+        temp <span class="token operator">=</span> src<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 备份</span>
+        cv2<span class="token punctuation">.</span>line<span class="token punctuation">(</span>temp<span class="token punctuation">,</span> <span class="token punctuation">(</span>c_x<span class="token punctuation">,</span> c_y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>int<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> thickness<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 在temp上画线</span>
+        t1 <span class="token operator">=</span> img<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        t1<span class="token punctuation">[</span>temp<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">255</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">255</span>
+        c <span class="token operator">=</span> img<span class="token punctuation">[</span>temp<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">255</span><span class="token punctuation">]</span>
+        points <span class="token operator">=</span> c<span class="token punctuation">[</span>c <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        freq_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 可以展示匹配过程</span>
+        <span class="token comment" spellcheck="true"># cv2.imshow('d', temp)</span>
+        <span class="token comment" spellcheck="true"># cv2.imshow('d1', t1)</span>
+        <span class="token comment" spellcheck="true"># 如果要求固定检测时间不要太快，可以在这里调慢</span>
+        cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> max<span class="token punctuation">(</span>freq_list<span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">getthr</span><span class="token punctuation">(</span>imgc<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    thres <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 随机数范围</span>
+    imgfan <span class="token operator">=</span> cv2<span class="token punctuation">.</span>threshold<span class="token punctuation">(</span>imgc<span class="token punctuation">,</span> thres<span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> cv2<span class="token punctuation">.</span>THRESH_BINARY<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    max <span class="token operator">=</span> get_pointer_rad<span class="token punctuation">(</span>imgfan<span class="token punctuation">)</span>
+    thr <span class="token operator">=</span> max<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> thr
+
+<span class="token keyword">def</span> <span class="token function">get_averg</span><span class="token punctuation">(</span>imgc<span class="token punctuation">,</span>h<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tol <span class="token operator">=</span> <span class="token number">0</span>
+    h <span class="token operator">=</span> int<span class="token punctuation">(</span>h<span class="token punctuation">)</span>          <span class="token comment" spellcheck="true"># 统计次数</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        thr <span class="token operator">=</span> getthr<span class="token punctuation">(</span>imgc<span class="token punctuation">)</span>
+        tol <span class="token operator">=</span> tol <span class="token operator">+</span> thr
+        <span class="token comment" spellcheck="true"># debug 看看角度是否正确统计</span>
+        <span class="token comment" spellcheck="true"># print(f'第{i+1}次的角度:{thr}')</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">'、'</span><span class="token punctuation">)</span>
+    averg <span class="token operator">=</span> tol <span class="token operator">/</span> h
+    <span class="token keyword">return</span> averg
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    img <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'./img/clock_re.png'</span><span class="token punctuation">)</span>
+    imgc <span class="token operator">=</span> img<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">165</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">:</span><span class="token number">171</span><span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'角度的平均值：{get_averg(imgc,5)}'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>xlsx_get.py</code></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> openpyxl <span class="token keyword">import</span> Workbook
+<span class="token keyword">import</span> openpyxl <span class="token keyword">as</span> xl
+<span class="token keyword">import</span> cv2
+<span class="token keyword">import</span> line_get <span class="token keyword">as</span> lg
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> time
+
+
+<span class="token keyword">def</span> <span class="token function">get_xlsx</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 新建xlsx或打开已有xlsx</span>
+    filex <span class="token operator">=</span> <span class="token string">'data.xlsx'</span>
+    <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>filex<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'--在result.xlsx中写入数据--'</span><span class="token punctuation">)</span>
+        wb <span class="token operator">=</span> xl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'data.xlsx'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 文件表单定位</span>
+        sheet <span class="token operator">=</span> wb<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        wb <span class="token operator">=</span> Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'--新建一个data.xlsx--'</span><span class="token punctuation">)</span>
+        sheet <span class="token operator">=</span> wb<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+
+    <span class="token comment" spellcheck="true"># 储存数据</span>
+    ws <span class="token operator">=</span> wb<span class="token punctuation">.</span>active
+    ws<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'指针角度'</span>
+    ws<span class="token punctuation">[</span><span class="token string">'B1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'转换角度'</span>
+    ws<span class="token punctuation">[</span><span class="token string">'C1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'测试时间'</span>
+    img <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'./img/clock_re.png'</span><span class="token punctuation">)</span>
+    imgh <span class="token operator">=</span> img<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">165</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">171</span><span class="token punctuation">]</span>
+
+    cishu <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'请输入需要多少组数据--一直测则输入0--：'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    pingjun <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'请输入多少组算一次平均值--推荐10--:'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    row <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">if</span> cishu <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">or</span> cishu <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">while</span> row <span class="token operator">>=</span> cishu <span class="token punctuation">:</span>
+            maxrow <span class="token operator">=</span> sheet<span class="token punctuation">.</span>max_row
+            <span class="token comment" spellcheck="true"># print(f'excel中第{maxrow + 1}行输入数据-----')</span>
+            <span class="token comment" spellcheck="true"># 测几次来算平均值 imgh,10--10次</span>
+            thr <span class="token operator">=</span> lg<span class="token punctuation">.</span>get_averg<span class="token punctuation">(</span>imgh<span class="token punctuation">,</span>pingjun<span class="token punctuation">)</span>
+            ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>value<span class="token operator">=</span>thr<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'第{row + 1}组-----角度平均值数据：{thr}，输入到第{maxrow + 1}行中'</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> thr<span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> thr<span class="token operator">&lt;=</span><span class="token number">45</span><span class="token punctuation">:</span>
+                cdu <span class="token operator">=</span> thr<span class="token operator">/</span><span class="token number">2.25</span> <span class="token operator">+</span><span class="token number">100</span>
+            <span class="token keyword">elif</span> thr<span class="token operator">>=</span><span class="token number">135</span> <span class="token operator">and</span> thr <span class="token operator">&lt;=</span> <span class="token number">360</span><span class="token punctuation">:</span>
+                cdu <span class="token operator">=</span> <span class="token punctuation">(</span>thr <span class="token operator">-</span> <span class="token number">135</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2.25</span>
+            <span class="token keyword">else</span> <span class="token punctuation">:</span>
+                cdu <span class="token operator">=</span> <span class="token string">'故障'</span>
+            ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>value<span class="token operator">=</span>cdu<span class="token punctuation">)</span>
+            timed <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H:%M:%S"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># %Y-%m-%d</span>
+            ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>value<span class="token operator">=</span>timed<span class="token punctuation">)</span>
+            row <span class="token operator">+=</span> <span class="token number">1</span>
+            wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'result.xlsx'</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">while</span> row <span class="token operator">&lt;</span> cishu <span class="token punctuation">:</span>
+            maxrow <span class="token operator">=</span> sheet<span class="token punctuation">.</span>max_row
+            <span class="token comment" spellcheck="true"># print(f'excel中第{maxrow + 1}行输入数据-----')</span>
+            <span class="token comment" spellcheck="true"># 测几次来算平均值 imgh,10--10次</span>
+            thr <span class="token operator">=</span> lg<span class="token punctuation">.</span>get_averg<span class="token punctuation">(</span>imgh<span class="token punctuation">,</span>pingjun<span class="token punctuation">)</span>
+            ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>value<span class="token operator">=</span>thr<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'第{row + 1}组-----角度平均值数据：{thr}，输入到第{maxrow + 1}行中'</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> thr<span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> thr<span class="token operator">&lt;=</span><span class="token number">45</span><span class="token punctuation">:</span>
+                cdu <span class="token operator">=</span> thr<span class="token operator">/</span><span class="token number">2.25</span> <span class="token operator">+</span><span class="token number">100</span>
+            <span class="token keyword">elif</span> thr<span class="token operator">>=</span><span class="token number">135</span> <span class="token operator">and</span> thr <span class="token operator">&lt;=</span> <span class="token number">360</span><span class="token punctuation">:</span>
+                cdu <span class="token operator">=</span> <span class="token punctuation">(</span>thr <span class="token operator">-</span> <span class="token number">135</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2.25</span>
+            <span class="token keyword">else</span> <span class="token punctuation">:</span>
+                cdu <span class="token operator">=</span> <span class="token string">'故障'</span>
+            ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>value<span class="token operator">=</span>cdu<span class="token punctuation">)</span>
+            timed <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H:%M:%S"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># %Y-%m-%d</span>
+            ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>value<span class="token operator">=</span>timed<span class="token punctuation">)</span>
+            row <span class="token operator">+=</span> <span class="token number">1</span>
+            wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'data.xlsx'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    get_xlsx<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>keshihua_data.py</code><br><strong>主要运行文件</strong></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> plotly<span class="token punctuation">.</span>offline <span class="token keyword">as</span> ptly
+<span class="token keyword">import</span> plotly<span class="token punctuation">.</span>graph_objs <span class="token keyword">as</span> go
+<span class="token keyword">import</span> openpyxl <span class="token keyword">as</span> xl
+<span class="token keyword">import</span> xlsx_get <span class="token keyword">as</span> xg
+
+xg<span class="token punctuation">.</span>get_xlsx<span class="token punctuation">(</span><span class="token punctuation">)</span>
+data<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+wb <span class="token operator">=</span> xl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'data.xlsx'</span><span class="token punctuation">)</span>
+sheet <span class="token operator">=</span> wb<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+ws <span class="token operator">=</span> wb<span class="token punctuation">.</span>active
+
+cdu <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> row <span class="token keyword">in</span> ws<span class="token punctuation">.</span>iter_rows<span class="token punctuation">(</span>min_row<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> min_col<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>max_col<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>max_row<span class="token operator">=</span>sheet<span class="token punctuation">.</span>max_row <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> cell <span class="token keyword">in</span> row<span class="token punctuation">:</span>
+        cdu<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cell<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+timed <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> row <span class="token keyword">in</span> ws<span class="token punctuation">.</span>iter_rows<span class="token punctuation">(</span>min_row<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> min_col<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>max_col<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>max_row<span class="token operator">=</span>sheet<span class="token punctuation">.</span>max_row <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> cell <span class="token keyword">in</span> row<span class="token punctuation">:</span>
+        timed<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cell<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+
+trace1 <span class="token operator">=</span> go<span class="token punctuation">.</span>Scatter<span class="token punctuation">(</span>x <span class="token operator">=</span> timed<span class="token punctuation">,</span>
+                    y <span class="token operator">=</span> cdu<span class="token punctuation">,</span>
+                    mode <span class="token operator">=</span> <span class="token string">'lines+markers'</span><span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">#mode可选'markers','lines','lines+markers'</span>
+                    name <span class="token operator">=</span> <span class="token string">'data'</span><span class="token punctuation">,</span>
+                    marker <span class="token operator">=</span> dict<span class="token punctuation">(</span>size <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">,</span>        <span class="token comment" spellcheck="true">#若设为变量则可用散点大小表示变量大小</span>
+                                  color <span class="token operator">=</span> <span class="token string">'rgba(152, 0, 0, .8)'</span><span class="token punctuation">,</span>
+                                  line <span class="token operator">=</span> dict<span class="token punctuation">(</span>width <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span>
+                                              color <span class="token operator">=</span> <span class="token string">'rgb(0, 0, 0)'</span>
+                                              <span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                  opacity<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+                                <span class="token punctuation">)</span>
+            <span class="token punctuation">)</span>
+data<span class="token punctuation">.</span>append<span class="token punctuation">(</span>trace1<span class="token punctuation">)</span>
+layout <span class="token operator">=</span> go<span class="token punctuation">.</span>Layout<span class="token punctuation">(</span>font<span class="token operator">=</span>dict<span class="token punctuation">(</span>family<span class="token operator">=</span><span class="token string">'Courier New, monospace'</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token number">18</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'#3D3D3D'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                   title<span class="token operator">=</span><span class="token string">'温度值'</span>
+    <span class="token punctuation">)</span>
+fig <span class="token operator">=</span> go<span class="token punctuation">.</span>Figure<span class="token punctuation">(</span>data<span class="token operator">=</span>data<span class="token punctuation">,</span> layout<span class="token operator">=</span>layout<span class="token punctuation">)</span>
+ptly<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>fig<span class="token punctuation">,</span> filename <span class="token operator">=</span> <span class="token string">'data.html'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="3-进一步优化，直接再存到excel同时绘制图线，达到粗略得实时"><a href="#3-进一步优化，直接再存到excel同时绘制图线，达到粗略得实时" class="headerlink" title="3. 进一步优化，直接再存到excel同时绘制图线，达到粗略得实时"></a>3. 进一步优化，直接再存到excel同时绘制图线，达到粗略得实时</h1><p><code>keshihua_data_shishi.py</code></p>
+<ul>
+<li>1.实时显示，但不太美观，而且不丝滑</li>
+<li>2.界面美观，但不会实时显示</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># import plotly.offline as ptly</span>
+<span class="token comment" spellcheck="true"># import plotly.graph_objs as go</span>
+<span class="token keyword">import</span> openpyxl <span class="token keyword">as</span> xl
+<span class="token keyword">from</span> openpyxl <span class="token keyword">import</span> Workbook
+<span class="token keyword">import</span> line_get <span class="token keyword">as</span> lg
+<span class="token keyword">import</span> cv2
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+<span class="token keyword">def</span> <span class="token function">save_xlsx</span><span class="token punctuation">(</span>thr<span class="token punctuation">,</span>cdu<span class="token punctuation">,</span>timed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    filex <span class="token operator">=</span> <span class="token string">'ssdata.xlsx'</span>
+    <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>filex<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'--在ssdata.xlsx中写入数据--'</span><span class="token punctuation">)</span>
+        wb <span class="token operator">=</span> xl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'ssdata.xlsx'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 文件表单定位</span>
+        sheet <span class="token operator">=</span> wb<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        wb <span class="token operator">=</span> Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'--新建一个ssdata.xlsx--'</span><span class="token punctuation">)</span>
+        sheet <span class="token operator">=</span> wb<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+
+    ws <span class="token operator">=</span> wb<span class="token punctuation">.</span>active
+    ws<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'指针角度'</span>
+    ws<span class="token punctuation">[</span><span class="token string">'B1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'转换角度'</span>
+    ws<span class="token punctuation">[</span><span class="token string">'C1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'测试时间'</span>
+
+    maxrow <span class="token operator">=</span> sheet<span class="token punctuation">.</span>max_row <span class="token operator">+</span> <span class="token number">1</span>
+    ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>value<span class="token operator">=</span>thr<span class="token punctuation">)</span>
+    ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>value<span class="token operator">=</span>cdu<span class="token punctuation">)</span>
+    ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>value<span class="token operator">=</span>timed<span class="token punctuation">)</span>
+
+    wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'ssdata.xlsx'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">get_cts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    filex <span class="token operator">=</span> <span class="token string">'ssdata.xlsx'</span>
+    <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>filex<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'--在ssdata.xlsx中写入数据--'</span><span class="token punctuation">)</span>
+        wb <span class="token operator">=</span> xl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'ssdata.xlsx'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 文件表单定位</span>
+        sheet <span class="token operator">=</span> wb<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        wb <span class="token operator">=</span> Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'--新建一个ssdata.xlsx--'</span><span class="token punctuation">)</span>
+        sheet <span class="token operator">=</span> wb<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+    ws <span class="token operator">=</span> wb<span class="token punctuation">.</span>active
+    cdu <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> row <span class="token keyword">in</span> ws<span class="token punctuation">.</span>iter_rows<span class="token punctuation">(</span>min_row<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> min_col<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>max_col<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>max_row<span class="token operator">=</span>sheet<span class="token punctuation">.</span>max_row <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> cell <span class="token keyword">in</span> row<span class="token punctuation">:</span>
+            cdu<span class="token punctuation">.</span>append<span class="token punctuation">(</span>str<span class="token punctuation">(</span>cell<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    timed <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> row <span class="token keyword">in</span> ws<span class="token punctuation">.</span>iter_rows<span class="token punctuation">(</span>min_row<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> min_col<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>max_col<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>max_row<span class="token operator">=</span>sheet<span class="token punctuation">.</span>max_row <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> cell <span class="token keyword">in</span> row<span class="token punctuation">:</span>
+            timed<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cell<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> cdu<span class="token punctuation">,</span>timed
+
+<span class="token keyword">def</span> <span class="token function">get_shishi</span><span class="token punctuation">(</span>cishu<span class="token punctuation">,</span>pingjun<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    img <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'./img/clock_re.png'</span><span class="token punctuation">)</span>
+    imgh <span class="token operator">=</span> img<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">165</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">171</span><span class="token punctuation">]</span>
+
+    row <span class="token operator">=</span> <span class="token number">0</span>
+    cts <span class="token operator">=</span> get_cts<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    cdus <span class="token operator">=</span> cts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    timeds <span class="token operator">=</span> cts<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">while</span> row <span class="token operator">>=</span> cishu <span class="token punctuation">:</span>
+        thr <span class="token operator">=</span> lg<span class="token punctuation">.</span>get_averg<span class="token punctuation">(</span>imgh<span class="token punctuation">,</span>pingjun<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> thr <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">and</span> thr <span class="token operator">&lt;=</span> <span class="token number">45</span><span class="token punctuation">:</span>
+            cdu <span class="token operator">=</span> thr <span class="token operator">/</span> <span class="token number">2.25</span> <span class="token operator">+</span> <span class="token number">100</span>
+        <span class="token keyword">elif</span> thr <span class="token operator">>=</span> <span class="token number">135</span> <span class="token operator">and</span> thr <span class="token operator">&lt;=</span> <span class="token number">360</span><span class="token punctuation">:</span>
+            cdu <span class="token operator">=</span> <span class="token punctuation">(</span>thr <span class="token operator">-</span> <span class="token number">135</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.25</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            cdu <span class="token operator">=</span> <span class="token string">'测试故障'</span>
+        cdus<span class="token punctuation">.</span>append<span class="token punctuation">(</span>str<span class="token punctuation">(</span>cdu<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        timed <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H:%M:%S"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        timeds<span class="token punctuation">.</span>append<span class="token punctuation">(</span>timed<span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true"># 保存数据</span>
+        save_xlsx<span class="token punctuation">(</span>thr<span class="token punctuation">,</span>cdu<span class="token punctuation">,</span>timed<span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true"># plt.figure(1)</span>
+        plt<span class="token punctuation">.</span>clf<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 清空画布上的所有内容</span>
+        fig1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>num<span class="token operator">=</span><span class="token string">'温度-时间'</span><span class="token punctuation">,</span> figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">75</span><span class="token punctuation">,</span> facecolor<span class="token operator">=</span><span class="token string">'#FFFFFF'</span><span class="token punctuation">,</span> edgecolor<span class="token operator">=</span><span class="token string">'#0000FF'</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'Time'</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'Temp'</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>timeds<span class="token punctuation">,</span> cdus<span class="token punctuation">,</span> <span class="token string">'r-s'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># plt.draw()  # 注意此函数需要调用</span>
+        <span class="token comment" spellcheck="true"># time.sleep(0.01)</span>
+        plt<span class="token punctuation">.</span>pause<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>timeds<span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">22</span><span class="token punctuation">:</span>
+            timeds <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            cdus <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            plt<span class="token punctuation">.</span>clf<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span> <span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+
+        <span class="token comment" spellcheck="true"># # plotly 数据可视化 美观，可是不会动态</span>
+        <span class="token comment" spellcheck="true"># data = []</span>
+        <span class="token comment" spellcheck="true"># namee = str(round(cdu,1)) + '°C'</span>
+        <span class="token comment" spellcheck="true"># trace1 = go.Scatter(x=timeds,</span>
+        <span class="token comment" spellcheck="true">#                     y=cdus,</span>
+        <span class="token comment" spellcheck="true">#                     mode='lines+markers',  # mode可选'markers','lines','lines+markers'</span>
+        <span class="token comment" spellcheck="true">#                     name= namee,</span>
+        <span class="token comment" spellcheck="true">#                     marker=dict(size=10,  # 若设为变量则可用散点大小表示变量大小</span>
+        <span class="token comment" spellcheck="true">#                                 color='rgba(152, 0, 0, .8)',</span>
+        <span class="token comment" spellcheck="true">#                                 line=dict(width=2,</span>
+        <span class="token comment" spellcheck="true">#                                           color='rgb(0, 0, 0)'</span>
+        <span class="token comment" spellcheck="true">#                                           ),</span>
+        <span class="token comment" spellcheck="true">#                                 opacity=[]</span>
+        <span class="token comment" spellcheck="true">#                                 )</span>
+        <span class="token comment" spellcheck="true">#                     )</span>
+        <span class="token comment" spellcheck="true"># data.append(trace1)</span>
+        <span class="token comment" spellcheck="true"># axis_template = dict(</span>
+        <span class="token comment" spellcheck="true">#     showgrid=True,  # 网格</span>
+        <span class="token comment" spellcheck="true">#     zeroline=True,  # 是否显示基线,即沿着(0,0)画出x轴和y轴</span>
+        <span class="token comment" spellcheck="true">#     nticks=20,</span>
+        <span class="token comment" spellcheck="true">#     showline=True,</span>
+        <span class="token comment" spellcheck="true">#     title='Time',</span>
+        <span class="token comment" spellcheck="true">#     mirror='all',</span>
+        <span class="token comment" spellcheck="true">#     zerolinecolor="#FF0000"</span>
+        <span class="token comment" spellcheck="true"># )</span>
+        <span class="token comment" spellcheck="true"># ayis_template = dict(</span>
+        <span class="token comment" spellcheck="true">#     showgrid=True,  # 网格</span>
+        <span class="token comment" spellcheck="true">#     zeroline=True,  # 是否显示基线,即沿着(0,0)画出x轴和y轴</span>
+        <span class="token comment" spellcheck="true">#     nticks=20,</span>
+        <span class="token comment" spellcheck="true">#     showline=True,</span>
+        <span class="token comment" spellcheck="true">#     title='Temp',</span>
+        <span class="token comment" spellcheck="true">#     mirror='all',</span>
+        <span class="token comment" spellcheck="true">#     zerolinecolor="#FF0000"</span>
+        <span class="token comment" spellcheck="true"># )</span>
+        <span class="token comment" spellcheck="true"># layout = go.Layout(font=dict(family='Courier New, monospace', size=18, color='#3D3D3D'),</span>
+        <span class="token comment" spellcheck="true">#                    title='温度值' ,xaxis=axis_template,yaxis=ayis_template</span>
+        <span class="token comment" spellcheck="true">#                    )</span>
+        <span class="token comment" spellcheck="true"># fig = go.Figure(data=data, layout=layout)</span>
+        <span class="token comment" spellcheck="true"># ptly.plot(fig, filename='ssdata.html')</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    get_shishi<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>keshihua_shishi.py</code></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> keshihua_data_shishi <span class="token keyword">as</span> kds
+
+cishu <span class="token operator">=</span> <span class="token number">0</span>   <span class="token comment" spellcheck="true"># 0 - 一直测</span>
+pingjun <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'请输入多少组算一次平均数--建议10组--:'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    kds<span class="token punctuation">.</span>get_shishi<span class="token punctuation">(</span>cishu<span class="token punctuation">,</span>pingjun<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="4-粗糙的整合–待优化"><a href="#4-粗糙的整合–待优化" class="headerlink" title="4. 粗糙的整合–待优化"></a>4. 粗糙的整合–待优化</h1><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> math
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> openpyxl <span class="token keyword">as</span> xl
+<span class="token keyword">from</span> openpyxl <span class="token keyword">import</span> Workbook
+<span class="token keyword">import</span> cv2
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> plotly<span class="token punctuation">.</span>offline <span class="token keyword">as</span> ptly
+<span class="token keyword">import</span> plotly<span class="token punctuation">.</span>graph_objs <span class="token keyword">as</span> go
+
+<span class="token comment" spellcheck="true"># 获取指针角度值</span>
+<span class="token keyword">def</span> <span class="token function">get_pointer_rad</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    shape <span class="token operator">=</span> img<span class="token punctuation">.</span>shape
+    c_y<span class="token punctuation">,</span> c_x<span class="token punctuation">,</span> depth <span class="token operator">=</span> int<span class="token punctuation">(</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> shape<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>    <span class="token comment" spellcheck="true"># h,w,cute</span>
+    x1<span class="token operator">=</span>c_x<span class="token operator">+</span>c_x<span class="token operator">*</span><span class="token number">1.5</span>  <span class="token comment" spellcheck="true"># 指针长度--宽 2.5倍</span>
+    src <span class="token operator">=</span> img<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    freq_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">361</span><span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token comment" spellcheck="true"># 算法</span>
+        x <span class="token operator">=</span> <span class="token punctuation">(</span>x1 <span class="token operator">-</span> c_x<span class="token punctuation">)</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>cos<span class="token punctuation">(</span>i <span class="token operator">*</span> math<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">)</span> <span class="token operator">+</span> c_x
+        y <span class="token operator">=</span> <span class="token punctuation">(</span>x1 <span class="token operator">-</span> c_x<span class="token punctuation">)</span> <span class="token operator">*</span> math<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>i <span class="token operator">*</span> math<span class="token punctuation">.</span>pi <span class="token operator">/</span> <span class="token number">180</span><span class="token punctuation">)</span> <span class="token operator">+</span> c_y
+        temp <span class="token operator">=</span> src<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 备份</span>
+        cv2<span class="token punctuation">.</span>line<span class="token punctuation">(</span>temp<span class="token punctuation">,</span> <span class="token punctuation">(</span>c_x<span class="token punctuation">,</span> c_y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>int<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> thickness<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 在temp上画线</span>
+        t1 <span class="token operator">=</span> img<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        t1<span class="token punctuation">[</span>temp<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">255</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">255</span>
+        c <span class="token operator">=</span> img<span class="token punctuation">[</span>temp<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">255</span><span class="token punctuation">]</span>
+        points <span class="token operator">=</span> c<span class="token punctuation">[</span>c <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span>
+        freq_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">(</span>len<span class="token punctuation">(</span>points<span class="token punctuation">)</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 可以展示匹配过程</span>
+        <span class="token comment" spellcheck="true"># cv2.imshow('d', temp)</span>
+        <span class="token comment" spellcheck="true"># cv2.imshow('d1', t1)</span>
+        <span class="token comment" spellcheck="true"># 如果要求固定检测时间不要太快，可以在这里调慢</span>
+        cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> max<span class="token punctuation">(</span>freq_list<span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">getthr</span><span class="token punctuation">(</span>imgc<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    thres <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 随机数范围</span>
+    imgfan <span class="token operator">=</span> cv2<span class="token punctuation">.</span>threshold<span class="token punctuation">(</span>imgc<span class="token punctuation">,</span> thres<span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> cv2<span class="token punctuation">.</span>THRESH_BINARY<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    max <span class="token operator">=</span> get_pointer_rad<span class="token punctuation">(</span>imgfan<span class="token punctuation">)</span>
+    thr <span class="token operator">=</span> max<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">return</span> thr
+
+<span class="token keyword">def</span> <span class="token function">get_averg</span><span class="token punctuation">(</span>imgc<span class="token punctuation">,</span>h<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tol <span class="token operator">=</span> <span class="token number">0</span>
+    h <span class="token operator">=</span> int<span class="token punctuation">(</span>h<span class="token punctuation">)</span>          <span class="token comment" spellcheck="true"># 统计次数</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        thr <span class="token operator">=</span> getthr<span class="token punctuation">(</span>imgc<span class="token punctuation">)</span>
+        tol <span class="token operator">=</span> tol <span class="token operator">+</span> thr
+        <span class="token comment" spellcheck="true"># debug 看看角度是否正确统计</span>
+        <span class="token comment" spellcheck="true"># print(f'第{i+1}次的角度:{thr}')</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>end<span class="token operator">=</span><span class="token string">'、'</span><span class="token punctuation">)</span>
+    averg <span class="token operator">=</span> tol <span class="token operator">/</span> h
+    <span class="token keyword">return</span> averg
+
+
+<span class="token keyword">def</span> <span class="token function">save_xlsx</span><span class="token punctuation">(</span>thr<span class="token punctuation">,</span>cdu<span class="token punctuation">,</span>timed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    filex <span class="token operator">=</span> <span class="token string">'ssdata.xlsx'</span>
+    <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>filex<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'--在ssdata.xlsx中写入数据--'</span><span class="token punctuation">)</span>
+        wb <span class="token operator">=</span> xl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'ssdata.xlsx'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 文件表单定位</span>
+        sheet <span class="token operator">=</span> wb<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        wb <span class="token operator">=</span> Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'--新建一个ssdata.xlsx--'</span><span class="token punctuation">)</span>
+        sheet <span class="token operator">=</span> wb<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+
+    ws <span class="token operator">=</span> wb<span class="token punctuation">.</span>active
+    ws<span class="token punctuation">[</span><span class="token string">'A1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'指针角度'</span>
+    ws<span class="token punctuation">[</span><span class="token string">'B1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'转换角度'</span>
+    ws<span class="token punctuation">[</span><span class="token string">'C1'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'测试时间'</span>
+
+    maxrow <span class="token operator">=</span> sheet<span class="token punctuation">.</span>max_row <span class="token operator">+</span> <span class="token number">1</span>
+    ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>value<span class="token operator">=</span>thr<span class="token punctuation">)</span>
+    ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>value<span class="token operator">=</span>cdu<span class="token punctuation">)</span>
+    ws<span class="token punctuation">.</span>cell<span class="token punctuation">(</span>row<span class="token operator">=</span>maxrow<span class="token punctuation">,</span>column<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>value<span class="token operator">=</span>timed<span class="token punctuation">)</span>
+
+    wb<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token string">'ssdata.xlsx'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">get_cts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    filex <span class="token operator">=</span> <span class="token string">'ssdata.xlsx'</span>
+    <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>filex<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'--在ssdata.xlsx中写入数据--'</span><span class="token punctuation">)</span>
+        wb <span class="token operator">=</span> xl<span class="token punctuation">.</span>load_workbook<span class="token punctuation">(</span><span class="token string">'ssdata.xlsx'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 文件表单定位</span>
+        sheet <span class="token operator">=</span> wb<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        wb <span class="token operator">=</span> Workbook<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'--新建一个ssdata.xlsx--'</span><span class="token punctuation">)</span>
+        sheet <span class="token operator">=</span> wb<span class="token punctuation">[</span><span class="token string">'Sheet'</span><span class="token punctuation">]</span>
+    ws <span class="token operator">=</span> wb<span class="token punctuation">.</span>active
+    cdu <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> row <span class="token keyword">in</span> ws<span class="token punctuation">.</span>iter_rows<span class="token punctuation">(</span>min_row<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> min_col<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>max_col<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>max_row<span class="token operator">=</span>sheet<span class="token punctuation">.</span>max_row <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> cell <span class="token keyword">in</span> row<span class="token punctuation">:</span>
+            cdu<span class="token punctuation">.</span>append<span class="token punctuation">(</span>str<span class="token punctuation">(</span>cell<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    timed <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> row <span class="token keyword">in</span> ws<span class="token punctuation">.</span>iter_rows<span class="token punctuation">(</span>min_row<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> min_col<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>max_col<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span>max_row<span class="token operator">=</span>sheet<span class="token punctuation">.</span>max_row <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> cell <span class="token keyword">in</span> row<span class="token punctuation">:</span>
+            timed<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cell<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> cdu<span class="token punctuation">,</span>timed
+
+<span class="token keyword">def</span> <span class="token function">get_shishi</span><span class="token punctuation">(</span>cishu<span class="token punctuation">,</span>pingjun<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># img = cv2.imread('./img/clock_re.png')</span>
+    imgh <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'frame.jpg'</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># imgh = img[0:165,6:171]</span>
+
+    <span class="token comment" spellcheck="true"># 读取excle中数据</span>
+    cts <span class="token operator">=</span> get_cts<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    cdus <span class="token operator">=</span> cts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    timeds <span class="token operator">=</span> cts<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+    row <span class="token operator">=</span> <span class="token boolean">True</span>
+    <span class="token keyword">while</span> row<span class="token punctuation">:</span>
+        thr <span class="token operator">=</span> get_averg<span class="token punctuation">(</span>imgh<span class="token punctuation">,</span>pingjun<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> thr <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">and</span> thr <span class="token operator">&lt;=</span> <span class="token number">45</span><span class="token punctuation">:</span>
+            cdu <span class="token operator">=</span> thr <span class="token operator">/</span> <span class="token number">2.25</span> <span class="token operator">+</span> <span class="token number">100</span>
+        <span class="token keyword">elif</span> thr <span class="token operator">>=</span> <span class="token number">135</span> <span class="token operator">and</span> thr <span class="token operator">&lt;=</span> <span class="token number">360</span><span class="token punctuation">:</span>
+            cdu <span class="token operator">=</span> <span class="token punctuation">(</span>thr <span class="token operator">-</span> <span class="token number">135</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2.25</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            cdu <span class="token operator">=</span> <span class="token string">'测试故障'</span>
+        cdus<span class="token punctuation">.</span>append<span class="token punctuation">(</span>str<span class="token punctuation">(</span>cdu<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        timed <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%H:%M:%S"</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        timeds<span class="token punctuation">.</span>append<span class="token punctuation">(</span>timed<span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true"># 保存数据</span>
+        save_xlsx<span class="token punctuation">(</span>thr<span class="token punctuation">,</span>cdu<span class="token punctuation">,</span>timed<span class="token punctuation">)</span>
+
+
+        <span class="token comment" spellcheck="true"># # plotly 数据可视化 美观，可是不会动态</span>
+        <span class="token comment" spellcheck="true"># data = []</span>
+        <span class="token comment" spellcheck="true"># cdu1 = round(cdu ,1)</span>
+        <span class="token comment" spellcheck="true"># namee = str(cdu1) + '°C'</span>
+        <span class="token comment" spellcheck="true"># trace1 = go.Scatter(x=timeds,</span>
+        <span class="token comment" spellcheck="true">#                     y=cdus,</span>
+        <span class="token comment" spellcheck="true">#                     mode='lines+markers',  # mode可选'markers','lines','lines+markers'</span>
+        <span class="token comment" spellcheck="true">#                     name= namee,</span>
+        <span class="token comment" spellcheck="true">#                     marker=dict(size=10,  # 若设为变量则可用散点大小表示变量大小</span>
+        <span class="token comment" spellcheck="true">#                                 color='rgba(152, 0, 0, .8)',</span>
+        <span class="token comment" spellcheck="true">#                                 line=dict(width=2,</span>
+        <span class="token comment" spellcheck="true">#                                           color='rgb(0, 0, 0)'</span>
+        <span class="token comment" spellcheck="true">#                                           ),</span>
+        <span class="token comment" spellcheck="true">#                                 opacity=[]</span>
+        <span class="token comment" spellcheck="true">#                                 )</span>
+        <span class="token comment" spellcheck="true">#                     )</span>
+        <span class="token comment" spellcheck="true"># data.append(trace1)</span>
+        <span class="token comment" spellcheck="true"># axis_template = dict(</span>
+        <span class="token comment" spellcheck="true">#     showgrid=True,  # 网格</span>
+        <span class="token comment" spellcheck="true">#     zeroline=True,  # 是否显示基线,即沿着(0,0)画出x轴和y轴</span>
+        <span class="token comment" spellcheck="true">#     nticks=20,</span>
+        <span class="token comment" spellcheck="true">#     showline=True,</span>
+        <span class="token comment" spellcheck="true">#     title='Time',</span>
+        <span class="token comment" spellcheck="true">#     mirror='all',</span>
+        <span class="token comment" spellcheck="true">#     zerolinecolor="#FF0000"</span>
+        <span class="token comment" spellcheck="true"># )</span>
+        <span class="token comment" spellcheck="true"># ayis_template = dict(</span>
+        <span class="token comment" spellcheck="true">#     showgrid=True,  # 网格</span>
+        <span class="token comment" spellcheck="true">#     zeroline=True,  # 是否显示基线,即沿着(0,0)画出x轴和y轴</span>
+        <span class="token comment" spellcheck="true">#     nticks=20,</span>
+        <span class="token comment" spellcheck="true">#     showline=True,</span>
+        <span class="token comment" spellcheck="true">#     title='Temp',</span>
+        <span class="token comment" spellcheck="true">#     mirror='all',</span>
+        <span class="token comment" spellcheck="true">#     zerolinecolor="#FF0000"</span>
+        <span class="token comment" spellcheck="true"># )</span>
+        <span class="token comment" spellcheck="true"># layout = go.Layout(font=dict(family='Courier New, monospace', size=18, color='#3D3D3D'),</span>
+        <span class="token comment" spellcheck="true">#                    title='温度值' ,xaxis=axis_template,yaxis=ayis_template</span>
+        <span class="token comment" spellcheck="true">#                    )</span>
+        <span class="token comment" spellcheck="true"># fig = go.Figure(data=data, layout=layout)</span>
+        <span class="token comment" spellcheck="true"># ptly.plot(fig, filename='ssdata.html')</span>
+        <span class="token comment" spellcheck="true"># break</span>
+
+        <span class="token comment" spellcheck="true"># 实时数据，停不下来</span>
+        <span class="token comment" spellcheck="true"># plt.figure(1)</span>
+        plt<span class="token punctuation">.</span>clf<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 清空画布上的所有内容</span>
+        fig1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>num<span class="token operator">=</span><span class="token string">'温度-时间'</span><span class="token punctuation">,</span> figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">75</span><span class="token punctuation">,</span> facecolor<span class="token operator">=</span><span class="token string">'#FFFFFF'</span><span class="token punctuation">,</span> edgecolor<span class="token operator">=</span><span class="token string">'#0000FF'</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span><span class="token string">'Time'</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span><span class="token string">'Temp'</span><span class="token punctuation">)</span>
+        plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>timeds<span class="token punctuation">,</span> cdus<span class="token punctuation">,</span> <span class="token string">'r-s'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># plt.draw()  # 注意此函数需要调用</span>
+        <span class="token comment" spellcheck="true"># time.sleep(0.01)</span>
+        plt<span class="token punctuation">.</span>pause<span class="token punctuation">(</span><span class="token number">0.01</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> len<span class="token punctuation">(</span>timeds<span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">22</span><span class="token punctuation">:</span>
+            timeds <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            cdus <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            plt<span class="token punctuation">.</span>clf<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            row <span class="token operator">=</span> <span class="token boolean">False</span>
+        <span class="token keyword">else</span> <span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+
+
+<span class="token keyword">def</span> <span class="token function">video_show</span><span class="token punctuation">(</span>video<span class="token punctuation">,</span>ci<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    i <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        ret1<span class="token punctuation">,</span>frame <span class="token operator">=</span> video<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> ret1<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"视频获取失败！"</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+        framegray <span class="token operator">=</span> cv2<span class="token punctuation">.</span>cvtColor<span class="token punctuation">(</span>frame<span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>COLOR_BGR2GRAY<span class="token punctuation">)</span>
+
+        template <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'./img/moban_c.jpg'</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># print(template.shape)</span>
+        <span class="token comment" spellcheck="true"># exit()</span>
+        theight <span class="token punctuation">,</span> twidth <span class="token operator">=</span> template<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token punctuation">,</span> template<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+        result <span class="token operator">=</span> cv2<span class="token punctuation">.</span>matchTemplate<span class="token punctuation">(</span>frame<span class="token punctuation">,</span>template<span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>TM_SQDIFF_NORMED<span class="token punctuation">)</span>
+        cv2<span class="token punctuation">.</span>normalize<span class="token punctuation">(</span>result<span class="token punctuation">,</span>result<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>NORM_MINMAX<span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        min_val<span class="token punctuation">,</span>max_val<span class="token punctuation">,</span>min_loc<span class="token punctuation">,</span>max_loc <span class="token operator">=</span> cv2<span class="token punctuation">.</span>minMaxLoc<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true"># # min_loc：矩形定点</span>
+        <span class="token comment" spellcheck="true"># # (min_loc[0]+twidth,min_loc[1]+theight)：矩形的宽高</span>
+        <span class="token comment" spellcheck="true"># # (0,0,225)：矩形的边框颜色；2：矩形边框宽度</span>
+        cv2<span class="token punctuation">.</span>rectangle<span class="token punctuation">(</span>frame <span class="token punctuation">,</span>min_loc <span class="token punctuation">,</span><span class="token punctuation">(</span>min_loc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> twidth <span class="token punctuation">,</span>min_loc<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> theight<span class="token punctuation">)</span> <span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">255</span> <span class="token punctuation">,</span><span class="token number">0</span> <span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+        cv2<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span><span class="token string">"Video_show"</span><span class="token punctuation">,</span>frame<span class="token punctuation">)</span>
+
+        choose_data <span class="token operator">=</span> framegray<span class="token punctuation">[</span>min_loc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span><span class="token punctuation">(</span>min_loc<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> twidth <span class="token punctuation">)</span><span class="token punctuation">,</span>min_loc<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>min_loc<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> theight<span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># choose_datafan = cv2.threshold(choose_data ,110,255 ,cv2.THRESH_BINARY_INV)[1]</span>
+        cv2<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span><span class="token string">"choose_video"</span><span class="token punctuation">,</span>choose_data<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> i<span class="token operator">%</span>ci <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">:</span>
+            cv2<span class="token punctuation">.</span>imwrite<span class="token punctuation">(</span>f<span class="token string">'frame.jpg'</span><span class="token punctuation">,</span>choose_data<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'照片已保存--frame.jpg--：'</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+        i <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">if</span> cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xff</span> <span class="token operator">==</span> ord<span class="token punctuation">(</span><span class="token string">"e"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+    video<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span> <span class="token punctuation">:</span>
+    cishu <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment" spellcheck="true"># 0 - 一直测</span>
+    <span class="token comment" spellcheck="true"># pingjun = int(input('请输入多少组算一次平均数--建议2组--:'))</span>
+    pingjun <span class="token operator">=</span> <span class="token number">5</span>
+    ci <span class="token operator">=</span> <span class="token number">100</span>
+    <span class="token comment" spellcheck="true"># ci = int(input('请输入多少时间换一组照片--100大概3.638s左右--：'))</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        video <span class="token operator">=</span> cv2<span class="token punctuation">.</span>VideoCapture<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+        video_show<span class="token punctuation">(</span>video <span class="token punctuation">,</span>ci<span class="token punctuation">)</span>
+        get_shishi<span class="token punctuation">(</span>cishu <span class="token punctuation">,</span>pingjun<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://yq010105.github.io" rel="external nofollow noreferrer">Yun Qi</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://yq010105.github.io/2020/02/19/python-mengya/">http://yq010105.github.io/2020/02/19/python-mengya/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="http://yq010105.github.io" target="_blank">Yun Qi</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/Compete/">
+                                    <span class="chip bg-color">Compete</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2020/02/20/python-math/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Python_math">
+                        
+                        <span class="card-title">Python_math</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Python中的math库，写代码时需要用到的python中的数学函数
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/02/18/python-open-cv/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Python_Opencv">
+                        
+                        <span class="card-title">Python_Opencv</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Python中opencv的学习和使用，可以操作图片，跟ps中知识挺像的hhh
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/Compete/">
+                        <span class="chip bg-color">Compete</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1,h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1,h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="http://yq010105.github.io" target="_blank">Yun Qi</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">31.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/yq010105" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:yuanqi053@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/satoru43886693" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/satoru43886693" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1422718901" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1422718901" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"./live2d_models/haruna/33/model.2018.spring.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.8},"log":false});</script></body>
+
+</html>
