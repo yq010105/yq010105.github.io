@@ -426,12 +426,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Spider/">
-                                <span class="chip bg-color">Spider</span>
-                            </a>
-                        
                             <a href="/tags/Python/">
                                 <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/Spider/">
+                                <span class="chip bg-color">Spider</span>
                             </a>
                         
                     </div>
@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1,253
+                    1,705
                 </div>
                 
 
@@ -539,179 +539,179 @@ rows <span class="token operator">=</span> <span class="token punctuation">[</sp
 <h1 id="2-爬取-baidu-上搜到的图片-初级"><a href="#2-爬取-baidu-上搜到的图片-初级" class="headerlink" title="2. 爬取 baidu 上搜到的图片(初级)"></a>2. 爬取 baidu 上搜到的图片(初级)</h1><h2 id="2-1-thumbURL"><a href="#2-1-thumbURL" class="headerlink" title="2.1 thumbURL"></a>2.1 thumbURL</h2><ul>
 <li><em>分辨率极低</em></li>
 </ul>
-<pre class="line-numbers language-py"><code class="language-py">import re
-import requests
-import os
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> re
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> os
 
-def download(html):
-    #通过正则匹配
-    pic_url = re.findall('"thumbURL":"(.*?)",',html, re.S)
-    i = 1
-    for key in pic_url:
-        print("开始下载图片："+key +"\r\n")
-        try:
-            pic = requests.get(key, timeout=10)
-        except requests.exceptions.ConnectionError:
-            print('图片无法下载')
-            continue
-        #保存图片路径
-        main_path="E:/baidu/" #文件保存路径，如果不存在就会被重建
-        if  not os.path.exists(main_path):#如果路径不存在
-            os.makedirs(main_path)
-        dir = "E:/baidu/" + str(i) + '.jpg'
-        fp = open(dir, 'wb')
-        fp.write(pic.content)
-        fp.close()
-        i += 1
-def main():
-        url = 'https://image.baidu.com/search/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&fm=result&pos=history&word=siyueshinide'
-        result = requests.get(url)
-        download(result.text)
+<span class="token keyword">def</span> <span class="token function">download</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true">#通过正则匹配</span>
+    pic_url <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'"thumbURL":"(.*?)",'</span><span class="token punctuation">,</span>html<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+    i <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">for</span> key <span class="token keyword">in</span> pic_url<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"开始下载图片："</span><span class="token operator">+</span>key <span class="token operator">+</span><span class="token string">"\r\n"</span><span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            pic <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>key<span class="token punctuation">,</span> timeout<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span> requests<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>ConnectionError<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'图片无法下载'</span><span class="token punctuation">)</span>
+            <span class="token keyword">continue</span>
+        <span class="token comment" spellcheck="true">#保存图片路径</span>
+        main_path<span class="token operator">=</span><span class="token string">"E:/baidu/"</span> <span class="token comment" spellcheck="true">#文件保存路径，如果不存在就会被重建</span>
+        <span class="token keyword">if</span>  <span class="token operator">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true">#如果路径不存在</span>
+            os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span>
+        dir <span class="token operator">=</span> <span class="token string">"E:/baidu/"</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg'</span>
+        fp <span class="token operator">=</span> open<span class="token punctuation">(</span>dir<span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span>
+        fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>pic<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+        fp<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        i <span class="token operator">+=</span> <span class="token number">1</span>
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> <span class="token string">'https://image.baidu.com/search/index?tn=baiduimage&amp;ipn=r&amp;ct=201326592&amp;cl=2&amp;lm=-1&amp;st=-1&amp;sf=1&amp;fmq=&amp;pv=&amp;ic=0&amp;nc=1&amp;z=&amp;se=1&amp;showtab=0&amp;fb=0&amp;width=&amp;height=&amp;face=0&amp;istype=2&amp;ie=utf-8&amp;fm=result&amp;pos=history&amp;word=siyueshinide'</span>
+        result <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+        download<span class="token punctuation">(</span>result<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
 
 
-if __name__ == '__main__':
-        main()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+        main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-2-objURL"><a href="#2-2-objURL" class="headerlink" title="2.2 objURL"></a>2.2 objURL</h2><p><em>分辨率较高，但有的图爬不了</em></p>
-<pre class="line-numbers language-py"><code class="language-py">import re
-import requests
-import os
-import json
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> re
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> json
 
-def download(html):
-    #通过正则匹配
-    pic_url = re.findall('"objURL":"(.*?)",',html, re.S)
-    # for pic_url_li in pic_url:
-        # pic_url_js = '{'+'"link"'+':' +pic_url_li+'}'
-        # pic_url_py = json.loads(pic_url_li)
-    # print(pic_url)
-    # exit()
-    i = 1
-    for key in pic_url:
-        print("开始下载图片："+key +"\r\n")
-        try:
-            pic = requests.get(key, timeout=10)
-        except requests.exceptions.ConnectionError:
-            print('图片无法下载')
-            continue
-        except requests.exceptions.ReadTimeout:
-            print('requests.exceptions.ReadTimeout')
-            continue
-        #保存图片路径
-        main_path="E:/baidu/" #文件保存路径，如果不存在就会被重建
-        if  not os.path.exists(main_path):#如果路径不存在
-            os.makedirs(main_path)
-        dir = "E:/baidu/" + str(i) + '.jpg'
-        fp = open(dir, 'wb')
-        fp.write(pic.content)
-        fp.close()
-        i += 1
-def main():
-        url = 'https://image.baidu.com/search/index?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&fm=result&pos=history&word=siyueshinide'
-        result = requests.get(url)
-        download(result.text)
+<span class="token keyword">def</span> <span class="token function">download</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true">#通过正则匹配</span>
+    pic_url <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'"objURL":"(.*?)",'</span><span class="token punctuation">,</span>html<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># for pic_url_li in pic_url:</span>
+        <span class="token comment" spellcheck="true"># pic_url_js = '{'+'"link"'+':' +pic_url_li+'}'</span>
+        <span class="token comment" spellcheck="true"># pic_url_py = json.loads(pic_url_li)</span>
+    <span class="token comment" spellcheck="true"># print(pic_url)</span>
+    <span class="token comment" spellcheck="true"># exit()</span>
+    i <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">for</span> key <span class="token keyword">in</span> pic_url<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"开始下载图片："</span><span class="token operator">+</span>key <span class="token operator">+</span><span class="token string">"\r\n"</span><span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            pic <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>key<span class="token punctuation">,</span> timeout<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span> requests<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>ConnectionError<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'图片无法下载'</span><span class="token punctuation">)</span>
+            <span class="token keyword">continue</span>
+        <span class="token keyword">except</span> requests<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>ReadTimeout<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'requests.exceptions.ReadTimeout'</span><span class="token punctuation">)</span>
+            <span class="token keyword">continue</span>
+        <span class="token comment" spellcheck="true">#保存图片路径</span>
+        main_path<span class="token operator">=</span><span class="token string">"E:/baidu/"</span> <span class="token comment" spellcheck="true">#文件保存路径，如果不存在就会被重建</span>
+        <span class="token keyword">if</span>  <span class="token operator">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment" spellcheck="true">#如果路径不存在</span>
+            os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span>
+        dir <span class="token operator">=</span> <span class="token string">"E:/baidu/"</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg'</span>
+        fp <span class="token operator">=</span> open<span class="token punctuation">(</span>dir<span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span>
+        fp<span class="token punctuation">.</span>write<span class="token punctuation">(</span>pic<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+        fp<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        i <span class="token operator">+=</span> <span class="token number">1</span>
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> <span class="token string">'https://image.baidu.com/search/index?tn=baiduimage&amp;ipn=r&amp;ct=201326592&amp;cl=2&amp;lm=-1&amp;st=-1&amp;sf=1&amp;fmq=&amp;pv=&amp;ic=0&amp;nc=1&amp;z=&amp;se=1&amp;showtab=0&amp;fb=0&amp;width=&amp;height=&amp;face=0&amp;istype=2&amp;ie=utf-8&amp;fm=result&amp;pos=history&amp;word=siyueshinide'</span>
+        result <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+        download<span class="token punctuation">(</span>result<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
 
 
-if __name__ == '__main__':
-        main()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+        main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-3-baidu-面向对象"><a href="#2-3-baidu-面向对象" class="headerlink" title="2.3 baidu 面向对象"></a>2.3 baidu 面向对象</h2><ul>
 <li>输入想爬取的关键词，自动爬取(只能下 30 张)</li>
 </ul>
-<pre class="line-numbers language-py"><code class="language-py">import requests
-import re
-import os
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> os
 
 
-def get_id(search_id):
-    url = 'http://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=' + search_id
-    return url
+<span class="token keyword">def</span> <span class="token function">get_id</span><span class="token punctuation">(</span>search_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    url <span class="token operator">=</span> <span class="token string">'http://image.baidu.com/search/index?tn=baiduimage&amp;ps=1&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;nc=1&amp;ie=utf-8&amp;word='</span> <span class="token operator">+</span> search_id
+    <span class="token keyword">return</span> url
 
-def get_obj():
-    url = get_id(search_id)
-    html = requests.get(url).content.decode()
-    obj_URL = re.findall('"objURL":"(.*?)",',html,re.S)
-    return obj_URL
+<span class="token keyword">def</span> <span class="token function">get_obj</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    url <span class="token operator">=</span> get_id<span class="token punctuation">(</span>search_id<span class="token punctuation">)</span>
+    html <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    obj_URL <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'"objURL":"(.*?)",'</span><span class="token punctuation">,</span>html<span class="token punctuation">,</span>re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> obj_URL
 
-def save_pic():
-    obj_url = get_obj()
-    i = 1
-    for objurl in obj_url:
-        print('开始下载图片'+'\t'+'第'+str(i)+'张')
-        try :
-            pic = requests.get(objurl,timeout = 10)
-        except requests.exceptions.ConnectionError:
-            print('图片无法下载')
-            continue
-        except requests.exceptions.ReadTimeout:
-            print('requests.exceptions.ReadTimeout')
-            continue
-        global search_id
-        main_path = r'E:\learn\py\git\spider\spider_learn\baidu\pic\\' + search_id +'\\'
-        if not os.path.exists(main_path):
-            os.makedirs(main_path)
-        dir = "E:\learn\py\git\spider\spider_learn\\baidu\pic\\" +search_id +'\\'+ search_id+ str(i) + '.jpg'
-        with open(dir,'wb') as f:
-            f.write(pic.content)
-        i += 1
+<span class="token keyword">def</span> <span class="token function">save_pic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    obj_url <span class="token operator">=</span> get_obj<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    i <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">for</span> objurl <span class="token keyword">in</span> obj_url<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'开始下载图片'</span><span class="token operator">+</span><span class="token string">'\t'</span><span class="token operator">+</span><span class="token string">'第'</span><span class="token operator">+</span>str<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'张'</span><span class="token punctuation">)</span>
+        <span class="token keyword">try</span> <span class="token punctuation">:</span>
+            pic <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>objurl<span class="token punctuation">,</span>timeout <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span> requests<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>ConnectionError<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'图片无法下载'</span><span class="token punctuation">)</span>
+            <span class="token keyword">continue</span>
+        <span class="token keyword">except</span> requests<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>ReadTimeout<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'requests.exceptions.ReadTimeout'</span><span class="token punctuation">)</span>
+            <span class="token keyword">continue</span>
+        <span class="token keyword">global</span> search_id
+        main_path <span class="token operator">=</span> r<span class="token string">'E:\learn\py\git\spider\spider_learn\baidu\pic\\'</span> <span class="token operator">+</span> search_id <span class="token operator">+</span><span class="token string">'\\'</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span>
+        dir <span class="token operator">=</span> <span class="token string">"E:\learn\py\git\spider\spider_learn\\baidu\pic\\"</span> <span class="token operator">+</span>search_id <span class="token operator">+</span><span class="token string">'\\'</span><span class="token operator">+</span> search_id<span class="token operator">+</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg'</span>
+        <span class="token keyword">with</span> open<span class="token punctuation">(</span>dir<span class="token punctuation">,</span><span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>pic<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+        i <span class="token operator">+=</span> <span class="token number">1</span>
 
 
-if __name__ =='__main__':
-    search_id = input('请输入要下载的内容:')
-    save_pic()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    search_id <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'请输入要下载的内容:'</span><span class="token punctuation">)</span>
+    save_pic<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-4-baidu-more"><a href="#2-4-baidu-more" class="headerlink" title="2.4 baidu_more"></a>2.4 baidu_more</h2><ul>
 <li><strong>进一步升级，可以爬任意数量图片</strong></li>
 </ul>
-<pre class="line-numbers language-py"><code class="language-py">import requests
-import re
-import os
-from multiprocessing.dummy import Pool
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> os
+<span class="token keyword">from</span> multiprocessing<span class="token punctuation">.</span>dummy <span class="token keyword">import</span> Pool
 
 
-def get_urls(search_id):
-    total = (input('请输入要几页----30张一页----：'))
-    url = 'http://image.baidu.com/search/index?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=' + search_id+ '&pn='
-    t = 0
-    URLS = []
-    while t < int(total)*30:
-        URL = url + str(t)
-        t = t + 30
-        URLS.append(URL)
-    return URLS
+<span class="token keyword">def</span> <span class="token function">get_urls</span><span class="token punctuation">(</span>search_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    total <span class="token operator">=</span> <span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'请输入要几页----30张一页----：'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    url <span class="token operator">=</span> <span class="token string">'http://image.baidu.com/search/index?tn=baiduimage&amp;ps=1&amp;ct=201326592&amp;lm=-1&amp;cl=2&amp;nc=1&amp;ie=utf-8&amp;word='</span> <span class="token operator">+</span> search_id<span class="token operator">+</span> <span class="token string">'&amp;pn='</span>
+    t <span class="token operator">=</span> <span class="token number">0</span>
+    URLS <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">while</span> t <span class="token operator">&lt;</span> int<span class="token punctuation">(</span>total<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">30</span><span class="token punctuation">:</span>
+        URL <span class="token operator">=</span> url <span class="token operator">+</span> str<span class="token punctuation">(</span>t<span class="token punctuation">)</span>
+        t <span class="token operator">=</span> t <span class="token operator">+</span> <span class="token number">30</span>
+        URLS<span class="token punctuation">.</span>append<span class="token punctuation">(</span>URL<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> URLS
 
-def get_obj(url):
-    html = requests.get(url).content.decode()
-    obj_URL = re.findall('"objURL":"(.*?)",',html,re.S)
-    return obj_URL
+<span class="token keyword">def</span> <span class="token function">get_obj</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    html <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    obj_URL <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'"objURL":"(.*?)",'</span><span class="token punctuation">,</span>html<span class="token punctuation">,</span>re<span class="token punctuation">.</span>S<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> obj_URL
 
-def save_pic():
-    pool=Pool(5)
-    objurls = pool.map(get_obj,URLS)
-    i = 1
-    for objurl in objurls:
-        for obj in objurl:
-            print('开始下载图片'+'\t'+'第'+str(i)+'张')
-            try :
-                pic = requests.get(obj,timeout = 10)
-            except requests.exceptions.ConnectionError:
-                print('图片无法下载')
-                continue
-            except requests.exceptions.ReadTimeout:
-                print('requests.exceptions.ReadTimeout')
-                continue
-            global search_id
-            main_path = patha +'\\' + search_id +'\\'
-            if not os.path.exists(main_path):
-                os.makedirs(main_path)
-            dir = main_path + search_id+ str(i) + '.jpg'
-            with open(dir,'wb') as f:
-                f.write(pic.content)
-            i += 1
+<span class="token keyword">def</span> <span class="token function">save_pic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    pool<span class="token operator">=</span>Pool<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+    objurls <span class="token operator">=</span> pool<span class="token punctuation">.</span>map<span class="token punctuation">(</span>get_obj<span class="token punctuation">,</span>URLS<span class="token punctuation">)</span>
+    i <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">for</span> objurl <span class="token keyword">in</span> objurls<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> obj <span class="token keyword">in</span> objurl<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'开始下载图片'</span><span class="token operator">+</span><span class="token string">'\t'</span><span class="token operator">+</span><span class="token string">'第'</span><span class="token operator">+</span>str<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'张'</span><span class="token punctuation">)</span>
+            <span class="token keyword">try</span> <span class="token punctuation">:</span>
+                pic <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>obj<span class="token punctuation">,</span>timeout <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">)</span>
+            <span class="token keyword">except</span> requests<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>ConnectionError<span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'图片无法下载'</span><span class="token punctuation">)</span>
+                <span class="token keyword">continue</span>
+            <span class="token keyword">except</span> requests<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>ReadTimeout<span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'requests.exceptions.ReadTimeout'</span><span class="token punctuation">)</span>
+                <span class="token keyword">continue</span>
+            <span class="token keyword">global</span> search_id
+            main_path <span class="token operator">=</span> patha <span class="token operator">+</span><span class="token string">'\\'</span> <span class="token operator">+</span> search_id <span class="token operator">+</span><span class="token string">'\\'</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span>
+            dir <span class="token operator">=</span> main_path <span class="token operator">+</span> search_id<span class="token operator">+</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg'</span>
+            <span class="token keyword">with</span> open<span class="token punctuation">(</span>dir<span class="token punctuation">,</span><span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>pic<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
 
 
-if __name__ =='__main__':
-    search_id = input('请输入要下载的内容:')
-    URLS = get_urls(search_id)
-    patha = input('输入文件保存路径----示例:E:\\baidu----:')
-    save_pic()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    search_id <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'请输入要下载的内容:'</span><span class="token punctuation">)</span>
+    URLS <span class="token operator">=</span> get_urls<span class="token punctuation">(</span>search_id<span class="token punctuation">)</span>
+    patha <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'输入文件保存路径----示例:E:\\baidu----:'</span><span class="token punctuation">)</span>
+    save_pic<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="3-爬取-ins-上的图片-初级版"><a href="#3-爬取-ins-上的图片-初级版" class="headerlink" title="3. 爬取 ins 上的图片(初级版)"></a>3. 爬取 ins 上的图片(初级版)</h1><ul>
 <li><em>分辨率低</em></li>
 </ul>
@@ -786,7 +786,72 @@ if __name__ =='__main__':
     <span class="token keyword">return</span>
 
 save_pic<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>学习如何爬取高分辨率图片 ing</strong></p>
+<h1 id="4-爬取Wallhaven上的图片"><a href="#4-爬取Wallhaven上的图片" class="headerlink" title="4.爬取Wallhaven上的图片"></a>4.爬取Wallhaven上的图片</h1><h2 id="4-1-龟速爬取-只是用来爬了一下博客需要的图片hhh"><a href="#4-1-龟速爬取-只是用来爬了一下博客需要的图片hhh" class="headerlink" title="4.1 龟速爬取,只是用来爬了一下博客需要的图片hhh"></a>4.1 龟速爬取,只是用来爬了一下博客需要的图片hhh</h2><p><em>爬取速度慢，要等半天才能开始保存文件，应该是我代码结构的问题，以后再做优化</em></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> lxml<span class="token punctuation">.</span>html
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> os
+
+headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"User-Agent"</span><span class="token punctuation">:</span><span class="token string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36"</span><span class="token punctuation">}</span>
+
+<span class="token keyword">def</span> <span class="token function">get_url</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    pages <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'输入页数：'</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># pages = '1'</span>
+    url_pics <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    page <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> page <span class="token operator">&lt;=</span> int<span class="token punctuation">(</span>pages<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> <span class="token string">'https://wallhaven.cc/search?categories=010&amp;purity=100&amp;resolutions=1280x800&amp;sorting=relevance&amp;order=desc&amp;page='</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>page<span class="token punctuation">)</span>
+        html <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers <span class="token operator">=</span> headers<span class="token punctuation">)</span><span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># print(html)</span>
+    <span class="token comment" spellcheck="true"># exit()</span>
+        selector <span class="token operator">=</span> lxml<span class="token punctuation">.</span>html<span class="token punctuation">.</span>fromstring<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+
+        url_pic <span class="token operator">=</span> selector<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//*[@id="thumbs"]/section/ul/li/figure/a/@href'</span><span class="token punctuation">)</span>
+        url_pics<span class="token punctuation">.</span>append<span class="token punctuation">(</span>url_pic<span class="token punctuation">)</span>
+        page <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'得到了内层url'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> url_pics
+
+<span class="token keyword">def</span> <span class="token function">get_pic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    url_pics <span class="token operator">=</span> get_url<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    img_urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> urlst <span class="token keyword">in</span> url_pics<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> url <span class="token keyword">in</span> urlst<span class="token punctuation">:</span>
+            htmlp <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers <span class="token operator">=</span> headers<span class="token punctuation">)</span><span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token comment" spellcheck="true"># print(htmlp)</span>
+            <span class="token comment" spellcheck="true"># exit()</span>
+            img_url <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'"wallpaper" src="(.*?)"'</span><span class="token punctuation">,</span>htmlp<span class="token punctuation">,</span>re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            img_urls<span class="token punctuation">.</span>append<span class="token punctuation">(</span>img_url<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'得到图片的url'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> img_urls
+
+<span class="token keyword">def</span> <span class="token function">get_img</span><span class="token punctuation">(</span>imgurl_list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    i <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">for</span> url <span class="token keyword">in</span> imgurl_list<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'开始下载图片'</span><span class="token operator">+</span><span class="token string">'\t'</span><span class="token operator">+</span><span class="token string">'第'</span><span class="token operator">+</span>str<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'张'</span><span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            pic <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> timeout<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span> requests<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>ConnectionError<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'图片无法下载'</span><span class="token punctuation">)</span>
+            <span class="token keyword">continue</span>
+        <span class="token keyword">except</span> requests<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>ReadTimeout<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'requests.exceptions.ReadTimeout'</span><span class="token punctuation">)</span>
+            <span class="token keyword">continue</span>
+
+        main_path <span class="token operator">=</span> r<span class="token string">'E:\\wallhaven\\'</span> 
+        <span class="token keyword">if</span> <span class="token operator">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span>
+
+
+        dir <span class="token operator">=</span> <span class="token string">'E:\\wallhaven\\'</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span><span class="token string">'.jpg'</span>
+
+        <span class="token keyword">with</span> open<span class="token punctuation">(</span>dir<span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>pic<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+        i <span class="token operator">+=</span> <span class="token number">1</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    imgurl_list <span class="token operator">=</span> get_pic<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    get_img<span class="token punctuation">(</span>imgurl_list<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -868,12 +933,12 @@ save_pic<span class="token punctuation">(</span><span class="token punctuation">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Spider/">
-                                    <span class="chip bg-color">Spider</span>
-                                </a>
-                            
                                 <a href="/tags/Python/">
                                     <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/Spider/">
+                                    <span class="chip bg-color">Spider</span>
                                 </a>
                             
                         </div>
@@ -919,7 +984,7 @@ save_pic<span class="token punctuation">(</span><span class="token punctuation">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Python_format">
+                        <img src="/medias/wallhaven/4.jpg" class="responsive-img" alt="Python_format">
                         
                         <span class="card-title">Python_format</span>
                     </div>
@@ -968,7 +1033,7 @@ save_pic<span class="token punctuation">(</span><span class="token punctuation">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Python-Note">
+                        <img src="/medias/wallhaven/1.jpg" class="responsive-img" alt="Python-Note">
                         
                         <span class="card-title">Python-Note</span>
                     </div>
@@ -1155,7 +1220,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">31.3k</span>&nbsp;字
+                class="white-color">31.8k</span>&nbsp;字
             
             
             
@@ -1185,10 +1250,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="mailto:yuanqi053@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
 
 
 
@@ -1208,6 +1269,12 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
+
+
+
+    <a href="https://space.bilibili.com/168705417" class="tooltipped" target="_blank" data-tooltip="b站帐号: https://space.bilibili.com/168705417" data-position="top" data-delay="50">
+        <i class="fas fa-star"></i>
+    </a>
 
 </div>
     </div>
