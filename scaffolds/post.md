@@ -1,6 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
+img: /img/pic/
 categories:
 tags:
 top: false # 推荐
