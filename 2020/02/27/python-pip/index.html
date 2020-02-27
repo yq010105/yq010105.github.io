@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python_WordCloud, Yun.Qi">
-    <meta name="description" content="WordCloud 一个可以生成词云的 python 的轮子">
+    <meta name="keywords" content="Python_pip, Yun.Qi">
+    <meta name="description" content="pip 的使用方法">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python_WordCloud | Yun.Qi</title>
+    <title>Python_pip | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python_WordCloud</h1>
+                    <h1 class="description center-align post-title">Python_pip</h1>
                 </div>
             </div>
         </div>
@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-13
+                    2020-02-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-02-26
+                    2020-02-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    271
+                    192
                 </div>
                 
 
@@ -496,78 +496,23 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>安装: <code>pip install WordCloud</code></p>
-<h1 id="1-wordcloud-代码-英文"><a href="#1-wordcloud-代码-英文" class="headerlink" title="1. wordcloud 代码(英文)"></a>1. wordcloud 代码(英文)</h1><pre class="line-numbers language-py"><code class="language-py">from wordcloud import WordCloud
-import PIL .Image as image
-import numpy as np # 自定义图片
-
-dir = './bi.txt'
-
-with open(dir) as fp:
-    text = fp.read()
-    # print(text)
-    # exit()
-    mask = np.array(image.open('F:\download\\1.png'))   #自定义词云形状
-    WordCloud = WordCloud(
-        mask = mask,
-    ).generate(text)
-    image_produce = WordCloud.to_image()
-    image_produce.show()        #  生成的文件在：C:\Users\20180\AppData\Local\Temp\jieba.cache中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="2-wordcloud-代码实现-中文"><a href="#2-wordcloud-代码实现-中文" class="headerlink" title="2. wordcloud 代码实现(中文)"></a>2. wordcloud 代码实现(中文)</h1><ul>
-<li><strong>jieba 库</strong></li>
+                <blockquote>
+<p><a href="https://blog.csdn.net/qq_15260769/article/details/80731407" target="_blank" rel="noopener">参考博客</a></p>
+</blockquote>
+<h1 id="1-pip自身的安装，更新，卸载"><a href="#1-pip自身的安装，更新，卸载" class="headerlink" title="1. pip自身的安装，更新，卸载"></a>1. pip自身的安装，更新，卸载</h1><h2 id="1-1-pip-安装"><a href="#1-1-pip-安装" class="headerlink" title="1.1 pip 安装"></a>1.1 pip 安装</h2><p><a href="https://pypi.python.org/pypi/pip" target="_blank" rel="noopener">官网下载pip</a>,下载 .tar.gz压缩包</p>
+<ul>
+<li>解压后再文件目录中有一个<code>setup.py</code>文件</li>
+<li>使用<code>python setup.py install</code>安装pip</li>
+<li>环境变量设置，找一下pip.exe所在位置，将其添加到系统的环境变量path中</li>
 </ul>
-<pre class="line-numbers language-py"><code class="language-py">from wordcloud import WordCloud
-import PIL .Image as image
-import numpy as np # 自定义图片
-import jieba # 中文
-
-def trans_cn(text):
-    word_list = jieba.cut(text)
-    result = ' '.join(word_list)
-    return result
-
-dir = './bi.txt'
-
-with open(dir) as fp:
-    text = fp.read()
-    # print(text)
-    # exit()
-    text = trans_cn(text)
-    mask = np.array(image.open('F:\download\\1.png'))
-    WordCloud = WordCloud(
-        mask = mask,
-        font_path ='C:\\windows\\Fonts\\msyh.ttc'
-    ).generate(text)
-    image_produce = WordCloud.to_image()
-    image_produce.show()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>参考<a href="https://www.jianshu.com/p/c986f5017ca7" target="_blank" rel="noopener">简书网站</a></p>
-</blockquote>
-<h1 id="3-将-python-词云生成的图片保存下来"><a href="#3-将-python-词云生成的图片保存下来" class="headerlink" title="3. 将 python 词云生成的图片保存下来"></a>3. 将 python 词云生成的图片保存下来</h1><pre class="line-numbers language-py"><code class="language-py">import jieba
-
-from wordcloud import WordCloud
-
-
-with open("./bi.txt") as fp:
-    txt = fp.read()  # 读取文本
-
-words = jieba.lcut(txt)  # 精确分词
-
-nextword = ' '.join(words)    #空格连接字符
-
-wordshow = WordCloud(background_color='white',
-                     width=800,
-                     height=800,
-                     max_words=800,
-                     max_font_size=100,
-                     font_path="msyh.ttc",    #用微软雅黑作为字体显示效果
-
-                     ).generate(nextword)
-
-wordshow.to_file('bilibili_rank.png')  #转换成图片<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p><a href="https://blog.csdn.net/qq_41709494/article/details/89213176" target="_blank" rel="noopener">参考网站</a></p>
-</blockquote>
+<h1 id="1-2-pip-更新"><a href="#1-2-pip-更新" class="headerlink" title="1.2 pip 更新"></a>1.2 pip 更新</h1><p><code>python -m pip install --upgrade pip</code></p>
+<h1 id="1-3-pip-卸载"><a href="#1-3-pip-卸载" class="headerlink" title="1.3 pip 卸载"></a>1.3 pip 卸载</h1><p><code>python -m pip uninstall pip</code></p>
+<h1 id="2-pip对python包的操作"><a href="#2-pip对python包的操作" class="headerlink" title="2. pip对python包的操作"></a>2. pip对python包的操作</h1><h2 id="2-1-pip-安装包"><a href="#2-1-pip-安装包" class="headerlink" title="2.1 pip 安装包"></a>2.1 pip 安装包</h2><p><code>pip install 包名</code></p>
+<h2 id="2-2-pip-更新包"><a href="#2-2-pip-更新包" class="headerlink" title="2.2 pip 更新包"></a>2.2 pip 更新包</h2><p><code>pip install --upgrade 包名</code></p>
+<h2 id="2-3-pip-卸载包"><a href="#2-3-pip-卸载包" class="headerlink" title="2.3 pip 卸载包"></a>2.3 pip 卸载包</h2><p><code>pip uninstall 包名</code></p>
+<h2 id="2-4-其他细节操作"><a href="#2-4-其他细节操作" class="headerlink" title="2.4 其他细节操作"></a>2.4 其他细节操作</h2><h3 id="2-4-1-查看安装的包"><a href="#2-4-1-查看安装的包" class="headerlink" title="2.4.1 查看安装的包"></a>2.4.1 查看安装的包</h3><p><code>pip list</code></p>
+<h3 id="2-4-2-查看具体包的信息"><a href="#2-4-2-查看具体包的信息" class="headerlink" title="2.4.2 查看具体包的信息"></a>2.4.2 查看具体包的信息</h3><p><code>pip show 包名</code></p>
+<h3 id="2-4-3-查看需要升级的包"><a href="#2-4-3-查看需要升级的包" class="headerlink" title="2.4.3 查看需要升级的包"></a>2.4.3 查看需要升级的包</h3><p><code>pip list --outdated</code></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -611,7 +556,7 @@ wordshow.to_file('bilibili_rank.png')  #转换成图片<span aria-hidden="true" 
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yq010105.github.io/2020/02/13/python-wordcloud/">http://yq010105.github.io/2020/02/13/python-wordcloud/</a>
+                    <a href="http://yq010105.github.io/2020/02/27/python-pip/">http://yq010105.github.io/2020/02/27/python-pip/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -688,47 +633,45 @@ wordshow.to_file('bilibili_rank.png')  #转换成图片<span aria-hidden="true" 
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/02/14/python-bili-exam/">
+                <a href="/2020/02/27/python-pip/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/wallhaven/101.jpg" class="responsive-img" alt="Python_Bilibili_Api">
+                        <img src="/medias/wallhaven/9.jpg" class="responsive-img" alt="Python_pip">
                         
-                        <span class="card-title">Python_Bilibili_Api</span>
+                        <span class="card-title">Python_pip</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用bilibili提供的api基于python做出的几个小栗子，获取信息
+                            pip 的使用方法
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/Bilibili/">
-                        <span class="chip bg-color">Bilibili</span>
-                    </a>
                     
                     <a href="/tags/Python/">
                         <span class="chip bg-color">Python</span>
@@ -745,31 +688,31 @@ wordshow.to_file('bilibili_rank.png')  #转换成图片<span aria-hidden="true" 
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/13/py-pyinstaller/">
+                <a href="/2020/02/25/system/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/wallhaven/34.jpg" class="responsive-img" alt="Python Pyinstaller">
+                        <img src="/medias/wallhaven/27.jpg" class="responsive-img" alt="System重置系统后各种软件的重新安装">
                         
-                        <span class="card-title">Python Pyinstaller</span>
+                        <span class="card-title">System重置系统后各种软件的重新安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Pyinstaller 可以将 python 文件打包成 exe 可执行文件
+                            重置系统后软件安装的各个步骤中回收站状况，我什么也不懂hh
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
-                                    学习力
+                            <a href="/categories/%E6%97%A0%E5%8A%9B/" class="post-category">
+                                    无力
                                 </a>
                             
                             
@@ -779,8 +722,8 @@ wordshow.to_file('bilibili_rank.png')  #转换成图片<span aria-hidden="true" 
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/Windows/">
+                        <span class="chip bg-color">Windows</span>
                     </a>
                     
                 </div>
