@@ -87,3 +87,8 @@ UI 美观，可以搜到各种 app
 
 > 当然也可以下载乐愚社区自己的[APP](https://www.lanzous.com/b527515)
 
+## 7. 投屏
+
+### 7.1 手机投到电脑上
+免费开源投屏神器[GitHub链接](https://github.com/Genymobile/scrcpy)
+使用方法可以[看教程](https://yq010105.github.io/2020/03/02/scrcpy/)
