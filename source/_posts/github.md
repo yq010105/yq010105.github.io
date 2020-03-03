@@ -112,3 +112,19 @@ Git 忽略规则匹配语法
 ![cmder](/img/cmder.png)
 >版权声明：本文为CSDN博主「LeonWuV」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 >[原文链接](https://blog.csdn.net/wxl1555/article/details/79887591)
+
+
+### 2.4 更加基础的cmd命令
+* mkdir `mkdir 文件夹名`  新建文件夹
+* touch `touch 文件名`新建文件
+  * 另一种方法：`cd .>user.js` // 在当前目录下新建user.js文件
+* rm/del `rm 文件名`    `del 文件名`删除文件
+* rmdir `rmdir 空文件夹名`删除空文件夹
+  * `rmdir /s/q 文件夹名`删除文件夹及内的全部文件     /s -删除全部子目录及内容，/q - 不显示 Y/N询问
+  * `rmdir /s/q d:\multify\my-multify`    删除D盘multify文件夹下的my-multify文件夹以及子内容，并且不提示
+* rename`rename 1.txt 1.bat`   文件重命名
+* `echo 111>>1.txt` 将111 写进1.txt中，cmd文本编辑
+  * `echo .>>1.txt` 换行写
+  * `for /f %i in ('type 1.txt') do md %i`以一个txt文件中的内容为名称创建文件(夹)
+  * `copy con 1.txt` 然后将内容写入1.txt文件中(好像只能覆盖)
+* `type 文件名` 查看文本文件内容
