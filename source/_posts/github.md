@@ -108,5 +108,7 @@ Git 忽略规则匹配语法
 * 打印当前目录路劲 pwd 为print working directory的简写，
 * 显示当前目录下的所有文件列表 ls 为list的简写，当然也可以用ll命令，它比ls显示的内容更加详细，但是ll在cmder中不可用
 * 清屏 cmder中为 cls和clear均可，reset无效， 而在bash中clear和reset均可，cls无效；
+
+![cmder](/img/cmder.png)
 >版权声明：本文为CSDN博主「LeonWuV」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 >[原文链接](https://blog.csdn.net/wxl1555/article/details/79887591)
