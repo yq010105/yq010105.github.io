@@ -439,12 +439,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Windows/">
-                                <span class="chip bg-color">Windows</span>
-                            </a>
-                        
                             <a href="/tags/Source/">
                                 <span class="chip bg-color">Source</span>
+                            </a>
+                        
+                            <a href="/tags/Windows/">
+                                <span class="chip bg-color">Windows</span>
                             </a>
                         
                     </div>
@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-02
+                    2020-03-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    411
+                    647
                 </div>
                 
 
@@ -516,6 +516,25 @@
 <p>更加详细的教程，参考<a href="https://www.iplaysoft.com/scrcpy.html" target="_blank" rel="noopener">这篇文章</a></p>
 </blockquote>
 <p>快捷键的使用<br><img src="/img/scrcpy.png" alt="快捷键使用"></p>
+<p>一些scrcpy代码操作</p>
+<p><strong>Scrcpy 的命令参数</strong></p>
+<ul>
+<li>关闭手机屏幕    scrcpy -S</li>
+<li>限制画面分辨率    scrcpy -m 1024 (比如限制为 1024)</li>
+<li>修改视频码率    scrcpy -b 4M (默认 8Mbps，改成 4Mbps)</li>
+<li>裁剪画面    scrcpy -c 1224:1440:0:0</li>
+<li>表示分辨率 1224x1440 并且偏移坐标为 (0,0)</li>
+<li>多设备切换    scrcpy -s 设备ID (使用 adb devices 命令查看设备ID)</li>
+<li>窗口置顶    scrcpy -T</li>
+<li>显示触摸点击    scrcpy -t</li>
+<li>在演示或录制教程时，可在画面上对应显示出点击动作</li>
+<li>全屏显示    scrcpy -f</li>
+<li>文件传输默认路径    scrcpy –push-target /你的/目录，将文件拖放到 scrcpy 可以传输文件，此命令指定默认保存目录</li>
+<li>只读模式(仅显示不控制)    scrcpy -n</li>
+<li>屏幕录像    scrcpy -r 视频文件名.mp4 或 .mkv</li>
+<li>屏幕录像 (禁用电脑显示)    scrcpy -Nr 文件名.mkv</li>
+<li>设置窗口标题    scrcpy –window-title ‘异次元好棒！’</li>
+</ul>
 <h3 id="2-无线投屏"><a href="#2-无线投屏" class="headerlink" title="2. 无线投屏"></a>2. 无线投屏</h3><p>注意要在同一局域网下</p>
 <ul>
 <li>查询设备当前的 IP 地址 (设置 →关于手机→状态)</li>
@@ -607,12 +626,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Windows/">
-                                    <span class="chip bg-color">Windows</span>
-                                </a>
-                            
                                 <a href="/tags/Source/">
                                     <span class="chip bg-color">Source</span>
+                                </a>
+                            
+                                <a href="/tags/Windows/">
+                                    <span class="chip bg-color">Windows</span>
                                 </a>
                             
                         </div>
@@ -692,12 +711,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Windows/">
-                        <span class="chip bg-color">Windows</span>
-                    </a>
-                    
                     <a href="/tags/Source/">
                         <span class="chip bg-color">Source</span>
+                    </a>
+                    
+                    <a href="/tags/Windows/">
+                        <span class="chip bg-color">Windows</span>
                     </a>
                     
                 </div>
@@ -923,7 +942,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">33.6k</span>&nbsp;字
+                class="white-color">33.9k</span>&nbsp;字
             
             
             
