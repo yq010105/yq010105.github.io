@@ -85,7 +85,7 @@ UI 美观，可以搜到各种 app
 
 资源多，大佬多
 
-> 当然也可以下载乐愚社区自己的[APP](https://www.lanzous.com/b527515)
+> 当然也可以下载乐愚社区自己的[APP](https://bbs.leyuz.net/downapp/2be83e0d73bb1a36df0ace7abd568867.apk)
 
 ## 7. 投屏
 

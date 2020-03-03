@@ -502,3 +502,93 @@ Label2.Caption=Average
 
 End Sub
 ```
+
+
+----
+----
+
+# 5. **正式学习**
+## 5.1 基础知识（零碎）
+对象三要素：属性、事件、方法
+* 属性：
+`对象.属性= 属性值`
+* 事件：
+
+```
+Private Sub 对象名_事件过程名[参数列表]
+
+End Sub
+```
+
+* 方法：
+
+```
+对象.方法[参数名表]
+Form1.Print "avb"
+Text1.SetFocus
+```
+
+暂停程序Stop
+结束程序End
+
+命令按钮改变背景必须变两个属性-bg和style
+其他的只需改变bg就行了
+
+# 6. 学习作业
+## 6.1 第一次作业
+### 1. 倒计时控件
+![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDJCPGJGNGBGHGFCOHAGOGH)
+
+**作业代码**
+
+```vb 
+Private Sub Command1_Click()
+    Timer1.Interval = 50
+End Sub
+
+Private Sub Command2_Click()
+    End
+End Sub
+
+Private Sub Timer1_Timer()
+    Text2.Text = Format(Now(), "yyyy/MM/dd hh:mm:ss")
+    Text3.Text = #10/1/2020# - Date & "天"
+    Text1.Text = "2020-10-01"
+End Sub
+```
+
+剩下的随便改改bg，caption，font等等的
+
+小知识点：
+* Access Key: 再名称前加&  &emsp;`即&s`
+* 关于日期的格式，参考[Format函数](https://blog.csdn.net/bigheadsheep/article/details/12013267)这篇文章
+
+小问题：
+* 怎么把输入的日期格式化为计算数据,不会更高级的输入转化，只能先死输入
+
+
+### 2. 加法运算器
+![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDGCPGJGNGBGHGFCOHAGOGH)
+
+**作业代码**
+
+```vb
+Private Sub Command1_Click(Index As Integer)
+    Text3.Text = Val(Text1.Text) + Val(Text2.Text)
+End Sub
+
+Private Sub Command2_Click(Index As Integer)
+    Text1.Text = ""
+    Text2.Text = ""
+    Text3.Text = ""
+    Text1.SetFocus
+End Sub
+
+Private Sub Command3_Click()
+    End
+End Sub
+```
+
+小知识点：
+* `Text1.SetFocus`按下按钮后将鼠标指针重新指回`TabIndex = 0`的位置，即使焦点回到加数A框
+* val将字符型数据转换为数值型数据，str将数值型转换为字符型
