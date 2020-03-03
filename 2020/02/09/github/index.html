@@ -478,7 +478,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1,356
+                    1,594
                 </div>
                 
 
@@ -590,6 +590,27 @@ git commit -m 'update .gitignore'</code></pre></li>
 <blockquote>
 <p>版权声明：本文为CSDN博主「LeonWuV」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br><a href="https://blog.csdn.net/wxl1555/article/details/79887591" target="_blank" rel="noopener">原文链接</a></p>
 </blockquote>
+<h3 id="2-4-更加基础的cmd命令"><a href="#2-4-更加基础的cmd命令" class="headerlink" title="2.4 更加基础的cmd命令"></a>2.4 更加基础的cmd命令</h3><ul>
+<li>mkdir <code>mkdir 文件夹名</code>  新建文件夹</li>
+<li>touch <code>touch 文件名</code>新建文件<ul>
+<li>另一种方法：<code>cd .&gt;user.js</code> // 在当前目录下新建user.js文件</li>
+</ul>
+</li>
+<li>rm/del <code>rm 文件名</code>    <code>del 文件名</code>删除文件</li>
+<li>rmdir <code>rmdir 空文件夹名</code>删除空文件夹<ul>
+<li><code>rmdir /s/q 文件夹名</code>删除文件夹及内的全部文件     /s -删除全部子目录及内容，/q - 不显示 Y/N询问</li>
+<li><code>rmdir /s/q d:\multify\my-multify</code>    删除D盘multify文件夹下的my-multify文件夹以及子内容，并且不提示</li>
+</ul>
+</li>
+<li>rename<code>rename 1.txt 1.bat</code>   文件重命名</li>
+<li><code>echo 111&gt;&gt;1.txt</code> 将111 写进1.txt中，cmd文本编辑<ul>
+<li><code>echo .&gt;&gt;1.txt</code> 换行写</li>
+<li><code>for /f %i in ('type 1.txt') do md %i</code>以一个txt文件中的内容为名称创建文件(夹)</li>
+<li><code>copy con 1.txt</code> 然后将内容写入1.txt文件中(好像只能覆盖)</li>
+</ul>
+</li>
+<li><code>type 文件名</code> 查看文本文件内容</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -982,7 +1003,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">33.9k</span>&nbsp;字
+                class="white-color">34.1k</span>&nbsp;字
             
             
             
