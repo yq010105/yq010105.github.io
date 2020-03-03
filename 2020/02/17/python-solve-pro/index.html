@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-02-26
+                    2020-03-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    626
+                    1,142
                 </div>
                 
 
@@ -498,7 +498,7 @@
                 <p><strong>这篇主要是记录一些生活学习中遇到的一些难题,想不通,就用 python 模拟出来</strong><br><em>虽然模拟出来了，但不会有可能还是不会 hhh</em></p>
 <a id="more"></a>
 
-<h1 id="1-概率类问题"><a href="#1-概率类问题" class="headerlink" title="1. 概率类问题"></a>1. 概率类问题</h1><h2 id="1-1-一道小题，材料力学老师引出"><a href="#1-1-一道小题，材料力学老师引出" class="headerlink" title="1.1 一道小题，材料力学老师引出"></a>1.1 一道小题，材料力学老师引出</h2><p><em>24 个朋友生日问题</em></p>
+<h1 id="1-概率类问题"><a href="#1-概率类问题" class="headerlink" title="1. 概率类问题"></a>1. 概率类问题</h1><h2 id="1-1-24-个朋友生日问题"><a href="#1-1-24-个朋友生日问题" class="headerlink" title="1.1 24 个朋友生日问题"></a>1.1 24 个朋友生日问题</h2><p>一道小题，材料力学老师引出</p>
 <pre><code>一年中同一天收到2个或2个以上朋友生日聚会邀请的概率
 A 、小于10%  B、20%  C、40%  D、大于50%</code></pre><p><em>将其大致概括就是：身边有 24 个朋友，他们中有两个人或两个以上的人同一天生日的概率是多少</em><br><strong>为了简单，就只算两个人生日相同的概率</strong></p>
 <pre class="line-numbers language-py"><code class="language-py">import random
@@ -548,6 +548,18 @@ for i in range(ren-1):
 fenmu = 365 ** (ren-1)
 print(total/fenmu) # 0.4616557420854712<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以计算出概率为 0.46，即可以得出有两人或两人以上的概率为 0.54</p>
+<h2 id="1-2-三门问题"><a href="#1-2-三门问题" class="headerlink" title="1.2 三门问题"></a>1.2 三门问题</h2><p>概率论与数理统计上课问题–无python代码，需要思考<br><a href="https://baike.baidu.com/item/%E4%B8%89%E9%97%A8%E9%97%AE%E9%A2%98/1242689?fr=aladdin" target="_blank" rel="noopener">百度百科</a></p>
+<p><strong>问题大概</strong></p>
+<p>三门问题（Monty Hall problem）亦称为蒙提霍尔问题、蒙特霍问题或蒙提霍尔悖论，大致出自美国的电视游戏节目Let’s Make a Deal。问题名字来自该节目的主持人蒙提·霍尔（Monty Hall）。参赛者会看见三扇关闭了的门，其中一扇的后面有一辆汽车，选中后面有车的那扇门可赢得该汽车，另外两扇门后面则各藏有一只山羊。当参赛者选定了一扇门，但未去开启它的时候，节目主持人开启剩下两扇门的其中一扇，露出其中一只山羊。主持人其后会问参赛者要不要换另一扇仍然关上的门。问题是：换另一扇门会否增加参赛者赢得汽车的机率？如果严格按照上述的条件，即主持人清楚地知道，自己打开的那扇门后是羊，那么答案是会。不换门的话，赢得汽车的几率是1/3。换门的话，赢得汽车的几率是2/3</p>
+<p><strong>解答</strong></p>
+<ul>
+<li>第一次选的空门1（概率1/3），之后主持人开另一个空门，换门，得到汽车。事件总概率1/3。</li>
+<li>第一次选的空门2（概率1/3），之后主持人开另一个空门，换门，得到汽车。事件总概率1/3。</li>
+<li>第一次选的汽车（概率1/3），之后主持人开另一个空门1（概率1/2）<br>不换门，得到汽车 这个事件总概率1/3 * 1/2 = 1/6</li>
+<li>第一次选的汽车（概率1/3），之后主持人开另一个空门2（概率1/2）<br>不换门，得到汽车 这个事件总概率1/3 * 1/2 = 1/6</li>
+</ul>
+<p>所以换门赢得汽车的概率更大</p>
+<p><strong>概率存在于被给予的条件下，概率不能寄托在实际的物体上</strong></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -943,7 +955,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">32.4k</span>&nbsp;字
+                class="white-color">33.2k</span>&nbsp;字
             
             
             
