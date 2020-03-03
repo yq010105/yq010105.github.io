@@ -95,3 +95,18 @@ Git 忽略规则匹配语法
     链接：https://www.jianshu.com/p/74bd0ceb6182
     来源：简书
     著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
+### 2.3 cmder 命令操作文件和文件夹
+常用命令
+* 切换目录 cd：change directory的简写，如：cd d:aa/nn 意思就是切换到d盘下的aa文件夹下的nn文件夹
+* 回到上一目录 cd .. 这个结合我们写js或者css时，引用文件时写为../lib/aa.js 所以这个很好理解 需要注意的是在 cd 和..之间有个空格
+* 创建文件 touch 如：touch aa.te 意思就是在当前目录下创建一个名为aa.te的文件
+* 删除文件 rm 是remove的简写 如：rm aa.te 意思就为删除当前目录下的aa.te文件
+* 创建文件夹 mkdir 为make directory 的简写，如 mkdir aa 即为在当前目录下创建一个aa文件夹
+* 删除文件夹 rm -r 其中的r表示递归（recusive）的意思，意思就是先删除文件夹里的文件在删除文件夹，如：rm -r aa 意思为删除aa文件夹下的文件和aa文件夹自己
+* 打印当前目录路劲 pwd 为print working directory的简写，
+* 显示当前目录下的所有文件列表 ls 为list的简写，当然也可以用ll命令，它比ls显示的内容更加详细，但是ll在cmder中不可用
+* 清屏 cmder中为 cls和clear均可，reset无效， 而在bash中clear和reset均可，cls无效；
+>版权声明：本文为CSDN博主「LeonWuV」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+>[原文链接](https://blog.csdn.net/wxl1555/article/details/79887591)
