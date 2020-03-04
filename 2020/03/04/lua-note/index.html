@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python_math, Yun.Qi">
-    <meta name="description" content="Python中的math库，写代码时需要用到的python中的数学函数">
+    <meta name="keywords" content="Lua-note, Yun.Qi">
+    <meta name="description" content="关于lua语言的学习，听说跟c差不多">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python_math | Yun.Qi</title>
+    <title>Lua-note | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon2.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/33.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/img/pic/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python_math</h1>
+                    <h1 class="description center-align post-title">Lua-note</h1>
                 </div>
             </div>
         </div>
@@ -439,8 +439,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/Lua/">
+                                <span class="chip bg-color">Lua</span>
+                            </a>
+                        
+                            <a href="/tags/Note/">
+                                <span class="chip bg-color">Note</span>
                             </a>
                         
                     </div>
@@ -464,7 +468,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-20
+                    2020-03-04
                 </div>
                 
 
@@ -478,7 +482,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    63
+                    640
                 </div>
                 
 
@@ -491,14 +495,96 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>python 中的 math 库</strong><br>非常的有意思 hhh<br>暂时先写一部分；没什么时间深入研究，等过段时间再说</p>
-<a id="more"></a>
+                <h1 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1. 基础知识"></a>1. 基础知识</h1><h2 id="1-1-注释"><a href="#1-1-注释" class="headerlink" title="1.1 注释"></a>1.1 注释</h2><ul>
+<li><p>单行注释 <code>--单行注释</code></p>
+</li>
+<li><p>多行注释</p>
+</li>
+</ul>
+<pre class="line-numbers language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">--[[
+多行注释
+下面两个--可有可无
+--]]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-2-标示符"><a href="#1-2-标示符" class="headerlink" title="1.2 标示符"></a>1.2 标示符</h3><p>变量，最好不要使用下划线夹大写字母的标示符<br>Lua 不允许使用特殊字符和@ $ % 来定义标示符</p>
+<h3 id="1-3-关键字"><a href="#1-3-关键字" class="headerlink" title="1.3 关键字"></a>1.3 关键字</h3><p>不可以当作变量，function local nil repeat until 等等</p>
+<h3 id="1-4-全局变量"><a href="#1-4-全局变量" class="headerlink" title="1.4 全局变量"></a>1.4 全局变量</h3><p>默认变量为全局变量<br>访问一个没有声明的全局变量返回 nil，无</p>
+<pre class="line-numbers language-lua"><code class="language-lua"><span class="token function">print</span><span class="token punctuation">(</span>aa<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- nil</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>删除全局变量：<code>a = nil</code></p>
+<h3 id="1-5-Lua-数据类型"><a href="#1-5-Lua-数据类型" class="headerlink" title="1.5 Lua 数据类型"></a>1.5 Lua 数据类型</h3><p>lua 是动态类型语言，变量不需要类型定义，只需复制<br>lua 的数据基本类型：<br><strong>nil</strong> , <strong>boolean</strong> , <strong>number</strong> , <strong>string</strong> , userdata(用户自定义) , <strong>function(函数)</strong> , thread(进程) ,<strong>table(实现类与类的继承)</strong><br>nil：一个无效值（false）<br>boolean： true 、false/nil<br>number： 只有 double 双精度型<br>string：字符串，’’/“”都可以 <code>[[一串可换行字符串]]</code><br>userdata：表示任意存储在变量中的 c 数据结构<br>thread：表示执行的独立线路，用于执行协同程序<br>table：lua 中的他变了是一个关联数组，数组的索引可以实数字、字符串或表类型，构造表达式：{}表示创建一个空表</p>
+<h4 id="1-5-1-number-amp-string"><a href="#1-5-1-number-amp-string" class="headerlink" title="1.5.1 number &amp; string"></a>1.5.1 number &amp; string</h4><p>几个例子：</p>
+<pre class="line-numbers language-lua"><code class="language-lua"><span class="token function">print</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token operator">+</span><span class="token string">"11"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">--22.0</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"11"</span><span class="token operator">+</span><span class="token string">"11"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">--22.0   自动将字符串转换为number</span>
 
-<h1 id="1-角度相关函数"><a href="#1-角度相关函数" class="headerlink" title="1. 角度相关函数"></a>1. 角度相关函数</h1><h2 id="1-1-角弧度转换"><a href="#1-1-角弧度转换" class="headerlink" title="1.1 角弧度转换"></a>1.1 角弧度转换</h2><pre class="line-numbers language-py"><code class="language-py">import math
-math.degrees(math.pi/2)
-# 90.0
-math.radians(90)
-# 1.5707963267948966<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"a"</span> <span class="token operator">..</span> <span class="token string">"b"</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">--ab</span>
+<span class="token comment" spellcheck="true">-- 用 .. 链接字符串，前后有空格</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token number">123</span> <span class="token operator">..</span> <span class="token number">456</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">--123456</span>
+
+len <span class="token operator">=</span> <span class="token string">"123456"</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token operator">#</span>len<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 6</span>
+<span class="token comment" spellcheck="true">-- # 计算字符串长度</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-5-2-table"><a href="#1-5-2-table" class="headerlink" title="1.5.2 table"></a>1.5.2 table</h4><p>table 表的操作</p>
+<pre class="line-numbers language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 创建空表</span>
+<span class="token keyword">local</span> tbl1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">-- 键值对形式添加数据</span>
+tbl1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+tbl1<span class="token punctuation">[</span><span class="token string">"red"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token function">print</span><span class="token punctuation">(</span>tbl1<span class="token punctuation">[</span><span class="token string">"red"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">--10</span>
+rrr <span class="token operator">=</span> <span class="token punctuation">{</span>red<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>blue<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span>yellow<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span>rrr<span class="token punctuation">[</span><span class="token string">"red"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">--10</span>
+
+<span class="token comment" spellcheck="true">-- 列表中的yyy[1] 不是下标，而是key |123</span>
+yyy <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"red"</span><span class="token punctuation">,</span><span class="token string">"blue"</span><span class="token punctuation">,</span><span class="token string">"orange"</span><span class="token punctuation">}</span>
+<span class="token function">print</span><span class="token punctuation">(</span>yyy<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>yyy<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>yyy<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">--red blue    orange</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>table 遍历</p>
+<pre class="line-numbers language-lua"><code class="language-lua">rrr <span class="token operator">=</span> <span class="token punctuation">{</span>red<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>blue<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span>yellow<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">}</span>
+<span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>rrr<span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>k <span class="token operator">..</span> <span class="token string">":"</span> <span class="token operator">..</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span>
+<span class="token comment" spellcheck="true">--[[好像是随机排的
+red:10
+blue:20
+yellow:30
+]]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="1-5-3-function"><a href="#1-5-3-function" class="headerlink" title="1.5.3 function"></a>1.5.3 function</h4><p>函数类型，定义函数</p>
+<pre class="line-numbers language-lua"><code class="language-lua"><span class="token keyword">function</span> <span class="token function">kkk</span> <span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>v<span class="token operator">+</span>v<span class="token punctuation">)</span>
+<span class="token keyword">end</span>
+<span class="token function">kkk</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 12</span>
+
+a <span class="token operator">=</span> kkk
+<span class="token function">a</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">--16</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>难点:函数中函数</strong></p>
+<pre class="line-numbers language-lua"><code class="language-lua"><span class="token keyword">function</span> <span class="token function">kkk</span><span class="token punctuation">(</span>tab<span class="token punctuation">,</span>func<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> k<span class="token punctuation">,</span>v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>tab<span class="token punctuation">)</span> <span class="token keyword">do</span>
+        <span class="token function">func</span><span class="token punctuation">(</span>k<span class="token punctuation">,</span>v<span class="token punctuation">)</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span>
+
+ttt <span class="token operator">=</span> <span class="token punctuation">{</span>red <span class="token operator">=</span> <span class="token number">10</span> <span class="token punctuation">,</span> blue <span class="token operator">=</span> <span class="token number">20</span> <span class="token punctuation">}</span>
+<span class="token function">kkk</span><span class="token punctuation">(</span>ttt<span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>k1<span class="token punctuation">,</span>v1<span class="token punctuation">)</span>
+            <span class="token function">print</span><span class="token punctuation">(</span>k1 <span class="token operator">..</span> v1<span class="token punctuation">)</span>
+        <span class="token keyword">end</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- blue20</span>
+<span class="token comment" spellcheck="true">-- red10</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-6-运算符"><a href="#1-6-运算符" class="headerlink" title="1.6 运算符"></a>1.6 运算符</h3><h4 id="1-6-1-算数运算符"><a href="#1-6-1-算数运算符" class="headerlink" title="1.6.1 算数运算符"></a>1.6.1 算数运算符</h4><p>+-*/ 加减乘除<br>% 取余<br>^ 乘幂<br>- 符号</p>
+<h4 id="1-6-2-关系运算符"><a href="#1-6-2-关系运算符" class="headerlink" title="1.6.2 关系运算符"></a>1.6.2 关系运算符</h4><p>== / ~= / &gt; / &lt; / &gt;= / &lt;=</p>
+<h4 id="1-6-3-逻辑运算符"><a href="#1-6-3-逻辑运算符" class="headerlink" title="1.6.3 逻辑运算符"></a>1.6.3 逻辑运算符</h4><p>and 与<br>or 或<br>not 非</p>
+<h4 id="1-6-4-其他运算符"><a href="#1-6-4-其他运算符" class="headerlink" title="1.6.4 其他运算符"></a>1.6.4 其他运算符</h4><p>.. 连接两个字符串<br># 返回字符串长度或表的长度</p>
+<h4 id="1-6-5-运算符优先级"><a href="#1-6-5-运算符优先级" class="headerlink" title="1.6.5 运算符优先级"></a>1.6.5 运算符优先级</h4><p>从上到下，优先级减小 ^优先级最大<br>^<br>not - * /<br>+ -<br>..<br>&gt; &lt; &lt;= &gt;= ~= ==<br>and<br>or</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -542,7 +628,7 @@ math.radians(90)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yq010105.github.io/2020/02/20/python-math/">http://yq010105.github.io/2020/02/20/python-math/</a>
+                    <a href="http://yq010105.github.io/2020/03/04/lua-note/">http://yq010105.github.io/2020/03/04/lua-note/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -580,8 +666,12 @@ math.radians(90)
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/Lua/">
+                                    <span class="chip bg-color">Lua</span>
+                                </a>
+                            
+                                <a href="/tags/Note/">
+                                    <span class="chip bg-color">Note</span>
                                 </a>
                             
                         </div>
@@ -622,29 +712,29 @@ math.radians(90)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/02/21/python-plt/">
+                <a href="/2020/03/04/lua-note/">
                     <div class="card-image">
                         
+                        <img src="/img/pic/1.jpg" class="responsive-img" alt="Lua-note">
                         
-                        <img src="/medias/wallhaven/29.jpg" class="responsive-img" alt="Python_Plt">
-                        
-                        <span class="card-title">Python_Plt</span>
+                        <span class="card-title">Lua-note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python plt 的学习过程，可以让数据可视化，还可以展示图像
+                            关于lua语言的学习，听说跟c差不多
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -657,11 +747,16 @@ math.radians(90)
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/Lua/">
+                        <span class="chip bg-color">Lua</span>
+                    </a>
+                    
+                    <a href="/tags/Note/">
+                        <span class="chip bg-color">Note</span>
                     </a>
                     
                 </div>
@@ -675,23 +770,23 @@ math.radians(90)
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/19/python-mengya/">
+                <a href="/2020/03/02/scrcpy/">
                     <div class="card-image">
                         
-                        <img src="/img/cover/mengya.jpg" class="responsive-img" alt="Python_mengya_process">
+                        <img src="/img/pic/6.jpg" class="responsive-img" alt="Scrcpy手机投屏到电脑">
                         
-                        <span class="card-title">Python_mengya_process</span>
+                        <span class="card-title">Scrcpy手机投屏到电脑</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            识别表的指针，代码的构造过程，并没有写完（萌芽杯比赛项目）
+                            Scrcpy的使用教程
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-02
                             </span>
                         <span class="publish-author">
                             
@@ -708,12 +803,12 @@ math.radians(90)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/Source/">
+                        <span class="chip bg-color">Source</span>
                     </a>
                     
-                    <a href="/tags/Compete/">
-                        <span class="chip bg-color">Compete</span>
+                    <a href="/tags/Windows/">
+                        <span class="chip bg-color">Windows</span>
                     </a>
                     
                 </div>

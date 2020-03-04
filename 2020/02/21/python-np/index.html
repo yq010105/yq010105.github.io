@@ -471,14 +471,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-02-26
+                    2020-03-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    804
+                    805
                 </div>
                 
 
@@ -492,7 +492,8 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <a id="more"></a>
-<p><strong>函数引用，命名为np：<code>import numpy as np</code></strong></p>
+
+<p><strong>函数引用，命名为 np：<code>import numpy as np</code></strong></p>
 <h1 id="1-np-linspace"><a href="#1-np-linspace" class="headerlink" title="1. np.linspace()"></a>1. np.linspace()</h1><p><strong>用来创建等差数列</strong></p>
 <pre class="line-numbers language-py"><code class="language-py">numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)
 
@@ -515,8 +516,8 @@ array([ 2. ,  2.2,  2.4,  2.6,  2.8])
 </blockquote>
 <h1 id="2-np-arange"><a href="#2-np-arange" class="headerlink" title="2. np.arange()"></a>2. np.arange()</h1><p><strong>函数返回一个有终点和起点的固定步长的排列，如[1,2,3,4,5]，起点是 1，终点是 5，步长为 1</strong></p>
 <ul>
-<li>1）一个参数时，参数值为终点，起点取默认值0，步长取默认值1</li>
-<li>2）两个参数时，第一个参数为起点，第二个参数为终点，步长取默认值1</li>
+<li>1）一个参数时，参数值为终点，起点取默认值 0，步长取默认值 1</li>
+<li>2）两个参数时，第一个参数为起点，第二个参数为终点，步长取默认值 1</li>
 <li>3）三个参数时，第一个参数为起点，第二个参数为终点，第三个参数为步长。其中步长支持小数</li>
 </ul>
 <pre class="line-numbers language-py"><code class="language-py">#一个参数 默认起点0，步长为1 输出：[0 1 2]
@@ -530,7 +531,7 @@ a = np.arange(0, 3, 0.1)<span aria-hidden="true" class="line-numbers-rows"><span
 <blockquote>
 <p><a href="https://blog.csdn.net/qq_41550480/article/details/89390579" target="_blank" rel="noopener">原文链接</a></p>
 </blockquote>
-<h1 id="3-np-random"><a href="#3-np-random" class="headerlink" title="3. np.random()"></a>3. np.random()</h1><h2 id="3-1-np-random-randint"><a href="#3-1-np-random-randint" class="headerlink" title="3.1 np.random.randint"></a>3.1 np.random.randint</h2><p>low、high、size三个参数。默认high是None,如果只有low，那范围就是[0,low)。如果有high，范围就是[low,high)</p>
+<h1 id="3-np-random"><a href="#3-np-random" class="headerlink" title="3. np.random()"></a>3. np.random()</h1><h2 id="3-1-np-random-randint"><a href="#3-1-np-random-randint" class="headerlink" title="3.1 np.random.randint"></a>3.1 np.random.randint</h2><p>low、high、size 三个参数。默认 high 是 None,如果只有 low，那范围就是[0,low)。如果有 high，范围就是[low,high)</p>
 <pre class="line-numbers language-py"><code class="language-py">>>> np.random.randint(2, size=10)
 array([1, 0, 0, 0, 1, 1, 0, 0, 1, 0])
 
@@ -543,12 +544,12 @@ array([[4, 0, 2, 1],
 <blockquote>
 <p><a href="https://blog.csdn.net/weixin_42029738/article/details/81977492" target="_blank" rel="noopener">原文链接</a></p>
 </blockquote>
-<h2 id="3-2-numpy-random-randn-与rand"><a href="#3-2-numpy-random-randn-与rand" class="headerlink" title="3.2 numpy.random.randn()与rand()"></a>3.2 numpy.random.randn()与rand()</h2><ul>
+<h2 id="3-2-numpy-random-randn-与-rand"><a href="#3-2-numpy-random-randn-与-rand" class="headerlink" title="3.2 numpy.random.randn()与 rand()"></a>3.2 numpy.random.randn()与 rand()</h2><ul>
 <li>numpy.random.randn(d0, d1, …, dn)是从标准正态分布中返回一个或多个样本值</li>
 <li>numpy.random.rand(d0, d1, …, dn)的随机样本位于[0, 1)中</li>
 </ul>
 <pre class="line-numbers language-py"><code class="language-py">
-import numpy as np 
+import numpy as np
 
 arr1 = np.random.randn(2,4)
 print(arr1)
@@ -570,9 +571,9 @@ print(arr2)
 '''<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-3-np-random-seed"><a href="#3-3-np-random-seed" class="headerlink" title="3.3 np.random.seed()"></a>3.3 np.random.seed()</h2><p><strong>seed( ) 用于指定随机数生成时所用算法开始的整数值</strong></p>
 <ul>
-<li>1.如果使用相同的seed( )值，则每次生成的随即数都相同</li>
+<li>1.如果使用相同的 seed( )值，则每次生成的随即数都相同</li>
 <li>2.如果不设置这个值，则系统根据时间来自己选择这个值，此时每次生成的随机数因时间差异而不同</li>
-<li>3.设置的seed()值仅一次有效</li>
+<li>3.设置的 seed()值仅一次有效</li>
 </ul>
 <p><img src="/img/np/random_seed.webp" alt="seed示例"></p>
 <h2 id="3-4-np-random-normal-loc-scale-size"><a href="#3-4-np-random-normal-loc-scale-size" class="headerlink" title="3.4 np.random.normal([loc,scale,size])"></a>3.4 np.random.normal([loc,scale,size])</h2><p>正态(高斯)分布</p>
@@ -971,7 +972,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">34.1k</span>&nbsp;字
+                class="white-color">34.8k</span>&nbsp;字
             
             
             

@@ -475,7 +475,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-03
+                    2020-03-04
                 </div>
                 
 
@@ -495,7 +495,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://github.com/Genymobile/scrcpy" target="_blank" rel="noopener">Scrcpy</a>是一款可以将安卓手机投屏到电脑上的开源软件，在电脑上控制手机，无需root手机</p>
+                <p><a href="https://github.com/Genymobile/scrcpy" target="_blank" rel="noopener">Scrcpy</a>是一款可以将安卓手机投屏到电脑上的开源软件，在电脑上控制手机，无需 root 手机</p>
 <p><strong>用前提示：</strong><br>安卓系统版本要求 5.0 以上</p>
 <p>几个缺陷：（建议忽略）<em>版本 v1.12.1</em></p>
 <ul>
@@ -506,41 +506,41 @@
 <p><em>也许以后会作者大佬修复</em></p>
 <p><strong>使用方法：</strong></p>
 <h3 id="1-有线投屏"><a href="#1-有线投屏" class="headerlink" title="1. 有线投屏"></a>1. 有线投屏</h3><ul>
-<li>用usb数据线将手机和电脑相连接</li>
-<li>打开手机地usb调试功能（开发者选项里）</li>
-<li>如果提示是否允许usb调试，点击确定</li>
-<li>PC端，windows根据系统位数直接<a href="https://github.com/Genymobile/scrcpy/releases" target="_blank" rel="noopener">下载压缩包</a></li>
-<li>将解压后的安装包里面有一个<strong>scrcpy.exe</strong>文件，使用cmd运行<br>然后就好了</li>
+<li>用 usb 数据线将手机和电脑相连接</li>
+<li>打开手机地 usb 调试功能（开发者选项里）</li>
+<li>如果提示是否允许 usb 调试，点击确定</li>
+<li>PC 端，windows 根据系统位数直接<a href="https://github.com/Genymobile/scrcpy/releases" target="_blank" rel="noopener">下载压缩包</a></li>
+<li>将解压后的安装包里面有一个<strong>scrcpy.exe</strong>文件，使用 cmd 运行<br>然后就好了</li>
 </ul>
 <blockquote>
 <p>更加详细的教程，参考<a href="https://www.iplaysoft.com/scrcpy.html" target="_blank" rel="noopener">这篇文章</a></p>
 </blockquote>
 <p>快捷键的使用<br><img src="/img/scrcpy.png" alt="快捷键使用"></p>
-<p>一些scrcpy代码操作</p>
+<p>一些 scrcpy 代码操作</p>
 <p><strong>Scrcpy 的命令参数</strong></p>
 <ul>
-<li>关闭手机屏幕    scrcpy -S</li>
-<li>限制画面分辨率    scrcpy -m 1024 (比如限制为 1024)</li>
-<li>修改视频码率    scrcpy -b 4M (默认 8Mbps，改成 4Mbps)</li>
-<li>裁剪画面    scrcpy -c 1224:1440:0:0</li>
+<li>关闭手机屏幕 scrcpy -S</li>
+<li>限制画面分辨率 scrcpy -m 1024 (比如限制为 1024)</li>
+<li>修改视频码率 scrcpy -b 4M (默认 8Mbps，改成 4Mbps)</li>
+<li>裁剪画面 scrcpy -c 1224:1440:0:0</li>
 <li>表示分辨率 1224x1440 并且偏移坐标为 (0,0)</li>
-<li>多设备切换    scrcpy -s 设备ID (使用 adb devices 命令查看设备ID)</li>
-<li>窗口置顶    scrcpy -T</li>
-<li>显示触摸点击    scrcpy -t</li>
+<li>多设备切换 scrcpy -s 设备 ID (使用 adb devices 命令查看设备 ID)</li>
+<li>窗口置顶 scrcpy -T</li>
+<li>显示触摸点击 scrcpy -t</li>
 <li>在演示或录制教程时，可在画面上对应显示出点击动作</li>
-<li>全屏显示    scrcpy -f</li>
-<li>文件传输默认路径    scrcpy –push-target /你的/目录，将文件拖放到 scrcpy 可以传输文件，此命令指定默认保存目录</li>
-<li>只读模式(仅显示不控制)    scrcpy -n</li>
-<li>屏幕录像    scrcpy -r 视频文件名.mp4 或 .mkv</li>
-<li>屏幕录像 (禁用电脑显示)    scrcpy -Nr 文件名.mkv</li>
-<li>设置窗口标题    scrcpy –window-title ‘异次元好棒！’</li>
+<li>全屏显示 scrcpy -f</li>
+<li>文件传输默认路径 scrcpy –push-target /你的/目录，将文件拖放到 scrcpy 可以传输文件，此命令指定默认保存目录</li>
+<li>只读模式(仅显示不控制) scrcpy -n</li>
+<li>屏幕录像 scrcpy -r 视频文件名.mp4 或 .mkv</li>
+<li>屏幕录像 (禁用电脑显示) scrcpy -Nr 文件名.mkv</li>
+<li>设置窗口标题 scrcpy –window-title ‘异次元好棒！’</li>
 </ul>
 <h3 id="2-无线投屏"><a href="#2-无线投屏" class="headerlink" title="2. 无线投屏"></a>2. 无线投屏</h3><p>注意要在同一局域网下</p>
 <ul>
-<li>查询设备当前的 IP 地址 (设置 →关于手机→状态)</li>
+<li>查询设备当前的 IP 地址 (设置 → 关于手机 → 状态)</li>
 <li>启用 adb TCP/IP 连接，执行命令：adb tcpip 5555，其中 5555 为端口号</li>
 <li>拔掉你的数据线</li>
-<li>通过 WiFi 进行连接，执行命令：adb connect 设备IP地址:5555</li>
+<li>通过 WiFi 进行连接，执行命令：adb connect 设备 IP 地址:5555</li>
 <li>重新启动 scrcpy 即可</li>
 <li>如果 WiFi 较慢，可以调整码率：scrcpy -b 3M -m 800，意思是限制 3 Mbps，画面分辨率限制 800，数值可以随意调整。</li>
 <li>如需切换回 USB 模式，执行：adb usb</li>
@@ -672,51 +672,49 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/03/02/scrcpy/">
+                <a href="/2020/03/04/lua-note/">
                     <div class="card-image">
                         
-                        <img src="/img/pic/6.jpg" class="responsive-img" alt="Scrcpy手机投屏到电脑">
+                        <img src="/img/pic/1.jpg" class="responsive-img" alt="Lua-note">
                         
-                        <span class="card-title">Scrcpy手机投屏到电脑</span>
+                        <span class="card-title">Lua-note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Scrcpy的使用教程
+                            关于lua语言的学习，听说跟c差不多
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                    技术力
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Source/">
-                        <span class="chip bg-color">Source</span>
+                    <a href="/tags/Lua/">
+                        <span class="chip bg-color">Lua</span>
                     </a>
                     
-                    <a href="/tags/Windows/">
-                        <span class="chip bg-color">Windows</span>
+                    <a href="/tags/Note/">
+                        <span class="chip bg-color">Note</span>
                     </a>
                     
                 </div>
@@ -942,7 +940,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">34.1k</span>&nbsp;字
+                class="white-color">34.8k</span>&nbsp;字
             
             
             
