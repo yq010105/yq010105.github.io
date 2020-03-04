@@ -4,8 +4,8 @@ date: 2020-02-18 20:42:34
 summary: Python中opencv的学习和使用，可以操作图片，跟ps中知识挺像的hhh
 categories: 学习力
 tags:
-    - Python
-    - Compete
+  - Python
+  - Compete
 ---
 
 <!--more-->
@@ -35,11 +35,11 @@ def cv_show(name,img):
     cv2.waitKey(0)
     cv2.destroyALLWindows()
 ```
+
 ## 0.1.1 画直线
 
 像素点坐标，左为零，上为零
-左上角为坐标原点，而坐标系是从左到右x符合，从上到下，y要取负
-
+左上角为坐标原点，而坐标系是从左到右 x 符合，从上到下，y 要取负
 
 ```py
 img = np.zeros((320, 320, 3), np.uint8) #生成一个空灰度图像
@@ -56,8 +56,6 @@ cv2.line(img,(0,100),(100,0),(0,0,255),2)
 cv2.line(img,(0,200),(100,0),(0,255,0),2)
 cv_show('line',img)
 ```
-
-
 
 ## 0.2 基本属性/函数
 
@@ -309,6 +307,7 @@ blackhat = cv2.morphologyEx(img,cv2.MORPH_BLACKHAT,kernel)
 ```
 
 ## 0.15 图像梯度-Sobel 算子
+
 ![sobel](/img/opencv/1.jpg)
 梯度：边缘位置的像素数值不同，数值差越大，梯度越大
 边缘检测，物体分辨
@@ -394,7 +393,6 @@ v2 = cv2.Canny(img,50,150)
 
 ```
 
-
 ## 0.18 图像金字塔
 
 越往上走图像越小
@@ -422,6 +420,7 @@ down_up = cv2.pyrDown(up)
 ```
 
 ![拉普拉斯金字塔](/img/opencv/拉普拉斯.png)
+
 - 拉普拉斯金字塔
   原始 - 先 down 再 up = result
   result - down up = reslt1
@@ -528,18 +527,20 @@ img = cv2.circle(img,center,radius,(0,255,0),2)
 ```
 
 ## 0.20 模板匹配----匹配对象在另一个图像哪里
+
 从左到右，从上到下，进行匹配
 匹配计算方法
-* TM_SQDIFF----平方项匹配，值越小，越相关
-* TM_CCORR-----计算相关性，值越大，越相关
-* TM_CCOEFF----计算相关系数，值越大，越相关
-* TM_SQDIFF_NORMED:计算归一化平方不同，越接近0，越相关
-* TM_CCORR_NORMED:计算归一化相关性，越接近1，越相关
-* TM_CCOEFF_NORMED:计算归一化的相关系数，越接近1，越相关
-* 最好用归一化的方法
-返回结果
-匹配的地方大小：
-原图结果A\*B,模板大小a\*b,返回结果矩阵：(A-a+1)*(B-b+1)
+
+- TM_SQDIFF----平方项匹配，值越小，越相关
+- TM_CCORR-----计算相关性，值越大，越相关
+- TM_CCOEFF----计算相关系数，值越大，越相关
+- TM_SQDIFF_NORMED:计算归一化平方不同，越接近 0，越相关
+- TM_CCORR_NORMED:计算归一化相关性，越接近 1，越相关
+- TM_CCOEFF_NORMED:计算归一化的相关系数，越接近 1，越相关
+- 最好用归一化的方法
+  返回结果
+  匹配的地方大小：
+  原图结果 A\*B,模板大小 a\*b,返回结果矩阵：(A-a+1)\*(B-b+1)
 
 ```py
 img = cv2.imread('1.jpg',0)
@@ -548,7 +549,7 @@ template = cv2.imread('11.jpg',0)
 # (110,85)
 h,w = template.shape[:2]
 
-res = cv2.matchTemplate(img,template,cv2.TM_SQDIFE) 
+res = cv2.matchTemplate(img,template,cv2.TM_SQDIFE)
 # (154,179)
 
 min_val,max_val,min_loc,max_loc = cv2.minMaxLoc(res)
@@ -563,6 +564,7 @@ cv2.rectangle(img2,top_left,bottom_right,255,2)
 # 展示出来
 cv_show('res',img2)
 ```
+
 匹配多个对象
 
 ```py
@@ -584,20 +586,21 @@ cv2.waitKey(0)
 ```
 
 ## 0.21 直方图
+
 图片像素的统计直方图
 cv2.calcHist(img,channels,mask,histSize,ranges)
 img -- 图片
-channels--通道 0 -- 自动灰度图  'b' 'g' 'r'
+channels--通道 0 -- 自动灰度图 'b' 'g' 'r'
 mask--淹模图像，掩码，统计某一部分
-    创建掩码
-    mask = np.zeros(img,shape[:2],np.uint8)
-    选择掩码保存部分
-    mask[100:300,100:400] = 255 白色保存部分
-    # masked_img = cv2.bitwise_and(img,img,mask=mask)
-hisSize -- BIN的数目，直方图范围
+创建掩码
+mask = np.zeros(img,shape[:2],np.uint8)
+选择掩码保存部分
+mask[100:300,100:400] = 255 白色保存部分 # masked_img = cv2.bitwise_and(img,img,mask=mask)
+hisSize -- BIN 的数目，直方图范围
 ranges -- 像素值取值反围
 
 `hist = cv2.calcHist([img],[0],None,[256],[0,256])`
+
 ```py
 img =cv2.imread('1.jpg')
 hist = cv2.calcHist([img],[0],None,[256],[0,256])
@@ -615,30 +618,34 @@ equ = cv2.equalizeHist(img)
 plt.hist(equ,ravel(),256)
 plt.show
 
-# 结果更加的明显    
+# 结果更加的明显
 # 一个部分分给其他部分，进行均衡
 # 分模块进行均衡化
 # 但有的图会出现边界
 ```
+
 自适应直方图均衡化
+
 ```py
 clahe = cv2.createCLAHE(clipLimit = 2.0,tileGridSize = (8，8))
 res_clahe = clahe.apply(img)
 cv2.imshow('result',res_clahe)
 ```
 
-## 0.22傅里叶变换
+## 0.22 傅里叶变换
+
 现实中的事物都是运动的
 而傅里叶的频域中一切都是静止的，现实中的东西在频域中分为高频，低频
-* 高频：变化剧烈的灰度分量，eg：边界
-* 低频：变化缓慢的灰度变量，eg：一片大海
-![傅里叶](/img/opencv/傅里叶.png)
-滤波
-低通滤波器：只保留低频，图像变得模糊
-高通滤波器：只保留高频，图像细节增强
 
+- 高频：变化剧烈的灰度分量，eg：边界
+- 低频：变化缓慢的灰度变量，eg：一片大海
+  ![傅里叶](/img/opencv/傅里叶.png)
+  滤波
+  低通滤波器：只保留低频，图像变得模糊
+  高通滤波器：只保留高频，图像细节增强
 
 在 频域中处理，更加方便
+
 ```py
 cv2.dft()
 # 逆变换
@@ -657,7 +664,9 @@ dft_shift = np.fft.fftshift(dft)
 # cv2.dft()返回结果是双通道的，通常还要转换为图像格式
 magnitude_spectrum = 20*np.log(cv2.magnitude(dft_shift[:,:,0],dft_shift[:,:,1]))
 ```
+
 低通：
+
 ```py
 import numpy as np
 import cv2
@@ -684,7 +693,7 @@ crow,ccol = int(rows/2) , int(cols/2)
 # 要magn里面
 # 创建一个掩码  zeros 全为0 全不要
 mask = np.zeros((rows,cols,2),np.uint8)
-mask[crow-30:crow+30,ccol-30:ccol+30] = 1   # 中间为低频，低频要 
+mask[crow-30:crow+30,ccol-30:ccol+30] = 1   # 中间为低频，低频要
 fshift = dft_shift*mask
 # shift 回去
 f_ishift = np.fft.ifftshift(fshift)
@@ -700,7 +709,9 @@ plt.title('magnitude spectrum'), plt.xticks([]),plt.yticks([])
 plt.show()
 图像模糊
 ```
+
 高通
+
 ```py
 import numpy as np
 import cv2
@@ -776,7 +787,8 @@ if __name__ == "__main__":
     video_show()
 ```
 
-### 0.23.1 选取roi区域定义
+### 0.23.1 选取 roi 区域定义
+
 ```py
 # 方法1：使用表示矩形区域的Rect，参数有矩形左上角坐标、矩形的长和宽
 # Mat imageROI;

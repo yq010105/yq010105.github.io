@@ -340,11 +340,11 @@ def save_pic():
 save_pic()
 ```
 
-# 4.爬取Wallhaven上的图片
+# 4.爬取 Wallhaven 上的图片
 
-## 4.1 龟速爬取,只是用来爬了一下博客需要的图片hhh
+## 4.1 龟速爬取,只是用来爬了一下博客需要的图片 hhh
 
-*爬取速度慢，要等半天才能开始保存文件，应该是我代码结构的问题，以后再做优化*
+_爬取速度慢，要等半天才能开始保存文件，应该是我代码结构的问题，以后再做优化_
 
 ```python
 import lxml.html
@@ -398,11 +398,11 @@ def get_img(imgurl_list):
             print('requests.exceptions.ReadTimeout')
             continue
 
-        main_path = r'E:\\wallhaven\\' 
+        main_path = r'E:\\wallhaven\\'
         if not os.path.exists(main_path):
             os.makedirs(main_path)
 
-        
+
         dir = 'E:\\wallhaven\\' + str(i) +'.jpg'
 
         with open(dir, 'wb') as f:

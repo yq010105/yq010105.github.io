@@ -4,8 +4,8 @@ date: 2020-02-15 13:26:23
 categories: 资源力
 summary: Bilibili api 相关信息和介绍
 tags:
-    - Bilibili
-    - Api
+  - Bilibili
+  - Api
 ---
 
 ## 1. up 信息，名字，等级，视频总播放量，文章总浏览数
@@ -32,6 +32,6 @@ tags:
 
 `https://api.bilibili.com/x/web-interface/online?&;jsonp=jsonp`
 
-## 7. up的粉丝数量，但有限制，最对250个
+## 7. up 的粉丝数量，但有限制，最对 250 个
 
 `https://api.bilibili.com/x/relation/followers?vmid=uid&pn=5&ps=0&order=desc&jsonp=jsonp`

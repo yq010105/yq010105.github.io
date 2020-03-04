@@ -4,11 +4,12 @@ date: 2020-02-22 14:40:22
 summary: Python openpyxl的操作方法,用python操作excel
 categories: 学习力
 tags:
-    - Python
+  - Python
 ---
- 
-**Python openpyxl的操作方法**
->[参考教程](https://www.jb51.net/article/169356.htm)
+
+**Python openpyxl 的操作方法**
+
+> [参考教程](https://www.jb51.net/article/169356.htm)
 
 <!--more-->
 
@@ -26,7 +27,9 @@ ws = wb.active
 ```
 
 ## 1.2 储存
+
 每个文件操作完之后需要储存
+
 ```py
 wb.save('文件名.xlsx')
 ```
@@ -38,11 +41,12 @@ wb2 = load_workbook('文件名.xlsx')
 ```
 
 # 2. 创建表
+
 # 2.1 创建表（sheet
 
 ```py
 # 方式一：插入到最后(default)
-ws1 = wb.create_sheet("Mysheet") 
+ws1 = wb.create_sheet("Mysheet")
 # 方式二：插入到最开始的位置
 ws2 = wb.create_sheet("Mysheet", 0)
 ```
@@ -69,6 +73,7 @@ for sheet in wb:
 # 3. 单元格
 
 ## 3.1 储存数据
+
 ```py
 #  方式一 数据可以直接分配到单元格中(可以输入公式)
 ws['A1'] = 42
@@ -93,7 +98,7 @@ for i in range(1,101):
         ws.cell(row=i, column=j)
 ```
 
-### 3.2.2 多单元格访问 
+### 3.2.2 多单元格访问
 
 ```py
 # 通过切片
@@ -154,12 +159,14 @@ tuple(ws.columns)
 
 # 4. 其他
 
-## 4.1 改变sheet 标签按钮颜色
+## 4.1 改变 sheet 标签按钮颜色
+
 ```py
 ws.sheet_properties.tabColor = "1072BA"
 ```
 
 ## 4.2 获取最大行，最大列
+
 ```py
 # 获得最大列和最大行
 print(sheet.max_row)
@@ -167,6 +174,7 @@ print(sheet.max_column)
 ```
 
 ## 4.3 获取每一行每一列
+
 ```py
 sheet.rows为生成器, 里面是每一行的数据，每一行又由一个tuple包裹。
 sheet.columns类似，不过里面是每个tuple是每一列的单元格。
@@ -174,7 +182,7 @@ sheet.columns类似，不过里面是每个tuple是每一列的单元格。
 for row in sheet.rows:
   for cell in row:
     print(cell.value)
- 
+
 # A1, A2, A3这样的顺序
 for column in sheet.columns:
   for cell in column:
@@ -185,14 +193,14 @@ for column in sheet.columns:
 
 ```py
 from openpyxl.utils import get_column_letter, column_index_from_string
- 
+
 # 根据列的数字返回字母
 print(get_column_letter(2)) # B
 # 根据字母返回列的数字
 print(column_index_from_string('D')) # 4
 ```
 
-## 4.5  删除工作表
+## 4.5 删除工作表
 
 ```py
 # 方式一
@@ -212,14 +220,14 @@ rows = [
   [5, 30, 10],
   [6, 25, 5],
   [7, 50, 10]]
- 
+
 list(zip(*rows))
- 
+
 # out
 [('Number', 2, 3, 4, 5, 6, 7),
  ('data1', 40, 40, 50, 30, 25, 50),
  ('data2', 30, 25, 30, 10, 5, 10)]
- 
+
 # 注意 方法会舍弃缺少数据的列(行)
 rows = [
   ['Number', 'data1', 'data2'],
@@ -236,9 +244,12 @@ rows = [
 
 ## 4.7 设置单元格风格
 
-### 4.7.1 需要导入的类 
+### 4.7.1 需要导入的类
+
 `from openpyxl.styles import Font, colors, Alignment`
+
 ### 4.7.2 字体
+
 ```py
 bold_itatic_24_font = Font(name='等线', size=24, italic=True, color=colors.RED, bold=True)
 # 代码指定了等线24号，加粗斜体，字体颜色红色。直接使用cell的font属性，将Font对象赋值给它
@@ -253,6 +264,7 @@ sheet['B1'].alignment = Alignment(horizontal='center', vertical='center')
 ```
 
 ### 4.7.4 设置行高和列宽
+
 ```py
 # 第2行行高
 sheet.row_dimensions[2].height = 40

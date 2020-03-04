@@ -1,19 +1,21 @@
 ---
 title: Python_mengya_process
 date: 2020-02-19 12:51:09
-top: true 
+top: true
 cover: true
 coverImg: /img/cover/mengya.jpg
 img: /img/cover/mengya.jpg
 categories: 技术力
 summary: 识别表的指针，代码的构造过程，并没有写完（萌芽杯比赛项目）
 tags:
-    - Python 
-    - Compete
+  - Python
+  - Compete
 ---
 
 # 1. 测试
+
 ## 1.1 视频经过梯度处理
+
 ```python
 import cv2
 
@@ -46,6 +48,7 @@ cv2.destroyAllWindows()
 ```
 
 ## 1.2 检测指针，绘制直线
+
 ```python
 import cv2
 import numpy as np
@@ -67,7 +70,7 @@ def linedraw(image):
 
     # kernel = np.ones((5, 5), np.uint8)  # （5，5）腐蚀大小
     # erosion = cv2.erode(thresohold, kernel, iterations=1) 去噪音点
-    
+
     edges = cv2.Canny(thresohold, 10, 150, apertureSize=3)
     lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 80, minLineLength=110, maxLineGap=10)
         # print(type(lines))
@@ -244,6 +247,7 @@ print(f'角度的平均值：{get_averg()}')
 # 2. 初步完成~~核心~~
 
 `line_get.py`
+
 ```python
 import cv2
 import math
@@ -300,6 +304,7 @@ if __name__ == '__main__':
 ```
 
 `xlsx_get.py`
+
 ```python
 from openpyxl import Workbook
 import openpyxl as xl
@@ -421,12 +426,12 @@ fig = go.Figure(data=data, layout=layout)
 ptly.plot(fig, filename = 'data.html')
 ```
 
-# 3. 进一步优化，直接再存到excel同时绘制图线，达到粗略得实时
+# 3. 进一步优化，直接再存到 excel 同时绘制图线，达到粗略得实时
 
 `keshihua_data_shishi.py`
 
-* 1.实时显示，但不太美观，而且不丝滑
-* 2.界面美观，但不会实时显示
+- 1.实时显示，但不太美观，而且不丝滑
+- 2.界面美观，但不会实时显示
 
 ```python
 # import plotly.offline as ptly
@@ -571,6 +576,7 @@ if __name__ == '__main__':
 ```
 
 `keshihua_shishi.py`
+
 ```python
 import keshihua_data_shishi as kds
 

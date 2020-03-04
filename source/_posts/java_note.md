@@ -10,7 +10,6 @@ tags:
 
 > [java 参考学习教程](https://www.runoob.com/java/java-basic-syntax.html)
 
-
 ## 1. java 基础语法
 
 - _对象_：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等

@@ -4,7 +4,6 @@ date: 2020-02-12 18:32:41
 type: "tags"
 ---
 
-
 ## 1. 小说
 
 > [小说蓝奏云](https://www.lanzous.com/b00z87jid)
@@ -90,5 +89,6 @@ UI 美观，可以搜到各种 app
 ## 7. 投屏
 
 ### 7.1 手机投到电脑上
-免费开源投屏神器[GitHub链接](https://github.com/Genymobile/scrcpy)
+
+免费开源投屏神器[GitHub 链接](https://github.com/Genymobile/scrcpy)
 使用方法可以[看教程](https://yq010105.github.io/2020/03/02/scrcpy/)

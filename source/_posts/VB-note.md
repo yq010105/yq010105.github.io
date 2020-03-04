@@ -462,6 +462,7 @@ Dim starName As String="刘翔”
 |  +or&  | 字串串连"v"&"b"="vb" |
 
 **几个例子**
+
 ```vb
 Dim firstName As String
 
@@ -481,6 +482,7 @@ Label1.Caption = yourName
 
 End Sub
 ```
+
 ```vb
 Dim number1, number2, number3 as Integer
 
@@ -503,16 +505,19 @@ Label2.Caption=Average
 End Sub
 ```
 
+---
 
-----
-----
+---
 
 # 5. **正式学习**
+
 ## 5.1 基础知识（零碎）
+
 对象三要素：属性、事件、方法
-* 属性：
-`对象.属性= 属性值`
-* 事件：
+
+- 属性：
+  `对象.属性= 属性值`
+- 事件：
 
 ```
 Private Sub 对象名_事件过程名[参数列表]
@@ -520,7 +525,7 @@ Private Sub 对象名_事件过程名[参数列表]
 End Sub
 ```
 
-* 方法：
+- 方法：
 
 ```
 对象.方法[参数名表]
@@ -528,20 +533,23 @@ Form1.Print "avb"
 Text1.SetFocus
 ```
 
-暂停程序Stop
-结束程序End
+暂停程序 Stop
+结束程序 End
 
-命令按钮改变背景必须变两个属性-bg和style
-其他的只需改变bg就行了
+命令按钮改变背景必须变两个属性-bg 和 style
+其他的只需改变 bg 就行了
 
 # 6. 学习作业
+
 ## 6.1 第一次作业
+
 ### 1. 倒计时控件
+
 ![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDJCPGJGNGBGHGFCOHAGOGH)
 
 **作业代码**
 
-```vb 
+```vb
 Private Sub Command1_Click()
     Timer1.Interval = 50
 End Sub
@@ -557,17 +565,19 @@ Private Sub Timer1_Timer()
 End Sub
 ```
 
-剩下的随便改改bg，caption，font等等的
+剩下的随便改改 bg，caption，font 等等的
 
 小知识点：
-* Access Key: 再名称前加&  &emsp;`即&s`
-* 关于日期的格式，参考[Format函数](https://blog.csdn.net/bigheadsheep/article/details/12013267)这篇文章
+
+- Access Key: 再名称前加& &emsp;`即&s`
+- 关于日期的格式，参考[Format 函数](https://blog.csdn.net/bigheadsheep/article/details/12013267)这篇文章
 
 小问题：
-* 怎么把输入的日期格式化为计算数据,不会更高级的输入转化，只能先死输入
 
+- 怎么把输入的日期格式化为计算数据,不会更高级的输入转化，只能先死输入
 
 ### 2. 加法运算器
+
 ![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDGCPGJGNGBGHGFCOHAGOGH)
 
 **作业代码**
@@ -590,5 +600,6 @@ End Sub
 ```
 
 小知识点：
-* `Text1.SetFocus`按下按钮后将鼠标指针重新指回`TabIndex = 0`的位置，即使焦点回到加数A框
-* val将字符型数据转换为数值型数据，str将数值型转换为字符型
+
+- `Text1.SetFocus`按下按钮后将鼠标指针重新指回`TabIndex = 0`的位置，即使焦点回到加数 A 框
+- val 将字符型数据转换为数值型数据，str 将数值型转换为字符型
