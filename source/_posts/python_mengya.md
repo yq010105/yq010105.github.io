@@ -823,3 +823,7 @@ if __name__ == '__main__' :
         video_show(video ,ci)
         get_shishi(cishu ,pingjun)
 ```
+
+# 5. 下一步的优化
+
+## 5.1 可以持续的调用摄像头
