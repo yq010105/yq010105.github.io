@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-04
+                    2020-03-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2,835
+                    3,121
                 </div>
                 
 
@@ -955,6 +955,42 @@ End Sub</code></pre><ul>
 Form1.Print "avb"
 Text1.SetFocus</code></pre><p>暂停程序 Stop<br>结束程序 End</p>
 <p>命令按钮改变背景必须变两个属性-bg 和 style<br>其他的只需改变 bg 就行了</p>
+<h3 id="判断结构"><a href="#判断结构" class="headerlink" title="判断结构"></a>判断结构</h3><pre class="line-numbers language-vb"><code class="language-vb">if --- then
+  语句
+else
+  语句
+end if<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>example：密码输入，限制输入 3 次</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Dim i As Integer ' 定义一个整型变量
+Private Sub Command2_Click()
+    If Text1 = "buct" Then
+        Text2.Visible = True
+        Label2.Visible = True
+        Command1.Visible = True
+        Text1.Visible = False
+        Label1.Visible = False
+        Command2.Visible = False
+        Label3.Visible = False
+        Text2.SetFocus
+    Else
+       ' Text1 = ""
+       ' Label3.Visible = True
+       ' Label3 = "密码错误，请重新输入"
+       ' Text1.SetFocus
+        i = i +1
+        If i >= 3 Then End
+        Text1 = ""
+        Text1.SetFocus
+        MsgBox "密码输入错误，请重新输入" ' 弹出一个框
+    End If
+End Sub
+
+Private Sub Form_Load()
+    Text2.Visible = False
+    Label2.Visible = False
+    Command1.Visible = False
+    Label3.Visible = False
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="6-学习作业"><a href="#6-学习作业" class="headerlink" title="6. 学习作业"></a>6. 学习作业</h1><h2 id="6-1-第一次作业"><a href="#6-1-第一次作业" class="headerlink" title="6.1 第一次作业"></a>6.1 第一次作业</h2><h3 id="1-倒计时控件"><a href="#1-倒计时控件" class="headerlink" title="1. 倒计时控件"></a>1. 倒计时控件</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDJCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Private Sub Command1_Click()
@@ -980,6 +1016,48 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <ul>
 <li>怎么把输入的日期格式化为计算数据,不会更高级的输入转化，只能先死输入</li>
 </ul>
+<p>解决：</p>
+<ul>
+<li>使用 CDate 函数将字符串转化为日期</li>
+</ul>
+<p>新的问题：</p>
+<ul>
+<li>在重新输到<code>2020-10-</code> 的时候会报错</li>
+</ul>
+<p>解决：</p>
+<ul>
+<li>添加一行代码</li>
+</ul>
+<p>完全版代码</p>
+<pre class="line-numbers language-vb"><code class="language-vb">Private Sub Command1_Click()
+    Timer1.Interval = 50
+End Sub
+
+Private Sub Command2_Click()
+    End
+End Sub
+
+Private Sub Text1_Click()
+    Text1 = ""
+End Sub
+
+Private Sub Timer1_Timer()
+    Text2.Text = Format(Now(), "yyyy/MM/dd hh:mm:ss")
+    yy = Val(Left$(Text1.Text$, 4))   '  text1中的年
+    mon = Val(Mid$(Text1.Text$, 6, 2)) '          月
+    dday = Val(Right$(Text1.Text$, 2))  '         日
+
+    If Text1.Text = "" Then
+        Text3.Text = ""
+    Else                      ' 加入判断 让到 - 的时候自动补全
+        If Text1.Text = yy & "-" & mon & "-" Then
+            t1 = Text1.Text & "01"
+            Text3.Text = CDate(t1) - Date & "天"
+        Else
+            Text3.Text = CDate(Text1.Text) - Date & "天"
+        End If
+    End If
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-加法运算器"><a href="#2-加法运算器" class="headerlink" title="2. 加法运算器"></a>2. 加法运算器</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDGCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Private Sub Command1_Click(Index As Integer)
@@ -1401,7 +1479,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">34.8k</span>&nbsp;字
+                class="white-color">35.1k</span>&nbsp;字
             
             
             
