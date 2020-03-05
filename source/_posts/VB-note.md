@@ -539,6 +539,51 @@ Text1.SetFocus
 命令按钮改变背景必须变两个属性-bg 和 style
 其他的只需改变 bg 就行了
 
+### 判断结构
+
+```vb
+if --- then
+  语句
+else
+  语句
+end if
+```
+
+**example：密码输入，限制输入 3 次**
+
+```vb
+Dim i As Integer ' 定义一个整型变量
+Private Sub Command2_Click()
+    If Text1 = "buct" Then
+        Text2.Visible = True
+        Label2.Visible = True
+        Command1.Visible = True
+        Text1.Visible = False
+        Label1.Visible = False
+        Command2.Visible = False
+        Label3.Visible = False
+        Text2.SetFocus
+    Else
+       ' Text1 = ""
+       ' Label3.Visible = True
+       ' Label3 = "密码错误，请重新输入"
+       ' Text1.SetFocus
+        i = i +1
+        If i >= 3 Then End
+        Text1 = ""
+        Text1.SetFocus
+        MsgBox "密码输入错误，请重新输入" ' 弹出一个框
+    End If
+End Sub
+
+Private Sub Form_Load()
+    Text2.Visible = False
+    Label2.Visible = False
+    Command1.Visible = False
+    Label3.Visible = False
+End Sub
+```
+
 # 6. 学习作业
 
 ## 6.1 第一次作业
@@ -575,6 +620,52 @@ End Sub
 小问题：
 
 - 怎么把输入的日期格式化为计算数据,不会更高级的输入转化，只能先死输入
+
+解决：
+
+- 使用 CDate 函数将字符串转化为日期
+
+新的问题：
+
+- 在重新输到`2020-10-` 的时候会报错
+
+解决：
+
+- 添加一行代码
+
+完全版代码
+
+```vb
+Private Sub Command1_Click()
+    Timer1.Interval = 50
+End Sub
+
+Private Sub Command2_Click()
+    End
+End Sub
+
+Private Sub Text1_Click()
+    Text1 = ""
+End Sub
+
+Private Sub Timer1_Timer()
+    Text2.Text = Format(Now(), "yyyy/MM/dd hh:mm:ss")
+    yy = Val(Left$(Text1.Text$, 4))   '  text1中的年
+    mon = Val(Mid$(Text1.Text$, 6, 2)) '          月
+    dday = Val(Right$(Text1.Text$, 2))  '         日
+
+    If Text1.Text = "" Then
+        Text3.Text = ""
+    Else                      ' 加入判断 让到 - 的时候自动补全
+        If Text1.Text = yy & "-" & mon & "-" Then
+            t1 = Text1.Text & "01"
+            Text3.Text = CDate(t1) - Date & "天"
+        Else
+            Text3.Text = CDate(Text1.Text) - Date & "天"
+        End If
+    End If
+End Sub
+```
 
 ### 2. 加法运算器
 

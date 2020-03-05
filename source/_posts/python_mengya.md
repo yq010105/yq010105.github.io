@@ -3,8 +3,8 @@ title: Python_mengya_process
 date: 2020-02-19 12:51:09
 top: true
 cover: true
-coverImg: /img/cover/mengya.jpg
-img: /img/cover/mengya.jpg
+coverImg: /img/cover/mengya1.jpg
+img: /img/cover/mengya1.jpg
 categories: 技术力
 summary: 识别表的指针，代码的构造过程，并没有写完（萌芽杯比赛项目）
 tags:
