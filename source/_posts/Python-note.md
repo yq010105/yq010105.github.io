@@ -163,6 +163,8 @@ if not os.path.exists(main_path):   #如果该路径不存在
     os.makedirs(main_path)  #则新建一个路径
 ```
 
+**删除文件:**`os.remove(path)`
+
 # 5. 将图片保存在文件夹中
 
 ```py

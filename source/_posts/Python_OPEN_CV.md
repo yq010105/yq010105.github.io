@@ -36,7 +36,7 @@ def cv_show(name,img):
     cv2.destroyALLWindows()
 ```
 
-## 0.1.1 画直线
+### 0.1.1 画直线
 
 像素点坐标，左为零，上为零
 左上角为坐标原点，而坐标系是从左到右 x 符合，从上到下，y 要取负
@@ -55,6 +55,20 @@ def cv_show(name,img):
 cv2.line(img,(0,100),(100,0),(0,0,255),2)
 cv2.line(img,(0,200),(100,0),(0,255,0),2)
 cv_show('line',img)
+```
+
+### 0.1.2 调用笔记本摄像头
+
+```python
+video = cv2.VideoCapture(0) # 参数是0，表示打开笔记本的内置摄像头，参数是视频文件路径则打开视频，如cap = cv2.VideoCapture("../test.avi")
+ret,frame = video.read() # ret,frame是获cap.read()方法的两个返回值。其中ret是布尔值，如果读取帧是正确的则返回True，如果文件读取到结尾，它的返回值就为False
+
+cv2.waitKey(0) # 如cv2.waitKey(0)只显示当前帧图像，相当于视频暂停
+cv2.waitKey(1) # 表示延时1ms切换到下一帧图像，对于视频而言
+cv2.waitKey(1000) # 会因为延时过久而卡顿感觉到卡顿
+
+cv2.release()
+调用release()释放摄像头，调用destroyAllWindows()关闭所有图像窗口
 ```
 
 ## 0.2 基本属性/函数
@@ -98,11 +112,18 @@ cv2.destroyAllWindows()
 
 图像截取
 
-```py
+```python
 img = cv.imread('1.jpg')
 cat = img[0:200,0:200]
 cv.show('cat',cat)
 ```
+
+图片截取，（识别技术将匹配到的数据展示）
+```python
+image_clip = image_rgb[int(top):(int(top) + int(height)), int(left):(int(left) + int(width))]
+顺序为[y0:y1, x0:x1]
+```
+
 
 ## 0.5 特殊选取,切分通道
 
@@ -852,7 +873,7 @@ if __name__ == '__main__':
 
 # 2. 根据数据生成表格，图线
 
-# 2.1 python 根据数据生图线
+**[openpyxl](https://yq010105.github.io/2020/02/22/python-openpyxl/) and [plotly](https://yq010105.github.io/2020/02/22/python-plotly/) or [plt](https://yq010105.github.io/2020/02/21/python-plt/)**
 
 # 3. 慢慢学 opencv
 
