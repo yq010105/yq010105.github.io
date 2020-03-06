@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-04
+                    2020-03-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    5,918
+                    6,140
                 </div>
                 
 
@@ -512,7 +512,7 @@
     cv2.imshow(name,img)
     cv2.waitKey(0)
     cv2.destroyALLWindows()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="0-1-1-画直线"><a href="#0-1-1-画直线" class="headerlink" title="0.1.1 画直线"></a>0.1.1 画直线</h2><p>像素点坐标，左为零，上为零<br>左上角为坐标原点，而坐标系是从左到右 x 符合，从上到下，y 要取负</p>
+<h3 id="0-1-1-画直线"><a href="#0-1-1-画直线" class="headerlink" title="0.1.1 画直线"></a>0.1.1 画直线</h3><p>像素点坐标，左为零，上为零<br>左上角为坐标原点，而坐标系是从左到右 x 符合，从上到下，y 要取负</p>
 <pre class="line-numbers language-py"><code class="language-py">img = np.zeros((320, 320, 3), np.uint8) #生成一个空灰度图像
 print(img.shape) # 输出：(320, 320, 3)
 
@@ -526,6 +526,15 @@ def cv_show(name,img):
 cv2.line(img,(0,100),(100,0),(0,0,255),2)
 cv2.line(img,(0,200),(100,0),(0,255,0),2)
 cv_show('line',img)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="0-1-2-调用笔记本摄像头"><a href="#0-1-2-调用笔记本摄像头" class="headerlink" title="0.1.2 调用笔记本摄像头"></a>0.1.2 调用笔记本摄像头</h3><pre class="line-numbers language-python"><code class="language-python">video <span class="token operator">=</span> cv2<span class="token punctuation">.</span>VideoCapture<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 参数是0，表示打开笔记本的内置摄像头，参数是视频文件路径则打开视频，如cap = cv2.VideoCapture("../test.avi")</span>
+ret<span class="token punctuation">,</span>frame <span class="token operator">=</span> video<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ret,frame是获cap.read()方法的两个返回值。其中ret是布尔值，如果读取帧是正确的则返回True，如果文件读取到结尾，它的返回值就为False</span>
+
+cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 如cv2.waitKey(0)只显示当前帧图像，相当于视频暂停</span>
+cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 表示延时1ms切换到下一帧图像，对于视频而言</span>
+cv2<span class="token punctuation">.</span>waitKey<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 会因为延时过久而卡顿感觉到卡顿</span>
+
+cv2<span class="token punctuation">.</span>release<span class="token punctuation">(</span><span class="token punctuation">)</span>
+调用release<span class="token punctuation">(</span><span class="token punctuation">)</span>释放摄像头，调用destroyAllWindows<span class="token punctuation">(</span><span class="token punctuation">)</span>关闭所有图像窗口<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="0-2-基本属性-函数"><a href="#0-2-基本属性-函数" class="headerlink" title="0.2 基本属性/函数"></a>0.2 基本属性/函数</h2><p>img.shape # (414.500.3) (h,w,rgb=3)<br>img.size # h*w*rgb<br>img.dtype # uint8</p>
 <h2 id="0-3-读取视频"><a href="#0-3-读取视频" class="headerlink" title="0.3 读取视频"></a>0.3 读取视频</h2><p>cv2.VideoCapture 捕获摄像头</p>
 <ul>
@@ -554,9 +563,12 @@ while open:
 vc.release()
 cv2.destroyAllWindows()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="0-4-感兴趣区域"><a href="#0-4-感兴趣区域" class="headerlink" title="0.4 感兴趣区域"></a>0.4 感兴趣区域</h2><p>图像截取</p>
-<pre class="line-numbers language-py"><code class="language-py">img = cv.imread('1.jpg')
-cat = img[0:200,0:200]
-cv.show('cat',cat)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">img <span class="token operator">=</span> cv<span class="token punctuation">.</span>imread<span class="token punctuation">(</span><span class="token string">'1.jpg'</span><span class="token punctuation">)</span>
+cat <span class="token operator">=</span> img<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">200</span><span class="token punctuation">]</span>
+cv<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token string">'cat'</span><span class="token punctuation">,</span>cat<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>图片截取，（识别技术将匹配到的数据展示）</p>
+<pre class="line-numbers language-python"><code class="language-python">image_clip <span class="token operator">=</span> image_rgb<span class="token punctuation">[</span>int<span class="token punctuation">(</span>top<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token punctuation">(</span>int<span class="token punctuation">(</span>top<span class="token punctuation">)</span> <span class="token operator">+</span> int<span class="token punctuation">(</span>height<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> int<span class="token punctuation">(</span>left<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token punctuation">(</span>int<span class="token punctuation">(</span>left<span class="token punctuation">)</span> <span class="token operator">+</span> int<span class="token punctuation">(</span>width<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+顺序为<span class="token punctuation">[</span>y0<span class="token punctuation">:</span>y1<span class="token punctuation">,</span> x0<span class="token punctuation">:</span>x1<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="0-5-特殊选取-切分通道"><a href="#0-5-特殊选取-切分通道" class="headerlink" title="0.5 特殊选取,切分通道"></a>0.5 特殊选取,切分通道</h2><p>b：::0<br>g：::1<br>r：::2</p>
 <pre class="line-numbers language-py"><code class="language-py">b,g,r = cv2.split(img)  # 切分
 b.shape == g.shape == r.shape
@@ -1090,7 +1102,8 @@ if __name__ == '__main__':
 <blockquote>
 <p><a href="https://www.cnblogs.com/botoo/p/8416315.html" target="_blank" rel="noopener">参考教程</a></p>
 </blockquote>
-<h1 id="2-根据数据生成表格，图线"><a href="#2-根据数据生成表格，图线" class="headerlink" title="2. 根据数据生成表格，图线"></a>2. 根据数据生成表格，图线</h1><h1 id="2-1-python-根据数据生图线"><a href="#2-1-python-根据数据生图线" class="headerlink" title="2.1 python 根据数据生图线"></a>2.1 python 根据数据生图线</h1><h1 id="3-慢慢学-opencv"><a href="#3-慢慢学-opencv" class="headerlink" title="3. 慢慢学 opencv"></a>3. 慢慢学 opencv</h1><p><a href="https://www.cnblogs.com/silence-cho/p/10926248.html" target="_blank" rel="noopener">先行教程</a></p>
+<h1 id="2-根据数据生成表格，图线"><a href="#2-根据数据生成表格，图线" class="headerlink" title="2. 根据数据生成表格，图线"></a>2. 根据数据生成表格，图线</h1><p><strong><a href="https://yq010105.github.io/2020/02/22/python-openpyxl/">openpyxl</a> and <a href="https://yq010105.github.io/2020/02/22/python-plotly/">plotly</a> or <a href="https://yq010105.github.io/2020/02/21/python-plt/">plt</a></strong></p>
+<h1 id="3-慢慢学-opencv"><a href="#3-慢慢学-opencv" class="headerlink" title="3. 慢慢学 opencv"></a>3. 慢慢学 opencv</h1><p><a href="https://www.cnblogs.com/silence-cho/p/10926248.html" target="_blank" rel="noopener">先行教程</a></p>
 <h2 id="3-1-在新窗口打开图片，保存图片，基操"><a href="#3-1-在新窗口打开图片，保存图片，基操" class="headerlink" title="3.1 在新窗口打开图片，保存图片，基操"></a>3.1 在新窗口打开图片，保存图片，基操</h2><pre class="line-numbers language-py"><code class="language-py">import cv2
 
 img_path = './img/' + input('输入图像路径：--带后缀--')
@@ -1588,7 +1601,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.1k</span>&nbsp;字
+                class="white-color">35.3k</span>&nbsp;字
             
             
             
