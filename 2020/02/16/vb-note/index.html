@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-07
+                    2020-03-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3,120
+                    3,591
                 </div>
                 
 
@@ -941,14 +941,18 @@ Label2.Caption=Average
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <hr>
-<h1 id="5-正式学习"><a href="#5-正式学习" class="headerlink" title="5. 正式学习"></a>5. <strong>正式学习</strong></h1><h2 id="5-1-基础知识（零碎）"><a href="#5-1-基础知识（零碎）" class="headerlink" title="5.1 基础知识（零碎）"></a>5.1 基础知识（零碎）</h2><p>对象三要素：属性、事件、方法</p>
+<h1 id="5-正式学习"><a href="#5-正式学习" class="headerlink" title="5. 正式学习"></a>5. <strong>正式学习</strong></h1><h2 id="5-1-基础知识（零碎）"><a href="#5-1-基础知识（零碎）" class="headerlink" title="5.1 基础知识（零碎）"></a>5.1 基础知识（零碎）</h2><p>对象：数据和数据操作方式的综合体，如窗体、控件</p>
+<p>对象三要素：属性、事件、方法</p>
 <ul>
-<li>属性：<br><code>对象.属性= 属性值</code></li>
-<li>事件：</li>
+<li><p>属性：<br><code>对象.属性= 属性值</code></p>
+</li>
+<li><p>事件：</p>
+</li>
 </ul>
-<pre><code>Private Sub 对象名_事件过程名[参数列表]
-
-End Sub</code></pre><ul>
+<pre class="line-numbers language-vb"><code class="language-vb">Private Sub 对象名_事件过程名[参数列表]
+' click load ----
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
 <li>方法：</li>
 </ul>
 <pre><code>对象.方法[参数名表]
@@ -991,6 +995,54 @@ Private Sub Form_Load()
     Command1.Visible = False
     Label3.Visible = False
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-2-VB-的语言成分"><a href="#5-2-VB-的语言成分" class="headerlink" title="5.2 VB 的语言成分"></a>5.2 VB 的语言成分</h2><p>编码规则：</p>
+<ul>
+<li>不区分字母大小写</li>
+<li>语句书写自由:同一行可以写多条语句用<code>:</code>分开、一条语句多行写用<code>_</code>连接</li>
+<li>代码注释： <code>'</code>或者<code>Rem</code>引导注释内容、快注释-视窗-工具栏-编辑-快注释</li>
+<li>VB 的命名约定：字母或汉字开头，长度不超过 255 个字符，控件不超过 40 个字符<ul>
+<li>不用 VB 关键字:<code>if loop</code></li>
+<li>不能包含空格，小数点，其他声明字符<code>$ % &amp;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="5-2-1-基本数据类型"><a href="#5-2-1-基本数据类型" class="headerlink" title="5.2.1 基本数据类型"></a>5.2.1 基本数据类型</h3><p><img src="/img/VB/sjlx.png" alt="VB数据类型"></p>
+<h3 id="5-2-2-直接常量"><a href="#5-2-2-直接常量" class="headerlink" title="5.2.2 直接常量"></a>5.2.2 直接常量</h3><p><img src="/img/VB/zjcl.png" alt="VB直接常量"></p>
+<h3 id="5-2-3-变量"><a href="#5-2-3-变量" class="headerlink" title="5.2.3 变量"></a>5.2.3 变量</h3><ol>
+<li>变量隐式声明：使用的变量未作声明，所有变量均为 Variant 类型</li>
+<li>变量显式声明：</li>
+</ol>
+<ul>
+<li>使用类型标示符直接声明变量 <code>MyName$ ="David"</code>–字符串型</li>
+<li>使用 Dim 语句<ul>
+<li>格式 1：Dim 变量名 As 数据类型[,变量名 As 数据类型，…..0]</li>
+<li>格式 2：Dim 变量名 + 类型标识符</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-vb"><code class="language-vb">Dim A As Integer, B As Double
+Dim A%,B#
+Dim MyName1 As String , Myname2 As String*5 '字符串只能是五个字符
+Dim Vp1, Vp2 As Single<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>变量的强制声明：在每个模块开始处自动加一条”Option Explicit”语句，所有变量需要指定数据类型</li>
+</ol>
+<p>工具菜单- 选项命令 - 选中编辑器中的要求变量声明</p>
+<h3 id="5-2-4-模块"><a href="#5-2-4-模块" class="headerlink" title="5.2.4 模块"></a>5.2.4 模块</h3><p>VB 代码存储在模块中<br>三种模块：窗体模块、标准模块、类模块<br><img src="/img/VB/mk.png" alt="VB模块"></p>
+<h3 id="5-2-5-变量的作用域"><a href="#5-2-5-变量的作用域" class="headerlink" title="5.2.5 变量的作用域"></a>5.2.5 变量的作用域</h3><ul>
+<li>全局变量：在窗体或标准模块中声明 Public<ul>
+<li><code>Public 变量名 As 数据类型</code></li>
+</ul>
+</li>
+<li>模块级变量：在模块的声明部分使用 Dim 或 Private 声明<ul>
+<li><code>Dim 变量名 As 数据类型</code></li>
+</ul>
+</li>
+<li>局部变量：在过程中由 Dim 或 Static 关键字声明<ul>
+<li><code>Static 变量名 As 数据类型</code></li>
+</ul>
+</li>
+</ul>
 <h1 id="6-学习作业"><a href="#6-学习作业" class="headerlink" title="6. 学习作业"></a>6. 学习作业</h1><h2 id="6-1-第一次作业"><a href="#6-1-第一次作业" class="headerlink" title="6.1 第一次作业"></a>6.1 第一次作业</h2><h3 id="1-倒计时控件"><a href="#1-倒计时控件" class="headerlink" title="1. 倒计时控件"></a>1. 倒计时控件</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDJCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Private Sub Command1_Click()
@@ -1479,7 +1531,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.3k</span>&nbsp;字
+                class="white-color">35.8k</span>&nbsp;字
             
             
             
