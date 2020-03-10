@@ -542,13 +542,13 @@ Text1.SetFocus
 命令按钮改变背景必须变两个属性-bg 和 style
 其他的只需改变 bg 就行了
 
-### 判断结构
+### If 判断结构
 
 ```vb
-if --- then
-  语句
+if 表达式 then
+  语句1
 else
-  语句
+  语句2
 end if
 ```
 
@@ -642,12 +642,178 @@ VB 代码存储在模块中
 - 局部变量：在过程中由 Dim 或 Static 关键字声明
   - `Static 变量名 As 数据类型`
 
+变量的作用域
+![变量的作用域及使用规则](/img/VB/zyy.png)
 
+- 内部常量：控件常量、语言常量、对象常量、用户界面常量
+- 用户定义常量：用 Const 语句和赋值
 
+```vb
+Const PI As Double = 3.14159265...
+Private Const Msg As String = "hello world"
+Public Const Msg As String = "天安门"
+```
 
-# 6. 学习作业
+- 静态变量：每次调用一个过程时保留上次的调用值
 
-## 6.1 第一次作业
+`Static 变量名 As 数据类型,变量名 As 数据类型....`
+
+### 5.2.6 变量类型检查
+
+![变量的类型检查](/img/VB/bllxjc.png)
+
+![数据类型分类判断](/img/VB/sjlxflpd.png)
+
+### 5.2.7 运算符
+
+![运算符](/img/VB/ysf.png)
+
+### 5.2.8 常用内部函数
+
+![常用内部函数、数学函数](/img/VB/cyhs.png)
+![常用转换函数](/img/VB/cyzhhs.png)
+![字符串函数](/img/VB/zfchs.png)
+
+![字符串函数例子](/img/VB/sszfclz.png)
+
+### 5.2.9 日期函数
+
+```vb
+'Time Date Now DateDiff DateAdd
+Private Sub Command1_Click()
+    Dim d1 As Date, d2 As Date
+    Print Now, Date, Time
+    Print Time, Hour(Time), Minute(Time), Second(Time)
+    Print Date, Year(Date), Month(Date), Day(Date)
+    Print "=---------------------="
+    Print DateDiff("d", Now, #10/1/2009#); #10/1/2009# - Date
+    Print Date + Time; "***"; DateAdd("h", 5, Now); "***";
+    Print DateAdd("s", 5, Time), vbCrLf
+    d1 = "2004-07-16 05:00:00"
+    d2 = "2004-08-20 23:00:00"
+    Print #8/20/2004# - #7/16/2004#, d2 - d1, (d2 - d1) * 24
+End Sub
+```
+
+![日期函数例子](/img/VB/rqlz.png)
+
+**格式输出函数**
+`Format$(表达式[,格式字符串])`
+
+> 关于日期的格式详情，参考[Format 函数](https://blog.csdn.net/bigheadsheep/article/details/12013267)这篇文章
+
+**Shell 函数**
+![shell函数](/img/VB/shellhs.png)
+
+### 5.2.10 基本语句
+
+#### 5.2.10.1 赋值语句
+
+```vb
+Let 变量名 = 表达式  '普通变量
+Set 变量名 = 表达式  ' 对象型变量
+
+Let A = 5
+Set Obj1 = Command1
+
+Text1.text = "ok"
+```
+
+#### 快速输入输出函数
+
+![InputBox函数](/img/VB/kssrschs.png)
+
+![MsgBox函数](/img/VB/msgbox.png)
+
+![MsgBox例子](/img/VB/msgboxlz.png)
+
+# 6. 课程学习过程中练习
+
+第几次课.第几道练习
+
+## 2.1 勾选要求变量声明（初学）
+
+然后每次使用必须先定义变量
+
+```vb
+Option Explicit
+
+Private Sub Command1_Click()
+    Dim B As Integer, A As Integer
+    B = 10
+    A = A + B
+    Print B, A
+End Sub
+'10 10
+'10 10
+```
+
+```vb
+Option Explicit
+
+Private Sub Command1_Click()
+    Static B As Integer, A As Integer     '静态变量
+    B = 10
+    A = A + B
+    Print B, A
+End Sub
+'10 10
+'10 20
+'10 30
+```
+
+Dim 和 Static 都是局部变量可以将其拉到窗体级全局变量
+
+```vb
+Option Explicit
+    Dim B As Integer, A As Integer
+Private Sub Command1_Click()
+
+    B = 10
+    A = A + B
+    Print B, A
+End Sub
+
+Private Sub Command2_Click()
+    Print B, A
+End Sub
+```
+
+## 2.2 字符判断
+
+```vb
+Private Sub Text1_Change()
+    If Not IsNumeric(Text1) Then
+        MsgBox "Text1 输入非法数字，请重新输入"
+        Text1.Text = ""
+    End If
+End Sub
+```
+
+## 2.3 inputbox & keypress
+
+```vb
+Option Explicit
+
+Private Sub Label2_Click()
+    Text3 = Val(Text1) + Val(Text2)
+End Sub
+
+Private Sub Text1_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Text2 = InputBox("请输入")
+End Sub
+
+Private Sub Text3_GotFocus()
+    Text1 = ""
+    Text2 = ""
+    Text3 = ""
+    Text1.SetFocus
+End Sub
+```
+
+# 7. 学习作业
+
+## 7.1 第一次作业
 
 ### 1. 倒计时控件
 
@@ -755,3 +921,13 @@ End Sub
 
 - `Text1.SetFocus`按下按钮后将鼠标指针重新指回`Text1`的位置，即使焦点回到加数 A 框
 - val 将字符型数据转换为数值型数据，str 将数值型转换为字符型
+
+## 7.2 第二次作业
+
+### 1. 华氏度与摄氏度的转换
+
+![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDFDFCPGJGNGBGHGFCOHAGOGH)
+
+### 2. 二次方程根的求解
+
+![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDEDFCPGJGNGBGHGFCOHAGOGH)
