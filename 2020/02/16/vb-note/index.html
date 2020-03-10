@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-09
+                    2020-03-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3,591
+                    4,164
                 </div>
                 
 
@@ -563,7 +563,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 </ul>
 <pre class="line-numbers language-VB"><code class="language-VB">Private Sub Form_Load()
 Form1.Show
-Form1.BackColor = &H000000FF&
+Form1.BackColor = &amp;H000000FF&amp;
 End Sub
 ## 窗口背景颜色<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-vb"><code class="language-vb">Private Sub Form_Load()
@@ -959,10 +959,10 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 Form1.Print "avb"
 Text1.SetFocus</code></pre><p>暂停程序 Stop<br>结束程序 End</p>
 <p>命令按钮改变背景必须变两个属性-bg 和 style<br>其他的只需改变 bg 就行了</p>
-<h3 id="判断结构"><a href="#判断结构" class="headerlink" title="判断结构"></a>判断结构</h3><pre class="line-numbers language-vb"><code class="language-vb">if --- then
-  语句
+<h3 id="If-判断结构"><a href="#If-判断结构" class="headerlink" title="If 判断结构"></a>If 判断结构</h3><pre class="line-numbers language-vb"><code class="language-vb">if 表达式 then
+  语句1
 else
-  语句
+  语句2
 end if<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>example：密码输入，限制输入 3 次</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Dim i As Integer ' 定义一个整型变量
@@ -982,7 +982,7 @@ Private Sub Command2_Click()
        ' Label3 = "密码错误，请重新输入"
        ' Text1.SetFocus
         i = i +1
-        If i >= 3 Then End
+        If i &gt;= 3 Then End
         Text1 = ""
         Text1.SetFocus
         MsgBox "密码输入错误，请重新输入" ' 弹出一个框
@@ -1043,7 +1043,112 @@ Dim Vp1, Vp2 As Single<span aria-hidden="true" class="line-numbers-rows"><span><
 </ul>
 </li>
 </ul>
-<h1 id="6-学习作业"><a href="#6-学习作业" class="headerlink" title="6. 学习作业"></a>6. 学习作业</h1><h2 id="6-1-第一次作业"><a href="#6-1-第一次作业" class="headerlink" title="6.1 第一次作业"></a>6.1 第一次作业</h2><h3 id="1-倒计时控件"><a href="#1-倒计时控件" class="headerlink" title="1. 倒计时控件"></a>1. 倒计时控件</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDJCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
+<p>变量的作用域<br><img src="/img/VB/zyy.png" alt="变量的作用域及使用规则"></p>
+<ul>
+<li>内部常量：控件常量、语言常量、对象常量、用户界面常量</li>
+<li>用户定义常量：用 Const 语句和赋值</li>
+</ul>
+<pre class="line-numbers language-vb"><code class="language-vb">Const PI As Double = 3.14159265...
+Private Const Msg As String = "hello world"
+Public Const Msg As String = "天安门"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>静态变量：每次调用一个过程时保留上次的调用值</li>
+</ul>
+<p><code>Static 变量名 As 数据类型,变量名 As 数据类型....</code></p>
+<h3 id="5-2-6-变量类型检查"><a href="#5-2-6-变量类型检查" class="headerlink" title="5.2.6 变量类型检查"></a>5.2.6 变量类型检查</h3><p><img src="/img/VB/bllxjc.png" alt="变量的类型检查"></p>
+<p><img src="/img/VB/sjlxflpd.png" alt="数据类型分类判断"></p>
+<h3 id="5-2-7-运算符"><a href="#5-2-7-运算符" class="headerlink" title="5.2.7 运算符"></a>5.2.7 运算符</h3><p><img src="/img/VB/ysf.png" alt="运算符"></p>
+<h3 id="5-2-8-常用内部函数"><a href="#5-2-8-常用内部函数" class="headerlink" title="5.2.8 常用内部函数"></a>5.2.8 常用内部函数</h3><p><img src="/img/VB/cyhs.png" alt="常用内部函数、数学函数"><br><img src="/img/VB/cyzhhs.png" alt="常用转换函数"><br><img src="/img/VB/zfchs.png" alt="字符串函数"></p>
+<p><img src="/img/VB/sszfclz.png" alt="字符串函数例子"></p>
+<h3 id="5-2-9-日期函数"><a href="#5-2-9-日期函数" class="headerlink" title="5.2.9 日期函数"></a>5.2.9 日期函数</h3><pre class="line-numbers language-vb"><code class="language-vb">'Time Date Now DateDiff DateAdd
+Private Sub Command1_Click()
+    Dim d1 As Date, d2 As Date
+    Print Now, Date, Time
+    Print Time, Hour(Time), Minute(Time), Second(Time)
+    Print Date, Year(Date), Month(Date), Day(Date)
+    Print "=---------------------="
+    Print DateDiff("d", Now, #10/1/2009#); #10/1/2009# - Date
+    Print Date + Time; "***"; DateAdd("h", 5, Now); "***";
+    Print DateAdd("s", 5, Time), vbCrLf
+    d1 = "2004-07-16 05:00:00"
+    d2 = "2004-08-20 23:00:00"
+    Print #8/20/2004# - #7/16/2004#, d2 - d1, (d2 - d1) * 24
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/img/VB/rqlz.png" alt="日期函数例子"></p>
+<p><strong>格式输出函数</strong><br><code>Format$(表达式[,格式字符串])</code></p>
+<blockquote>
+<p>关于日期的格式详情，参考<a href="https://blog.csdn.net/bigheadsheep/article/details/12013267" target="_blank" rel="noopener">Format 函数</a>这篇文章</p>
+</blockquote>
+<p><strong>Shell 函数</strong><br><img src="/img/VB/shellhs.png" alt="shell函数"></p>
+<h3 id="5-2-10-基本语句"><a href="#5-2-10-基本语句" class="headerlink" title="5.2.10 基本语句"></a>5.2.10 基本语句</h3><h4 id="5-2-10-1-赋值语句"><a href="#5-2-10-1-赋值语句" class="headerlink" title="5.2.10.1 赋值语句"></a>5.2.10.1 赋值语句</h4><pre class="line-numbers language-vb"><code class="language-vb">Let 变量名 = 表达式  '普通变量
+Set 变量名 = 表达式  ' 对象型变量
+
+Let A = 5
+Set Obj1 = Command1
+
+Text1.text = "ok"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="快速输入输出函数"><a href="#快速输入输出函数" class="headerlink" title="快速输入输出函数"></a>快速输入输出函数</h4><p><img src="/img/VB/kssrschs.png" alt="InputBox函数"></p>
+<p><img src="/img/VB/msgbox.png" alt="MsgBox函数"></p>
+<p><img src="/img/VB/msgboxlz.png" alt="MsgBox例子"></p>
+<h1 id="6-课程学习过程中练习"><a href="#6-课程学习过程中练习" class="headerlink" title="6. 课程学习过程中练习"></a>6. 课程学习过程中练习</h1><p>第几次课.第几道练习</p>
+<h2 id="2-1-勾选要求变量声明（初学）"><a href="#2-1-勾选要求变量声明（初学）" class="headerlink" title="2.1 勾选要求变量声明（初学）"></a>2.1 勾选要求变量声明（初学）</h2><p>然后每次使用必须先定义变量</p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+
+Private Sub Command1_Click()
+    Dim B As Integer, A As Integer
+    B = 10
+    A = A + B
+    Print B, A
+End Sub
+'10 10
+'10 10<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+
+Private Sub Command1_Click()
+    Static B As Integer, A As Integer     '静态变量
+    B = 10
+    A = A + B
+    Print B, A
+End Sub
+'10 10
+'10 20
+'10 30<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Dim 和 Static 都是局部变量可以将其拉到窗体级全局变量</p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+    Dim B As Integer, A As Integer
+Private Sub Command1_Click()
+
+    B = 10
+    A = A + B
+    Print B, A
+End Sub
+
+Private Sub Command2_Click()
+    Print B, A
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-2-字符判断"><a href="#2-2-字符判断" class="headerlink" title="2.2 字符判断"></a>2.2 字符判断</h2><pre class="line-numbers language-vb"><code class="language-vb">Private Sub Text1_Change()
+    If Not IsNumeric(Text1) Then
+        MsgBox "Text1 输入非法数字，请重新输入"
+        Text1.Text = ""
+    End If
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-3-inputbox-amp-keypress"><a href="#2-3-inputbox-amp-keypress" class="headerlink" title="2.3 inputbox &amp; keypress"></a>2.3 inputbox &amp; keypress</h2><pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+
+Private Sub Label2_Click()
+    Text3 = Val(Text1) + Val(Text2)
+End Sub
+
+Private Sub Text1_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Text2 = InputBox("请输入")
+End Sub
+
+Private Sub Text3_GotFocus()
+    Text1 = ""
+    Text2 = ""
+    Text3 = ""
+    Text1.SetFocus
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="7-学习作业"><a href="#7-学习作业" class="headerlink" title="7. 学习作业"></a>7. 学习作业</h1><h2 id="7-1-第一次作业"><a href="#7-1-第一次作业" class="headerlink" title="7.1 第一次作业"></a>7.1 第一次作业</h2><h3 id="1-倒计时控件"><a href="#1-倒计时控件" class="headerlink" title="1. 倒计时控件"></a>1. 倒计时控件</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDJCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Private Sub Command1_Click()
     Timer1.Interval = 50
@@ -1055,7 +1160,7 @@ End Sub
 
 Private Sub Timer1_Timer()
     Text2.Text = Format(Now(), "yyyy/MM/dd hh:mm:ss")
-    Text3.Text = #10/1/2020# - Date & "天"
+    Text3.Text = #10/1/2020# - Date &amp; "天"
     Text1.Text = "2020-10-01"
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>剩下的随便改改 bg，caption，font 等等的</p>
@@ -1102,11 +1207,11 @@ Private Sub Timer1_Timer()
     If Text1.Text = "" Then
         Text3.Text = ""
     Else                      ' 加入判断 让到 - 的时候自动补全
-        If Text1.Text = yy & "-" & mon & "-" Then
-            t1 = Text1.Text & "01"
-            Text3.Text = CDate(t1) - Date & "天"
+        If Text1.Text = yy &amp; "-" &amp; mon &amp; "-" Then
+            t1 = Text1.Text &amp; "01"
+            Text3.Text = CDate(t1) - Date &amp; "天"
         Else
-            Text3.Text = CDate(Text1.Text) - Date & "天"
+            Text3.Text = CDate(Text1.Text) - Date &amp; "天"
         End If
     End If
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1131,6 +1236,8 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <li><code>Text1.SetFocus</code>按下按钮后将鼠标指针重新指回<code>Text1</code>的位置，即使焦点回到加数 A 框</li>
 <li>val 将字符型数据转换为数值型数据，str 将数值型转换为字符型</li>
 </ul>
+<h2 id="7-2-第二次作业"><a href="#7-2-第二次作业" class="headerlink" title="7.2 第二次作业"></a>7.2 第二次作业</h2><h3 id="1-华氏度与摄氏度的转换"><a href="#1-华氏度与摄氏度的转换" class="headerlink" title="1. 华氏度与摄氏度的转换"></a>1. 华氏度与摄氏度的转换</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDFDFCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
+<h3 id="2-二次方程根的求解"><a href="#2-二次方程根的求解" class="headerlink" title="2. 二次方程根的求解"></a>2. 二次方程根的求解</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDEDFCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1531,7 +1638,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">35.8k</span>&nbsp;字
+                class="white-color">36.4k</span>&nbsp;字
             
             
             
