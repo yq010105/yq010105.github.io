@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java-Note, Yun.Qi">
-    <meta name="description" content="Java 语言学习笔记">
+    <meta name="keywords" content="服务器学习, Yun.Qi">
+    <meta name="description" content="从零开始的服务器学习">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java-Note | Yun.Qi</title>
+    <title>服务器学习 | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon2.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/img/pic/')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java-Note</h1>
+                    <h1 class="description center-align post-title">服务器学习</h1>
                 </div>
             </div>
         </div>
@@ -439,12 +439,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Note/">
-                                <span class="chip bg-color">Note</span>
-                            </a>
-                        
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                <span class="chip bg-color">服务器</span>
                             </a>
                         
                     </div>
@@ -468,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-15
+                    2020-03-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-04
+                    2020-03-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1,800
+                    4
                 </div>
                 
 
@@ -495,388 +491,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p><a href="https://www.runoob.com/java/java-basic-syntax.html" target="_blank" rel="noopener">java 参考学习教程</a></p>
-</blockquote>
-<h2 id="1-java-基础语法"><a href="#1-java-基础语法" class="headerlink" title="1. java 基础语法"></a>1. java 基础语法</h2><ul>
-<li>_对象_：对象是类的一个实例，有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等</li>
-<li><em>类</em>：类是一个模板，它描述一类对象的行为和状态</li>
-<li>_方法_：方法就是行为，一个类可以有很多方法。逻辑运算、数据修改以及所有动作都是在方法中完成的</li>
-<li>_实例变量_：每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定</li>
-</ul>
-<h3 id="1-1-java-程序HelloWorld-java"><a href="#1-1-java-程序HelloWorld-java" class="headerlink" title="1.1 java 程序HelloWorld.java"></a>1.1 java 程序<code>HelloWorld.java</code></h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/* 第一个Java程序
-     * 它将打印字符串 Hello World
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String <span class="token punctuation">[</span><span class="token punctuation">]</span>args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 打印 Hello World</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-# Hello World<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>cmd 窗口</strong><br><code>javac HelloWorld.java --调试</code><br><code>java Helloworld --运行</code></p>
-<h3 id="1-2-基本语法"><a href="#1-2-基本语法" class="headerlink" title="1.2 基本语法"></a>1.2 基本语法</h3><ul>
-<li>大小写敏感：Java 是大小写敏感的，这就意味着标识符 Hello 与 hello 是不同的</li>
-<li>类名：对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 MyFirstJavaClass</li>
-<li>方法名：所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写</li>
-<li>源文件名.java：源文件名必须和类名相同。当保存文件的时候，你应该使用类名作为文件名保存（切记 Java 是大小写敏感的），文件名的后缀为 .java。（如果文件名和类名不相同则会导致编译错误）</li>
-<li>主方法入口：所有的 Java 程序由 <code>public static void main(String []args)</code> 方法开始执行</li>
-</ul>
-<h3 id="1-3-java-标识符"><a href="#1-3-java-标识符" class="headerlink" title="1.3 java 标识符"></a>1.3 java 标识符</h3><p><em>Java 所有的组成部分都需要名字。类名、变量名以及方法名都被称为标识符</em></p>
-<ul>
-<li>所有的标识符都应该以字母（A-Z 或者 a-z）,美元符（$）、或者下划线（_）开始</li>
-<li>首字符之后可以是字母（A-Z 或者 a-z）,美元符（$）、下划线（_）或数字的任何字符组合</li>
-<li>关键字不能用作标识符</li>
-<li>标识符是大小写敏感的</li>
-<li>合法标识符举例：age、$salary、_value、__1_value</li>
-<li>非法标识符举例：123abc、-salary</li>
-</ul>
-<h3 id="1-4-java-修饰符"><a href="#1-4-java-修饰符" class="headerlink" title="1.4 java 修饰符"></a>1.4 java 修饰符</h3><p><em>像其他语言一样，Java 可以使用修饰符来修饰类中方法和属性。主要有两类修饰符</em></p>
-<ul>
-<li>访问控制修饰符 : default, public , protected, private</li>
-<li>非访问控制修饰符 : final, abstract, static, synchronized</li>
-</ul>
-<h3 id="1-5-java-变量"><a href="#1-5-java-变量" class="headerlink" title="1.5 java 变量"></a>1.5 java 变量</h3><ul>
-<li>局部变量</li>
-<li>类变量–静态变量</li>
-<li>成员变量–非静态变量</li>
-</ul>
-<h3 id="1-6-java-数组"><a href="#1-6-java-数组" class="headerlink" title="1.6 java 数组"></a>1.6 java 数组</h3><p><em>数组是储存在堆上的对象，可以保存多个同类型变量</em></p>
-<h3 id="1-7-java-枚举"><a href="#1-7-java-枚举" class="headerlink" title="1.7 java 枚举"></a>1.7 java 枚举</h3><p><em>Java 5.0 引入了枚举，枚举限制变量只能是预先设定好的值。使用枚举可以减少代码中的 bug</em><br><em>例如，我们为果汁店设计一个程序，它将限制果汁为小杯、中杯、大杯。这就意味着它不允许顾客点除了这三种尺寸外的果汁</em></p>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">FreshJuice</span> <span class="token punctuation">{</span>
-   <span class="token keyword">enum</span> FreshJuiceSize<span class="token punctuation">{</span> SMALL<span class="token punctuation">,</span> MEDIUM <span class="token punctuation">,</span> LARGE <span class="token punctuation">}</span>
-   FreshJuiceSize size<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FreshJuiceTest</span> <span class="token punctuation">{</span>
-   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String <span class="token punctuation">[</span><span class="token punctuation">]</span>args<span class="token punctuation">)</span><span class="token punctuation">{</span>
-      FreshJuice juice <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FreshJuice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      juice<span class="token punctuation">.</span>size <span class="token operator">=</span> FreshJuice<span class="token punctuation">.</span>FreshJuiceSize<span class="token punctuation">.</span>MEDIUM  <span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="1-7-1-java-关键字-不可以用于变量"><a href="#1-7-1-java-关键字-不可以用于变量" class="headerlink" title="1.7.1 java 关键字(不可以用于变量)"></a>1.7.1 java 关键字(不可以用于变量)</h3><table>
-<thead>
-<tr>
-<th align="center">类别</th>
-<th align="center">关键字</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">访问控制</td>
-<td align="center">private</td>
-<td align="center">私有的</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">protected</td>
-<td align="center">受保护的</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">public</td>
-<td align="center">公共的</td>
-</tr>
-<tr>
-<td align="center">类、方法和变量修饰符</td>
-<td align="center">abstract</td>
-<td align="center">声明抽象</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">class</td>
-<td align="center">类</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">extends</td>
-<td align="center">扩充，继承</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">final</td>
-<td align="center">最终值，不可改变的</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">implements</td>
-<td align="center">实现（接口）</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">interface</td>
-<td align="center">接口</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">native</td>
-<td align="center">本地，原生方法</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">new</td>
-<td align="center">新，创建</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">static</td>
-<td align="center">静态</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">strictfp</td>
-<td align="center">严格，精准</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">synchronized</td>
-<td align="center">线程，同步</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">transient</td>
-<td align="center">短暂</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">volatile</td>
-<td align="center">易失的</td>
-</tr>
-<tr>
-<td align="center">程序控制语句</td>
-<td align="center">break</td>
-<td align="center">跳出循环</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">case</td>
-<td align="center">定义一个值供 switch 选择</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">continue</td>
-<td align="center">继续</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">default</td>
-<td align="center">默认</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">do</td>
-<td align="center">运行</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">else</td>
-<td align="center">否则</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">for</td>
-<td align="center">循环</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">if</td>
-<td align="center">如果</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">instanceof</td>
-<td align="center">实例</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">return</td>
-<td align="center">返回</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">switch</td>
-<td align="center">根据值选择执行</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">while</td>
-<td align="center">循环</td>
-</tr>
-<tr>
-<td align="center">错误处理</td>
-<td align="center">assert</td>
-<td align="center">断言表达式是否为真</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">catch</td>
-<td align="center">捕捉一场</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">finally</td>
-<td align="center">有没有异常都执行</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">throw</td>
-<td align="center">抛出一个异常对象</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">throws</td>
-<td align="center">声明一个异常可能被抛出</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">try</td>
-<td align="center">捕获异常</td>
-</tr>
-<tr>
-<td align="center">包相关</td>
-<td align="center">impot</td>
-<td align="center">引入</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">package</td>
-<td align="center">包</td>
-</tr>
-<tr>
-<td align="center">基本类型</td>
-<td align="center">boolean</td>
-<td align="center">布尔型</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">byte</td>
-<td align="center">字节型</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">char</td>
-<td align="center">字符型</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">double</td>
-<td align="center">双精度浮点</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">float</td>
-<td align="center">单精度浮点</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">int</td>
-<td align="center">整型</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">long</td>
-<td align="center">长整型</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">short</td>
-<td align="center">短整型</td>
-</tr>
-<tr>
-<td align="center">变量引用</td>
-<td align="center">super</td>
-<td align="center">父类。超类</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">this</td>
-<td align="center">本类</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">void</td>
-<td align="center">无返回值</td>
-</tr>
-<tr>
-<td align="center">保留关键字</td>
-<td align="center">goto</td>
-<td align="center">是关键字，但不能使用</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">const</td>
-<td align="center">是关键字，但不能使用</td>
-</tr>
-<tr>
-<td align="center"></td>
-<td align="center">null</td>
-<td align="center">空</td>
-</tr>
-</tbody></table>
-<h3 id="1-8-java-注释"><a href="#1-8-java-注释" class="headerlink" title="1.8 java 注释"></a>1.8 java 注释</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/*多行
-*注释
-*/</span>
-
-<span class="token comment" spellcheck="true">// 单行注释</span>
-<span class="token comment" spellcheck="true">/*单行注释*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="1-9-java-空行—-忽略"><a href="#1-9-java-空行—-忽略" class="headerlink" title="1.9 java 空行—-忽略"></a>1.9 java 空行—-忽略</h3><h3 id="1-10-继承"><a href="#1-10-继承" class="headerlink" title="1.10 继承"></a>1.10 继承</h3><ul>
-<li>在 Java 中，一个类可以由其他类派生。如果你要创建一个类，而且已经存在一个类具有你所需要的属性或方法，那么你可以将新创建的类继承该类</li>
-<li>利用继承的方法，可以重用已存在类的方法和属性，而不用重写这些代码。被继承的类称为超类（super class），派生类称为子类（subclass）</li>
-</ul>
-<h3 id="1-11-接口"><a href="#1-11-接口" class="headerlink" title="1.11 接口"></a>1.11 接口</h3><ul>
-<li>在 Java 中，接口可理解为对象间相互通信的协议。接口在继承中扮演着很重要的角色</li>
-<li>接口只定义派生要用到的方法，但是方法的具体实现完全取决于派生类</li>
-</ul>
-<h3 id="1-12-java-源程序与编译型运行区别"><a href="#1-12-java-源程序与编译型运行区别" class="headerlink" title="1.12 java 源程序与编译型运行区别"></a>1.12 java 源程序与编译型运行区别</h3><p><img src="/img/java/java.png" alt="java_pic"></p>
-<h2 id="2-对象和类"><a href="#2-对象和类" class="headerlink" title="2. 对象和类"></a>2. 对象和类</h2><p><em>一个群体中有很多 boy 和 girl</em><br><em>其中 boy 和 girl 为类 class，而具体的每个人为该类的对象</em></p>
-<h3 id="2-1-java-中的类"><a href="#2-1-java-中的类" class="headerlink" title="2.1 java 中的类"></a>2.1 java 中的类</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">{</span>
-  String breed<span class="token punctuation">;</span>
-  <span class="token keyword">int</span> age<span class="token punctuation">;</span>
-  String color<span class="token punctuation">;</span>
-  <span class="token keyword">void</span> <span class="token function">barking</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token keyword">void</span> <span class="token function">hungry</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token keyword">void</span> <span class="token function">sleeping</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>一个类中可以包含一下类型的变量：</p>
-<ul>
-<li>局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁</li>
-<li>成员变量：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问</li>
-<li>类变量：类变量也声明在类中，方法体之外，但必须声明为 static 类型<br>一个类可以拥有多个方法，在上面的例子中：barking()、hungry()和 sleeping()都是 Dog 类的方法</li>
-</ul>
-<h3 id="2-2-构造方法"><a href="#2-2-构造方法" class="headerlink" title="2.2 构造方法"></a>2.2 构造方法</h3><ul>
-<li>每个类都有构造方法。如果没有显式地为类定义构造方法，Java 编译器将会为该类提供一个默认构造方法。</li>
-<li>在创建一个对象的时候，至少要调用一个构造方法</li>
-<li>构造方法的名称必须与类同名，一个类可以有多个构造方法</li>
-</ul>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Puppy</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token function">Puppy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">public</span> <span class="token function">Puppy</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 这个构造器仅有一个参数：name</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-3-创建对象"><a href="#2-3-创建对象" class="headerlink" title="2.3 创建对象"></a>2.3 创建对象</h3><p><em>对象是根据类创建的。在 Java 中，使用关键字 new 来创建一个新的对象</em></p>
-<ul>
-<li>声明：声明一个对象，包括对象名称和对象类型</li>
-<li>实例化：使用关键字 new 来创建一个对象</li>
-<li>初始化：使用 new 创建对象时，会调用构造方法初始化对象</li>
-</ul>
-<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Puppy</span><span class="token punctuation">{</span>
-   <span class="token keyword">public</span> <span class="token function">Puppy</span><span class="token punctuation">(</span>String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">//这个构造器仅有一个参数：name</span>
-      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"小狗的名字是 : "</span> <span class="token operator">+</span> name <span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">// 下面的语句将创建一个Puppy对象</span>
-      Puppy myPuppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Puppy</span><span class="token punctuation">(</span> <span class="token string">"tommy"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<script>
+                <h1 id="还没开始"><a href="#还没开始" class="headerlink" title="还没开始"></a>还没开始</h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -919,7 +534,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yq010105.github.io/2020/02/15/java-note/">http://yq010105.github.io/2020/02/15/java-note/</a>
+                    <a href="http://yq010105.github.io/2020/03/11/aliyun/">http://yq010105.github.io/2020/03/11/aliyun/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -957,12 +572,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Note/">
-                                    <span class="chip bg-color">Note</span>
-                                </a>
-                            
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                    <span class="chip bg-color">服务器</span>
                                 </a>
                             
                         </div>
@@ -1003,28 +614,78 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/02/16/vb-note/">
+                <a href="/2020/03/11/aliyun/">
                     <div class="card-image">
                         
-                        <img src="/img/cover/vb.jpg" class="responsive-img" alt="VB-Note">
+                        <img src="/img/pic/" class="responsive-img" alt="服务器学习">
                         
-                        <span class="card-title">VB-Note</span>
+                        <span class="card-title">服务器学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            VB语言学习过程，这个学期开始学习VB，提前作预习
+                            从零开始的服务器学习
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-16
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/" class="post-category">
+                                    学习力
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">服务器</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/03/04/lua-note/">
+                    <div class="card-image">
+                        
+                        <img src="/img/pic/1.jpg" class="responsive-img" alt="Lua-note">
+                        
+                        <span class="card-title">Lua-note</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            关于lua语言的学习，听说跟c差不多
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1044,61 +705,8 @@
                         <span class="chip bg-color">Note</span>
                     </a>
                     
-                    <a href="/tags/VB/">
-                        <span class="chip bg-color">VB</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/02/15/bilibili-api/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/wallhaven/78.jpg" class="responsive-img" alt="Bilibili Api">
-                        
-                        <span class="card-title">Bilibili Api</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Bilibili api 相关信息和介绍
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-15
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%B5%84%E6%BA%90%E5%8A%9B/" class="post-category">
-                                    资源力
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Bilibili/">
-                        <span class="chip bg-color">Bilibili</span>
-                    </a>
-                    
-                    <a href="/tags/Api/">
-                        <span class="chip bg-color">Api</span>
+                    <a href="/tags/Lua/">
+                        <span class="chip bg-color">Lua</span>
                     </a>
                     
                 </div>

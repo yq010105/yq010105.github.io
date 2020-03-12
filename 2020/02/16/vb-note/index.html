@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-10
+                    2020-03-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    4,164
+                    4,671
                 </div>
                 
 
@@ -563,7 +563,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 </ul>
 <pre class="line-numbers language-VB"><code class="language-VB">Private Sub Form_Load()
 Form1.Show
-Form1.BackColor = &amp;H000000FF&amp;
+Form1.BackColor = &H000000FF&
 End Sub
 ## 窗口背景颜色<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-vb"><code class="language-vb">Private Sub Form_Load()
@@ -982,7 +982,7 @@ Private Sub Command2_Click()
        ' Label3 = "密码错误，请重新输入"
        ' Text1.SetFocus
         i = i +1
-        If i &gt;= 3 Then End
+        If i >= 3 Then End
         Text1 = ""
         Text1.SetFocus
         MsgBox "密码输入错误，请重新输入" ' 弹出一个框
@@ -1087,7 +1087,7 @@ Let A = 5
 Set Obj1 = Command1
 
 Text1.text = "ok"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="快速输入输出函数"><a href="#快速输入输出函数" class="headerlink" title="快速输入输出函数"></a>快速输入输出函数</h4><p><img src="/img/VB/kssrschs.png" alt="InputBox函数"></p>
+<h4 id="5-2-10-2-快速输入输出函数"><a href="#5-2-10-2-快速输入输出函数" class="headerlink" title="5.2.10.2 快速输入输出函数"></a>5.2.10.2 快速输入输出函数</h4><p><img src="/img/VB/kssrschs.png" alt="InputBox函数"></p>
 <p><img src="/img/VB/msgbox.png" alt="MsgBox函数"></p>
 <p><img src="/img/VB/msgboxlz.png" alt="MsgBox例子"></p>
 <h1 id="6-课程学习过程中练习"><a href="#6-课程学习过程中练习" class="headerlink" title="6. 课程学习过程中练习"></a>6. 课程学习过程中练习</h1><p>第几次课.第几道练习</p>
@@ -1160,7 +1160,7 @@ End Sub
 
 Private Sub Timer1_Timer()
     Text2.Text = Format(Now(), "yyyy/MM/dd hh:mm:ss")
-    Text3.Text = #10/1/2020# - Date &amp; "天"
+    Text3.Text = #10/1/2020# - Date & "天"
     Text1.Text = "2020-10-01"
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>剩下的随便改改 bg，caption，font 等等的</p>
@@ -1207,11 +1207,11 @@ Private Sub Timer1_Timer()
     If Text1.Text = "" Then
         Text3.Text = ""
     Else                      ' 加入判断 让到 - 的时候自动补全
-        If Text1.Text = yy &amp; "-" &amp; mon &amp; "-" Then
-            t1 = Text1.Text &amp; "01"
-            Text3.Text = CDate(t1) - Date &amp; "天"
+        If Text1.Text = yy & "-" & mon & "-" Then
+            t1 = Text1.Text & "01"
+            Text3.Text = CDate(t1) - Date & "天"
         Else
-            Text3.Text = CDate(Text1.Text) - Date &amp; "天"
+            Text3.Text = CDate(Text1.Text) - Date & "天"
         End If
     End If
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -1237,7 +1237,132 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <li>val 将字符型数据转换为数值型数据，str 将数值型转换为字符型</li>
 </ul>
 <h2 id="7-2-第二次作业"><a href="#7-2-第二次作业" class="headerlink" title="7.2 第二次作业"></a>7.2 第二次作业</h2><h3 id="1-华氏度与摄氏度的转换"><a href="#1-华氏度与摄氏度的转换" class="headerlink" title="1. 华氏度与摄氏度的转换"></a>1. 华氏度与摄氏度的转换</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDFDFCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+Dim C As Variant, F As Variant, CI As Double, FI As Double
+
+Private Sub Form_Load()
+    Label4.Enabled = False
+    Timer1.Interval = 50
+End Sub
+
+Private Sub label3_click()
+    C = Text1.Text
+    If IsNumeric(C) Then
+        CI = Val(C)
+        FI = Round(9 / 5 * CI + 32, 1)
+        Text2.Text = FI
+    Else
+        MsgBox "摄氏度不是数"
+        Text1.Text = ""
+    End If
+End Sub
+
+Private Sub Label4_Click()
+    F = Text2.Text
+    If IsNumeric(F) Then
+        FI = Val(F)
+        CI = Round(5 / 9 * (FI - 32), 1)
+        Text1.Text = CI
+    Else
+        MsgBox "华氏度不是数"
+        Text2.Text = ""
+    End If
+End Sub
+
+Private Sub Text1_Click()
+    Label3.Enabled = True: Label4.Enabled = False
+    Text1.Text = "": Text2.Text = ""
+End Sub
+
+Private Sub Text1_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then label3_click
+End Sub
+
+Private Sub Text2_Click()
+    Label4.Enabled = True: Label3.Enabled = False
+    Text1.Text = "": Text2.Text = ""
+End Sub
+
+Private Sub Text2_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Label4_Click
+End Sub
+
+Private Sub Timer1_Timer()
+    C = Text1.Text: F = Text2.Text
+    If C <> "" Or F <> "" Then
+        label3_click
+        Label4_Click
+    End If
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>小知识点：</p>
+<ul>
+<li>VB中的不等于<code>&lt;&gt;</code></li>
+<li>enabled可以让控件是否响应用户，如正向转换时，关闭逆向开关；逆向转换时，关闭正向开关</li>
+</ul>
 <h3 id="2-二次方程根的求解"><a href="#2-二次方程根的求解" class="headerlink" title="2. 二次方程根的求解"></a>2. 二次方程根的求解</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDEDFCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
+<p><strong>作业代码</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+Dim a As Variant, b As Variant, c As Variant, x1 As Variant, x2 As Variant
+Dim ai As Double, bi As Double, ci As Double, dta As Double, xs1 As Double, xs2 As Double, xx1 As Double, xx2 As Double
+
+Private Sub Command1_Click()
+    a = Text1.Text: b = Text2.Text: c = Text3.Text
+    If IsNumeric(a) And IsNumeric(b) And IsNumeric(c) Then
+        ai = Val(a): bi = Val(b): ci = Val(c)
+        dta = bi ^ 2 - 4 * ai * ci
+        If dta > 0 Then
+            x1 = (-bi + Sqr(dta)) / (2 * ai)
+            x2 = (-bi - Sqr(dta)) / (2 * ai)
+            Text4.Text = x1
+            Text5.Text = x2
+        ElseIf dta = 0 Then
+            x1 = (-bi) / (2 * ai)
+            x2 = (-bi) / (2 * ai)
+            Text4.Text = x1
+            Text5.Text = x2
+        Else
+            xs1 = Round((-bi) / (2 * ai), 2)
+            xx1 = Round(Sqr(-dta) / (2 * ai), 2)
+            Text4.Text = Str(xs1) & "+" & Str(xx1) & "i"
+            xs2 = Round((-bi) / (2 * ai), 2)
+            xx2 = Round(Sqr(-dta) / (2 * ai), 2)
+            Text5.Text = Str(xs2) & "-" & Str(xx2) & "i"
+        End If
+    Else
+        MsgBox "abc不全是数字"
+    End If
+End Sub
+
+Private Sub Command2_Click()
+    Text1.Text = ""
+    Text2.Text = ""
+    Text3.Text = ""
+    Text4.Text = ""
+    Text5.Text = ""
+    Text1.SetFocus
+End Sub
+
+Private Sub Command3_Click()
+    End
+End Sub
+
+Private Sub Text1_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Command1_Click
+End Sub
+Private Sub Text2_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Command1_Click
+End Sub
+Private Sub Text3_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Command1_Click
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>小知识点：</p>
+<ul>
+<li>Dim声明</li>
+<li>ElseIf的使用</li>
+<li>MsgBox的使用  <code>MsgBox "提示信息"</code></li>
+<li>Round(x,2)  约到小数点后几位</li>
+<li>keypress 的应用，可以执行事件</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1638,7 +1763,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.4k</span>&nbsp;字
+                class="white-color">36.9k</span>&nbsp;字
             
             
             
