@@ -719,7 +719,7 @@ Set Obj1 = Command1
 Text1.text = "ok"
 ```
 
-#### 快速输入输出函数
+#### 5.2.10.2 快速输入输出函数
 
 ![InputBox函数](/img/VB/kssrschs.png)
 
@@ -928,6 +928,138 @@ End Sub
 
 ![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDFDFCPGJGNGBGHGFCOHAGOGH)
 
+```vb
+Option Explicit
+Dim C As Variant, F As Variant, CI As Double, FI As Double
+
+Private Sub Form_Load()
+    Label4.Enabled = False
+    Timer1.Interval = 50
+End Sub
+
+Private Sub label3_click()
+    C = Text1.Text
+    If IsNumeric(C) Then
+        CI = Val(C)
+        FI = Round(9 / 5 * CI + 32, 1)
+        Text2.Text = FI
+    Else
+        MsgBox "摄氏度不是数"
+        Text1.Text = ""
+    End If
+End Sub
+
+Private Sub Label4_Click()
+    F = Text2.Text
+    If IsNumeric(F) Then
+        FI = Val(F)
+        CI = Round(5 / 9 * (FI - 32), 1)
+        Text1.Text = CI
+    Else
+        MsgBox "华氏度不是数"
+        Text2.Text = ""
+    End If
+End Sub
+
+Private Sub Text1_Click()
+    Label3.Enabled = True: Label4.Enabled = False
+    Text1.Text = "": Text2.Text = ""
+End Sub
+
+Private Sub Text1_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then label3_click
+End Sub
+
+Private Sub Text2_Click()
+    Label4.Enabled = True: Label3.Enabled = False
+    Text1.Text = "": Text2.Text = ""
+End Sub
+
+Private Sub Text2_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Label4_Click
+End Sub
+
+Private Sub Timer1_Timer()
+    C = Text1.Text: F = Text2.Text
+    If C <> "" Or F <> "" Then
+        label3_click
+        Label4_Click
+    End If
+End Sub
+```
+
+小知识点：
+- VB中的不等于`<>`
+- enabled可以让控件是否响应用户，如正向转换时，关闭逆向开关；逆向转换时，关闭正向开关
+
+
 ### 2. 二次方程根的求解
 
 ![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDEDFCPGJGNGBGHGFCOHAGOGH)
+
+**作业代码**
+
+```vb
+Option Explicit
+Dim a As Variant, b As Variant, c As Variant, x1 As Variant, x2 As Variant
+Dim ai As Double, bi As Double, ci As Double, dta As Double, xs1 As Double, xs2 As Double, xx1 As Double, xx2 As Double
+
+Private Sub Command1_Click()
+    a = Text1.Text: b = Text2.Text: c = Text3.Text
+    If IsNumeric(a) And IsNumeric(b) And IsNumeric(c) Then
+        ai = Val(a): bi = Val(b): ci = Val(c)
+        dta = bi ^ 2 - 4 * ai * ci
+        If dta > 0 Then
+            x1 = (-bi + Sqr(dta)) / (2 * ai)
+            x2 = (-bi - Sqr(dta)) / (2 * ai)
+            Text4.Text = x1
+            Text5.Text = x2
+        ElseIf dta = 0 Then
+            x1 = (-bi) / (2 * ai)
+            x2 = (-bi) / (2 * ai)
+            Text4.Text = x1
+            Text5.Text = x2
+        Else
+            xs1 = Round((-bi) / (2 * ai), 2)
+            xx1 = Round(Sqr(-dta) / (2 * ai), 2)
+            Text4.Text = Str(xs1) & "+" & Str(xx1) & "i"
+            xs2 = Round((-bi) / (2 * ai), 2)
+            xx2 = Round(Sqr(-dta) / (2 * ai), 2)
+            Text5.Text = Str(xs2) & "-" & Str(xx2) & "i"
+        End If
+    Else
+        MsgBox "abc不全是数字"
+    End If
+End Sub
+
+Private Sub Command2_Click()
+    Text1.Text = ""
+    Text2.Text = ""
+    Text3.Text = ""
+    Text4.Text = ""
+    Text5.Text = ""
+    Text1.SetFocus
+End Sub
+
+Private Sub Command3_Click()
+    End
+End Sub
+
+Private Sub Text1_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Command1_Click
+End Sub
+Private Sub Text2_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Command1_Click
+End Sub
+Private Sub Text3_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then Command1_Click
+End Sub
+```
+
+小知识点：
+
+- Dim声明
+- ElseIf的使用
+- MsgBox的使用  `MsgBox "提示信息"`
+- Round(x,2)  约到小数点后几位
+- keypress 的应用，可以执行事件
