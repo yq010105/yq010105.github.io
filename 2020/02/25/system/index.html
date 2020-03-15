@@ -304,10 +304,10 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = '340d600392818df2413382dc7d8325c360d83ea49a262d31760348484bbc10b5';
         if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入日记的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码不对，不能偷看别人的日记哦！');
+            if (pwd !== CryptoJS.SHA256(prompt('请输入密码')).toString(CryptoJS.enc.Hex)) {
+                alert('あなたは私のマスターではありません');
                 location.href = '/';
             }
         }
@@ -471,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-04
+                    2020-03-15
                 </div>
                 
 
@@ -892,7 +892,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.9k</span>&nbsp;字
+                class="white-color">37.7k</span>&nbsp;字
             
             
             

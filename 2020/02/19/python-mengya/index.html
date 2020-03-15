@@ -306,8 +306,8 @@
     (function() {
         let pwd = '';
         if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入日记的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码不对，不能偷看别人的日记哦！');
+            if (pwd !== CryptoJS.SHA256(prompt('请输入密码')).toString(CryptoJS.enc.Hex)) {
+                alert('あなたは私のマスターではありません');
                 location.href = '/';
             }
         }
@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-05
+                    2020-03-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3,770
+                    3,819
                 </div>
                 
 
@@ -1262,7 +1262,9 @@ pingjun <span class="token operator">=</span> int<span class="token punctuation"
         video <span class="token operator">=</span> cv2<span class="token punctuation">.</span>VideoCapture<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
         video_show<span class="token punctuation">(</span>video <span class="token punctuation">,</span>ci<span class="token punctuation">)</span>
         get_shishi<span class="token punctuation">(</span>cishu <span class="token punctuation">,</span>pingjun<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="5-下一步的优化"><a href="#5-下一步的优化" class="headerlink" title="5. 下一步的优化"></a>5. 下一步的优化</h1><h2 id="5-1-可以持续的调用摄像头"><a href="#5-1-可以持续的调用摄像头" class="headerlink" title="5.1 可以持续的调用摄像头"></a>5.1 可以持续的调用摄像头</h2><script>
+<h1 id="5-进一步优化"><a href="#5-进一步优化" class="headerlink" title="5. 进一步优化"></a>5. 进一步优化</h1><h2 id="5-1-分析误差的准备"><a href="#5-1-分析误差的准备" class="headerlink" title="5.1 分析误差的准备"></a>5.1 分析误差的准备</h2><h3 id="5-1-1-构造一个桌面指针"><a href="#5-1-1-构造一个桌面指针" class="headerlink" title="5.1.1 构造一个桌面指针"></a>5.1.1 构造一个桌面指针</h3><p>写出代码，在服务器上运行</p>
+<h3 id="5-1-2-手机上下载一个模拟时钟"><a href="#5-1-2-手机上下载一个模拟时钟" class="headerlink" title="5.1.2 手机上下载一个模拟时钟"></a>5.1.2 手机上下载一个模拟时钟</h3><h3 id="5-1-3-两者相对比来分析误差"><a href="#5-1-3-两者相对比来分析误差" class="headerlink" title="5.1.3 两者相对比来分析误差"></a>5.1.3 两者相对比来分析误差</h3><p>误差分析</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1658,7 +1660,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.9k</span>&nbsp;字
+                class="white-color">37.7k</span>&nbsp;字
             
             
             

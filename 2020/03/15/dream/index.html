@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python_solve_problems, Yun.Qi">
-    <meta name="description" content="用python模拟学习生活中遇到的问题，便于解决理解，大部分可能都是学概率统计的时候遇到的问题">
+    <meta name="keywords" content="盗梦空间, Yun.Qi">
+    <meta name="description" content="记录我做的梦">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python_solve_problems | Yun.Qi</title>
+    <title>盗梦空间 | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon2.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,7 +304,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = '81dc948cd3fa9ec2064515b4267ef9a339993233dbdc0e984ce7b0fde6e1a0a9';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入密码')).toString(CryptoJS.enc.Hex)) {
                 alert('あなたは私のマスターではありません');
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/31.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/78.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python_solve_problems</h1>
+                    <h1 class="description center-align post-title">盗梦空间</h1>
                 </div>
             </div>
         </div>
@@ -437,17 +437,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
-                            </a>
-                        
-                            <a href="/tags/Questions/">
-                                <span class="chip bg-color">Questions</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -455,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/" class="post-category">
-                                技术力
+                            <a href="/categories/%E6%83%B3%E8%B1%A1%E5%8A%9B/" class="post-category">
+                                想象力
                             </a>
                         
                     </div>
@@ -468,21 +460,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-02-17
+                    2020-03-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-04
+                    2020-03-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1,142
+                    37
                 </div>
                 
 
@@ -495,71 +487,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>这篇主要是记录一些生活学习中遇到的一些难题,想不通,就用 python 模拟出来</strong><br><em>虽然模拟出来了，但不会有可能还是不会 hhh</em></p>
-<a id="more"></a>
-
-<h1 id="1-概率类问题"><a href="#1-概率类问题" class="headerlink" title="1. 概率类问题"></a>1. 概率类问题</h1><h2 id="1-1-24-个朋友生日问题"><a href="#1-1-24-个朋友生日问题" class="headerlink" title="1.1 24 个朋友生日问题"></a>1.1 24 个朋友生日问题</h2><p>一道小题，材料力学老师引出</p>
-<pre><code>一年中同一天收到2个或2个以上朋友生日聚会邀请的概率
-A 、小于10%  B、20%  C、40%  D、大于50%</code></pre><p><em>将其大致概括就是：身边有 24 个朋友，他们中有两个人或两个以上的人同一天生日的概率是多少</em><br><strong>为了简单，就只算两个人生日相同的概率</strong></p>
-<pre class="line-numbers language-py"><code class="language-py">import random
-
-def get_same():
-    ris = []
-    for i in range(24):  # 24个人，生成24个随机数
-        ri = random.randint(1, 365)  # 随机数范围则是一年365天
-        ris.append(ri)
-
-    d = 0
-    for j in range(24):     # 循环来比较随机数
-        for k in range(j+1, 24):
-            if ris[j] == ris[k]:
-                d += 1
-                # print(ris[k])
-            else:
-                continue
-    return d        # 如果有相同，不管有几个，d都不是0
-    # 即如果d=0，说明这24个人里无同一天生日
-
-def get_gailv():
-    su = 0      # 总次数
-    suancal = 0  # 无相同，即d=0的次数
-    for h in range(0, 10000):   # 10000次
-        # print(h)
-        suan = get_same()
-        if suan == 0:   # 如果suan为0，说明生日都不同
-            suancal = suancal + 1
-        su += 1
-    return suancal/su    # 24 人生日都不同的概率
-
-gailvs = []
-for j in range(10):     # 重复10次获得概率
-    gailv = get_gailv()
-    gailvs.append(gailv)
-print(gailvs)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>结果为</strong><br><strong>[0.4609, 0.4626, 0.4719, 0.4608, 0.4528, 0.4607, 0.467, 0.4575, 0.4549, 0.4577]</strong></p>
-<p><em>可以发现没有超过 0.5 的概率，说明生日都不相同的概率是大于 0.5 的，也就是说这 24 个人有超过 50%的概率是有两个或两个以上生日是同一天的</em><br><strong>接下来分析原因：</strong><br>不难猜想出，如果只有两个人，这两个人生日同一天概率很小，随着人数的增多，出现生日相同的概率越来越大<br>可以反过来思考，计算每个人生日都不同的概率<br>两个人不同：364/365<br>三个人不同：364/365 _ 363/365<br>四个人不同：364/365 _ 363/365 * 362/365<br>以此类推：当 24 个人生日不同时的概率：</p>
-<pre class="line-numbers language-py"><code class="language-py">total = 1
-j = 365
-ren = int(input('请输入人数：'))    # 24人
-for i in range(ren-1):
-    j = j - 1
-    total = j * total
-
-fenmu = 365 ** (ren-1)
-print(total/fenmu) # 0.4616557420854712<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>可以计算出概率为 0.46，即可以得出有两人或两人以上的概率为 0.54</p>
-<h2 id="1-2-三门问题"><a href="#1-2-三门问题" class="headerlink" title="1.2 三门问题"></a>1.2 三门问题</h2><p>概率论与数理统计上课问题–无 python 代码，需要思考<br><a href="https://baike.baidu.com/item/%E4%B8%89%E9%97%A8%E9%97%AE%E9%A2%98/1242689?fr=aladdin" target="_blank" rel="noopener">百度百科</a></p>
-<p><strong>问题大概</strong></p>
-<p>三门问题（Monty Hall problem）亦称为蒙提霍尔问题、蒙特霍问题或蒙提霍尔悖论，大致出自美国的电视游戏节目 Let’s Make a Deal。问题名字来自该节目的主持人蒙提·霍尔（Monty Hall）。参赛者会看见三扇关闭了的门，其中一扇的后面有一辆汽车，选中后面有车的那扇门可赢得该汽车，另外两扇门后面则各藏有一只山羊。当参赛者选定了一扇门，但未去开启它的时候，节目主持人开启剩下两扇门的其中一扇，露出其中一只山羊。主持人其后会问参赛者要不要换另一扇仍然关上的门。问题是：换另一扇门会否增加参赛者赢得汽车的机率？如果严格按照上述的条件，即主持人清楚地知道，自己打开的那扇门后是羊，那么答案是会。不换门的话，赢得汽车的几率是 1/3。换门的话，赢得汽车的几率是 2/3</p>
-<p><strong>解答</strong></p>
-<ul>
-<li>第一次选的空门 1（概率 1/3），之后主持人开另一个空门，换门，得到汽车。事件总概率 1/3。</li>
-<li>第一次选的空门 2（概率 1/3），之后主持人开另一个空门，换门，得到汽车。事件总概率 1/3。</li>
-<li>第一次选的汽车（概率 1/3），之后主持人开另一个空门 1（概率 1/2）<br>不换门，得到汽车 这个事件总概率 1/3 * 1/2 = 1/6</li>
-<li>第一次选的汽车（概率 1/3），之后主持人开另一个空门 2（概率 1/2）<br>不换门，得到汽车 这个事件总概率 1/3 * 1/2 = 1/6</li>
-</ul>
-<p>所以换门赢得汽车的概率更大</p>
-<p><strong>概率存在于被给予的条件下，概率不能寄托在实际的物体上</strong></p>
+                <h1 id="1-奇怪的梦"><a href="#1-奇怪的梦" class="headerlink" title="1. 奇怪的梦"></a>1. 奇怪的梦</h1><h2 id="1-1-双重人格"><a href="#1-1-双重人格" class="headerlink" title="1.1 双重人格"></a>1.1 双重人格</h2><p>一个人有两个人格，而且喜欢的是不同的人，然后👴忘了，以后再写</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -603,7 +531,7 @@ print(total/fenmu) # 0.4616557420854712<span aria-hidden="true" class="line-numb
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yq010105.github.io/2020/02/17/python-solve-pro/">http://yq010105.github.io/2020/02/17/python-solve-pro/</a>
+                    <a href="http://yq010105.github.io/2020/03/15/dream/">http://yq010105.github.io/2020/03/15/dream/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -640,15 +568,7 @@ print(total/fenmu) # 0.4616557420854712<span aria-hidden="true" class="line-numb
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
-                                </a>
-                            
-                                <a href="/tags/Questions/">
-                                    <span class="chip bg-color">Questions</span>
-                                </a>
-                            
+                            <span class="chip bg-color">No tag</span>
                         </div>
                     
                 </div>
@@ -687,29 +607,30 @@ print(total/fenmu) # 0.4616557420854712<span aria-hidden="true" class="line-numb
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/02/18/yi-xie-qi-guai-de-xiang-xiang/">
+                <a href="/2020/03/15/dream/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/wallhaven/24.jpg" class="responsive-img" alt="一些奇怪的想象">
+                        <img src="/medias/wallhaven/78.jpg" class="responsive-img" alt="盗梦空间">
                         
-                        <span class="card-title">一些奇怪的想象</span>
+                        <span class="card-title">盗梦空间</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录我的一些奇怪的想法，脑子突然坏掉
+                            记录我做的梦
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -722,14 +643,7 @@ print(total/fenmu) # 0.4616557420854712<span aria-hidden="true" class="line-numb
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Imagination/">
-                        <span class="chip bg-color">Imagination</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -740,23 +654,24 @@ print(total/fenmu) # 0.4616557420854712<span aria-hidden="true" class="line-numb
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/02/16/vb-note/">
+                <a href="/2020/03/15/linux-note/">
                     <div class="card-image">
                         
-                        <img src="/img/cover/vb.jpg" class="responsive-img" alt="VB-Note">
                         
-                        <span class="card-title">VB-Note</span>
+                        <img src="/medias/wallhaven/28.jpg" class="responsive-img" alt="Linux-note">
+                        
+                        <span class="card-title">Linux-note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            VB语言学习过程，这个学期开始学习VB，提前作预习
+                            关于Linux相关知识的学习
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-15
                             </span>
                         <span class="publish-author">
                             
@@ -773,12 +688,12 @@ print(total/fenmu) # 0.4616557420854712<span aria-hidden="true" class="line-numb
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Note/">
-                        <span class="chip bg-color">Note</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/VB/">
-                        <span class="chip bg-color">VB</span>
+                    <a href="/tags/Note/">
+                        <span class="chip bg-color">Note</span>
                     </a>
                     
                 </div>
