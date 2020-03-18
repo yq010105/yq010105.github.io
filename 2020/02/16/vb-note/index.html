@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-11
+                    2020-03-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    4,671
+                    5,650
                 </div>
                 
 
@@ -1090,6 +1090,152 @@ Text1.text = "ok"<span aria-hidden="true" class="line-numbers-rows"><span></span
 <h4 id="5-2-10-2-快速输入输出函数"><a href="#5-2-10-2-快速输入输出函数" class="headerlink" title="5.2.10.2 快速输入输出函数"></a>5.2.10.2 快速输入输出函数</h4><p><img src="/img/VB/kssrschs.png" alt="InputBox函数"></p>
 <p><img src="/img/VB/msgbox.png" alt="MsgBox函数"></p>
 <p><img src="/img/VB/msgboxlz.png" alt="MsgBox例子"></p>
+<h2 id="5-3-控制结构与算法"><a href="#5-3-控制结构与算法" class="headerlink" title="5.3 控制结构与算法"></a>5.3 控制结构与算法</h2><h3 id="5-3-1-顺序结构"><a href="#5-3-1-顺序结构" class="headerlink" title="5.3.1 顺序结构"></a>5.3.1 顺序结构</h3><p>语句 1→→→ 语句 2→→→ 语句 3</p>
+<h3 id="5-3-2-选择结构"><a href="#5-3-2-选择结构" class="headerlink" title="5.3.2 选择结构"></a>5.3.2 选择结构</h3><h4 id="5-3-2-1-if"><a href="#5-3-2-1-if" class="headerlink" title="5.3.2.1 if"></a>5.3.2.1 if</h4><p><strong>1</strong><code>if 表达式 then 语句</code></p>
+<pre class="line-numbers language-vb"><code class="language-vb">2
+if 表达式 then
+    语句块
+end if
+
+3
+if 表达式 then
+    语句块1
+else
+    语句块2
+end if
+
+4
+if 表达式 then
+    语句块
+else : 语句
+end if
+
+5
+if 表达式 then 语句1 else 语句2
+
+6
+if 表达式1 then
+    语句块1
+elseif 表达式2 then
+    语句块2
+else
+    语句块
+end if<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>例子：</strong><br><img src="/img/VB/cfex.png" alt="摄氏度与华氏度提示"></p>
+<h4 id="5-3-2-2-select"><a href="#5-3-2-2-select" class="headerlink" title="5.3.2.2 select"></a>5.3.2.2 select</h4><pre class="line-numbers language-vb"><code class="language-vb">select case 变量或表达式
+    case 表达式列表1    'is 关系运算表达式
+        语句块1
+    case 表达式列表2
+        语句块2
+    case else
+        语句块
+end select<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>例子：</strong></p>
+<p><img src="/img/VB/yex.png" alt="求函数Y的值"></p>
+<h3 id="5-3-3-循环结构"><a href="#5-3-3-循环结构" class="headerlink" title="5.3.3 循环结构"></a>5.3.3 循环结构</h3><pre class="line-numbers language-vb"><code class="language-vb">for 循环变量=初值 to 终值 [step步长]
+    语句块
+    [exit for]
+    语句块
+next 循环变量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-vb"><code class="language-vb">for each 元素变量 in 数组或集合
+    语句块
+next 元素变量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-vb"><code class="language-vb">先判断后执行
+do while 条件
+    语句块
+loop
+
+do until 条件
+    语句块
+loop
+
+先执行后判断
+do
+    语句块
+loop while 条件
+
+do
+    语句块
+loop until 条件
+
+
+exit do 退出循环体<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-3-3-1-for-next-循环"><a href="#5-3-3-1-for-next-循环" class="headerlink" title="5.3.3.1 for next 循环"></a>5.3.3.1 for next 循环</h4><ul>
+<li>循环变量是数之变量</li>
+<li>初值、终值、步长可以是数之表达式</li>
+<li>步长可正可负，但不能为 0 、为 1 是省略</li>
+<li>exit for 退出循环，经常放到条件语句中</li>
+<li>next 后的循环变量应与 for 语句中的循环变量一致，可以省略</li>
+</ul>
+<pre class="line-numbers language-vb"><code class="language-vb">for 循环变量=初值 to 终值 [step步长]
+    语句块
+    [exit for]
+    语句块
+next 循环变量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-vb"><code class="language-vb">'--求1+2+3+4+...+n--
+private sub command1_click()
+    dim n as integer , i as integer , s as integer
+    n = val(text1.text)
+    s = 0
+    for i = 1 to n
+        s = s + i
+    next i
+    label3.caption = s
+end sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>for each ... in ... next 循环</code></p>
+<p>For Each…In…Next 循环结构中元素变量是 变体型变量</p>
+<pre class="line-numbers language-vb"><code class="language-vb">for each 元素变量 in 数组或集合
+    语句块
+next 元素变量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="/img/VB/foreach.png" alt="控件颜色"></p>
+<h4 id="5-3-3-2-do…loop-循环结构"><a href="#5-3-3-2-do…loop-循环结构" class="headerlink" title="5.3.3.2 do…loop 循环结构"></a>5.3.3.2 do…loop 循环结构</h4><pre class="line-numbers language-vb"><code class="language-vb">do while 条件
+    语句组1
+    exit do
+    语句组2
+loop
+
+细节------------------
+先判断后执行---当
+do while 条件
+    语句块
+loop
+
+do until 条件
+    语句块
+loop
+
+先执行后判断---直到
+do
+    语句块
+loop while 条件
+
+do
+    语句块
+loop until 条件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>while true 则循环<br>until false 则循环</p>
+<pre class="line-numbers language-vb"><code class="language-vb">' 1^2+2^2+....小于n的最大值
+private sub command1_click()
+    dim n as long , s as long, i as integer
+    n = val(text1.text)
+    i = 0
+    s = 0
+    do while s < n
+        i = i + 1
+        s = s + i * i
+    loop
+    text2.text = s - i * i
+end sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-3-3-3-循环嵌套"><a href="#5-3-3-3-循环嵌套" class="headerlink" title="5.3.3.3 循环嵌套"></a>5.3.3.3 循环嵌套</h4><pre class="line-numbers language-vb"><code class="language-vb">'----------eg:
+for i = 1 to 3
+    for j = 5 to 7
+        print i , j
+    next j
+next i
+
+or
+next j,i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-3-4-goto-语句"><a href="#5-3-4-goto-语句" class="headerlink" title="5.3.4 goto 语句"></a>5.3.4 goto 语句</h3><p><code>goto{标号|行号}</code></p>
+<p><img src="/img/VB/gotoex.png" alt="goto例子"></p>
 <h1 id="6-课程学习过程中练习"><a href="#6-课程学习过程中练习" class="headerlink" title="6. 课程学习过程中练习"></a>6. 课程学习过程中练习</h1><p>第几次课.第几道练习</p>
 <h2 id="2-1-勾选要求变量声明（初学）"><a href="#2-1-勾选要求变量声明（初学）" class="headerlink" title="2.1 勾选要求变量声明（初学）"></a>2.1 勾选要求变量声明（初学）</h2><p>然后每次使用必须先定义变量</p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
@@ -1147,6 +1293,86 @@ Private Sub Text3_GotFocus()
     Text2 = ""
     Text3 = ""
     Text1.SetFocus
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-1-DIY"><a href="#3-1-DIY" class="headerlink" title="3.1 DIY"></a>3.1 DIY</h2><p><strong>换行 text 的 multline 属性要为 true</strong><br><code>chr(13) + chr(10)</code><br><code>vbcrlf</code></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+Dim ID As Boolean
+
+Private Sub Command1_Click()
+    ID = True
+    Timer1.Interval = 600
+    Text1 = "DIY" + Chr(13) + Chr(10) + "程序设计"  '回车换行
+End Sub
+
+Private Sub Command2_Click()
+    ID = False
+    Text1.Alignment = 0 '居左
+    Text1.FontSize = 50
+    Text1 = "1111" & vbCrLf _
+    & "fads" + vbCrLf _
+    & "7777" + Chr(13) + Chr(10)  '回车加换行
+End Sub
+
+Private Sub Timer1_Timer()
+    Dim A As Integer
+    Randomize
+    A = Rnd * 4      'rnd 0-1
+    Text1.ForeColor = RGB(Rnd * 250, Rnd * 250, Rnd * 250)
+    If ID Then
+        Text1.FontSize = Rnd * 260
+        Text1.FontBold = True   '粗体字
+        Select Case A
+        Case 0
+            Text1.FontName = "隶书"
+            Text1.Alignment = 0
+        Case 1
+            Text1.FontName = "黑体"
+            Text1.Alignment = 1
+        Case 2
+            Text1.FontName = "楷体"
+            Text1.Alignment = 2
+        End Select
+    End If
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-2-for"><a href="#3-2-for" class="headerlink" title="3.2 for"></a>3.2 for</h2><p><code>cls</code>清屏</p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+
+Private Sub Command1_Click()
+    Dim i As Integer, j As Integer
+    For i = 1 To 3
+        For j = 5 To 7
+            Print i, j
+        Next j
+        Print "---------"
+    Next i
+End Sub
+
+Private Sub Command2_Click()
+    Dim a       '必须用变体
+    For Each a In Form1.Controls
+        a.BackColor = vbRed
+    Next a
+End Sub
+
+Private Sub Command3_Click()
+    Cls
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-3-for-与-if-可以互换"><a href="#3-3-for-与-if-可以互换" class="headerlink" title="3.3 for 与 if 可以互换"></a>3.3 for 与 if 可以互换</h2><p><code>goto 111</code></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+
+Private Sub Command1_Click()
+    'Dim i As Integer, s As Integer
+    Dim i, a, j, b
+    For i = 0 To 100
+        a = a + i
+    Next i
+111 If j <= 100 Then
+        b = b + j
+        j = j + 1
+        GoTo 111
+    End If
+    Print a
+    Print b
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="7-学习作业"><a href="#7-学习作业" class="headerlink" title="7. 学习作业"></a>7. 学习作业</h1><h2 id="7-1-第一次作业"><a href="#7-1-第一次作业" class="headerlink" title="7.1 第一次作业"></a>7.1 第一次作业</h2><h3 id="1-倒计时控件"><a href="#1-倒计时控件" class="headerlink" title="1. 倒计时控件"></a>1. 倒计时控件</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDJCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
 <p><strong>作业代码</strong></p>
@@ -1296,8 +1522,8 @@ Private Sub Timer1_Timer()
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>小知识点：</p>
 <ul>
-<li>VB中的不等于<code>&lt;&gt;</code></li>
-<li>enabled可以让控件是否响应用户，如正向转换时，关闭逆向开关；逆向转换时，关闭正向开关</li>
+<li>VB 中的不等于<code>&lt;&gt;</code></li>
+<li>enabled 可以让控件是否响应用户，如正向转换时，关闭逆向开关；逆向转换时，关闭正向开关</li>
 </ul>
 <h3 id="2-二次方程根的求解"><a href="#2-二次方程根的求解" class="headerlink" title="2. 二次方程根的求解"></a>2. 二次方程根的求解</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDEDFCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
 <p><strong>作业代码</strong></p>
@@ -1357,11 +1583,29 @@ Private Sub Text3_KeyPress(KeyAscii As Integer)
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>小知识点：</p>
 <ul>
-<li>Dim声明</li>
-<li>ElseIf的使用</li>
-<li>MsgBox的使用  <code>MsgBox "提示信息"</code></li>
-<li>Round(x,2)  约到小数点后几位</li>
+<li>Dim 声明</li>
+<li>ElseIf 的使用</li>
+<li>MsgBox 的使用 <code>MsgBox "提示信息"</code></li>
+<li>Round(x,2) 约到小数点后几位</li>
 <li>keypress 的应用，可以执行事件</li>
+</ul>
+<h2 id="7-3-第三次作业"><a href="#7-3-第三次作业" class="headerlink" title="7.3 第三次作业"></a>7.3 第三次作业</h2><h3 id="所有水仙花数"><a href="#所有水仙花数" class="headerlink" title="所有水仙花数"></a>所有水仙花数</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDJDJCPGJGNGBGHGFCOHAGOGH" alt="水仙花❀数"></p>
+<p><strong>作业代码</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+
+Private Sub Command1_Click()
+    Dim a, b, c, num
+    For num = 100 To 999
+        a = num Mod 10
+        b = num \ 10 Mod 10
+        c = num \ 100
+        If a ^ 3 + b ^ 3 + c ^ 3 = num Then Print num
+    Next num
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>小知识点：</p>
+<ul>
+<li><code>15 mod 10</code>取余数5</li>
+<li><code>15 \ 10</code>整数相除得整数1</li>
 </ul>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1763,7 +2007,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">37.7k</span>&nbsp;字
+                class="white-color">38.7k</span>&nbsp;字
             
             
             
