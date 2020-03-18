@@ -92,3 +92,5 @@ UI 美观，可以搜到各种 app
 
 免费开源投屏神器[GitHub 链接](https://github.com/Genymobile/scrcpy)
 使用方法可以[看教程](https://yq010105.github.io/2020/03/02/scrcpy/)
+
+可以把文件从电脑上传到手机上，但是却不能把手机上的文件传到电脑上

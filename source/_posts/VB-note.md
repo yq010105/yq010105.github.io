@@ -727,6 +727,217 @@ Text1.text = "ok"
 
 ![MsgBox例子](/img/VB/msgboxlz.png)
 
+## 5.3 控制结构与算法
+
+### 5.3.1 顺序结构
+
+语句 1→→→ 语句 2→→→ 语句 3
+
+### 5.3.2 选择结构
+
+#### 5.3.2.1 if
+
+**1**`if 表达式 then 语句`
+
+```vb
+2
+if 表达式 then
+    语句块
+end if
+
+3
+if 表达式 then
+    语句块1
+else
+    语句块2
+end if
+
+4
+if 表达式 then
+    语句块
+else : 语句
+end if
+
+5
+if 表达式 then 语句1 else 语句2
+
+6
+if 表达式1 then
+    语句块1
+elseif 表达式2 then
+    语句块2
+else
+    语句块
+end if
+```
+
+**例子：**
+![摄氏度与华氏度提示](/img/VB/cfex.png)
+
+#### 5.3.2.2 select
+
+```vb
+select case 变量或表达式
+    case 表达式列表1    'is 关系运算表达式
+        语句块1
+    case 表达式列表2
+        语句块2
+    case else
+        语句块
+end select
+```
+
+**例子：**
+
+![求函数Y的值](/img/VB/yex.png)
+
+### 5.3.3 循环结构
+
+```vb
+for 循环变量=初值 to 终值 [step步长]
+    语句块
+    [exit for]
+    语句块
+next 循环变量
+```
+
+```vb
+for each 元素变量 in 数组或集合
+    语句块
+next 元素变量
+```
+
+```vb
+先判断后执行
+do while 条件
+    语句块
+loop
+
+do until 条件
+    语句块
+loop
+
+先执行后判断
+do
+    语句块
+loop while 条件
+
+do
+    语句块
+loop until 条件
+
+
+exit do 退出循环体
+```
+
+#### 5.3.3.1 for next 循环
+
+- 循环变量是数之变量
+- 初值、终值、步长可以是数之表达式
+- 步长可正可负，但不能为 0 、为 1 是省略
+- exit for 退出循环，经常放到条件语句中
+- next 后的循环变量应与 for 语句中的循环变量一致，可以省略
+
+```vb
+for 循环变量=初值 to 终值 [step步长]
+    语句块
+    [exit for]
+    语句块
+next 循环变量
+```
+
+```vb
+'--求1+2+3+4+...+n--
+private sub command1_click()
+    dim n as integer , i as integer , s as integer
+    n = val(text1.text)
+    s = 0
+    for i = 1 to n
+        s = s + i
+    next i
+    label3.caption = s
+end sub
+```
+
+`for each ... in ... next 循环`
+
+For Each...In...Next 循环结构中元素变量是 变体型变量
+
+```vb
+for each 元素变量 in 数组或集合
+    语句块
+next 元素变量
+```
+
+![控件颜色](/img/VB/foreach.png)
+
+#### 5.3.3.2 do...loop 循环结构
+
+```vb
+do while 条件
+    语句组1
+    exit do
+    语句组2
+loop
+
+细节------------------
+先判断后执行---当
+do while 条件
+    语句块
+loop
+
+do until 条件
+    语句块
+loop
+
+先执行后判断---直到
+do
+    语句块
+loop while 条件
+
+do
+    语句块
+loop until 条件
+```
+
+while true 则循环
+until false 则循环
+
+```vb
+' 1^2+2^2+....小于n的最大值
+private sub command1_click()
+    dim n as long , s as long, i as integer
+    n = val(text1.text)
+    i = 0
+    s = 0
+    do while s < n
+        i = i + 1
+        s = s + i * i
+    loop
+    text2.text = s - i * i
+end sub
+```
+
+#### 5.3.3.3 循环嵌套
+
+```vb
+'----------eg:
+for i = 1 to 3
+    for j = 5 to 7
+        print i , j
+    next j
+next i
+
+or
+next j,i
+```
+
+### 5.3.4 goto 语句
+
+`goto{标号|行号}`
+
+![goto例子](/img/VB/gotoex.png)
+
 # 6. 课程学习过程中练习
 
 第几次课.第几道练习
@@ -808,6 +1019,107 @@ Private Sub Text3_GotFocus()
     Text2 = ""
     Text3 = ""
     Text1.SetFocus
+End Sub
+```
+
+## 3.1 DIY
+
+**换行 text 的 multline 属性要为 true**
+`chr(13) + chr(10)`
+`vbcrlf`
+
+```vb
+Option Explicit
+Dim ID As Boolean
+
+Private Sub Command1_Click()
+    ID = True
+    Timer1.Interval = 600
+    Text1 = "DIY" + Chr(13) + Chr(10) + "程序设计"  '回车换行
+End Sub
+
+Private Sub Command2_Click()
+    ID = False
+    Text1.Alignment = 0 '居左
+    Text1.FontSize = 50
+    Text1 = "1111" & vbCrLf _
+    & "fads" + vbCrLf _
+    & "7777" + Chr(13) + Chr(10)  '回车加换行
+End Sub
+
+Private Sub Timer1_Timer()
+    Dim A As Integer
+    Randomize
+    A = Rnd * 4      'rnd 0-1
+    Text1.ForeColor = RGB(Rnd * 250, Rnd * 250, Rnd * 250)
+    If ID Then
+        Text1.FontSize = Rnd * 260
+        Text1.FontBold = True   '粗体字
+        Select Case A
+        Case 0
+            Text1.FontName = "隶书"
+            Text1.Alignment = 0
+        Case 1
+            Text1.FontName = "黑体"
+            Text1.Alignment = 1
+        Case 2
+            Text1.FontName = "楷体"
+            Text1.Alignment = 2
+        End Select
+    End If
+End Sub
+```
+
+
+## 3.2 for
+
+`cls`清屏
+
+```vb
+Option Explicit
+
+Private Sub Command1_Click()
+    Dim i As Integer, j As Integer
+    For i = 1 To 3
+        For j = 5 To 7
+            Print i, j
+        Next j
+        Print "---------"
+    Next i
+End Sub
+
+Private Sub Command2_Click()
+    Dim a       '必须用变体
+    For Each a In Form1.Controls
+        a.BackColor = vbRed
+    Next a
+End Sub
+
+Private Sub Command3_Click()
+    Cls
+End Sub
+```
+
+## 3.3 for 与 if 可以互换
+
+`goto 111`
+
+```vb
+Option Explicit
+
+Private Sub Command1_Click()
+    'Dim i As Integer, s As Integer
+    Dim i, a, j, b
+    For i = 0 To 100
+        a = a + i
+    Next i
+111 If j <= 100 Then
+        b = b + j
+        j = j + 1
+        GoTo 111
+    End If
+    Print a
+    Print b
 End Sub
 ```
 
@@ -989,9 +1301,9 @@ End Sub
 ```
 
 小知识点：
-- VB中的不等于`<>`
-- enabled可以让控件是否响应用户，如正向转换时，关闭逆向开关；逆向转换时，关闭正向开关
 
+- VB 中的不等于`<>`
+- enabled 可以让控件是否响应用户，如正向转换时，关闭逆向开关；逆向转换时，关闭正向开关
 
 ### 2. 二次方程根的求解
 
@@ -1058,8 +1370,38 @@ End Sub
 
 小知识点：
 
-- Dim声明
-- ElseIf的使用
-- MsgBox的使用  `MsgBox "提示信息"`
-- Round(x,2)  约到小数点后几位
+- Dim 声明
+- ElseIf 的使用
+- MsgBox 的使用 `MsgBox "提示信息"`
+- Round(x,2) 约到小数点后几位
 - keypress 的应用，可以执行事件
+
+## 7.3 第三次作业
+
+### 所有水仙花数
+
+![水仙花❀数](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDJDJCPGJGNGBGHGFCOHAGOGH)
+
+**作业代码**
+
+```vb
+Option Explicit
+
+Private Sub Command1_Click()
+    Dim a, b, c, num
+    For num = 100 To 999
+        a = num Mod 10
+        b = num \ 10 Mod 10
+        c = num \ 100
+        If a ^ 3 + b ^ 3 + c ^ 3 = num Then Print num
+    Next num
+End Sub
+```
+
+小知识点：
+
+- `15 mod 10`取余数5
+- `15 \ 10`整数相除得整数1
+
+
+
