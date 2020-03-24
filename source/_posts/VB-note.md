@@ -938,6 +938,182 @@ next j,i
 
 ![goto例子](/img/VB/gotoex.png)
 
+## 5.4 数组
+
+### 5.4.1 数组
+
+![数组概念](/img/VB/szgn.png)
+
+如：`A(8)`,`B(I)`,`A(A(5))`
+`a(1,3)`-二维数组
+
+### 5.4.2 数组定义
+
+`Public|Private|Dim 数组名 维数定义 AS 类型`
+`Dim A(-4 TO 10) As Integer`
+`Dim A(0 TO 8,0 to 3) As Integer` = `Dim a(8,3) as integer`
+
+#### 5.4.2.1 定义形式
+
+`dim 数组名 ([下界 to]上界) as 数据类型`
+下界默认为 0，也可以在 `option base n` 来修改默认下界
+
+#### 5.4.2.2 动态数组的建立与使用
+
+`dim 数组名() [as 数据类型]`先不给大小
+`redim 数组名 (8,8,)`具体使用时在给出大小
+`redim preserve 数组名(8,newvalue)`改变数组大小，可用 preserve 保留原来的数据
+
+#### 5.4.2.3 控件数组
+
+在窗体上画出控件，进行属性设置
+
+- 复制粘贴，建立控件数组
+- 编程时哟个 load 方法
+
+![动态数组的使用](/img/VB/dtszdsy.png)
+
+![输入10个单词，反序输出](/img/VB/fxsc.png)
+![输出10个单词，反序输出2](/img/VB/fxsc1.png)
+![输出10个单词，反序输出3](/img/VB/fxsc2.png)
+
+```vb
+array 数组输入
+数组下界到数组上界
+ubound(A) to lbound(A)
+```
+
+#### 5.4.2.4 数组元素的复制
+
+```vb
+option base 1
+    dim a(15),b(3,5)
+    for i = 1 to 3
+        for j = 1 to 5
+        b(i,j) = a((i-1) * 5 +j)
+        next j
+    next i
+```
+
+#### 5.4.2.5 for each ... next
+
+```vb
+打印一堆数组x中所有元素
+dim x(15)
+for each a in x
+    print a;
+next a
+```
+
+```vb
+求二维数组y的所有元素之和
+dim y(10,10)
+for each a in y
+    sum = sum + a
+next a
+print sum
+```
+
+![保留动态数组的内容](/img/VB/blsznr.png)
+
+### 5.4.3 数组应用举例
+
+#### 5.4.3.1 例子 1
+
+例:生成 20 个 10 到 100 之间的随机整数,存于一维整型数组 A 中,同时显示于第一个文本框中,单击窗体将这 20 个数以相反的次序显示于另一个文本框中
+![数组应用](/img/VB/szlz.png)
+
+#### 5.4.3.2 例子 2
+
+![控件数组](/img/VB/szlz1.png)
+
+## 5.5 过程
+
+- 过程的引入:使同类的操作不重复(操作方法相同、参数不同)
+- 过程:完成一段独立功能,可供其他过程使用(调用)。过程又称为子程序
+- 调用过程:调用其他过程的过程
+
+过程：
+
+- sub 子过程
+- function 函数过程
+- property 属性过程
+- event 事件过程
+
+### 5.5.1 子过程和函数过程
+
+![子过程和函数过程](/img/VB/zgchsgc.png)
+
+调用：
+
+- 子过程名[参数列表]
+- Call 子过程名 (参数列表)
+- 变量名 = 函数过程名([参数列表])
+
+- public 所有模块的所有其他过程
+- private 只有本模块的其他过程
+- static 过程中所有的局部变量都为静态变量
+- 函数过程名：function 过程的名称
+- 形参表：调用时要传递给 function 的参数变量列表
+
+![过程例子](/img/VB/gclz.png)
+
+```vb
+定义求阶乘的函数Fact
+Function Fact(n As Integer) As Double
+    Dim F As Double, i As Integer
+    F=1
+    For i=1 To n
+        F=F * i
+    Next i
+    Fact =F
+End function
+
+Private Sub Command1_Click()
+    Dim m As Integer, n As Integer, c As Double
+    m= Val(TextI.Text)
+    n= Val(Text2.Text)
+    c=Fact(m)/(Fact(n)*(Fact(m-n)))'调用Fact
+    Text3.Text= Trim(Str(c))
+End sub
+```
+
+- ◆Sub 过程的建立方法与 Function 过程的建立方法相同。
+- ◆<过程名>不具有值的意义,在 Sub 过程中不能给<过程名>赋
+  值,也不能给<过程名>定义类型。
+- ◆Sub 过程通过<形参表>中的参数返回值。
+
+![sub过程](/img/VB/subgclz.png)
+
+### 5.5.2 参数的传递
+
+![参数传递](/img/VB/cscd.png)
+
+### 5.5.3 代码模块
+
+![代码模块](/img/VB/dmmk.png)
+
+#### 5.5.3.1 窗体模块
+
+事件过程、通用过程、通用声明
+
+#### 5.5.3.2 标准模块
+
+![标准模块](/img/VB/bzmk.png)
+
+#### 5.5.3.3 类模块
+
+在类模块中编写代码建立新对象
+
+### 5.5.4 过程的作用域
+
+![过程作用域](/img/VB/gczyy.png)
+
+![过程作用域例子](/img/VB/gczyylz.png)
+![过程作用域例子](/img/VB/gczyylz1.png)
+
+![过程作用域及使用规则](/img/VB/gczyysygz.png)
+
 # 6. 课程学习过程中练习
 
 第几次课.第几道练习
@@ -1070,7 +1246,6 @@ Private Sub Timer1_Timer()
 End Sub
 ```
 
-
 ## 3.2 for
 
 `cls`清屏
@@ -1117,9 +1292,148 @@ Private Sub Command1_Click()
         b = b + j
         j = j + 1
         GoTo 111
-    End If
+    E
     Print a
     Print b
+End Sub
+```
+
+## 4.1 求积
+
+![例子](/img/VB/kclx4_1.png)
+
+```vb
+Private Sub Form DblClick
+    Dim a (1 To 5) As integer, b (3 To 8)As Integer
+    Dim i As Integer
+    For i=1 to 5
+        a(i) = i
+        picture3.Print a(i)
+    For i=3 to 8
+        b(i) = i
+        Picture4.Print b(i)
+    Next i
+    MsgBox"开始计算"
+    Text1= tim(a())
+    Text2= tim(b())
+End sub
+Function tim(x() As Integer)
+    Dim t As double, i As Integer
+    t=1
+    For i= LBound (x) To UBound(x)
+        t= t*x(i)
+    Next i
+    tim = t
+End function
+```
+
+## 4.2 控件数组--将五个 shape 从上到下移动
+
+设置好属性---复制，粘贴，名称一样的控件数组
+
+shape1 重命名为 S1
+
+```vb
+Option Explicit
+    Dim i As Integer
+
+Private Sub Command1_Click()
+    Timer1.Interval = 50
+End Sub
+
+Private Sub Timer1_Timer()
+    For i = 0 To 4
+        ' 改变颜色  ---不同颜色
+        ' S1(i).BackColor = RGB(Rnd * 250, Rnd * 250, Rnd * 250)
+        ' S1(i).BorderColor = RGB(Rnd * 250, Rnd * 250, Rnd * 250)
+        If S1(i).Top + S1(i).Height > Form1.ScaleHeight Then
+            S1(i).Top = 0
+        Else
+            S1(i).Top = S1(i).Top + 100
+        End If
+    Next i
+End Sub
+
+Option Explicit
+    Dim i As Integer
+
+Private Sub Command1_Click()
+    Timer1.Interval = 50
+End Sub
+
+Private Sub Timer1_Timer()
+    Dim A
+    A = RGB(Rnd * 250, Rnd * 250, Rnd * 250)  ' 相同颜色
+    For i = 0 To 4
+        S1(i).BackColor = A
+        S1(i).BorderColor = A
+        ' S1(i).BackColor = RGB(Rnd * 250, Rnd * 250, Rnd * 250)
+        ' S1(i).BorderColor = RGB(Rnd * 250, Rnd * 250, Rnd * 250)
+        If S1(i).Top + S1(i).Height > Form1.ScaleHeight Then
+            S1(i).Top = 0
+        Else
+            S1(i).Top = S1(i).Top + 100
+        End If
+    Next i
+End Sub
+```
+
+## 4.3 所有控件的移动
+
+```vb
+Option Explicit
+    Dim i As Variant  ' 变体型变量
+
+Private Sub Command1_Click()
+    For Each i In Form1.Controls
+        If i.Top + i.Height > Form1.ScaleHeight Then
+            i.Top = 0
+        Else
+            i.Top = i.Top + 500
+        End If
+    Next i
+End Sub
+```
+
+## 4.4 模块、多窗口
+
+`form2.show`打开form2
+新建module，然后将子过程放入module，可以在form1中调用
+
+```vb
+' module1:
+Option Explicit
+
+Sub fact(n As Integer, f As Long)
+    Dim i As Integer
+    f = 1
+    For i = 1 To n
+        f = f * i
+    Next i
+End Sub
+
+' form1
+Option Explicit
+
+Private Sub Command1_Click()
+    Dim s As Long
+        Call fact(Val(Text1), s)
+        Print Val(Text1); s
+        Text1.SetFocus
+        Text1 = ""
+End Sub
+
+Private Sub Command2_Click()
+    Form2.Show
+End Sub
+
+' form2
+Option Explicit
+
+Private Sub Command1_Click()
+    Dim s As Long
+    Call fact(8, s)
+    Print 8; s
 End Sub
 ```
 
@@ -1239,6 +1553,8 @@ End Sub
 ### 1. 华氏度与摄氏度的转换
 
 ![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDFDFCPGJGNGBGHGFCOHAGOGH)
+
+**作业代码**
 
 ```vb
 Option Explicit
@@ -1400,8 +1716,98 @@ End Sub
 
 小知识点：
 
-- `15 mod 10`取余数5
-- `15 \ 10`整数相除得整数1
+- `15 mod 10`取余数 5
+- `15 \ 10`整数相除得整数 1
 
+## 7.4 第四次作业
 
+### 1. sub 子过程计算和
 
+![计算和](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADIDBDCCPGJGNGBGHGFCOHAGOGH)
+
+**作业代码**
+
+```vb
+Option Explicit
+
+Private Sub Command1_Click()
+    Dim sr As Integer, j As Integer, s As Long, f As Long
+    sr = Text1.Text
+    s = 0
+    For j = 1 To sr
+        Call Tim(j, f)
+        s = s + f
+    Next j
+    Text2.Text = s
+End Sub
+
+Sub Tim(k As Integer, f As Long)
+    Dim i As Integer
+        f = 0
+        For i = 1 To k
+            f = f + i
+        Next i
+End Sub
+```
+
+小知识点：
+
+- sub 子过程的编写和调用：call 函数名(参数，返回结果)
+
+### 2. 奖学金等级
+
+![计算奖学金的等级](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADIDDDDCPGJGNGBGHGFCOHAGOGH)
+
+**作业代码**
+
+```vb
+Option Explicit
+
+Private Sub Command1_Click()
+    Dim m1 As Long, m2 As Long, m3 As Long, jg As Long
+    m1 = Text1.Text: m2 = Text2.Text: m3 = Text3.Text
+    Call pd(m1, m2, m3, jg)
+    If jg = 1 Then
+        Text4.Text = "一等奖"
+    ElseIf jg = 2 Then
+        Text4.Text = "二等奖"
+    ElseIf jg = 3 Then
+        Text4.Text = "三等奖"
+    Else
+        Text4.Text = "没有奖"
+    End If
+End Sub
+
+Sub pd(f1 As Long, f2 As Long, f3 As Long, jg As Long)
+    Dim fpj As Long, p1 As Integer, p2 As Integer, p3 As Integer
+    Dim f(1 To 3) As Integer, i As Variant
+    fpj = (f1 + f2 + f3) / 3
+    f(1) = f1: f(2) = f2: f(3) = f3
+    p1 = 0: p2 = 0: p3 = 0
+    For Each i In f
+        If i = 100 Then
+            p1 = p1 + 1
+        End If
+        If i >= 80 Then
+            p2 = p2 + 1
+        End If
+        If i >= 75 Then
+            p3 = p3 + 1
+        End If
+    Next i
+    If (fpj > 95) Or (p1 >= 2 And p2 = 3) Then
+        jg = 1
+    ElseIf (fpj > 90) Or (p1 >= 1 And p3 = 3) Then
+        jg = 2
+    ElseIf p3 = 3 Then
+        jg = 3
+    End If
+End Sub
+
+Private Sub Text4_Click()
+    Text1.Text = "": Text2.Text = "": Text3.Text = "": Text4.Text = ""
+End Sub
+```
+
+重点注意：
+* `for each a in f` 中的 a 必须是变体型变量
