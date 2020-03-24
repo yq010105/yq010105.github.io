@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-18
+                    2020-03-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    5,650
+                    7,313
                 </div>
                 
 
@@ -1236,6 +1236,106 @@ or
 next j,i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="5-3-4-goto-语句"><a href="#5-3-4-goto-语句" class="headerlink" title="5.3.4 goto 语句"></a>5.3.4 goto 语句</h3><p><code>goto{标号|行号}</code></p>
 <p><img src="/img/VB/gotoex.png" alt="goto例子"></p>
+<h2 id="5-4-数组"><a href="#5-4-数组" class="headerlink" title="5.4 数组"></a>5.4 数组</h2><h3 id="5-4-1-数组"><a href="#5-4-1-数组" class="headerlink" title="5.4.1 数组"></a>5.4.1 数组</h3><p><img src="/img/VB/szgn.png" alt="数组概念"></p>
+<p>如：<code>A(8)</code>,<code>B(I)</code>,<code>A(A(5))</code><br><code>a(1,3)</code>-二维数组</p>
+<h3 id="5-4-2-数组定义"><a href="#5-4-2-数组定义" class="headerlink" title="5.4.2 数组定义"></a>5.4.2 数组定义</h3><p><code>Public|Private|Dim 数组名 维数定义 AS 类型</code><br><code>Dim A(-4 TO 10) As Integer</code><br><code>Dim A(0 TO 8,0 to 3) As Integer</code> = <code>Dim a(8,3) as integer</code></p>
+<h4 id="5-4-2-1-定义形式"><a href="#5-4-2-1-定义形式" class="headerlink" title="5.4.2.1 定义形式"></a>5.4.2.1 定义形式</h4><p><code>dim 数组名 ([下界 to]上界) as 数据类型</code><br>下界默认为 0，也可以在 <code>option base n</code> 来修改默认下界</p>
+<h4 id="5-4-2-2-动态数组的建立与使用"><a href="#5-4-2-2-动态数组的建立与使用" class="headerlink" title="5.4.2.2 动态数组的建立与使用"></a>5.4.2.2 动态数组的建立与使用</h4><p><code>dim 数组名() [as 数据类型]</code>先不给大小<br><code>redim 数组名 (8,8,)</code>具体使用时在给出大小<br><code>redim preserve 数组名(8,newvalue)</code>改变数组大小，可用 preserve 保留原来的数据</p>
+<h4 id="5-4-2-3-控件数组"><a href="#5-4-2-3-控件数组" class="headerlink" title="5.4.2.3 控件数组"></a>5.4.2.3 控件数组</h4><p>在窗体上画出控件，进行属性设置</p>
+<ul>
+<li>复制粘贴，建立控件数组</li>
+<li>编程时哟个 load 方法</li>
+</ul>
+<p><img src="/img/VB/dtszdsy.png" alt="动态数组的使用"></p>
+<p><img src="/img/VB/fxsc.png" alt="输入10个单词，反序输出"><br><img src="/img/VB/fxsc1.png" alt="输出10个单词，反序输出2"><br><img src="/img/VB/fxsc2.png" alt="输出10个单词，反序输出3"></p>
+<pre class="line-numbers language-vb"><code class="language-vb">array 数组输入
+数组下界到数组上界
+ubound(A) to lbound(A)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-4-2-4-数组元素的复制"><a href="#5-4-2-4-数组元素的复制" class="headerlink" title="5.4.2.4 数组元素的复制"></a>5.4.2.4 数组元素的复制</h4><pre class="line-numbers language-vb"><code class="language-vb">option base 1
+    dim a(15),b(3,5)
+    for i = 1 to 3
+        for j = 1 to 5
+        b(i,j) = a((i-1) * 5 +j)
+        next j
+    next i<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-4-2-5-for-each-…-next"><a href="#5-4-2-5-for-each-…-next" class="headerlink" title="5.4.2.5 for each … next"></a>5.4.2.5 for each … next</h4><pre class="line-numbers language-vb"><code class="language-vb">打印一堆数组x中所有元素
+dim x(15)
+for each a in x
+    print a;
+next a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-vb"><code class="language-vb">求二维数组y的所有元素之和
+dim y(10,10)
+for each a in y
+    sum = sum + a
+next a
+print sum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/img/VB/blsznr.png" alt="保留动态数组的内容"></p>
+<h3 id="5-4-3-数组应用举例"><a href="#5-4-3-数组应用举例" class="headerlink" title="5.4.3 数组应用举例"></a>5.4.3 数组应用举例</h3><h4 id="5-4-3-1-例子-1"><a href="#5-4-3-1-例子-1" class="headerlink" title="5.4.3.1 例子 1"></a>5.4.3.1 例子 1</h4><p>例:生成 20 个 10 到 100 之间的随机整数,存于一维整型数组 A 中,同时显示于第一个文本框中,单击窗体将这 20 个数以相反的次序显示于另一个文本框中<br><img src="/img/VB/szlz.png" alt="数组应用"></p>
+<h4 id="5-4-3-2-例子-2"><a href="#5-4-3-2-例子-2" class="headerlink" title="5.4.3.2 例子 2"></a>5.4.3.2 例子 2</h4><p><img src="/img/VB/szlz1.png" alt="控件数组"></p>
+<h2 id="5-5-过程"><a href="#5-5-过程" class="headerlink" title="5.5 过程"></a>5.5 过程</h2><ul>
+<li>过程的引入:使同类的操作不重复(操作方法相同、参数不同)</li>
+<li>过程:完成一段独立功能,可供其他过程使用(调用)。过程又称为子程序</li>
+<li>调用过程:调用其他过程的过程</li>
+</ul>
+<p>过程：</p>
+<ul>
+<li>sub 子过程</li>
+<li>function 函数过程</li>
+<li>property 属性过程</li>
+<li>event 事件过程</li>
+</ul>
+<h3 id="5-5-1-子过程和函数过程"><a href="#5-5-1-子过程和函数过程" class="headerlink" title="5.5.1 子过程和函数过程"></a>5.5.1 子过程和函数过程</h3><p><img src="/img/VB/zgchsgc.png" alt="子过程和函数过程"></p>
+<p>调用：</p>
+<ul>
+<li><p>子过程名[参数列表]</p>
+</li>
+<li><p>Call 子过程名 (参数列表)</p>
+</li>
+<li><p>变量名 = 函数过程名([参数列表])</p>
+</li>
+<li><p>public 所有模块的所有其他过程</p>
+</li>
+<li><p>private 只有本模块的其他过程</p>
+</li>
+<li><p>static 过程中所有的局部变量都为静态变量</p>
+</li>
+<li><p>函数过程名：function 过程的名称</p>
+</li>
+<li><p>形参表：调用时要传递给 function 的参数变量列表</p>
+</li>
+</ul>
+<p><img src="/img/VB/gclz.png" alt="过程例子"></p>
+<pre class="line-numbers language-vb"><code class="language-vb">定义求阶乘的函数Fact
+Function Fact(n As Integer) As Double
+    Dim F As Double, i As Integer
+    F=1
+    For i=1 To n
+        F=F * i
+    Next i
+    Fact =F
+End function
+
+Private Sub Command1_Click()
+    Dim m As Integer, n As Integer, c As Double
+    m= Val(TextI.Text)
+    n= Val(Text2.Text)
+    c=Fact(m)/(Fact(n)*(Fact(m-n)))'调用Fact
+    Text3.Text= Trim(Str(c))
+End sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>◆Sub 过程的建立方法与 Function 过程的建立方法相同。</li>
+<li>◆&lt;过程名&gt;不具有值的意义,在 Sub 过程中不能给&lt;过程名&gt;赋<br>值,也不能给&lt;过程名&gt;定义类型。</li>
+<li>◆Sub 过程通过&lt;形参表&gt;中的参数返回值。</li>
+</ul>
+<p><img src="/img/VB/subgclz.png" alt="sub过程"></p>
+<h3 id="5-5-2-参数的传递"><a href="#5-5-2-参数的传递" class="headerlink" title="5.5.2 参数的传递"></a>5.5.2 参数的传递</h3><p><img src="/img/VB/cscd.png" alt="参数传递"></p>
+<h3 id="5-5-3-代码模块"><a href="#5-5-3-代码模块" class="headerlink" title="5.5.3 代码模块"></a>5.5.3 代码模块</h3><p><img src="/img/VB/dmmk.png" alt="代码模块"></p>
+<h4 id="5-5-3-1-窗体模块"><a href="#5-5-3-1-窗体模块" class="headerlink" title="5.5.3.1 窗体模块"></a>5.5.3.1 窗体模块</h4><p>事件过程、通用过程、通用声明</p>
+<h4 id="5-5-3-2-标准模块"><a href="#5-5-3-2-标准模块" class="headerlink" title="5.5.3.2 标准模块"></a>5.5.3.2 标准模块</h4><p><img src="/img/VB/bzmk.png" alt="标准模块"></p>
+<h4 id="5-5-3-3-类模块"><a href="#5-5-3-3-类模块" class="headerlink" title="5.5.3.3 类模块"></a>5.5.3.3 类模块</h4><p>在类模块中编写代码建立新对象</p>
+<h3 id="5-5-4-过程的作用域"><a href="#5-5-4-过程的作用域" class="headerlink" title="5.5.4 过程的作用域"></a>5.5.4 过程的作用域</h3><p><img src="/img/VB/gczyy.png" alt="过程作用域"></p>
+<p><img src="/img/VB/gczyylz.png" alt="过程作用域例子"><br><img src="/img/VB/gczyylz1.png" alt="过程作用域例子"></p>
+<p><img src="/img/VB/gczyysygz.png" alt="过程作用域及使用规则"></p>
 <h1 id="6-课程学习过程中练习"><a href="#6-课程学习过程中练习" class="headerlink" title="6. 课程学习过程中练习"></a>6. 课程学习过程中练习</h1><p>第几次课.第几道练习</p>
 <h2 id="2-1-勾选要求变量声明（初学）"><a href="#2-1-勾选要求变量声明（初学）" class="headerlink" title="2.1 勾选要求变量声明（初学）"></a>2.1 勾选要求变量声明（初学）</h2><p>然后每次使用必须先定义变量</p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
@@ -1370,10 +1470,124 @@ Private Sub Command1_Click()
         b = b + j
         j = j + 1
         GoTo 111
-    End If
+    E
     Print a
     Print b
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-1-求积"><a href="#4-1-求积" class="headerlink" title="4.1 求积"></a>4.1 求积</h2><p><img src="/img/VB/kclx4_1.png" alt="例子"></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Private Sub Form DblClick
+    Dim a (1 To 5) As integer, b (3 To 8)As Integer
+    Dim i As Integer
+    For i=1 to 5
+        a(i) = i
+        picture3.Print a(i)
+    For i=3 to 8
+        b(i) = i
+        Picture4.Print b(i)
+    Next i
+    MsgBox"开始计算"
+    Text1= tim(a())
+    Text2= tim(b())
+End sub
+Function tim(x() As Integer)
+    Dim t As double, i As Integer
+    t=1
+    For i= LBound (x) To UBound(x)
+        t= t*x(i)
+    Next i
+    tim = t
+End function<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-2-控件数组–将五个-shape-从上到下移动"><a href="#4-2-控件数组–将五个-shape-从上到下移动" class="headerlink" title="4.2 控件数组–将五个 shape 从上到下移动"></a>4.2 控件数组–将五个 shape 从上到下移动</h2><p>设置好属性—复制，粘贴，名称一样的控件数组</p>
+<p>shape1 重命名为 S1</p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+    Dim i As Integer
+
+Private Sub Command1_Click()
+    Timer1.Interval = 50
+End Sub
+
+Private Sub Timer1_Timer()
+    For i = 0 To 4
+        ' 改变颜色  ---不同颜色
+        ' S1(i).BackColor = RGB(Rnd * 250, Rnd * 250, Rnd * 250)
+        ' S1(i).BorderColor = RGB(Rnd * 250, Rnd * 250, Rnd * 250)
+        If S1(i).Top + S1(i).Height > Form1.ScaleHeight Then
+            S1(i).Top = 0
+        Else
+            S1(i).Top = S1(i).Top + 100
+        End If
+    Next i
+End Sub
+
+Option Explicit
+    Dim i As Integer
+
+Private Sub Command1_Click()
+    Timer1.Interval = 50
+End Sub
+
+Private Sub Timer1_Timer()
+    Dim A
+    A = RGB(Rnd * 250, Rnd * 250, Rnd * 250)  ' 相同颜色
+    For i = 0 To 4
+        S1(i).BackColor = A
+        S1(i).BorderColor = A
+        ' S1(i).BackColor = RGB(Rnd * 250, Rnd * 250, Rnd * 250)
+        ' S1(i).BorderColor = RGB(Rnd * 250, Rnd * 250, Rnd * 250)
+        If S1(i).Top + S1(i).Height > Form1.ScaleHeight Then
+            S1(i).Top = 0
+        Else
+            S1(i).Top = S1(i).Top + 100
+        End If
+    Next i
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-3-所有控件的移动"><a href="#4-3-所有控件的移动" class="headerlink" title="4.3 所有控件的移动"></a>4.3 所有控件的移动</h2><pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+    Dim i As Variant  ' 变体型变量
+
+Private Sub Command1_Click()
+    For Each i In Form1.Controls
+        If i.Top + i.Height > Form1.ScaleHeight Then
+            i.Top = 0
+        Else
+            i.Top = i.Top + 500
+        End If
+    Next i
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-4-模块、多窗口"><a href="#4-4-模块、多窗口" class="headerlink" title="4.4 模块、多窗口"></a>4.4 模块、多窗口</h2><p><code>form2.show</code>打开form2<br>新建module，然后将子过程放入module，可以在form1中调用</p>
+<pre class="line-numbers language-vb"><code class="language-vb">' module1:
+Option Explicit
+
+Sub fact(n As Integer, f As Long)
+    Dim i As Integer
+    f = 1
+    For i = 1 To n
+        f = f * i
+    Next i
+End Sub
+
+' form1
+Option Explicit
+
+Private Sub Command1_Click()
+    Dim s As Long
+        Call fact(Val(Text1), s)
+        Print Val(Text1); s
+        Text1.SetFocus
+        Text1 = ""
+End Sub
+
+Private Sub Command2_Click()
+    Form2.Show
+End Sub
+
+' form2
+Option Explicit
+
+Private Sub Command1_Click()
+    Dim s As Long
+    Call fact(8, s)
+    Print 8; s
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="7-学习作业"><a href="#7-学习作业" class="headerlink" title="7. 学习作业"></a>7. 学习作业</h1><h2 id="7-1-第一次作业"><a href="#7-1-第一次作业" class="headerlink" title="7.1 第一次作业"></a>7.1 第一次作业</h2><h3 id="1-倒计时控件"><a href="#1-倒计时控件" class="headerlink" title="1. 倒计时控件"></a>1. 倒计时控件</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDJCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Private Sub Command1_Click()
@@ -1463,6 +1677,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <li>val 将字符型数据转换为数值型数据，str 将数值型转换为字符型</li>
 </ul>
 <h2 id="7-2-第二次作业"><a href="#7-2-第二次作业" class="headerlink" title="7.2 第二次作业"></a>7.2 第二次作业</h2><h3 id="1-华氏度与摄氏度的转换"><a href="#1-华氏度与摄氏度的转换" class="headerlink" title="1. 华氏度与摄氏度的转换"></a>1. 华氏度与摄氏度的转换</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDFDFCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
+<p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
 Dim C As Variant, F As Variant, CI As Double, FI As Double
 
@@ -1604,8 +1819,86 @@ Private Sub Command1_Click()
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>小知识点：</p>
 <ul>
-<li><code>15 mod 10</code>取余数5</li>
-<li><code>15 \ 10</code>整数相除得整数1</li>
+<li><code>15 mod 10</code>取余数 5</li>
+<li><code>15 \ 10</code>整数相除得整数 1</li>
+</ul>
+<h2 id="7-4-第四次作业"><a href="#7-4-第四次作业" class="headerlink" title="7.4 第四次作业"></a>7.4 第四次作业</h2><h3 id="1-sub-子过程计算和"><a href="#1-sub-子过程计算和" class="headerlink" title="1. sub 子过程计算和"></a>1. sub 子过程计算和</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADIDBDCCPGJGNGBGHGFCOHAGOGH" alt="计算和"></p>
+<p><strong>作业代码</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+
+Private Sub Command1_Click()
+    Dim sr As Integer, j As Integer, s As Long, f As Long
+    sr = Text1.Text
+    s = 0
+    For j = 1 To sr
+        Call Tim(j, f)
+        s = s + f
+    Next j
+    Text2.Text = s
+End Sub
+
+Sub Tim(k As Integer, f As Long)
+    Dim i As Integer
+        f = 0
+        For i = 1 To k
+            f = f + i
+        Next i
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>小知识点：</p>
+<ul>
+<li>sub 子过程的编写和调用：call 函数名(参数，返回结果)</li>
+</ul>
+<h3 id="2-奖学金等级"><a href="#2-奖学金等级" class="headerlink" title="2. 奖学金等级"></a>2. 奖学金等级</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADIDDDDCPGJGNGBGHGFCOHAGOGH" alt="计算奖学金的等级"></p>
+<p><strong>作业代码</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+
+Private Sub Command1_Click()
+    Dim m1 As Long, m2 As Long, m3 As Long, jg As Long
+    m1 = Text1.Text: m2 = Text2.Text: m3 = Text3.Text
+    Call pd(m1, m2, m3, jg)
+    If jg = 1 Then
+        Text4.Text = "一等奖"
+    ElseIf jg = 2 Then
+        Text4.Text = "二等奖"
+    ElseIf jg = 3 Then
+        Text4.Text = "三等奖"
+    Else
+        Text4.Text = "没有奖"
+    End If
+End Sub
+
+Sub pd(f1 As Long, f2 As Long, f3 As Long, jg As Long)
+    Dim fpj As Long, p1 As Integer, p2 As Integer, p3 As Integer
+    Dim f(1 To 3) As Integer, i As Variant
+    fpj = (f1 + f2 + f3) / 3
+    f(1) = f1: f(2) = f2: f(3) = f3
+    p1 = 0: p2 = 0: p3 = 0
+    For Each i In f
+        If i = 100 Then
+            p1 = p1 + 1
+        End If
+        If i >= 80 Then
+            p2 = p2 + 1
+        End If
+        If i >= 75 Then
+            p3 = p3 + 1
+        End If
+    Next i
+    If (fpj > 95) Or (p1 >= 2 And p2 = 3) Then
+        jg = 1
+    ElseIf (fpj > 90) Or (p1 >= 1 And p3 = 3) Then
+        jg = 2
+    ElseIf p3 = 3 Then
+        jg = 3
+    End If
+End Sub
+
+Private Sub Text4_Click()
+    Text1.Text = "": Text2.Text = "": Text3.Text = "": Text4.Text = ""
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>重点注意：</p>
+<ul>
+<li><code>for each a in f</code> 中的 a 必须是变体型变量</li>
 </ul>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -2007,7 +2300,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">38.7k</span>&nbsp;字
+                class="white-color">42.9k</span>&nbsp;字
             
             
             
