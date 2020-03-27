@@ -8,3 +8,4 @@ public/
 #ignored the useless themes
 /themes/landscape/
 !/themes/yilia/
+package-lock.json
