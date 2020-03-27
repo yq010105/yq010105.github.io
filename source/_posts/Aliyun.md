@@ -87,6 +87,113 @@ password:
 
 word press + 主题
 
+### 1.3 另一种方式
+
+> 将本地的 hexo 博客内容部署到阿里云服务器：主要参考[大佬的教程](https://www.zhihu.com/question/60329559)
+
+安装 nginx 和 git，我的是 Ubuntu，所以
+
+```
+apt-get update
+apt-get install nginx
+apt-get install git
+```
+
+新建 git 用户，并设置密码
+
+```
+adduser git
+passwd
+```
+
+切换到 git 用户`su git`
+
+在用户目录下新建.git 目录
+
+```
+cd ~  # cd到用户目录
+mkdir .git
+cd .git
+```
+
+将本地的密匙文件`id_rsa.pub`内容保存到`.git`目录下的`authorized_keys`
+
+```
+vim authorized_keys
+```
+
+使用vim将密匙粘贴在该文件中，然后保存退出就可以使用git用户ssh到服务器了
+
+`ssh git@ip地址`
+
+成功后，建立git库
+
+```
+mkdir hexo.git
+cd hexo.git
+git init --bare
+```
+
+然后设置显示成网页
+
+```
+cd hooks 
+vim post-receive
+```
+
+将一下内容写入到`post-receive`中
+
+```
+#!/bin/bash
+
+rm -rf /home/git/hexo
+git clone /home/git/hexo.git /home/git/hexo
+
+rm -rf /usr/share/nginx/hexo/*
+mv /home/git/hexo/* /usr/share/nginx/hexo
+```
+
+修改执行权限
+
+`chmod a+x post-receive`
+
+配置nginx
+
+`cd /usr/share/nginx`
+
+切换root用户
+```
+su
+
+创建hexo网页目录
+mkdir hexo 
+
+将文件夹所有者设置为git
+chown git hexo 
+chgrp git hexo 
+```
+
+到nginx中修改配置
+
+```
+cd /etc/nginx
+vim nginx.conf
+
+修改配置文件，修改location的目录,即加一行
+root /usr/share/nginx/hexo;
+```
+
+然后将本地的hexo文件夹中的配置文件`_config.yml`修改`deploy`
+
+`git@ip地址:hexo.git`
+
+如我的
+```
+deploy:
+  type: git
+  repo: git@服务器ip地址:hexo.git
+```
+
 ## 2. 内网穿透
 
 ## 3. 搭建一个文件系统
