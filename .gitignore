@@ -8,4 +8,5 @@ public/
 #ignored the useless themes
 /themes/landscape/
 !/themes/yilia/
+!/themes/hexo-theme-matery/
 package-lock.json

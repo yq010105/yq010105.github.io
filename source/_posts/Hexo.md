@@ -516,3 +516,30 @@ _在`main.0cf68a.css`中修改@media 下的模块_
 ### 8.3 头像图片
 
 直接在`_config.yml`中修改，我改成了透明即`header: 'rgba(255, 127, 127, 0)'`
+
+
+## 9. 给你的网页添加动态标题
+
+在网站的开头或者结尾添加代码，我是在`layout.ejs`上添加的
+
+```js
+<script>
+  var OriginTitile=document.title;
+  var st;
+  document.addEventListener('visibilitychange',function(){
+  if(document.hidden){
+      document.title="(つェ⊂)看不惹~"+OriginTitile;
+      clearTimeout(st);
+      console.log('hide');
+  }
+  else{
+      document.title='(*´∇｀*)被你发现了~ '+OriginTitile;
+      console.log('show');
+      st=setTimeout(function(){
+      document.title=OriginTitile;
+      },6000);
+      console.log('endChange=');
+  }
+  });
+</script>
+```

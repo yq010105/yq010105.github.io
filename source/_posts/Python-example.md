@@ -10,7 +10,7 @@ summary: python写的几个小程序
 password:
 ---
 
-# 第一个：每日手动记录支付宝基金余额
+# 1. 每日手动记录支付宝基金余额
 
 ```python
 import openpyxl as xl
@@ -195,3 +195,73 @@ pause				# 让屏幕停留
 功能：可以记录日常的基金走势，然后记录数据
 
 不足：不能够自动删除excel中的重复的数据，（如同一天的数据）
+
+
+# 2. 图中图——将一幅图套娃
+
+[迷糊老师](https://space.bilibili.com/39665558)的程序，hhh很好玩，b站[迷糊老师视频](https://www.bilibili.com/video/BV1QE411P7GV)
+
+```python
+from PIL import Image
+
+def fill_img_with_img(imgParent, imgChild):
+    imgSize =(imgParent.width*imgChild.width, imgParent.height*imgChild.height)
+    imgRet = Image.new('L', imgSize, 'white') 
+
+    i = 1 
+    for w in range(imgParent.width):
+        print(i)
+        i += 1
+        for h in range(imgParent.height):    
+            if imgParent.getpixel((w, h)) < 127:
+                imgRet.paste(imgChild,(w*imgChild.width, h*imgChild.height))
+    return imgRet
+
+if __name__ == '__main__':
+    imgParent = Image.open('parent.jpg')
+    imgParent = imgParent.convert('L')
+
+    imgChild = Image.open('child2.png')
+    imgChild = imgChild.convert('L')
+
+    imgRet = fill_img_with_img(imgParent,imgChild)
+
+    imgRet.save('result.png')
+```
+
+# 3. 好奇心——用程序检查哪些网站能打开
+
+## 3.1 初步，只能检查IP地址##不成熟的探索
+
+```python
+import requests
+import urllib.request
+import time 
+from urllib import error , request
+
+f = open('re.txt',"w",encoding='utf-8')
+
+j = 0
+k = 0
+
+for i in range(255):
+    htmls = []
+    https = []
+    http = 'http://123.56.22.' + str(i)
+    try:
+        reponse = request.urlopen(http)
+        https.append(http)
+        j += 1 
+        print(f'这是第{j}个网站了')
+        f.write('url' + '\t' + http + '\n' )
+        continue
+    except error.URLError as e:
+        k += 1
+        print(f'访问页面出错1,{k}次了')
+    except urllib.error.URLError:
+        print('访问页面出错2')
+# print(f'总共是{https}')
+f.close()
+```
+
+## 3.2 开始加一点细节，也不太完善
