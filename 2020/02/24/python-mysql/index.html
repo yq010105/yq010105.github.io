@@ -887,7 +887,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">46.9k</span>&nbsp;字
+                class="white-color">47.2k</span>&nbsp;字
             
             
             
@@ -1059,6 +1059,24 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
+    <script>var OriginTitile=document.title;
+        var st;
+        document.addEventListener('visibilitychange',function(){
+        if(document.hidden){
+            document.title="(つェ⊂)看不惹~"+OriginTitile;
+            clearTimeout(st);
+            console.log('hide');
+            }
+        else{
+            document.title='(*´∇｀*)被你发现了~ '+OriginTitile;
+            console.log('show');
+            st=setTimeout(function(){
+            document.title=OriginTitile;
+            },6000);
+            console.log('endChange=');
+        }
+        });
+    </script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"./live2d_models/haruna/33/model.2018.spring.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.8},"log":false});</script></body>
 
 </html>

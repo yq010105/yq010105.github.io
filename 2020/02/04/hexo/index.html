@@ -471,14 +471,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-04
+                    2020-03-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    2,227
+                    2,311
                 </div>
                 
 
@@ -946,6 +946,26 @@ click_show_text: false<span aria-hidden="true" class="line-numbers-rows"><span><
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>根据自己喜好改变<code>background</code>属性值</p>
 <h3 id="8-3-头像图片"><a href="#8-3-头像图片" class="headerlink" title="8.3 头像图片"></a>8.3 头像图片</h3><p>直接在<code>_config.yml</code>中修改，我改成了透明即<code>header: 'rgba(255, 127, 127, 0)'</code></p>
+<h2 id="9-给你的网页添加动态标题"><a href="#9-给你的网页添加动态标题" class="headerlink" title="9. 给你的网页添加动态标题"></a>9. 给你的网页添加动态标题</h2><p>在网站的开头或者结尾添加代码，我是在<code>layout.ejs</code>上添加的</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+  <span class="token keyword">var</span> OriginTitile<span class="token operator">=</span>document<span class="token punctuation">.</span>title<span class="token punctuation">;</span>
+  <span class="token keyword">var</span> st<span class="token punctuation">;</span>
+  document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'visibilitychange'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>hidden<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      document<span class="token punctuation">.</span>title<span class="token operator">=</span><span class="token string">"(つェ⊂)看不惹~"</span><span class="token operator">+</span>OriginTitile<span class="token punctuation">;</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>st<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hide'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">else</span><span class="token punctuation">{</span>
+      document<span class="token punctuation">.</span>title<span class="token operator">=</span><span class="token string">'(*´∇｀*)被你发现了~ '</span><span class="token operator">+</span>OriginTitile<span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'show'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      st<span class="token operator">=</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      document<span class="token punctuation">.</span>title<span class="token operator">=</span>OriginTitile<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">6000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'endChange='</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1339,7 +1359,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">46.9k</span>&nbsp;字
+                class="white-color">47.2k</span>&nbsp;字
             
             
             
@@ -1511,6 +1531,24 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
+    <script>var OriginTitile=document.title;
+        var st;
+        document.addEventListener('visibilitychange',function(){
+        if(document.hidden){
+            document.title="(つェ⊂)看不惹~"+OriginTitile;
+            clearTimeout(st);
+            console.log('hide');
+            }
+        else{
+            document.title='(*´∇｀*)被你发现了~ '+OriginTitile;
+            console.log('show');
+            st=setTimeout(function(){
+            document.title=OriginTitile;
+            },6000);
+            console.log('endChange=');
+        }
+        });
+    </script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"./live2d_models/haruna/33/model.2018.spring.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.8},"log":false});</script></body>
 
 </html>
