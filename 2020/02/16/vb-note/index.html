@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-24
+                    2020-03-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    7,313
+                    8,100
                 </div>
                 
 
@@ -1336,6 +1336,61 @@ End sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <h3 id="5-5-4-过程的作用域"><a href="#5-5-4-过程的作用域" class="headerlink" title="5.5.4 过程的作用域"></a>5.5.4 过程的作用域</h3><p><img src="/img/VB/gczyy.png" alt="过程作用域"></p>
 <p><img src="/img/VB/gczyylz.png" alt="过程作用域例子"><br><img src="/img/VB/gczyylz1.png" alt="过程作用域例子"></p>
 <p><img src="/img/VB/gczyysygz.png" alt="过程作用域及使用规则"></p>
+<h2 id="5-6-用户界面设计"><a href="#5-6-用户界面设计" class="headerlink" title="5.6 用户界面设计"></a>5.6 用户界面设计</h2><h3 id="5-6-1-单选按钮和复选框"><a href="#5-6-1-单选按钮和复选框" class="headerlink" title="5.6.1 单选按钮和复选框"></a>5.6.1 单选按钮和复选框</h3><p>单选框只能选一个（Option）<br>复选框可以选多个（Check）<br><code>click动作</code><br><code>check.value = true</code> 则为被选中</p>
+<h3 id="5-6-2-框架Frame"><a href="#5-6-2-框架Frame" class="headerlink" title="5.6.2 框架Frame"></a>5.6.2 框架Frame</h3><p>框架之间可以隔开单选按钮<br><code>fontname</code> <code>fontsize</code> <code>forecolor</code><br>属性</p>
+<h3 id="5-6-3-滚动条"><a href="#5-6-3-滚动条" class="headerlink" title="5.6.3 滚动条"></a>5.6.3 滚动条</h3><p>HScroll Bar 、 VScroll Bar<br>水平、竖直滚动条</p>
+<ul>
+<li>属性<br>MIN 默认 0<br>MAX 默认 32767</li>
+</ul>
+<p>Value ：设置滚动块在滚动条中的位置值<br>Smallchange ：最小变动值属性<br>Largechange ：最大——</p>
+<ul>
+<li>事件<br>Scroll ：当鼠标拖动滚动块时，触发<br>Change ： 当改变value值时出发</li>
+</ul>
+<p>eg：在text中显示最大最小值</p>
+<pre class="line-numbers language-vb"><code class="language-vb">text1 = HScroll1.Min
+text2 = HScroll2.Max
+text3 = HScroll3.Value
+
+HScroll ' 横向
+VScroll ' 纵向<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>RGB函数：<br>颜色值的取间是0~255</p>
+<p>随机数 Rnd() 返回小于1 大于或等于0 的值<br>Rnd[()]</p>
+<pre class="line-numbers language-vb"><code class="language-vb">private sub form_click()
+    text1.forecolor = RGB(255 * Rnd , 255 * Rnd , 255 * Rnd)
+    form1.backcolor = RGB(255 * Rnd , 255 * Rnd , 255 * Rnd)
+end sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>返回小于1但大于或等于0的值。 Number的值决定了Rnd生成随机数的方式。<br>在调用Rnd之前,先使用无参数的 Randomize语句初始化随机函数生成器,该<br>生成器具有根据系统计时器得到的种子。<br>如果 number的值是 Randomize生成。<br>小于0,每次都使用 number作为随机数种子得到相同结果<br>大于0,以上一个随机数为种子产生下一个随机数;<br>等于0,产生与最近生成的随机数相同的随机数。<br>省略,以上一个随机数为种子产生下一个随机数<br>例,Int((上限下限+1)*Rnd+下限),生成上限与下限之间的随机整数。</p>
+<h3 id="5-6-4-列表框"><a href="#5-6-4-列表框" class="headerlink" title="5.6.4 列表框"></a>5.6.4 列表框</h3><p>只能在程序中设置的属性：<br>Listindex 执行时选中的列表项的序号<br>Listcount 项目数量 从0开始<br>Selected True表示选中相应的项<br>Text 表示选中列表项文本内容</p>
+<p>Additem ： 增加项<br>Removeitem ： 删除项<br>Clear ： 清除</p>
+<p>属性style : 1 时为多选框<br>属性columns: 几列</p>
+<pre class="line-numbers language-vb"><code class="language-vb">List1.AddItem "1"
+List1.AddItem "2"
+province = Array("a","b") ' 一维数组
+
+Province(List1.ListIndex) '数组中数据 
+List1.List(List.ListIndex) = text1
+
+' 判断是否选中
+if list1.selected(i) Then<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-6-5-组合框"><a href="#5-6-5-组合框" class="headerlink" title="5.6.5 组合框"></a>5.6.5 组合框</h3><p>style属性：<br>0 下拉式<br>1 简单组合框<br>2 下拉式列表框</p>
+<h3 id="5-6-6-驱动器列表框、目录列表框、文件列表框"><a href="#5-6-6-驱动器列表框、目录列表框、文件列表框" class="headerlink" title="5.6.6 驱动器列表框、目录列表框、文件列表框"></a>5.6.6 驱动器列表框、目录列表框、文件列表框</h3><p>DriveListBox<br>DirectoryListBox<br>FileListBox</p>
+<pre class="line-numbers language-vb"><code class="language-vb">select case index
+    case 0
+        语句1
+    case 1
+        语句2
+end select
+
+' 打开程序
+Retval = shell(dir1.path + "\" + file1.filename,1)
+Retval = shell("C:\user\..",1)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-6-7-通用对话框"><a href="#5-6-7-通用对话框" class="headerlink" title="5.6.7 通用对话框"></a>5.6.7 通用对话框</h3><p>打开、另存为、颜色、字体、打印机、帮助<br>工程–部件–Microsoft Comm Dialog Control 6.0 选择通用对话框</p>
+<p><code>对象.Action = 1</code> 打开文件对话框<br><code>对象.ShowOpen</code> 打开文件对话框</p>
+<p><img src="/img/VB/tongyong.png" alt="通用对话框例子"></p>
+<h3 id="5-6-8-菜单设计"><a href="#5-6-8-菜单设计" class="headerlink" title="5.6.8 菜单设计"></a>5.6.8 菜单设计</h3><p>普通的菜单设计<br>工具–菜单编辑器–逐一填写</p>
+<p>弹出菜单<br>对象.PopupMenu 菜单名，标值，x，y<br><code>PopupMenu Cal2,2</code></p>
+<h3 id="5-6-9-多重窗体"><a href="#5-6-9-多重窗体" class="headerlink" title="5.6.9 多重窗体"></a>5.6.9 多重窗体</h3><p>工程–添加窗体–打开<br>load 窗体名称 将窗体装入内存，但不显示<br>unload 窗体名称</p>
+<p>窗体名称.show 显示窗体<br>窗体名称.hide 隐藏窗体<br><code>form1.show</code>显示form1窗体</p>
 <h1 id="6-课程学习过程中练习"><a href="#6-课程学习过程中练习" class="headerlink" title="6. 课程学习过程中练习"></a>6. 课程学习过程中练习</h1><p>第几次课.第几道练习</p>
 <h2 id="2-1-勾选要求变量声明（初学）"><a href="#2-1-勾选要求变量声明（初学）" class="headerlink" title="2.1 勾选要求变量声明（初学）"></a>2.1 勾选要求变量声明（初学）</h2><p>然后每次使用必须先定义变量</p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
@@ -1553,7 +1608,7 @@ Private Sub Command1_Click()
         End If
     Next i
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="4-4-模块、多窗口"><a href="#4-4-模块、多窗口" class="headerlink" title="4.4 模块、多窗口"></a>4.4 模块、多窗口</h2><p><code>form2.show</code>打开form2<br>新建module，然后将子过程放入module，可以在form1中调用</p>
+<h2 id="4-4-模块、多窗口"><a href="#4-4-模块、多窗口" class="headerlink" title="4.4 模块、多窗口"></a>4.4 模块、多窗口</h2><p><code>form2.show</code>打开 form2<br>新建 module，然后将子过程放入 module，可以在 form1 中调用</p>
 <pre class="line-numbers language-vb"><code class="language-vb">' module1:
 Option Explicit
 
@@ -1900,7 +1955,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <ul>
 <li><code>for each a in f</code> 中的 a 必须是变体型变量</li>
 </ul>
-<script>
+<h2 id="7-5-第五次作业"><a href="#7-5-第五次作业" class="headerlink" title="7.5 第五次作业"></a>7.5 第五次作业</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -2300,7 +2355,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.2k</span>&nbsp;字
+                class="white-color">48.0k</span>&nbsp;字
             
             
             
@@ -2476,7 +2531,7 @@ $(function () {
         var st;
         document.addEventListener('visibilitychange',function(){
         if(document.hidden){
-            document.title="(つェ⊂)看不惹~"+OriginTitile;
+            document.title="(つェ⊂)看不见惹~"+OriginTitile;
             clearTimeout(st);
             console.log('hide');
             }
