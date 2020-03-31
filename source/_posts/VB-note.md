@@ -1114,6 +1114,155 @@ End sub
 
 ![过程作用域及使用规则](/img/VB/gczyysygz.png)
 
+
+## 5.6 用户界面设计
+
+### 5.6.1 单选按钮和复选框
+
+单选框只能选一个（Option）
+复选框可以选多个（Check）
+`click动作`
+`check.value = true` 则为被选中
+
+### 5.6.2 框架Frame
+
+框架之间可以隔开单选按钮
+`fontname` `fontsize` `forecolor`
+属性
+
+### 5.6.3 滚动条
+
+HScroll Bar 、 VScroll Bar
+水平、竖直滚动条
+
+* 属性
+MIN 默认 0 
+MAX 默认 32767
+
+Value ：设置滚动块在滚动条中的位置值
+Smallchange ：最小变动值属性
+Largechange ：最大------
+
+* 事件
+Scroll ：当鼠标拖动滚动块时，触发
+Change ： 当改变value值时出发
+
+eg：在text中显示最大最小值
+
+```vb
+text1 = HScroll1.Min
+text2 = HScroll2.Max
+text3 = HScroll3.Value
+
+HScroll ' 横向
+VScroll ' 纵向
+```
+
+RGB函数：
+颜色值的取间是0~255
+
+随机数 Rnd() 返回小于1 大于或等于0 的值
+Rnd[()]
+
+```vb
+private sub form_click()
+    text1.forecolor = RGB(255 * Rnd , 255 * Rnd , 255 * Rnd)
+    form1.backcolor = RGB(255 * Rnd , 255 * Rnd , 255 * Rnd)
+end sub
+```
+
+返回小于1但大于或等于0的值。 Number的值决定了Rnd生成随机数的方式。
+在调用Rnd之前,先使用无参数的 Randomize语句初始化随机函数生成器,该
+生成器具有根据系统计时器得到的种子。
+如果 number的值是 Randomize生成。
+小于0,每次都使用 number作为随机数种子得到相同结果
+大于0,以上一个随机数为种子产生下一个随机数;
+等于0,产生与最近生成的随机数相同的随机数。
+省略,以上一个随机数为种子产生下一个随机数
+例,Int((上限下限+1)*Rnd+下限),生成上限与下限之间的随机整数。
+
+### 5.6.4 列表框
+
+只能在程序中设置的属性：
+Listindex 执行时选中的列表项的序号
+Listcount 项目数量 从0开始
+Selected True表示选中相应的项
+Text 表示选中列表项文本内容
+
+Additem ： 增加项
+Removeitem ： 删除项
+Clear ： 清除
+
+属性style : 1 时为多选框
+属性columns: 几列
+
+```vb
+List1.AddItem "1"
+List1.AddItem "2"
+province = Array("a","b") ' 一维数组
+
+Province(List1.ListIndex) '数组中数据 
+List1.List(List.ListIndex) = text1
+
+' 判断是否选中
+if list1.selected(i) Then
+```
+
+### 5.6.5 组合框
+
+style属性：
+0 下拉式 
+1 简单组合框 
+2 下拉式列表框
+
+### 5.6.6 驱动器列表框、目录列表框、文件列表框
+
+DriveListBox 
+DirectoryListBox
+FileListBox
+
+```vb
+select case index
+    case 0
+        语句1
+    case 1
+        语句2
+end select
+
+' 打开程序
+Retval = shell(dir1.path + "\" + file1.filename,1)
+Retval = shell("C:\user\..",1)
+```
+
+### 5.6.7 通用对话框
+
+打开、另存为、颜色、字体、打印机、帮助
+工程--部件--Microsoft Comm Dialog Control 6.0 选择通用对话框
+
+`对象.Action = 1` 打开文件对话框
+`对象.ShowOpen ` 打开文件对话框
+
+![通用对话框例子](/img/VB/tongyong.png)
+
+### 5.6.8 菜单设计
+
+普通的菜单设计
+工具--菜单编辑器--逐一填写
+
+弹出菜单
+对象.PopupMenu 菜单名，标值，x，y
+`PopupMenu Cal2,2`
+
+### 5.6.9 多重窗体
+
+工程--添加窗体--打开
+load 窗体名称 将窗体装入内存，但不显示
+unload 窗体名称
+
+窗体名称.show 显示窗体
+窗体名称.hide 隐藏窗体
+`form1.show`显示form1窗体
+
 # 6. 课程学习过程中练习
 
 第几次课.第几道练习
@@ -1397,8 +1546,8 @@ End Sub
 
 ## 4.4 模块、多窗口
 
-`form2.show`打开form2
-新建module，然后将子过程放入module，可以在form1中调用
+`form2.show`打开 form2
+新建 module，然后将子过程放入 module，可以在 form1 中调用
 
 ```vb
 ' module1:
@@ -1810,4 +1959,9 @@ End Sub
 ```
 
 重点注意：
-* `for each a in f` 中的 a 必须是变体型变量
+
+- `for each a in f` 中的 a 必须是变体型变量
+
+## 7.5 第五次作业
+
+### 1. 
