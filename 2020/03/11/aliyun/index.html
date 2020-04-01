@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="服务器学习, Yun.Qi">
-    <meta name="description" content="从零开始的服务器学习">
+    <meta name="description" content="从零开始的服务器学习(白嫖到阿里云服务器后开始了解一些服务器的基本知识)">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -471,14 +471,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-26
+                    2020-04-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1,062
+                    1,232
                 </div>
                 
 
@@ -491,7 +491,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-入门概述"><a href="#1-入门概述" class="headerlink" title="1. 入门概述"></a>1. 入门概述</h1><p>一台云服务器（以下简称 ECS 实例）由实例规格、镜像、块存储、快照、安全组、弹性网卡等基础计算组件组成并协同提供服务。一般来说，阿里云服务器、云服务器、云服务器 ECS、ECS 实例等均指代云服务器 ECS。其中：</p>
+                <a id="more"></a>
+
+<h1 id="1-入门概述"><a href="#1-入门概述" class="headerlink" title="1. 入门概述"></a>1. 入门概述</h1><p>一台云服务器（以下简称 ECS 实例）由实例规格、镜像、块存储、快照、安全组、弹性网卡等基础计算组件组成并协同提供服务。一般来说，阿里云服务器、云服务器、云服务器 ECS、ECS 实例等均指代云服务器 ECS。其中：</p>
 <ul>
 <li>实例规格：定义了 ECS 实例的 vCPU 和内存的配置，是计算能力的体现。</li>
 <li>镜像：提供启动 ECS 实例所需的所有信息，包括操作系统和预装软件。</li>
@@ -576,6 +578,12 @@ root /usr/share/nginx/hexo;</code></pre><p>然后将本地的hexo文件夹中的
 <pre><code>deploy:
   type: git
   repo: git@服务器ip地址:hexo.git</code></pre><h2 id="2-内网穿透"><a href="#2-内网穿透" class="headerlink" title="2. 内网穿透"></a>2. 内网穿透</h2><h2 id="3-搭建一个文件系统"><a href="#3-搭建一个文件系统" class="headerlink" title="3. 搭建一个文件系统"></a>3. 搭建一个文件系统</h2><p>类似云盘</p>
+<h3 id="3-1-搭建网盘owncloud"><a href="#3-1-搭建网盘owncloud" class="headerlink" title="3.1 搭建网盘owncloud"></a>3.1 搭建网盘owncloud</h3><blockquote>
+<p>主要参考<a href="https://luomuxiaoxiao.com/?p=722" target="_blank" rel="noopener">这位大佬的教程</a><br>要先看<a href="https://luomuxiaoxiao.com/?p=707" target="_blank" rel="noopener">这篇</a></p>
+</blockquote>
+<p>只要跟着做一遍基本就能安装上，但是也有几个坑</p>
+<p>几个坑：最后的登录时的用户名要在<code>/etc/mysql</code>下的<code>debian.cnf</code>中查看<br>直接输入：<br><code>sudo vim/vi /etc/mysql/debian.cnf</code><br>查看数据库的用户名密码，然后就可以了</p>
+<p>可能我的服务器宽带不够hhh，搭建网盘还是没速度hhh，算了，等毕业以后在弄这些东西，主要是那个备案太烦了，太难了。所以现在光有域名没有备案，就不行，hhh只能通过ip地址访问hhh，太low了</p>
 <h2 id="4-爬虫"><a href="#4-爬虫" class="headerlink" title="4. 爬虫"></a>4. 爬虫</h2><p>初步实现的爬虫程序：</p>
 <ul>
 <li><p>哔哩哔哩脚本</p>
@@ -714,15 +722,15 @@ root /usr/share/nginx/hexo;</code></pre><p>然后将本地的hexo文件夹中的
                     <div class="card-image">
                         
                         
-                        <img src="/medias/wallhaven/28.jpg" class="responsive-img" alt="Linux-note">
+                        <img src="/medias/wallhaven/35.jpg" class="responsive-img" alt="Linux-Note">
                         
-                        <span class="card-title">Linux-note</span>
+                        <span class="card-title">Linux-Note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关于Linux相关知识的学习
+                            关于Linux相关知识的学习，Linux系统学习笔记
                         
                     </div>
                     <div class="publish-info">
@@ -766,15 +774,15 @@ root /usr/share/nginx/hexo;</code></pre><p>然后将本地的hexo文件夹中的
                 <a href="/2020/03/04/lua-note/">
                     <div class="card-image">
                         
-                        <img src="/img/pic/1.jpg" class="responsive-img" alt="Lua-note">
+                        <img src="/img/pic/1.jpg" class="responsive-img" alt="Lua-Note">
                         
-                        <span class="card-title">Lua-note</span>
+                        <span class="card-title">Lua-Note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关于lua语言的学习，听说跟c差不多
+                            关于lua语言的学习，听说跟c差不多，Lua语言学习笔记本
                         
                     </div>
                     <div class="publish-info">
@@ -943,31 +951,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="4887714772"
-                   fixed='true'
-                   autoplay='false'
-                   theme:='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
@@ -978,7 +961,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.0k</span>&nbsp;字
+                class="white-color">49.6k</span>&nbsp;字
             
             
             
@@ -1105,7 +1088,9 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></script>
+    <!--樱花飘落-->
+    <!--script-- src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></!--script-->
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
@@ -1137,11 +1122,12 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
 
-    
-    
-    <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     

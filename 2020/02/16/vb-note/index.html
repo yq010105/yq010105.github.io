@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="VB-Note, Yun.Qi">
-    <meta name="description" content="VB语言学习过程，这个学期开始学习VB，提前作预习">
+    <meta name="description" content="VB语言学习过程，这个学期开始学习VB，提前作预习，VB笔记本">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-03-31
+                    2020-04-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    8,100
+                    8,754
                 </div>
                 
 
@@ -1337,42 +1337,43 @@ End sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <p><img src="/img/VB/gczyylz.png" alt="过程作用域例子"><br><img src="/img/VB/gczyylz1.png" alt="过程作用域例子"></p>
 <p><img src="/img/VB/gczyysygz.png" alt="过程作用域及使用规则"></p>
 <h2 id="5-6-用户界面设计"><a href="#5-6-用户界面设计" class="headerlink" title="5.6 用户界面设计"></a>5.6 用户界面设计</h2><h3 id="5-6-1-单选按钮和复选框"><a href="#5-6-1-单选按钮和复选框" class="headerlink" title="5.6.1 单选按钮和复选框"></a>5.6.1 单选按钮和复选框</h3><p>单选框只能选一个（Option）<br>复选框可以选多个（Check）<br><code>click动作</code><br><code>check.value = true</code> 则为被选中</p>
-<h3 id="5-6-2-框架Frame"><a href="#5-6-2-框架Frame" class="headerlink" title="5.6.2 框架Frame"></a>5.6.2 框架Frame</h3><p>框架之间可以隔开单选按钮<br><code>fontname</code> <code>fontsize</code> <code>forecolor</code><br>属性</p>
+<p><img src="/img/VB/checklz.png" alt="例子"></p>
+<h3 id="5-6-2-框架-Frame"><a href="#5-6-2-框架-Frame" class="headerlink" title="5.6.2 框架 Frame"></a>5.6.2 框架 Frame</h3><p>框架之间可以隔开单选按钮<br><code>fontname</code> <code>fontsize</code> <code>forecolor</code><br>属性</p>
 <h3 id="5-6-3-滚动条"><a href="#5-6-3-滚动条" class="headerlink" title="5.6.3 滚动条"></a>5.6.3 滚动条</h3><p>HScroll Bar 、 VScroll Bar<br>水平、竖直滚动条</p>
 <ul>
 <li>属性<br>MIN 默认 0<br>MAX 默认 32767</li>
 </ul>
 <p>Value ：设置滚动块在滚动条中的位置值<br>Smallchange ：最小变动值属性<br>Largechange ：最大——</p>
 <ul>
-<li>事件<br>Scroll ：当鼠标拖动滚动块时，触发<br>Change ： 当改变value值时出发</li>
+<li>事件<br>Scroll ：当鼠标拖动滚动块时，触发<br>Change ： 当改变 value 值时出发</li>
 </ul>
-<p>eg：在text中显示最大最小值</p>
+<p>eg：在 text 中显示最大最小值</p>
 <pre class="line-numbers language-vb"><code class="language-vb">text1 = HScroll1.Min
 text2 = HScroll2.Max
 text3 = HScroll3.Value
 
 HScroll ' 横向
 VScroll ' 纵向<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>RGB函数：<br>颜色值的取间是0~255</p>
-<p>随机数 Rnd() 返回小于1 大于或等于0 的值<br>Rnd[()]</p>
+<p>RGB 函数：<br>颜色值的取间是 0~255</p>
+<p>随机数 Rnd() 返回小于 1 大于或等于 0 的值<br>Rnd[()]</p>
 <pre class="line-numbers language-vb"><code class="language-vb">private sub form_click()
     text1.forecolor = RGB(255 * Rnd , 255 * Rnd , 255 * Rnd)
     form1.backcolor = RGB(255 * Rnd , 255 * Rnd , 255 * Rnd)
 end sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>返回小于1但大于或等于0的值。 Number的值决定了Rnd生成随机数的方式。<br>在调用Rnd之前,先使用无参数的 Randomize语句初始化随机函数生成器,该<br>生成器具有根据系统计时器得到的种子。<br>如果 number的值是 Randomize生成。<br>小于0,每次都使用 number作为随机数种子得到相同结果<br>大于0,以上一个随机数为种子产生下一个随机数;<br>等于0,产生与最近生成的随机数相同的随机数。<br>省略,以上一个随机数为种子产生下一个随机数<br>例,Int((上限下限+1)*Rnd+下限),生成上限与下限之间的随机整数。</p>
-<h3 id="5-6-4-列表框"><a href="#5-6-4-列表框" class="headerlink" title="5.6.4 列表框"></a>5.6.4 列表框</h3><p>只能在程序中设置的属性：<br>Listindex 执行时选中的列表项的序号<br>Listcount 项目数量 从0开始<br>Selected True表示选中相应的项<br>Text 表示选中列表项文本内容</p>
+<p>返回小于 1 但大于或等于 0 的值。 Number 的值决定了 Rnd 生成随机数的方式。<br>在调用 Rnd 之前,先使用无参数的 Randomize 语句初始化随机函数生成器,该<br>生成器具有根据系统计时器得到的种子。<br>如果 number 的值是 Randomize 生成。<br>小于 0,每次都使用 number 作为随机数种子得到相同结果<br>大于 0,以上一个随机数为种子产生下一个随机数;<br>等于 0,产生与最近生成的随机数相同的随机数。<br>省略,以上一个随机数为种子产生下一个随机数<br>例,Int((上限下限+1)*Rnd+下限),生成上限与下限之间的随机整数。</p>
+<h3 id="5-6-4-列表框"><a href="#5-6-4-列表框" class="headerlink" title="5.6.4 列表框"></a>5.6.4 列表框</h3><p>只能在程序中设置的属性：<br>Listindex 执行时选中的列表项的序号<br>Listcount 项目数量 从 0 开始<br>Selected True 表示选中相应的项<br>Text 表示选中列表项文本内容</p>
 <p>Additem ： 增加项<br>Removeitem ： 删除项<br>Clear ： 清除</p>
-<p>属性style : 1 时为多选框<br>属性columns: 几列</p>
+<p>属性 style : 1 时为多选框<br>属性 columns: 几列</p>
 <pre class="line-numbers language-vb"><code class="language-vb">List1.AddItem "1"
 List1.AddItem "2"
 province = Array("a","b") ' 一维数组
 
-Province(List1.ListIndex) '数组中数据 
+Province(List1.ListIndex) '数组中数据
 List1.List(List.ListIndex) = text1
 
 ' 判断是否选中
 if list1.selected(i) Then<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="5-6-5-组合框"><a href="#5-6-5-组合框" class="headerlink" title="5.6.5 组合框"></a>5.6.5 组合框</h3><p>style属性：<br>0 下拉式<br>1 简单组合框<br>2 下拉式列表框</p>
+<h3 id="5-6-5-组合框"><a href="#5-6-5-组合框" class="headerlink" title="5.6.5 组合框"></a>5.6.5 组合框</h3><p>style 属性：<br>0 下拉式<br>1 简单组合框<br>2 下拉式列表框</p>
 <h3 id="5-6-6-驱动器列表框、目录列表框、文件列表框"><a href="#5-6-6-驱动器列表框、目录列表框、文件列表框" class="headerlink" title="5.6.6 驱动器列表框、目录列表框、文件列表框"></a>5.6.6 驱动器列表框、目录列表框、文件列表框</h3><p>DriveListBox<br>DirectoryListBox<br>FileListBox</p>
 <pre class="line-numbers language-vb"><code class="language-vb">select case index
     case 0
@@ -1390,7 +1391,21 @@ Retval = shell("C:\user\..",1)<span aria-hidden="true" class="line-numbers-rows"
 <h3 id="5-6-8-菜单设计"><a href="#5-6-8-菜单设计" class="headerlink" title="5.6.8 菜单设计"></a>5.6.8 菜单设计</h3><p>普通的菜单设计<br>工具–菜单编辑器–逐一填写</p>
 <p>弹出菜单<br>对象.PopupMenu 菜单名，标值，x，y<br><code>PopupMenu Cal2,2</code></p>
 <h3 id="5-6-9-多重窗体"><a href="#5-6-9-多重窗体" class="headerlink" title="5.6.9 多重窗体"></a>5.6.9 多重窗体</h3><p>工程–添加窗体–打开<br>load 窗体名称 将窗体装入内存，但不显示<br>unload 窗体名称</p>
-<p>窗体名称.show 显示窗体<br>窗体名称.hide 隐藏窗体<br><code>form1.show</code>显示form1窗体</p>
+<p>窗体名称.show 显示窗体<br>窗体名称.hide 隐藏窗体<br><code>form2.show</code>显示 form1 窗体</p>
+<h3 id="5-6-10-鼠标-键盘事件"><a href="#5-6-10-鼠标-键盘事件" class="headerlink" title="5.6.10 鼠标/键盘事件"></a>5.6.10 鼠标/键盘事件</h3><p><img src="/img/VB/sbsj.png" alt="鼠标事件"></p>
+<p>键盘事件：KeyPress ， KeyUp ， KeyDown</p>
+<h3 id="5-6-11-对象拖放与-OLE-拖放"><a href="#5-6-11-对象拖放与-OLE-拖放" class="headerlink" title="5.6.11 对象拖放与 OLE 拖放"></a>5.6.11 对象拖放与 OLE 拖放</h3><p>对象拖放：用鼠标将对象从一个地方拖动到另一个地方</p>
+<p>拖放方式属性：DragMode 为 1 自动 0 手动<br>拖放图标属性可以在设计时设置，也可在程序中设置<br><code>控件名.DragIcon = 图像控件.picture</code><br><code>控件名.DragIcon = LoadPicture("C:\Icons\mail.ico")</code></p>
+<p>拖放事件</p>
+<pre class="line-numbers language-vb"><code class="language-vb">sub form_dragdrop(source as control , x as single , y as single)
+    source.move x,y
+end sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>OLE 拖放 ：将数据从一个控件或应用程序中移动到另一个控件或应用程序。<br><strong>OLEDragMode</strong>属性—决定是自动还是手动实现“拖”操作<br><strong>OLEDropMode</strong>属性—决定是自动还是手动实现“放”操作<br>注:并不是所有的控件都有此二属性,有的只有其一。</p>
+<ul>
+<li>OLEDragDrop 事件—在目标控件上进行“放”操作时发生的事件。</li>
+<li>OLEStartDrag 事件一源控件 OLEDrag 方法被执行或用户做“拖”，操作时发生的事件</li>
+<li>OLEDragOver 事件—在拖动时,经某控件时在该控件上发生的事件</li>
+</ul>
 <h1 id="6-课程学习过程中练习"><a href="#6-课程学习过程中练习" class="headerlink" title="6. 课程学习过程中练习"></a>6. 课程学习过程中练习</h1><p>第几次课.第几道练习</p>
 <h2 id="2-1-勾选要求变量声明（初学）"><a href="#2-1-勾选要求变量声明（初学）" class="headerlink" title="2.1 勾选要求变量声明（初学）"></a>2.1 勾选要求变量声明（初学）</h2><p>然后每次使用必须先定义变量</p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
@@ -1955,7 +1970,108 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <ul>
 <li><code>for each a in f</code> 中的 a 必须是变体型变量</li>
 </ul>
-<h2 id="7-5-第五次作业"><a href="#7-5-第五次作业" class="headerlink" title="7.5 第五次作业"></a>7.5 第五次作业</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><script>
+<h2 id="7-5-第五次作业"><a href="#7-5-第五次作业" class="headerlink" title="7.5 第五次作业"></a>7.5 第五次作业</h2><h3 id="1-RGB-三色调色板"><a href="#1-RGB-三色调色板" class="headerlink" title="1. RGB 三色调色板"></a>1. RGB 三色调色板</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDGDCDJDDDCDJCPGJGNGBGHGFCOHAGOGH" alt="RGB三色调色板要求"></p>
+<p><strong>作业代码</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+Dim r As Integer, g As Integer, b As Integer
+
+Private Sub Command1_Click()
+    Text2.ForeColor = Text1.BackColor
+End Sub
+
+Private Sub Command2_Click()
+    Text2.BackColor = Text1.BackColor
+End Sub
+
+Private Sub HScroll1_Change()
+    r = HScroll1.Value: g = HScroll2.Value: b = HScroll3.Value
+    Text1.BackColor = RGB(r, g, b)
+End Sub
+
+Private Sub HScroll2_Change()
+    r = HScroll1.Value: g = HScroll2.Value: b = HScroll3.Value
+    Text1.BackColor = RGB(r, g, b)
+End Sub
+
+Private Sub HScroll3_Change()
+    r = HScroll1.Value: g = HScroll2.Value: b = HScroll3.Value
+    Text1.BackColor = RGB(r, g, b)
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>小知识点：</p>
+<ul>
+<li>hscroll1.value 横向滚动条的值</li>
+<li>hscroll1_change() 判断横向滚动条的值是否发生变化,变化时执行的程序</li>
+<li>RGB()函数的使用</li>
+</ul>
+<h3 id="2-成绩合计-amp-密码验证"><a href="#2-成绩合计-amp-密码验证" class="headerlink" title="2. 成绩合计 &amp; 密码验证"></a>2. 成绩合计 &amp; 密码验证</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDGDCDJDEDCDFCPGJGNGBGHGFCOHAGOGH" alt="成绩&amp;密码"></p>
+<p><strong>作业代码 1</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+Dim i As Integer, t As Integer
+
+Private Sub Command1_Click()
+    t = 0
+    For i = 0 To 4
+        If Check1(i).Value Then
+            t = t + Val(Text1(i).Text)
+        End If
+    Next i
+    Text2.Text = t
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>小知识点：</p>
+<ul>
+<li>控件数组的使用</li>
+<li>check1.value 为 true 直接判断</li>
+</ul>
+<p><strong>作业代码 2</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">' Form2
+Option Explicit
+Dim reval As Integer
+
+Private Sub bl_Click()
+    reval = Shell("C:\Users\20180\Desktop\bz-live.bat", 2)
+End Sub
+
+Private Sub fb_Click()
+    reval = Shell("C:\Users\20180\Desktop\fund.bat", 2)
+End Sub
+
+Private Sub Form_Click()
+    PopupMenu b, 2
+End Sub
+
+Private Sub sc_Click()
+    reval = Shell("C:\Users\20180\Desktop\scrcpy.bat", 2)
+End Sub
+
+Private Sub tc_Click()
+    reval = Shell("C:\Users\20180\Desktop\timecal.bat", 2)
+End Sub
+
+'Form1
+
+Option Explicit
+
+Private Sub Command1_Click()
+    If Text1.Text = "123" Then
+        Form1.Hide
+        Form2.Show
+    Else
+        Label2.Visible = True
+        Label2.Caption = "password error"
+        Text1.Text = ""
+    End If
+End Sub
+
+Private Sub Form_Load()
+    Label2.Visible = False
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>小知识点：</p>
+<ul>
+<li>主要是菜单的编辑，工具–菜单编辑器</li>
+<li>form1.hide &amp; form2.show 窗体的隐藏和显示</li>
+<li><code>reval = shell("C:\Users\20180\Desktop\fund.bat",2)</code>调用程序</li>
+</ul>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -2090,9 +2206,9 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
                     <div class="card-image">
                         
                         
-                        <img src="/medias/wallhaven/31.jpg" class="responsive-img" alt="Python_solve_problems">
+                        <img src="/medias/wallhaven/79.jpg" class="responsive-img" alt="用python解决问题">
                         
-                        <span class="card-title">Python_solve_problems</span>
+                        <span class="card-title">用python解决问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -2151,7 +2267,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java 语言学习笔记
+                            Java 语言学习笔记本
                         
                     </div>
                     <div class="publish-info">
@@ -2320,31 +2436,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="4887714772"
-                   fixed='true'
-                   autoplay='false'
-                   theme:='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
@@ -2355,7 +2446,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.0k</span>&nbsp;字
+                class="white-color">49.6k</span>&nbsp;字
             
             
             
@@ -2482,7 +2573,9 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></script>
+    <!--樱花飘落-->
+    <!--script-- src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/sakura.js"></!--script-->
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
@@ -2514,11 +2607,12 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
 
-    
-    
-    <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
