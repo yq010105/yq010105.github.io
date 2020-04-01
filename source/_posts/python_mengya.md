@@ -1,16 +1,18 @@
 ---
-title: Python_mengya_process
+title: 萌芽杯项目的python代码
 date: 2020-02-19 12:51:09
 top: true
-cover: true
+cover: false
 coverImg: /img/cover/mengya1.jpg
 img: /img/cover/mengya1.jpg
 categories: 技术力
-summary: 识别表的指针，代码的构造过程，并没有写完（萌芽杯比赛项目）
+summary: 项目-识别表的指针，python代码的构造过程，并没有写完（萌芽杯比赛项目）
 tags:
   - Python
   - Compete
 ---
+
+<!--more-->
 
 # 1. 测试
 
@@ -836,10 +838,109 @@ if __name__ == '__main__' :
 
 ### 5.1.1 构造一个桌面指针
 
-写出代码，在服务器上运行
+```python
+import turtle as t
+import time
+import datetime as dt
+
+def drawuse():
+    # background
+    game = t.Screen()
+    game.bgcolor('#A4D3EE')
+    game.setup(500,500,0,10)
+    game.tracer(0)
+
+    pen = t.Turtle()
+    pen.ht()
+    pen.speed(0)
+    pen.up()
+    pen.pensize(3)
+
+    def draw():
+        i = 0
+        while True:
+            pen.clear()
+            # 圆
+            pen.pensize(3)
+            pen.up()
+            pen.color('black')
+            pen.goto(0,-200)
+            pen.down()
+            pen.seth(0)
+            pen.circle(200)
+
+            # 刻度
+            pen.up()
+            pen.goto(0,0)
+            pen.seth(225)
+
+            for _ in range(13):
+                pen.fd(180)
+                pen.down()
+                pen.fd(20)
+                pen.up()
+                pen.goto(0,0)
+                pen.right(22.5)
+
+            # 指针
+            pen.up()
+            pen.goto(0,0)
+            pen.down()
+            pen.seth(225 - i)
+            pen.color('red')
+            pen.pensize(6)
+            pen.fd(120)
+            i += 1
+            if i >= 271:
+                i = 0
+            game.update()
+            time.sleep(1)
+
+    def drawgd(thr):
+        pen.clear()
+        # 圆
+        pen.up()
+        pen.color('black')
+        pen.goto(0,-200)
+        pen.down()
+        pen.seth(0)
+        pen.circle(200)
+
+        # 刻度
+        pen.up()
+        pen.goto(0,0)
+        pen.seth(225)
+
+        for _ in range(13):
+            pen.fd(180)
+            pen.down()
+            pen.fd(20)
+            pen.up()
+            pen.goto(0,0)
+            pen.right(22.5)
+
+        # 指针
+        pen.up()
+        pen.goto(0,0)
+        pen.down()
+        pen.seth(225 - thr)
+        pen.color('red')
+        pen.pensize(6)
+        pen.fd(120)
+        game.update()
+        time.sleep(1)
+
+    # 模式一--动态
+    draw()
+
+    # # 模式二--固定
+    # thr = int(input("输入指针度数:--角度--"))
+    # drawgd(thr)
+
+    game.mainloop()
+```
 
 ### 5.1.2 手机上下载一个模拟时钟
 
-### 5.1.3 两者相对比来分析误差
+### 5.1.3 获取两者数据对比来分析误差
 
-误差分析

@@ -1,12 +1,12 @@
 ---
-title: Spider Example
+title: 自己写的几个爬虫
 date: 2020-02-10 16:43:47
 top: true
 coverImg: /img/cover/spiderex1.jpg
 img: /img/cover/spiderex1.jpg
 categories: 技术力
-summary: 自己动手编写的几个python爬虫小栗子
-cover: true
+summary: 自己动手编写的几个python爬虫小栗子，很垃圾，很基础
+cover: false
 tags:
   - Spider
   - Python
@@ -340,7 +340,7 @@ def save_pic():
 save_pic()
 ```
 
-# 4.爬取 Wallhaven 上的图片
+# 4. 爬取 Wallhaven 上的图片
 
 ## 4.1 龟速爬取,只是用来爬了一下博客需要的图片 hhh
 

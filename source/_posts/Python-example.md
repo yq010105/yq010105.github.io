@@ -1,14 +1,16 @@
 ---
-title: Python Example
+title: 自己写的几个python小程序
 top: false
 cover: false
 date: 2020-03-21 22:45:11
 categories:	技术力
 tags:
 	- Python
-summary: python写的几个小程序
+summary: python写的几个小程序，慢慢写，很垃圾，基本上是方便我~~装B~~学习生活的代码
 password:
 ---
+
+<!--more-->
 
 # 1. 每日手动记录支付宝基金余额
 

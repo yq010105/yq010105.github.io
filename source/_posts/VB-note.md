@@ -3,7 +3,7 @@ title: VB-Note
 date: 2020-02-16 13:32:49
 top: true
 img: /img/cover/vb.jpg
-summary: VB语言学习过程，这个学期开始学习VB，提前作预习
+summary: VB语言学习过程，这个学期开始学习VB，提前作预习，VB笔记本
 categories: 学习力
 tags:
   - VB
@@ -1114,7 +1114,6 @@ End sub
 
 ![过程作用域及使用规则](/img/VB/gczyysygz.png)
 
-
 ## 5.6 用户界面设计
 
 ### 5.6.1 单选按钮和复选框
@@ -1124,7 +1123,9 @@ End sub
 `click动作`
 `check.value = true` 则为被选中
 
-### 5.6.2 框架Frame
+![例子](/img/VB/checklz.png)
+
+### 5.6.2 框架 Frame
 
 框架之间可以隔开单选按钮
 `fontname` `fontsize` `forecolor`
@@ -1135,19 +1136,19 @@ End sub
 HScroll Bar 、 VScroll Bar
 水平、竖直滚动条
 
-* 属性
-MIN 默认 0 
-MAX 默认 32767
+- 属性
+  MIN 默认 0
+  MAX 默认 32767
 
 Value ：设置滚动块在滚动条中的位置值
 Smallchange ：最小变动值属性
 Largechange ：最大------
 
-* 事件
-Scroll ：当鼠标拖动滚动块时，触发
-Change ： 当改变value值时出发
+- 事件
+  Scroll ：当鼠标拖动滚动块时，触发
+  Change ： 当改变 value 值时出发
 
-eg：在text中显示最大最小值
+eg：在 text 中显示最大最小值
 
 ```vb
 text1 = HScroll1.Min
@@ -1158,10 +1159,10 @@ HScroll ' 横向
 VScroll ' 纵向
 ```
 
-RGB函数：
-颜色值的取间是0~255
+RGB 函数：
+颜色值的取间是 0~255
 
-随机数 Rnd() 返回小于1 大于或等于0 的值
+随机数 Rnd() 返回小于 1 大于或等于 0 的值
 Rnd[()]
 
 ```vb
@@ -1171,37 +1172,37 @@ private sub form_click()
 end sub
 ```
 
-返回小于1但大于或等于0的值。 Number的值决定了Rnd生成随机数的方式。
-在调用Rnd之前,先使用无参数的 Randomize语句初始化随机函数生成器,该
+返回小于 1 但大于或等于 0 的值。 Number 的值决定了 Rnd 生成随机数的方式。
+在调用 Rnd 之前,先使用无参数的 Randomize 语句初始化随机函数生成器,该
 生成器具有根据系统计时器得到的种子。
-如果 number的值是 Randomize生成。
-小于0,每次都使用 number作为随机数种子得到相同结果
-大于0,以上一个随机数为种子产生下一个随机数;
-等于0,产生与最近生成的随机数相同的随机数。
+如果 number 的值是 Randomize 生成。
+小于 0,每次都使用 number 作为随机数种子得到相同结果
+大于 0,以上一个随机数为种子产生下一个随机数;
+等于 0,产生与最近生成的随机数相同的随机数。
 省略,以上一个随机数为种子产生下一个随机数
-例,Int((上限下限+1)*Rnd+下限),生成上限与下限之间的随机整数。
+例,Int((上限下限+1)\*Rnd+下限),生成上限与下限之间的随机整数。
 
 ### 5.6.4 列表框
 
 只能在程序中设置的属性：
 Listindex 执行时选中的列表项的序号
-Listcount 项目数量 从0开始
-Selected True表示选中相应的项
+Listcount 项目数量 从 0 开始
+Selected True 表示选中相应的项
 Text 表示选中列表项文本内容
 
 Additem ： 增加项
 Removeitem ： 删除项
 Clear ： 清除
 
-属性style : 1 时为多选框
-属性columns: 几列
+属性 style : 1 时为多选框
+属性 columns: 几列
 
 ```vb
 List1.AddItem "1"
 List1.AddItem "2"
 province = Array("a","b") ' 一维数组
 
-Province(List1.ListIndex) '数组中数据 
+Province(List1.ListIndex) '数组中数据
 List1.List(List.ListIndex) = text1
 
 ' 判断是否选中
@@ -1210,14 +1211,14 @@ if list1.selected(i) Then
 
 ### 5.6.5 组合框
 
-style属性：
-0 下拉式 
-1 简单组合框 
+style 属性：
+0 下拉式
+1 简单组合框
 2 下拉式列表框
 
 ### 5.6.6 驱动器列表框、目录列表框、文件列表框
 
-DriveListBox 
+DriveListBox
 DirectoryListBox
 FileListBox
 
@@ -1240,7 +1241,7 @@ Retval = shell("C:\user\..",1)
 工程--部件--Microsoft Comm Dialog Control 6.0 选择通用对话框
 
 `对象.Action = 1` 打开文件对话框
-`对象.ShowOpen ` 打开文件对话框
+`对象.ShowOpen` 打开文件对话框
 
 ![通用对话框例子](/img/VB/tongyong.png)
 
@@ -1261,7 +1262,39 @@ unload 窗体名称
 
 窗体名称.show 显示窗体
 窗体名称.hide 隐藏窗体
-`form1.show`显示form1窗体
+`form2.show`显示 form1 窗体
+
+### 5.6.10 鼠标/键盘事件
+
+![鼠标事件](/img/VB/sbsj.png)
+
+键盘事件：KeyPress ， KeyUp ， KeyDown
+
+### 5.6.11 对象拖放与 OLE 拖放
+
+对象拖放：用鼠标将对象从一个地方拖动到另一个地方
+
+拖放方式属性：DragMode 为 1 自动 0 手动
+拖放图标属性可以在设计时设置，也可在程序中设置
+`控件名.DragIcon = 图像控件.picture`
+`控件名.DragIcon = LoadPicture("C:\Icons\mail.ico")`
+
+拖放事件
+
+```vb
+sub form_dragdrop(source as control , x as single , y as single)
+    source.move x,y
+end sub
+```
+
+OLE 拖放 ：将数据从一个控件或应用程序中移动到另一个控件或应用程序。
+**OLEDragMode**属性—决定是自动还是手动实现“拖”操作
+**OLEDropMode**属性—决定是自动还是手动实现“放”操作
+注:并不是所有的控件都有此二属性,有的只有其一。
+
+- OLEDragDrop 事件—在目标控件上进行“放”操作时发生的事件。
+- OLEStartDrag 事件一源控件 OLEDrag 方法被执行或用户做“拖”，操作时发生的事件
+- OLEDragOver 事件—在拖动时,经某控件时在该控件上发生的事件
 
 # 6. 课程学习过程中练习
 
@@ -1964,4 +1997,120 @@ End Sub
 
 ## 7.5 第五次作业
 
-### 1. 
+### 1. RGB 三色调色板
+
+![RGB三色调色板要求](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDGDCDJDDDCDJCPGJGNGBGHGFCOHAGOGH)
+
+**作业代码**
+
+```vb
+Option Explicit
+Dim r As Integer, g As Integer, b As Integer
+
+Private Sub Command1_Click()
+    Text2.ForeColor = Text1.BackColor
+End Sub
+
+Private Sub Command2_Click()
+    Text2.BackColor = Text1.BackColor
+End Sub
+
+Private Sub HScroll1_Change()
+    r = HScroll1.Value: g = HScroll2.Value: b = HScroll3.Value
+    Text1.BackColor = RGB(r, g, b)
+End Sub
+
+Private Sub HScroll2_Change()
+    r = HScroll1.Value: g = HScroll2.Value: b = HScroll3.Value
+    Text1.BackColor = RGB(r, g, b)
+End Sub
+
+Private Sub HScroll3_Change()
+    r = HScroll1.Value: g = HScroll2.Value: b = HScroll3.Value
+    Text1.BackColor = RGB(r, g, b)
+End Sub
+```
+
+小知识点：
+
+- hscroll1.value 横向滚动条的值
+- hscroll1_change() 判断横向滚动条的值是否发生变化,变化时执行的程序
+- RGB()函数的使用
+
+### 2. 成绩合计 & 密码验证
+
+![成绩&密码](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDGDCDJDEDCDFCPGJGNGBGHGFCOHAGOGH)
+
+**作业代码 1**
+
+```vb
+Option Explicit
+Dim i As Integer, t As Integer
+
+Private Sub Command1_Click()
+    t = 0
+    For i = 0 To 4
+        If Check1(i).Value Then
+            t = t + Val(Text1(i).Text)
+        End If
+    Next i
+    Text2.Text = t
+End Sub
+```
+
+小知识点：
+
+- 控件数组的使用
+- check1.value 为 true 直接判断
+
+**作业代码 2**
+
+```vb
+' Form2
+Option Explicit
+Dim reval As Integer
+
+Private Sub bl_Click()
+    reval = Shell("C:\Users\20180\Desktop\bz-live.bat", 2)
+End Sub
+
+Private Sub fb_Click()
+    reval = Shell("C:\Users\20180\Desktop\fund.bat", 2)
+End Sub
+
+Private Sub Form_Click()
+    PopupMenu b, 2
+End Sub
+
+Private Sub sc_Click()
+    reval = Shell("C:\Users\20180\Desktop\scrcpy.bat", 2)
+End Sub
+
+Private Sub tc_Click()
+    reval = Shell("C:\Users\20180\Desktop\timecal.bat", 2)
+End Sub
+
+'Form1
+
+Option Explicit
+
+Private Sub Command1_Click()
+    If Text1.Text = "123" Then
+        Form1.Hide
+        Form2.Show
+    Else
+        Label2.Visible = True
+        Label2.Caption = "password error"
+        Text1.Text = ""
+    End If
+End Sub
+
+Private Sub Form_Load()
+    Label2.Visible = False
+End Sub
+```
+
+小知识点：
+* 主要是菜单的编辑，工具--菜单编辑器
+* form1.hide & form2.show 窗体的隐藏和显示
+* `reval = shell("C:\Users\20180\Desktop\fund.bat",2)`调用程序

@@ -1,5 +1,5 @@
 ---
-title: WindowsTerminal
+title: WindowsTerminal的配置
 top: false
 cover: false
 date: 2020-03-18 22:48:23
@@ -10,7 +10,7 @@ summary: 一款美观的可以代替power shell的软件——WindowsTerminal
 password:
 ---
 
-
+<!--more-->
 
 # 发现
 

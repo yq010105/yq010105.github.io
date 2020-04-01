@@ -1,12 +1,14 @@
 ---
-title: Bilibili Api
+title: Bilibili提供的一些api
 date: 2020-02-15 13:26:23
 categories: 资源力
-summary: Bilibili api 相关信息和介绍
+summary: Bilibili提供的api的相关信息和介绍
 tags:
   - Bilibili
   - Api
 ---
+
+<!--more-->
 
 ## 1. up 信息，名字，等级，视频总播放量，文章总浏览数
 

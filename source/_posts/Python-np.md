@@ -1,5 +1,5 @@
 ---
-title: Python_np
+title: Python中numpy库的学习
 date: 2020-02-21 12:06:22
 summary: Python中numpy轮子，用来处理数据
 categories: 学习力

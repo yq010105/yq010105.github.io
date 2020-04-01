@@ -1,12 +1,14 @@
 ---
-title: Pycharm questions
+title: Pycharm的一些问题
 date: 2020-02-04 23:01:44
-summary: 使用 Pycharm 遇到的问题,现以转用vscode
+summary: 使用 Pycharm 遇到的问题,现已转用vscode
 categories: 无力
 tags:
   - Python
   - Questions
 ---
+
+<!--more-->
 
 **使用 Pycharm 遇到的问题**
 _VS code 天下第一_

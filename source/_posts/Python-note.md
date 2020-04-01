@@ -1,7 +1,7 @@
 ---
 title: Python-Note
 date: 2020-02-09 15:38:38
-summary: Python 语言学习笔记
+summary: Python 语言学习笔记本
 categories: 学习力
 tags:
   - Python
@@ -493,3 +493,18 @@ boy:good:doiido:hello
 ```
 
 > 参考[博客网站](https://www.cnblogs.com/sui776265233/p/10755525.html)
+
+
+## 8.4 ord() & chr()
+
+ord()
+将字符转化为ascii码
+
+chr()
+将ascii码转化为字母或实际数字
+
+```python
+ord('a')  # 返回ASCII码 97
+
+chr(97)   # 返回 字母'a'
+```

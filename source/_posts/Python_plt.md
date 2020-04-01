@@ -1,5 +1,5 @@
 ---
-title: Python_Plt
+title: Python中Plt库的学习
 date: 2020-02-21 11:37:01
 summary: Python plt 的学习过程，可以让数据可视化，还可以展示图像
 categories: 学习力

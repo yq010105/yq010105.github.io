@@ -2,11 +2,13 @@
 title: Java-Note
 date: 2020-02-15 19:58:04
 categories: 学习力
-summary: Java 语言学习笔记
+summary: Java 语言学习笔记本
 tags:
   - Java
   - Note
 ---
+
+<!--more-->
 
 > [java 参考学习教程](https://www.runoob.com/java/java-basic-syntax.html)
 

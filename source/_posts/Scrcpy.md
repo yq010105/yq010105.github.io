@@ -1,5 +1,5 @@
 ---
-title: Scrcpy手机投屏到电脑
+title: 用Scrcpy将手机投屏到电脑
 img: /img/pic/6.jpg
 top: false
 cover: false
@@ -12,6 +12,8 @@ summary: Scrcpy的使用教程
 ---
 
 [Scrcpy](https://github.com/Genymobile/scrcpy)是一款可以将安卓手机投屏到电脑上的开源软件，在电脑上控制手机，无需 root 手机
+
+<!--more-->
 
 **用前提示：**
 安卓系统版本要求 5.0 以上

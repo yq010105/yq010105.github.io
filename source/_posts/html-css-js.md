@@ -1,14 +1,16 @@
 ---
-title: html/css/js基础知识
+title: 前端开发的基础知识
 top: false
 cover: false
 date: 2020-03-25 12:04:47
 categories: 学习力
 tags:
   - Vue
-summary: 学习前端前的基础知识-html/css/js
+summary: 学习前端前的基础知识，对，没错，就是html、css和js
 password:
 ---
+
+<!--more-->
 
 **参考资料**（大佬的笔记）
 
@@ -20,7 +22,7 @@ password:
 > Node.js + Gulp 知识点汇总 https://blog.csdn.net/wuyxinu/article/details/103774211
 
 **学习思路**
-HTML 入门 →CSS 入门 →HTML 进阶 →CSS 进阶 →JavaScript 入门
+HTML 入门 →**CSS 入门** →HTML 进阶 →CSS 进阶 →JavaScript 入门
 →jQuery 入门 →ASP.NET 入门（或 PHP 入门）→Ajax→ASP.NET 进阶（或 PHP 进阶）
 
 # 1. html/html5 的基础

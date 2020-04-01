@@ -1,5 +1,5 @@
 ---
-title: Python_openpyxl
+title: Python中openpyxl库的学习
 date: 2020-02-22 14:40:22
 summary: Python openpyxl的操作方法,用python操作excel
 categories: 学习力

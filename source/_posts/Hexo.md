@@ -1,11 +1,13 @@
 ---
-title: Hexo
+title: Hexo搭建博客的基本知识
 date: 2020-02-04 15:34:18
 categories: 技术力
-summary: Hexo博客基本操作
+summary: Hexo博客基本操作，包括主题的修改和博客文件的备份等等
 tags:
   - Hexo
 ---
+
+<!--more-->
 
 > **建立 hexo_blog，参考 b 站 up:[CodeSheep](https://space.bilibili.com/384068749)的[视频](https://www.bilibili.com/video/av44544186)**
 >

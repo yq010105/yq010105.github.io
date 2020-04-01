@@ -1,11 +1,13 @@
 ---
-title: Markdown
+title: Markdown基本知识
 date: 2020-02-08 12:00:45
 categories: 学习力
-summary: 关于我使用 Markdown 以来学到的知识
+summary: 关于我使用 Markdown 以来学到的知识，即markdown的操作方法
 tags:
   - Markdown
 ---
+
+<!--more-->
 
 ## 1. 空格
 

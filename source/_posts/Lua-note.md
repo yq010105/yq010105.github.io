@@ -1,5 +1,5 @@
 ---
-title: Lua-note
+title: Lua-Note
 img: /img/pic/1.jpg
 top: false
 cover: false
@@ -8,9 +8,11 @@ categories: 学习力
 tags:
   - Lua
   - Note
-summary: 关于lua语言的学习，听说跟c差不多
+summary: 关于lua语言的学习，听说跟c差不多，Lua语言学习笔记本
 password:
 ---
+
+<!--more-->
 
 # 1. 基础知识
 

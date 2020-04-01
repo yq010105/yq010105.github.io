@@ -1,12 +1,14 @@
 ---
-title: Python_Bilibili_Api
+title: 用Python写的一些获取b站信息的小程序
 date: 2020-02-14 14:31:32
-summary: 用bilibili提供的api基于python做出的几个小栗子，获取信息
+summary: 用bilibili提供的api基于python做出的几个小栗子，获取信息，‘搞’b站，从基础开始
 categories: 技术力
 tags:
   - Python
   - Bilibili
 ---
+
+<!--more-->
 
 **bilibili 提供的 api 接口(一串 json 字符)**
 _让基于 bilibili 的开发更简单_

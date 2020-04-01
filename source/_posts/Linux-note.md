@@ -1,5 +1,5 @@
 ---
-title: Linux-note
+title: Linux-Note
 img: 
 top: false
 cover: false
@@ -8,9 +8,11 @@ categories: 学习力
 tags:
     - Linux
     - Note
-summary: 关于Linux相关知识的学习
+summary: 关于Linux相关知识的学习，Linux系统学习笔记
 password:
 ---
+
+<!--more-->
 
 # 1. Linux文件系统的概况
 

@@ -1,15 +1,17 @@
 ---
-title: Python_pip
+title: Python在终端中如何使用pip命令
 top: false
 cover: false
 date: 2020-02-27 15:10:05
 categories: 学习力
 tags:
   - Python
-summary: pip 的使用方法
+summary: pip 的使用方法，安装--基本操作
 ---
 
 > [参考博客](https://blog.csdn.net/qq_15260769/article/details/80731407)
+
+<!--more-->
 
 # 1. pip 自身的安装，更新，卸载
 

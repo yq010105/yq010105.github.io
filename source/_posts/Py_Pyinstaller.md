@@ -1,11 +1,13 @@
 ---
-title: Python Pyinstaller
+title: Python中Pyinstaller库的学习
 date: 2020-02-13 17:36:51
 categories: 学习力
 summary: Pyinstaller 可以将 python 文件打包成 exe 可执行文件
 tags:
   - Python
 ---
+
+<!--more-->
 
 **安装**
 **`pip3 install pyinstaller`**
