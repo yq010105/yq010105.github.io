@@ -6,6 +6,7 @@ date: 2020-03-25 12:04:47
 categories: 学习力
 tags:
   - Vue
+  - Note
 summary: 学习前端前的基础知识，对，没错，就是html、css和js
 password:
 ---

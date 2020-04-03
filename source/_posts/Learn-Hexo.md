@@ -31,15 +31,20 @@ tags:
 ### 1.2 blog 分支
 
 - 6、将当前目录下修改的所有代码从工作区添加到暂存区 . 代表当前目录
-  > `git add .`
+  
+  `git add .`
 - 7、将缓存区内容添加到本地仓库
-  > `git commit -m "提交信息"`
+  
+  `git commit -m "提交信息"`
 - 8、将本地版本库推送到远程服务器,将本地库如果设置了 blog 为默认分支，可以直接 git push
-  > `git push origin blog`
+  
+  `git push origin blog`
 - 9、先将远程仓库 master 中的信息同步到本地仓库 master 中
-  > `git pull origin master`
+  
+  `git pull origin master`
 - 10、查看工作区代码相对于暂存区的差别
-  > `git status`
+  
+  `git status`
 
 > 参考[简书网站](https://www.jianshu.com/p/2e1d551b8261 "简书")
 
