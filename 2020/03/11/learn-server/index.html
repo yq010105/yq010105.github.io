@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Python中PyQt库的学习, Yun.Qi">
-    <meta name="description" content="学习PyQt来做GUI，因为萌芽杯的需要">
+    <meta name="keywords" content="服务器学习, Yun.Qi">
+    <meta name="description" content="从零开始的服务器学习(白嫖到阿里云服务器后开始了解一些服务器的基本知识)">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python中PyQt库的学习 | Yun.Qi</title>
+    <title>服务器学习 | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon2.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/29.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python中PyQt库的学习</h1>
+                    <h1 class="description center-align post-title">服务器学习</h1>
                 </div>
             </div>
         </div>
@@ -439,8 +439,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/Server/">
+                                <span class="chip bg-color">Server</span>
                             </a>
                         
                     </div>
@@ -464,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-04-02
+                    2020-03-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-02
+                    2020-04-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    466
+                    1,232
                 </div>
                 
 
@@ -491,105 +491,106 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>初步的代码理解</strong><br><em>先会用个大概，浅显的理解</em></p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> os<span class="token punctuation">,</span>sys
-<span class="token keyword">from</span> PyQt5 <span class="token keyword">import</span> QtCore<span class="token punctuation">,</span>QtWidgets<span class="token punctuation">,</span>QtGui
-<span class="token keyword">import</span> clock <span class="token keyword">as</span> cl
+                <a id="more"></a>
 
-<span class="token comment" spellcheck="true"># 打开时的提示</span>
-<span class="token keyword">def</span> <span class="token function">tipclock1</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    label <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QLabel<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setGeometry<span class="token punctuation">(</span>QtCore<span class="token punctuation">.</span>QRect<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">300</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setFont<span class="token punctuation">(</span>QtGui<span class="token punctuation">.</span>QFont<span class="token punctuation">(</span><span class="token string">'Roman times'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'桌面表针已打开'</span><span class="token punctuation">)</span>
+<h1 id="1-入门概述"><a href="#1-入门概述" class="headerlink" title="1. 入门概述"></a>1. 入门概述</h1><p>一台云服务器（以下简称 ECS 实例）由实例规格、镜像、块存储、快照、安全组、弹性网卡等基础计算组件组成并协同提供服务。一般来说，阿里云服务器、云服务器、云服务器 ECS、ECS 实例等均指代云服务器 ECS。其中：</p>
+<ul>
+<li>实例规格：定义了 ECS 实例的 vCPU 和内存的配置，是计算能力的体现。</li>
+<li>镜像：提供启动 ECS 实例所需的所有信息，包括操作系统和预装软件。</li>
+<li>块存储：提供存储能力，包括系统盘和数据盘。存储类型包括云盘和本地盘等多种不同类型的磁盘。就像硬盘一样，您可以对挂载到 ECS 实例上的云盘做分区、格式化、创建文件系统等操作，并对数据进行持久化存储。</li>
+<li>网络：使用专有网络（简称 VPC），相当于您自己构建了一个数据中心网络，有自己的路由、交换机和访问策略。</li>
+<li>安全组：用来允许或拒绝公网请求和内网请求，为实例提供防护能力。绝大多数情况下，当实例加入一个新创建的安全组时，在提供业务访问前您都必须添加必要的安全组规则。一般来说，安全组等同于服务器防火<br>墙。</li>
+</ul>
+<h1 id="2-操作"><a href="#2-操作" class="headerlink" title="2. 操作"></a>2. 操作</h1><blockquote>
+<p><a href="https://www.cnblogs.com/minhren/p/12337260.html" target="_blank" rel="noopener">参考博客</a></p>
+</blockquote>
+<h2 id="2-1-登录"><a href="#2-1-登录" class="headerlink" title="2.1 登录"></a>2.1 登录</h2><p><code>ssh root@ip地址</code></p>
+<p>然后输入密码，可以到实例中重置密码</p>
+<h2 id="2-2-更新系统"><a href="#2-2-更新系统" class="headerlink" title="2.2 更新系统"></a>2.2 更新系统</h2><p><code>apt-get update</code></p>
+<h2 id="2-3-升级软件"><a href="#2-3-升级软件" class="headerlink" title="2.3 升级软件"></a>2.3 升级软件</h2><p><code>apt-get install upgrade</code><br>或者<br><code>apt-get upgrade</code></p>
+<h2 id="2-4-接着安装桌面系统"><a href="#2-4-接着安装桌面系统" class="headerlink" title="2.4 接着安装桌面系统"></a>2.4 接着安装桌面系统</h2><p><code>apt-get install ubuntu-desktop</code></p>
+<h2 id="2-5-打开"><a href="#2-5-打开" class="headerlink" title="2.5 打开"></a>2.5 打开</h2><p>等到图形界面安装完成输入 reboot 指令进行重启.接着我们用控制台里的远程连接管理:要选 VNC,如图</p>
+<p><img src="https://img2018.cnblogs.com/i-beta/828103/202002/828103-20200220203209860-193153872.png" alt="图片链接"></p>
+<p>然后输入远程连接密码</p>
+<h1 id="3-连接服务器的方法"><a href="#3-连接服务器的方法" class="headerlink" title="3. 连接服务器的方法"></a>3. 连接服务器的方法</h1><h2 id="3-1-用-cmder-的-ssh"><a href="#3-1-用-cmder-的-ssh" class="headerlink" title="3.1 用 cmder 的 ssh"></a>3.1 用 cmder 的 ssh</h2><p><code>ssh root@ip</code><br>然后输入密码，即可连接</p>
+<h2 id="3-2-使用网页端的-VNC-连接"><a href="#3-2-使用网页端的-VNC-连接" class="headerlink" title="3.2 使用网页端的 VNC 连接"></a>3.2 使用网页端的 VNC 连接</h2><p>在阿里云服务器实例中的远程连接中有一个 VNC 连接，网页版的连接占用小但是太卡了</p>
+<h2 id="3-3-使用-Xshell-连接服务器"><a href="#3-3-使用-Xshell-连接服务器" class="headerlink" title="3.3 使用 Xshell 连接服务器"></a>3.3 使用 Xshell 连接服务器</h2><ul>
+<li>Xshell:跟 cmder 差不多都是 ssh 连接然后命令行操作</li>
+</ul>
+<ul>
+<li>Xftp:可以在本地与服务器之间传输文件</li>
+<li>Xmanager:可以左到与 VNC 一样显示服务器的图形界面</li>
+</ul>
+<h1 id="服务器的一些用法（菜鸟）"><a href="#服务器的一些用法（菜鸟）" class="headerlink" title="服务器的一些用法（菜鸟）"></a>服务器的一些用法（菜鸟）</h1><h2 id="1-搭建网站"><a href="#1-搭建网站" class="headerlink" title="1. 搭建网站"></a>1. 搭建网站</h2><h3 id="1-1-第一步学习"><a href="#1-1-第一步学习" class="headerlink" title="1.1 第一步学习"></a>1.1 第一步学习</h3><ul>
+<li>前端:html+css+js/vue 框架</li>
+<li>后端:Django</li>
+<li>数据库:Mysql</li>
+<li>Linux 知识</li>
+</ul>
+<h3 id="1-2-使用框架"><a href="#1-2-使用框架" class="headerlink" title="1.2 使用框架"></a>1.2 使用框架</h3><p>word press + 主题</p>
+<h3 id="1-3-另一种方式"><a href="#1-3-另一种方式" class="headerlink" title="1.3 另一种方式"></a>1.3 另一种方式</h3><blockquote>
+<p>将本地的 hexo 博客内容部署到阿里云服务器：主要参考<a href="https://www.zhihu.com/question/60329559" target="_blank" rel="noopener">大佬的教程</a></p>
+</blockquote>
+<p>安装 nginx 和 git，我的是 Ubuntu，所以</p>
+<pre><code>apt-get update
+apt-get install nginx
+apt-get install git</code></pre><p>新建 git 用户，并设置密码</p>
+<pre><code>adduser git
+passwd</code></pre><p>切换到 git 用户<code>su git</code></p>
+<p>在用户目录下新建.git 目录</p>
+<pre><code>cd ~  # cd到用户目录
+mkdir .git
+cd .git</code></pre><p>将本地的密匙文件<code>id_rsa.pub</code>内容保存到<code>.git</code>目录下的<code>authorized_keys</code></p>
+<pre><code>vim authorized_keys</code></pre><p>使用vim将密匙粘贴在该文件中，然后保存退出就可以使用git用户ssh到服务器了</p>
+<p><code>ssh git@ip地址</code></p>
+<p>成功后，建立git库</p>
+<pre><code>mkdir hexo.git
+cd hexo.git
+git init --bare</code></pre><p>然后设置显示成网页</p>
+<pre><code>cd hooks 
+vim post-receive</code></pre><p>将一下内容写入到<code>post-receive</code>中</p>
+<pre><code>#!/bin/bash
 
-<span class="token keyword">def</span> <span class="token function">tipimg1</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    label <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QLabel<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setGeometry<span class="token punctuation">(</span>QtCore<span class="token punctuation">.</span>QRect<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">350</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setFont<span class="token punctuation">(</span>QtGui<span class="token punctuation">.</span>QFont<span class="token punctuation">(</span><span class="token string">'Roman times'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'图像识别已打开'</span><span class="token punctuation">)</span>
+rm -rf /home/git/hexo
+git clone /home/git/hexo.git /home/git/hexo
 
-<span class="token keyword">def</span> <span class="token function">tipdata1</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    label <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QLabel<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setGeometry<span class="token punctuation">(</span>QtCore<span class="token punctuation">.</span>QRect<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setFont<span class="token punctuation">(</span>QtGui<span class="token punctuation">.</span>QFont<span class="token punctuation">(</span><span class="token string">'Roman times'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'数据分析已打开'</span><span class="token punctuation">)</span>
+rm -rf /usr/share/nginx/hexo/*
+mv /home/git/hexo/* /usr/share/nginx/hexo</code></pre><p>修改执行权限</p>
+<p><code>chmod a+x post-receive</code></p>
+<p>配置nginx</p>
+<p><code>cd /usr/share/nginx</code></p>
+<p>切换root用户</p>
+<pre><code>su
 
-<span class="token comment" spellcheck="true"># 关闭时的提示</span>
-<span class="token keyword">def</span> <span class="token function">tipclock0</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    label <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QLabel<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setGeometry<span class="token punctuation">(</span>QtCore<span class="token punctuation">.</span>QRect<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span><span class="token number">300</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setFont<span class="token punctuation">(</span>QtGui<span class="token punctuation">.</span>QFont<span class="token punctuation">(</span><span class="token string">'Roman times'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'桌面表针已关闭'</span><span class="token punctuation">)</span>
+创建hexo网页目录
+mkdir hexo 
 
-<span class="token keyword">def</span> <span class="token function">tipimg0</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    label <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QLabel<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setGeometry<span class="token punctuation">(</span>QtCore<span class="token punctuation">.</span>QRect<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span><span class="token number">350</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setFont<span class="token punctuation">(</span>QtGui<span class="token punctuation">.</span>QFont<span class="token punctuation">(</span><span class="token string">'Roman times'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'图像识别已关闭'</span><span class="token punctuation">)</span>
+将文件夹所有者设置为git
+chown git hexo 
+chgrp git hexo </code></pre><p>到nginx中修改配置</p>
+<pre><code>cd /etc/nginx
+vim nginx.conf
 
-<span class="token keyword">def</span> <span class="token function">tipdata0</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    label <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QLabel<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setGeometry<span class="token punctuation">(</span>QtCore<span class="token punctuation">.</span>QRect<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">,</span><span class="token number">400</span><span class="token punctuation">,</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setFont<span class="token punctuation">(</span>QtGui<span class="token punctuation">.</span>QFont<span class="token punctuation">(</span><span class="token string">'Roman times'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'数据分析已关闭'</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 主界面</span>
-<span class="token keyword">def</span> <span class="token function">get_gui</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 位置w，位置h，大小w，大小h</span>
-    w<span class="token punctuation">.</span>setGeometry<span class="token punctuation">(</span><span class="token number">600</span><span class="token punctuation">,</span><span class="token number">300</span><span class="token punctuation">,</span><span class="token number">540</span><span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span>
-    w<span class="token punctuation">.</span>setWindowTitle<span class="token punctuation">(</span><span class="token string">'Python'</span><span class="token punctuation">)</span>
-    w<span class="token punctuation">.</span>setWindowIcon<span class="token punctuation">(</span>QtGui<span class="token punctuation">.</span>QIcon<span class="token punctuation">(</span><span class="token string">'7.ico'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    QtWidgets<span class="token punctuation">.</span>QToolTip<span class="token punctuation">.</span>setFont<span class="token punctuation">(</span>QtGui<span class="token punctuation">.</span>QFont<span class="token punctuation">(</span><span class="token string">'SansSerif'</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    w<span class="token punctuation">.</span>setToolTip<span class="token punctuation">(</span><span class="token string">'This is python'</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
-        label <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QLabel<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
-        label<span class="token punctuation">.</span>setGeometry<span class="token punctuation">(</span>QtCore<span class="token punctuation">.</span>QRect<span class="token punctuation">(</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token operator">+</span>i<span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">220</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        label<span class="token punctuation">.</span>setFont<span class="token punctuation">(</span>QtGui<span class="token punctuation">.</span>QFont<span class="token punctuation">(</span><span class="token string">'Roman times'</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">:</span>
-            label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'打开桌面模拟表针:'</span><span class="token punctuation">)</span>
-            <span class="token comment" spellcheck="true"># tipclock1(w)</span>
-            <span class="token comment" spellcheck="true"># tipclock0(w)</span>
-        <span class="token keyword">elif</span> i <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">:</span>
-            label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'打开识别图像程序:'</span><span class="token punctuation">)</span>
-            <span class="token comment" spellcheck="true"># tipimg1(w)</span>
-            <span class="token comment" spellcheck="true"># tipimg0(w)</span>
-        <span class="token keyword">elif</span> i <span class="token operator">==</span> <span class="token number">2</span> <span class="token punctuation">:</span>
-            label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'打开数据分析程序:'</span><span class="token punctuation">)</span>
-            <span class="token comment" spellcheck="true"># tipdata1(w)</span>
-            <span class="token comment" spellcheck="true"># tipdata0(w)</span>
-        <span class="token keyword">elif</span> i <span class="token operator">==</span> <span class="token number">3</span> <span class="token punctuation">:</span>
-            label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'打开桌面模拟表针:'</span><span class="token punctuation">)</span>
-        <span class="token keyword">else</span> <span class="token punctuation">:</span>
-            label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'打开桌面模拟表针:'</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># text = QtWidgets.QLineEdit(w)</span>
-        <span class="token comment" spellcheck="true"># text.setGeometry(QtCore.QRect(150,30,160,30))</span>
-
-        button <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QPushButton<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
-        button<span class="token punctuation">.</span>setGeometry<span class="token punctuation">(</span>QtCore<span class="token punctuation">.</span>QRect<span class="token punctuation">(</span><span class="token number">280</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token operator">+</span>i<span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># button.move(150,100)</span>
-        button<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'打开'</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">:</span>
-            button<span class="token punctuation">.</span>clicked<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>cl<span class="token punctuation">.</span>drawuse<span class="token punctuation">)</span>
-
-        <span class="token keyword">if</span> button<span class="token punctuation">.</span>isActiveWindow<span class="token punctuation">:</span>
-            tipclock1<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
-
-        button <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QPushButton<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
-        button<span class="token punctuation">.</span>setGeometry<span class="token punctuation">(</span>QtCore<span class="token punctuation">.</span>QRect<span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token operator">+</span>i<span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        button<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">'关闭'</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true"># if i == 0 :</span>
-            <span class="token comment" spellcheck="true"># button.clicked.connect()</span>
-
-    w<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-
-    app <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QApplication<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">)</span>
-    w <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QWidget<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    get_gui<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
-    sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span>app<span class="token punctuation">.</span>exec_<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+修改配置文件，修改location的目录,即加一行
+root /usr/share/nginx/hexo;</code></pre><p>然后将本地的hexo文件夹中的配置文件<code>_config.yml</code>修改<code>deploy</code></p>
+<p><code>git@ip地址:hexo.git</code></p>
+<p>如我的</p>
+<pre><code>deploy:
+  type: git
+  repo: git@服务器ip地址:hexo.git</code></pre><h2 id="2-内网穿透"><a href="#2-内网穿透" class="headerlink" title="2. 内网穿透"></a>2. 内网穿透</h2><h2 id="3-搭建一个文件系统"><a href="#3-搭建一个文件系统" class="headerlink" title="3. 搭建一个文件系统"></a>3. 搭建一个文件系统</h2><p>类似云盘</p>
+<h3 id="3-1-搭建网盘owncloud"><a href="#3-1-搭建网盘owncloud" class="headerlink" title="3.1 搭建网盘owncloud"></a>3.1 搭建网盘owncloud</h3><blockquote>
+<p>主要参考<a href="https://luomuxiaoxiao.com/?p=722" target="_blank" rel="noopener">这位大佬的教程</a><br>要先看<a href="https://luomuxiaoxiao.com/?p=707" target="_blank" rel="noopener">这篇</a></p>
+</blockquote>
+<p>只要跟着做一遍基本就能安装上，但是也有几个坑</p>
+<p>几个坑：最后的登录时的用户名要在<code>/etc/mysql</code>下的<code>debian.cnf</code>中查看<br>直接输入：<br><code>sudo vim/vi /etc/mysql/debian.cnf</code><br>查看数据库的用户名密码，然后就可以了</p>
+<p>可能我的服务器宽带不够hhh，搭建网盘还是没速度hhh，算了，等毕业以后在弄这些东西，主要是那个备案太烦了，太难了。所以现在光有域名没有备案，就不行，hhh只能通过ip地址访问hhh，太low了</p>
+<h2 id="4-爬虫"><a href="#4-爬虫" class="headerlink" title="4. 爬虫"></a>4. 爬虫</h2><p>初步实现的爬虫程序：</p>
+<ul>
+<li><p>哔哩哔哩脚本</p>
+</li>
+<li><p>图片爬取</p>
+</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -633,7 +634,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yq010105.github.io/2020/04/02/python-pyqt/">http://yq010105.github.io/2020/04/02/python-pyqt/</a>
+                    <a href="http://yq010105.github.io/2020/03/11/learn-server/">http://yq010105.github.io/2020/03/11/learn-server/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -671,8 +672,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/Server/">
+                                    <span class="chip bg-color">Server</span>
                                 </a>
                             
                         </div>
@@ -717,23 +718,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/04/03/yq-fund/">
+                <a href="/2020/03/15/learn-linux/">
                     <div class="card-image">
                         
-                        <img src="/img/pic/fund.jpeg" class="responsive-img" alt="理财笔记">
                         
-                        <span class="card-title">理财笔记</span>
+                        <img src="/medias/wallhaven/35.jpg" class="responsive-img" alt="Linux-Note">
+                        
+                        <span class="card-title">Linux-Note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录我开始理财学到的东西吧，随缘写一写
+                            关于Linux相关知识的学习，Linux系统学习笔记
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-03
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-15
                         </span>
                         <span class="publish-author">
                             
@@ -750,8 +752,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Life/">
-                        <span class="chip bg-color">Life</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Note/">
+                        <span class="chip bg-color">Note</span>
                     </a>
                     
                 </div>
@@ -765,24 +771,23 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/31/python-schedule/">
+                <a href="/2020/03/04/note-lua/">
                     <div class="card-image">
                         
+                        <img src="/img/pic/1.jpg" class="responsive-img" alt="Lua-Note">
                         
-                        <img src="/medias/wallhaven/26.jpg" class="responsive-img" alt="Python中schedule库的学习">
-                        
-                        <span class="card-title">Python中schedule库的学习</span>
+                        <span class="card-title">Lua-Note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python中的schedule库的使用
+                            关于lua语言的学习，听说跟c差不多，Lua语言学习笔记本
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-04
                             </span>
                         <span class="publish-author">
                             
@@ -799,8 +804,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/Note/">
+                        <span class="chip bg-color">Note</span>
+                    </a>
+                    
+                    <a href="/tags/Lua/">
+                        <span class="chip bg-color">Lua</span>
                     </a>
                     
                 </div>
