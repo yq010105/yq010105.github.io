@@ -1,5 +1,5 @@
 ---
-title: Spider_Note
+title: Spider-Note
 date: 2020-02-08 11:40:18
 summary: python爬虫学习，根据GitHub上的一篇教程所学到的知识
 categories: 学习力

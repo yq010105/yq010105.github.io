@@ -413,3 +413,9 @@ if __name__ == '__main__':
     imgurl_list = get_pic()
     get_img(imgurl_list)
 ```
+
+## 4.2 多线程爬取
+
+```python
+遇到了一个bug，等到bug解决再写上来
+```
