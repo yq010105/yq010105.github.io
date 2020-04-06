@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Pycharm的一些问题, Yun.Qi">
-    <meta name="description" content="使用 Pycharm 遇到的问题,现已转用vscode">
+    <meta name="keywords" content="Python学习中遇到的问题, Yun.Qi">
+    <meta name="description" content="Python的一些问题，包括bug，还有编辑器的使用问题等等">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Pycharm的一些问题 | Yun.Qi</title>
+    <title>Python学习中遇到的问题 | Yun.Qi</title>
     <link rel="icon" type="image/png" href="/favicon2.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -317,12 +317,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/35.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Pycharm的一些问题</h1>
+                    <h1 class="description center-align post-title">Python学习中遇到的问题</h1>
                 </div>
             </div>
         </div>
@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-02
+                    2020-04-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    122
+                    691
                 </div>
                 
 
@@ -497,12 +497,134 @@
             <div id="articleContent">
                 <a id="more"></a>
 
-<p><strong>使用 Pycharm 遇到的问题</strong><br><em>VS code 天下第一</em></p>
-<!-- more -->
-
-<h1 id="1-新版-pycharm-问题"><a href="#1-新版-pycharm-问题" class="headerlink" title="1. 新版 pycharm 问题"></a>1. 新版 pycharm 问题</h1><h2 id="问题-1：pycharm-双击打不开"><a href="#问题-1：pycharm-双击打不开" class="headerlink" title="问题 1：pycharm 双击打不开"></a>问题 1：pycharm 双击打不开</h2><p>已解决：可能时进程中已经有了 pycharm，在任务管理器里结束进程，然后重新打开</p>
+<h1 id="1-新版-pycharm-问题"><a href="#1-新版-pycharm-问题" class="headerlink" title="1. 新版 pycharm 问题"></a>1. 新版 pycharm 问题</h1><p><strong>使用 Pycharm 遇到的问题</strong><br><em>VS code 天下第一</em></p>
+<h2 id="问题-1：pycharm-双击打不开"><a href="#问题-1：pycharm-双击打不开" class="headerlink" title="问题 1：pycharm 双击打不开"></a>问题 1：pycharm 双击打不开</h2><p>已解决：可能时进程中已经有了 pycharm，在任务管理器里结束进程，然后重新打开</p>
 <h2 id="问题-2：pycharm-打开后回有两个窗口，而且不能再窗口上操作"><a href="#问题-2：pycharm-打开后回有两个窗口，而且不能再窗口上操作" class="headerlink" title="问题 2：pycharm 打开后回有两个窗口，而且不能再窗口上操作"></a>问题 2：pycharm 打开后回有两个窗口，而且不能再窗口上操作</h2><p>重装可以解决，但不知道什么原因，猜测可能是打开文件太多，加载不了</p>
-<h1 id="2-现已经转用-vs-code-真香"><a href="#2-现已经转用-vs-code-真香" class="headerlink" title="2. 现已经转用 vs code 真香"></a>2. 现已经转用 vs code 真香</h1><script>
+<h1 id="2-Python的一些BUG"><a href="#2-Python的一些BUG" class="headerlink" title="2. Python的一些BUG"></a>2. Python的一些BUG</h1><p>写程序用一分钟，找BUG需要一天</p>
+<h2 id="2-1-class传参的一些问题"><a href="#2-1-class传参的一些问题" class="headerlink" title="2.1 class传参的一些问题"></a>2.1 class传参的一些问题</h2><p><em>takes 2 positional arguments but 30 were given</em><br>大概就是只需要两个位置参数，但是我给了30个，<code>黑人问号？？？</code></p>
+<p>就是这个程序， 主要就是用多线程来爬取图片，然后到第二部，获得子页面的图片url资源地址时出错，无法解决</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> threading
+<span class="token keyword">import</span> time
+<span class="token keyword">import</span> requests
+<span class="token keyword">import</span> lxml<span class="token punctuation">.</span>html
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> os
+<span class="token keyword">from</span> multiprocessing <span class="token keyword">import</span> Pool
+
+<span class="token comment" spellcheck="true"># 创建 Thread 的子类</span>
+<span class="token keyword">class</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span>threading<span class="token punctuation">.</span>Thread<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> func<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        threading<span class="token punctuation">.</span>Thread<span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>func <span class="token operator">=</span> func
+        self<span class="token punctuation">.</span>args <span class="token operator">=</span> args
+        self<span class="token punctuation">.</span>result <span class="token operator">=</span> None
+
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>result <span class="token operator">=</span> self<span class="token punctuation">.</span>func<span class="token punctuation">(</span><span class="token operator">*</span>self<span class="token punctuation">.</span>args<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">getresult</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>result
+
+<span class="token comment" spellcheck="true"># 创建爬取图片的类</span>
+<span class="token keyword">class</span> <span class="token class-name">WallGet</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> headers<span class="token punctuation">,</span> pages<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>headers <span class="token operator">=</span> headers
+        self<span class="token punctuation">.</span>pages <span class="token operator">=</span> pages
+
+    <span class="token comment" spellcheck="true"># 很快就完了</span>
+    <span class="token keyword">def</span> <span class="token function">get_url</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        pages <span class="token operator">=</span> self<span class="token punctuation">.</span>pages
+        url_pics <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        page <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> page <span class="token operator">&lt;=</span> int<span class="token punctuation">(</span>pages<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            url <span class="token operator">=</span> <span class="token string">'https://wallhaven.cc/search?categories=010&amp;purity=100&amp;resolutions=1280x800&amp;sorting=relevance&amp;order=desc&amp;page='</span> <span class="token operator">+</span> \
+                str<span class="token punctuation">(</span>page<span class="token punctuation">)</span>
+            html <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>self<span class="token punctuation">.</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            selector <span class="token operator">=</span> lxml<span class="token punctuation">.</span>html<span class="token punctuation">.</span>fromstring<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+
+            url_pic <span class="token operator">=</span> selector<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span>
+                <span class="token string">'//*[@id="thumbs"]/section/ul/li/figure/a/@href'</span><span class="token punctuation">)</span>
+            url_pics<span class="token punctuation">.</span>append<span class="token punctuation">(</span>url_pic<span class="token punctuation">)</span>
+            page <span class="token operator">+=</span> <span class="token number">1</span>
+        urls <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> url_pic <span class="token keyword">in</span> url_pics<span class="token punctuation">:</span>
+            <span class="token keyword">for</span> url <span class="token keyword">in</span> url_pic<span class="token punctuation">:</span>
+                urls<span class="token punctuation">.</span>append<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> urls
+
+    <span class="token comment" spellcheck="true"># 单个图片url的获取</span>
+    <span class="token keyword">def</span> <span class="token function">get_picurl</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        html2 <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>self<span class="token punctuation">.</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>content<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        img_url <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'"wallpaper" src="(.*?)"'</span><span class="token punctuation">,</span> html2<span class="token punctuation">,</span> re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>img_url<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> img_url
+
+    <span class="token keyword">def</span> <span class="token function">down_img</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> imgurls<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        i <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">for</span> imgurl <span class="token keyword">in</span> imgurls<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'下载图片第{i}张'</span><span class="token punctuation">)</span>
+            <span class="token keyword">try</span><span class="token punctuation">:</span>
+                pic <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>imgurl<span class="token punctuation">,</span> timeout<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+            <span class="token keyword">except</span> requests<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>ConnectionError<span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'图片无法下载'</span><span class="token punctuation">)</span>
+                <span class="token keyword">continue</span>
+            <span class="token keyword">except</span> requests<span class="token punctuation">.</span>exceptions<span class="token punctuation">.</span>ReadTimeout<span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'requests.exceptions.ReadTimeout'</span><span class="token punctuation">)</span>
+                <span class="token keyword">continue</span>
+
+            main_path <span class="token operator">=</span> r<span class="token string">'E:\\wallhaven\\'</span>
+            <span class="token keyword">if</span> <span class="token operator">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>main_path<span class="token punctuation">)</span>
+
+            dir <span class="token operator">=</span> <span class="token string">'E:\\wallhaven\\'</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg'</span>
+
+            <span class="token keyword">with</span> open<span class="token punctuation">(</span>dir<span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+                f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>pic<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
+
+<span class="token comment" spellcheck="true"># 运行主程序</span>
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"User-Agent"</span><span class="token punctuation">:</span> <span class="token string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36"</span><span class="token punctuation">}</span>
+    pages <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'输入要多少页： '</span><span class="token punctuation">)</span>
+    wallget <span class="token operator">=</span> WallGet<span class="token punctuation">(</span>headers<span class="token punctuation">,</span> pages<span class="token punctuation">)</span>
+    urls <span class="token operator">=</span> wallget<span class="token punctuation">.</span>get_url<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'每页图片链接获取完成'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>urls<span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># 调试的时候这句话出现问题</span>
+    <span class="token comment" spellcheck="true"># th = MyThread(wallget.get_picurl,(urls[0]))</span>
+    <span class="token comment" spellcheck="true"># th.start()</span>
+    <span class="token comment" spellcheck="true"># 同样，直接用也会出现问题</span>
+    th2 <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span> wallget<span class="token punctuation">.</span>get_picurl<span class="token punctuation">,</span>args<span class="token operator">=</span><span class="token punctuation">(</span>urls<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    th2<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># print(th.getresult())</span>
+    exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+    l <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> url <span class="token keyword">in</span> urls<span class="token punctuation">:</span>
+        th <span class="token operator">=</span> MyThread<span class="token punctuation">(</span>wallget<span class="token punctuation">.</span>get_picurl<span class="token punctuation">,</span> <span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        th<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        l<span class="token punctuation">.</span>append<span class="token punctuation">(</span>th<span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> l<span class="token punctuation">:</span>
+        i<span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'图片url资源地址获取完成'</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><em>出错提示信息</em></p>
+<pre class="line-numbers language-c"><code class="language-c">Exception in thread Thread<span class="token number">-1</span><span class="token punctuation">:</span>
+<span class="token function">Traceback</span> <span class="token punctuation">(</span>most recent call last<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  File <span class="token string">"D:\py\lib\threading.py"</span><span class="token punctuation">,</span> line <span class="token number">917</span><span class="token punctuation">,</span> in _bootstrap_inner
+    self<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  File <span class="token string">"D:\py\lib\threading.py"</span><span class="token punctuation">,</span> line <span class="token number">865</span><span class="token punctuation">,</span> in run
+    self<span class="token punctuation">.</span><span class="token function">_target</span><span class="token punctuation">(</span><span class="token operator">*</span>self<span class="token punctuation">.</span>_args<span class="token punctuation">,</span> <span class="token operator">*</span><span class="token operator">*</span>self<span class="token punctuation">.</span>_kwargs<span class="token punctuation">)</span>
+TypeError<span class="token punctuation">:</span> <span class="token function">get_picurl</span><span class="token punctuation">(</span><span class="token punctuation">)</span> takes <span class="token number">2</span> positional arguments but <span class="token number">30</span> were given<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -545,7 +667,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yq010105.github.io/2020/02/04/q-pycharm/">http://yq010105.github.io/2020/02/04/q-pycharm/</a>
+                    <a href="http://yq010105.github.io/2020/02/04/q-python/">http://yq010105.github.io/2020/02/04/q-python/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -637,9 +759,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/wallhaven/7.jpg" class="responsive-img" alt="Spider_Note">
+                        <img src="/medias/wallhaven/32.jpg" class="responsive-img" alt="Spider-Note">
                         
-                        <span class="card-title">Spider_Note</span>
+                        <span class="card-title">Spider-Note</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -667,12 +789,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
-                    </a>
-                    
                     <a href="/tags/Spider/">
                         <span class="chip bg-color">Spider</span>
+                    </a>
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                     <a href="/tags/Note/">
@@ -877,7 +999,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.6k</span>&nbsp;字
+                class="white-color">58.2k</span>&nbsp;字
             
             
             
