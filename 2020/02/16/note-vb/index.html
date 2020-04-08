@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-02
+                    2020-04-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    8,754
+                    10,400
                 </div>
                 
 
@@ -1406,6 +1406,184 @@ end sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <li>OLEStartDrag 事件一源控件 OLEDrag 方法被执行或用户做“拖”，操作时发生的事件</li>
 <li>OLEDragOver 事件—在拖动时,经某控件时在该控件上发生的事件</li>
 </ul>
+<h2 id="5-7-Active-X-控件"><a href="#5-7-Active-X-控件" class="headerlink" title="5.7 Active X 控件"></a>5.7 Active X 控件</h2><h3 id="5-7-1-SSTab选项卡控件"><a href="#5-7-1-SSTab选项卡控件" class="headerlink" title="5.7.1 SSTab选项卡控件"></a>5.7.1 SSTab选项卡控件</h3><p>工程–部件–选中Microsoft Tabbed Dialog Control 6.0</p>
+<p>style属性：选项卡样式–0/1：office风格/windows风格<br>Tabs 属性：控制控件上选项卡的数目<br>Tab 属性 ：决定控件上当前被选定的项</p>
+<h3 id="5-7-2-ProgressBar进度条控件"><a href="#5-7-2-ProgressBar进度条控件" class="headerlink" title="5.7.2 ProgressBar进度条控件"></a>5.7.2 ProgressBar进度条控件</h3><p>工程–部件–选中Microsoft Windows Common Control 6.0</p>
+<p>Max 属性：进度条上限<br>Min 属性：进度条下限<br>Value ：进度值<br>Scrolling ： 卷动方向形式<br>Orientation ： 纵横滚动定位<br>MousePoint ：鼠标指针</p>
+<h3 id="5-7-3-Slide滑动条控件"><a href="#5-7-3-Slide滑动条控件" class="headerlink" title="5.7.3 Slide滑动条控件"></a>5.7.3 Slide滑动条控件</h3><p>工程–部件–选中Microsoft Windows Common Control 6.0</p>
+<p>TickStyle ： 决定控件上滑块及刻度的显示样式<br>TickFrequency ： 决定控件上刻度点的疏密<br>ToolTipText：指针停在该控件上时显示提示信息<br>Orientation ：决定控件在窗体上水平或垂直放置</p>
+<h3 id="5-7-4-MS-Chart控件"><a href="#5-7-4-MS-Chart控件" class="headerlink" title="5.7.4 MS Chart控件"></a>5.7.4 MS Chart控件</h3><p>工程–部件–选中Microsoft Chart Control 6.0(OLEDB)</p>
+<p>BorderStyle ： 决定图表是否有外框线<br>ColumnCount ： 每一格的列数<br>RowCount ： 每一行的列数<br>ChartType ： 选择图表类型<br>TitleText ： 图题<br>ChartData 返回一个数组，该数组包含将要被该图表显示的值</p>
+<p><code>MSChart1.ChartData = 数组</code></p>
+<p><img src="/img/VB/tubiao.png" alt="图表控件"></p>
+<h3 id="5-7-5-UpDown控件"><a href="#5-7-5-UpDown控件" class="headerlink" title="5.7.5 UpDown控件"></a>5.7.5 UpDown控件</h3><p>工程–部件–选中Microsoft Windows Common Control-2 6.0</p>
+<p>一对箭头按钮控件，单击按钮，增减数值<br>UpDown通常与Textbox绑定</p>
+<p>Max/Min 最大值最小值<br>Increment 指定每次单击上箭头或下箭头时Value的变化量</p>
+<pre class="line-numbers language-vb"><code class="language-vb">private sub updown1_downclick()
+    text1.updown1.value
+end sub
+private sub updow n1_upclick()
+    text1.updown1.value
+end sub <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-7-6-ActiveX控件的创建"><a href="#5-7-6-ActiveX控件的创建" class="headerlink" title="5.7.6 ActiveX控件的创建"></a>5.7.6 ActiveX控件的创建</h3><p>ActiveX是 Microsoft对于一系列策略性面向对象程序技术和工具称呼,其中主要的技术是组件对象模型(COM)。</p>
+<p><img src="/img/VB/activex.png" alt="ActiveX的三种表现形式"></p>
+<p>ActiveX部件：可执行代码：exe、dll、ocx文件</p>
+<p>ActiveX控件标准和非标准文件：以ocx后缀保存在Windows\System目录下<br>ActiveX控件分为：控件和插入对象 、可插入对象就是一个应用程序，如MIcrosoft Word</p>
+<p>创造自己的ActiveX控件</p>
+<ul>
+<li>启动VB，打开 ActiveX控件</li>
+<li>UserControl对象，为AX控件名称，在此进行控件制作</li>
+<li>在代码窗口利用工具中的添加过程，为新的ActiveX控件添加共有的属性、时间等</li>
+<li>界面与代码设计好后，在指定目录生成指定的ocx，完成自制AX控件的工作</li>
+<li>另打开VB，通过增加部件找到所自制的AX控件，放在工具箱上即可使用</li>
+</ul>
+<h2 id="5-8-文件"><a href="#5-8-文件" class="headerlink" title="5.8 文件"></a>5.8 文件</h2><p><img src="/img/VB/file.png" alt="基本概念"></p>
+<h3 id="5-8-1-顺序文件"><a href="#5-8-1-顺序文件" class="headerlink" title="5.8.1 顺序文件"></a>5.8.1 顺序文件</h3><p>ASCII文件，由任何字处理文件建立，在VB中建立，只能按顺序存取记录</p>
+<p>打开文件–读或写文件–关闭文件</p>
+<h4 id="5-8-1-1-顺序文件打开"><a href="#5-8-1-1-顺序文件打开" class="headerlink" title="5.8.1.1 顺序文件打开"></a>5.8.1.1 顺序文件打开</h4><p>格式 Open &lt;文件名&gt; for 方式 as  [#]&lt;文件号&gt;</p>
+<p>Input 只读 / Output 写 / Append 添加方式</p>
+<p>文件号 1 到511 之间的整数</p>
+<p><code>opnn "C:\Data\Stud.dat" For Output As #1</code></p>
+<h4 id="5-8-1-2-顺序文件关闭"><a href="#5-8-1-2-顺序文件关闭" class="headerlink" title="5.8.1.2 顺序文件关闭"></a>5.8.1.2 顺序文件关闭</h4><p>Close 文件号列表</p>
+<p><code>Close #1</code><br><code>Close #1,2,#8</code><br><code>Close</code> 关闭所有</p>
+<h4 id="5-8-1-3-顺序文件的读写"><a href="#5-8-1-3-顺序文件的读写" class="headerlink" title="5.8.1.3 顺序文件的读写"></a>5.8.1.3 顺序文件的读写</h4><p><strong>①写</strong></p>
+<ol>
+<li>Write #文件号,[输出列表]</li>
+</ol>
+<p><code>Write #1,A1,A2,A3</code></p>
+<p>说明</p>
+<ul>
+<li>&lt;输出列表&gt;中各项之间要用逗号分开</li>
+<li>&lt;输出列表&gt;每一项可以是常量、变量或表达式</li>
+<li>写到文件中的各数据间自动插入逗号,字符串自动加上双引号</li>
+<li>所有数据写完后,在最后加入一个回车换行符</li>
+<li>不含&lt;输出列表&gt;时,将在文件中写入一空行</li>
+</ul>
+<p><strong>学号、姓名、成绩1、2</strong>保存到文件中</p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+Dim no, na, g1, g2 As Variant
+Private Sub Command1_Click()
+    no = Text1.Text: na = Text2.Text
+    g1 = Val(Text3.Text): g2 = Val(Text4.Text)
+    Write #2, no, na, g1, g2
+    Text1.Text = "": Text2.Text = "": Text3.Text = "": Text4.Text = ""
+End Sub
+
+Private Sub Command2_Click()
+    Close #2
+    End
+End Sub
+
+Private Sub Form_Load()
+    CommonDialog1.ShowSave
+    Open CommonDialog1.FileName For Append As #2
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="2">
+<li>print #文件号，输出列表</li>
+</ol>
+<p><code>print #2, no ,na, g1, g2</code><br><code>print #2, no; na; g1; g2</code></p>
+<p>将输出列表中的内容写入指定文件<br>说明</p>
+<ul>
+<li>当&lt;输出列表&gt;用逗号分隔时,采用分区格式输出</li>
+<li>当&lt;输出列表&gt;用分号分隔时,采用紧凑格式输出</li>
+<li>所有项将在一行内输出,输出后将自动换行</li>
+<li>可以使用Spc()函数和Tab()函数</li>
+</ul>
+<p><img src="/img/VB/writeprint.png" alt="两者区别"></p>
+<p><strong>②读</strong></p>
+<ol>
+<li>input #文件号,变量列表</li>
+<li>Line input #文件号，变量名</li>
+<li>eof(文件号) 函数</li>
+</ol>
+<p><strong>读取文件中的程序，计算平均成绩</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+Dim num, nam, s1, s2, ave
+
+Private Sub Command1_Click()
+    CommonDialog1.ShowOpen
+    Open CommonDialog1.FileName For Input As #3
+    Text1.Text = ""
+    Do While Not EOF(3)
+   ' 装入用Wite# 语句生成的文件
+        Input #3, num, nam, s1, s2
+        ave = (s1 + s2) / 2
+        Text1.Text = Text1.Text & num & "   " & nam _
+                        & "   " & Str(s1) & "    " & Str(s2) & _
+                        "  " & Str(ave) & Chr(13) & Chr(10)
+    Loop
+    Close #3
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>计算每个同学的平均成绩，并同时将结果与原数据保存到另一个文件</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
+Dim num(100) As String, nam(100) As String
+Dim g(100, 2) As Integer, n As Integer, ave, sum1, sum2, i
+
+Private Sub Command1_Click()
+    CommonDialog1.ShowOpen
+    Open CommonDialog1.FileName For Input As #3
+        n = 0
+        Do While Not EOF(3)
+            n = n + 1
+            Input #3, num(n), nam(n), g(n, 1), g(n, 2)
+        Text1.Text = Text1.Text & "   " & num(n) & _
+        "   " & nam(n) & "    " & Str(g(n, 1)) & _
+        "   " & Str(g(n, 2)) & "    " & Chr(13) & Chr(10)
+        Loop
+End Sub
+
+Private Sub Command2_Click()
+    CommonDialog1.ShowSave
+    Open CommonDialog1.FileName For Output As #4
+    sum1 = 0
+    sum2 = 0
+    Text2.Text = ""
+    For i = 1 To n
+        ave = (g(i, 1) + g(i, 2)) / 2
+        Write #4, num(i), nam(i), g(i, 1), g(i, 2), ave
+        Text2.Text = Text2.Text & "   " & num(i) & _
+        "   " & nam(i) & "   " & Str(g(i, 1)) & "   " & _
+        Str(g(i, 2)) & "   " & Str(ave) & vbCrLf
+        sum1 = sum1 + g(i, 1): sum2 = sum2 + g(i, 2)
+    Next i
+    Text2.Text = Text2.Text & "average" & " " & _
+    Str(sum1 / n) & "   " & Str(sum2 / n)
+    Write #4, "总平均", sum1 / n, sum2 / n
+End Sub
+
+Private Sub Command3_Click()
+    Close #3, #4
+    End
+End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="5-8-2-随机文件"><a href="#5-8-2-随机文件" class="headerlink" title="5.8.2 随机文件"></a>5.8.2 随机文件</h3><p>读写次序任意，记录长度相等，随机文件中的记录常定义为用户自定义类型</p>
+<p><strong>自定义数据类型操作</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">private/public type 自定义类型名
+    元素名 下标 as 类型
+end type<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="/img/VB/sjwjsm1.png" alt=""><br><img src="/img/VB/sjwjsm2.png" alt="说明"></p>
+<p><img src="/img/VB/sjwjex.png" alt="例子"><br><img src="/img/VB/sjwjex1.png" alt="例子"></p>
+<h4 id="5-8-2-1-随机文件打开"><a href="#5-8-2-1-随机文件打开" class="headerlink" title="5.8.2.1 随机文件打开"></a>5.8.2.1 随机文件打开</h4><p><code>open 文件名 [for random] as 文件号 len= 记录长度</code><br>for random 可以省略<br>记录长度：就是自定义类型的大小，可以用len获得<br>若文件不存在，则建立新的文件</p>
+<h4 id="5-8-2-2-随机文件关闭"><a href="#5-8-2-2-随机文件关闭" class="headerlink" title="5.8.2.2 随机文件关闭"></a>5.8.2.2 随机文件关闭</h4><p><code>close #2</code></p>
+<h4 id="5-8-2-3-随机文件写"><a href="#5-8-2-3-随机文件写" class="headerlink" title="5.8.2.3 随机文件写"></a>5.8.2.3 随机文件写</h4><p><code>put 文件号，记录号，变量名</code></p>
+<p><img src="/img/VB/sjwjxie.png" alt="写文件"></p>
+<h4 id="5-8-2-4-随机文件读"><a href="#5-8-2-4-随机文件读" class="headerlink" title="5.8.2.4 随机文件读"></a>5.8.2.4 随机文件读</h4><p><code>get #文件号， 记录号， 变量名</code><br>功能： 将一个一打开的随机文件读入一个变量之中</p>
+<p><img src="/img/VB/sjwjdxex0.png" alt="例子"></p>
+<p><img src="/img/VB/sjwjdxex.png" alt="例子"><br><img src="/img/VB/sjwjdxex1.png" alt="例子"></p>
+<h3 id="5-8-3-总结"><a href="#5-8-3-总结" class="headerlink" title="5.8.3 总结"></a>5.8.3 总结</h3><p><img src="/img/VB/filezongjie.png" alt="文件操作总结"></p>
+<p>开闭 写读</p>
+<ul>
+<li>open 语句</li>
+<li>close 语句</li>
+<li>write\print 语句</li>
+<li>input\line input语句 ， input函数</li>
+</ul>
+<hr>
+<ul>
+<li>open 语句</li>
+<li>close 语句</li>
+<li>put 语句</li>
+<li>get 语句</li>
+</ul>
 <h1 id="6-课程学习过程中练习"><a href="#6-课程学习过程中练习" class="headerlink" title="6. 课程学习过程中练习"></a>6. 课程学习过程中练习</h1><p>第几次课.第几道练习</p>
 <h2 id="2-1-勾选要求变量声明（初学）"><a href="#2-1-勾选要求变量声明（初学）" class="headerlink" title="2.1 勾选要求变量声明（初学）"></a>2.1 勾选要求变量声明（初学）</h2><p>然后每次使用必须先定义变量</p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
@@ -1658,7 +1836,7 @@ Private Sub Command1_Click()
     Call fact(8, s)
     Print 8; s
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="7-学习作业"><a href="#7-学习作业" class="headerlink" title="7. 学习作业"></a>7. 学习作业</h1><h2 id="7-1-第一次作业"><a href="#7-1-第一次作业" class="headerlink" title="7.1 第一次作业"></a>7.1 第一次作业</h2><h3 id="1-倒计时控件"><a href="#1-倒计时控件" class="headerlink" title="1. 倒计时控件"></a>1. 倒计时控件</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDJCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
+<h1 id="7-学习作业"><a href="#7-学习作业" class="headerlink" title="7. 学习作业"></a>7. 学习作业</h1><h2 id="7-1-第一次作业"><a href="#7-1-第一次作业" class="headerlink" title="7.1 第一次作业"></a>7.1 第一次作业</h2><h3 id="1-倒计时控件"><a href="#1-倒计时控件" class="headerlink" title="1. 倒计时控件"></a>1. 倒计时控件</h3><p><img src="/img/VB/zy/zy1_1.png" alt="第一次作业"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Private Sub Command1_Click()
     Timer1.Interval = 50
@@ -1725,7 +1903,7 @@ Private Sub Timer1_Timer()
         End If
     End If
 End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-加法运算器"><a href="#2-加法运算器" class="headerlink" title="2. 加法运算器"></a>2. 加法运算器</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDGCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
+<h3 id="2-加法运算器"><a href="#2-加法运算器" class="headerlink" title="2. 加法运算器"></a>2. 加法运算器</h3><p><img src="/img/VB/zy/zy1_2.png" alt="第一次作业2"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Private Sub Command1_Click(Index As Integer)
     Text3.Text = Val(Text1.Text) + Val(Text2.Text)
@@ -1746,7 +1924,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <li><code>Text1.SetFocus</code>按下按钮后将鼠标指针重新指回<code>Text1</code>的位置，即使焦点回到加数 A 框</li>
 <li>val 将字符型数据转换为数值型数据，str 将数值型转换为字符型</li>
 </ul>
-<h2 id="7-2-第二次作业"><a href="#7-2-第二次作业" class="headerlink" title="7.2 第二次作业"></a>7.2 第二次作业</h2><h3 id="1-华氏度与摄氏度的转换"><a href="#1-华氏度与摄氏度的转换" class="headerlink" title="1. 华氏度与摄氏度的转换"></a>1. 华氏度与摄氏度的转换</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDFDFCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
+<h2 id="7-2-第二次作业"><a href="#7-2-第二次作业" class="headerlink" title="7.2 第二次作业"></a>7.2 第二次作业</h2><h3 id="1-华氏度与摄氏度的转换"><a href="#1-华氏度与摄氏度的转换" class="headerlink" title="1. 华氏度与摄氏度的转换"></a>1. 华氏度与摄氏度的转换</h3><p><img src="/img/VB/zy/zy2_1.png" alt="第二次作业1"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
 Dim C As Variant, F As Variant, CI As Double, FI As Double
@@ -1810,7 +1988,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <li>VB 中的不等于<code>&lt;&gt;</code></li>
 <li>enabled 可以让控件是否响应用户，如正向转换时，关闭逆向开关；逆向转换时，关闭正向开关</li>
 </ul>
-<h3 id="2-二次方程根的求解"><a href="#2-二次方程根的求解" class="headerlink" title="2. 二次方程根的求解"></a>2. 二次方程根的求解</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDEDFCPGJGNGBGHGFCOHAGOGH" alt="作业要求图片"></p>
+<h3 id="2-二次方程根的求解"><a href="#2-二次方程根的求解" class="headerlink" title="2. 二次方程根的求解"></a>2. 二次方程根的求解</h3><p><img src="/img/VB/zy/zy2_2.png" alt="第二次作业2"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
 Dim a As Variant, b As Variant, c As Variant, x1 As Variant, x2 As Variant
@@ -1874,7 +2052,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <li>Round(x,2) 约到小数点后几位</li>
 <li>keypress 的应用，可以执行事件</li>
 </ul>
-<h2 id="7-3-第三次作业"><a href="#7-3-第三次作业" class="headerlink" title="7.3 第三次作业"></a>7.3 第三次作业</h2><h3 id="所有水仙花数"><a href="#所有水仙花数" class="headerlink" title="所有水仙花数"></a>所有水仙花数</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDJDJCPGJGNGBGHGFCOHAGOGH" alt="水仙花❀数"></p>
+<h2 id="7-3-第三次作业"><a href="#7-3-第三次作业" class="headerlink" title="7.3 第三次作业"></a>7.3 第三次作业</h2><h3 id="所有水仙花数"><a href="#所有水仙花数" class="headerlink" title="所有水仙花数"></a>所有水仙花数</h3><p><img src="/img/VB/zy/zy3.png" alt="第三次作业"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
 
@@ -1892,7 +2070,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <li><code>15 mod 10</code>取余数 5</li>
 <li><code>15 \ 10</code>整数相除得整数 1</li>
 </ul>
-<h2 id="7-4-第四次作业"><a href="#7-4-第四次作业" class="headerlink" title="7.4 第四次作业"></a>7.4 第四次作业</h2><h3 id="1-sub-子过程计算和"><a href="#1-sub-子过程计算和" class="headerlink" title="1. sub 子过程计算和"></a>1. sub 子过程计算和</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADIDBDCCPGJGNGBGHGFCOHAGOGH" alt="计算和"></p>
+<h2 id="7-4-第四次作业"><a href="#7-4-第四次作业" class="headerlink" title="7.4 第四次作业"></a>7.4 第四次作业</h2><h3 id="1-sub-子过程计算和"><a href="#1-sub-子过程计算和" class="headerlink" title="1. sub 子过程计算和"></a>1. sub 子过程计算和</h3><p><img src="/img/VB/zy/zy4_1.png" alt="第四次作业1"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
 
@@ -1918,7 +2096,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <ul>
 <li>sub 子过程的编写和调用：call 函数名(参数，返回结果)</li>
 </ul>
-<h3 id="2-奖学金等级"><a href="#2-奖学金等级" class="headerlink" title="2. 奖学金等级"></a>2. 奖学金等级</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADIDDDDCPGJGNGBGHGFCOHAGOGH" alt="计算奖学金的等级"></p>
+<h3 id="2-奖学金等级"><a href="#2-奖学金等级" class="headerlink" title="2. 奖学金等级"></a>2. 奖学金等级</h3><p><img src="/img/VB/zy/zy4_2.png" alt="第四次作业2"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
 
@@ -1970,7 +2148,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <ul>
 <li><code>for each a in f</code> 中的 a 必须是变体型变量</li>
 </ul>
-<h2 id="7-5-第五次作业"><a href="#7-5-第五次作业" class="headerlink" title="7.5 第五次作业"></a>7.5 第五次作业</h2><h3 id="1-RGB-三色调色板"><a href="#1-RGB-三色调色板" class="headerlink" title="1. RGB 三色调色板"></a>1. RGB 三色调色板</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDGDCDJDDDCDJCPGJGNGBGHGFCOHAGOGH" alt="RGB三色调色板要求"></p>
+<h2 id="7-5-第五次作业"><a href="#7-5-第五次作业" class="headerlink" title="7.5 第五次作业"></a>7.5 第五次作业</h2><h3 id="1-RGB-三色调色板"><a href="#1-RGB-三色调色板" class="headerlink" title="1. RGB 三色调色板"></a>1. RGB 三色调色板</h3><p><img src="/img/VB/zy/zy5_1.png" alt="第五次作业1"></p>
 <p><strong>作业代码</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
 Dim r As Integer, g As Integer, b As Integer
@@ -2003,7 +2181,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <li>hscroll1_change() 判断横向滚动条的值是否发生变化,变化时执行的程序</li>
 <li>RGB()函数的使用</li>
 </ul>
-<h3 id="2-成绩合计-amp-密码验证"><a href="#2-成绩合计-amp-密码验证" class="headerlink" title="2. 成绩合计 &amp; 密码验证"></a>2. 成绩合计 &amp; 密码验证</h3><p><img src="https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDGDCDJDEDCDFCPGJGNGBGHGFCOHAGOGH" alt="成绩&amp;密码"></p>
+<h3 id="2-成绩合计-amp-密码验证"><a href="#2-成绩合计-amp-密码验证" class="headerlink" title="2. 成绩合计 &amp; 密码验证"></a>2. 成绩合计 &amp; 密码验证</h3><p><img src="/img/VB/zy/zy5_2.png" alt="第五次作业2"></p>
 <p><strong>作业代码 1</strong></p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
 Dim i As Integer, t As Integer
@@ -2071,6 +2249,7 @@ End Sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <li>form1.hide &amp; form2.show 窗体的隐藏和显示</li>
 <li><code>reval = shell("C:\Users\20180\Desktop\fund.bat",2)</code>调用程序</li>
 </ul>
+<h2 id="7-6-第六次作业"><a href="#7-6-第六次作业" class="headerlink" title="7.6 第六次作业"></a>7.6 第六次作业</h2><h3 id="学生成绩的录入、统计图表输出应用程序"><a href="#学生成绩的录入、统计图表输出应用程序" class="headerlink" title="学生成绩的录入、统计图表输出应用程序"></a>学生成绩的录入、统计图表输出应用程序</h3><p><img src="/img/VB/zy/zy6.png" alt="第六次作业"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -2446,7 +2625,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.2k</span>&nbsp;字
+                class="white-color">59.9k</span>&nbsp;字
             
             
             
