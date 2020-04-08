@@ -1296,6 +1296,306 @@ OLE 拖放 ：将数据从一个控件或应用程序中移动到另一个控件
 - OLEStartDrag 事件一源控件 OLEDrag 方法被执行或用户做“拖”，操作时发生的事件
 - OLEDragOver 事件—在拖动时,经某控件时在该控件上发生的事件
 
+## 5.7 Active X 控件
+
+### 5.7.1 SSTab选项卡控件
+
+工程--部件--选中Microsoft Tabbed Dialog Control 6.0
+
+style属性：选项卡样式--0/1：office风格/windows风格
+Tabs 属性：控制控件上选项卡的数目
+Tab 属性 ：决定控件上当前被选定的项
+
+### 5.7.2 ProgressBar进度条控件
+
+工程--部件--选中Microsoft Windows Common Control 6.0
+
+Max 属性：进度条上限
+Min 属性：进度条下限
+Value ：进度值
+Scrolling ： 卷动方向形式
+Orientation ： 纵横滚动定位
+MousePoint ：鼠标指针
+
+### 5.7.3 Slide滑动条控件
+
+工程--部件--选中Microsoft Windows Common Control 6.0
+
+TickStyle ： 决定控件上滑块及刻度的显示样式
+TickFrequency ： 决定控件上刻度点的疏密
+ToolTipText：指针停在该控件上时显示提示信息
+Orientation ：决定控件在窗体上水平或垂直放置
+
+### 5.7.4 MS Chart控件
+
+工程--部件--选中Microsoft Chart Control 6.0(OLEDB)
+
+BorderStyle ： 决定图表是否有外框线
+ColumnCount ： 每一格的列数
+RowCount ： 每一行的列数
+ChartType ： 选择图表类型
+TitleText ： 图题
+ChartData 返回一个数组，该数组包含将要被该图表显示的值
+
+`MSChart1.ChartData = 数组`
+
+![图表控件](/img/VB/tubiao.png)
+
+### 5.7.5 UpDown控件
+
+工程--部件--选中Microsoft Windows Common Control-2 6.0
+
+一对箭头按钮控件，单击按钮，增减数值
+UpDown通常与Textbox绑定
+
+Max/Min 最大值最小值
+Increment 指定每次单击上箭头或下箭头时Value的变化量
+
+```vb
+private sub updown1_downclick()
+    text1.updown1.value
+end sub
+private sub updow n1_upclick()
+    text1.updown1.value
+end sub 
+```
+
+### 5.7.6 ActiveX控件的创建
+
+ActiveX是 Microsoft对于一系列策略性面向对象程序技术和工具称呼,其中主要的技术是组件对象模型(COM)。
+
+![ActiveX的三种表现形式](/img/VB/activex.png)
+
+ActiveX部件：可执行代码：exe、dll、ocx文件
+
+ActiveX控件标准和非标准文件：以ocx后缀保存在Windows\System目录下
+ActiveX控件分为：控件和插入对象 、可插入对象就是一个应用程序，如MIcrosoft Word
+
+创造自己的ActiveX控件
+
+* 启动VB，打开 ActiveX控件
+* UserControl对象，为AX控件名称，在此进行控件制作
+* 在代码窗口利用工具中的添加过程，为新的ActiveX控件添加共有的属性、时间等
+* 界面与代码设计好后，在指定目录生成指定的ocx，完成自制AX控件的工作
+* 另打开VB，通过增加部件找到所自制的AX控件，放在工具箱上即可使用
+
+## 5.8 文件
+
+![基本概念](/img/VB/file.png)
+
+### 5.8.1 顺序文件
+
+ASCII文件，由任何字处理文件建立，在VB中建立，只能按顺序存取记录
+
+打开文件--读或写文件--关闭文件
+
+#### 5.8.1.1 顺序文件打开
+
+格式 Open <文件名> for 方式 as  [#]<文件号>
+
+Input 只读 / Output 写 / Append 添加方式
+
+文件号 1 到511 之间的整数
+
+`opnn "C:\Data\Stud.dat" For Output As #1`
+
+#### 5.8.1.2 顺序文件关闭
+
+Close 文件号列表
+
+`Close #1`
+`Close #1,2,#8`
+`Close` 关闭所有
+
+#### 5.8.1.3 顺序文件的读写
+
+
+**①写**
+1. Write #文件号,[输出列表]
+
+`Write #1,A1,A2,A3`
+
+说明
+* <输出列表>中各项之间要用逗号分开
+* <输出列表>每一项可以是常量、变量或表达式
+* 写到文件中的各数据间自动插入逗号,字符串自动加上双引号
+* 所有数据写完后,在最后加入一个回车换行符
+* 不含<输出列表>时,将在文件中写入一空行
+
+**学号、姓名、成绩1、2**保存到文件中
+
+```vb
+Option Explicit
+Dim no, na, g1, g2 As Variant
+Private Sub Command1_Click()
+    no = Text1.Text: na = Text2.Text
+    g1 = Val(Text3.Text): g2 = Val(Text4.Text)
+    Write #2, no, na, g1, g2
+    Text1.Text = "": Text2.Text = "": Text3.Text = "": Text4.Text = ""
+End Sub
+
+Private Sub Command2_Click()
+    Close #2
+    End
+End Sub
+
+Private Sub Form_Load()
+    CommonDialog1.ShowSave
+    Open CommonDialog1.FileName For Append As #2
+End Sub
+```
+
+2. print #文件号，输出列表
+
+`print #2, no ,na, g1, g2`
+`print #2, no; na; g1; g2`
+
+将输出列表中的内容写入指定文件
+说明
+
+* 当<输出列表>用逗号分隔时,采用分区格式输出
+* 当<输出列表>用分号分隔时,采用紧凑格式输出
+* 所有项将在一行内输出,输出后将自动换行
+* 可以使用Spc()函数和Tab()函数
+
+![两者区别](/img/VB/writeprint.png)
+
+**②读**
+
+1. input #文件号,变量列表
+2. Line input #文件号，变量名
+3. eof(文件号) 函数
+
+**读取文件中的程序，计算平均成绩**
+
+```vb
+Option Explicit
+Dim num, nam, s1, s2, ave
+
+Private Sub Command1_Click()
+    CommonDialog1.ShowOpen
+    Open CommonDialog1.FileName For Input As #3
+    Text1.Text = ""
+    Do While Not EOF(3)
+   ' 装入用Wite# 语句生成的文件
+        Input #3, num, nam, s1, s2
+        ave = (s1 + s2) / 2
+        Text1.Text = Text1.Text & num & "   " & nam _
+                        & "   " & Str(s1) & "    " & Str(s2) & _
+                        "  " & Str(ave) & Chr(13) & Chr(10)
+    Loop
+    Close #3
+End Sub
+```
+
+**计算每个同学的平均成绩，并同时将结果与原数据保存到另一个文件**
+
+```vb
+Option Explicit
+Dim num(100) As String, nam(100) As String
+Dim g(100, 2) As Integer, n As Integer, ave, sum1, sum2, i
+
+Private Sub Command1_Click()
+    CommonDialog1.ShowOpen
+    Open CommonDialog1.FileName For Input As #3
+        n = 0
+        Do While Not EOF(3)
+            n = n + 1
+            Input #3, num(n), nam(n), g(n, 1), g(n, 2)
+        Text1.Text = Text1.Text & "   " & num(n) & _
+        "   " & nam(n) & "    " & Str(g(n, 1)) & _
+        "   " & Str(g(n, 2)) & "    " & Chr(13) & Chr(10)
+        Loop
+End Sub
+
+Private Sub Command2_Click()
+    CommonDialog1.ShowSave
+    Open CommonDialog1.FileName For Output As #4
+    sum1 = 0
+    sum2 = 0
+    Text2.Text = ""
+    For i = 1 To n
+        ave = (g(i, 1) + g(i, 2)) / 2
+        Write #4, num(i), nam(i), g(i, 1), g(i, 2), ave
+        Text2.Text = Text2.Text & "   " & num(i) & _
+        "   " & nam(i) & "   " & Str(g(i, 1)) & "   " & _
+        Str(g(i, 2)) & "   " & Str(ave) & vbCrLf
+        sum1 = sum1 + g(i, 1): sum2 = sum2 + g(i, 2)
+    Next i
+    Text2.Text = Text2.Text & "average" & " " & _
+    Str(sum1 / n) & "   " & Str(sum2 / n)
+    Write #4, "总平均", sum1 / n, sum2 / n
+End Sub
+
+Private Sub Command3_Click()
+    Close #3, #4
+    End
+End Sub
+```
+
+### 5.8.2 随机文件
+
+读写次序任意，记录长度相等，随机文件中的记录常定义为用户自定义类型
+
+**自定义数据类型操作**
+
+```vb
+private/public type 自定义类型名
+    元素名 下标 as 类型
+end type
+```
+
+![](/img/VB/sjwjsm1.png)
+![说明](/img/VB/sjwjsm2.png)
+
+![例子](/img/VB/sjwjex.png)
+![例子](/img/VB/sjwjex1.png)
+
+#### 5.8.2.1 随机文件打开
+
+`open 文件名 [for random] as 文件号 len= 记录长度`
+for random 可以省略 
+记录长度：就是自定义类型的大小，可以用len获得
+若文件不存在，则建立新的文件
+
+#### 5.8.2.2 随机文件关闭
+
+`close #2`
+
+#### 5.8.2.3 随机文件写
+
+`put 文件号，记录号，变量名`
+
+![写文件](/img/VB/sjwjxie.png)
+
+#### 5.8.2.4 随机文件读
+
+`get #文件号， 记录号， 变量名`
+功能： 将一个一打开的随机文件读入一个变量之中
+
+![例子](/img/VB/sjwjdxex0.png)
+
+![例子](/img/VB/sjwjdxex.png)
+![例子](/img/VB/sjwjdxex1.png)
+
+### 5.8.3 总结
+
+![文件操作总结](/img/VB/filezongjie.png)
+
+开闭 写读
+
+* open 语句
+* close 语句
+* write\print 语句
+* input\line input语句 ， input函数
+
+---
+
+* open 语句
+* close 语句
+* put 语句
+* get 语句
+
 # 6. 课程学习过程中练习
 
 第几次课.第几道练习
@@ -1625,7 +1925,8 @@ End Sub
 
 ### 1. 倒计时控件
 
-![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDJCPGJGNGBGHGFCOHAGOGH)
+![第一次作业](/img/VB/zy/zy1_1.png)
+
 
 **作业代码**
 
@@ -1704,7 +2005,8 @@ End Sub
 
 ### 2. 加法运算器
 
-![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDDDHDEDIDGDGCPGJGNGBGHGFCOHAGOGH)
+![第一次作业2](/img/VB/zy/zy1_2.png)
+
 
 **作业代码**
 
@@ -1734,7 +2036,8 @@ End Sub
 
 ### 1. 华氏度与摄氏度的转换
 
-![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDFDFCPGJGNGBGHGFCOHAGOGH)
+![第二次作业1](/img/VB/zy/zy2_1.png)
+
 
 **作业代码**
 
@@ -1805,7 +2108,8 @@ End Sub
 
 ### 2. 二次方程根的求解
 
-![作业要求图片](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDEDFCPGJGNGBGHGFCOHAGOGH)
+![第二次作业2](/img/VB/zy/zy2_2.png)
+
 
 **作业代码**
 
@@ -1878,7 +2182,8 @@ End Sub
 
 ### 所有水仙花数
 
-![水仙花❀数](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADGDJDJCPGJGNGBGHGFCOHAGOGH)
+![第三次作业](/img/VB/zy/zy3.png)
+
 
 **作业代码**
 
@@ -1905,7 +2210,8 @@ End Sub
 
 ### 1. sub 子过程计算和
 
-![计算和](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADIDBDCCPGJGNGBGHGFCOHAGOGH)
+![第四次作业1](/img/VB/zy/zy4_1.png)
+
 
 **作业代码**
 
@@ -1938,7 +2244,8 @@ End Sub
 
 ### 2. 奖学金等级
 
-![计算奖学金的等级](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDEDFDADIDDDDCPGJGNGBGHGFCOHAGOGH)
+![第四次作业2](/img/VB/zy/zy4_2.png)
+
 
 **作业代码**
 
@@ -1999,7 +2306,8 @@ End Sub
 
 ### 1. RGB 三色调色板
 
-![RGB三色调色板要求](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDGDCDJDDDCDJCPGJGNGBGHGFCOHAGOGH)
+![第五次作业1](/img/VB/zy/zy5_1.png)
+
 
 **作业代码**
 
@@ -2039,7 +2347,8 @@ End Sub
 
 ### 2. 成绩合计 & 密码验证
 
-![成绩&密码](https://course-proxy2.buct.edu.cn/meol/common/ckeditor/openfile.jsp?id=DBCPDGDCDJDEDCDFCPGJGNGBGHGFCOHAGOGH)
+![第五次作业2](/img/VB/zy/zy5_2.png)
+
 
 **作业代码 1**
 
@@ -2114,3 +2423,11 @@ End Sub
 * 主要是菜单的编辑，工具--菜单编辑器
 * form1.hide & form2.show 窗体的隐藏和显示
 * `reval = shell("C:\Users\20180\Desktop\fund.bat",2)`调用程序
+
+
+## 7.6 第六次作业
+
+### 学生成绩的录入、统计图表输出应用程序
+
+![第六次作业](/img/VB/zy/zy6.png)
+

@@ -161,3 +161,9 @@ Traceback (most recent call last):
     self._target(*self._args, **self._kwargs)
 TypeError: get_picurl() takes 2 positional arguments but 30 were given
 ```
+
+## 2.2 改用了Pool线程操作后
+
+```python
+
+```
