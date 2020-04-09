@@ -23,8 +23,15 @@ password:
 > Node.js + Gulp 知识点汇总 https://blog.csdn.net/wuyxinu/article/details/103774211
 
 **学习思路**
-HTML 入门 →**CSS 入门** →HTML 进阶 →CSS 进阶 →JavaScript 入门
-→jQuery 入门 →ASP.NET 入门（或 PHP 入门）→Ajax→ASP.NET 进阶（或 PHP 进阶）
+* [x] HTML 入门 
+* [ ] CSS 入门 
+* [ ] HTML 进阶 
+* [ ] CSS 进阶 
+* [ ] JavaScript 入门
+* [ ] jQuery 入门 
+* [ ] ASP.NET 入门（或 PHP 入门）
+* [ ] Ajax
+* [ ] ASP.NET 进阶（或 PHP 进阶）
 
 # 1. html/html5 的基础
 
