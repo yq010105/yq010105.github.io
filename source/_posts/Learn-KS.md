@@ -45,9 +45,11 @@ VSCode中的插件Markdown All in One
 
 # 3. Cmder快捷键
 
-| 快捷键      | 说明 |
-| ----------- | ---- |
-| Alt + enter | 全屏 |
-|             |      |
-|             |      |
+| 快捷键          | 说明                   |
+| --------------- | ---------------------- |
+| Alt + enter     | 全屏                   |
+| Win + Alt + P   | 开启选项               |
+| Alt + Shift + 1 | cmd.exe                |
+| Alt + Shift + 2 | powershell.exe         |
+| Alt + Shift + 3 | powershell.exe(管理员) |
 
