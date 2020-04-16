@@ -622,6 +622,7 @@ id属性是唯一的，class可以有多个
     样式属性2:取值2;
     ……
 }
+/*注释*/
 ```
 
 ### 2.3.1 基本选择器
@@ -683,9 +684,19 @@ h3,div,p,span {color:red;}
 ## 2.4 文本样式
 
 * font-family 字体名：微软雅黑等等
-`font-family:微软雅黑;`
+`font-family:微软雅黑;` 还有 `宋体` `Times New Roman等等`
 * font-size 字体大小: px/百分比/em
 `font-size:15px;`
-* 
+* font-weight 字体粗细
+`font-weight:bold;` `normal`
+* font-style 字体斜体
+`font-style:italic;`斜体 `oblique`特殊字体（无italic变量） `normal`默认
+* color 颜色
+`color:blue;` `color:#000000;`
+
+## 2.5 文本样式总结
+
+
+
 
 # 3. js 的基础

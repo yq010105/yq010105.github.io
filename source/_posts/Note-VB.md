@@ -1298,17 +1298,17 @@ OLE 拖放 ：将数据从一个控件或应用程序中移动到另一个控件
 
 ## 5.7 Active X 控件
 
-### 5.7.1 SSTab选项卡控件
+### 5.7.1 SSTab 选项卡控件
 
-工程--部件--选中Microsoft Tabbed Dialog Control 6.0
+工程--部件--选中 Microsoft Tabbed Dialog Control 6.0
 
-style属性：选项卡样式--0/1：office风格/windows风格
+style 属性：选项卡样式--0/1：office 风格/windows 风格
 Tabs 属性：控制控件上选项卡的数目
 Tab 属性 ：决定控件上当前被选定的项
 
-### 5.7.2 ProgressBar进度条控件
+### 5.7.2 ProgressBar 进度条控件
 
-工程--部件--选中Microsoft Windows Common Control 6.0
+工程--部件--选中 Microsoft Windows Common Control 6.0
 
 Max 属性：进度条上限
 Min 属性：进度条下限
@@ -1317,18 +1317,18 @@ Scrolling ： 卷动方向形式
 Orientation ： 纵横滚动定位
 MousePoint ：鼠标指针
 
-### 5.7.3 Slide滑动条控件
+### 5.7.3 Slide 滑动条控件
 
-工程--部件--选中Microsoft Windows Common Control 6.0
+工程--部件--选中 Microsoft Windows Common Control 6.0
 
 TickStyle ： 决定控件上滑块及刻度的显示样式
 TickFrequency ： 决定控件上刻度点的疏密
 ToolTipText：指针停在该控件上时显示提示信息
 Orientation ：决定控件在窗体上水平或垂直放置
 
-### 5.7.4 MS Chart控件
+### 5.7.4 MS Chart 控件
 
-工程--部件--选中Microsoft Chart Control 6.0(OLEDB)
+工程--部件--选中 Microsoft Chart Control 6.0(OLEDB)
 
 BorderStyle ： 决定图表是否有外框线
 ColumnCount ： 每一格的列数
@@ -1341,15 +1341,15 @@ ChartData 返回一个数组，该数组包含将要被该图表显示的值
 
 ![图表控件](/img/VB/tubiao.png)
 
-### 5.7.5 UpDown控件
+### 5.7.5 UpDown 控件
 
-工程--部件--选中Microsoft Windows Common Control-2 6.0
+工程--部件--选中 Microsoft Windows Common Control-2 6.0
 
 一对箭头按钮控件，单击按钮，增减数值
-UpDown通常与Textbox绑定
+UpDown 通常与 Textbox 绑定
 
 Max/Min 最大值最小值
-Increment 指定每次单击上箭头或下箭头时Value的变化量
+Increment 指定每次单击上箭头或下箭头时 Value 的变化量
 
 ```vb
 private sub updown1_downclick()
@@ -1357,27 +1357,27 @@ private sub updown1_downclick()
 end sub
 private sub updow n1_upclick()
     text1.updown1.value
-end sub 
+end sub
 ```
 
-### 5.7.6 ActiveX控件的创建
+### 5.7.6 ActiveX 控件的创建
 
-ActiveX是 Microsoft对于一系列策略性面向对象程序技术和工具称呼,其中主要的技术是组件对象模型(COM)。
+ActiveX 是 Microsoft 对于一系列策略性面向对象程序技术和工具称呼,其中主要的技术是组件对象模型(COM)。
 
 ![ActiveX的三种表现形式](/img/VB/activex.png)
 
-ActiveX部件：可执行代码：exe、dll、ocx文件
+ActiveX 部件：可执行代码：exe、dll、ocx 文件
 
-ActiveX控件标准和非标准文件：以ocx后缀保存在Windows\System目录下
-ActiveX控件分为：控件和插入对象 、可插入对象就是一个应用程序，如MIcrosoft Word
+ActiveX 控件标准和非标准文件：以 ocx 后缀保存在 Windows\System 目录下
+ActiveX 控件分为：控件和插入对象 、可插入对象就是一个应用程序，如 MIcrosoft Word
 
-创造自己的ActiveX控件
+创造自己的 ActiveX 控件
 
-* 启动VB，打开 ActiveX控件
-* UserControl对象，为AX控件名称，在此进行控件制作
-* 在代码窗口利用工具中的添加过程，为新的ActiveX控件添加共有的属性、时间等
-* 界面与代码设计好后，在指定目录生成指定的ocx，完成自制AX控件的工作
-* 另打开VB，通过增加部件找到所自制的AX控件，放在工具箱上即可使用
+- 启动 VB，打开 ActiveX 控件
+- UserControl 对象，为 AX 控件名称，在此进行控件制作
+- 在代码窗口利用工具中的添加过程，为新的 ActiveX 控件添加共有的属性、时间等
+- 界面与代码设计好后，在指定目录生成指定的 ocx，完成自制 AX 控件的工作
+- 另打开 VB，通过增加部件找到所自制的 AX 控件，放在工具箱上即可使用
 
 ## 5.8 文件
 
@@ -1385,17 +1385,17 @@ ActiveX控件分为：控件和插入对象 、可插入对象就是一个应用
 
 ### 5.8.1 顺序文件
 
-ASCII文件，由任何字处理文件建立，在VB中建立，只能按顺序存取记录
+ASCII 文件，由任何字处理文件建立，在 VB 中建立，只能按顺序存取记录
 
 打开文件--读或写文件--关闭文件
 
 #### 5.8.1.1 顺序文件打开
 
-格式 Open <文件名> for 方式 as  [#]<文件号>
+格式 Open <文件名> for 方式 as [#]<文件号>
 
 Input 只读 / Output 写 / Append 添加方式
 
-文件号 1 到511 之间的整数
+文件号 1 到 511 之间的整数
 
 `opnn "C:\Data\Stud.dat" For Output As #1`
 
@@ -1409,20 +1409,21 @@ Close 文件号列表
 
 #### 5.8.1.3 顺序文件的读写
 
+**① 写**
 
-**①写**
 1. Write #文件号,[输出列表]
 
 `Write #1,A1,A2,A3`
 
 说明
-* <输出列表>中各项之间要用逗号分开
-* <输出列表>每一项可以是常量、变量或表达式
-* 写到文件中的各数据间自动插入逗号,字符串自动加上双引号
-* 所有数据写完后,在最后加入一个回车换行符
-* 不含<输出列表>时,将在文件中写入一空行
 
-**学号、姓名、成绩1、2**保存到文件中
+- <输出列表>中各项之间要用逗号分开
+- <输出列表>每一项可以是常量、变量或表达式
+- 写到文件中的各数据间自动插入逗号,字符串自动加上双引号
+- 所有数据写完后,在最后加入一个回车换行符
+- 不含<输出列表>时,将在文件中写入一空行
+
+**学号、姓名、成绩 1、2**保存到文件中
 
 ```vb
 Option Explicit
@@ -1453,14 +1454,14 @@ End Sub
 将输出列表中的内容写入指定文件
 说明
 
-* 当<输出列表>用逗号分隔时,采用分区格式输出
-* 当<输出列表>用分号分隔时,采用紧凑格式输出
-* 所有项将在一行内输出,输出后将自动换行
-* 可以使用Spc()函数和Tab()函数
+- 当<输出列表>用逗号分隔时,采用分区格式输出
+- 当<输出列表>用分号分隔时,采用紧凑格式输出
+- 所有项将在一行内输出,输出后将自动换行
+- 可以使用 Spc()函数和 Tab()函数
 
 ![两者区别](/img/VB/writeprint.png)
 
-**②读**
+**② 读**
 
 1. input #文件号,变量列表
 2. Line input #文件号，变量名
@@ -1554,8 +1555,8 @@ end type
 #### 5.8.2.1 随机文件打开
 
 `open 文件名 [for random] as 文件号 len= 记录长度`
-for random 可以省略 
-记录长度：就是自定义类型的大小，可以用len获得
+for random 可以省略
+记录长度：就是自定义类型的大小，可以用 len 获得
 若文件不存在，则建立新的文件
 
 #### 5.8.2.2 随机文件关闭
@@ -1584,17 +1585,181 @@ for random 可以省略
 
 开闭 写读
 
-* open 语句
-* close 语句
-* write\print 语句
-* input\line input语句 ， input函数
+- open 语句
+- close 语句
+- write\print 语句
+- input\line input 语句 ， input 函数
 
 ---
 
-* open 语句
-* close 语句
-* put 语句
-* get 语句
+- open 语句
+- close 语句
+- put 语句
+- get 语句
+
+## 5.9 绘图
+
+### 5.9.1 图形设计基础
+
+#### 5.9.1.1 坐标系统
+
+左上角（0，0）横向 x，纵向 y
+
+1. 刻度单位
+
+![刻度单位](/img/VB/kddw.png)
+
+2. 改变坐标系
+
+**自定义坐标体系**
+
+![自定义坐标体系](/img/VB/zdyzbx.png)
+
+`ScaleLeft` `ScaleTop`属性 ， 窗体左边的坐标，上边的坐标
+
+`ScaleWidth` `ScaleHeight`属性 ，容器对象内部的宽度和高度，将
+
+![例子](/img/VB/zbxex1.png)
+
+![例子](/img/VB/zbxex2.png)
+
+![例子](/img/VB/zbxex3.png)
+
+Scale 方法：
+`对象名.Scale[(x1,y1)-(x2,y2)]`
+
+```vb
+Private Sub picture1_click()
+    dim a(5,5) as integer, i as integer , j as integer
+    picture1.scale (0,0)-(6,6)
+    for i=1 to 5
+        picture1.currenty = i
+        for j=1 to 5
+            if i = j then a(i,j) = 1 else a(i,j) = 0
+            picture1.currentx = j
+            picture1.print a(i,j);
+    next j,i
+end sub
+```
+
+![例子](/img/VB/scale.png)
+
+3. 当前坐标
+
+`currentx` `currenty`
+
+4. 位置大小相关属性
+
+![例子](/img/VB/wzdxxg.png)
+
+#### 5.9.1.2 颜色
+
+颜色值：四字节，长整型
+RGB    每个字节取值：00-FF （或0-255）
+
+1. 设计阶段设置
+2. 运行阶段设置
+
+RGB函数：`RGB(red,green,blue)`
+eg:`form1.backcolor = RGB(255,0,0)`
+
+或者
+
+QBColor函数： `QbColor(value)`
+value ： 0-7颜色加亮、 8-15
+0黑1蓝2绿3青4红5紫红6黄7浅灰色
+
+或者
+
+使用颜色常量
+`vbblack` `vbred` `vbgreen` `vbyellow` `vbwhite`
+`vbblue`  `vbmagenta洋红` `vbcyan青色` 
+
+或者
+
+使用颜色的十六进制 `&H00BBGGRR&`
+
+使用系统颜色 `vbscrollbars &H80000000`滚动条颜色
+
+### 5.9.2 图形控件
+
+#### 5.9.2.1 Picture控件
+
+可以显示图片，可以作为其他控件的容器
+
+* 设计阶段
+* 程序运行中：`LoadPicture()`
+
+`Autosize`为True时 自动调整大小与显示的图片匹配
+
+#### 5.9.2.2 Image控件
+
+可以显示图像，内存占用小
+Stretch属性 拉伸位图和图标，适应图像框的大小
+
+#### 5.9.2.3 Shape控件
+
+属性：Shape、FillStyle、BackColor、FillColor等属性
+
+方法：`object.Move left[,top[,width[,height]]]`
+
+![例子](/img/VB/shapeex.png)
+
+#### 5.9.2.4 Line控件
+
+设计时再窗体上绘制直线
+
+`BorderStyle` 、 `BorderWidth`
+
+### 5.9.3 绘图方法
+
+![绘图方法](/img/VB/htff.png)
+
+#### 5.9.3.1 画点方法Pset
+
+`对象名.Pset[step](x,y)[,颜色]`
+在对象指定位置，用给定的颜色画点
+* Step 可选，指定相对于又currentx和y 属性提供的坐标
+* x，y 点的水平和垂直坐标
+* 颜色 绘制该店的RGB颜色
+
+![例子1](/img/VB/psetex.png)
+
+![例子2](/img/VB/psetex1.png)
+![例子2](/img/VB/psetex2.png)
+
+#### 5.9.3.2 画线、画矩形Line
+
+`对象名.Line[step][(x1,y1)]-[step]\(x2,y2)[,color[,B[F]]]`
+
+![Line](/img/VB/line.png)
+
+![例子1](/img/VB/lineex1.png)
+
+![例子2](/img/VB/lineex2.png)
+
+![例子3](/img/VB/lineex3.png)
+![例子3](/img/VB/lineex4.png)
+
+#### 5.9.3.3 画圆 Circle
+
+![画圆](/img/VB/circle.png)
+
+![画圆例子](/img/VB/circleex.png)
+
+![画圆例子1](/img/VB/circleex1.png)
+![画圆例子1](/img/VB/circleex2.png)
+
+#### 5.9.3.4 使用point方法返回指定点的颜色
+
+![Point例子](/img/VB/pointex.png)
+
+## 5.10 高级界面设计
+
+### 5.10.1 多文档界面MDI
+
+![MDI](/img/VB/mdi.png)
+
 
 # 6. 课程学习过程中练习
 
@@ -1927,7 +2092,6 @@ End Sub
 
 ![第一次作业](/img/VB/zy/zy1_1.png)
 
-
 **作业代码**
 
 ```vb
@@ -2007,7 +2171,6 @@ End Sub
 
 ![第一次作业2](/img/VB/zy/zy1_2.png)
 
-
 **作业代码**
 
 ```vb
@@ -2037,7 +2200,6 @@ End Sub
 ### 1. 华氏度与摄氏度的转换
 
 ![第二次作业1](/img/VB/zy/zy2_1.png)
-
 
 **作业代码**
 
@@ -2109,7 +2271,6 @@ End Sub
 ### 2. 二次方程根的求解
 
 ![第二次作业2](/img/VB/zy/zy2_2.png)
-
 
 **作业代码**
 
@@ -2184,7 +2345,6 @@ End Sub
 
 ![第三次作业](/img/VB/zy/zy3.png)
 
-
 **作业代码**
 
 ```vb
@@ -2211,7 +2371,6 @@ End Sub
 ### 1. sub 子过程计算和
 
 ![第四次作业1](/img/VB/zy/zy4_1.png)
-
 
 **作业代码**
 
@@ -2245,7 +2404,6 @@ End Sub
 ### 2. 奖学金等级
 
 ![第四次作业2](/img/VB/zy/zy4_2.png)
-
 
 **作业代码**
 
@@ -2308,7 +2466,6 @@ End Sub
 
 ![第五次作业1](/img/VB/zy/zy5_1.png)
 
-
 **作业代码**
 
 ```vb
@@ -2348,7 +2505,6 @@ End Sub
 ### 2. 成绩合计 & 密码验证
 
 ![第五次作业2](/img/VB/zy/zy5_2.png)
-
 
 **作业代码 1**
 
@@ -2420,10 +2576,10 @@ End Sub
 ```
 
 小知识点：
-* 主要是菜单的编辑，工具--菜单编辑器
-* form1.hide & form2.show 窗体的隐藏和显示
-* `reval = shell("C:\Users\20180\Desktop\fund.bat",2)`调用程序
 
+- 主要是菜单的编辑，工具--菜单编辑器
+- form1.hide & form2.show 窗体的隐藏和显示
+- `reval = shell("C:\Users\20180\Desktop\fund.bat",2)`调用程序
 
 ## 7.6 第六次作业
 
@@ -2431,3 +2587,148 @@ End Sub
 
 ![第六次作业](/img/VB/zy/zy6.png)
 
+**作业代码**
+
+**form1**
+
+```vb
+Option Explicit
+Dim no, na, g1, g2 As Variant
+Private Sub Command1_Click()
+    no = Text1.Text: na = Text2.Text
+    g1 = Val(Text3.Text): g2 = Val(Text4.Text)
+    Write #2, no, na, g1, g2
+    Text1.Text = "": Text2.Text = "": Text3.Text = "": Text4.Text = ""
+End Sub
+
+Private Sub Command2_Click()
+    Close #2
+    Form2.Show
+End Sub
+
+Private Sub Form_Load()
+    CommonDialog1.ShowSave
+    Open CommonDialog1.FileName For Append As #2
+End Sub
+```
+
+**form2**
+
+```vb
+Option Explicit
+Dim num(100) As String, nam(100) As String
+Dim g(100, 2) As Integer, n As Integer, ave, sum1, sum2, i
+
+Private Sub Command1_Click()
+    CommonDialog1.ShowOpen
+    Open CommonDialog1.FileName For Input As #3
+        n = 0
+        Do While Not EOF(3)
+            n = n + 1
+            Input #3, num(n), nam(n), g(n, 1), g(n, 2)
+        Text1.Text = Text1.Text & "   " & num(n) & _
+        "   " & nam(n) & "    " & Str(g(n, 1)) & _
+        "   " & Str(g(n, 2)) & "    " & Chr(13) & Chr(10)
+        Loop
+End Sub
+
+Private Sub Command2_Click()
+    CommonDialog1.ShowSave
+    Open CommonDialog1.FileName For Output As #4
+    sum1 = 0
+    sum2 = 0
+    Text2.Text = ""
+    For i = 1 To n
+        ave = (g(i, 1) + g(i, 2)) / 2
+        Write #4, num(i), nam(i), g(i, 1), g(i, 2), ave
+        Text2.Text = Text2.Text & "    " & num(i) & _
+        "    " & nam(i) & "    " & Str(g(i, 1)) & "    " & _
+        Str(g(i, 2)) & "    " & Str(ave) & vbCrLf
+        sum1 = sum1 + g(i, 1): sum2 = sum2 + g(i, 2)
+    Next i
+    Text2.Text = Text2.Text & "总平均" & " " & _
+    Str(sum1 / n) & "   " & Str(sum2 / n)
+    Write #4, "总平均", sum1 / n, sum2 / n
+End Sub
+
+Private Sub Command3_Click()
+    Close #3, #4
+    End
+End Sub
+
+Private Sub Command4_Click()
+    Form3.Show
+End Sub
+```
+
+**form3**
+
+```vb
+Option Explicit
+Dim arrvalues(1 To 3, 1 To 3), num, nam
+Dim s1, s2 As Integer
+Dim i As Integer
+
+Private Sub Command1_Click()
+    CommonDialog1.ShowOpen
+    Open CommonDialog1.FileName For Input As #5
+    i = 1
+    Do While Not EOF(5)
+        Input #5, num, nam, s1, s2
+        arrvalues(i, 1) = nam
+        arrvalues(i, 2) = s1
+        arrvalues(i, 3) = s2
+        i = i + 1
+    Loop
+    MSChart1.ChartData = arrvalues
+    Close #5
+End Sub
+```
+
+小知识点：
+
+- 主要是文件的读取和写入
+- 条形图的绘制`CommonDialog`控件
+
+## 7.7 第七次作业
+
+![第七次作业](/img/VB/zy/zy7.png)
+
+**作业代码**
+
+```vb
+Option Explicit
+Dim i, t, x, y, pcolor As Variant
+
+Private Sub Form_Click()
+    Picture1.Scale (-1, 1)-(1, -1)
+    Picture1.DrawWidth = 3
+    Picture1.Line (-1, 0)-(1, 0), vbBl
+    Picture1.Line (0, 1)-(0, -1), vbBlue
+    Picture1.DrawWidth = 1
+    For i = -1 To 1 Step 0.1
+        Picture1.Line (i, 0.05)-(i, 0)
+    Next i
+    Timer1.Interval = 10
+End Sub
+
+Private Sub Timer1_Timer()
+    Picture1.DrawWidth = 2
+    pcolor = RGB(Rnd * 255, Rnd * 255, Rnd * 255)
+    For t = 0 To 2 * 3.1415925 Step 0.001
+        x = Sin(2 * t) * Cos(t)
+        y = Sin(2 * t) * Sin(t)
+        Picture1.PSet (x, y), pcolor
+        Next t
+End Sub
+```
+
+小知识点：
+
+- Scale(x1,y1)-(x2,y2) 坐标轴的范围分成多少份
+- PSet画点，一系列的点组成先线（用for循环）
+
+
+## 7.8 第八次作业
+
+![第八次作业](/img/VB/zy/zy8.png)
