@@ -1761,6 +1761,95 @@ Stretch属性 拉伸位图和图标，适应图像框的大小
 ![MDI](/img/VB/mdi.png)
 
 
+## 5.11 开发多媒体应用程序
+
+概述：MMControl控件
+**播放动作的5个步骤**
+* 选择播放设备 DeviceType
+* 选择播放文件名 FileName
+* 打开文件 Open
+* 播放文件 Play
+* 关闭 Close
+
+![MCI控件](/img/VB/mci.png)
+
+**MM控件的主要属性和事件**
+
+![MMControl](/img/VB/mmcontrol.png)
+
+![MMCommand](/img/VB/mmccommand.png)
+
+![其他属性](/img/VB/mmcothers.png)
+
+![制作播放器1](/img/VB/mmcmake.png)
+
+![制作播放器2](/img/VB/mmcmake2.png)
+
+![使用API多媒体函数实现播放](/img/VB/api.png)
+
+![使用API多媒体函数实现播放](/img/VB/apiuse.png)
+
+![使用API多媒体函数实现播放](/img/VB/apiuse2.png)
+
+![使用API多媒体函数实现播放](/img/VB/apiuse3.png)
+
+*直接搜API浏览器，打开文件，然后选择需要的函数，拷贝*
+
+**拷贝内容**
+
+```vb
+Private Declare Function sndPlaySound Lib "winmm.dll" Alias "sndPlaySoundA" (ByVal lpszSoundName As String, ByVal uFlags As Long) As Long
+Private Const SND_ASYNC = &H1         '  play asynchronously
+Private Const SND_LOOP = &H8         '  loop the sound until next sndPlaySound
+Private Const SND_SYNC = &H0         '  play synchronously (default)
+```
+
+![使用API多媒体函数实现播放例子](/img/VB/apiex.png)
+
+![使用API多媒体函数实现播放例子](/img/VB/apiex1.png)
+
+![使用API多媒体函数实现播放例子](/img/VB/apiex2.png)
+
+## 5.12 数据库访问技术
+
+![数据库概念](/img/VB/sjk.png)
+
+**数据库管理系统**
+有：Access Interbase SQLServer DB2 MySql 等等
+
+### 5.12.1 关系型数据库
+表、记录与字段、关键字、表间关系、外部键、索引
+
+![关系型数据库概念](/img/VB/gxxsjk.png)
+
+![关系型数据库字段、记录、关键字](/img/VB/gxxsjk1.png)
+
+![关系型数据库表间关系](/img/VB/gxxsjk2.png)
+
+![关系型数据库外部键、索引](/img/VB/gxxsjk3.png)
+
+### 5.12.2 用可视化数据管理器建立和维护数据库
+
+![可视化数据管理器](/img/VB/kshsjglq.png)
+
+![可视化数据管理器](/img/VB/kshsjglq1.png)
+
+![可视化数据管理器](/img/VB/kshsjglq2.png)
+
+![可视化数据管理器](/img/VB/kshsjglq3.png)
+
+![可视化数据管理器](/img/VB/kshsjglq4.png)
+
+![可视化数据管理器](/img/VB/kshsjglq5.png)
+
+![可视化数据管理器](/img/VB/kshsjglq6.png)
+
+![可视化数据管理器](/img/VB/kshsjglq7.png)
+
+![可视化数据管理器](/img/VB/kshsjglq8.png)
+
+![可视化数据管理器](/img/VB/kshsjglq9.png)
+
 # 6. 课程学习过程中练习
 
 第几次课.第几道练习
