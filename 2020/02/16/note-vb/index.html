@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-14
+                    2020-04-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    11,507
+                    11,710
                 </div>
                 
 
@@ -1664,6 +1664,51 @@ end sub<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 <p><img src="/img/VB/circleex1.png" alt="画圆例子1"><br><img src="/img/VB/circleex2.png" alt="画圆例子1"></p>
 <h4 id="5-9-3-4-使用point方法返回指定点的颜色"><a href="#5-9-3-4-使用point方法返回指定点的颜色" class="headerlink" title="5.9.3.4 使用point方法返回指定点的颜色"></a>5.9.3.4 使用point方法返回指定点的颜色</h4><p><img src="/img/VB/pointex.png" alt="Point例子"></p>
 <h2 id="5-10-高级界面设计"><a href="#5-10-高级界面设计" class="headerlink" title="5.10 高级界面设计"></a>5.10 高级界面设计</h2><h3 id="5-10-1-多文档界面MDI"><a href="#5-10-1-多文档界面MDI" class="headerlink" title="5.10.1 多文档界面MDI"></a>5.10.1 多文档界面MDI</h3><p><img src="/img/VB/mdi.png" alt="MDI"></p>
+<h2 id="5-11-开发多媒体应用程序"><a href="#5-11-开发多媒体应用程序" class="headerlink" title="5.11 开发多媒体应用程序"></a>5.11 开发多媒体应用程序</h2><p>概述：MMControl控件<br><strong>播放动作的5个步骤</strong></p>
+<ul>
+<li>选择播放设备 DeviceType</li>
+<li>选择播放文件名 FileName</li>
+<li>打开文件 Open</li>
+<li>播放文件 Play</li>
+<li>关闭 Close</li>
+</ul>
+<p><img src="/img/VB/mci.png" alt="MCI控件"></p>
+<p><strong>MM控件的主要属性和事件</strong></p>
+<p><img src="/img/VB/mmcontrol.png" alt="MMControl"></p>
+<p><img src="/img/VB/mmccommand.png" alt="MMCommand"></p>
+<p><img src="/img/VB/mmcothers.png" alt="其他属性"></p>
+<p><img src="/img/VB/mmcmake.png" alt="制作播放器1"></p>
+<p><img src="/img/VB/mmcmake2.png" alt="制作播放器2"></p>
+<p><img src="/img/VB/api.png" alt="使用API多媒体函数实现播放"></p>
+<p><img src="/img/VB/apiuse.png" alt="使用API多媒体函数实现播放"></p>
+<p><img src="/img/VB/apiuse2.png" alt="使用API多媒体函数实现播放"></p>
+<p><img src="/img/VB/apiuse3.png" alt="使用API多媒体函数实现播放"></p>
+<p><em>直接搜API浏览器，打开文件，然后选择需要的函数，拷贝</em></p>
+<p><strong>拷贝内容</strong></p>
+<pre class="line-numbers language-vb"><code class="language-vb">Private Declare Function sndPlaySound Lib "winmm.dll" Alias "sndPlaySoundA" (ByVal lpszSoundName As String, ByVal uFlags As Long) As Long
+Private Const SND_ASYNC = &H1         '  play asynchronously
+Private Const SND_LOOP = &H8         '  loop the sound until next sndPlaySound
+Private Const SND_SYNC = &H0         '  play synchronously (default)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="/img/VB/apiex.png" alt="使用API多媒体函数实现播放例子"></p>
+<p><img src="/img/VB/apiex1.png" alt="使用API多媒体函数实现播放例子"></p>
+<p><img src="/img/VB/apiex2.png" alt="使用API多媒体函数实现播放例子"></p>
+<h2 id="5-12-数据库访问技术"><a href="#5-12-数据库访问技术" class="headerlink" title="5.12 数据库访问技术"></a>5.12 数据库访问技术</h2><p><img src="/img/VB/sjk.png" alt="数据库概念"></p>
+<p><strong>数据库管理系统</strong><br>有：Access Interbase SQLServer DB2 MySql 等等</p>
+<h3 id="5-12-1-关系型数据库"><a href="#5-12-1-关系型数据库" class="headerlink" title="5.12.1 关系型数据库"></a>5.12.1 关系型数据库</h3><p>表、记录与字段、关键字、表间关系、外部键、索引</p>
+<p><img src="/img/VB/gxxsjk.png" alt="关系型数据库概念"></p>
+<p><img src="/img/VB/gxxsjk1.png" alt="关系型数据库字段、记录、关键字"></p>
+<p><img src="/img/VB/gxxsjk2.png" alt="关系型数据库表间关系"></p>
+<p><img src="/img/VB/gxxsjk3.png" alt="关系型数据库外部键、索引"></p>
+<h3 id="5-12-2-用可视化数据管理器建立和维护数据库"><a href="#5-12-2-用可视化数据管理器建立和维护数据库" class="headerlink" title="5.12.2 用可视化数据管理器建立和维护数据库"></a>5.12.2 用可视化数据管理器建立和维护数据库</h3><p><img src="/img/VB/kshsjglq.png" alt="可视化数据管理器"></p>
+<p><img src="/img/VB/kshsjglq1.png" alt="可视化数据管理器"></p>
+<p><img src="/img/VB/kshsjglq2.png" alt="可视化数据管理器"></p>
+<p><img src="/img/VB/kshsjglq3.png" alt="可视化数据管理器"></p>
+<p><img src="/img/VB/kshsjglq4.png" alt="可视化数据管理器"></p>
+<p><img src="/img/VB/kshsjglq5.png" alt="可视化数据管理器"></p>
+<p><img src="/img/VB/kshsjglq6.png" alt="可视化数据管理器"></p>
+<p><img src="/img/VB/kshsjglq7.png" alt="可视化数据管理器"></p>
+<p><img src="/img/VB/kshsjglq8.png" alt="可视化数据管理器"></p>
+<p><img src="/img/VB/kshsjglq9.png" alt="可视化数据管理器"></p>
 <h1 id="6-课程学习过程中练习"><a href="#6-课程学习过程中练习" class="headerlink" title="6. 课程学习过程中练习"></a>6. 课程学习过程中练习</h1><p>第几次课.第几道练习</p>
 <h2 id="2-1-勾选要求变量声明（初学）"><a href="#2-1-勾选要求变量声明（初学）" class="headerlink" title="2.1 勾选要求变量声明（初学）"></a>2.1 勾选要求变量声明（初学）</h2><p>然后每次使用必须先定义变量</p>
 <pre class="line-numbers language-vb"><code class="language-vb">Option Explicit
@@ -2827,7 +2872,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">62.6k</span>&nbsp;字
+                class="white-color">62.8k</span>&nbsp;字
             
             
             
