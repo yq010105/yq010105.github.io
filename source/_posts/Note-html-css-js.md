@@ -352,6 +352,9 @@ HTML 5 除了新增部分标签之外，还增加了一组技术，包括 canvas
 
 class,顾名思义，就是“类”。它釆用的思想跟C、Java等编程语言中的“类”相似。 我们可以为同一个页面的相同元素或者不同元素设置相同的class,然后使得相同class的元 素具有相同的CSS样式
 
+**可以用多类名**，**用空格隔开**
+eg: `<h1 class="title tac">文章总标题</h1>`
+
 id属性具有唯一性，也就是说在一个页面中相同的id只允许出现一次
 W3C建议，对 于页面关键的结构或者大结构，我们才使用id。所谓的关键结构，指的是诸如LOGO、导航、 主体内容、底部信息栏等结构。对于一些小地方，还是建议使用class属性
 
@@ -560,7 +563,7 @@ CSS是什么？CSS，即“Cascading Style Sheet（层叠样式表）”，是�
 
 ```html
 <head>
-    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="css文件路径" rel="stylesheet" type="text/css" />
 </head>
 ```
 
@@ -584,7 +587,7 @@ CSS是什么？CSS，即“Cascading Style Sheet（层叠样式表）”，是�
 </body>
 ```
 
-### 2.1.3 内联样式表
+### 2.1.3 内联样式表(行内式)
 
 也是把CSS代码和HTML代码放在同一个文件中，但是跟内部样式表不同，CSS样式不是在<style></style>标签对中定义，而是**在标签的style属性中定义**
 
@@ -611,7 +614,7 @@ id属性是唯一的，class可以有多个
 <p class="first">绿叶学习网</p>
 ```
 
-## 2.3 css选择器
+## 2.3 CSS选择器
 
 将想要的标签选中，然后再操作标签
 
@@ -648,7 +651,7 @@ div {width:100px; height:100px;}
 .class属性值 {属性:属性值}
 ```
 
-#### 2.3.1.4 子元素选择器
+#### 2.3.2.2 子元素选择器
 
 ```css
 #father1 #p1 {color:red;}
@@ -660,7 +663,7 @@ div {width:100px; height:100px;}
 </div>
 ```
 
-#### 2.3.1.5 相邻选择器
+#### 2.3.2.5 相邻选择器
 
 ```css
 #lv + div {color:red;}
@@ -675,26 +678,179 @@ div {width:100px; height:100px;}
 <div>绿叶学习网</div>
 ```
 
-#### 2.3.1.6 群组选择器
+#### 2.3.2.6 群组选择器
 
 ```css
 h3,div,p,span {color:red;}
 ```
 
-## 2.4 文本样式
+### 2.3.2 复合选择器
+
+#### 2.3.2.1 后代选择器
+
+```css
+.class h3 {
+  color: red;
+}
+h3是div的后代，div的元素名为class
+
+#father1 #p1 {color:red;}
+#父元素选择 #子元素选择 {属性:属性值}
+
+<div id="father1">
+    <div id="p1">绿叶学习网</div>
+    <div>绿叶学习网</div>
+</div>
+```
+
+#### 2.3.2.2 子元素选择器
+
+**只选择儿子**，**不会选择所有的后代**
+```css
+/* 子代选择器 */
+.class>h3 {
+  color: red;
+}
+```
+
+#### 2.3.2.3 交集选择器
+
+既是p标签 又是.red类 关系
+
+```css
+p.red {
+  color:red;
+}
+```
+
+#### 2.3.2.4 并集选择器(群组选择器)
+
+样式相同时，用并集选择
+```css
+p,span,.red,#id {
+  color:red;
+}
+```
+
+#### 2.3.2.5 链接伪类选择器
+
+##### 2.3.2.5.1 伪选择器
+
+类选择器 `.demo`
+伪类选择器 `:demo`
+为链接添加一些特殊效果
+
+##### 2.3.2.5.2 链接伪类选择器
+
+* a:link 未访问链接
+* a:visited 已访问链接
+* a:hover 鼠标移动到链接上
+* a:active 选定链接
+
+顺序不能颠倒：lvha
+也算是交集选择器的变种
+实际开发，都是先用一个总的a风格，然后只是写a:hover
+
+```css
+a:link {
+  color: #333;
+}
+a:visited {
+  color: #9ca7a5;
+}
+a:hover {
+  color: red;
+}
+a:active {
+  color: green;
+}
+
+/* 子代选择，只是nav中的链接有hover样式 */
+.nav a:hover {
+  color: red;
+}
+```
+
+## 2.4 CSS的font文本样式
 
 * font-family 字体名：微软雅黑等等
 `font-family:微软雅黑;` 还有 `宋体` `Times New Roman等等`
+
+```css
+h1 {
+	color: deeppink;
+	font-size: xx-large;
+	font-family: JetBrains Mono,"幼圆","microsoft yahei","微软雅黑";
+	/*多个字体用逗号隔开，从开始寻找字体：如果第一个没有，用第二个，如果都没有，用默认字体*/
+	/*中文字体需要引号，英文字体无特殊字符，不需要引号*/
+  font-family: "\5FAE\8F6F\96C5\9ED1"   /*= 微软雅黑*/
+  /*Unicode字体，可以查表*/
+}
+```
+
 * font-size 字体大小: px/百分比/em
-`font-size:15px;`
+`font-size:15px;` 一般都用px，像素
+
 * font-weight 字体粗细
-`font-weight:bold;` `normal`
+`font-weight:bold;` `normal` `100~900   400为normal，700为bold`
+用数字更好
+
 * font-style 字体斜体
 `font-style:italic;`斜体 `oblique`特殊字体（无italic变量） `normal`默认
+
 * color 颜色
 `color:blue;` `color:#000000;`
 
-## 2.5 文本样式总结
+**综合性font语法**
+```css
+.imporp {
+	font: initial 700 20px "幼圆";
+}
+
+也就是:
+.xuanze {
+  font: font-style font-weight font-size font-family;
+}
+```
+
+## 2.5 CSS的外观属性
+
+### 2.5.1 color文本颜色
+
+* 预定义颜色：red，green，blue，pink等等
+* 十六进制：#FF0000，#000000黑色，#ffffff白色，#ff0000红色
+  * 简写：#ccc   由 #cccccc简写，两两相同
+* RGB颜色：`rgb(255,0,0)` `rgb(100%,0%,0%)`
+
+### 2.5.2 文本水平对齐方式
+
+`text-align:` 
+left 左对齐（默认）
+right 右对齐
+center 居中对齐
+
+### 2.5.3 行间距
+
+`line-height:`
+em 百分比 px
+一般用像素px，作为单位，一般行距比字号大7、8像素
+
+### 2.5.4 首行缩进
+
+`text-indent:` ， em为常用单位
+为字符单位的倍数，如1em为一个字的宽度
+
+### 2.5.5 文本的装饰
+
+`text-decoration:` 去掉连接下划线
+none 默认，无装饰
+blink 闪烁
+underline 下划线
+line-through 删除线
+overline 上划线
+
+# 000 快捷键操作
+![快捷键操作](/img/hcj/kjj.png)
 
 
 
