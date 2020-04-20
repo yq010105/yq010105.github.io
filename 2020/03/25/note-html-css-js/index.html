@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-13
+                    2020-04-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    3,640
+                    4,320
                 </div>
                 
 
@@ -814,6 +814,7 @@ width、height宽高 scrolling滚动条
 </tr>
 </tbody></table>
 <h2 id="1-5-知识点"><a href="#1-5-知识点" class="headerlink" title="1.5 知识点"></a>1.5 知识点</h2><h3 id="1-5-1-class与id"><a href="#1-5-1-class与id" class="headerlink" title="1.5.1 class与id"></a>1.5.1 class与id</h3><p>class,顾名思义，就是“类”。它釆用的思想跟C、Java等编程语言中的“类”相似。 我们可以为同一个页面的相同元素或者不同元素设置相同的class,然后使得相同class的元 素具有相同的CSS样式</p>
+<p><strong>可以用多类名</strong>，<strong>用空格隔开</strong><br>eg: <code>&lt;h1 class="title tac"&gt;文章总标题&lt;/h1&gt;</code></p>
 <p>id属性具有唯一性，也就是说在一个页面中相同的id只允许出现一次<br>W3C建议，对 于页面关键的结构或者大结构，我们才使用id。所谓的关键结构，指的是诸如LOGO、导航、 主体内容、底部信息栏等结构。对于一些小地方，还是建议使用class属性</p>
 <h3 id="1-5-2-浏览器标题栏小图标"><a href="#1-5-2-浏览器标题栏小图标" class="headerlink" title="1.5.2 浏览器标题栏小图标"></a>1.5.2 浏览器标题栏小图标</h3><p>放在head里面</p>
 <p><code>&lt;link rel="shortcut icon" type="image/x-icon" href="favicon.icon"/&gt;</code></p>
@@ -1049,7 +1050,7 @@ width、height宽高 scrolling滚动条
 <h3 id="2-1-1-外部样式表"><a href="#2-1-1-外部样式表" class="headerlink" title="2.1.1 外部样式表"></a>2.1.1 外部样式表</h3><p>把CSS代码和HTML代码都单独放在不同文件中，然后在HTML文档中使用link标签来引用CSS样式表</p>
 <p>外部样式表都是在head标签内使用link标签来引用的</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>index.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>css文件路径<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-1-2-内部样式表"><a href="#2-1-2-内部样式表" class="headerlink" title="2.1.2 内部样式表"></a>2.1.2 内部样式表</h3><p>指的就是把CSS代码和HTML代码放在同一个文件中，其中CSS代码是放在<strong>标签对内的</strong></p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
@@ -1065,7 +1066,7 @@ width、height宽高 scrolling滚动条
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>绿叶学习网<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>  
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>绿叶学习网<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-1-3-内联样式表"><a href="#2-1-3-内联样式表" class="headerlink" title="2.1.3 内联样式表"></a>2.1.3 内联样式表</h3><p>也是把CSS代码和HTML代码放在同一个文件中，但是跟内部样式表不同，CSS样式不是在<style></style>标签对中定义，而是<strong>在标签的style属性中定义</strong></p>
+<h3 id="2-1-3-内联样式表-行内式"><a href="#2-1-3-内联样式表-行内式" class="headerlink" title="2.1.3 内联样式表(行内式)"></a>2.1.3 内联样式表(行内式)</h3><p>也是把CSS代码和HTML代码放在同一个文件中，但是跟内部样式表不同，CSS样式不是在<style></style>标签对中定义，而是<strong>在标签的style属性中定义</strong></p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span> 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/xhtml<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
@@ -1080,7 +1081,7 @@ width、height宽高 scrolling滚动条
 <h2 id="2-2-元素的id和class"><a href="#2-2-元素的id和class" class="headerlink" title="2.2 元素的id和class"></a>2.2 元素的id和class</h2><p>id属性是唯一的，class可以有多个<br><code>&lt;div id="first"&gt;绿叶学习网&lt;/div&gt;</code></p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>first<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>绿叶学习网<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>first<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>绿叶学习网<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="2-3-css选择器"><a href="#2-3-css选择器" class="headerlink" title="2.3 css选择器"></a>2.3 css选择器</h2><p>将想要的标签选中，然后再操作标签</p>
+<h2 id="2-3-CSS选择器"><a href="#2-3-CSS选择器" class="headerlink" title="2.3 CSS选择器"></a>2.3 CSS选择器</h2><p>将想要的标签选中，然后再操作标签</p>
 <p>选择器</p>
 <pre class="line-numbers language-css"><code class="language-css"><span class="token selector">选择器</span><span class="token punctuation">{</span>
     样式属性<span class="token property">1</span><span class="token punctuation">:</span>取值<span class="token number">1</span><span class="token punctuation">;</span>
@@ -1094,14 +1095,14 @@ width、height宽高 scrolling滚动条
 <span class="token selector"><span class="token id">#id</span>属性值 </span><span class="token punctuation">{</span>属性<span class="token punctuation">:</span>属性值<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="2-3-1-3-class选择器"><a href="#2-3-1-3-class选择器" class="headerlink" title="2.3.1.3 class选择器"></a>2.3.1.3 class选择器</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.red</span> </span><span class="token punctuation">{</span><span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100</span>px<span class="token punctuation">}</span>
 <span class="token selector"><span class="token class">.class</span>属性值 </span><span class="token punctuation">{</span>属性<span class="token punctuation">:</span>属性值<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h4 id="2-3-1-4-子元素选择器"><a href="#2-3-1-4-子元素选择器" class="headerlink" title="2.3.1.4 子元素选择器"></a>2.3.1.4 子元素选择器</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token id">#father1</span> <span class="token id">#p1</span> </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<h4 id="2-3-2-2-子元素选择器"><a href="#2-3-2-2-子元素选择器" class="headerlink" title="2.3.2.2 子元素选择器"></a>2.3.2.2 子元素选择器</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token id">#father1</span> <span class="token id">#p1</span> </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span><span class="token punctuation">}</span>
 <span class="token selector">#父元素选择 #子元素选择 </span><span class="token punctuation">{</span>属性<span class="token punctuation">:</span>属性值<span class="token punctuation">}</span>
 
 &lt;div id=<span class="token string">"father1"</span>>
     &lt;div id=<span class="token string">"p1"</span>>绿叶学习网&lt;/div>
     &lt;div>绿叶学习网&lt;/div>
 &lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="2-3-1-5-相邻选择器"><a href="#2-3-1-5-相邻选择器" class="headerlink" title="2.3.1.5 相邻选择器"></a>2.3.1.5 相邻选择器</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token id">#lv</span> + div </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<h4 id="2-3-2-5-相邻选择器"><a href="#2-3-2-5-相邻选择器" class="headerlink" title="2.3.2.5 相邻选择器"></a>2.3.2.5 相邻选择器</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token id">#lv</span> + div </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span><span class="token punctuation">}</span>
 <span class="token selector">#元素a + 元素a相邻的兄弟元素 </span><span class="token punctuation">{</span>属性<span class="token punctuation">:</span>属性值<span class="token punctuation">}</span>
 
 则是第三个div文本为红色red
@@ -1111,15 +1112,102 @@ width、height宽高 scrolling滚动条
 &lt;/div>
 &lt;div>绿叶学习网&lt;/div>
 &lt;div>绿叶学习网&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="2-3-1-6-群组选择器"><a href="#2-3-1-6-群组选择器" class="headerlink" title="2.3.1.6 群组选择器"></a>2.3.1.6 群组选择器</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector">h3,div,p,span </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="2-4-文本样式"><a href="#2-4-文本样式" class="headerlink" title="2.4 文本样式"></a>2.4 文本样式</h2><ul>
-<li>font-family 字体名：微软雅黑等等<br><code>font-family:微软雅黑;</code> 还有 <code>宋体</code> <code>Times New Roman等等</code></li>
-<li>font-size 字体大小: px/百分比/em<br><code>font-size:15px;</code></li>
-<li>font-weight 字体粗细<br><code>font-weight:bold;</code> <code>normal</code></li>
-<li>font-style 字体斜体<br><code>font-style:italic;</code>斜体 <code>oblique</code>特殊字体（无italic变量） <code>normal</code>默认</li>
-<li>color 颜色<br><code>color:blue;</code> <code>color:#000000;</code></li>
+<h4 id="2-3-2-6-群组选择器"><a href="#2-3-2-6-群组选择器" class="headerlink" title="2.3.2.6 群组选择器"></a>2.3.2.6 群组选择器</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector">h3,div,p,span </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-3-2-复合选择器"><a href="#2-3-2-复合选择器" class="headerlink" title="2.3.2 复合选择器"></a>2.3.2 复合选择器</h3><h4 id="2-3-2-1-后代选择器"><a href="#2-3-2-1-后代选择器" class="headerlink" title="2.3.2.1 后代选择器"></a>2.3.2.1 后代选择器</h4><pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.class</span> h3 </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">h3是div的后代，div的元素名为class
+
+<span class="token id">#father1</span> <span class="token id">#p1</span> </span><span class="token punctuation">{</span><span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span><span class="token punctuation">}</span>
+<span class="token selector">#父元素选择 #子元素选择 </span><span class="token punctuation">{</span>属性<span class="token punctuation">:</span>属性值<span class="token punctuation">}</span>
+
+&lt;div id=<span class="token string">"father1"</span>>
+    &lt;div id=<span class="token string">"p1"</span>>绿叶学习网&lt;/div>
+    &lt;div>绿叶学习网&lt;/div>
+&lt;/div><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-3-2-2-子元素选择器-1"><a href="#2-3-2-2-子元素选择器-1" class="headerlink" title="2.3.2.2 子元素选择器"></a>2.3.2.2 子元素选择器</h4><p><strong>只选择儿子</strong>，<strong>不会选择所有的后代</strong></p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 子代选择器 */</span>
+<span class="token selector"><span class="token class">.class</span>>h3 </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-3-2-3-交集选择器"><a href="#2-3-2-3-交集选择器" class="headerlink" title="2.3.2.3 交集选择器"></a>2.3.2.3 交集选择器</h4><p>既是p标签 又是.red类 关系</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">p<span class="token class">.red</span> </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-3-2-4-并集选择器-群组选择器"><a href="#2-3-2-4-并集选择器-群组选择器" class="headerlink" title="2.3.2.4 并集选择器(群组选择器)"></a>2.3.2.4 并集选择器(群组选择器)</h4><p>样式相同时，用并集选择</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">p,span,<span class="token class">.red</span>,<span class="token id">#id</span> </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-3-2-5-链接伪类选择器"><a href="#2-3-2-5-链接伪类选择器" class="headerlink" title="2.3.2.5 链接伪类选择器"></a>2.3.2.5 链接伪类选择器</h4><h5 id="2-3-2-5-1-伪选择器"><a href="#2-3-2-5-1-伪选择器" class="headerlink" title="2.3.2.5.1 伪选择器"></a>2.3.2.5.1 伪选择器</h5><p>类选择器 <code>.demo</code><br>伪类选择器 <code>:demo</code><br>为链接添加一些特殊效果</p>
+<h5 id="2-3-2-5-2-链接伪类选择器"><a href="#2-3-2-5-2-链接伪类选择器" class="headerlink" title="2.3.2.5.2 链接伪类选择器"></a>2.3.2.5.2 链接伪类选择器</h5><ul>
+<li>a:link 未访问链接</li>
+<li>a:visited 已访问链接</li>
+<li>a:hover 鼠标移动到链接上</li>
+<li>a:active 选定链接</li>
 </ul>
-<h2 id="2-5-文本样式总结"><a href="#2-5-文本样式总结" class="headerlink" title="2.5 文本样式总结"></a>2.5 文本样式总结</h2><h1 id="3-js-的基础"><a href="#3-js-的基础" class="headerlink" title="3. js 的基础"></a>3. js 的基础</h1><script>
+<p>顺序不能颠倒：lvha<br>也算是交集选择器的变种<br>实际开发，都是先用一个总的a风格，然后只是写a:hover</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">a<span class="token pseudo-class">:link</span> </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#333</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">a<span class="token pseudo-class">:visited</span> </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#9ca7a5</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">a<span class="token pseudo-class">:hover</span> </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">a<span class="token pseudo-class">:active</span> </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">/* 子代选择，只是nav中的链接有hover样式 */</span>
+<span class="token selector"><span class="token class">.nav</span> a<span class="token pseudo-class">:hover</span> </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-4-CSS的font文本样式"><a href="#2-4-CSS的font文本样式" class="headerlink" title="2.4 CSS的font文本样式"></a>2.4 CSS的font文本样式</h2><ul>
+<li>font-family 字体名：微软雅黑等等<br><code>font-family:微软雅黑;</code> 还有 <code>宋体</code> <code>Times New Roman等等</code></li>
+</ul>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector">h1 </span><span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> deeppink<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> xx-large<span class="token punctuation">;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> JetBrains Mono,<span class="token string">"幼圆"</span>,<span class="token string">"microsoft yahei"</span>,<span class="token string">"微软雅黑"</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*多个字体用逗号隔开，从开始寻找字体：如果第一个没有，用第二个，如果都没有，用默认字体*/</span>
+    <span class="token comment" spellcheck="true">/*中文字体需要引号，英文字体无特殊字符，不需要引号*/</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">"\5FAE\8F6F\96C5\9ED1"</span>   <span class="token comment" spellcheck="true">/*= 微软雅黑*/</span>
+  <span class="token comment" spellcheck="true">/*Unicode字体，可以查表*/</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>font-size 字体大小: px/百分比/em<br><code>font-size:15px;</code> 一般都用px，像素</p>
+</li>
+<li><p>font-weight 字体粗细<br><code>font-weight:bold;</code> <code>normal</code> <code>100~900   400为normal，700为bold</code><br>用数字更好</p>
+</li>
+<li><p>font-style 字体斜体<br><code>font-style:italic;</code>斜体 <code>oblique</code>特殊字体（无italic变量） <code>normal</code>默认</p>
+</li>
+<li><p>color 颜色<br><code>color:blue;</code> <code>color:#000000;</code></p>
+</li>
+</ul>
+<p><strong>综合性font语法</strong></p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.imporp</span> </span><span class="token punctuation">{</span>
+    <span class="token property">font</span><span class="token punctuation">:</span> initial <span class="token number">700</span> <span class="token number">20</span>px <span class="token string">"幼圆"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">也就是:
+<span class="token class">.xuanze</span> </span><span class="token punctuation">{</span>
+  <span class="token property">font</span><span class="token punctuation">:</span> font-style font-weight font-size font-family<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-5-CSS的外观属性"><a href="#2-5-CSS的外观属性" class="headerlink" title="2.5 CSS的外观属性"></a>2.5 CSS的外观属性</h2><h3 id="2-5-1-color文本颜色"><a href="#2-5-1-color文本颜色" class="headerlink" title="2.5.1 color文本颜色"></a>2.5.1 color文本颜色</h3><ul>
+<li>预定义颜色：red，green，blue，pink等等</li>
+<li>十六进制：#FF0000，#000000黑色，#ffffff白色，#ff0000红色<ul>
+<li>简写：#ccc   由 #cccccc简写，两两相同</li>
+</ul>
+</li>
+<li>RGB颜色：<code>rgb(255,0,0)</code> <code>rgb(100%,0%,0%)</code></li>
+</ul>
+<h3 id="2-5-2-文本水平对齐方式"><a href="#2-5-2-文本水平对齐方式" class="headerlink" title="2.5.2 文本水平对齐方式"></a>2.5.2 文本水平对齐方式</h3><p><code>text-align:</code><br>left 左对齐（默认）<br>right 右对齐<br>center 居中对齐</p>
+<h3 id="2-5-3-行间距"><a href="#2-5-3-行间距" class="headerlink" title="2.5.3 行间距"></a>2.5.3 行间距</h3><p><code>line-height:</code><br>em 百分比 px<br>一般用像素px，作为单位，一般行距比字号大7、8像素</p>
+<h3 id="2-5-4-首行缩进"><a href="#2-5-4-首行缩进" class="headerlink" title="2.5.4 首行缩进"></a>2.5.4 首行缩进</h3><p><code>text-indent:</code> ， em为常用单位<br>为字符单位的倍数，如1em为一个字的宽度</p>
+<h3 id="2-5-5-文本的装饰"><a href="#2-5-5-文本的装饰" class="headerlink" title="2.5.5 文本的装饰"></a>2.5.5 文本的装饰</h3><p><code>text-decoration:</code> 去掉连接下划线<br>none 默认，无装饰<br>blink 闪烁<br>underline 下划线<br>line-through 删除线<br>overline 上划线</p>
+<h1 id="000-快捷键操作"><a href="#000-快捷键操作" class="headerlink" title="000 快捷键操作"></a>000 快捷键操作</h1><p><img src="/img/hcj/kjj.png" alt="快捷键操作"></p>
+<h1 id="3-js-的基础"><a href="#3-js-的基础" class="headerlink" title="3. js 的基础"></a>3. js 的基础</h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1486,7 +1574,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">62.8k</span>&nbsp;字
+                class="white-color">63.5k</span>&nbsp;字
             
             
             
