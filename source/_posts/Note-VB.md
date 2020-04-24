@@ -1850,6 +1850,24 @@ Private Const SND_SYNC = &H0         '  play synchronously (default)
 
 ![可视化数据管理器](/img/VB/kshsjglq9.png)
 
+## 5.13 总复习
+
+### 5.13.1 同心圆
+![案例1](/img/VB/txy.png)
+![案例1](/img/VB/txy2.png)
+
+### 5.13.2 两圆转动
+![案例2](/img/VB/yzyd.png)
+![案例2](/img/VB/yzyd2.png)
+
+### 5.13.3 密码输入，文本框飘动
+![案例3](/img/VB/mimayd.png)
+
+### 5.13.4 网络连接计时
+
+![案例4](/img/VB/wlljjs.png)
+![案例4](/img/VB/wlljjs2.png)
+
 # 6. 课程学习过程中练习
 
 第几次课.第几道练习

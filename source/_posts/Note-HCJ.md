@@ -5,7 +5,7 @@ cover: false
 date: 2020-03-25 12:04:47
 categories: 学习力
 tags:
-  - Vue
+  - 前端
   - Note
 summary: 学习前端前的基础知识，对，没错，就是html、css和js
 password:
@@ -849,10 +849,873 @@ underline 下划线
 line-through 删除线
 overline 上划线
 
-# 000 快捷键操作
+## 2.6 标签的显示模式
+
+**这节是重点**
+
+### 2.6.1 标签的显示模式
+
+div只能自己占一行，可以把多个span放到一行，a链接也可以一行放多个
+
+块标签和行标签
+
+### 2.6.2 块级元素
+`block-level`
+
+h1~h6、p、div、ul、ol、li等，div是典型
+
+* 高度、宽度、外边距、内边距都可以控制（可以自己设置）
+* 宽度默认为容器（父级宽度）的100%
+* 里面可以放行内或者块级元素
+* p、h1~h6、dt不能放块级元素，p不能放div
+
+### 2.6.3 行内元素
+`inline-level`
+
+a、strong、b、em、i、del、s、ins、u、span等，span典型
+
+* 相邻行内元素再一行上、一行可以显示多个
+* 高宽不能直接设置
+* 默认宽度就是它本身的宽度,与文本内容多少有关
+* 行内元素只能容纳文本或者其他行内元素
+* 链接里面不能再含有链接
+* 特殊情况：a内可以放块级元素，但给a转换一下块级模式更加安全
+
+### 2.6.4 行内块元素
+`inline-block`
+
+img、input表单类、td单元格等，可以对他们设置宽高和对齐属性
+
+* 和相邻的行内元素在一行上、但会有空白缝隙，一行可以显示多个
+* 默认宽度和高度是本身内容的宽度
+* 高度、行高、外边距、内边距可以控制
+
+### 2.6.5 显示模式转换display
+
+* 块转换为行：`display:inline;`
+* 行转换为块：`display:block;`
+* 块、行转换为行内块：`display:inline-block`
+
+## 2.7 行高line-height
+
+可以间接让文字垂直居中
+
+### 2.7.1 行高测量
+
+行高测量：有英文的话基线与基线间的距离、中文可以直接量底线
+![行高测量](/img/hcj/hgcl.png)
+
+### 2.7.2 单行文本垂直居中
+
+上距离+文字高度+下距离 = 块高
+
+**行高**
+**等于高度**，**文字垂直居中**
+大于高度，文字偏下
+小于高度，文字偏上
+
+## 2.8 CSS背景background
+
+### 2.8.1 背景颜色color
+
+`background-color:`
+transparent透明色--默认透明
+
+### 2.8.2 背景图片image
+
+`background-image: url(images/1.jpg)`
+默认url为none,url中的地址不用加引号
+
+### 2.8.3 背景平铺repeat
+
+`background-repeat:`
+默认repeat 平铺
+no-repeat 不平铺
+repeat-x 横向平铺
+repeat-y 纵向平铺
+
+### 2.8.4 背景位置position（重点）
+
+`background-position:`
+length 百分数，浮点数子和单位标识符组成的长度值
+position后面是完整的位置坐标，可以加方位名词或者数字
+* 方位名词：`right top;` 右上角,,left,bottom,center
+  * `left top` 与 `top left`效果相同，顺序无关
+  * 只写一个的话，另一个默认居中
+
+常用的超大背景图片`center top`
+
+* 数字坐标： `x坐标 y坐标;`,如`10px 50px;`
+  * 第一个为x坐标，第二个为y坐标，顺序有关
+  * 只给一个值，则默认为x坐标，另一个默认居中
+  * 如果精确和方位混合使用，则精确值第一个为x，第二个为y
+
+### 2.8.5 背景附着
+
+`background-attachment:`
+`scroll` 滚动
+`fixed` 固定
+
+### 2.8.6 背景简写
+
+`background: transparent url(image.jpg) repeat-y scroll center top;`
+`background:`背景颜色 图片地址 背景平铺 背景滚动 背景位置;
+
+### 2.8.7 背景透明（CSS3）
+
+黑色半透明，rgba(red,green,blue,alpha)
+alpha：透明度0~1
+
+`background: rgba(0,0,0,0.3);`
+* 简略显示`rgba(0,0,0,.3)`
+* 半透明只是盒子半透明，内容不受影响
+
+## 2.9 CSS三大特性
+
+### 2.9.1 CSS层叠性
+
+通俗：前面有一个div属性，后面再写一个一样的，则会使用后面的
+
+* 就近原则，那个样式离着结构近，就执行那个样式
+* 样式不冲突，不会层叠
+
+### 2.9.2 CSS继承性
+
+```html
+<style>
+div {
+  color: red;
+}
+</style>
+<div>
+<p>内容<p>
+</div>
+```
+p中的内容也是red红色
+
+* 恰当的使用继承可以让代码更加简洁
+* text-，font-，line-，只有这些元素可以继承
+
+### 2.9.3 CSS优先级（重点）
+
+同一元素上有不同的规则
+* 选择器相同，执行就近原则（层叠性）
+* 选择器不同，如一个`div`，一个`.class`，两个选择器，选择`.class`
+
+#### 2.9.3.1 权重计算公式
+| 选择器           | 计算权重公式 |
+| ---------------- | ------------ |
+| 继承或者*        | 0,0,0,0      |
+| 每个元素标签选择器       | 0,0,0,1      |
+| 每个元素类选择器.        | 0,0,1,0      |
+| 每个元素id选择器#        | 0,1,0,0      |
+| 每个元素行内选择器style  | 1,0,0,0      |
+| 直接用!important | 权重最高     |
+
+最高权重的用法
+```css
+div {
+  color: red!important;
+}
+```
+
+**只要是继承权重一定为0**
+
+* 如果该标签被选中，则比较权重
+* 如果标签没有被选中，则始终为0
+
+#### 2.9.3.2 权重计算叠加
+
+交集选择器、后代选择器会出现权重叠加
+如：
+* `div ul li`   0,0,0,3
+* `.nav ul li`  0,0,1,2
+* `a:hover`  0,0,1,1
+* `.nav a`  0,0,1,1
+
+## 2.10 盒子模型（CSS重点）
+
+### 2.10.1 盒子模型介绍
+
+网页布局本质
+
+* 设置好各个盒子的大小，摆放好盒子的位置
+* 然后放内容（图片，文字等等）
+
+**盒子模型Box Model**
+* 盒子组成四部分：Border厚度（边缘），content内容，Padding内边距，Margin盒子与盒子间的距离（外边距）
+
+![盒子模型](/img/hcj/boxmodel.png)
+
+### 2.10.2 盒子边框border
+
+综合性写法：`border: 1px solid pink;`没有顺序 
+
+`border-width:` 默认medium，边框宽度px 
+`border-style:` 边框样式，none，hidden，dotted点线，dashed虚线，**solid实线**
+`border-color:` 颜色
+
+#### 2.10.2.1 边框分开写
+
+`border-top:` 上边框综合写法，具体写`border-top-width`等等
+`border-bottom:` 下边框
+`border-right:` 右边框
+`border-left:` 左边框
+
+例子
+```css
+input {
+  /* border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px dashed pink;
+    */
+  border: none;
+  border-bottom: 1px dashed red;
+}
+```
+
+```html
+用户名: <input type="text">
+密码： <input type="text">
+```
+
+#### 2.10.2.2 表格的细线边框
+
+表格的两个单元格在重合时会发生重叠，从而使得边框变粗
+
+合并单元格：`table {border-collapse:collapse;}`
+相邻边框合并在一起，而不会变粗
+
+### 2.10.3 盒子内边距padding
+
+单位px
+`padding-left:`
+`padding-right:`
+`padding-top:`
+`padding-bottom:`
+
+* 内容和边框有了距离
+* 添加内边距，盒子会变大
+* 简写：
+`padding: 20px;` 解释：上下左右都是20px的内边距
+`padding: 10px 20px;`  上下10px，左右20px
+`padding: 10px 20px 30px;` 上10px，左右20px，下30px
+`padding: 10px 20px 30px 40px;` 上10 ，右20，下30，左40，顺时针
+
+---
+
+![新浪导航](/img/hcj/xldh.png)
+
+给盒子指定一个padding而不给宽度，实现不同内容，不同宽度
+
+```html
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>xl</title>
+	<style>
+		.nav {
+			height: 41px;
+			background-color: rgb(252, 252, 252);
+			border-top: 4px solid #dd5600;
+			border-bottom: 1px solid #edefec;
+		}
+		.nav a {
+			display: inline-block;
+			height: 41px;
+			/* background-color: pink; */
+			text-decoration: none;
+			padding: 0px 20px;
+			line-height: 41px;
+			color: #4c4c4c;
+			font-size: 12px;
+		}
+		.nav a:hover {
+			background-color: #eaedea;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<a href="#">设为首页</a>
+		<a href="#">手机新浪网</a>
+		<a href="#">移动客户端</a>
+		<a href="#">博客</a>
+		<a href="#">微博</a>
+		<a href="#">关注我</a>
+	</div>
+</body>
+</html>
+```
+
+---
+
+**盒子模型的计算**
+
+![盒子模型](/img/hcj/boxmodel.png)
+
+**盒子的实际大小 = 内容宽度 高度 + 内边距 + 边框**
+
+* `padding: 10px`会把盒子的宽高各增加20px
+* 解决方法： 要让盒子保持原大小，则要修改width，height，减去内边距即可
+
+特殊情况：padding不会撑开的情况
+如果这个盒子没有宽度，则padding不会撑开盒子，盒子内的盒子不会撑开盒子
+
+### 2.10.4 盒子的外边距margin
+
+`margin-left:`
+`margin-right:`
+`margin-top:`
+`margin-bottom:`
+简写，与padding一样
+`margin: 10px` 上下左右
+
+#### 2.10.4.1 块级盒子居中对齐
+
+居中对齐：有宽度、左右外边距设为`auto`
+* 第一种写法
+`width: 600px;`
+`margin-left: auto;`
+`margin-right: auto;`
+
+* 第二种写法
+`margin: auto;`
+
+* 第三种写法
+`margin: 0 auto;`
+上下为`0` ，左右`auto`
+
+#### 2.10.4.2 文字居中，盒子居中
+
+* 文字水平居中：`text-aligh: center;`
+也可以让行内元素和行内块元素居中对齐
+
+* 盒子水平居中：`margin: 10px auto;`
+
+#### 2.10.4.3 插入图片和背景图片
+
+通常用插入图片
+* 插入图片`<img src="url" alt="">`
+移动位置只能通过盒模型`padding`或`margin`值来移动
+
+背景图片很少用，小图标或者超大背景
+* 背景图片`background-image: url(url);`
+移动位置只能用`background-position: x,y;`
+
+
+#### 2.10.4.4 清除元素默认的内外边距（写css第一句代码，很重要）
+
+```css
+* {
+  padding: 0;
+  margin: 0;
+}
+```
+
+* 一些元素有默认的内外边距，要美观就要删掉
+* **行内标签，尽量只设置左右内外边距，不设置上下内外边距（不管用）**
+
+#### 2.10.4.5 外边距合并
+1. 
+  * 相邻块元素垂直外边距合并，取两个值中的较大值（外边距塌陷）
+  * 解决方法：尽量只给一个盒子添加margin值
+2. 
+  * 嵌套关系的垂直外边距合并，（塌陷）父子级关系，给儿子一个margin，父亲也会有margin
+  * 解决方案
+    * 为父元素指定外边框`border-top:`
+    * 为父元素指定一个上`padding-top:`
+    * 为父元素添加`overflow: hidden;`
+
+#### 2.10.4.6 盒子模型的布局稳定性
+
+优先级使用，先宽度width，然后内边距padding，最后外边距margin
+
+### 2.10.5 盒子综合案例
+
+![盒子综合案例](/img/hcj/boxlizi.png)
+
+```html
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>盒子综合案例</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.box {
+			width: 298px;
+			height: 198px;
+			border: 1px solid #ccc;
+			margin: 100px auto; /* 水平居中 */
+			background: url(../images/1.ico);
+			padding: 15px;
+		}
+		.box ul li {
+			/* 去掉列表样式 */
+			list-style: none;
+			height: 30px;
+			border-bottom: 1px dashed #ccc;
+			line-height: 30px;
+			background: url(../images/1.ico) no-repeat 5px center;
+			/* background-position: 5px center; */
+			padding-left: 20px;
+		}
+		.box ul li a {
+			text-decoration: none;
+			font-size: 12px;
+			color: #2a2a29;
+			/* margin-left: 20px; */
+			/* padding-left: 20px; */
+		}
+		.box ul li a:hover {
+			text-decoration: underline;
+		}
+		.box h2 {
+			font-size: 18px;
+			padding: 5px 0;
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h2>最新文章/New Articles</h2>
+		<ul>
+			<li><a href="#">北京招聘</a></li>
+			<li><a href="#">体验js</a></li>
+			<li><a href="#">jquery</a></li>
+			<li><a href="#">网页设计师</a></li>
+			<li><a href="#">链式编程</a></li>
+		</ul>
+	</div>
+</body>
+</html>
+```
+
+**去掉列表默认的样式（前面的小点）**
+无序列表和有序列表列表样式在不同浏览器显示样式不一样所以去掉
+`li { list-style: none; }`
+
+### 2.10.6 拓展CSS3
+
+#### 2.10.6.1 边框圆角
+
+`border-radius: length`
+length可以为数值或百分比
+
+横向矩形为高度一般设置为高度的一半
+
+#### 2.10.6.2 盒子阴影
+
+`box-shadow: 水平阴影 垂直阴影 模糊距离(虚实) 阴影尺寸(大小) 阴影颜色 内外阴影`
+`h-shadow v-shadow`前两个必须写
+`blur spread color inset`可以省略
+内外阴影默认为outset，且不用写
+
+`美观的` `box-shadow: 0 15px 30px rgba(0,0,0,.3);`
+
+```css
+width: 300px;
+height: 300px;
+background-color: pink;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+/* border-radius: 150px; */
+border-radius: 20%;
+box-shadow: 2px 2px 2px 2px #000 ;
+```
+
+![picture](/img/hcj/shadow.png)
+
+## 2.11 CSS书写规范
+
+**空格规范**
+
+* `选择器`与`{}`之间有空格
+* 属性的`冒号`跟`值`有空格
+
+**选择器规范**
+
+* 并集选择器竖着写
+* 花括号对齐
+* 选择器嵌套层数最好不超过3级
+
+**属性规范**
+
+* 属性必须另起一行
+* 属性定义后必须有`;`结束
+
+## 2.12 浮动float
+
+布局页面
+
+### 2.12.1 CSS布局的三种机制
+
+网页布局的核心就是用CSS来摆放盒子
+
+三种方法：
+* 普通流
+
+块级元素会独占一行，从上向下顺序排序
+`div、hr、p、h1~h6、ul、ol、dl、form、table`
+
+行内元素会多个在一行内显示，从左到右，碰到父元素边缘自动换行
+`span、a、i、em`
+
+* 浮动流
+
+让盒子从普通流中浮动起来，主要作用让多个块级盒子一行显示
+
+* 定位流
+
+将盒子定在浏览器中的某一个位置，CSS离不开定位，特别是后面的js特效
+
+### 2.12.2 浮动
+
+#### **1. 为什么用浮动？？？**
+
+* 让多个盒子水平排列成一行
+
+&emsp;行内块也可以让多个块水平排列在一行`display: inline-block`，**但中间会有一个空隙，而且很难去掉，也不能简单地调整空隙大小,但浮动可以实现**
+
+* 实现盒子的左右对齐
+
+#### **2. 什么是浮动？？？**
+
+设置了浮动属性地元素：
+* 脱离标准普通流地控制
+* 移动到指定地位置
+
+#### **3. 浮动的作用**：
+* 让多个盒子div水平排列成一行
+* 可以实现盒子地左右对齐
+* 最早是用来控制图片，实现**文字环绕图片**的效果
+
+#### **4. 浮动的语法**
+
+float属性定义浮动
+```css
+选择器 {
+  float: none
+}
+
+/* none 、 left 、 right  */
+/* 不浮动 、 左浮 、 右浮 */
+```
+
+#### **5. 浮动的口诀**
+
+**浮**
+漂浮在普通流的上面，脱离标准流，*脱标*
+float让盒子漂浮在标准流的上面，所以第二个标准流的盒子跑到浮动盒子的地下
+
+![浮动](/img/hcj/float.png)
+
+**漏**
+浮动的盒子原来的位置留给下面标准流的盒子，不占有原来的位置
+
+**特**
+float特性，float会改变元素的display属性
+任何元素都可以浮动，浮动的元素会生成一个块级框，而不论他本身是什么元素，生成的块级框跟行内块相似
+
+两个块元素都给上float属性，会都转化为**行内块元素，而且中间没有空隙**
+
+**浮动的盒子会相互靠在一起，如果父级宽度装不下这些浮动的盒子，多出的盒子会另起一行对齐**
+
+#### **6. 浮动的应用(重点)**
+
+浮动流和标准流的父盒子的搭配
+先给定一个标准流的父级盒子，然后浮动流在标准流中浮动
+**完整的网页 = 标准流 + 浮动 + 定位**
+
+![浮动案例](/img/hcj/floatex1.png)
+
+```html
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Float</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.box {
+			width: 1226px;
+			height: 615px;
+			background-color: #CCCCCC;
+			margin: auto;
+			margin-top: 30px;
+		}
+		.left {
+			width: 234px;
+			height: 615px;
+			background-color: #f7ebcd;
+			float: left;
+		}
+		.left img {
+			width: 234px;
+		}
+		.right {
+			width: 992px;
+			height: 615px;
+			background-color: skyblue;
+			float: right;
+		}
+		.right li {
+			/* 清除列表样式 */
+			list-style: none;	
+			width: 234px;
+			height: 300px;
+			background-color: pink;
+			float: left;
+			margin-left: 14px;
+			margin-bottom: 14px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="left"><img src="../images/1.ico" alt=""></div>
+		<ul class="right">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+		</ul>
+	</div>
+</body>
+</html>
+```
+
+![浮动导航栏案例](/img/hcj/floatex2.png)
+
+**导航栏用li+a搭配更好**
+
+```html
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>导航栏</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		li {
+			list-style: none;
+		}
+		.banner {
+			width: 760px;
+			height: 150px;
+			background-color: #CCCCCC;
+			margin: auto;
+		}
+		.banner img {
+			width: 760px;
+		}
+		.nav {
+			width: 760px;
+			height: 32px;
+			background-color: pink;
+			margin: 0 auto;
+			background-image: url(../images/dhl.png) ;
+			background-repeat: repeat-x;
+		}
+		.nav ul li {
+			float: left;
+		}
+		/* 可以给a和li大小,但是a要求hover,所以要直接给a大小 */
+		.nav ul li a {
+			text-decoration: none;
+			display: block;
+			width: 80px;
+			height: 32px;
+			background: url(../images/banner0.png) no-repeat; 
+			
+			line-height: 32px;
+			text-align: center;
+			
+			color: #3b4300;
+			font-size: 12px;
+		}
+		.nav ul li a:hover {
+			background: url(../images/banner1.png) no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<!-- banner广告条 -->
+	<div class="banner"><img src="../images/banner.png" ></div>
+	<div class="nav">
+		<!-- 重要的导航栏用li+a的写法 -->
+		<ul>
+			<li><a href="#">网站首页</a></li>
+			<li><a href="#">网站首页</a></li>
+			<li><a href="#">网站首页</a></li>
+			<li><a href="#">网站首页</a></li>
+			<li><a href="#">网站首页</a></li>
+			<li><a href="#">网站首页</a></li>
+		</ul>
+	</div>
+</body>
+</html>
+```
+
+#### **7. 浮动的扩展**
+
+![浮动元素与父盒子的关系](/img/hcj/floatkz.png)
+
+* 浮动元素与父盒子的关系
+  * 子盒子的浮动参考父盒子对齐
+  * 不会与父元素的边框重叠，也不会超过父盒子的内边距
+
+![浮动元素与父盒子的关系](/img/hcj/floatkz1.png)
+![浮动元素与父盒子的关系](/img/hcj/floatkz2.png)
+
+两个都不浮动，则就两行显示，跟1不浮动、2浮动一样
+
+* 浮动元素与兄弟盒子的关系，在一个父级盒子中，如果前一个兄弟盒子是
+  * 浮动的，那么当前盒子会与钱一个盒子顶部对齐（1、2都浮动）
+  * 普通流的，那么当前盒子会显示正在前一个兄弟盒子的下方（1不浮动、2浮动）
+
+**一个父盒子中有很多盒子，如果其中一个盒子浮动，其他也应该浮动，防止出现问题**
+
+### 2.12.3 清除浮动
+
+#### 1. 为什么要清除浮动？？？
+
+**父级盒子很多情况下，不方便给出高度**，但是子盒子如果浮动就不会占用位置，最后父级盒子的高度为0，就会影响下面的标准流盒子
+
+正常的标准流盒子会把没有固定高度的父盒子撑开，而浮动的盒子不会撑开父亲
+不方便给高度：固定的样式，内容不同的情况下
+
+#### 2. 清除浮动
+
+主要是解决浮动元素撑不开**未给高度的父盒子**的问题，清除浮动后，父级会根据浮动的子盒子自动检测高度
+
+#### 3. 清除浮动的方法
+
+`clear: 属性值;`
+`left清除左侧浮动影响 right both`
+一般直接用`clear: both`
+
+##### ① 额外标签法（隔墙法）
+
+在浮动元素末尾添加一个空的标签
+
+`<div style="clear: both"></div>`或者其他如`<br>`标签等
+
+* 缺点： 添加了许多无意义标签，结构性差
+
+##### ② 父级添加overflow属性方法
+
+给父级添加`overflow`为`hidden` `auto` `scroll` 都可以
+`overflow: hidden;`
+auto生成滚动条，scroll生成两个滚动条
+
+代码简洁，但是内容增多时荣一造成不会自动换行而导致内容被隐藏掉，无法显示需要溢出的元素
+
+##### ③ 使用after伪元素清除浮动
+
+after方式为空元素添加额外标签的升级版，不用单独添加标签
+
+相当于给这个标签后面添加了一个新的标签，但是结构里面不可见，虚拟，更好
+
+```css
+/* 声明清除浮动的样式 */
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+/* 防止低版本浏览器不支持after */
+/* ie6、7清除浮动的样式 */
+.clearfix {
+  *zoom: 1;
+}
+
+/* 然后给需要的标签添加一个类名：clearfix */
+```
+
+##### ④ 使用双伪元素清除浮动
+
+代码更加简洁
+
+```css
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+```
+
+#### 4. 清除浮动总结
+
+当
+* 父级没高度
+* 子盒子浮动
+* 影响下面的布局
+就需要清除浮动，四种方法清除浮动
+
+#### 5. PS切片
+
+**PS切片常用切片工具**
+
+大致步骤：切片后然后，导出-->存储为web常用-->然后用切片保存选中的切片
+切片方法：
+1. 切片工具直接切片
+2. 图层-->新建基于图层的切片
+3. 利用辅助线`ctrl+ R`调出辅助线
+
+清除切片：视图-->清除切片
+
+
+---
+
+# ✳快捷键操作（常用）
+
+**html编辑的快捷方法**
+
 ![快捷键操作](/img/hcj/kjj.png)
 
+* `w200` 生成 `width: 200px;`
+* `h200` 生成 `height: 200px;`
 
+我的HB不行hhh草
+* `bd+` 生成 `border: 1px solid #000;`
+* `bd-` 生成 `border: none;`
 
+---
 
 # 3. js 的基础
