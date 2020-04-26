@@ -918,7 +918,7 @@ img、input表单类、td单元格等，可以对他们设置宽高和对齐属�
 
 ### 2.8.1 背景颜色color
 
-`background-color:`
+`-color:`
 transparent透明色--默认透明
 
 ### 2.8.2 背景图片image
@@ -1357,6 +1357,15 @@ box-shadow: 2px 2px 2px 2px #000 ;
 * 属性必须另起一行
 * 属性定义后必须有`;`结束
 
+### 2.11.1 CSS属性书写顺序（重点）
+
+按照顺序书写
+
+1. 布局定位属性：`display / position / float / clear / visibility / overflow` （display第一个写）
+2. 自身属性： `width / height / margin / padding / border / background /`
+3. 文本属性： `color / font / text-decoration / text-align / vertical-align / white-space / break-word`
+4. 其他属性（CSS3）： `content / cursor / border-radius / box-shadow / text-shadow / background:linear-gradient ...` 
+
 ## 2.12 浮动float
 
 布局页面
@@ -1700,6 +1709,8 @@ after方式为空元素添加额外标签的升级版，不用单独添加标签
 
 清除切片：视图-->清除切片
 
+或者使用ps切片的插件（免费但是需要注册自己的帐号）
+Cutterman切图神器
 
 ---
 
