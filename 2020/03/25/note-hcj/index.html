@@ -317,7 +317,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/30.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/wallhaven/49.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -439,12 +439,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Note/">
-                                <span class="chip bg-color">Note</span>
-                            </a>
-                        
                             <a href="/tags/%E5%89%8D%E7%AB%AF/">
                                 <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                            <a href="/tags/Note/">
+                                <span class="chip bg-color">Note</span>
                             </a>
                         
                     </div>
@@ -475,14 +475,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2020-04-24
+                    2020-04-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    9,005
+                    9,113
                 </div>
                 
 
@@ -1243,7 +1243,7 @@ width、height宽高 scrolling滚动条
 <h3 id="2-7-1-行高测量"><a href="#2-7-1-行高测量" class="headerlink" title="2.7.1 行高测量"></a>2.7.1 行高测量</h3><p>行高测量：有英文的话基线与基线间的距离、中文可以直接量底线<br><img src="/img/hcj/hgcl.png" alt="行高测量"></p>
 <h3 id="2-7-2-单行文本垂直居中"><a href="#2-7-2-单行文本垂直居中" class="headerlink" title="2.7.2 单行文本垂直居中"></a>2.7.2 单行文本垂直居中</h3><p>上距离+文字高度+下距离 = 块高</p>
 <p><strong>行高</strong><br><strong>等于高度</strong>，<strong>文字垂直居中</strong><br>大于高度，文字偏下<br>小于高度，文字偏上</p>
-<h2 id="2-8-CSS背景background"><a href="#2-8-CSS背景background" class="headerlink" title="2.8 CSS背景background"></a>2.8 CSS背景background</h2><h3 id="2-8-1-背景颜色color"><a href="#2-8-1-背景颜色color" class="headerlink" title="2.8.1 背景颜色color"></a>2.8.1 背景颜色color</h3><p><code>background-color:</code><br>transparent透明色–默认透明</p>
+<h2 id="2-8-CSS背景background"><a href="#2-8-CSS背景background" class="headerlink" title="2.8 CSS背景background"></a>2.8 CSS背景background</h2><h3 id="2-8-1-背景颜色color"><a href="#2-8-1-背景颜色color" class="headerlink" title="2.8.1 背景颜色color"></a>2.8.1 背景颜色color</h3><p><code>-color:</code><br>transparent透明色–默认透明</p>
 <h3 id="2-8-2-背景图片image"><a href="#2-8-2-背景图片image" class="headerlink" title="2.8.2 背景图片image"></a>2.8.2 背景图片image</h3><p><code>background-image: url(images/1.jpg)</code><br>默认url为none,url中的地址不用加引号</p>
 <h3 id="2-8-3-背景平铺repeat"><a href="#2-8-3-背景平铺repeat" class="headerlink" title="2.8.3 背景平铺repeat"></a>2.8.3 背景平铺repeat</h3><p><code>background-repeat:</code><br>默认repeat 平铺<br>no-repeat 不平铺<br>repeat-x 横向平铺<br>repeat-y 纵向平铺</p>
 <h3 id="2-8-4-背景位置position（重点）"><a href="#2-8-4-背景位置position（重点）" class="headerlink" title="2.8.4 背景位置position（重点）"></a>2.8.4 背景位置position（重点）</h3><p><code>background-position:</code><br>length 百分数，浮点数子和单位标识符组成的长度值<br>position后面是完整的位置坐标，可以加方位名词或者数字</p>
@@ -1570,6 +1570,13 @@ width、height宽高 scrolling滚动条
 <li>属性必须另起一行</li>
 <li>属性定义后必须有<code>;</code>结束</li>
 </ul>
+<h3 id="2-11-1-CSS属性书写顺序（重点）"><a href="#2-11-1-CSS属性书写顺序（重点）" class="headerlink" title="2.11.1 CSS属性书写顺序（重点）"></a>2.11.1 CSS属性书写顺序（重点）</h3><p>按照顺序书写</p>
+<ol>
+<li>布局定位属性：<code>display / position / float / clear / visibility / overflow</code> （display第一个写）</li>
+<li>自身属性： <code>width / height / margin / padding / border / background /</code></li>
+<li>文本属性： <code>color / font / text-decoration / text-align / vertical-align / white-space / break-word</code></li>
+<li>其他属性（CSS3）： <code>content / cursor / border-radius / box-shadow / text-shadow / background:linear-gradient ...</code> </li>
+</ol>
 <h2 id="2-12-浮动float"><a href="#2-12-浮动float" class="headerlink" title="2.12 浮动float"></a>2.12 浮动float</h2><p>布局页面</p>
 <h3 id="2-12-1-CSS布局的三种机制"><a href="#2-12-1-CSS布局的三种机制" class="headerlink" title="2.12.1 CSS布局的三种机制"></a>2.12.1 CSS布局的三种机制</h3><p>网页布局的核心就是用CSS来摆放盒子</p>
 <p>三种方法：</p>
@@ -1824,6 +1831,7 @@ width、height宽高 scrolling滚动条
 <li>利用辅助线<code>ctrl+ R</code>调出辅助线</li>
 </ol>
 <p>清除切片：视图–&gt;清除切片</p>
+<p>或者使用ps切片的插件（免费但是需要注册自己的帐号）<br>Cutterman切图神器</p>
 <hr>
 <h1 id="✳快捷键操作（常用）"><a href="#✳快捷键操作（常用）" class="headerlink" title="✳快捷键操作（常用）"></a>✳快捷键操作（常用）</h1><p><strong>html编辑的快捷方法</strong></p>
 <p><img src="/img/hcj/kjj.png" alt="快捷键操作"></p>
@@ -1918,12 +1926,12 @@ width、height宽高 scrolling滚动条
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Note/">
-                                    <span class="chip bg-color">Note</span>
-                                </a>
-                            
                                 <a href="/tags/%E5%89%8D%E7%AB%AF/">
                                     <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/Note/">
+                                    <span class="chip bg-color">Note</span>
                                 </a>
                             
                         </div>
@@ -1972,7 +1980,7 @@ width、height宽高 scrolling滚动条
                     <div class="card-image">
                         
                         
-                        <img src="/medias/wallhaven/29.jpg" class="responsive-img" alt="Python中PIL库的学习">
+                        <img src="/medias/wallhaven/37.jpg" class="responsive-img" alt="Python中PIL库的学习">
                         
                         <span class="card-title">Python中PIL库的学习</span>
                     </div>
@@ -2021,7 +2029,7 @@ width、height宽高 scrolling滚动条
                     <div class="card-image">
                         
                         
-                        <img src="/medias/wallhaven/7.jpg" class="responsive-img" alt="自己写的几个python小程序">
+                        <img src="/medias/wallhaven/5.jpg" class="responsive-img" alt="自己写的几个python小程序">
                         
                         <span class="card-title">自己写的几个python小程序</span>
                     </div>
@@ -2204,7 +2212,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <!--br-->
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">68.2k</span>&nbsp;字
+                class="white-color">68.6k</span>&nbsp;字
             
             
             
