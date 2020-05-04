@@ -47,11 +47,48 @@ java 语言的数据库
 
 ### 2.1 git 使用
 
-- git add .
-- git commit -m 'title'
-- git push
-- git pull
-- git clone https://........
+>[大佬的b站帐号](https://space.bilibili.com/503792864)
+>[大佬的视频](https://www.bilibili.com/video/av540325349)
+
+![大佬做的图](https://raw.githubusercontent.com/yq010105/Blog_images/master/img/git.png)
+
+基本操作：
+- `git init 项目名` 创建一个新的本地代码库
+- `git config --global user.name "your name"` 设置你的名字，将会被加到commit和tags中
+- `git config --global user.email "youremail"` 设置邮箱地址，将会被加到commit和tags中
+
+#### 2.1.1 本地操作
+
+- `git add . `放到暂存区
+- `git commit -m 'title'` 提交代码到本地仓库
+- `git status` 查看当前状态，列出所有新修改、暂存区文件的修改情况
+- `git log --n` 显示最近n次commit记录
+- `git reset  --hard commit_id` 回滚版本 *commit_id: 就是用git reflog可以查看到的一串东西*
+- `git diff [file]` 查看工作区和暂存区的区别 ：`git diff` `git diff --cached`
+- `git rm [file]` 删除工作区和暂存区的文件
+- `git reflog` 记录所有的操作记录
+- `git checkout -- [file]` 把工作区修改撤销掉
+- `git reset HEAD [file]` 把暂存区的修改撤销掉
+- `git stash` 把工作区修改内容保存到贮藏区
+- `git stash pop` 将贮藏区的内容恢复到工作区
+- `git tag` 列出代码库中所有的tag
+- `git tag -a<版本号>-m message` 新增一个版本号 
+
+#### 2.1.2 分支操作
+
+- `git branch -a` 列出当地所有分支
+- `git switch -c [name]` 创建一个新的分支
+- `git switch [name]` 切换分支
+- `git merge [from name]` 将name分支与当前分支合并
+- `git branch -d [name]` 删除name分支
+
+#### 2.1.3 远程操作
+
+- `git clone url` 从远程代码库下载整个代码库和历史记录
+- `git remote add <remote name> <url>` 链接一个远程库
+- `git fetch` 从远程代码库下载所有变动
+- `git push` 将当前本地的代码库推送到远程remote库的branch分支
+- `git pull` 从远程库拉去代码并将当前分支和他的`upstream merge`
 
 ### 2.2 .gitignore 文件
 
@@ -110,10 +147,9 @@ Git 忽略规则匹配语法
 ```
 
 > 作者：王伟 desire
-
-    链接：https://www.jianshu.com/p/74bd0ceb6182
-    来源：简书
-    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+>链接：https://www.jianshu.com/p/74bd0ceb6182
+>来源：简书
+>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ### 2.3 cmder 命令操作文件和文件夹
 
@@ -129,7 +165,7 @@ Git 忽略规则匹配语法
 - 显示当前目录下的所有文件列表 ls 为 list 的简写，当然也可以用 ll 命令，它比 ls 显示的内容更加详细，但是 ll 在 cmder 中不可用
 - 清屏 cmder 中为 cls 和 clear 均可，reset 无效， 而在 bash 中 clear 和 reset 均可，cls 无效；
 
-![cmder](/img/cmder.png)
+![cmder](https://raw.githubusercontent.com/yq010105/Blog_images/master/img/cmder.png)
 
 > 版权声明：本文为 CSDN 博主「LeonWuV」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
 > [原文链接](https://blog.csdn.net/wxl1555/article/details/79887591)

@@ -29,20 +29,18 @@ tags:
 `This is an [example link](https://www.jianshu.com/p/31eade263e7a)`
 会显示为:&nbsp;This is an [example link](https://www.jianshu.com/p/31eade263e7a)
 
-### 2.2 锚点
+### 2.2 锚点（有了目录的话，基本不用了）
 
 - 第一种
 
-```
-- [测试](#测试)
-### <a id="测试">测试</a>
-```
+`- [测试](#测试)`
+`### <a id="测试">测试</a>`
 
 - [测试](#测试)
 
 * 第二种
 
-```
+```html
 ### <a href="#测试2">测试2</a>
 h
 t
@@ -59,7 +57,7 @@ l
 
 ### 3.1 网络图片的添加
 
-```
+```md
 ![alt 属性文本](图片地址)
 
 ![alt 属性文本](图片地址 "可选标题")
@@ -76,13 +74,13 @@ l
 ```
 ![avatar](/img/picture_exam.jpeg "example")
 --or--
-<img src="/img/picture_exam.jpeg " width = 10% height = 10% div align=right />
-# 或者是
-#<img src="url" width = "100" height = "100" div align=left />
+<!-- <img src="/img/picture_exam.jpeg " width = 10% height = 10% div align=right /> -->
+或者是
+<!-- <img src="url" width = "100" height = "100" div align=center /> -->
 ```
 
 ![avatar](/img/picture_exam.jpeg "example")
-<img src="/img/picture_exam.jpeg " width = 10% height = 10% div align=right />
+<img src="/img/picture_exam.jpeg " width = 10% height = 10% div align=center />
 
 ## 4. 表格
 
@@ -102,7 +100,7 @@ l
 
 ## 5. 设置字体大小颜色
 
-```
+```html
 <font face="黑体">我是黑体字</font>
 <font face="微软雅黑">我是微软雅黑</font>
 <font face="STCAIYUN">我是华文彩云</font>
@@ -118,7 +116,21 @@ l
 <font color=#00ffff size=72>color=#00ffff</font>
 <font color=gray size=72>color=gray</font>
 
-- <a id="测试">锚点测试</a>
-- <a id="测试2">锚点测试 2</a>
+- 测试用的锚点：
+  - <a id="测试">锚点测试</a>
+  - <a id="测试2">锚点测试 2</a>
   
   > 参考网站:[CSDN](https://blog.csdn.net/weixin_37998647/article/details/79428290 "CSDN")
+
+## 6. 待办清单
+
+可能是我的这个hexo主题不适配这种语法，但是再typora中就可以显示
+*有的markdown支持有的不支持*
+
+- [ ] 任务一
+- [x] 任务二
+
+```md
+- [ ] 任务一
+- [x] 任务二
+```

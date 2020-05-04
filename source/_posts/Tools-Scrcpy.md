@@ -40,7 +40,7 @@ _也许以后会作者大佬修复_
 > 更加详细的教程，参考[这篇文章](https://www.iplaysoft.com/scrcpy.html)
 
 快捷键的使用
-![快捷键使用](/img/scrcpy.png)
+![快捷键的使用](https://raw.githubusercontent.com/yq010105/Blog_images/master/img/scrcpy.png)
 
 一些 scrcpy 代码操作
 

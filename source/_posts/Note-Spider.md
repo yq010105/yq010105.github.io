@@ -632,7 +632,7 @@ input('按任意键结束：')
 ```
 
 **运行程序会出现以下界面**
-![selenium](/img/selenium.png "selenium")
+![selenium](https://raw.githubusercontent.com/yq010105/Blog_images/master/img/selenium.png "selenium")
 
 #### 7.3.3.2 等待信息出现
 
@@ -1057,7 +1057,7 @@ print(f'请输入验证码后，网站返回：{after_check.content.decode()}')
 请输入验证码后，网站返回：看到这个页面，说明你的验证码输入正确
 ```
 
-![验证码](/img/captcha.png)
+![验证码](https://raw.githubusercontent.com/yq010105/Blog_images/master/img/captcha.png)
 
 ### 8.2.2 自动打码
 

@@ -10,7 +10,9 @@ tags:
 <!--more-->
 
 > **建立 hexo_blog，参考 b 站 up:[CodeSheep](https://space.bilibili.com/384068749)的[视频](https://www.bilibili.com/video/av44544186)**
->
+
+<iframe src="//player.bilibili.com/player.html?aid=44544186&bvid=BV1Yb411a7ty&cid=158772893&page=1" width="730px" height="500px" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 > > **所用主题 :[yilia](https://github.com/litten/hexo-theme-yilia)，主要按照[大佬博客](http://yansheng836.coding.me/)中的[这一分类](http://yansheng836.coding.me/tags/hexo/)进行修改**
 
 <!-- more -->
