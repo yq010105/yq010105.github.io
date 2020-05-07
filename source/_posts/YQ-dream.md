@@ -2,6 +2,7 @@
 title: 盗梦空间
 img: /img/cover/dmkj.jpg
 top: false
+toc: true
 cover: false
 date: 2020-03-15 17:43:00
 categories: 想象力

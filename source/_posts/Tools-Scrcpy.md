@@ -2,6 +2,7 @@
 title: 用Scrcpy将手机投屏到电脑
 img: /img/pic/6.jpg
 top: false
+toc: true
 cover: false
 date: 2020-03-02 19:07:08
 categories: 技术力

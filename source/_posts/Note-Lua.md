@@ -2,6 +2,7 @@
 title: Lua-Note
 img: /img/pic/1.jpg
 top: false
+toc: true
 cover: false
 date: 2020-03-04 20:09:03
 categories: 学习力

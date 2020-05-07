@@ -2,6 +2,7 @@
 title: Python中mysql数据库的学习
 date: 2020-02-24 17:36:48
 summary: MySQL数据库的学习，慢慢学
+toc: true
 categories: 学习力
 tags:
   - Python

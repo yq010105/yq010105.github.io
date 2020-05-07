@@ -2,6 +2,7 @@
 title: Python中WordCloud库的学习
 date: 2020-02-13 20:23:53
 summary: WordCloud 一个可以生成词云的 python 库
+toc: true
 categories: 学习力
 tags:
   - Python

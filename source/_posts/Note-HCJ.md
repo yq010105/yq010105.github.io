@@ -1,6 +1,7 @@
 ---
 title: 前端开发的基础知识
 top: false
+toc: true
 cover: false
 date: 2020-03-25 12:04:47
 categories: 学习力
@@ -15,12 +16,12 @@ password:
 
 **参考资料**（大佬的笔记）
 
-> HTML https://blog.csdn.net/wuyxinu/article/details/103515157
-> CSS https://blog.csdn.net/wuyxinu/article/details/103583618
-> JS https://blog.csdn.net/wuyxinu/article/details/103642800
-> JS-下 https://blog.csdn.net/wuyxinu/article/details/103646041
-> 还有 jQuery 的 https://blog.csdn.net/wuyxinu/article/details/103669718
-> Node.js + Gulp 知识点汇总 https://blog.csdn.net/wuyxinu/article/details/103774211
+> [HTML](https://blog.csdn.net/wuyxinu/article/details/103515157)
+> [CSS](https://blog.csdn.net/wuyxinu/article/details/103583618)
+> [JS](https://blog.csdn.net/wuyxinu/article/details/103642800)
+> [JS-下](https://blog.csdn.net/wuyxinu/article/details/103646041)
+> 还有 [jQuery](https://blog.csdn.net/wuyxinu/article/details/103669718)
+> [Node.js+Gulp](https://blog.csdn.net/wuyxinu/article/details/103774211)
 
 **学习思路**
 * [x] HTML 入门 

@@ -1,7 +1,8 @@
 ---
 title: WindowsTerminal的配置
 top: false
-cover: false
+toc: true
+cover: falses
 date: 2020-03-18 22:48:23
 categories: 资源力
 tags:

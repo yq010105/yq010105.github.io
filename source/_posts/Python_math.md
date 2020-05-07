@@ -2,6 +2,7 @@
 title: Python中math库的学习
 date: 2020-02-20 21:47:39
 summary: Python中的math库，写代码时需要用到的python中的数学函数
+toc: true
 categories: 学习力
 tags:
   - Python

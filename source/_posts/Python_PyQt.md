@@ -1,6 +1,7 @@
 ---
 title: Python中PyQt库的学习
 top: false
+toc: true
 cover: false
 date: 2020-04-02 19:13:42
 categories: 学习力
@@ -9,6 +10,8 @@ tags:
 summary: 学习PyQt来做GUI，因为萌芽杯的需要
 password:
 ---
+
+<!--more-->
 
 **初步的代码理解**
 *先会用个大概，浅显的理解*

@@ -2,6 +2,7 @@
 title: Python学习中遇到的问题
 date: 2020-02-04 23:01:44
 summary: Python的一些问题，包括bug，还有编辑器的使用问题等等
+toc: true
 categories: 无力
 tags:
   - Python

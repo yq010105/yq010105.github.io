@@ -2,6 +2,7 @@
 title: 一些奇怪的想象
 date: 2020-02-18 11:13:59
 categories: 想象力
+toc: true
 summary: 记录我的一些奇怪的想法，脑子突然坏掉
 tags:
   - Imagination

@@ -1,5 +1,6 @@
 ---
 title: Python中format函数的学习
+toc: true
 date: 2020-02-11 20:56:10
 summary: python中的format格式化字符串函数，功能强大
 categories: 学习力

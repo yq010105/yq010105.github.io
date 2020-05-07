@@ -1,5 +1,6 @@
 ---
 title: 厚墨书源学习如何制作
+toc: true
 date: 2020-02-18 12:19:20
 summary: 在学习制作厚墨书源过程中需要进一步学习的技术
 categories: 学习力

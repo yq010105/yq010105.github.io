@@ -1,6 +1,7 @@
 ---
 title: 自己写的几个python小程序
 top: false
+toc: true
 cover: false
 date: 2020-03-21 22:45:11
 categories:	技术力

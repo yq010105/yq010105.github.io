@@ -2,6 +2,7 @@
 title: 用Python写的一些获取b站信息的小程序
 date: 2020-02-14 14:31:32
 summary: 用bilibili提供的api基于python做出的几个小栗子，获取信息，‘搞’b站，从基础开始
+toc: true
 categories: 技术力
 tags:
   - Python

@@ -3,6 +3,7 @@ title: Python在终端中如何使用pip命令
 top: false
 cover: false
 date: 2020-02-27 15:10:05
+toc: true
 categories: 学习力
 tags:
   - Python

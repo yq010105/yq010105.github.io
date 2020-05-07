@@ -1,6 +1,7 @@
 ---
 title: HTTP协议的介绍
-date: 2020-02-13 12:50:04
+toc: true
+date: 2020-02-13 12:50:0s4
 categories: 学习力
 summary: HTTP 协议即 Hyper Text Transfer Protocol（超文本传输协议）,是用于从万维网WWW服务器传输超文本到本地浏览器的传送协议
 tags:

@@ -1,6 +1,7 @@
 ---
 title: 快捷键——让学习更高效
 top: false
+toc: true
 cover: false
 date: 2020-04-09 21:43:05
 categories: 技术力

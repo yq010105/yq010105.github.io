@@ -2,6 +2,7 @@
 title: 自己写的几个爬虫
 date: 2020-02-10 16:43:47
 top: true
+toc: true
 coverImg: /img/cover/spiderex1.jpg
 img: /img/cover/spiderex1.jpg
 categories: 技术力
@@ -64,7 +65,8 @@ with open(f'{time_num2}.csv','w',encoding='utf-8') as f:
 
 - **csv 部分展示**
   `2020年02月07日 - 2020年02月10日`
-  ![bilibili_csv](/img/bilibili_csv.png)
+
+![bilibili_csv](https://raw.githubusercontent.com/yq010105/Blog_images/master/img/bilibili_csv.png)
 
 # 2. 爬取 baidu 上搜到的图片(初级)
 

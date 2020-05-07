@@ -2,6 +2,7 @@
 title: Windows系统的各种问题
 date: 2020-02-25 09:31:57
 summary: 从小白开始的了解windows系统，在使用windows过程中遇到的问题
+toc: true
 categories: 无力
 tags:
   - Windows

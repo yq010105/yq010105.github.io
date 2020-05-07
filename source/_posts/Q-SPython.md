@@ -2,6 +2,7 @@
 title: 用python解决问题
 date: 2020-02-17 17:09:35
 summary: 用python模拟学习生活中遇到的问题，便于解决理解，大部分可能都是学概率统计的时候遇到的问题
+toc: true
 categories: 技术力
 tags:
   - Python
