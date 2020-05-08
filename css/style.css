@@ -175,6 +175,8 @@ div {
     font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
     .post .post-title a {
       color: #555; }
+    .post .post-title a:hover {
+      color: #7e7d7d; }
   .post .post-meta {
     padding: 0;
     margin: 15px 0 0;
