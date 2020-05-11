@@ -5,9 +5,11 @@ type: "about"
 layout: "about"
 ---
 
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
 <!-- 关于我 -->
 
-<p style="color: #414141; text-align: center; font-size: 25px;">About me</p>
+<p style="color: #414141; text-align: center; font-size: 25px;"><i class="fa fa-user" aria-hidden="true"></i>&emsp;About me</p>
 
 <!-- <hr style="border-top: 1px solid #DDDDDD;"> 分割线 -->
 <div style="">
@@ -31,9 +33,10 @@ layout: "about"
 
 <!-- 我的一些链接 -->
 
-<p style="color: #414141; text-align: center; font-size: 25px;">Link me</p>
+<p style="color: #414141; text-align: center; font-size: 25px;"><i class="fa fa-link aria-hidden="true"></i>&emsp;Link me</p>
 
-<a href="https://space.bilibili.com/168705417" style="text-decoration: none; color: #00A2D8; font-size: 17px" onmouseover="this.style.color='#7CCCE7'" onmouseout="this.style.color='#00A2D8'">Bilibili</a> | <a href="https://github.com/yq010105" style="text-decoration: none; color: #252A2F; font-size: 17px;" onmouseover="this.style.color='#6F7276'" onmouseout="this.style.color='#252A2F'">Github</a> | <a href="https://twitter.com/satoru43886693" style="text-decoration: none; color: #1DA1F2; font-size: 17px; " onmouseover="this.style.color='#71C5ED'" onmouseout="this.style.color='#1DA1F2'">Twitter</a>
+<i class="fa fa-star" aria-hidden="true"></i>&emsp;<a href="https://space.bilibili.com/168705417" style="text-decoration: none; color: #00A2D8; font-size: 17px" onmouseover="this.style.color='#7CCCE7'" onmouseout="this.style.color='#00A2D8'">Bilibili</a> | <i class="fa fa-github" aria-hidden="true"></i>&emsp;<a href="https://github.com/yq010105" style="text-decoration: none; color: #252A2F; font-size: 17px;" onmouseover="this.style.color='#6F7276'" onmouseout="this.style.color='#252A2F'">Github</a> | <i class="fa fa-twitter" aria-hidden="true"></i>&emsp;<a href="https://twitter.com/satoru43886693" style="text-decoration: none; color: #1DA1F2; font-size: 17px; " onmouseover="this.style.color='#71C5ED'" onmouseout="this.style.color='#1DA1F2'">Twitter</a>
+
 
 <!-- onmouseover="this.style.color='#71C5ED'" onmouseout="this.style.color='#1DA1F2'" -->
 
@@ -41,7 +44,7 @@ layout: "about"
 
 <!-- 我的技能 -->
 
-<p style="color: #414141; text-align: center; font-size: 25px;">My Skills</p>
+<p style="color: #414141; text-align: center; font-size: 25px;"><i class="fa fa-magic" aria-hidden="true"></i>&emsp;My Skills</p>
 
 - <div><div style="float: left; width: 80px; padding-right: 15px; line-height: 27px">Python</div> <div style="float: left; width: 400px; height: 27px; border: 1px solid #ddd;"><div style="float: left; background-color: pink; height: 27px; width: 60%"></div><p style="float: right; line-height: 27px">60%</p></div></div>
 
@@ -53,7 +56,7 @@ layout: "about"
 
 <!-- 我想做的一些事情 -->
 
-<p style="color: #414141; text-align: center; font-size: 25px;">Wanna do things | Things done</p>
+<p style="color: #414141; text-align: center; font-size: 25px;"><i class="fa fa-circle-o" aria-hidden="true"></i>&emsp;Wanna do things | <i class="fa fa-dot-circle-o" aria-hidden="true"></i>&emsp;Things done</p>
 
 <div style="float: left;">
 

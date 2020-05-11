@@ -35,6 +35,24 @@ password:
 
 ## 1.2 页面制作
 
+### 1.2.0 样式初始化
+```css
+/* css初始化代码,css reset */
+/* 清除元素默认的内外边距 */
+* {
+	padding: 0;
+	margin: 0;
+}
+/* 清除列表样式 */
+li {
+	list-style: none;
+}
+/* 去掉button中默认自带的边框 */
+button {
+	border: none;
+}
+```
+
 ### 1.2.1 版心定义
 
 ```css
@@ -50,8 +68,29 @@ password:
 
 * 先写主要的大盒子
 * 然后写大盒子内的**小盒子**
-  1. logo盒子
-  2. nav导航栏
-  3. search搜索框和搜索按钮
-  4. user用户头像和用户名
-* 写banner部分
+
+`class="headr"`中
+
+1. `logo`盒子
+2. `nav`导航栏
+3. `search`搜索框和搜索按钮
+4. `user`用户头像和用户名
+
+### 1.2.3 Banner部分
+
+`class="banner"`部分
+
+1. 左侧的`subnav start`
+2. 右侧的`course start`
+
+### 1.2.3 精品推荐小模块goods
+
+（banner下面一行）
+
+1. `h3` 
+2. `goods-item`几个推荐
+3. `mod` 修改兴趣
+
+### 1.2.4 精品推荐大模块box
+1. `box-hd`写标题
+2. `box-bd`写内容小盒子
