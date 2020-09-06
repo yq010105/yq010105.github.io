@@ -919,3 +919,35 @@ for x in (A,C,D):
 > * 在继承中基类的构造方法（`__init__()方法`）不会被自动调用，它需要在其派生类的构造方法中亲自专门调用。
 > * 在调用基类的方法时，需要加上基类的类名前缀，且需要带上self参数变量。而在类中调用普通函数时并不需要带上self参数
 > * Python总是首先查找对应类的方法，如果它不能在派生类中找到对应的方法，它才开始到基类中逐个查找。（先在本类中查找调用的方法，找不到才去基类中找）
+
+# 10. 几个python编写技巧
+
+## 10.1 变量的交换
+
+`a,b = b,a`
+
+## 10.2 字符串格式化
+
+`print("Hi, I'm %s . I'm from %s . And I'm %d" % (name,country,age))`
+`print("Hi, I'm {} . I'm from {} . And I'm {}".format(name,country,age))`
+`print(f"Hi, I'm {name} . I'm from {country} . And I'm {age+1}"`
+
+## 10.3 Yield语法
+
+yield不需要整个列表生成完毕后再输出，可以一个一个输出
+
+每当一个数据生成时，可以直接输出
+
+```python
+def fibonacci(n):
+    a = 0
+    b = 1
+    for _ in range(n):
+        yield a
+        a, b = b, a+b
+    return nums
+for i in fibonacci(10):
+    print(i)
+```
+
+## 10.4 列表解析式
