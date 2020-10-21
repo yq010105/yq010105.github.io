@@ -105,13 +105,13 @@ INPUT，识别HIGH和LOW两种状态
 INPUT_PULLUP
 
 ```c++
-pinMode(2, INPUT_PULLUP);
-pinMode(13, OUTPUT);
+pinMode(2, INPUT_PULLUP); - 2引脚为开关输入上拉
+pinMode(13, OUTPUT); - 13引脚为输出LED
 ```
 
 `int sensorVal = digitalRead(2)` 将开关状态数值读取到变量中
 
-上拉模式，开关断开-高电平，开关闭合-低电平
+上拉模式:开关断开-高电平，开关闭合-低电平
 
 sensorVal 高电平 - 开关断开 - 13输出LOW
 
@@ -124,3 +124,61 @@ if (sensorVal == HIGH) {
 ```
 
 关系运算符 ： `==`等于 `!=`不等于
+
+## 1.7 boolean运算符
+
+`&&` 与 、 `||` 或 、 `!` 非
+
+**非**
+```c++
+boolean pushButton;
+void setup() {
+  pinMode(2,INPUT_PULLUP);
+  pinMode(13,OUTPUT);
+}
+
+void loop() {
+  pushButton = digitalRead(2);
+/*逻辑非运算*/
+  if (!pushButton) {
+    digitalWrite(13, HIGH); /*pushButton 为false ，则点亮LED*/
+  } else {
+    digitalWrite(13, LOW);
+  }
+}
+
+/*if括号中如果为1.运行if后程序，如果为0，则运行else*/
+```
+
+**与** ： 都真，才真
+```c++
+boolean pushButton1;
+boolean pushButton2;
+void setup() {
+  pinMode(2,INPUT_PULLUP);
+  pinMode(8,INPUT_PULLUP);
+  pinMode(13,OUTPUT);
+}
+
+void loop() {
+  pushButton1 = digitalRead(2);
+  pushButton2 = digitalRead(8);
+/*逻辑与运算*/
+  if (!pushButton1 && !push Button) {
+    digitalWrite(13, HIGH); /*1和2都是1，才会点亮*/
+  } else {
+    digitalWrite(13, LOW);
+  }
+}
+```
+
+**或** ：只要有一个为真，就是真
+
+# 2. 编程语句学习
+
+
+
+
+# 3. 开始学库
+
+## 3.1 servo

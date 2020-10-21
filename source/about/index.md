@@ -61,7 +61,7 @@ layout: "about"
 <div style="float: left;">
 
 - [ ] 六级 <p style="display: inline; border: 1px dashed #ddd; color: #ddd">四级只有449分</p>
-- [ ] 考研 <p style="display: inline; border: 1px dashed #ddd; color: #ddd">本校或者北理工</p>
+- [ ] 考研 <p style="display: inline; border: 1px dashed #ddd; color: #ddd">北京的学校，想去北理工</p>
 - [ ] 考驾照
 - [ ] 拥有一个备案的域名
 - [ ] 学单片机，做点东西出来
@@ -72,5 +72,6 @@ layout: "about"
 
 - [x] 拥有个人博客
 - [x] 四级
+- [x] 萌芽杯
 
 </div>

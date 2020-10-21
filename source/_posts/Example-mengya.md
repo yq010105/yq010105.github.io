@@ -1,7 +1,7 @@
 ---
 title: 萌芽杯项目的python代码
 date: 2020-02-19 12:51:09
-top: true
+top: false
 toc: true
 cover: false
 coverImg: /img/cover/mengya1.jpg
