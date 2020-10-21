@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="summary"><title>Arduino学习 | Yun.Qi</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.png"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Arduino学习</h1><a id="logo" href="/.">Yun.Qi</a><p class="summary">Note/Diary</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Arduino学习</h1><div class="post-meta">2020-10-19<span> | </span><span class="category"><a href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/">学习力</a></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 571</span><span class="post-meta-item-text"> Words</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i><span class="post-count"> 2</span><span class="post-meta-item-text"> Minutes</span></span></span></div><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-入门"><span class="toc-text">1. 入门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-注释"><span class="toc-text">1.1 注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-变量"><span class="toc-text">1.2 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-变量的作用域"><span class="toc-text">1.2.1 变量的作用域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-函数"><span class="toc-text">1.3 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-数字输出"><span class="toc-text">1.4 数字输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-5-数字输入"><span class="toc-text">1.5 数字输入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-6-输入上拉模式"><span class="toc-text">1.6 输入上拉模式</span></a></li></ol></li></ol></div></div><div class="post-content"><h1 id="1-入门"><a href="#1-入门" class="headerlink" title="1. 入门"></a>1. 入门</h1><ul>
+<li>数字IO</li>
+<li>模拟IO</li>
+<li>串口IO</li>
+</ul>
+<p><strong>输入设备 Input</strong></p>
+<ul>
+<li><p>开关功能:某种状态下接通电路<br>类型:数字输入(开或关)</p>
+</li>
+<li><p>电位计功能:调节旋转程度<br>类型:模拟输入(旋转不同值不同)</p>
+</li>
+<li><p>蓝牙从功能:无线接收数据<br>类型:串口输入(向Arduino发送信息)</p>
+</li>
+</ul>
+<p><strong>输出设备 Output</strong></p>
+<ul>
+<li><p>LED功能:指示亮或灭<br>类型:数字输出</p>
+</li>
+<li><p>马达功能:转动<br>类型:模拟输出(调整转速)</p>
+</li>
+<li><p>蓝牙主功能:无线发送数据<br>类型:串口输出</p>
+</li>
+</ul>
+<p><img src="/img/arduino/arduino.png" alt="arduino入门"></p>
+<h2 id="1-1-注释"><a href="#1-1-注释" class="headerlink" title="1.1 注释"></a>1.1 注释</h2><p><code>/* */</code> 注释<br><code>int a = 0;</code> 要有分号结尾</p>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>{</span><br><span class="line">启动时/按下复位后运行一次</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>{</span><br><span class="line">永远重复运行</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="1-2-变量"><a href="#1-2-变量" class="headerlink" title="1.2 变量"></a>1.2 变量</h2><p><strong>变量类型</strong></p>
+<ol>
+<li><code>int 变量名</code> 整数 ，默认值为0</li>
+</ol>
+<p><code>int current_temperature</code> cdu为整数变量<br><code>int current_temperature = 18</code> 赋值</p>
+<p>整数的范围为-32,768到32,767，超过上限，返回到最下限</p>
+<blockquote>
+<p><a href="http://www.taichi-maker.com/homepage/reference-index/arduino-code-reference/" target="_blank" rel="noopener">变量参考资料-太极创客</a></p>
+</blockquote>
+<h3 id="1-2-1-变量的作用域"><a href="#1-2-1-变量的作用域" class="headerlink" title="1.2.1 变量的作用域"></a>1.2.1 变量的作用域</h3><p>全局变量 setup和loop外<br>局部变量 setup中或loop中，两个不同函数中，不能互相使用</p>
+<h2 id="1-3-函数"><a href="#1-3-函数" class="headerlink" title="1.3 函数"></a>1.3 函数</h2><p><code>pinMode(LED_BUILTIN,OUTPUT);</code> 初始化led数字引脚为输出模式<br><code>pinMode(13,OUTPUT)</code>如果UNO中LED接的引脚为13，也可以这样写<br><code>digitalWrite(LED_BUILTIN,HIGH);</code> 将数字引脚写为高电平 /亮<br><code>digitalWrite(LED_BUILTIN,LOW);</code>  将数字引脚写为低电平 /灭<br><code>delay(1000);</code> 延时等待1秒</p>
+<blockquote>
+<p><a href="http://www.taichi-maker.com/homepage/reference-index/arduino-code-reference/" target="_blank" rel="noopener">函数参考资料-太极创客</a></p>
+</blockquote>
+<h2 id="1-4-数字输出"><a href="#1-4-数字输出" class="headerlink" title="1.4 数字输出"></a>1.4 数字输出</h2><p>LED发光二极管<br>OUTPUT</p>
+<h2 id="1-5-数字输入"><a href="#1-5-数字输入" class="headerlink" title="1.5 数字输入"></a>1.5 数字输入</h2><p>开关，输入信号<br>INPUT，识别HIGH和LOW两种状态<br>引脚悬空floating</p>
+<p><code>int pushButton = 2;</code> 给引脚2取一个名字<br><code>pinMode(pushButton,INPUT);</code> 初始化2数字引脚为输入模式</p>
+<p><code>Serial.begin(9600);</code> 启动串口通讯 ，每秒9600位<br><code>Serial.println(button);</code>显示按键状态</p>
+<p><code>int buttonState = digitalRead(pushButton);</code></p>
+<p><code>digitalRead(被读引脚号码)</code>读取数字引脚的电平状态，返回HIGH/LOW值，1/0</p>
+<h2 id="1-6-输入上拉模式"><a href="#1-6-输入上拉模式" class="headerlink" title="1.6 输入上拉模式"></a>1.6 输入上拉模式</h2><p>INPUT_PULLUP</p>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pinMode</span>(<span class="number">2</span>, <span class="literal">INPUT_PULLUP</span>);</span><br><span class="line"><span class="built_in">pinMode</span>(<span class="number">13</span>, <span class="literal">OUTPUT</span>);</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>int sensorVal = digitalRead(2)</code> 将开关状态数值读取到变量中</p>
+<p>上拉模式，开关断开-高电平，开关闭合-低电平</p>
+<p>sensorVal 高电平 - 开关断开 - 13输出LOW</p>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (sensorVal == <span class="literal">HIGH</span>) {</span><br><span class="line">  <span class="built_in">digitalWrite</span>(<span class="number">13</span>, <span class="literal">LOW</span>);</span><br><span class="line">} <span class="keyword">else</span> {</span><br><span class="line">  <span class="built_in">digitalWrite</span>(<span class="number">13</span>, <span class="literal">HIGH</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>关系运算符 ： <code>==</code>等于 <code>!=</code>不等于</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></div><div class="tags"><a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/"><i class="fa fa-tag"></i>单片机</a></div><div class="post-nav"><a class="next" href="/2020/05/17/yq-sports/">体育锻炼相关</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Compete/" style="font-size: 15px;">Compete</a> <a href="/tags/Bilibili/" style="font-size: 15px;">Bilibili</a> <a href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" style="font-size: 15px;">单片机</a> <a href="/tags/Spider/" style="font-size: 15px;">Spider</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Note/" style="font-size: 15px;">Note</a> <a href="/tags/Windows/" style="font-size: 15px;">Windows</a> <a href="/tags/Jsoup/" style="font-size: 15px;">Jsoup</a> <a href="/tags/Server/" style="font-size: 15px;">Server</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 15px;">前端</a> <a href="/tags/Markdown/" style="font-size: 15px;">Markdown</a> <a href="/tags/VB/" style="font-size: 15px;">VB</a> <a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/Lua/" style="font-size: 15px;">Lua</a> <a href="/tags/Questions/" style="font-size: 15px;">Questions</a> <a href="/tags/Api/" style="font-size: 15px;">Api</a> <a href="/tags/Github/" style="font-size: 15px;">Github</a> <a href="/tags/Source/" style="font-size: 15px;">Source</a> <a href="/tags/Life/" style="font-size: 15px;">Life</a> <a href="/tags/Imagination/" style="font-size: 15px;">Imagination</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E5%8A%9B/">学习力</a><span class="category-list-count">33</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%83%B3%E8%B1%A1%E5%8A%9B/">想象力</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%8A%9B/">技术力</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%97%A0%E5%8A%9B/">无力</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B5%84%E6%BA%90%E5%8A%9B/">资源力</a><span class="category-list-count">3</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/10/19/learn-arduino/">Arduino学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/17/yq-sports/">体育锻炼相关</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/07/review-vb/">VB的作业和复习</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/26/css-project-study/">CSS学习中跟着老师做的几个项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/09/learn-ks/">快捷键——让学习更高效</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/08/note-cs/">C#-Note</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/04/python-threading/">Python多线程学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/03/yq-fund/">理财笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/04/02/python-pyqt/">Python中PyQt库的学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/31/python-schedule/">Python中schedule库的学习</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">Yun.Qi.</a> | Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a> | Theme by<a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Maupassant</a><br/><span class="footer-birthday-text">Birthday</span><span class="footer-birthday-date">2020/02/04</span></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><link rel="stylesheet" type="text/css" href="/css/search.css?v=0.0.0"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/copycode.js" successtext="Copy Successed!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
