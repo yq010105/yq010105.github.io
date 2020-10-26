@@ -100,6 +100,7 @@ INPUT，识别HIGH和LOW两种状态
 
 `digitalRead(被读引脚号码)`读取数字引脚的电平状态，返回HIGH/LOW值，1/0
 
+
 ## 1.6 输入上拉模式
 
 INPUT_PULLUP
@@ -174,11 +175,178 @@ void loop() {
 
 **或** ：只要有一个为真，就是真
 
-# 2. 编程语句学习
+
+## 1.8 LED数码管
+
+一位8段共阴极数码管
+
+![LED数码管](/img/arduino/led.png)
+
+不同引脚给出高电平，就能显示不同的数字
+
+# 2. 基础知识学习
+
+## 2.1 循环
+
+```c++
+int pinNumber = 3;
+while(pinNumber <=9>){
+  pinMode(pinNumber, OUTPUT);
+  pinNumber = pinNumber +1;
+}
+
+/*do while*/
+do{
+  语句
+}while(表达式);
+```
+
+```c++
+for (int brightness = 0 ; brightness <=255 ; brightness++) {
+  语句
+}
+```
+
+## 2.2 if
+
+```c++
+  if (!pushButton) {
+    digitalWrite(13, HIGH); /*pushButton 为false ，则点亮LED*/
+  } else {
+    digitalWrite(13, LOW);
+  }
+
+  if (!pushButton) {
+    digitalWrite(13, HIGH); /*pushButton 为false ，则点亮LED*/
+  } else if {
+    digitalWrite(13, LOW);
+  }
+  else{
+    语句
+  }
+```
+
+## 2.3 switch...case
+
+```c++
+switch (var) {
+    case 1:
+        //当var等于1时执行这里的程序
+        break;
+    case 2:
+        //当var等于2时执行这里的程序
+        break;
+    default:
+        // 如果var的值与以上case中的值都不匹配
+        // 则执行这里的程序
+        break;
+}
+```
+
+## 2.4 random()
+
+`random(0,4)` 0/1/2/3随机数
+
+## 2.5 自定义函数
+
+不带参数
+```c++
+void displayClear() {
+  digitalWrite(3,LOW);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  digitalWrite(7,LOW);
+  digitalWrite(8,LOW);
+  digitalWrite(9,LOW);
+} 
+
+displayClear()  /*调用函数*/
+```
+
+带参数
+```c++
+void displayNumber(int ledNumber) {
+  语句
+}
+void displayNumber(int ledNumber , long ledNumber2) {
+  语句
+}
 
 
+/*调用*/
+displayNumber(myNumber);
+```
+
+带参数，带返回值
+```c++
+int getRandomNumber(int minNumber, int maxNumber){
+  int randomNumber;
+  randomNumber = random(minNumber, maxNumber);
+  return randomNumber
+}
+/*返回randomNumber*/
+
+return ;
+/*返回0*/
+```
+
+`randomSeed(analogRead(A0))`来自A0引脚模拟输入的数值作为随机种子
+
+## 2.6 串口监视器
+
+```c++
+Serial.begin(9600);
+Serial.print("变量的值是"); /*字符串*/
+Serial.println(bianliang); /*变量*/
+serial.println(""); /*空白行*/
+```
+
+## 2.7 模拟输出
+
+可以不用`pinMode()`
+
+`analogWrite(ledPin, brightness)`
+`analogWrite(引脚编号, 参数)`
+
+## 2.8 PWM
+
+`analogWrite(ledPin, 127)` 50%亮度
+
+2毫秒内，50%高电平，50%低电平
+
+PWM脉冲宽度调制
+
+## 2.9 电位器模拟输入
+
+电位器，旋钮改变R1，R2比值
+R1 + R2 = 固定值
+
+3个引脚，1接地，2接输入引脚，3接5V引脚
+
+旋钮旋转来改变第2引脚的电位，
+
+`analogRead(引脚号码)`
+
+`analogRead(A0)`**读取**模拟输入引脚数值，将**0-5V**的电压输入信号映射到数值**0-1023**
+
+将5V分为1024份， 2.5V 对应数值 512
+引脚输入范围可以使用analogReference()进行调整
+
+>>[太极创客解释](http://www.taichi-maker.com/homepage/reference-index/arduino-code-reference/analogread/)
+
+## 2.10 等比映射
+
+`map(analogInputVal, 0 ,1023 , 0 , 255);`
+
+将0-1023映射到0-255
+
+# 3. 模块学习
+## 3. ESP8266入门
+
+使用arduino研究esp8266
 
 
-# 3. 开始学库
+# 4. 开始学库
 
-## 3.1 servo
+## 4.1 servo
+
