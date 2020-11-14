@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Android studio的学习</title>
+      <link href="/2020/11/03/learn-android/"/>
+      <url>/2020/11/03/learn-android/</url>
+      
+        <content type="html"><![CDATA[<h1 id="还没开始"><a href="#还没开始" class="headerlink" title="还没开始"></a>还没开始</h1><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习力 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android Studio </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>STM32学习</title>
       <link href="/2020/10/21/learn-stm32/"/>
       <url>/2020/10/21/learn-stm32/</url>
@@ -1215,9 +1240,9 @@
             
             <tag> Python </tag>
             
-            <tag> Note </tag>
-            
             <tag> Spider </tag>
+            
+            <tag> Note </tag>
             
         </tags>
       
