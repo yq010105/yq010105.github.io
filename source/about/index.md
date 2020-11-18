@@ -18,16 +18,16 @@ layout: "about"
 
 <!-- <div style="float: right; padding-right: 180px; padding-top: 80px; font-size: 17px;"><p style="display: inline;background-color:pink;">English本当🔨の<b>机械生</b> <br> 19歳、学生です、でぶです</p></div> -->
 
-<div><p style="text-align: center; border: 1px dashed pink;">English本当🔨の<b>机械生</b> &emsp;&emsp;&emsp; 19歳、学生です、でぶです、小学<b>二年级</b></p></div>
+<div><p style="text-align: center; border: 1px dashed pink;">English本当🔨の<b>机械生</b> &emsp;&emsp;&emsp; 19歳、学生です、でぶです、小学<b>三年级</b></p></div>
 <div>
 
 <!-- <p style="display: inline; font-size: 17px;"></p> -->
 
 </div>
 
-<p style="text-align: center; font-weight: bold;">好きのもの</p>
+<p style="text-align: center; font-weight: bold;">好きな人</p>
 
-<div style="display: inline-block; margin: 0 10px; border: 1px dashed pink;">めあくあ / Hololive箱 / いのり / 欅坂46 / 京アニ / K-ON / りりあ / 井手上 漠 / 美波 / 春茶 / なすお☆ちゃん / AV(aqua video) / 小祭祭 /</div>
+<div style="display: inline-block; margin: 0 10px; border: 1px dashed pink;">/ いのり / 欅坂46 / 京アニ / K-ON / <a href="https://www.instagram.com/riria0000/" style="font-weight: bold">りりあ</a> / <a href="https://www.instagram.com/baaaakuuuu/" style="font-weight: bold">井手上 漠</a> / 美波 / 春茶 / <a href="https://twitter.com/naaasuooo/" style="font-weight: bold">なすお☆ちゃん</a> / AV(aqua video) /</div>
 
 <hr style="border-top: 1px solid #DDDDDD;">
 
@@ -46,11 +46,17 @@ layout: "about"
 
 <p style="color: #414141; text-align: center; font-size: 25px;"><i class="fa fa-magic" aria-hidden="true"></i>&emsp;My Skills</p>
 
-- <div><div style="float: left; width: 80px; padding-right: 15px; line-height: 27px">Python</div> <div style="float: left; width: 400px; height: 27px; border: 1px solid #ddd;"><div style="float: left; background-color: pink; height: 27px; width: 60%"></div><p style="float: right; line-height: 27px">60%</p></div></div>
+- <div><div style="float: left; width: 80px; padding-right: 15px; line-height: 27px">Python</div> <div style="float: left; width: 400px; height: 27px; border: 1px solid #ddd;"><div style="float: left; background-color: pink; height: 27px; width: 50%"></div><p style="float: right; line-height: 27px">50%</p></div></div>
 
-- <div><div style="float: left; width: 80px; padding-right: 15px; line-height: 27px">VB</div> <div style="float: left; width: 400px; height: 27px; border: 1px solid #ddd;"><div style="float: left; background-color: pink; height: 27px; width: 70%"></div><p style="float: right; line-height: 27px">70%</p></div></div>
+- <div><div style="float: left; width: 80px; padding-right: 15px; line-height: 27px">VB</div> <div style="float: left; width: 400px; height: 27px; border: 1px solid #ddd;"><div style="float: left; background-color: pink; height: 27px; width: 50%"></div><p style="float: right; line-height: 27px">50%</p></div></div>
 
 - <div><div style="float: left; width: 80px; padding-right: 15px; line-height: 27px">前端</div> <div style="float: left; width: 400px; height: 27px; border: 1px solid #ddd;"><div style="float: left; background-color: pink; height: 27px; width: 40%"></div><p style="float: right; line-height: 27px">40%</p></div></div>
+
+- <div><div style="float: left; width: 80px; padding-right: 15px; line-height: 27px">C#</div> <div style="float: left; width: 400px; height: 27px; border: 1px solid #ddd;"><div style="float: left; background-color: pink; height: 27px; width: 1%"></div><p style="float: right; line-height: 27px">1%</p></div></div>
+
+- <div><div style="float: left; width: 80px; padding-right: 15px; line-height: 27px">Arduino</div> <div style="float: left; width: 400px; height: 27px; border: 1px solid #ddd;"><div style="float: left; background-color: pink; height: 27px; width: 10%"></div><p style="float: right; line-height: 27px">10%</p></div></div>
+
+- <div><div style="float: left; width: 80px; padding-right: 15px; line-height: 27px">Android</div> <div style="float: left; width: 400px; height: 27px; border: 1px solid #ddd;"><div style="float: left; background-color: pink; height: 27px; width: 0%"></div><p style="float: right; line-height: 27px">0%</p></div></div>
 
 <hr style="border-top: 1px solid #DDDDDD;">
 
