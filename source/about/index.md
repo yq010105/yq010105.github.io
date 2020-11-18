@@ -25,7 +25,7 @@ layout: "about"
 
 </div>
 
-<p style="text-align: center; font-weight: bold;">好きな人</p>
+<p style="text-align: center; font-weight: bold; font-size: 20px">好きな人</p>
 
 <div style="display: inline-block; margin: 0 10px; border: 1px dashed pink;">/ いのり / 欅坂46 / 京アニ / K-ON / <a href="https://www.instagram.com/riria0000/" style="font-weight: bold">りりあ</a> / <a href="https://www.instagram.com/baaaakuuuu/" style="font-weight: bold">井手上 漠</a> / 美波 / 春茶 / <a href="https://twitter.com/naaasuooo/" style="font-weight: bold">なすお☆ちゃん</a> / AV(aqua video) /</div>
 
